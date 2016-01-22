@@ -2,7 +2,7 @@
 
 Embedded Systems Playground
 =================
-This repo contains all my trials and tribulations with programming embedded systems. I grew tired of the simplicity offered by Arduino and the half-assed/unorganized course syllabus my college offered (Prog-2000) on prgoramming embedded systems. As a result, I decided to take maters to my own hands by taking 3 months off work and school to make my own path for learning how to do it correctly. No GPA, no grades, zero competitive nature. Just pure ol' desire to learn by mastery & discovery.
+This repo contains all my trials and tribulations with programming embedded systems. I grew tired of the simplicity offered by Arduino and the half-assed/unorganized course syllabus my college offered (Prog-2000) on programming embedded systems. As a result, I decided to take maters to my own hands by taking 3 months off work and school to make my own path for learning how to do it correctly. No GPA, no grades, zero competitive nature. Just pure ol' desire to learn by mastery & discovery.
 
 ### Learning/Referance material
 * https://zybooks.zyante.com/#/zybook/ProgrammingEmbeddedSystemsR10/dashboard
