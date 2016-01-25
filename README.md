@@ -2,7 +2,9 @@
 
 Embedded Systems Playground
 =================
-This repo contains all my trials and tribulations with programming embedded systems. I grew tired of the simplicity offered by Arduino and the half-assed/unorganized course syllabus my college offered (Prog-2000) on programming embedded systems. As a result, I decided to take maters to my own hands by taking 3 months off work and school to make my own path for learning how to do it correctly. No GPA, no grades, zero competitive nature. Just pure ol' desire to learn by mastery & discovery.
+I grew tired of the simplicity offered by Arduino and needed something more challenging. Developing drivers for sensors in C++ seems like the next step up and in order to get there, I needed to master programming embedded systems.
+
+This repo contains all my trials and tribulations with programming embedded systems. Review it, comment on it, and help me improve by criticizing my work.  
 
 ### Learning/Referance material
 * https://zybooks.zyante.com/#/zybook/ProgrammingEmbeddedSystemsR10/dashboard
