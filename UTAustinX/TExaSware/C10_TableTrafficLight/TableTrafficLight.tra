@@ -1,0 +1,22 @@
+*** Creating Trace Output File 'TableTrafficLight.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"systick.o"'
+### List of Objects: adding '"pll.o"'
+### List of Objects: adding '"tabletrafficlight.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4 "startup.o" "systick.o" "pll.o" "tabletrafficlight.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\TableTrafficLight.map" -o TableTrafficLight.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'TableTrafficLight.axf'
+### ADS-LD Command File: 'TableTrafficLight.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'TableTrafficLight.lnp', Handle=0x00000534
+### Writing '.lnp' file
+### ADS-LD Command file 'TableTrafficLight.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

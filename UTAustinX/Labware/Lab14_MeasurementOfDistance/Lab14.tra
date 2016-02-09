@@ -1,0 +1,25 @@
+*** Creating Trace Output File 'Lab14.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"adcswtrigger.o"'
+### List of Objects: adding '"mailbox.o"'
+### List of Objects: adding '"measurementofdistance.o"'
+### List of Objects: adding '"nokia5110.o"'
+### List of Objects: adding '"texas.o"'
+### List of Objects: adding '"uart.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4 "startup.o" "adcswtrigger.o" "mailbox.o" "measurementofdistance.o" "nokia5110.o" "texas.o" "uart.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Lab14.map" -o Lab14.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'Lab14.axf'
+### ADS-LD Command File: 'Lab14.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'Lab14.lnp', Handle=0x00000690
+### Writing '.lnp' file
+### ADS-LD Command file 'Lab14.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

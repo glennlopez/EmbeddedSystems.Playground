@@ -1,0 +1,195 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\ti\TivaWare_C_Series-2.1.0.12573\examples\boards\CC31xxxx\getWeather\cc31000_starter.uvproj
+Project File Date:  12/18/2014
+
+<h2>Output:</h2>
+Clean started: Project: 'cc31000_starter'
+   deleting intermediate output files for target 'getWeather'
+Rebuild target 'getWeather'
+compiling board.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling device.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling driver.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling flowcont.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling fs.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling netapp.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling netcfg.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling nonos.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling socket.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling spawn.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling spi.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling starter.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+starter.c(180): warning:  #1295-D: Deprecated declaration initializeAppVariables - give arg types
+starter.c(181): warning:  #1295-D: Deprecated declaration displayBanner - give arg types
+starter.c(182): warning:  #1295-D: Deprecated declaration GetUserNum - give arg types
+starter.c(183): warning:  #1295-D: Deprecated declaration GetUserInput - give arg types
+starter.c(184): warning:  #1295-D: Deprecated declaration GetData - give arg types
+starter.c(185): warning:  #1295-D: Deprecated declaration CreateConnection - give arg types
+starter.c(186): warning:  #1295-D: Deprecated declaration getWeather - give arg types
+starter.c(187): warning:  #1295-D: Deprecated declaration GetHostIP - give arg types
+starter.c(803): warning:  #177-D: variable "i" was declared but never referenced
+starter.c(805): warning:  #177-D: variable "User" was declared but never referenced
+starter.c(179): warning:  #177-D: function "establishConnectionWithAP" was declared but never referenced
+starter.c(181): warning:  #177-D: function "displayBanner" was declared but never referenced
+starter.c(182): warning:  #177-D: function "GetUserNum" was declared but never referenced
+starter.c(183): warning:  #177-D: function "GetUserInput" was declared but never referenced
+assembling startup_rvmdk.S...
+compiling uart.c...
+compiling uartstdio.c...
+compiling ustdlib.c...
+compiling wlan.c...
+..\cc3100\platform\ek-tm4c123gxl\board.h(76): warning:  #1295-D: Deprecated declaration GPIOB_intHandler - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(89): warning:  #1295-D: Deprecated declaration CC3100_enable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(102): warning:  #1295-D: Deprecated declaration CC3100_disable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(115): warning:  #1295-D: Deprecated declaration CC3100_InterruptEnable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(128): warning:  #1295-D: Deprecated declaration CC3100_InterruptDisable - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(141): warning:  #1295-D: Deprecated declaration stopWDT - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(154): warning:  #1295-D: Deprecated declaration initClk - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(165): warning:  #1295-D: Deprecated declaration MaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(176): warning:  #1295-D: Deprecated declaration UnMaskIntHdlr - give arg types
+..\cc3100\platform\ek-tm4c123gxl\board.h(189): warning:  #1295-D: Deprecated declaration UART1_intHandler - give arg types
+..\cc3100\simplelink\include\device.h(536): warning:  #1295-D: Deprecated declaration sl_Task - give arg types
+compiling ADCSWTrigger.c...
+compiling LaunchPadSwitches.c...
+compiling ST7735.c...
+linking...
+Program Size: Code=15208 RO-data=3756 RW-data=92 ZI-data=19580  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Errors, 157 Warning(s).
+Clean started: Project: 'cc31000_starter'
+   deleting intermediate output files for target 'getWeather'

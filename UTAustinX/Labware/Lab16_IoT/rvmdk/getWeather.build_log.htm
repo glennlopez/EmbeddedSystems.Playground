@@ -1,0 +1,95 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Box\Box Sync\UT6.03x\TM4Cware\C16_getWeather\getWeather.uvproj
+Project File Date:  11/20/2015
+
+<h2>Output:</h2>
+Build target 'getWeather'
+compiling main.c...
+linking...
+Program Size: Code=13892 RO-data=1824 RW-data=56 ZI-data=19512  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Error(s), 0 Warning(s).
+Clean started: Project: 'getWeather'
+   deleting intermediate output files for target 'getWeather'
+</pre>
+</body>
+</html>
+ase Done.
+Programming Done.
+Verify OK.
+): warning:  #1295-D: Deprecated declaration LED_GreenOff - give arg types
+      LED_GreenOff();
+main.c(257): error:  #260-D: explicit type is missing ("int" assumed)
+      LED_GreenOff();
+main.c(257): error:  #147: declaration is incompatible with "void LED_GreenOff(void)" (declared at line 96 of "LED.h")
+      LED_GreenOff();
+main.c(258): error:  #169: expected a declaration
+    }
+main.c(297): warning:  #12-D: parsing restarts here after previous syntax error
+      retVal = sl_WlanSetMode(ROLE_STA);
+main.c(299): error:  #77-D: this declaration has no storage class or type specifier
+      retVal = sl_Stop(0xFF);
+main.c(299): error:  #59: function call is not allowed in a constant expression
+      retVal = sl_Stop(0xFF);
+main.c(301): error:  #77-D: this declaration has no storage class or type specifier
+      retVal = sl_Start(0, pConfig, 0);
+main.c(301): error:  #148: variable "retVal" has already been initialized
+      retVal = sl_Start(0, pConfig, 0);
+main.c(301): error:  #59: function call is not allowed in a constant expression
+      retVal = sl_Start(0, pConfig, 0);
+main.c(301): error:  #20: identifier "pConfig" is undefined
+      retVal = sl_Start(0, pConfig, 0);
+main.c(304): error:  #169: expected a declaration
+      if (ROLE_STA != retVal){
+main.c(310): warning:  #12-D: parsing restarts here after previous syntax error
+    configOpt = SL_DEVICE_GENERAL_VERSION;
+main.c(311): error:  #77-D: this declaration has no storage class or type specifier
+    configLen = sizeof(ver);
+main.c(311): error:  #20: identifier "ver" is undefined
+    configLen = sizeof(ver);
+main.c(312): error:  #77-D: this declaration has no storage class or type specifier
+    retVal = sl_DevGet(SL_DEVICE_GENERAL_CONFIGURATION, &configOpt, &configLen, (unsigned char *)(&ver));
+main.c(312): error:  #148: variable "retVal" has already been initialized
+    retVal = sl_DevGet(SL_DEVICE_GENERAL_CONFIGURATION, &configOpt, &configLen, (unsigned char *)(&ver));
+main.c(312): error:  #59: function call is not allowed in a constant expression
+    retVal = sl_DevGet(SL_DEVICE_GENERAL_CONFIGURATION, &configOpt, &configLen, (unsigned char *)(&ver));
+main.c(312): error:  #20: identifier "configOpt" is undefined
+    retVal = sl_DevGet(SL_DEVICE_GENERAL_CONFIGURATION, &configOpt, &configLen, (unsigned char *)(&ver));
+main.c(312): error:  #44: expression must have pointer type
+    retVal = sl_DevGet(SL_DEVICE_GENERAL_CONFIGURATION, &configOpt, &configLen, (unsigned char *)(&ver));
+main.c(315): error:  #77-D: this declaration has no storage class or type specifier
+    retVal = sl_WlanPolicySet(SL_POLICY_CONNECTION, SL_CONNECTION_POLICY(1, 0, 0, 0, 1), NULL, 0);
+main.c(315): error:  #148: variable "retVal" has already been initialized
+    retVal = sl_WlanPolicySet(SL_POLICY_CONNECTION, SL_CONNECTION_POLICY(1, 0, 0, 0, 1), NULL, 0);
+main.c(315): error:  #59: function call is not allowed in a constant expression
+    retVal = sl_WlanPolicySet(SL_POLICY_CONNECTION, SL_CONNECTION_POLICY(1, 0, 0, 0, 1), NULL, 0);
+main.c(318): error:  #77-D: this declaration has no storage class or type specifier
+    retVal = sl_WlanProfileDel(0xFF);
+main.c(318): error:  #148: variable "retVal" has already been initialized
+    retVal = sl_WlanProfileDel(0xFF);
+main.c(318): error:  #59: function call is not allowed in a constant expression
+    retVal = sl_WlanProfileDel(0xFF);
+main.c(325): error:  #77-D: this declaration has no storage class or type specifier
+    retVal = sl_WlanDisconnect();
+main.c(325): error:  #148: variable "retVal" has already been initialized
+    retVal = sl_WlanDisconnect();
+main.c(325): error:  #59: function call is not allowed in a constant expression
+    retVal = sl_WlanDisconnect();
+main.c(326): error:  #169: expected a declaration
+    if(0 == retVal){
+main.c(332): warning:  #12-D: parsing restarts here after previous syntax error
+    retVal = sl_NetCfgSet(SL_IPV4_STA_P2P_CL_DHCP_ENABLE,1,1,&val);
+main.c(335): error:  #77-D: this declaration has no storage class or type specifier
+    configOpt = SL_SCAN_POLICY(0);
+main.c: 6 warnings, 30 errors
+".\rvmdk\getWeather.axf" - 30 Error(s), 6 Warning(s).
+Target not created
+Load "D:\\Box\\Box Sync\\UT6.03x\\TM4Cware\\C16_getWeather\\rvmdk\\getWeather.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

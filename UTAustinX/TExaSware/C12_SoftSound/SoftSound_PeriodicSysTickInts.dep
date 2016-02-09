@@ -1,0 +1,3 @@
+Dependencies for Project 'SoftSound', Target 'PeriodicSysTickInts': (DO NOT MODIFY !)
+F (.\startup.s)(0x519AF380)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Keil\ARM\RV31\Inc -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\Luminary --list "startup.lst" --xref -o "startup.o" --depend "startup.d")
+F (.\PeriodicSysTickInts.c)(0x52349FD7)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. -I D:\Keil\ARM\RV31\Inc -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\Luminary -Drvmdk -DPART_LM4F120H5QR -o "periodicsystickints.o" --omf_browse "periodicsystickints.crf" --depend "periodicsystickints.d")

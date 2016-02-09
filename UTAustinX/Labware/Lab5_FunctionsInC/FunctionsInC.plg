@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Dropbox\apn176\apntex_176\MySetup\TM4Cware\Lab5_FunctionsInC\Lab5.uvproj
+Project File Date:  01/08/2014
+
+<h2>Output:</h2>
+Clean started: Project: 'Lab5'
+   deleting intermediate output files for target 'FunctionsInC'
+Build target 'FunctionsInC'
+assembling startup.s...
+compiling UART.c...
+compiling main.c...
+linking...
+Program Size: Code=4552 RO-data=840 RW-data=56 ZI-data=1656  
+"FunctionsInC.axf" - 0 Error(s), 0 Warning(s).
+Clean started: Project: 'Lab5'
+   deleting intermediate output files for target 'FunctionsInC'

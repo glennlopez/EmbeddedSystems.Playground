@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule configRelations="2" moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.1189763519">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.1189763519" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.1189763519" name="Debug" parent="com.ti.ccstudio.buildDefinitions.TMS470.Debug" postbuildStep="" prebuildStep="">
+					<folderInfo id="com.ti.ccstudio.buildDefinitions.TMS470.Debug.1189763519." name="/" resourcePath="">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.DebugToolchain.1184966824" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.linkerDebug.1442942870">
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.152242622" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=Cortex M.TM4C123GH6PM"/>
+								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
+								<listOptionValue builtIn="false" value="OUTPUT_FORMAT=ELF"/>
+								<listOptionValue builtIn="false" value="CCS_MBS_VERSION=5.5.0"/>
+								<listOptionValue builtIn="false" value="LINKER_COMMAND_FILE=tm4c123gh6pm.cmd"/>
+								<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
+								<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
+							</option>
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.181864797" name="Compiler version" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="5.2.4" valueType="string"/>
+							<targetPlatform id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.targetPlatformDebug.2032117161" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.targetPlatformDebug"/>
+							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.builderDebug.751283510" keepEnvironmentInBuildfile="false" name="GNU Make" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.builderDebug"/>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.compilerDebug.1551429998" name="ARM Compiler" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.compilerDebug">
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION.1931723613" name="Target processor version (--silicon_version, -mv)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION.7M4" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE.675917903" name="Designate code state, 16-bit (thumb) or 32-bit (--code_state)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE.16" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI.702145309" name="Application binary interface. [See 'General' page to edit] (--abi)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI.eabi" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT.2116719660" name="Specify floating point support (--float_support)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT.FPv4SPD16" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC.2000949480" name="Enable support for GCC extensions (DEPRECATED) (--gcc)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE.1675888928" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ccs=&quot;ccs&quot;"/>
+									<listOptionValue builtIn="false" value="PART_TM4C123GH6PM"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEBUGGING_MODEL.1528474487" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WARNING.1322896630" name="Treat diagnostic &lt;id&gt; as warning (--diag_warning, -pdsw)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WARNING" valueType="stringList">
+									<listOptionValue builtIn="false" value="225"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DISPLAY_ERROR_NUMBER.1844791470" name="Emit diagnostic identifier numbers (--display_error_number, -pden)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WRAP.1268877485" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH.1138870955" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}\inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}\utils&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}\cc3100&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}\cc3100\platform\ek-tm4c123gxl&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}\CC3100\simplelink\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}\cc3100\simplelink\source&quot;"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN.1879574507" name="Little endian code [See 'General' page to edit] (--little_endian, -me)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.C_DIALECT.1119760279" name="C Dialect" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.C_DIALECT" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.C_DIALECT.C99" valueType="enumerated"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__C_SRCS.1188250150" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__C_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__CPP_SRCS.1283145079" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__CPP_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM_SRCS.702488571" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM2_SRCS.1507699484" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM2_SRCS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.linkerDebug.1442942870" name="ARM Linker" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.linkerDebug">
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE.766977997" name="Link information (map) listed into &lt;file&gt; (--map_file, -m)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE" value="&quot;${ProjName}.map&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE.2043907343" name="Set C system stack size (--stack_size, -stack)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE" value="1024" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE.345620974" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE" value="0" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE.1785426406" name="Specify output file name (--output_file, -o)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE" value="&quot;${ProjName}.out&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.XML_LINK_INFO.1111070265" name="Detailed link information data-base into &lt;file&gt; (--xml_link_info, -xml_link_info)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.XML_LINK_INFO" value="&quot;${ProjName}_linkInfo.xml&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DISPLAY_ERROR_NUMBER.101642680" name="Emit diagnostic identifier numbers (--display_error_number)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DIAG_WRAP.1071969114" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.SEARCH_PATH.1112495660" name="Add &lt;dir&gt; to library search path (--search_path, -i)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.SEARCH_PATH" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY.276851841" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${PARENT_LOC}\driverlib\ccs\Debug\driverlib.lib&quot;"/>
+								</option>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD_SRCS.894171001" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD2_SRCS.335547110" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD2_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__GEN_CMDS.1015604842" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__GEN_CMDS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.hex.849446747" name="ARM Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.hex"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="main2015.c|ccs|gcc|rvmdk|tm4c123gh6pm_startup_ccs.c|startup_gcc.c|startup_ewarm.c|startup_rvmdk.S" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.ti.ccstudio.buildDefinitions.TMS470.Release.1976678238">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.ti.ccstudio.buildDefinitions.TMS470.Release.1976678238" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.ti.ccstudio.errorparser.CoffErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.ti.ccstudio.errorparser.LinkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.ti.ccstudio.errorparser.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.ti.ccstudio.binaryparser.CoffParser" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.TMS470.Release.1976678238" name="Release" parent="com.ti.ccstudio.buildDefinitions.TMS470.Release" postbuildStep="" prebuildStep="">
+					<folderInfo id="com.ti.ccstudio.buildDefinitions.TMS470.Release.1976678238." name="/" resourcePath="">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.ReleaseToolchain.599433810" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.linkerRelease.1530930336">
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1797454170" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=Cortex M.TM4C123GH6PM"/>
+								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
+								<listOptionValue builtIn="false" value="OUTPUT_FORMAT=ELF"/>
+								<listOptionValue builtIn="false" value="CCS_MBS_VERSION=5.5.0"/>
+								<listOptionValue builtIn="false" value="LINKER_COMMAND_FILE=tm4c123gh6pm.cmd"/>
+								<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
+								<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
+							</option>
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.635452226" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="5.2.4" valueType="string"/>
+							<targetPlatform id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.targetPlatformRelease.2074639591" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.targetPlatformRelease"/>
+							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.builderRelease.16747115" name="GNU Make.Release" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.builderRelease"/>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.compilerRelease.2046263190" name="ARM Compiler" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.compilerRelease">
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION.347446612" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION.7M4" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE.382696319" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE.16" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI.686298297" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI.eabi" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT.1895435445" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT.FPv4SPD16" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC.383666245" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE.430112502" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ccs=&quot;ccs&quot;"/>
+									<listOptionValue builtIn="false" value="PART_TM4C123GH6PM"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WARNING.784258291" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WARNING" valueType="stringList">
+									<listOptionValue builtIn="false" value="225"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DISPLAY_ERROR_NUMBER.386380782" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WRAP.16897269" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH.1316566934" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN.1131406245" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN" value="true" valueType="boolean"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__C_SRCS.323690586" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__C_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__CPP_SRCS.369789109" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__CPP_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM_SRCS.2062138274" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM2_SRCS.1844764454" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.compiler.inputType__ASM2_SRCS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.linkerRelease.1530930336" name="ARM Linker" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exe.linkerRelease">
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE.947465133" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE" value="&quot;${ProjName}.map&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE.1403626471" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE" value="512" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE.664068471" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE" value="0" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE.1452014733" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE" value="&quot;${ProjName}.out&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.XML_LINK_INFO.2028577699" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.XML_LINK_INFO" value="&quot;${ProjName}_linkInfo.xml&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DISPLAY_ERROR_NUMBER.1063810943" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DIAG_WRAP.1509926701" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.SEARCH_PATH.2046634133" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.SEARCH_PATH" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY.890336723" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
+								</option>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD_SRCS.670933173" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD2_SRCS.1529254069" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__CMD2_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__GEN_CMDS.1199210377" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.exeLinker.inputType__GEN_CMDS"/>
+							</tool>
+							<tool id="com.ti.ccstudio.buildDefinitions.TMS470_5.2.hex.1864839100" name="ARM Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.TMS470_5.2.hex"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="GetWeather_4C123.com.ti.ccstudio.buildDefinitions.TMS470.ProjectType.322217390" name="ARM" projectType="com.ti.ccstudio.buildDefinitions.TMS470.ProjectType"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration"/>
+	<storageModule moduleId="org.eclipse.cdt.core.language.mapping">
+		<project-mappings>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.asmSource" language="com.ti.ccstudio.core.TIASMLanguage"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cHeader" language="com.ti.ccstudio.core.TIGCCLanguage"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cSource" language="com.ti.ccstudio.core.TIGCCLanguage"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxHeader" language="com.ti.ccstudio.core.TIGPPLanguage"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxSource" language="com.ti.ccstudio.core.TIGPPLanguage"/>
+		</project-mappings>
+	</storageModule>
+</cproject>

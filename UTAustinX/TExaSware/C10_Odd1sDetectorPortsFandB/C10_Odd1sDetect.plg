@@ -1,0 +1,13 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\ramesh\Dropbox\EdX\TM4Cware\C10_Odd1sDetectorPortsFandB\C10-Odd1sDetect.uvproj
+Project File Date:  07/31/2013
+
+<h2>Output:</h2>
+Build target 'C10_Odd1sDetect'
+linking...
+Program Size: Code=1376 RO-data=44 RW-data=4 ZI-data=1124  
+".\C10_Odd1sDetect.axf" - 0 Errors, 0 Warning(s).

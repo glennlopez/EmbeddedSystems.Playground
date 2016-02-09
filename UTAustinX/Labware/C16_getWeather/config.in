@@ -1,0 +1,65 @@
+#******************************************************************************
+#
+# config.in - Configuration information for the Patch Programmer
+#
+# Copyright (c) 2014 Texas Instruments Incorporated.  All rights reserved.
+# TI Information - Selective Disclosure
+#
+#******************************************************************************
+
+PART=TM4C123GH6PM
+TARGET=cc31000_starter
+DESC=CC3000 Basic WiFi Application
+ROOT=../../../..
+COPYRIGHT=2014
+STACK=4096
+
+VPATH=../drivers
+VPATH+=:../../../../utils
+VPATH+=:../cc3100
+VPATH+=:../cc3100/platform/ek-tm4c123gxl
+VPATH+=:../cc3100/simplelink/source
+VPATH+=:../cc3100/simplelink/include
+VPATH+=:../../../../utils
+
+IPATH=..
+IPATH+=:../
+IPATH+=:../../../..
+IPATH+=:../cc3100
+IPATH+=:../cc3100/platform/ek-tm4c123gxl
+IPATH+=:../cc3100/simplelink/source
+IPATH+=:../cc3100/simplelink/include
+
+SRC=./starter.c
+#SRC+= ./cc3000_basic_wifi_application_commands.c
+SRC+= ../cc3100/platform/ek-tm4c123gxl/board.c
+SRC+= ../cc3100/platform/ek-tm4c123gxl/spi.c
+SRC+= ../cc3100/platform/ek-tm4c123gxl/uart.c
+SRC+= ../cc3100/simplelink/source/device.c
+SRC+= ../cc3100/simplelink/source/driver.c
+SRC+= ../cc3100/simplelink/source/flowcont.c
+SRC+= ../cc3100/simplelink/source/fs.c
+SRC+= ../cc3100/simplelink/source/netapp.c
+SRC+= ../cc3100/simplelink/source/netcfg.c
+SRC+= ../cc3100/simplelink/source/nonos.c
+SRC+= ../cc3100/simplelink/source/wlan.c
+SRC+= ../cc3100/simplelink/source/spawn.c
+SRC+= ../cc3100/simplelink/source/socket.c
+SRC+= ../../../../utils/ustdlib.c
+SRC+= ../../../../utils/cmdline.c
+SRC+= ../../../../utils/uartstdio.c
+
+HEADER+=../cc3100/platform/ek-tm4c123gxl/user.h
+
+
+#DEFINES=CC3000_USE_BOOSTERPACK1
+DEFINES=_POSIX_SOURCE
+DEFINES+=:UART_BUFFERED
+DEFINES+=:TARGET_IS_TM4C123_RB1
+#DEFINES+=:CC3000_TM4C123_SPI
+
+DRIVERLIB=1
+#SYSTICK=SysTickHandler
+GPIOB=GPIOB_intHandler
+UART0=UARTStdioIntHandler
+#SSI2=SpiIntHandler

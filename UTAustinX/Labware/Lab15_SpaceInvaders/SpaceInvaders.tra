@@ -1,0 +1,23 @@
+*** Creating Trace Output File 'SpaceInvaders.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"nokia5110.o"'
+### List of Objects: adding '"spaceinvaders.o"'
+### List of Objects: adding '"random.o"'
+### List of Objects: adding '"pll.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4 "startup.o" "nokia5110.o" "spaceinvaders.o" "random.o" "pll.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\SpaceInvaders.map" -o SpaceInvaders.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'SpaceInvaders.axf'
+### ADS-LD Command File: 'SpaceInvaders.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'SpaceInvaders.lnp', Handle=0x00000330
+### Writing '.lnp' file
+### ADS-LD Command file 'SpaceInvaders.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

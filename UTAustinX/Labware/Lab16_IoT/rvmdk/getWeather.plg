@@ -1,0 +1,64 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100GetWeather_4C123\getWeather.uvproj
+Project File Date:  09/23/2015
+
+<h2>Output:</h2>
+Build target 'getWeather'
+compiling main.c...
+linking...
+Program Size: Code=13912 RO-data=1812 RW-data=56 ZI-data=19512  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\ArmBook\\LaunchPad\\ValvanoWareTM4C123\\CC3100GetWeather_4C123\\rvmdk\\getWeather.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'getWeather'
+linking...
+Program Size: Code=13912 RO-data=1812 RW-data=56 ZI-data=19512  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\ArmBook\\LaunchPad\\ValvanoWareTM4C123\\CC3100GetWeather_4C123\\rvmdk\\getWeather.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'getWeather'
+compiling main.c...
+linking...
+Program Size: Code=13896 RO-data=1812 RW-data=56 ZI-data=19512  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Errors, 0 Warning(s).
+Build target 'getWeather'
+compiling main.c...
+linking...
+Program Size: Code=13912 RO-data=1812 RW-data=56 ZI-data=19512  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\ArmBook\\LaunchPad\\ValvanoWareTM4C123\\CC3100GetWeather_4C123\\rvmdk\\getWeather.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'getWeather'
+compiling main.c...
+linking...
+Program Size: Code=13912 RO-data=1812 RW-data=56 ZI-data=19512  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\ArmBook\\LaunchPad\\ValvanoWareTM4C123\\CC3100GetWeather_4C123\\rvmdk\\getWeather.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'getWeather'
+compiling main.c...
+linking...
+Program Size: Code=13912 RO-data=1824 RW-data=56 ZI-data=19512  
+After Build - User command #1: fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf
+".\rvmdk\getWeather.axf" - 0 Errors, 0 Warning(s).

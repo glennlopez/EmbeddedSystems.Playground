@@ -1,0 +1,17 @@
+#******************************************************************************
+#
+# filelist.txt - List of files to be included in the release.
+#
+# Copyright (c) 2013 Texas Instruments Incorporated.  All rights reserved.
+# TI Information - Selective Disclosure
+#
+# This lists all files in this directory that should be included in a release.
+# Files associated with unannounced parts can be listed with proper marking
+# (the typical unannounced begin/end) but internal use only files should not be
+# listed and protected.
+#
+#******************************************************************************
+#PROJECT
+
+starter.c
+

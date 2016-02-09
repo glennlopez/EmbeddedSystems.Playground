@@ -1,0 +1,27 @@
+--cpu Cortex-M4.fp
+".\rvmdk\board.o"
+".\rvmdk\device.o"
+".\rvmdk\driver.o"
+".\rvmdk\flowcont.o"
+".\rvmdk\fs.o"
+".\rvmdk\netapp.o"
+".\rvmdk\netcfg.o"
+".\rvmdk\nonos.o"
+".\rvmdk\socket.o"
+".\rvmdk\spawn.o"
+".\rvmdk\spi.o"
+".\rvmdk\starter.o"
+".\rvmdk\startup_rvmdk.o"
+".\rvmdk\uart.o"
+".\rvmdk\uartstdio.o"
+".\rvmdk\ustdlib.o"
+".\rvmdk\wlan.o"
+".\rvmdk\adcswtrigger.o"
+".\rvmdk\launchpadswitches.o"
+".\rvmdk\st7735.o"
+"..\..\..\..\driverlib\rvmdk\driverlib.lib"
+--library_type=microlib --strict --scatter "cc31000_starter.sct"
+
+--entry Reset_Handler --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\rvmdk\cc31000_starter.map" -o .\rvmdk\cc31000_starter.axf

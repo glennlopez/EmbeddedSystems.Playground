@@ -1,0 +1,14 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Dropbox\EdX\TM4Cware\Lab14_MeasurementOfDistance\Lab14.uvproj
+Project File Date:  04/07/2014
+
+<h2>Output:</h2>
+Load "E:\\Dropbox\\EdX\\TM4Cware\\Lab14_MeasurementOfDistance\\Lab14.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

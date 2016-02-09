@@ -1,0 +1,53 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Dropbox\EdX\TM4Cware\Lab13_DAC\Lab13.uvproj
+Project File Date:  03/08/2014
+
+<h2>Output:</h2>
+Build target 'Lab13'
+assembling startup.s...
+compiling Lab13.c...
+compiling music.c...
+compiling Sound.c...
+compiling Switch.c...
+compiling TExaS.c...
+linking...
+Program Size: Code=8264 RO-data=11568 RW-data=108 ZI-data=1820  
+".\Lab13.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\EdX\\TM4Cware\\Lab13_DAC\\Lab13.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Lab13'
+linking...
+Program Size: Code=8264 RO-data=11568 RW-data=108 ZI-data=1820  
+".\Lab13.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\EdX\\TM4Cware\\Lab13_DAC\\Lab13.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Lab13'
+compiling Lab13.c...
+linking...
+Program Size: Code=8264 RO-data=11568 RW-data=108 ZI-data=1820  
+".\Lab13.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\EdX\\TM4Cware\\Lab13_DAC\\Lab13.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Lab13'
+compiling Lab13.c...
+linking...
+Program Size: Code=8264 RO-data=11568 RW-data=108 ZI-data=1820  
+".\Lab13.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\EdX\\TM4Cware\\Lab13_DAC\\Lab13.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

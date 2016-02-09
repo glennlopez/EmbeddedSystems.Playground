@@ -1,0 +1,33 @@
+-ccs.name cc31000_starter
+-ccs.location C:/ti/TivaWare_C_Series-2.1.0.12573/examples/boards/CC31xxxx/ek-tm4c123gxl-boost-cc3100_starter/ccs
+-ccs.device "Cortex M.TM4C123GH6PM"
+-ccs.cmd ""
+-ccs.rts libc.a
+-ccs.overwrite keep
+-ccs.endianness little
+-ccs.outputFormat ELF
+-ccs.outputType executable
+-ccs.definePathVariable SW_ROOT "C:\ti\TivaWare_C_Series-2.1.0.12573"
+-ccs.definePathVariable SW_PARENT "C:\ti"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/ek-tm4c123gxl-boost-cc3100_starter/starter.c" "."
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/platform/ek-tm4c123gxl/board.c" "cc3100/platform/ek-tm4c123gxl"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/platform/ek-tm4c123gxl/spi.c" "cc3100/platform/ek-tm4c123gxl"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/platform/ek-tm4c123gxl/uart.c" "cc3100/platform/ek-tm4c123gxl"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/device.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/driver.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/flowcont.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/fs.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/netapp.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/netcfg.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/nonos.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/wlan.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/spawn.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/cc3100/simplelink/source/socket.c" "cc3100/simplelink/source"
+-ccs.linkFile "SW_ROOT/utils/ustdlib.c" "utils"
+-ccs.linkFile "SW_ROOT/utils/cmdline.c" "utils"
+-ccs.linkFile "SW_ROOT/utils/uartstdio.c" "utils"
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/ek-tm4c123gxl-boost-cc3100_starter/startup_ccs.c" "."
+-ccs.linkFile "SW_ROOT/examples/boards/CC31xxxx/ek-tm4c123gxl-boost-cc3100_starter/cc31000_starter_ccs.cmd" "."
+-ccs.setCompilerOptions " --silicon_version=7M4 --float_support=FPv4SPD16 --abi=eabi --code_state=16 --gen_func_subsections=on -O2 --gcc --ual -D=ccs=\"ccs\" -D=PART_TM4C123GH6PM -D=_POSIX_SOURCE -D=UART_BUFFERED -D=TARGET_IS_TM4C123_RB1 -I=\"${SW_ROOT}/examples/boards/CC31xxxx\" -I=\"${SW_ROOT}/examples/boards/CC31xxxx\" -I=\"${SW_ROOT}\" -I=\"${SW_ROOT}/examples/boards/CC31xxxx/cc3100\" -I=\"${SW_ROOT}/examples/boards/CC31xxxx/cc3100/platform/ek-tm4c123gxl\" -I=\"${SW_ROOT}/examples/boards/CC31xxxx/cc3100/simplelink/source\" -I=\"${SW_ROOT}/examples/boards/CC31xxxx/cc3100/simplelink/include\""
+-ccs.setLinkerOptions " -m=cc31000_starter_ccs.map --stack_size=16384 --heap_size=0 --rom_model -l \"${SW_ROOT}/driverlib/ccs/Debug/driverlib.lib\""
+-ccs.setPostBuildStep "\"${CCE_INSTALL_ROOT}/utils/tiobj2bin/tiobj2bin\" \"${BuildArtifactFileName}\" \"${BuildArtifactFileBaseName}.bin\" \"${CG_TOOL_ROOT}/bin/armofd\" \"${CG_TOOL_ROOT}/bin/armhex\" \"${CCE_INSTALL_ROOT}/utils/tiobj2bin/mkhex4bin\""
