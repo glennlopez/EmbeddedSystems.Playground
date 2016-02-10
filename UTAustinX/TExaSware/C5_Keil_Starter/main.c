@@ -21,23 +21,33 @@ unsigned long calc_area(unsigned long);
 // MAIN: Mandatory subroutine for a C Program to be executable
  int main(void) {
 	  
-	unsigned long side;					//size of the wall in meters
-	unsigned long area; 				//size of the room in m^2
+	unsigned long side = 1;					//size of the wall in meters
+	unsigned long area = 0; 				//size of the room in m^2
 	 
 	UART_Init();   							// call subroutine to init uart lib
 	init_global();							// call the default global subroutine
-	
-	side = 1;										//in meters
-	area = calc_area(side); 		//in square meters 
-	printf("\nThis room with %ld by %ld is %ld meters squared \n", side, side, area);
+	 
+	 
+	if(error <= 0){
+		printf("\nThis program calculates the square of a number \n");
+	}
 	 
 	while(1){
-		if(side >=40){
+		if(side == 0){
+			printf("\nProgram done!\n");
 			break;
 		}
-		side = side + 1;
-		area = calc_area(side); 		//in square meters 
-		printf("\nThis room with %ld by %ld is %ld meters squared \n", side, side, area);
+		
+		printf("\n\nEnter a number to square (+/30 to quit): ");
+		scanf("%ld", &side);
+		
+		if(side <= 30){
+			area = calc_area(side);
+			printf("\nThe square of %ld is %ld meters squared \n", side, area);
+		}
+		else{
+			printf("\n\nCANNOT GO ABOVE 30 \n\n");
+		}
 	}
 	
 }
@@ -48,7 +58,7 @@ void init_global(){
  
 unsigned long calc_area(unsigned long s){
 	unsigned long result;
-	if(s <= 25){
+	if(s <= 30){
 		result = s * s;
 	}
 	else{
