@@ -12,8 +12,12 @@
 // Subroutines section
 // MAIN: Mandatory subroutine for a C Program to be executable
  int main(void) {
+	 unsigned long side;	//size of the wall in meters
+	 unsigned long area; //size of the room in m^2
 	UART_Init();   // call subroutine to init uart lib
-	
-	printf("This program calculates areas of square shaped rooms");
+	side = 3;				//3 meters
+	area = side * side; //in square meters 
+	//printf("This program calculates areas of square shaped rooms");
+	 printf("This room with %ld by %ld is %ld meters squared \n", side, side, area);
 }
  
