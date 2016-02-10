@@ -419,7 +419,7 @@ Image Symbol Table
     i.fputc                                  0x00000c18   Section        0  uart.o(i.fputc)
     i.init_global                            0x00000c44   Section        0  main.o(i.init_global)
     i.main                                   0x00000c50   Section        0  main.o(i.main)
-    .constdata                               0x00000d6c   Section       64  ctype_c.o(.constdata)
+    .constdata                               0x00000d9c   Section       64  ctype_c.o(.constdata)
     .data                                    0x20000000   Section        4  main.o(.data)
     .data                                    0x20000004   Section        4  stdin.o(.data)
     .data                                    0x20000008   Section        4  stdout.o(.data)
@@ -650,10 +650,10 @@ Image Symbol Table
     fgetc                                    0x00000c05   Thumb Code    20  uart.o(i.fgetc)
     fputc                                    0x00000c19   Thumb Code    44  uart.o(i.fputc)
     init_global                              0x00000c45   Thumb Code     8  main.o(i.init_global)
-    main                                     0x00000c51   Thumb Code    96  main.o(i.main)
-    __ctype_categories                       0x00000d6c   Data          64  ctype_c.o(.constdata)
-    Region$$Table$$Base                      0x00000dac   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000dcc   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x00000c51   Thumb Code   116  main.o(i.main)
+    __ctype_categories                       0x00000d9c   Data          64  ctype_c.o(.constdata)
+    Region$$Table$$Base                      0x00000ddc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000dfc   Number         0  anon$$obj.o(Region$$Table)
     error                                    0x20000000   Data           4  main.o(.data)
     __stdin                                  0x20000004   Data           4  stdin.o(.data)
     __stdout                                 0x20000008   Data           4  stdout.o(.data)
@@ -667,9 +667,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000ddc, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000e0c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000dcc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000dfc, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -714,9 +714,9 @@ Memory Map of the image
     0x00000c04   0x00000014   Code   RO           16    i.fgetc             uart.o
     0x00000c18   0x0000002c   Code   RO           17    i.fputc             uart.o
     0x00000c44   0x0000000c   Code   RO           63    i.init_global       main.o
-    0x00000c50   0x0000011c   Code   RO           64    i.main              main.o
-    0x00000d6c   0x00000040   Data   RO          417    .constdata          mc_w.l(ctype_c.o)
-    0x00000dac   0x00000020   Data   RO          419    Region$$Table       anon$$obj.o
+    0x00000c50   0x0000014c   Code   RO           64    i.main              main.o
+    0x00000d9c   0x00000040   Data   RO          417    .constdata          mc_w.l(ctype_c.o)
+    0x00000ddc   0x00000020   Data   RO          419    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000010, Max: 0xffffffff, ABSOLUTE)
@@ -743,12 +743,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       328        198          0          4          0       1537   main.o
+       376        226          0          4          0       1545   main.o
        644        620          0          0       1024        716   startup.o
        264         36          0          0          0       4861   uart.o
 
     ----------------------------------------------------------------------
-      1236        854         32          4       1024       7114   Object Totals
+      1284        882         32          4       1024       7122   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -804,15 +804,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3436        924         96         16       1024       7398   Grand Totals
-      3436        924         96         16       1024       7398   ELF Image Totals
-      3436        924         96         16          0          0   ROM Totals
+      3484        952         96         16       1024       7406   Grand Totals
+      3484        952         96         16       1024       7406   ELF Image Totals
+      3484        952         96         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3532 (   3.45kB)
+    Total RO  Size (Code + RO Data)                 3580 (   3.50kB)
     Total RW  Size (RW Data + ZI Data)              1040 (   1.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       3548 (   3.46kB)
+    Total ROM Size (Code + RO Data + RW Data)       3596 (   3.51kB)
 
 ==============================================================================
 

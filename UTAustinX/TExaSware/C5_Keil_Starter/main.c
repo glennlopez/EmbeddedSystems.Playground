@@ -35,10 +35,11 @@ unsigned long calc_area(unsigned long);
 	while(1){
 		if(side == 0){
 			printf("\nProgram done!\n");
+			printf("\nRules violated: %ld times.", error);
 			break;
 		}
 		
-		printf("\n\nEnter a number to square (+/30 to quit): ");
+		printf("\n\nEnter a number to square (0 to quit): ");
 		scanf("%ld", &side);
 		
 		if(side <= 30){
@@ -47,6 +48,7 @@ unsigned long calc_area(unsigned long);
 		}
 		else{
 			printf("\n\nCANNOT GO ABOVE 30 \n\n");
+			error = error + 1;
 		}
 	}
 	
