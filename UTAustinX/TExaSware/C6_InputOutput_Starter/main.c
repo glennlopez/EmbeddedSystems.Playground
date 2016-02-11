@@ -42,12 +42,19 @@ int main(void){
 	
   while(1){
 		//read the switch
-		in = GPIO_PORTF_DATA_R; 		//read contents of Port F and store to "in" variable
-		in = in & 0x10;							//mask out the other stuff and read only bit 4 - [7][6][5][4][3][2][1][0]
-		in = in >> 2; 							//shift data inside [4] 2x to the right int [2] (place the sw status into led status)
+		in = GPIO_PORTF_DATA_R;				//read the inputs from data egistry
+		in = GPIO_PORTF_DATA_R & 0x10;
+		
+		if(in == 0x10){
+			GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R | 0x04;			//set bit 1 and 3 to low and OR with DATA_R 
+		}
+		else{
+			GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & 0x1B;			//set bit 5,4,2,1 to high and AND with DATA_R
+		}
+		
 		
 		//display light up led IF switch is pressed
-		GPIO_PORTF_DATA_R = in;		//place the result into the data registry
+	
   }
 }
 // Subroutine to initialize port F pins for input and output
