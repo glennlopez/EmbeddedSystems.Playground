@@ -49,7 +49,9 @@ int main(void){
 			GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R | 0x04;			//set bit 1 and 3 to low and OR with DATA_R 
 		}
 		else{
-			GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & 0x1B;			//set bit 5,4,2,1 to high and AND with DATA_R
+			GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & 0xFB;			//set bit 5,4,2,1 to high and AND with DATA_R
+																												//can also use GPIO_PORTF_DATA_R & ~0x04
+																												// ~0x04 means !(0x04) aka: NOT 0x04 aka:0xFB
 		}
 		
 		
