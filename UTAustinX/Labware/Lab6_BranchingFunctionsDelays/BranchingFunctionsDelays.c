@@ -51,8 +51,10 @@ int main(void){ unsigned long volatile delay;
 		if(SW1 == 0){					//if sw1 == 0 (is pressed)
 													//LED = ~0x04;		//toggle led
 		LED = LED^0x04;
-			
+		}
 		
+		else{
+		LED = 0x04;	
 		}
   }
 } 
