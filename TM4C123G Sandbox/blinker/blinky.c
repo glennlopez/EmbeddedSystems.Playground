@@ -1,4 +1,4 @@
-//Blinker - uC hello World: by glennlopez
+//blinky.c - TM4C hello World: by glennlopez
 
 //TM4C123G REGISTRY DEFINITIONS
 #define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400253FC))
