@@ -58,7 +58,7 @@ int main(void){
       GPIO_PORTF_DATA_R = 0x02;  // LED is red
     }
     Delay();                     // wait 0.1 sec
-    GPIO_PORTF_DATA_R = 0x04;    // LED is blue
+    GPIO_PORTF_DATA_R = 0x0A;    // LED is blue
     Delay();                     // wait 0.1 sec
   }
 }
