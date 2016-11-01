@@ -132,15 +132,15 @@
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
-            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
+            <LoadApplicationAtStartup>0</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
-            <RestoreBreakpoints>1</RestoreBreakpoints>
-            <RestoreWatchpoints>1</RestoreWatchpoints>
-            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
+            <RestoreBreakpoints>0</RestoreBreakpoints>
+            <RestoreWatchpoints>0</RestoreWatchpoints>
+            <RestoreMemoryDisplay>0</RestoreMemoryDisplay>
             <RestoreFunctions>0</RestoreFunctions>
-            <RestoreToolbox>1</RestoreToolbox>
+            <RestoreToolbox>0</RestoreToolbox>
             <RestoreTracepoints>0</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
+            <RestoreSysVw>0</RestoreSysVw>
             <UsePdscDebugDescription>0</UsePdscDebugDescription>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>

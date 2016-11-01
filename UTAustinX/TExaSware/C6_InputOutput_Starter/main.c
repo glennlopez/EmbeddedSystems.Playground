@@ -27,36 +27,16 @@
 #define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
 // 2. Declarations Section
 //   Global Variables
-unsigned long in;			//PF4 switch
-unsigned long out;		//LED blue
 
 //   Function Prototypes
 void PortF_Init(void);
 
 // 3. Subroutines Section
 // MAIN: Mandatory for a C Program to be executable
-int main(void){   
-	
-	//initialize portf
-	PortF_Init();
-	
+int main(void){    
+
   while(1){
-		//read the switch
-		in = GPIO_PORTF_DATA_R;				//read the inputs from data egistry
-		in = GPIO_PORTF_DATA_R & 0x10;
-		
-		if(in == 0x10){
-			GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R | 0x04;			//set bit 1 and 3 to low and OR with DATA_R 
-		}
-		else{
-			GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & 0xFB;			//set bit 5,4,2,1 to high and AND with DATA_R
-																												//can also use GPIO_PORTF_DATA_R & ~0x04
-																												// ~0x04 means !(0x04) aka: NOT 0x04 aka:0xFB
-		}
-		
-		
-		//display light up led IF switch is pressed
-	
+
   }
 }
 // Subroutine to initialize port F pins for input and output

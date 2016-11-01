@@ -1,6 +1,20 @@
-//Blinker - uC hello World: by glennlopez
+// BranchingFunctionsDelays.c Lab 6
+// Runs on LM4F120/TM4C123
+// Use simple programming structures in C to 
+// toggle an LED while a button is pressed and 
+// turn the LED on when the button is released.  
+// This lab will use the hardware already built into the LaunchPad.
+// Daniel Valvano, Jonathan Valvano
+// January 15, 2016
 
-//TM4C123G REGISTRY DEFINITIONS
+// built-in connection: PF0 connected to negative logic momentary switch, SW2
+// built-in connection: PF1 connected to red LED
+// built-in connection: PF2 connected to blue LED
+// built-in connection: PF3 connected to green LED
+// built-in connection: PF4 connected to negative logic momentary switch, SW1
+
+#include "TExaS.h"
+
 #define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400253FC))
 #define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40025400))
 #define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))
@@ -11,73 +25,16 @@
 #define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
 #define SYSCTL_RCGC2_GPIOF      0x00000020  // port F Clock Gating Control
 
-// built-in connection: PF0 connected to negative logic momentary switch, SW2
-// built-in connection: PF1 connected to red LED
-// built-in connection: PF2 connected to blue LED
-// built-in connection: PF3 connected to green LED
-// built-in connection: PF4 connected to negative logic momentary switch, SW1
+// basic functions defined at end of startup.s
+void DisableInterrupts(void); // Disable interrupts
+void EnableInterrupts(void);  // Enable interrupts
 
-// Pin Offset = 	200	100	80		40		20		10		8		4
-//	Pin Number =	P7		P6		P5		P4		P3		P2		P1		P0
+int main(void){ unsigned long volatile delay;
+  TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  // activate grader and set system clock to 80 MHz
+  // initialization goes here
 
-
-//MACRO DEFINITIONS
-#define SW1		(*((volatile unsigned long*)0x40025040)) 	//PF4 input
-#define SW2		(*((volatile unsigned long*)0x40025004))	//PF0 input
-
-#define RED		(*((volatile unsigned long*)0x40025008))	//PF1 red 0x02
-#define BLUE	(*((volatile unsigned long*)0x40025010))	//PF2 blue 0x04
-#define GREEN	(*((volatile unsigned long*)0x40025020))	//PF3	greed 0x08
-
-#define DATA_DIRECTION 		0x0D;		//Output: PF1, PF2, PF3 | Input: PF4, PF0
-#define PULL_UP_RESISTORS 	0x11;		//Pull-up resistors for PF4, PF0 (siwtches)
-#define INITIAL_PIN_STATE 	0x00;		//Set the initial output pins states
-
-
-
-// prototypes
-void PortF_Init();									//Init portF prototype
-void second_delay(unsigned short second);		//delay
-
-
-int main(void){
-
-	//pre-loop function initializations
-	PortF_Init();	//Initialize Port F
-
-	while(1){
-		GREEN = 0x08;	//onboard green LED ON
-	}
-
-
-
-}
-
-
-
-
-//** FUNCTIONS **//
-void PortF_Init(){
-	volatile unsigned long dumy_delay;
-
-	SYSCTL_RCGC2_R = SYSCTL_RCGC2_R | 0x00000020;	//Enable PortF Clock
-	dumy_delay = SYSCTL_RCGC2_R;							//Catch up to clock before doing aything
-	GPIO_PORTF_AMSEL_R 	= 0x00;							//Analog Mode select register
-	GPIO_PORTF_AFSEL_R 	= 0x00;							//Alternative function
-	GPIO_PORTF_PCTL_R 	= 0x00000000;					//Alternative fucntion control
-	GPIO_PORTF_DEN_R		= 0x1F;							//PortF Digital Enable register
-	GPIO_PORTF_DIR_R		= DATA_DIRECTION;				//PortF pin directions
-	GPIO_PORTF_PUR_R		= PULL_UP_RESISTORS;			//PortF pull up resistors
-	GPIO_PORTF_DATA_R		= INITIAL_PIN_STATE;			//PORTF INITIAL STATE
-}
-
-void second_delay(unsigned short second){
-	unsigned long i, j, x;
-
-	for(x = second; x > 0; x--){
-		for(i = 1600; i > 0; i--){
-			for(j = 1000; j > 0; j--);
-		}
-	}
-
+  EnableInterrupts();           // enable interrupts for the grader
+  while(1){
+    // body goes here
+  }
 }
