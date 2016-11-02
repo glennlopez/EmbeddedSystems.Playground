@@ -54,9 +54,9 @@ int main(void){
   PortF_Init();        // Call initialization of port PF4, PF3, PF2, PF1, PF0    
   EnableInterrupts();  // The grader uses interrupts
   while(1){
-    SW1 = GPIO_PORTF_DATA_R&0x10;     // read PF4 into SW1
-    SW2 = GPIO_PORTF_DATA_R&0x01;     // read PF0 into SW2
-    if(SW1&&SW2){                     // both pressed
+    SW1 = GPIO_PORTF_DATA_R&0x01;     // read PF4 into SW1
+    SW2 = GPIO_PORTF_DATA_R&0x10;     // read PF0 into SW2
+    if((!SW1)&&(!SW2)){              		// both pressed
       GPIO_PORTF_DATA_R = 0x04;       // LED is blue
     } else{                           
       if(SW1&&(!SW2)){                // just SW1 pressed
