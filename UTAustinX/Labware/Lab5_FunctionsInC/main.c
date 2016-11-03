@@ -46,7 +46,7 @@ unsigned long Calc_Area(unsigned long l, unsigned long w) {
   unsigned long result;
 	
 	// Put your Lab 5 code here
-	if((l > 3)&&(w > 3)&&(l < 20)&&(w < 20)){
+	if((l >= 3)&&(w >= 3)&&(l <= 20)&&(w <= 20)){
 		result = l * w;
 	}
 	
