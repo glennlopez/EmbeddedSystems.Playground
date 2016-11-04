@@ -36,5 +36,15 @@ int main(void){ unsigned long volatile delay;
   EnableInterrupts();           // enable interrupts for the grader
   while(1){
     // body goes here
+		
+		//PF2 - output
+		//PF4 - input (enable PUR)
+		
+		//Start with PF2 (blue LED) on - PF2 = 1
+		//Delay for 100ms
+		
+		//if - PF2 is pressed (PF4 = 0) then LED on and off
+			//else - keep LED (PF4) on
+		
   }
 }
