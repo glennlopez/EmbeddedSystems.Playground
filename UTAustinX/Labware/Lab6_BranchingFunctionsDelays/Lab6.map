@@ -269,7 +269,7 @@ Image Symbol Table
     i.TExaS_Init                             0x00000684   Section        0  texas.o(i.TExaS_Init)
     i.Timer5A_Handler                        0x000007ac   Section        0  texas.o(i.Timer5A_Handler)
     i.main                                   0x00000da8   Section        0  branchingfunctionsdelays.o(i.main)
-    .constdata                               0x00000db8   Section     5964  texas.o(.constdata)
+    .constdata                               0x00000dd0   Section     5964  texas.o(.constdata)
     .data                                    0x20000000   Section       56  texas.o(.data)
     RealGrade                                0x20000010   Data           4  texas.o(.data)
     .bss                                     0x20000038   Section      628  texas.o(.bss)
@@ -509,22 +509,22 @@ Image Symbol Table
     SetGrade                                 0x000005b9   Thumb Code   196  texas.o(i.SetGrade)
     TExaS_Init                               0x00000685   Thumb Code   188  texas.o(i.TExaS_Init)
     Timer5A_Handler                          0x000007ad   Thumb Code  1510  texas.o(i.Timer5A_Handler)
-    main                                     0x00000da9   Thumb Code    16  branchingfunctionsdelays.o(i.main)
-    Port                                     0x00000db8   Data          24  texas.o(.constdata)
-    InputPortMsg                             0x00000dd0   Data          40  texas.o(.constdata)
-    OutputPortMsg                            0x00000df8   Data          40  texas.o(.constdata)
-    BlankMsg                                 0x00000e20   Data          40  texas.o(.constdata)
-    InitializedMsg                           0x00000e48   Data          40  texas.o(.constdata)
-    IntroMsg                                 0x00000e70   Data          40  texas.o(.constdata)
-    DoneMsg                                  0x00000e98   Data          40  texas.o(.constdata)
-    TestMsg                                  0x00000ec0   Data          40  texas.o(.constdata)
-    LabTest                                  0x00000ee8   Data        5428  texas.o(.constdata)
-    BgTest                                   0x0000241c   Data         160  texas.o(.constdata)
-    Key                                      0x000024bc   Data           8  texas.o(.constdata)
-    Scramble                                 0x000024c4   Data          32  texas.o(.constdata)
-    DeScramble                               0x000024e4   Data          32  texas.o(.constdata)
-    Region$$Table$$Base                      0x00002504   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00002524   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x00000da9   Thumb Code    30  branchingfunctionsdelays.o(i.main)
+    Port                                     0x00000dd0   Data          24  texas.o(.constdata)
+    InputPortMsg                             0x00000de8   Data          40  texas.o(.constdata)
+    OutputPortMsg                            0x00000e10   Data          40  texas.o(.constdata)
+    BlankMsg                                 0x00000e38   Data          40  texas.o(.constdata)
+    InitializedMsg                           0x00000e60   Data          40  texas.o(.constdata)
+    IntroMsg                                 0x00000e88   Data          40  texas.o(.constdata)
+    DoneMsg                                  0x00000eb0   Data          40  texas.o(.constdata)
+    TestMsg                                  0x00000ed8   Data          40  texas.o(.constdata)
+    LabTest                                  0x00000f00   Data        5428  texas.o(.constdata)
+    BgTest                                   0x00002434   Data         160  texas.o(.constdata)
+    Key                                      0x000024d4   Data           8  texas.o(.constdata)
+    Scramble                                 0x000024dc   Data          32  texas.o(.constdata)
+    DeScramble                               0x000024fc   Data          32  texas.o(.constdata)
+    Region$$Table$$Base                      0x0000251c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0000253c   Number         0  anon$$obj.o(Region$$Table)
     InPort                                   0x20000000   Data           4  texas.o(.data)
     OutPort                                  0x20000004   Data           4  texas.o(.data)
     BgTestStatus                             0x20000008   Data           1  texas.o(.data)
@@ -553,9 +553,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x0000255c, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00002574, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00002524, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000253c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -623,9 +623,9 @@ Memory Map of the image
     0x000005b8   0x000000cc   Code   RO           34    i.SetGrade          texas.o
     0x00000684   0x00000128   Code   RO           36    i.TExaS_Init        texas.o
     0x000007ac   0x000005fc   Code   RO           38    i.Timer5A_Handler   texas.o
-    0x00000da8   0x00000010   Code   RO           12    i.main              branchingfunctionsdelays.o
-    0x00000db8   0x0000174c   Data   RO           41    .constdata          texas.o
-    0x00002504   0x00000020   Data   RO          278    Region$$Table       anon$$obj.o
+    0x00000da8   0x00000028   Code   RO           12    i.main              branchingfunctionsdelays.o
+    0x00000dd0   0x0000174c   Data   RO           41    .constdata          texas.o
+    0x0000251c   0x00000020   Data   RO          278    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
@@ -653,12 +653,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        16          0          0          0          0       1919   branchingfunctionsdelays.o
+        40         10          0          0          0       1927   branchingfunctionsdelays.o
        692        632          0          0       1024        980   startup.o
       2532        282       5964         56        628      15170   texas.o
 
     ----------------------------------------------------------------------
-      3240        914       5996         56       1652      18069   Object Totals
+      3264        924       5996         56       1652      18077   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -707,15 +707,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3512        930       5996         56       1752      17969   Grand Totals
-      3512        930       5996         56       1752      17969   ELF Image Totals
-      3512        930       5996         56          0          0   ROM Totals
+      3536        940       5996         56       1752      17977   Grand Totals
+      3536        940       5996         56       1752      17977   ELF Image Totals
+      3536        940       5996         56          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9508 (   9.29kB)
+    Total RO  Size (Code + RO Data)                 9532 (   9.31kB)
     Total RW  Size (RW Data + ZI Data)              1808 (   1.77kB)
-    Total ROM Size (Code + RO Data + RW Data)       9564 (   9.34kB)
+    Total ROM Size (Code + RO Data + RW Data)       9588 (   9.36kB)
 
 ==============================================================================
 
