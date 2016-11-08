@@ -15,6 +15,7 @@
 
 #include "TExaS.h"
 
+// GPIO Address definitions
 #define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400253FC))
 #define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40025400))
 #define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))
@@ -32,6 +33,18 @@ void EnableInterrupts(void);  // Enable interrupts
 int main(void){ unsigned long volatile delay;
   TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  // activate grader and set system clock to 80 MHz
   // initialization goes here
+	
+		//SYSCTL_RCGC2_GPIOF
+		delay = SYSCTL_RCGC2_R;	
+	
+		//GPIO_PORTF_DATA_R 			= 	0x00;		// _ _ _ _  _ _ _ _ 
+		GPIO_PORTF_DIR_R 				= 	0x0E;		// _ _ _ 0  1 1 1 0 (PF0 and PF4 are switches - input)
+		GPIO_PORTF_AFSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
+		GPIO_PORTF_PUR_R				=		0x11;		// _ _ _ 1  0 0 0 1 (Enable pull-up resistors on P0 and P4 switches)
+		GPIO_PORTF_DEN_R				=		0x1F; 	// _ _ _ 1  1 1 1 1	(Enable digital signal for all target pins)
+		GPIO_PORTF_AMSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0	(Not using analog mode select)
+		GPIO_PORTF_PCTL_R				=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
+	
 
   EnableInterrupts();           // enable interrupts for the grader
   while(1){
