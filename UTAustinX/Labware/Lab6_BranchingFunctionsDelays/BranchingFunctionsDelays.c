@@ -34,16 +34,25 @@ int main(void){ unsigned long volatile delay;
   TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  // activate grader and set system clock to 80 MHz
   // initialization goes here
 	
+	//STEP1: Activate clock for PORTF
 		//SYSCTL_RCGC2_GPIOF
-		delay = SYSCTL_RCGC2_R;	
+		//delay = SYSCTL_RCGC2_R;
+
+	//STEP2: Unlock the port
+	 
 	
-		//GPIO_PORTF_DATA_R 			= 	0x00;		// _ _ _ _  _ _ _ _ 
+	//STEP3: Disable Analog functionality
+		GPIO_PORTF_AMSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0	(Not using analog mode select)
+	
+	//STEP4: Select GPIO functionality
+		GPIO_PORTF_PCTL_R				=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
+	
+	
+		GPIO_PORTF_DATA_R 			= 	0x00;		// _ _ _ _  _ _ _ _ (Initialize to 0x00)
 		GPIO_PORTF_DIR_R 				= 	0x0E;		// _ _ _ 0  1 1 1 0 (PF0 and PF4 are switches - input)
 		GPIO_PORTF_AFSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
 		GPIO_PORTF_PUR_R				=		0x11;		// _ _ _ 1  0 0 0 1 (Enable pull-up resistors on P0 and P4 switches)
 		GPIO_PORTF_DEN_R				=		0x1F; 	// _ _ _ 1  1 1 1 1	(Enable digital signal for all target pins)
-		GPIO_PORTF_AMSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0	(Not using analog mode select)
-		GPIO_PORTF_PCTL_R				=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
 	
 
   EnableInterrupts();           // enable interrupts for the grader
