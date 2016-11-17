@@ -15,39 +15,33 @@
 
 #include "TExaS.h"
 
-// GPIO Address definitions
+// GPIO Address definitions																										PortF(APB): 0x40025000
 #define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400253FC))
-#define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40025400))
-#define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))
-#define GPIO_PORTF_PUR_R        (*((volatile unsigned long *)0x40025510))
-#define GPIO_PORTF_DEN_R        (*((volatile unsigned long *)0x4002551C))
-#define GPIO_PORTF_AMSEL_R      (*((volatile unsigned long *)0x40025528))
-#define GPIO_PORTF_PCTL_R       (*((volatile unsigned long *)0x4002552C))
-#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
+#define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40025400))			//gpio direction 					- offset 0x400
+#define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))			//gpio alternte funtion 	- offset 0x420
+#define GPIO_PORTF_PUR_R        (*((volatile unsigned long *)0x40025510))			//gpio pull-up select			- offset 0x510
+#define GPIO_PORTF_DEN_R        (*((volatile unsigned long *)0x4002551C))			//gpio digital enable 		- offset 0x51C
+#define GPIO_PORTF_AMSEL_R      (*((volatile unsigned long *)0x40025528))			//gpio analog mode select	- offset 0x528
+#define GPIO_PORTF_PCTL_R       (*((volatile unsigned long *)0x4002552C))			//gpio port control				- offset 0x52C
+
+//APB: Advanced Peripheral Bus (has backwards compatability)
+//AHB: Advanced High-performance Bus (is faster)
+	
+#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))			
 #define SYSCTL_RCGC2_GPIOF      0x00000020  // port F Clock Gating Control
 
+
 // basic functions defined at end of startup.s
-void DisableInterrupts(void); // Disable interrupts
-void EnableInterrupts(void);  // Enable interrupts
+void DisableInterrupts(void); 	// Disable interrupts
+void EnableInterrupts(void);  	// Enable interrupts
+
+int initPortF(void);						// PortF prototype
 
 int main(void){ unsigned long volatile delay;
-  TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  // activate grader and set system clock to 80 MHz
-  // initialization goes here
 	
-	//STEP1: Activate clock for PORTF
-		//SYSCTL_RCGC2_GPIOF
-		//delay = SYSCTL_RCGC2_R;
-
-	//STEP2: Unlock the port
-	 
-	
-	//STEP3: Disable Analog functionality
+		TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  // activate grader and set system clock to 80 MHz
 		GPIO_PORTF_AMSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0	(Not using analog mode select)
-	
-	//STEP4: Select GPIO functionality
 		GPIO_PORTF_PCTL_R				=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
-	
-	
 		GPIO_PORTF_DATA_R 			= 	0x00;		// _ _ _ _  _ _ _ _ (Initialize to 0x00)
 		GPIO_PORTF_DIR_R 				= 	0x0E;		// _ _ _ 0  1 1 1 0 (PF0 and PF4 are switches - input)
 		GPIO_PORTF_AFSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
@@ -55,11 +49,18 @@ int main(void){ unsigned long volatile delay;
 		GPIO_PORTF_DEN_R				=		0x1F; 	// _ _ _ 1  1 1 1 1	(Enable digital signal for all target pins)
 	
 
-  EnableInterrupts();           // enable interrupts for the grader
+  EnableInterrupts();         // enable interrupts for the grader
+	initPortF();								// configure portf
+	
   while(1){
-    // body goes here
+															// body goes here
 		
 
 		
   }
+}
+
+int initPortF(void){				//GPIO PortF(APB): 0x 4002.5000
+	
+	return 0;
 }
