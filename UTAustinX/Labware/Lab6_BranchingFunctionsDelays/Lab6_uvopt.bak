@@ -212,7 +212,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>256</TopLine>
+      <TopLine>257</TopLine>
       <CurrentLine>277</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
@@ -226,10 +226,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>38</ColumnNumber>
+      <ColumnNumber>3</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>22</TopLine>
-      <CurrentLine>53</CurrentLine>
+      <TopLine>32</TopLine>
+      <CurrentLine>64</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\BranchingFunctionsDelays.c</PathWithFileName>
       <FilenameWithoutPath>BranchingFunctionsDelays.c</FilenameWithoutPath>
