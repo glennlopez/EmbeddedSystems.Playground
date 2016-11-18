@@ -1,23 +1,8 @@
-// BranchingFunctionsDelays.c Lab 6
-// Runs on LM4F120/TM4C123
-// Use simple programming structures in C to 
-// toggle an LED while a button is pressed and 
-// turn the LED on when the button is released.  
-// This lab will use the hardware already built into the LaunchPad.
-// Daniel Valvano, Jonathan Valvano
-// January 15, 2016
-
-// built-in connection: PF0 connected to negative logic momentary switch, SW2
-// built-in connection: PF1 connected to red LED
-// built-in connection: PF2 connected to blue LED
-// built-in connection: PF3 connected to green LED
-// built-in connection: PF4 connected to negative logic momentary switch, SW1
-
 #include "TExaS.h"
 
-// GPIO Address definitions																										PortF(APB): 0x40025000
-//APB: Advanced Peripheral Bus (has backwards compatability)
-//AHB: Advanced High-performance Bus (is faster)
+// GPIO Address definitions																										PortF(APB) base address: 0x40025000
+// APB: Advanced Peripheral Bus (has backwards compatability)
+// AHB: Advanced High-performance Bus (is faster)
 #define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400253FC))			//0x3FC means 0011 1111 expressed as 4*2^b (bitspecific addressing)
 #define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40025400))			//gpio direction 					- offset 0x400
 #define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))			//gpio alternte funtion 	- offset 0x420
@@ -30,22 +15,20 @@
 #define SYSCTL_RCGC2_GPIOF      0x00000020  // port F Clock Gating Control
 
 // PortF Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
-#define LED_BLUE								(*((volatile unsigned long *)0x40025010))			//PF2
-#define LED_RED									(*((volatile unsigned long *)0x40025008))			//PF1
-#define LED_GREEN								(*((volatile unsigned long *)0x40025020))			//PF3
-#define SW1											(*((volatile unsigned long *)0x40025040))			//PF4
-#define SW2											(*((volatile unsigned long *)0x40025004))			//PF0
+#define LED_BLUE								(*((volatile unsigned long *)0x40025010))			//PF2 - offset 0x010 (0000 0001 0000) | 16
+#define LED_RED									(*((volatile unsigned long *)0x40025008))			//PF1 - offset 0x008 (0000 0000 1000) | 8
+#define LED_GREEN								(*((volatile unsigned long *)0x40025020))			//PF3 - offset 0x020 (0000 0010 0000) | 32
+#define SW1											(*((volatile unsigned long *)0x40025040))			//PF4 - offset 0x040 (0000 0100 0000) | 64
+#define SW2											(*((volatile unsigned long *)0x40025004))			//PF0 - offset 0x004 (0000 0000 0100) | 4
 
-// WARNING: to be used only with single bit-specific address
-#define OFF 										0x00
-#define ON											0x2F
+// Warning: Do not use on pins with input direction
+#define OFF 										0x00	//not an address, no need to typecast to volatile unsigned long
+#define ON											0x2F	//not an address, no need to typecast to volatile unsigned long
 
 // basic functions defined at end of startup.s
 void DisableInterrupts(void); 	// Disable interrupts
 void EnableInterrupts(void);  	// Enable interrupts
 int initPortF(void);						// PortF prototype
-
-
 
 
 int main(void){ unsigned long volatile delay;
@@ -58,11 +41,20 @@ int main(void){ unsigned long volatile delay;
 	initPortF();								// configure portf
 	
   while(1){										// body goes here
-		if(SW1 == (SW1&ON)){
-			LED_BLUE = ON;
-		}
-		else{
+		
+		/* NOTE: Switches are
+		 * in reverse logic
+		 */
+		
+		if(SW1 == 0x00){	//SW1 is ON
+			LED_RED = ON;
 			LED_BLUE = OFF;
+			LED_GREEN = OFF;
+		}
+		if(SW1 == 0x10){	//SW2 is ON
+			LED_RED = OFF;
+			LED_BLUE = ON;
+			LED_GREEN = OFF;
 		}
 	}
 }
