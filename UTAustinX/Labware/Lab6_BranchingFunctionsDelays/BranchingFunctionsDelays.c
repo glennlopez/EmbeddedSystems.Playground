@@ -21,7 +21,7 @@
 #define SW1											(*((volatile unsigned long *)0x40025040))			//PF4 - offset 0x040 (0000 0100 0000) | 64
 #define SW2											(*((volatile unsigned long *)0x40025004))			//PF0 - offset 0x004 (0000 0000 0100) | 4
 
-// Warning: Do not use on pins with input direction
+// Warning: Do not use definitions below on pins with input direction
 #define OFF 										0x00	//not an address, no need to typecast to volatile unsigned long
 #define ON											0x2F	//not an address, no need to typecast to volatile unsigned long
 
@@ -46,15 +46,13 @@ int main(void){ unsigned long volatile delay;
 		 * in reverse logic
 		 */
 		
-		if(SW1 == 0x00){	//SW1 is ON
+		if(SW1 == (0x00)){	//SW1 is ON
 			LED_RED = ON;
 			LED_BLUE = OFF;
-			LED_GREEN = OFF;
 		}
-		if(SW1 == 0x10){	//SW2 is ON
+		if(SW1 == (0x10)){	//SW2 is OFF
 			LED_RED = OFF;
 			LED_BLUE = ON;
-			LED_GREEN = OFF;
 		}
 	}
 }
