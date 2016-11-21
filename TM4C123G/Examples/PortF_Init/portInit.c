@@ -13,8 +13,8 @@
 #define GPIO_PORTF_LOCK_R				(*((volatile unsigned long *)0x40025520))			//gpio portf lock register 	- offset 0x520
 #define GPIO_PORTF_CR_R					(*((volatile unsigned long *)0x40025524))			//gpio portf comit register	- offset 0x524
 	
-#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))			
-#define SYSCTL_RCGC2_GPIOF      0x00000020  // port F Clock Gating Control
+#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))			//gpio clock gating (RCGC2)	-	offset 0x108
+#define SYSCTL_RCGC2_GPIOF      0x00000020  																	//Port F Clock Gating Control | _ _ _ F E D C B A (ports)
 
 // PortF Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
 #define LED_BLUE								(*((volatile unsigned long *)0x40025010))			//PF2 - offset 0x010 (0000 0001 0000) | 16
@@ -42,45 +42,8 @@ int main(void){
   EnableInterrupts();         // enable interrupts for the grader
 	initPortF();								// configure portf
 	
-  while(1){										// body goes here
-		
-		/* NOTE: Switches are
-		 * in reverse logic using
-		 * pull-up resistors & schmit triggers
-		 */
-		
-		/*
-		if(SW12 == 0x00){	//SW1 and SW2 is ON
-			LED_RED = OFF;
-			LED_BLUE = OFF;
-			LED_GREEN = ON;
-		}
-		*/
-		
-		
-		if(SW2 == 0x00){	//SW2 is ON
-			LED_RED = OFF;
-			LED_BLUE = OFF;
-			LED_GREEN = ON;
-		}
-		if(SW2 == 0x01){	//SW2 is OFF
-			LED_RED = OFF;
-			LED_BLUE = OFF;
-			LED_GREEN = OFF;
-		}
-		
-		if(SW1 == 0x10){	//SW1 is OFF
-			LED_RED = OFF;
-			LED_BLUE = OFF;
-			LED_GREEN = OFF;
-		}
-		if(SW1 == 0x00){	//SW1 is ON
-			LED_RED = ON;
-			LED_BLUE = OFF;
-			LED_GREEN = OFF;
-		}
+  while(1){	
 	}
-}
 
 
 

@@ -1,5 +1,5 @@
 Dependencies for Project 'Lab6', Target 'Lab6': (DO NOT MODIFY !)
 F (.\startup.s)(0x51981D5A)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\BranchingFunctionsDelays.c)(0x5832792C)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\branchingfunctionsdelays.o --omf_browse .\branchingfunctionsdelays.crf --depend .\branchingfunctionsdelays.d)
+F (.\BranchingFunctionsDelays.c)(0x58327F9D)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\branchingfunctionsdelays.o --omf_browse .\branchingfunctionsdelays.crf --depend .\branchingfunctionsdelays.d)
 I (TExaS.h)(0x5699A688)
 F (.\texas.o)(0x5699A688)()
