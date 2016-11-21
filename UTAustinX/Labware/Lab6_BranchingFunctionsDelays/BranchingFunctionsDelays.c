@@ -16,12 +16,14 @@
 #define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))			
 #define SYSCTL_RCGC2_GPIOF      0x00000020  // port F Clock Gating Control
 
-// PortF Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
+// PortF Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
 #define LED_BLUE								(*((volatile unsigned long *)0x40025010))			//PF2 - offset 0x010 (0000 0001 0000) | 16
 #define LED_RED									(*((volatile unsigned long *)0x40025008))			//PF1 - offset 0x008 (0000 0000 1000) | 8
 #define LED_GREEN								(*((volatile unsigned long *)0x40025020))			//PF3 - offset 0x020 (0000 0010 0000) | 32
 #define SW1											(*((volatile unsigned long *)0x40025040))			//PF4 - offset 0x040 (0000 0100 0000) | 64
 #define SW2											(*((volatile unsigned long *)0x40025004))			//PF0 - offset 0x004 (0000 0000 0100) | 4
+	
+#define SW12										(*((volatile unsigned long *)0x40025044))			//PF0 - offset 0x004 (0000 0000 0100) | *
 
 // Warning: Do not use definitions below on pins with input direction
 #define OFF 										0x00	//not an address, no need to typecast to volatile unsigned long
@@ -33,11 +35,9 @@ void EnableInterrupts(void);  	// Enable interrupts
 int initPortF(void);						// PortF prototype
 
 
-int main(void){ unsigned long volatile delay;
+int main(void){ 
 	
 	TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  
-	SYSCTL_RCGC2_R					|=		0x00000020;
-	delay = SYSCTL_RCGC2_R;
 	
   EnableInterrupts();         // enable interrupts for the grader
 	initPortF();								// configure portf
@@ -49,13 +49,33 @@ int main(void){ unsigned long volatile delay;
 		 * pull-up resistors & schmit triggers
 		 */
 		
-		if(SW2 == (0x00)){	//SW1 is ON
-			LED_RED = ON;
+		if(SW12 == 0x00){	//SW1 and SW2 is ON
+			LED_RED = OFF;
 			LED_BLUE = OFF;
+			LED_GREEN = ON;
 		}
-		if(SW2 == (0x01)){	//SW2 is OFF
+		
+		
+		if(SW2 == 0x00){	//SW2 is ON
 			LED_RED = OFF;
 			LED_BLUE = ON;
+			LED_GREEN = OFF;
+		}
+		if(SW2 == 0x01){	//SW2 is OFF
+			LED_RED = OFF;
+			LED_BLUE = OFF;
+			LED_GREEN = OFF;
+		}
+		
+		if(SW1 == 0x10){	//SW1 is OFF
+			LED_RED = OFF;
+			LED_BLUE = OFF;
+			LED_GREEN = OFF;
+		}
+		if(SW1 == 0x00){	//SW1 is ON
+			LED_RED = ON;
+			LED_BLUE = OFF;
+			LED_GREEN = OFF;
 		}
 	}
 }
@@ -67,15 +87,19 @@ int main(void){ unsigned long volatile delay;
 //FUNCTIONS
 int initPortF(void){				//GPIO PortF(APB): 0x 4002.5000
 	
+		unsigned long volatile delay;
+	
 		// Configure PortF pins
-		GPIO_PORTF_LOCK_R				=		0x1F;		// _ _ _ 1  1 1 1 1	(enable write access to GPIOCR register) 
-		GPIO_PORTF_AMSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0	(Not using analog mode select)
-		GPIO_PORTF_PCTL_R				=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
-		GPIO_PORTF_DATA_R 			= 	0x00;		// _ _ _ _  _ _ _ _ (Initialize to 0x00)
-		GPIO_PORTF_DIR_R 				= 	0x0E;		// _ _ _ 0  1 1 1 0 (PF0 and PF4 are input switches)
-		GPIO_PORTF_AFSEL_R			=		0x00;		// _ _ _ 0  0 0 0 0 (Not using alternative functions)
-		GPIO_PORTF_PUR_R				=		0x11;		// _ _ _ 1  0 0 0 1 (Enable pull-up resistors on P0 and P4 switches)
-		GPIO_PORTF_DEN_R				=		0x1F; 	// _ _ _ 1  1 1 1 1	(Enable digital signal for all target pins)
+		SYSCTL_RCGC2_R					|=	0x00000020;			// _ _ F E  D C B A (Port clock defines)
+		delay 									= 	SYSCTL_RCGC2_R;
+		GPIO_PORTF_LOCK_R				=		0x4C4F434B;			// _ _ _ 1  1 1 1 1	(enable write access to GPIOCR register) 
+		GPIO_PORTF_CR_R					=		0x1F;
+		GPIO_PORTF_AMSEL_R			=		0x00;						// _ _ _ 0  0 0 0 0	(Not using analog mode select)
+		GPIO_PORTF_PCTL_R				=		0x00000000;			// _ _ _ 0  0 0 0 0 (Not using alternative functions)
+		GPIO_PORTF_DIR_R 				= 	0x0E;						// _ _ _ 0  1 1 1 0 (PF0 and PF4 are input switches)
+		GPIO_PORTF_AFSEL_R			=		0x00;						// _ _ _ 0  0 0 0 0 (Not using alternative functions)
+		GPIO_PORTF_PUR_R				=		0x11;						// _ _ _ 1  0 0 0 1 (Enable pull-up resistors on P0 and P4 switches)
+		GPIO_PORTF_DEN_R				=		0x1F; 					// _ _ _ 1  1 1 1 1	(Enable digital signal for all target pins)
 	
 	return 0;
 	}
