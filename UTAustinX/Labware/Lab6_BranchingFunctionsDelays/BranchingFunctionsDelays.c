@@ -44,9 +44,9 @@
 	
 	
 // PortA Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
-#define PA4								(*((volatile unsigned long *)0x40004040))						//OUT - offset
-#define PA3								(*((volatile unsigned long *)0x40004020))						//OUT - offset
-#define PA2								(*((volatile unsigned long *)0x40004010))						//IN 	- offset
+#define PA4											(*((volatile unsigned long *)0x40004040))			//OUT - offset
+#define PA3											(*((volatile unsigned long *)0x40004020))			//OUT - offset
+#define PA2											(*((volatile unsigned long *)0x40004010))			//IN 	- offset
 
 
 
@@ -61,6 +61,7 @@ void DisableInterrupts(void); 				// Disable interrupts
 void EnableInterrupts(void);  				// Enable interrupts
 int initPortF(void);									// PortF prototype
 int initPortA(void);									// PortA prototype
+void delay();
 
 
 
@@ -69,12 +70,32 @@ int main(void){
 	TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  
 	
   EnableInterrupts();         // enable interrupts for the grader
-	initPortF();								// configure portF
-	initPortA();								// configure portA
+	initPortF();								// configure portF - main program
+	initPortA();								// configure portA - for debugging
 	
   while(1){										// body goes here
 		
 		
+		/*
+			[x] Make PF2 an output and make PF4 an input (enable PUR for PF4). 
+			[x] The system starts with the LED ON (make PF2 =1). 
+			[x] Delay for about 100 ms
+			[x] If the switch is pressed (PF4 is 0), then toggle the LED once, else turn the LED ON. 
+			[x] Repeat steps 3 and 4 over and over.
+		*/
+		
+		if(SW1 == 0x10){
+			LED_BLUE = ON;
+			PA4 = ON;						//debug pin for logic analyser
+		}
+		else{
+			LED_BLUE = ON;
+			PA4 = ON;
+			delay();
+			LED_BLUE = OFF;
+			PA4 = OFF;					//debug pin for logic analyser
+			delay();
+		}
 
 	}
 }
@@ -84,6 +105,14 @@ int main(void){
 
 
 //FUNCTIONS
+void delay(){								//Software delay
+	int long i = 1333333;			//use 1600000 when simulating
+	while(i > 0){
+		i--;
+	}
+}
+
+
 int initPortA(void){				//GPIO PortA(APB): 0x 4000.4000
 	
 		unsigned long volatile delay;
