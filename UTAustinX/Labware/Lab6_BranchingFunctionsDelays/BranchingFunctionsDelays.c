@@ -75,14 +75,6 @@ int main(void){
   while(1){										// body goes here
 		
 		
-		if(SW1 == 0x00){
-			PA4 = ON;
-		}
-		else{
-			PA4 = OFF;
-		}
-		
-		
 
 	}
 }
