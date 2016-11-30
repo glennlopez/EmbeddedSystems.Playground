@@ -41,7 +41,7 @@
 //   Function Prototypes
 void PortF_Init(void);
 void Delay1ms(unsigned long msec);
-void EnableInterrupts(void);  // Enable interrupts
+void EnableInterrupts(void);  			// Enable interrupts
 void WaitForASLow(void);
 void WaitForASHigh(void);
 void SetVT(void);
@@ -52,10 +52,14 @@ void ClearReady(void);
 // 3. Subroutines Section
 // MAIN: Mandatory for a C Program to be executable
 int main(void){
-  TExaS_Init(SW_PIN_PF40, LED_PIN_PF31,ScopeOn);  // activate grader and set system clock to 80 MHz
-  PortF_Init();                            // Init port PF4 PF3 PF1    
-  EnableInterrupts();                      // enable interrupts for the grader  
-  while(1){          // Follows the nine steps list above
+  TExaS_Init(SW_PIN_PF40, LED_PIN_PF31,ScopeOn);  		// activate grader and set system clock to 80 MHz
+  PortF_Init();                            						// Init port PF4 PF3 PF1    
+  EnableInterrupts();                      						// enable interrupts for the grader  
+	
+	
+  while(1){          
+		
+		
     // a) Ready signal goes high
     // b) wait for switch to be pressed
     // c) Ready signal goes low
@@ -65,89 +69,125 @@ int main(void){
     // g) VT signal goes high
     // h) wait 250ms
     // i) VT signal goes low
+		
+		
   }
 }
-// Subroutine to initialize port F pins for input and output
-// PF4 is input SW1 and PF3-1 is output LEDs
-// Inputs: None
-// Outputs: None
-// Notes: ...
+
+
+
+
+/*
+ * Subroutine to initialize port F pins for input and output
+ * PF4 is input SW1 and PF3-1 is output LEDs
+ * Inputs: None
+ * Outputs: None
+ * Notes: ...
+ */
 void PortF_Init(void){ volatile unsigned long delay;
-  SYSCTL_RCGC2_R |= 0x00000020;      // 1) F clock
-  delay = SYSCTL_RCGC2_R;            // delay to allow clock to stabilize     
-  GPIO_PORTF_AMSEL_R &= 0x00;        // 2) disable analog function
-  GPIO_PORTF_PCTL_R &= 0x00000000;   // 3) GPIO clear bit PCTL  
-  GPIO_PORTF_DIR_R &= ~0x10;         // 4.1) PF4 input,
-  GPIO_PORTF_DIR_R |= 0x0E;          // 4.2) PF3,2,1 output  
-  GPIO_PORTF_AFSEL_R &= 0x00;        // 5) no alternate function
-  GPIO_PORTF_PUR_R |= 0x10;          // 6) enable pullup resistor on PF4       
-  GPIO_PORTF_DEN_R |= 0x1E;          // 7) enable digital pins PF4-PF1
+  SYSCTL_RCGC2_R 							|= 0x00000020;      		// 1) F clock
+  delay 											 = SYSCTL_RCGC2_R;      // delay to allow clock to stabilize     
+  GPIO_PORTF_AMSEL_R 					&= 0x00;        				// 2) disable analog function
+  GPIO_PORTF_PCTL_R 					&= 0x00000000;   				// 3) GPIO clear bit PCTL  
+  GPIO_PORTF_DIR_R 						&= ~0x10;         			// 4.1) PF4 input,
+  GPIO_PORTF_DIR_R 						|= 0x0E;          			// 4.2) PF3,2,1 output  
+  GPIO_PORTF_AFSEL_R 					&= 0x00;        				// 5) no alternate function
+  GPIO_PORTF_PUR_R 						|= 0x10;          			// 6) enable pullup resistor on PF4       
+  GPIO_PORTF_DEN_R 						|= 0x1E;          			// 7) enable digital pins PF4-PF1
 }
-// Color    LED(s) PortF
-// dark     ---    0
-// red      R--    0x02
-// blue     --B    0x04
-// green    -G-    0x08
-// yellow   RG-    0x0A
-// sky blue -GB    0x0C
-// white    RGB    0x0E
 
 
-// Subroutine reads AS input and waits for signal to be low
-// If AS is already low, it returns right away
-// If AS is currently high, it will wait until it to go low
-// Inputs:  None
-// Outputs: None
+
+
+/*
+ * Subroutine reads AS input and waits for signal to be low
+ * If AS is already low, it returns right away
+ * If AS is currently high, it will wait until it to go low
+ * Inputs:  None
+ * Outputs: None
+ */
 void WaitForASLow(void){
-// write this function
+
+	
 }
 
-// Subroutine reads AS input and waits for signal to be high
-// If AS is already high, it returns right away
-// If AS is currently low, it will wait until it to go high
-// Inputs:  None
-// Outputs: None
+
+
+/*
+ * Subroutine reads AS input and waits for signal to be high
+ * If AS is already high, it returns right away
+ * If AS is currently low, it will wait until it to go high
+ * Inputs:  None
+ * Outputs: None
+ */
 void WaitForASHigh(void){
-// write this function
+
+	
 }
 
-// Subroutine sets VT high
-// Inputs:  None
-// Outputs: None
-// Notes:   friendly means it does not affect other bits in the port
+
+
+
+/*
+ * Subroutine sets VT high
+ * Inputs:  None
+ * Outputs: None
+ * Notes:   friendly means it does not affect other bits in the port
+ */
 void SetVT(void){
-// write this function
+
+	
 }
 
-// Subroutine clears VT low
-// Inputs:  None
-// Outputs: None
-// Notes:   friendly means it does not affect other bits in the port
+
+
+
+/*
+ * Subroutine clears VT low
+ * Inputs:  None
+ * Outputs: None
+ * Notes:   friendly means it does not affect other bits in the port
+ */
 void ClearVT(void){
 // write this function
 }
 
-// Subroutine sets Ready high
-// Inputs:  None
-// Outputs: None
-// Notes:   friendly means it does not affect other bits in the port
+
+
+
+/*
+ * Subroutine sets Ready high
+ * Inputs:  None
+ * Outputs: None
+ * Notes:   friendly means it does not affect other bits in the port
+ */
 void SetReady(void){
-// write this function
+
+	
 }
 
 
-// Subroutine clears Ready low
-// Inputs:  None
-// Outputs: None
-// Notes:   friendly means it does not affect other bits in the port
+
+
+/*
+ * Subroutine clears Ready low
+ * Inputs:  None
+ * Outputs: None
+ * Notes:   friendly means it does not affect other bits in the port
+ */
 void ClearReady(void){
-// write this function
+
+	
 }
 
-// Subroutine to delay in units of milliseconds
-// Inputs:  Number of milliseconds to delay
-// Outputs: None
-// Notes:   assumes 80 MHz clock
+
+
+/*
+ * Subroutine to delay in units of milliseconds
+ * Inputs:  Number of milliseconds to delay
+ * Outputs: None
+ * Notes:   assumes 80 MHz clock 
+ */
 void Delay1ms(unsigned long msec){
 // write this function
 
