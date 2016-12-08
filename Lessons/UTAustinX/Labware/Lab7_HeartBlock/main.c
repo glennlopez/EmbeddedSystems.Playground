@@ -18,7 +18,7 @@
 // 8) clear VT low 
 // 9) set Ready high
 
-// Date: January 15, 2016
+// Date: December 07, 2016
 
 // 1. Pre-processor Directives Section
 #include "TExaS.h"
@@ -40,14 +40,6 @@
 #define GPIO_PORTF_PCTL_R       (*((volatile unsigned long *)0x4002552C)) //offset:	0x52C		- 0x00000000 resets 
 
 
-	/* D E B U G   P O R T   P A R A M E T E R S
-	* PA3: 		Output 	(GREEN LED) - Ready signal
-	* PA2: 		Output 	(RED LED)		- Venticular trigger
-	* PA5:		Output	( ??? )			-	Unknown
-	* PA4: 		Input 	(SWITCH)		- Atrial sensor
-	*/
-
-
 // PortA Base Address (APB): 0x4000.4000 (for debug)
 #define GPIO_PORTA_DATA_R       (*((volatile unsigned long *)0x400043FC)) //offset: 0x3FC 	- enabled pins for data I/O (4*2^b)
 #define GPIO_PORTA_DIR_R        (*((volatile unsigned long *)0x40004400)) //offset: 0x400		- 1 is output, 0 is input
@@ -60,24 +52,28 @@
 #define GPIO_PORTA_PCTL_R       (*((volatile unsigned long *)0x4000452C)) //offset:	0x52C		- 0x00000000 resets 
 
 
-
 // PortF Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
-#define LED_BLUE								(*((volatile unsigned long *)0x40025010))			//PF2 - offset 0x010 
-#define LED_RED									(*((volatile unsigned long *)0x40025008))			//PF1 - offset 0x008 
-#define LED_GREEN								(*((volatile unsigned long *)0x40025020))			//PF3 - offset 0x020 
-#define SW1											(*((volatile unsigned long *)0x40025040))			//PF4 - offset 0x040 
-#define SW2											(*((volatile unsigned long *)0x40025004))			//PF0 - offset 0x004
+#define LED_BLUE								(*((volatile unsigned long *)0x40025010))	//PF2 - offset 0x010 
+#define LED_RED									(*((volatile unsigned long *)0x40025008))	//PF1 - offset 0x008 
+#define LED_GREEN								(*((volatile unsigned long *)0x40025020))	//PF3 - offset 0x020 
+#define SW1											(*((volatile unsigned long *)0x40025040))	//PF4 - offset 0x040 
+#define SW2											(*((volatile unsigned long *)0x40025004))	//PF0 - offset 0x004
 	
-	
+
 // PortA Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
-#define PA2											(*((volatile unsigned long *)0x40004010))			//OUTPUT	VT
-#define PA3											(*((volatile unsigned long *)0x40004020))			//OUTPUT	READY
-#define PA4											(*((volatile unsigned long *)0x40004040))			//INPUT		AS
-#define PA5											(*((volatile unsigned long *)0x40004080))			//OUTPUT	??
+#define PA2											(*((volatile unsigned long *)0x40004010))	//OUTPUT	VT
+#define PA3											(*((volatile unsigned long *)0x40004020))	//OUTPUT	READY
+#define PA4											(*((volatile unsigned long *)0x40004040))	//INPUT		AS
+#define PA5											(*((volatile unsigned long *)0x40004080))	//OUTPUT	??
+	
+	/* D E B U G   P O R T   P A R A M E T E R S
+	* PA3: 		Output 	(GREEN LED) - Ready signal
+	* PA2: 		Output 	(RED LED)		- Venticular trigger
+	* PA5:		Output	( ??? )			-	Unknown
+	* PA4: 		Input 	(SWITCH)		- Atrial sensor
+	*/
 
-
-
-// Warning: Only use these for bitspecific addresses
+// Warning: Only use these for bitspecific addresses (constants are not code friendly)
 #define OFF 										0x00	//not an address, no need to typecast to volatile unsigned long
 #define ON											0xFF	//not an address, no need to typecast to volatile unsigned long
 
