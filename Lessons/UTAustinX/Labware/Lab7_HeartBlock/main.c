@@ -61,10 +61,10 @@
 	
 
 // PortA Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
-#define PA2											(*((volatile unsigned long *)0x40004010))	//OUTPUT	VT
-#define PA3											(*((volatile unsigned long *)0x40004020))	//OUTPUT	READY
-#define PA4											(*((volatile unsigned long *)0x40004040))	//INPUT		AS
-#define PA5											(*((volatile unsigned long *)0x40004080))	//OUTPUT	??
+#define VT											(*((volatile unsigned long *)0x40004010))		//OUTPUT	PA2
+#define RDY											(*((volatile unsigned long *)0x40004020))		//OUTPUT	PA3
+#define AS											(*((volatile unsigned long *)0x40004040))		//INPUT		PA4
+#define PA5											(*((volatile unsigned long *)0x40004080))		//OUTPUT	??
 	
 	/* D E B U G   P O R T   P A R A M E T E R S
 	* PA3: 		Output 	(GREEN LED) - Ready signal
@@ -86,7 +86,7 @@
 //   Function Prototypes
 void PortF_Init(void);
 void PortA_Init(void);
-void Delay1ms(unsigned long msec);
+void Delay1ms(unsigned long msec);		//<-- notice: this is the only subroutine with params
 void EnableInterrupts(void);
 void WaitForASLow(void);
 void WaitForASHigh(void);
@@ -108,18 +108,25 @@ int main(void){
 		
 		
     // a) Ready signal goes high
+			//SetReady();
+		
     // b) wait for switch to be pressed
+		
     // c) Ready signal goes low
+		
     // d) wait 10ms
+		
     // e) wait for switch to be released
+		
     // f) wait 250ms
+		
     // g) VT signal goes high
+			SetVT();
+		
     // h) wait 250ms
+		
     // i) VT signal goes low
 		
-		
-		LED_GREEN = ON;
-		PA3 = ON;
 		
 		
   }
@@ -200,8 +207,11 @@ void WaitForASHigh(void){
  * Notes:   friendly means it does not affect other bits in the port
  */
 void SetVT(void){
-
+	//main port - PF1
+	LED_RED = ON;
 	
+	//debug port - PA2
+	VT = ON;
 }
 
 
@@ -227,8 +237,11 @@ void ClearVT(void){
  * Notes:   friendly means it does not affect other bits in the port
  */
 void SetReady(void){
-
+	//main port - PF3
+	LED_GREEN = ON;
 	
+	//debug port - PA3
+	RDY = ON;
 }
 
 
@@ -255,6 +268,8 @@ void ClearReady(void){
  */
 void Delay1ms(unsigned long msec){
 	
+	//loop parameter container
+		//loop 1ms
 
 }
 
