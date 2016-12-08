@@ -59,6 +59,9 @@
 #define SW1											(*((volatile unsigned long *)0x40025040))	//PF4 - offset 0x040 
 #define SW2											(*((volatile unsigned long *)0x40025004))	//PF0 - offset 0x004
 	
+#define LED_YELLOW							(*((volatile unsigned long *)0x40025028))	//PF3, PF1 - offset 0x028
+#define LED_PURPLE							(*((volatile unsigned long *)0x40025018))	//PF1, PF2 - offset 0x018
+	
 
 // PortA Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
 #define VT											(*((volatile unsigned long *)0x40004010))		//OUTPUT	PA2
@@ -74,8 +77,8 @@
 	*/
 
 // Warning: Only use these for bitspecific addresses (constants are not code friendly)
-#define OFF 										0x00	//not an address, no need to typecast to volatile unsigned long
-#define ON											0xFF	//not an address, no need to typecast to volatile unsigned long
+#define OFF 										0x00	//notice: not an address, no need to typecast to volatile unsigned long
+#define ON											0xFF	//notice: not an address, no need to typecast to volatile unsigned long
 
 
 
@@ -106,6 +109,7 @@ int main(void){
 	
   while(1){          
 		
+		LED_PURPLE = ON;
 		
     // a) Ready signal goes high
 			//SetReady();
@@ -121,7 +125,7 @@ int main(void){
     // f) wait 250ms
 		
     // g) VT signal goes high
-			SetVT();
+			//SetVT();
 		
     // h) wait 250ms
 		
