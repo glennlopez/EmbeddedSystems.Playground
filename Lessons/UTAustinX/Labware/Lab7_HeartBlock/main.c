@@ -109,32 +109,32 @@ int main(void){
 	
   while(1){          
 		
-    // Ready signal goes high
-			//SetReady();
+    //Ready signal goes high
+			SetReady();
 		
-    // wait for switch to be pressed
+    //wait for switch to be pressed
+			WaitForASLow();
 		
-    // Ready signal goes low
+    //Ready signal goes low
+			ClearReady();
 		
-    // wait 10ms
+    //wait 10ms
+			Delay1ms(10);
 		
-    // wait for switch to be released
+    //wait for switch to be released
+			WaitForASHigh();
 		
-    // wait 250ms
+    //wait 250ms
+			Delay1ms(250);
 		
-    // VT signal goes high
-			//SetVT();
+    //VT signal goes high
+			SetVT();
 		
-    // wait 250ms
+    //wait 250ms
+			Delay1ms(250);
 		
-    // VT signal goes low
-		
-		
-		
-		RDY = ON;
-		Delay1ms(1000);
-		RDY = OFF;
-		Delay1ms(700);
+    //VT signal goes low
+			ClearVT();
 		
 		
   }
@@ -189,11 +189,10 @@ void PortA_Init(void){ volatile unsigned long delay;
 void WaitForASLow(void){
 	//if AS(PA4) is high wait...
 	while(SW1 == 0x10){
-		//loop till PA4 is low
+		//loop till PF4 is low
 	}
 	
 	//if AS is low... do nothing
-	
 }
 
 
