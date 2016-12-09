@@ -162,6 +162,14 @@ void PortF_Init(void){ volatile unsigned long delay;
   GPIO_PORTF_DEN_R 						|= 		0x1E;          				// 7) enable digital pins PF4-PF1
 }
 
+
+/*
+ * Subroutine to initialize port A pins for debug
+ * PF4 is input SW1 and PF3-1 is output LEDs
+ * Inputs: None
+ * Outputs: None
+ * Notes: ...
+ */
 void PortA_Init(void){ volatile unsigned long delay;
 	SYSCTL_RCGC2_R 							|= 		0x00000001;      			// 1) A clock gate enable
   delay 											 = 		SYSCTL_RCGC2_R;      	// delay to allow clock to stabilize  
