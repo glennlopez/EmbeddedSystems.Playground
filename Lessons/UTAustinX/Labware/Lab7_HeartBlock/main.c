@@ -64,10 +64,10 @@
 	
 
 // PortA Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
-#define VT											(*((volatile unsigned long *)0x40004010))		//OUTPUT	PA2
-#define RDY											(*((volatile unsigned long *)0x40004020))		//OUTPUT	PA3
-#define AS											(*((volatile unsigned long *)0x40004040))		//INPUT		PA4
-#define PA5											(*((volatile unsigned long *)0x40004080))		//OUTPUT	??
+#define VT											(*((volatile unsigned long *)0x40004010))	//OUTPUT	PA2
+#define RDY											(*((volatile unsigned long *)0x40004020))	//OUTPUT	PA3
+#define AS											(*((volatile unsigned long *)0x40004040))	//INPUT		PA4
+#define PA5											(*((volatile unsigned long *)0x40004080))	//OUTPUT	??
 	
 	/* D E B U G   P O R T   P A R A M E T E R S
 	* PA3: 		Output 	(GREEN LED) - Ready signal
@@ -109,28 +109,32 @@ int main(void){
 	
   while(1){          
 		
-		LED_PURPLE = ON;
-		
-    // a) Ready signal goes high
+    // Ready signal goes high
 			//SetReady();
 		
-    // b) wait for switch to be pressed
+    // wait for switch to be pressed
 		
-    // c) Ready signal goes low
+    // Ready signal goes low
 		
-    // d) wait 10ms
+    // wait 10ms
 		
-    // e) wait for switch to be released
+    // wait for switch to be released
 		
-    // f) wait 250ms
+    // wait 250ms
 		
-    // g) VT signal goes high
+    // VT signal goes high
 			//SetVT();
 		
-    // h) wait 250ms
+    // wait 250ms
 		
-    // i) VT signal goes low
+    // VT signal goes low
 		
+		
+		
+		RDY = ON;
+		Delay1ms(1000);
+		RDY = OFF;
+		Delay1ms(700);
 		
 		
   }
@@ -183,7 +187,12 @@ void PortA_Init(void){ volatile unsigned long delay;
  * Outputs: None
  */
 void WaitForASLow(void){
-
+	//if AS(PA4) is high wait...
+	while(SW1 == 0x10){
+		//loop till PA4 is low
+	}
+	
+	//if AS is low... do nothing
 	
 }
 
@@ -197,8 +206,12 @@ void WaitForASLow(void){
  * Outputs: None
  */
 void WaitForASHigh(void){
-
+	//if AS(PA4) is low... wait
+	while(SW1 == 0x00){
+		//loop till AS(PA4) is high
+	}
 	
+	//if AS is high... do nothing
 }
 
 
@@ -228,7 +241,11 @@ void SetVT(void){
  * Notes:   friendly means it does not affect other bits in the port
  */
 void ClearVT(void){
-// write this function
+	//main port - PF1
+	LED_RED = OFF;
+	
+	//debug port - PA2
+	VT = OFF;
 }
 
 
@@ -258,8 +275,11 @@ void SetReady(void){
  * Notes:   friendly means it does not affect other bits in the port
  */
 void ClearReady(void){
-
+	//main port - PF3
+	LED_GREEN = OFF;
 	
+	//debug port - PA3
+	RDY = OFF;	
 }
 
 
@@ -268,12 +288,13 @@ void ClearReady(void){
  * Subroutine to delay in units of milliseconds
  * Inputs:  Number of milliseconds to delay
  * Outputs: None
- * Notes:   assumes 80 MHz clock 
+ * Notes:   assumes 80 MHz clock (non-simulation)
  */
 void Delay1ms(unsigned long msec){
-	
-	//loop parameter container
-		//loop 1ms
-
+	int i = 0;
+	while(msec > 0){
+		for(i = 0; i < 13255; i++);
+		msec--;
+	}
 }
 
