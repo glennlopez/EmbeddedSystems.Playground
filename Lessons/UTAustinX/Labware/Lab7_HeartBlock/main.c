@@ -97,12 +97,6 @@ void ClearVT(void);
 void SetReady(void);
 void ClearReady(void);
 
-// Pre-lab prototypes
-void SW1_Pressed(void);
-void SW2_Pressed(void);
-void delaySec(int sec);
-void message(void);
-
 
 // 3. Subroutines Section
 // MAIN: Mandatory for a C Program to be executable
@@ -115,16 +109,6 @@ int main(void){
 	
   while(1){  
 
-
-/* START OF S.O.S */
-		
-
-		
-/* END OF S.O.S. */
-
-		
-	
-/* START OF LAB 7		
 		
     //Ready signal goes high
 			SetReady();
@@ -153,8 +137,6 @@ int main(void){
     //VT signal goes low
 			ClearVT();
 			
-			
-END OF LAB 7 */		
 		
   }
 }
@@ -323,65 +305,3 @@ void Delay1ms(unsigned long msec){
 		msec--;
 	}
 }
-
-
-/************/ //PRE-LAB7: S.O.S. /************/
-
-	/* D E B U G   P O R T   P A R A M E T E R S
-	* PA3: 		Output 	(GREEN LED) - Ready signal
-	* PA2: 		Output 	(RED LED)		- Venticular trigger
-	* PA5:		Output	( ??? )			-	Unknown
-	* PA4: 		Input 	(SWITCH)		- Atrial sensor
-	*/
-
-
-
-/*
- * Subroutine
- * Inputs: SW1  
- * Outputs: none
- * Notes:   
- */
-void SW1_Pressed(void){
-	
-}
-
-
-/*
- * Subroutine
- * Inputs: SW2
- * Outputs: none
- * Notes:   
- */
-void SW2_Pressed(void){
-
-}
-
-
-/*
- * Subroutine: Hardware Delay
- * Inputs:  none
- * Outputs: none
- * Notes: none
- */
-void delaySec(int sec){
-	unsigned int i;
-	while(sec > 0){
-		for(i = 0; i < 8100000; i++);
-		sec--;
-	}
-}
-
-
-/*
- * Subroutine
- * Inputs: none
- * Outputs: PA3 (RDY)
- * Notes:   
- */
-void message(void){
-
-	
-	
-}
-
