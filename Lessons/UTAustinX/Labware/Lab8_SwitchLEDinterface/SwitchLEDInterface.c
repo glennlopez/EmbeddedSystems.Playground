@@ -1,4 +1,5 @@
 // ***** 0. Documentation Section *****
+//Lab8 - glennlopez@gmail.com
 
 /* H A R D W A R E 
  * 1x switch
@@ -12,6 +13,7 @@
  * Output: PE1 (LED)
  * Delay: 100ms
  * Start: LED on, Blink when switch is pressed
+ * De-bounce: 5ms
  */
 
 // ***** 1. Pre-processor Directives Section *****
@@ -66,17 +68,17 @@ int main(void){
 }
 
 /*
- * Subroutine to initialize port F pins for input and output
+ * Subroutine to initialize port E pins for input and output
  * PF4 is input SW1 and PF3-1 is output LEDs
  * Inputs: None
  * Outputs: None
  * Notes: ...
  */
 void PortE_Init(void){ volatile unsigned long delay;
-  //SYSCTL_RCGC2_R 							|= 		0x00000020;      			// 1) F clock gate enbale
-  //delay 											 = 		SYSCTL_RCGC2_R;      	// delay to allow clock to stabilize     
-  //GPIO_PORTF_AMSEL_R 					&= 		0x00;        					// 2) disable analog function
-  //GPIO_PORTF_PCTL_R 					&= 		0x00000000;   				// 3) GPIO clear bit PCTL  
+  SYSCTL_RCGC2_R 							|= 		0x00000010;      			// 1) F clock gate enbale
+  delay 											 = 		SYSCTL_RCGC2_R;      	// delay to allow clock to stabilize     
+  GPIO_PORTF_AMSEL_R 					&= 		0x00;        					// 2) disable analog function
+  GPIO_PORTF_PCTL_R 					&= 		0x00000000;   				// 3) GPIO clear bit PCTL  
   //GPIO_PORTF_DIR_R 						&= 		~0x10;         				// 4.1) PF4 input,
   //GPIO_PORTF_DIR_R 						|= 		0x0E;          				// 4.2) PF3,2,1 output  
   //GPIO_PORTF_AFSEL_R 					&= 		0x00;        					// 5) no alternate function
