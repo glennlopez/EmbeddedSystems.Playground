@@ -18,23 +18,10 @@
 
 // ***** 1. Pre-processor Directives Section *****
 #include "TExaS.h"
-//#include "tm4c123gh6pm.h" //<-- disabled this so I can define my own stuff
+#include "tm4c123gh6pm.h" //contains defines for register memory
 
-// Common port registers 
-#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108)) //offset:	0x108		- *Register 136: Clock gating control register
-
-
-//PortE base address (APB): 0x4002.4000
-#define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400243FC)) //offset: 0x3FC 	- enabled pins for data I/O (4*2^b)
-#define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40024400)) //offset: 0x400		- 1 is output, 0 is input
-#define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40024420)) //offset:	0x420		- 1 enabled, 0 disabled
-#define GPIO_PORTF_PUR_R        (*((volatile unsigned long *)0x40024510)) //offset:	0x510		- 1 pullup enabled, 0 disabled
-#define GPIO_PORTF_DEN_R        (*((volatile unsigned long *)0x4002451C)) //offset:	0x51C		- 1 enabled, 0 disabled
-#define GPIO_PORTF_LOCK_R       (*((volatile unsigned long *)0x40024520)) //offset:	0x520		- 0x4C4F434B unlocks GPIO commit register
-#define GPIO_PORTF_CR_R         (*((volatile unsigned long *)0x40024524)) //offset:	0x524		- 1 writeable, 0 cannot be written
-#define GPIO_PORTF_AMSEL_R      (*((volatile unsigned long *)0x40024528)) //offset:	0x528		- 1 enabled, 0 disabled
-#define GPIO_PORTF_PCTL_R       (*((volatile unsigned long *)0x4002552C)) //offset:	0x52C		- 0x00000000 resets 
-
+//bit-specific addressing
+#define PE0	(*((volatile unsigned long *)0x40024004))	//PE0(Switch) | base(port a): 0x40024000 / offset(pin 5):0x004  
 
 
 // ***** 2. Global Declarations Section *****
@@ -42,8 +29,24 @@
 // FUNCTION PROTOTYPES: Each subroutine defined
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
-void PortE_Init(void);				// Initialize PortE
 
+// SWITCH DRIVER: includes initialization and functions accociated with switch hardware
+void Switch_Init(void){ volatile unsigned long delay;
+  SYSCTL_RCGC2_R 					|= 		0x00000010;					// 1) activate clock for Port E
+  delay										 = 		SYSCTL_RCGC2_R;     // wait for SYSCTL_RCGC2_R before continuing
+																										// 2) no need to unlock GPIO Port A
+  GPIO_PORTE_AMSEL_R 			&= 		~0x01;      				// 3) disable analog on PE0
+  GPIO_PORTE_PCTL_R 			&= 		~0x0000000F; 				// 4) PCTL GPIO on PE0
+  GPIO_PORTE_DIR_R 				&= 		~0x01;        			// 5) direction PE0 input
+  GPIO_PORTE_AFSEL_R 			&= 		~0x01;      				// 6) PE0 regular port function
+  GPIO_PORTE_DEN_R 				|= 		0x01;         			// 7) enable PE0 digital port
+}
+unsigned long Switch_Input(void){
+	return PE0; 																			// return 0x01(pressed) or 0(not pressed)
+}
+unsigned long Switch_Input2(void){
+	return (GPIO_PORTE_DATA_R&0x01); 									// 0x01(pressed) or 0(not pressed)
+}
 
 
 
@@ -67,21 +70,3 @@ int main(void){
   
 }
 
-/*
- * Subroutine to initialize port E pins for input and output
- * PF4 is input SW1 and PF3-1 is output LEDs
- * Inputs: None
- * Outputs: None
- * Notes: ...
- */
-void PortE_Init(void){ volatile unsigned long delay;
-  SYSCTL_RCGC2_R 							|= 		0x00000010;      			// 1) F clock gate enbale
-  delay 											 = 		SYSCTL_RCGC2_R;      	// delay to allow clock to stabilize     
-  GPIO_PORTF_AMSEL_R 					&= 		0x00;        					// 2) disable analog function
-  GPIO_PORTF_PCTL_R 					&= 		0x00000000;   				// 3) GPIO clear bit PCTL  
-  //GPIO_PORTF_DIR_R 						&= 		~0x10;         				// 4.1) PF4 input,
-  //GPIO_PORTF_DIR_R 						|= 		0x0E;          				// 4.2) PF3,2,1 output  
-  //GPIO_PORTF_AFSEL_R 					&= 		0x00;        					// 5) no alternate function
-  //GPIO_PORTF_PUR_R 						|= 		0x10;          				// 6) enable pullup resistor on PF4       
-  //GPIO_PORTF_DEN_R 						|= 		0x1E;          				// 7) enable digital pins PF4-PF1
-}
