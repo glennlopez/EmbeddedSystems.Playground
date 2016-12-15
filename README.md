@@ -2,7 +2,7 @@
 
 Embedded Systems Playground
 =================
-I grew tired of the simplicity offered by Arduino and needed something more challenging. Developing drivers for sensors in C++ seems like the next step up and in order to get there, I needed to master programming embedded systems in C.  
+I grew tired of the simplicity offered by Arduino and needed something more challenging. Developing drivers for sensors in C++ seems like the next step up and in order to get there, I needed to master programming in C for embedded systems.  
 
 This repo contains all my trials and tribulations with my progress in learning how to properly use C++'s OOP abstraction with C in embedded systems.
 
