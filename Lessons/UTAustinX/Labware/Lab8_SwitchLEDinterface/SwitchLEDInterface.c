@@ -1,97 +1,97 @@
-// ***** 0. Documentation Section *****
-//Lab8 - glennlopez@gmail.com
-
-/* H A R D W A R E 
- * 1x switch
- * 1x 10k resistor
- * 1x LED
- * 1x 470 resistor
- */
- 
-/* S Y S T E M 
- * Input: PE0 (switch)
- * Output: PE1 (LED)
- * Delay: 100ms
- * Start: LED on, Blink when switch is pressed
- * De-bounce: 5ms
- */
-
-// ***** 1. Pre-processor Directives Section *****
+// Includes
 #include "TExaS.h"
-#include "tm4c123gh6pm.h" //contains defines for register memory
 
+// Clock gating controls base address: 0x400F.E000
+#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))			//run mode gating register		- offset 0x108 
 
-// ***** 2. Global Declarations Section *****
-// FUNCTION PROTOTYPES: Each subroutine defined
-void DisableInterrupts(void); // Disable interrupts
-void EnableInterrupts(void);  // Enable interrupts
-
-/*
-//FIXME: edit this stuff
-void PortE_Init(void){ volatile unsigned long delay;
-  //SYSCTL_RCGC2_R 							|= 		0x00000010;      			// 1) F clock gate enbale
-  //delay 											 = 		SYSCTL_RCGC2_R;      	// delay to allow clock to stabilize     
-  //GPIO_PORTF_AMSEL_R 					&= 		0x00;        					// 2) disable analog function
-  //GPIO_PORTF_PCTL_R 					&= 		0x00000000;   				// 3) GPIO clear bit PCTL  
-  //GPIO_PORTF_DIR_R 						&= 		~0x10;         				// 4.1) PF4 input,
-  //GPIO_PORTF_DIR_R 						|= 		0x0E;          				// 4.2) PF3,2,1 output  
-  //GPIO_PORTF_AFSEL_R 					&= 		0x00;        					// 5) no alternate function
-  //GPIO_PORTF_PUR_R 						|= 		0x10;          				// 6) enable pullup resistor on PF4       
-  //GPIO_PORTF_DEN_R 						|= 		0x1E;          				// 7) enable digital pins PF4-PF1
-}
-
-*/
-
-
-// SWITCH DRIVER(PE0): includes initialization and functions accociated with switch hardware
-#define PE0	(*((volatile unsigned long *)0x40024004))		//Bit specific addressing - base(port a): 0x40024000 / offset(pin 5):0x004
-void Switch_Init(void){ volatile unsigned long delay;
-  SYSCTL_RCGC2_R 					|= 		0x00000010;							// activate clock for Port E
-  delay										 = 		SYSCTL_RCGC2_R;     		// set delay to RCGC2_R before continuing
 	
-  GPIO_PORTE_AMSEL_R 			&= 		~0x01;      						// disable analog on PE0
-  GPIO_PORTE_PCTL_R 			&= 		~0x0000000F; 						// PCTL GPIO on PE0
-  GPIO_PORTE_DIR_R 				&= 		~0x01;        					// direction PE0 input
-  GPIO_PORTE_AFSEL_R 			&= 		~0x01;      						// PE0 regular port function
-  GPIO_PORTE_DEN_R 				|= 		0x01;         					// enable PE0 digital port
-}
-unsigned long Switch_Input(void){
-  return PE0; // return 0x20(pressed) or 0(not pressed)
-}
-unsigned long Switch_Input2(void){
-  return (GPIO_PORTA_DATA_R&0x01); // 0x20(pressed) or 0(not pressed)
-}
-
-// LED DRIVER(PE1): includes initialization and functions accociated with LED hardware
-#define PE1	(*((volatile unsigned long *)0x40024008))		//Bit specific addressing - base(port a): 0x40024000 / offset(pin 5):0x004
-void LED_Init(void){ volatile unsigned long delay;
-  SYSCTL_RCGC2_R 				|= 			0x00000010;					// P[E]1: _ _ _ X  _ _ _ _ 	(X X F [E]  D C B A)
-  delay 								 = 			SYSCTL_RCGC2_R;			// set delay to RCGC2_R before continuing
+// PortE(APB) base address: 0x4002.4000
+#define GPIO_PORTE_DATA_R       (*((volatile unsigned long *)0x40024000))			//0x3FC means 0011 1111 expressed as 4*2^b (bitspecific addressing)
+#define GPIO_PORTE_DIR_R        (*((volatile unsigned long *)0x40024400))			//gpio direction 							- offset 0x400
+#define GPIO_PORTE_AFSEL_R      (*((volatile unsigned long *)0x40024420))			//gpio alternte funtion 			- offset 0x420
+#define GPIO_PORTE_PUR_R        (*((volatile unsigned long *)0x40024510))			//gpio pull-up select					- offset 0x510
+#define GPIO_PORTE_DEN_R        (*((volatile unsigned long *)0x4002451C))			//gpio digital enable 				- offset 0x51C
+#define GPIO_PORTE_AMSEL_R      (*((volatile unsigned long *)0x40024528))			//gpio analog mode select			- offset 0x528
+#define GPIO_PORTE_PCTL_R       (*((volatile unsigned long *)0x4002452C))			//gpio port control						- offset 0x52C
+#define GPIO_PORTE_LOCK_R				(*((volatile unsigned long *)0x40024520))			//gpio portf lock register 		- offset 0x520
+#define GPIO_PORTE_CR_R					(*((volatile unsigned long *)0x40024524))			//gpio portf comit register		- offset 0x524
 	
-  GPIO_PORTE_PCTL_R 		&= 			~0x000000F0; 				// PE[1]: _ _ _ _  _ _ X _  (7 6 5 4  3 2 [1] 0) INVERT
-  GPIO_PORTE_AMSEL_R 		&= 			~0x02;      				// PE[1]: _ _ _ _  _ _ X _ 	(7 6 5 4  3 2 [1] 0) INVERT
-  GPIO_PORTE_DIR_R 			|= 			0x02;         			// PE[1]: _ _ _ _  _ _ X _ 	(7 6 5 4  3 2 [1] 0)
-  GPIO_PORTE_AFSEL_R 		&= 			~0x02;      				// PE[1]: _ _ _ _  _ _ X _ 	(7 6 5 4  3 2 [1] 0) INVERT
-  GPIO_PORTE_DEN_R 			|= 			0x02;         			// PE[1]: _ _ _ _  _ _ X _ 	(7 6 5 4  3 2 [1] 0)
-}
-// Make PA2 high
- void LED_On(void){
-   GPIO_PORTA_DATA_R |= 0x02;
- }
-// Make PA2 low
-void LED_Off(void){
-  GPIO_PORTE_DATA_R &= ~0x02;
-}
-#define ON 0xFF; 
-#define OFF 0x00;
+// PortE Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
+#define SW1											(*((volatile unsigned long *)0x40024004))			//OUT - offset
+#define LED											(*((volatile unsigned long *)0x40024008))			//OUT - offset
 
-// ***** 3. Subroutines Section *****
+// Warning: Only use these for bitspecific addresses
+#define OFF 										0x00	//not an address, no need to typecast to volatile unsigned long
+#define ON											0xFF	//not an address, no need to typecast to volatile unsigned long
+
+
+
+// Basic functions defined at end of startup.s
+void DisableInterrupts(void); 				// Disable interrupts
+void EnableInterrupts(void);  				// Enable interrupts
+int initPortE(void);									// PortA prototype
+void blink(int ms);										// Blink LED in miliseconds
+void delay1ms(unsigned long msec);		// Delay subroutine req for blink
+
+
+
 int main(void){ 
-  TExaS_Init(SW_PIN_PE0, LED_PIN_PE1, ScopeOff);  // activate grader and set system clock to 80 MHz
-  EnableInterrupts();           // enable interrupts for the grader
 	
-  while(1){
-		PE1 = 0x01;
-  }
+	TExaS_Init(SW_PIN_PE0, LED_PIN_PE1, ScopeOff);  
+  EnableInterrupts();         // enable interrupts for the grader
+	initPortE();								// configure portA - for debugging
+	
+  while(1){										
+
+		if(SW1 == OFF){
+			LED = ON;
+		}
+		else{
+			delay1ms(10);						//debounce
+			if(SW1 == 0x01){				//check if switch still on
+				blink(100);						//blink the led
+			}
+		}
+
+	}
 }
 
+
+
+
+
+
+void delay1ms(unsigned long msec){
+	int i = 0;
+	while(msec > 0){
+		for(i = 0; i < 13255; i++);
+		msec--;
+	}
+}
+
+
+void blink(int ms){
+			LED = ON;
+			delay1ms(ms);
+			LED = OFF;
+			delay1ms(ms);
+}
+
+
+int initPortE(void){unsigned long volatile delay;
+
+		SYSCTL_RCGC2_R					|=	0x00000010;				// _ _ F E  D C B A (Port selection)
+		delay 									= 	SYSCTL_RCGC2_R;
+	
+		GPIO_PORTE_LOCK_R				=		0x4C4F434B;				// _ _ _ 1  1 1 1 1	(enable write access to GPIOCR register) 
+		GPIO_PORTE_CR_R					=		0x1F;							// _ _ _ 1  1 1 1 1	(Change Commit registers)
+		GPIO_PORTE_AMSEL_R			=		0x00;							// _ _ _ 0  0 0 0 0	(Not using analog mode select)
+		GPIO_PORTE_PCTL_R				=		0x00000000;				// _ _ _ 0  0 0 0 0 (Not using alternative functions)
+		GPIO_PORTE_DIR_R 			 &= 	~0x01;         		// PE0 (Input)
+		GPIO_PORTE_DIR_R 			 |= 	0x02;          		// PE1 (output)
+		GPIO_PORTE_AFSEL_R			=		0x00;							// 0 0 0 0  0 0 0 0 (Not using alternative functions)
+		GPIO_PORTE_PUR_R				=		0x00;							// 0 0 0 1  0 0 0 1 (Enable pull-up resistors on P0 and P4 switches)
+		GPIO_PORTE_DEN_R				=		0x1F; 						// 0 0 0 1  1 1 1 1	(Enable digital signal for all target pins)
+	
+	return 0;
+}
