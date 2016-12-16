@@ -7,3 +7,39 @@ D:\Github Clones\EmbeddedSystems.Playground\Lessons\UTAustinX\Labware\Lab8_Switc
 Project File Date:  02/10/2014
 
 <h2>Output:</h2>
+Build target 'Lab8'
+compiling SwitchLEDInterface.c...
+linking...
+Program Size: Code=3888 RO-data=6628 RW-data=56 ZI-data=1752  
+".\Lab8.axf" - 0 Error(s), 0 Warning(s).
+</pre>
+</body>
+</html>
+mbeddedSystems.Playground\\Lessons\\UTAustinX\\Labware\\Lab8_SwitchLEDinterface\\Lab8.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Connection failed!, error code=&d
+Error: Flash Download failed  -  Target DLL has been cancelled
+         &=              ~0x01;                                                  // disable analog on PE0
+SwitchLEDInterface.c(38): error:  #20: identifier "GPIO_PORTE_PCTL_R" is undefined
+    GPIO_PORTE_PCTL_R                   &=              ~0x0000000F;                                            // PCTL GPIO on PE0
+SwitchLEDInterface.c(39): error:  #20: identifier "GPIO_PORTE_DIR_R" is undefined
+    GPIO_PORTE_DIR_R                            &=              ~0x01;                                          // direction PE0 input
+SwitchLEDInterface.c(40): error:  #20: identifier "GPIO_PORTE_AFSEL_R" is undefined
+    GPIO_PORTE_AFSEL_R                  &=              ~0x01;                                                  // PE0 regular port function
+SwitchLEDInterface.c(41): error:  #20: identifier "GPIO_PORTE_DEN_R" is undefined
+    GPIO_PORTE_DEN_R                            |=              0x01;                                           // enable PE0 digital port
+SwitchLEDInterface.c(49): error:  #20: identifier "SYSCTL_RCGC2_R" is undefined
+    delay                                                                =                      SYSCTL_RCGC2_R;                 // set delay to RCGC2_R before continuing
+SwitchLEDInterface.c(51): error:  #20: identifier "GPIO_PORTE_PCTL_R" is undefined
+    GPIO_PORTE_PCTL_R           &=                      ~0x000000F0;                            // PE[1]: _ _ _ _  _ _ X _  (7 6 5 4  3 2 [1] 0) INVERT
+SwitchLEDInterface.c(52): error:  #20: identifier "GPIO_PORTE_AMSEL_R" is undefined
+    GPIO_PORTE_AMSEL_R          &=                      ~0x02;                                  // PE[1]: _ _ _ _  _ _ X _      (7 6 5 4  3 2 [1] 0) INVERT
+SwitchLEDInterface.c(53): error:  #20: identifier "GPIO_PORTE_DIR_R" is undefined
+    GPIO_PORTE_DIR_R                    |=                      0x02;                           // PE[1]: _ _ _ _  _ _ X _      (7 6 5 4  3 2 [1] 0)
+SwitchLEDInterface.c(54): error:  #20: identifier "GPIO_PORTE_AFSEL_R" is undefined
+    GPIO_PORTE_AFSEL_R          &=                      ~0x02;                                  // PE[1]: _ _ _ _  _ _ X _      (7 6 5 4  3 2 [1] 0) INVERT
+SwitchLEDInterface.c(55): error:  #20: identifier "GPIO_PORTE_DEN_R" is undefined
+    GPIO_PORTE_DEN_R                    |=                      0x02;                           // PE[1]: _ _ _ _  _ _ X _      (7 6 5 4  3 2 [1] 0)
+SwitchLEDInterface.c: 0 warnings, 12 errors
+".\Lab8.axf" - 12 Error(s), 0 Warning(s).
+Target not created

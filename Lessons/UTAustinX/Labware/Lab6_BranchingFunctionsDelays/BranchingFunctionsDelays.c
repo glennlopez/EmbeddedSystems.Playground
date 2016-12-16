@@ -19,6 +19,10 @@
 #define GPIO_PORTA_PCTL_R       (*((volatile unsigned long *)0x4000452C))			//gpio port control						- offset 0x52C
 #define GPIO_PORTA_LOCK_R				(*((volatile unsigned long *)0x40004520))			//gpio portf lock register 		- offset 0x520
 #define GPIO_PORTA_CR_R					(*((volatile unsigned long *)0x40004524))			//gpio portf comit register		- offset 0x524
+	
+// PortE(APB) base address: 0x4002.4000
+// APB: Advanced Peripheral Bus (has backwards compatability)
+// AHB: Advanced High-performance Bus (is faster)
 
 
 // PortF(APB) base address: 0x4002.5000
