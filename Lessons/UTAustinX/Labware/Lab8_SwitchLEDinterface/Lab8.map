@@ -143,14 +143,18 @@ Section Cross References
 Removing Unused input sections from the image.
 
     Removing switchledinterface.o(i.LED_Init), (112 bytes).
+    Removing switchledinterface.o(i.LED_Off), (24 bytes).
+    Removing switchledinterface.o(i.LED_On), (24 bytes).
     Removing switchledinterface.o(i.Switch_Init), (112 bytes).
+    Removing switchledinterface.o(i.Switch_Input), (12 bytes).
+    Removing switchledinterface.o(i.Switch_Input2), (16 bytes).
     Removing texas.o(i.Decrypt), (92 bytes).
     Removing texas.o(i.PortD2_Init), (108 bytes).
     Removing texas.o(i.SetMode), (24 bytes).
     Removing texas.o(i.TExaS_Stop), (28 bytes).
     Removing texas.o(i.copy), (18 bytes).
 
-7 unused section(s) (total 494 bytes) removed from the image.
+11 unused section(s) (total 570 bytes) removed from the image.
 
 ==============================================================================
 
@@ -277,7 +281,7 @@ Image Symbol Table
     i.Timer5A_Handler                        0x00000880   Section        0  texas.o(i.Timer5A_Handler)
     i.UART_Init                              0x00000e7c   Section        0  texas.o(i.UART_Init)
     i.main                                   0x00000f14   Section        0  switchledinterface.o(i.main)
-    .constdata                               0x00000f28   Section     6596  texas.o(.constdata)
+    .constdata                               0x00000f30   Section     6596  texas.o(.constdata)
     .data                                    0x20000000   Section       56  texas.o(.data)
     RealGrade                                0x20000010   Data           4  texas.o(.data)
     .bss                                     0x20000038   Section      628  texas.o(.bss)
@@ -519,26 +523,26 @@ Image Symbol Table
     Timer4A_Handler                          0x00000861   Thumb Code    20  texas.o(i.Timer4A_Handler)
     Timer5A_Handler                          0x00000881   Thumb Code  1510  texas.o(i.Timer5A_Handler)
     UART_Init                                0x00000e7d   Thumb Code   126  texas.o(i.UART_Init)
-    main                                     0x00000f15   Thumb Code    18  switchledinterface.o(i.main)
-    Port                                     0x00000f28   Data          24  texas.o(.constdata)
-    InputPortMsgA                            0x00000f40   Data          40  texas.o(.constdata)
-    OutputPortMsgA                           0x00000f68   Data          40  texas.o(.constdata)
-    InputPortMsgB                            0x00000f90   Data          40  texas.o(.constdata)
-    OutputPortMsgB                           0x00000fb8   Data          40  texas.o(.constdata)
-    InputPortMsgE                            0x00000fe0   Data          40  texas.o(.constdata)
-    OutputPortMsgE                           0x00001008   Data          40  texas.o(.constdata)
-    BlankMsg                                 0x00001030   Data          40  texas.o(.constdata)
-    InitializedMsg                           0x00001058   Data          40  texas.o(.constdata)
-    IntroMsg                                 0x00001080   Data          40  texas.o(.constdata)
-    DoneMsg                                  0x000010a8   Data          40  texas.o(.constdata)
-    TestMsg                                  0x000010d0   Data          40  texas.o(.constdata)
-    LabTest                                  0x000010f8   Data        5900  texas.o(.constdata)
-    BgTest                                   0x00002804   Data         160  texas.o(.constdata)
-    Key                                      0x000028a4   Data           8  texas.o(.constdata)
-    Scramble                                 0x000028ac   Data          32  texas.o(.constdata)
-    DeScramble                               0x000028cc   Data          32  texas.o(.constdata)
-    Region$$Table$$Base                      0x000028ec   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0000290c   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x00000f15   Thumb Code    24  switchledinterface.o(i.main)
+    Port                                     0x00000f30   Data          24  texas.o(.constdata)
+    InputPortMsgA                            0x00000f48   Data          40  texas.o(.constdata)
+    OutputPortMsgA                           0x00000f70   Data          40  texas.o(.constdata)
+    InputPortMsgB                            0x00000f98   Data          40  texas.o(.constdata)
+    OutputPortMsgB                           0x00000fc0   Data          40  texas.o(.constdata)
+    InputPortMsgE                            0x00000fe8   Data          40  texas.o(.constdata)
+    OutputPortMsgE                           0x00001010   Data          40  texas.o(.constdata)
+    BlankMsg                                 0x00001038   Data          40  texas.o(.constdata)
+    InitializedMsg                           0x00001060   Data          40  texas.o(.constdata)
+    IntroMsg                                 0x00001088   Data          40  texas.o(.constdata)
+    DoneMsg                                  0x000010b0   Data          40  texas.o(.constdata)
+    TestMsg                                  0x000010d8   Data          40  texas.o(.constdata)
+    LabTest                                  0x00001100   Data        5900  texas.o(.constdata)
+    BgTest                                   0x0000280c   Data         160  texas.o(.constdata)
+    Key                                      0x000028ac   Data           8  texas.o(.constdata)
+    Scramble                                 0x000028b4   Data          32  texas.o(.constdata)
+    DeScramble                               0x000028d4   Data          32  texas.o(.constdata)
+    Region$$Table$$Base                      0x000028f4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00002914   Number         0  anon$$obj.o(Region$$Table)
     InPort                                   0x20000000   Data           4  texas.o(.data)
     OutPort                                  0x20000004   Data           4  texas.o(.data)
     BgTestStatus                             0x20000008   Data           1  texas.o(.data)
@@ -567,98 +571,97 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00002944, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x0000294c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000290c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00002914, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
-    0x00000284   0x00000008   Code   RO          159  * !!!main             c_w.l(__main.o)
-    0x0000028c   0x00000034   Code   RO          313    !!!scatter          c_w.l(__scatter.o)
-    0x000002c0   0x0000001a   Code   RO          315    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x00000284   0x00000008   Code   RO          183  * !!!main             c_w.l(__main.o)
+    0x0000028c   0x00000034   Code   RO          337    !!!scatter          c_w.l(__scatter.o)
+    0x000002c0   0x0000001a   Code   RO          339    !!handler_copy      c_w.l(__scatter_copy.o)
     0x000002da   0x00000002   PAD
-    0x000002dc   0x0000001c   Code   RO          317    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x000002f8   0x00000002   Code   RO          186    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x000002fa   0x00000000   Code   RO          193    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          196    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          198    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          200    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          203    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          205    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          207    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          209    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          211    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          213    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          215    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          217    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          219    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          221    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          223    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          227    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          229    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          231    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          233    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x000002fa   0x00000002   Code   RO          234    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
-    0x000002fc   0x00000002   Code   RO          254    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x000002fe   0x00000000   Code   RO          268    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          271    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          274    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          276    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          279    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000002   Code   RO          280    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x00000300   0x00000000   Code   RO          161    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
-    0x00000300   0x00000000   Code   RO          163    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
-    0x00000300   0x00000006   Code   RO          175    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
-    0x00000306   0x00000000   Code   RO          165    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
-    0x00000306   0x00000004   Code   RO          166    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
-    0x0000030a   0x00000000   Code   RO          168    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
-    0x0000030a   0x00000008   Code   RO          169    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
-    0x00000312   0x00000002   Code   RO          190    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x00000314   0x00000000   Code   RO          236    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x00000314   0x00000004   Code   RO          237    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x00000318   0x00000006   Code   RO          238    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x000002dc   0x0000001c   Code   RO          341    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002f8   0x00000002   Code   RO          210    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002fa   0x00000000   Code   RO          217    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          220    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          222    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          224    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          227    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          229    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          231    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          233    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          235    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          237    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          239    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          241    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          243    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          245    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          247    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          251    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          253    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          255    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          257    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000002fa   0x00000002   Code   RO          258    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x000002fc   0x00000002   Code   RO          278    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000002fe   0x00000000   Code   RO          292    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          295    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          298    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          300    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          303    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000002   Code   RO          304    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x00000300   0x00000000   Code   RO          185    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
+    0x00000300   0x00000000   Code   RO          187    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
+    0x00000300   0x00000006   Code   RO          199    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
+    0x00000306   0x00000000   Code   RO          189    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
+    0x00000306   0x00000004   Code   RO          190    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
+    0x0000030a   0x00000000   Code   RO          192    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
+    0x0000030a   0x00000008   Code   RO          193    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
+    0x00000312   0x00000002   Code   RO          214    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x00000314   0x00000000   Code   RO          260    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x00000314   0x00000004   Code   RO          261    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000318   0x00000006   Code   RO          262    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x0000031e   0x00000002   PAD
     0x00000320   0x00000030   Code   RO            4    .text               startup.o
-    0x00000350   0x00000006   Code   RO          157    .text               c_w.l(heapauxi.o)
-    0x00000356   0x0000004a   Code   RO          177    .text               c_w.l(sys_stackheap_outer.o)
-    0x000003a0   0x0000000c   Code   RO          179    .text               c_w.l(exit.o)
-    0x000003ac   0x00000008   Code   RO          187    .text               c_w.l(libspace.o)
-    0x000003b4   0x0000000c   Code   RO          246    .text               c_w.l(sys_exit.o)
-    0x000003c0   0x00000002   Code   RO          257    .text               c_w.l(use_no_semi.o)
-    0x000003c2   0x00000000   Code   RO          259    .text               c_w.l(indicate_semi.o)
+    0x00000350   0x00000006   Code   RO          181    .text               c_w.l(heapauxi.o)
+    0x00000356   0x0000004a   Code   RO          201    .text               c_w.l(sys_stackheap_outer.o)
+    0x000003a0   0x0000000c   Code   RO          203    .text               c_w.l(exit.o)
+    0x000003ac   0x00000008   Code   RO          211    .text               c_w.l(libspace.o)
+    0x000003b4   0x0000000c   Code   RO          270    .text               c_w.l(sys_exit.o)
+    0x000003c0   0x00000002   Code   RO          281    .text               c_w.l(use_no_semi.o)
+    0x000003c2   0x00000000   Code   RO          283    .text               c_w.l(indicate_semi.o)
     0x000003c2   0x00000002   PAD
-    0x000003c4   0x0000000c   Code   RO           41    i.ADC1_In           texas.o
-    0x000003d0   0x000000d0   Code   RO           42    i.ADC1_Init         texas.o
-    0x000004a0   0x0000006c   Code   RO           44    i.Encrypt           texas.o
-    0x0000050c   0x0000007c   Code   RO           45    i.PLL_Init          texas.o
-    0x00000588   0x00000018   Code   RO           47    i.SetCode           texas.o
-    0x000005a0   0x00000018   Code   RO           48    i.SetCourse         texas.o
-    0x000005b8   0x000000cc   Code   RO           49    i.SetGrade          texas.o
-    0x00000684   0x0000017c   Code   RO           51    i.TExaS_Init        texas.o
-    0x00000800   0x00000060   Code   RO           52    i.TExaS_Scope       texas.o
-    0x00000860   0x00000020   Code   RO           54    i.Timer4A_Handler   texas.o
-    0x00000880   0x000005fc   Code   RO           55    i.Timer5A_Handler   texas.o
-    0x00000e7c   0x00000098   Code   RO           56    i.UART_Init         texas.o
-    0x00000f14   0x00000012   Code   RO           14    i.main              switchledinterface.o
-    0x00000f26   0x00000002   PAD
-    0x00000f28   0x000019c4   Data   RO           59    .constdata          texas.o
-    0x000028ec   0x00000020   Data   RO          311    Region$$Table       anon$$obj.o
+    0x000003c4   0x0000000c   Code   RO           65    i.ADC1_In           texas.o
+    0x000003d0   0x000000d0   Code   RO           66    i.ADC1_Init         texas.o
+    0x000004a0   0x0000006c   Code   RO           68    i.Encrypt           texas.o
+    0x0000050c   0x0000007c   Code   RO           69    i.PLL_Init          texas.o
+    0x00000588   0x00000018   Code   RO           71    i.SetCode           texas.o
+    0x000005a0   0x00000018   Code   RO           72    i.SetCourse         texas.o
+    0x000005b8   0x000000cc   Code   RO           73    i.SetGrade          texas.o
+    0x00000684   0x0000017c   Code   RO           75    i.TExaS_Init        texas.o
+    0x00000800   0x00000060   Code   RO           76    i.TExaS_Scope       texas.o
+    0x00000860   0x00000020   Code   RO           78    i.Timer4A_Handler   texas.o
+    0x00000880   0x000005fc   Code   RO           79    i.Timer5A_Handler   texas.o
+    0x00000e7c   0x00000098   Code   RO           80    i.UART_Init         texas.o
+    0x00000f14   0x0000001c   Code   RO           18    i.main              switchledinterface.o
+    0x00000f30   0x000019c4   Data   RO           83    .constdata          texas.o
+    0x000028f4   0x00000020   Data   RO          335    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000038   Data   RW           60    .data               texas.o
+    0x20000000   0x00000038   Data   RW           84    .data               texas.o
 
 
     Execution Region ER_ZI (Base: 0x20000038, Size: 0x000006d8, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000038   0x00000274   Zero   RW           58    .bss                texas.o
-    0x200002ac   0x00000060   Zero   RW          188    .bss                c_w.l(libspace.o)
+    0x20000038   0x00000274   Zero   RW           82    .bss                texas.o
+    0x200002ac   0x00000060   Zero   RW          212    .bss                c_w.l(libspace.o)
     0x2000030c   0x00000004   PAD
     0x20000310   0x00000000   Zero   RW            2    HEAP                startup.o
     0x20000310   0x00000400   Zero   RW            1    STACK               startup.o
@@ -672,13 +675,13 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        692        632          0          0       1024        988   startup.o
-        18          0          0          0          0       1879   switchledinterface.o
+        28          4          0          0          0       1887   switchledinterface.o
       2896        354       6596         56        628      19138   texas.o
 
     ----------------------------------------------------------------------
-      3608        986       6628         56       1652      22005   Object Totals
+      3616        990       6628         56       1652      22013   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         2          0          0          0          0          0   (incl. Padding)
+         0          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -725,15 +728,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3880       1002       6628         56       1752      21749   Grand Totals
-      3880       1002       6628         56       1752      21749   ELF Image Totals
-      3880       1002       6628         56          0          0   ROM Totals
+      3888       1006       6628         56       1752      21757   Grand Totals
+      3888       1006       6628         56       1752      21757   ELF Image Totals
+      3888       1006       6628         56          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                10508 (  10.26kB)
+    Total RO  Size (Code + RO Data)                10516 (  10.27kB)
     Total RW  Size (RW Data + ZI Data)              1808 (   1.77kB)
-    Total ROM Size (Code + RO Data + RW Data)      10564 (  10.32kB)
+    Total ROM Size (Code + RO Data + RW Data)      10572 (  10.32kB)
 
 ==============================================================================
 
