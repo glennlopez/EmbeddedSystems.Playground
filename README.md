@@ -6,7 +6,7 @@ I grew tired of the simplicity offered by Arduino and needed something more chal
 
 This repo contains all my trials and tribulations with my progress in learning how to properly use C++'s OOP abstraction with C in embedded systems.
 
-><b>Prospective employers:</b> If you'd like to see my progress with C++ you may visit https://github.com/glennlopez/Cpp.Playground. Do note that learning C++ required coding C++ as if it were C (non-OOP). As such, you'll find that most of the code I wrote in C++ did not include OOP features.
+><b>Prospective employers:</b>My progress with C++ is at https://github.com/glennlopez/Cpp.Playground. 
 
 ### Learning/Referance material
 * https://zybooks.zyante.com/#/zybook/ProgrammingEmbeddedSystemsR10/dashboard
