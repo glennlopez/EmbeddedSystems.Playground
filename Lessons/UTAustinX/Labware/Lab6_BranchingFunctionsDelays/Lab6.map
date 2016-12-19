@@ -18,7 +18,7 @@ Section Cross References
     branchingfunctionsdelays.o(i.main) refers to branchingfunctionsdelays.o(i.initPortF) for initPortF
     branchingfunctionsdelays.o(i.main) refers to branchingfunctionsdelays.o(i.initPortA) for initPortA
     branchingfunctionsdelays.o(i.main) refers to branchingfunctionsdelays.o(i.initPortE) for initPortE
-    branchingfunctionsdelays.o(i.main) refers to branchingfunctionsdelays.o(i.delay) for delay
+    branchingfunctionsdelays.o(i.main) refers to branchingfunctionsdelays.o(i.Delay1ms) for Delay1ms
     texas.o(i.Decrypt) refers to texas.o(.bss) for EncriptedMagicCode
     texas.o(i.Decrypt) refers to texas.o(.constdata) for DeScramble
     texas.o(i.Encrypt) refers to texas.o(i.SetCode) for SetCode
@@ -143,13 +143,14 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
+    Removing branchingfunctionsdelays.o(i.delay), (16 bytes).
     Removing texas.o(i.Decrypt), (92 bytes).
     Removing texas.o(i.PortD2_Init), (108 bytes).
     Removing texas.o(i.SetMode), (24 bytes).
     Removing texas.o(i.TExaS_Stop), (28 bytes).
     Removing texas.o(i.copy), (18 bytes).
 
-5 unused section(s) (total 270 bytes) removed from the image.
+6 unused section(s) (total 286 bytes) removed from the image.
 
 ==============================================================================
 
@@ -265,19 +266,19 @@ Image Symbol Table
     .text                                    0x000003c2   Section        0  indicate_semi.o(.text)
     i.ADC1_In                                0x000003c4   Section        0  texas.o(i.ADC1_In)
     i.ADC1_Init                              0x000003d0   Section        0  texas.o(i.ADC1_Init)
-    i.Encrypt                                0x000004a0   Section        0  texas.o(i.Encrypt)
-    i.PLL_Init                               0x0000050c   Section        0  texas.o(i.PLL_Init)
-    i.SetCode                                0x00000588   Section        0  texas.o(i.SetCode)
-    i.SetCourse                              0x000005a0   Section        0  texas.o(i.SetCourse)
-    i.SetGrade                               0x000005b8   Section        0  texas.o(i.SetGrade)
-    i.TExaS_Init                             0x00000684   Section        0  texas.o(i.TExaS_Init)
-    i.Timer5A_Handler                        0x000007ac   Section        0  texas.o(i.Timer5A_Handler)
-    i.delay                                  0x00000da8   Section        0  branchingfunctionsdelays.o(i.delay)
-    i.initPortA                              0x00000db8   Section        0  branchingfunctionsdelays.o(i.initPortA)
-    i.initPortE                              0x00000e34   Section        0  branchingfunctionsdelays.o(i.initPortE)
-    i.initPortF                              0x00000ebc   Section        0  branchingfunctionsdelays.o(i.initPortF)
-    i.main                                   0x00000f38   Section        0  branchingfunctionsdelays.o(i.main)
-    .constdata                               0x00000f9c   Section     5964  texas.o(.constdata)
+    i.Delay1ms                               0x000004a0   Section        0  branchingfunctionsdelays.o(i.Delay1ms)
+    i.Encrypt                                0x000004b8   Section        0  texas.o(i.Encrypt)
+    i.PLL_Init                               0x00000524   Section        0  texas.o(i.PLL_Init)
+    i.SetCode                                0x000005a0   Section        0  texas.o(i.SetCode)
+    i.SetCourse                              0x000005b8   Section        0  texas.o(i.SetCourse)
+    i.SetGrade                               0x000005d0   Section        0  texas.o(i.SetGrade)
+    i.TExaS_Init                             0x0000069c   Section        0  texas.o(i.TExaS_Init)
+    i.Timer5A_Handler                        0x000007c4   Section        0  texas.o(i.Timer5A_Handler)
+    i.initPortA                              0x00000dc0   Section        0  branchingfunctionsdelays.o(i.initPortA)
+    i.initPortE                              0x00000e3c   Section        0  branchingfunctionsdelays.o(i.initPortE)
+    i.initPortF                              0x00000ec4   Section        0  branchingfunctionsdelays.o(i.initPortF)
+    i.main                                   0x00000f40   Section        0  branchingfunctionsdelays.o(i.main)
+    .constdata                               0x00000fa8   Section     5964  texas.o(.constdata)
     .data                                    0x20000000   Section       56  texas.o(.data)
     RealGrade                                0x20000010   Data           4  texas.o(.data)
     .bss                                     0x20000038   Section      628  texas.o(.bss)
@@ -510,33 +511,33 @@ Image Symbol Table
     __semihosting_library_function           0x000003c3   Thumb Code     0  indicate_semi.o(.text)
     ADC1_In                                  0x000003c5   Thumb Code     6  texas.o(i.ADC1_In)
     ADC1_Init                                0x000003d1   Thumb Code   168  texas.o(i.ADC1_Init)
-    Encrypt                                  0x000004a1   Thumb Code    92  texas.o(i.Encrypt)
-    PLL_Init                                 0x0000050d   Thumb Code   118  texas.o(i.PLL_Init)
-    SetCode                                  0x00000589   Thumb Code    20  texas.o(i.SetCode)
-    SetCourse                                0x000005a1   Thumb Code    20  texas.o(i.SetCourse)
-    SetGrade                                 0x000005b9   Thumb Code   196  texas.o(i.SetGrade)
-    TExaS_Init                               0x00000685   Thumb Code   188  texas.o(i.TExaS_Init)
-    Timer5A_Handler                          0x000007ad   Thumb Code  1510  texas.o(i.Timer5A_Handler)
-    delay                                    0x00000da9   Thumb Code    12  branchingfunctionsdelays.o(i.delay)
-    initPortA                                0x00000db9   Thumb Code    92  branchingfunctionsdelays.o(i.initPortA)
-    initPortE                                0x00000e35   Thumb Code   102  branchingfunctionsdelays.o(i.initPortE)
-    initPortF                                0x00000ebd   Thumb Code    92  branchingfunctionsdelays.o(i.initPortF)
-    main                                     0x00000f39   Thumb Code    92  branchingfunctionsdelays.o(i.main)
-    Port                                     0x00000f9c   Data          24  texas.o(.constdata)
-    InputPortMsg                             0x00000fb4   Data          40  texas.o(.constdata)
-    OutputPortMsg                            0x00000fdc   Data          40  texas.o(.constdata)
-    BlankMsg                                 0x00001004   Data          40  texas.o(.constdata)
-    InitializedMsg                           0x0000102c   Data          40  texas.o(.constdata)
-    IntroMsg                                 0x00001054   Data          40  texas.o(.constdata)
-    DoneMsg                                  0x0000107c   Data          40  texas.o(.constdata)
-    TestMsg                                  0x000010a4   Data          40  texas.o(.constdata)
-    LabTest                                  0x000010cc   Data        5428  texas.o(.constdata)
-    BgTest                                   0x00002600   Data         160  texas.o(.constdata)
-    Key                                      0x000026a0   Data           8  texas.o(.constdata)
-    Scramble                                 0x000026a8   Data          32  texas.o(.constdata)
-    DeScramble                               0x000026c8   Data          32  texas.o(.constdata)
-    Region$$Table$$Base                      0x000026e8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00002708   Number         0  anon$$obj.o(Region$$Table)
+    Delay1ms                                 0x000004a1   Thumb Code    24  branchingfunctionsdelays.o(i.Delay1ms)
+    Encrypt                                  0x000004b9   Thumb Code    92  texas.o(i.Encrypt)
+    PLL_Init                                 0x00000525   Thumb Code   118  texas.o(i.PLL_Init)
+    SetCode                                  0x000005a1   Thumb Code    20  texas.o(i.SetCode)
+    SetCourse                                0x000005b9   Thumb Code    20  texas.o(i.SetCourse)
+    SetGrade                                 0x000005d1   Thumb Code   196  texas.o(i.SetGrade)
+    TExaS_Init                               0x0000069d   Thumb Code   188  texas.o(i.TExaS_Init)
+    Timer5A_Handler                          0x000007c5   Thumb Code  1510  texas.o(i.Timer5A_Handler)
+    initPortA                                0x00000dc1   Thumb Code    92  branchingfunctionsdelays.o(i.initPortA)
+    initPortE                                0x00000e3d   Thumb Code   102  branchingfunctionsdelays.o(i.initPortE)
+    initPortF                                0x00000ec5   Thumb Code    92  branchingfunctionsdelays.o(i.initPortF)
+    main                                     0x00000f41   Thumb Code    98  branchingfunctionsdelays.o(i.main)
+    Port                                     0x00000fa8   Data          24  texas.o(.constdata)
+    InputPortMsg                             0x00000fc0   Data          40  texas.o(.constdata)
+    OutputPortMsg                            0x00000fe8   Data          40  texas.o(.constdata)
+    BlankMsg                                 0x00001010   Data          40  texas.o(.constdata)
+    InitializedMsg                           0x00001038   Data          40  texas.o(.constdata)
+    IntroMsg                                 0x00001060   Data          40  texas.o(.constdata)
+    DoneMsg                                  0x00001088   Data          40  texas.o(.constdata)
+    TestMsg                                  0x000010b0   Data          40  texas.o(.constdata)
+    LabTest                                  0x000010d8   Data        5428  texas.o(.constdata)
+    BgTest                                   0x0000260c   Data         160  texas.o(.constdata)
+    Key                                      0x000026ac   Data           8  texas.o(.constdata)
+    Scramble                                 0x000026b4   Data          32  texas.o(.constdata)
+    DeScramble                               0x000026d4   Data          32  texas.o(.constdata)
+    Region$$Table$$Base                      0x000026f4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00002714   Number         0  anon$$obj.o(Region$$Table)
     InPort                                   0x20000000   Data           4  texas.o(.data)
     OutPort                                  0x20000004   Data           4  texas.o(.data)
     BgTestStatus                             0x20000008   Data           1  texas.o(.data)
@@ -565,98 +566,98 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00002740, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x0000274c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00002708, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00002714, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
-    0x00000284   0x00000008   Code   RO          150  * !!!main             c_w.l(__main.o)
-    0x0000028c   0x00000034   Code   RO          304    !!!scatter          c_w.l(__scatter.o)
-    0x000002c0   0x0000001a   Code   RO          306    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x00000284   0x00000008   Code   RO          156  * !!!main             c_w.l(__main.o)
+    0x0000028c   0x00000034   Code   RO          310    !!!scatter          c_w.l(__scatter.o)
+    0x000002c0   0x0000001a   Code   RO          312    !!handler_copy      c_w.l(__scatter_copy.o)
     0x000002da   0x00000002   PAD
-    0x000002dc   0x0000001c   Code   RO          308    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x000002f8   0x00000002   Code   RO          177    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x000002fa   0x00000000   Code   RO          184    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          187    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          189    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          191    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          194    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          196    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          198    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          200    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          202    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          204    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          206    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          208    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          210    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          212    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          214    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          218    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          220    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          222    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          224    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x000002fa   0x00000002   Code   RO          225    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
-    0x000002fc   0x00000002   Code   RO          245    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x000002fe   0x00000000   Code   RO          259    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          262    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          265    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          267    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          270    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000002   Code   RO          271    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x00000300   0x00000000   Code   RO          152    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
-    0x00000300   0x00000000   Code   RO          154    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
-    0x00000300   0x00000006   Code   RO          166    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
-    0x00000306   0x00000000   Code   RO          156    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
-    0x00000306   0x00000004   Code   RO          157    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
-    0x0000030a   0x00000000   Code   RO          159    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
-    0x0000030a   0x00000008   Code   RO          160    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
-    0x00000312   0x00000002   Code   RO          181    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x00000314   0x00000000   Code   RO          227    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x00000314   0x00000004   Code   RO          228    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x00000318   0x00000006   Code   RO          229    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x000002dc   0x0000001c   Code   RO          314    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002f8   0x00000002   Code   RO          183    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002fa   0x00000000   Code   RO          190    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          193    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          195    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          197    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          200    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          202    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          204    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          206    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          208    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          210    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          212    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          214    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          216    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          218    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          220    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          224    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          226    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          228    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          230    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000002fa   0x00000002   Code   RO          231    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x000002fc   0x00000002   Code   RO          251    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000002fe   0x00000000   Code   RO          265    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          268    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          271    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          273    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          276    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000002   Code   RO          277    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x00000300   0x00000000   Code   RO          158    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
+    0x00000300   0x00000000   Code   RO          160    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
+    0x00000300   0x00000006   Code   RO          172    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
+    0x00000306   0x00000000   Code   RO          162    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
+    0x00000306   0x00000004   Code   RO          163    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
+    0x0000030a   0x00000000   Code   RO          165    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
+    0x0000030a   0x00000008   Code   RO          166    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
+    0x00000312   0x00000002   Code   RO          187    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x00000314   0x00000000   Code   RO          233    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x00000314   0x00000004   Code   RO          234    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000318   0x00000006   Code   RO          235    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x0000031e   0x00000002   PAD
     0x00000320   0x00000030   Code   RO            4    .text               startup.o
-    0x00000350   0x00000006   Code   RO          148    .text               c_w.l(heapauxi.o)
-    0x00000356   0x0000004a   Code   RO          168    .text               c_w.l(sys_stackheap_outer.o)
-    0x000003a0   0x0000000c   Code   RO          170    .text               c_w.l(exit.o)
-    0x000003ac   0x00000008   Code   RO          178    .text               c_w.l(libspace.o)
-    0x000003b4   0x0000000c   Code   RO          237    .text               c_w.l(sys_exit.o)
-    0x000003c0   0x00000002   Code   RO          248    .text               c_w.l(use_no_semi.o)
-    0x000003c2   0x00000000   Code   RO          250    .text               c_w.l(indicate_semi.o)
+    0x00000350   0x00000006   Code   RO          154    .text               c_w.l(heapauxi.o)
+    0x00000356   0x0000004a   Code   RO          174    .text               c_w.l(sys_stackheap_outer.o)
+    0x000003a0   0x0000000c   Code   RO          176    .text               c_w.l(exit.o)
+    0x000003ac   0x00000008   Code   RO          184    .text               c_w.l(libspace.o)
+    0x000003b4   0x0000000c   Code   RO          243    .text               c_w.l(sys_exit.o)
+    0x000003c0   0x00000002   Code   RO          254    .text               c_w.l(use_no_semi.o)
+    0x000003c2   0x00000000   Code   RO          256    .text               c_w.l(indicate_semi.o)
     0x000003c2   0x00000002   PAD
-    0x000003c4   0x0000000c   Code   RO           50    i.ADC1_In           texas.o
-    0x000003d0   0x000000d0   Code   RO           51    i.ADC1_Init         texas.o
-    0x000004a0   0x0000006c   Code   RO           53    i.Encrypt           texas.o
-    0x0000050c   0x0000007c   Code   RO           54    i.PLL_Init          texas.o
-    0x00000588   0x00000018   Code   RO           56    i.SetCode           texas.o
-    0x000005a0   0x00000018   Code   RO           57    i.SetCourse         texas.o
-    0x000005b8   0x000000cc   Code   RO           58    i.SetGrade          texas.o
-    0x00000684   0x00000128   Code   RO           60    i.TExaS_Init        texas.o
-    0x000007ac   0x000005fc   Code   RO           62    i.Timer5A_Handler   texas.o
-    0x00000da8   0x00000010   Code   RO           12    i.delay             branchingfunctionsdelays.o
-    0x00000db8   0x0000007c   Code   RO           13    i.initPortA         branchingfunctionsdelays.o
-    0x00000e34   0x00000088   Code   RO           14    i.initPortE         branchingfunctionsdelays.o
-    0x00000ebc   0x0000007c   Code   RO           15    i.initPortF         branchingfunctionsdelays.o
-    0x00000f38   0x00000064   Code   RO           16    i.main              branchingfunctionsdelays.o
-    0x00000f9c   0x0000174c   Data   RO           65    .constdata          texas.o
-    0x000026e8   0x00000020   Data   RO          302    Region$$Table       anon$$obj.o
+    0x000003c4   0x0000000c   Code   RO           56    i.ADC1_In           texas.o
+    0x000003d0   0x000000d0   Code   RO           57    i.ADC1_Init         texas.o
+    0x000004a0   0x00000018   Code   RO           12    i.Delay1ms          branchingfunctionsdelays.o
+    0x000004b8   0x0000006c   Code   RO           59    i.Encrypt           texas.o
+    0x00000524   0x0000007c   Code   RO           60    i.PLL_Init          texas.o
+    0x000005a0   0x00000018   Code   RO           62    i.SetCode           texas.o
+    0x000005b8   0x00000018   Code   RO           63    i.SetCourse         texas.o
+    0x000005d0   0x000000cc   Code   RO           64    i.SetGrade          texas.o
+    0x0000069c   0x00000128   Code   RO           66    i.TExaS_Init        texas.o
+    0x000007c4   0x000005fc   Code   RO           68    i.Timer5A_Handler   texas.o
+    0x00000dc0   0x0000007c   Code   RO           14    i.initPortA         branchingfunctionsdelays.o
+    0x00000e3c   0x00000088   Code   RO           15    i.initPortE         branchingfunctionsdelays.o
+    0x00000ec4   0x0000007c   Code   RO           16    i.initPortF         branchingfunctionsdelays.o
+    0x00000f40   0x00000068   Code   RO           17    i.main              branchingfunctionsdelays.o
+    0x00000fa8   0x0000174c   Data   RO           71    .constdata          texas.o
+    0x000026f4   0x00000020   Data   RO          308    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000038   Data   RW           66    .data               texas.o
+    0x20000000   0x00000038   Data   RW           72    .data               texas.o
 
 
     Execution Region ER_ZI (Base: 0x20000038, Size: 0x000006d8, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000038   0x00000274   Zero   RW           64    .bss                texas.o
-    0x200002ac   0x00000060   Zero   RW          179    .bss                c_w.l(libspace.o)
+    0x20000038   0x00000274   Zero   RW           70    .bss                texas.o
+    0x200002ac   0x00000060   Zero   RW          185    .bss                c_w.l(libspace.o)
     0x2000030c   0x00000004   PAD
     0x20000310   0x00000000   Zero   RW            2    HEAP                startup.o
     0x20000310   0x00000400   Zero   RW            1    STACK               startup.o
@@ -669,12 +670,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       500        110          0          0          0       4083   branchingfunctionsdelays.o
+       512        104          0          0          0       4214   branchingfunctionsdelays.o
        692        632          0          0       1024        980   startup.o
       2532        282       5964         56        628      15170   texas.o
 
     ----------------------------------------------------------------------
-      3724       1024       5996         56       1652      20233   Object Totals
+      3736       1018       5996         56       1652      20364   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -723,15 +724,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3996       1040       5996         56       1752      19925   Grand Totals
-      3996       1040       5996         56       1752      19925   ELF Image Totals
-      3996       1040       5996         56          0          0   ROM Totals
+      4008       1034       5996         56       1752      20108   Grand Totals
+      4008       1034       5996         56       1752      20108   ELF Image Totals
+      4008       1034       5996         56          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9992 (   9.76kB)
+    Total RO  Size (Code + RO Data)                10004 (   9.77kB)
     Total RW  Size (RW Data + ZI Data)              1808 (   1.77kB)
-    Total ROM Size (Code + RO Data + RW Data)      10048 (   9.81kB)
+    Total ROM Size (Code + RO Data + RW Data)      10060 (   9.82kB)
 
 ==============================================================================
 

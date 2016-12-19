@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Lab6.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Lab6.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Dec 16 04:04:07 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Mon Dec 19 00:51:47 2016
 <BR><P>
 <H3>Maximum Stack Usage =         64 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -775,6 +775,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
+<P><STRONG><a name="[9f]"></a>Delay1ms</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, branchingfunctionsdelays.o(i.Delay1ms))
+<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
 <P><STRONG><a name="[93]"></a>Encrypt</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, texas.o(i.Encrypt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Encrypt
 </UL>
@@ -823,10 +827,6 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
 </UL>
-<P><STRONG><a name="[9f]"></a>delay</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, branchingfunctionsdelays.o(i.delay))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
 <P><STRONG><a name="[9d]"></a>initPortA</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, branchingfunctionsdelays.o(i.initPortA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = initPortA
 </UL>
@@ -845,7 +845,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, branchingfunctionsdelays.o(i.main))
+<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, branchingfunctionsdelays.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20 + Unknown Stack Size
 <LI>Call Chain = main &rArr; TExaS_Init &rArr; ADC1_Init
 </UL>
@@ -853,7 +853,7 @@ Global Symbols
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPortF
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPortE
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPortA
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay1ms
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableInterrupts
 </UL>
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
