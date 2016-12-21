@@ -1,6 +1,6 @@
 <!-- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
 
-PSoC Playground
+PSoC
 =================
 This is where I keep all the fun things I do with PSoC. Anything from testing out sensors, shields, and algorythms to learning how sertain modules interact with eachother. 
 

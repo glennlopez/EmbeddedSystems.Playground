@@ -1,0 +1,212 @@
+
+<!-- saved from url=(0057)http://www.alhekma4u.com/Products/Motors/PM4222/index.htm -->
+<html dir="rtl"><script>(function main() {
+
+var w = window;
+
+if (!w.alert.is_nice) {
+
+	w.alert = function alert(msg) {
+
+		if (typeof GM_addStyle == 'undefined') {
+			function GM_addStyle(css) {
+				var head = document.head || document.getElementsByTagName('head')[0];
+				if (head) {
+					var style = document.createElement("style");
+					style.type = "text/css";
+					style.appendChild(document.createTextNode(css));
+					head.appendChild(style);
+				}
+			}
+		}
+
+		GM_addStyle("#nice_alert {\
+	font: 14px/16px sans-serif !important;\
+	position: fixed !important;\
+	top: 0 !important;\
+	right: 0 !important;\
+	margin: 0 !important;\
+	padding: 0 !important;\
+	list-style-type: none !important;\
+	float: left !important;\
+	cursor: pointer !important;\
+	text-align: left !important;\
+	z-index: 9999 !important;\
+}\
+#nice_alert ALERTBOX {\
+	background-color: InfoBackground !important;\
+	color: InfoText !important;\
+	border-bottom: 1px solid rgba(0,0,0,0.3) !important;\
+	margin: 0 !important;\
+	float: right !important;\
+	clear: both !important;\
+	overflow: hidden !important;\
+	font-size: 14px !important;\
+	white-space: pre-wrap !important;\
+	outline: 0 !important;\
+	-webkit-box-shadow: 0px 2px 8px rgba(0,0,0,0.2);\
+	-moz-box-shadow: 0px 2px 8px rgba(0,0,0,0.3);\
+	box-shadow: 0px 2px 8px rgba(0,0,0,0.3);\
+}");
+
+		var nice_alert = document.getElementById('nice_alert') || document.createElement('ALERTGROUP');
+		nice_alert.id = 'nice_alert';
+		document.documentElement.appendChild(nice_alert);
+		nice_alert.addEventListener('click',function(e){
+			var t = e.target;
+			if (t.tagName == 'ALERTBOX') {
+				var h = t.clientHeight - 18;
+				t.style.height = h +'px';
+				var i = 9;
+				var closing = setInterval(function(){
+					i--;
+					t.style.opacity = i/10;
+					t.style.paddingTop = parseInt(t.style.paddingTop) - 1 +'px';
+					t.style.paddingBottom = parseInt(t.style.paddingBottom) - 1 +'px';
+					var currentHeight = parseInt(t.style.height) - h/10;
+					t.style.height = (currentHeight < 0 ? 0 : currentHeight) +'px';
+					if (i < 1) {
+						t.style.display = 'none';
+						clearInterval(closing);
+					}
+				}, 30);
+			}
+		}, false);
+
+		var cache = document.createElement('ALERTBOX');
+		cache.style.padding = '0px 16px';
+		cache.style.opacity = 0;
+		cache.tabIndex = 0;
+
+		(w.alert = function alert (msg) {
+			w.alert.is_nice = 'Of course it is!';
+			var box = cache.cloneNode(false);
+			box.appendChild(document.createTextNode(msg));
+			nice_alert.appendChild(box);
+			var i = 1;
+			var showing = setInterval(function(){
+				box.style.opacity = i/10;
+				i++;
+				box.style.paddingTop = parseInt(box.style.paddingTop) + 1 +'px';
+				box.style.paddingBottom = parseInt(box.style.paddingBottom) + 1 +'px';
+				if (i > 9) {
+					clearInterval(showing);
+				}
+			}, 30);
+		})(msg);
+	
+	};
+	
+}
+
+
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>Alhekma&nbsp; For Electronic Services&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+info</title>
+<style>
+<!--
+.font9
+	{color:#003300;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+.font10
+	{color:#003300;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+-->
+</style>
+<style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style type="text/css"></style><script type="text/javascript">function a() {	 document.addEventListener('keydown', function(e){		/*console.log('keydown');*/		var keys = [];		if(e.ctrlKey || e.shiftKey || e.altKey || e.metaKey) {			if(e.metaKey) {				keys.push('Cmd');			}			if(e.shiftKey) {				keys.push('Shift');			}			if(e.ctrlKey)			{				keys.push('Ctrl');			}			if(e.altKey) {				keys.push('Alt');			}		}		if(e.which)		{			/*console.log(e.which);*/			keys.push(String.fromCharCode(e.which));		}		/*console.log(keys.join('+'));*/		if(keys.length >= 2 && keys[keys.length-1] != '') {			window.postMessage({type: 'dolphin_shortcuts', keys:keys}, '*');		}	 });}a();</script><script type="text/javascript"> window.oncontextmenu = function(event) {    var target = event.target.getAttribute('obj_url');	 window.postMessage({type: 'dolphin_clickTarget', target:target}, '*'); };</script><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><style id="wrc-middle-css" type="text/css">.wrc_whole_window{	display: none;	position: fixed; 	z-index: 2147483647;	background-color: rgba(40, 40, 40, 0.9);	word-spacing: normal !important;	margin: 0px !important;	padding: 0px !important;	border: 0px !important;	left: 0px;	top: 0px;	width: 100%;	height: 100%;	line-height: normal !important;	letter-spacing: normal !important;	overflow: hidden;}.wrc_bar_window{	display: none;	position: fixed; 	z-index: 2147483647;	background-color: rgba(60, 60, 60, 1.0);	word-spacing: normal !important;	font-family: Segoe UI, Arial Unicode MS, Arial, Sans-Serif;	margin: 0px !important;	padding: 0px !important;	border: 0px !important;	left: 0px;	top: 0px;	width: 100%;	height: 40px;	line-height: normal !important;	letter-spacing: normal !important;	color: white !important;	font-size: 13px !important;}.wrc_middle {	display: table-cell;	vertical-align: middle;	width: 100%;}.wrc_middle_main {	font-family: Segoe UI, Arial Unicode MS, Arial, Sans-Serif;	font-size: 14px;	width: 600px;	height: auto;    background: url(chrome-extension://icmlaeflemplmjndnaapfdbbnpncnbda/skin/images/background-body.jpg) repeat-x left top;	background-color: rgb(39, 53, 62);	position: relative;	margin-left: auto;	margin-right: auto;	text-align: left;}.wrc_middle_tq_main {	font-family: Segoe UI, Arial Unicode MS, Arial, Sans-Serif;	font-size: 16px;	width: 615px;	height: 460px;    background: url(chrome-extension://icmlaeflemplmjndnaapfdbbnpncnbda/skin/images/background-sitecorrect.png) no-repeat;	background-color: white;	color: black !important;	position: relative;	margin-left: auto;	margin-right: auto;	text-align: center;}.wrc_middle_logo {    background: url(chrome-extension://icmlaeflemplmjndnaapfdbbnpncnbda/skin/images/logo.jpg) no-repeat left bottom;    width: 140px;    height: 42px;    color: orange;    display: table-cell;    text-align: right;    vertical-align: middle;}.wrc_icon_warning {	margin: 20px 10px 20px 15px;	float: left;	background-color: transparent;}.wrc_middle_title {    color: #b6bec7;	height: auto;    margin: 0px auto;	font-size: 2.2em;	white-space: nowrap;	text-align: center;}.wrc_middle_hline {    height: 2px;	width: 100%;    display: block;}.wrc_middle_description {	text-align: center;	margin: 15px;	font-size: 1.4em;	padding: 20px;	height: auto;	color: white;	min-height: 3.5em;}.wrc_middle_actions_main_div {	margin-bottom: 15px;	text-align: center;}.wrc_middle_actions_blue_button div {	display: inline-block;	width: auto;	cursor: Pointer;	margin: 3px 10px 3px 10px;	color: white;	font-size: 1.2em;	font-weight: bold;}.wrc_middle_actions_blue_button {	-moz-appearance: none;	border-radius: 7px;	-moz-border-radius: 7px/7px;	border-radius: 7px/7px;	background-color: rgb(0, 173, 223) !important;	display: inline-block;	width: auto;	cursor: Pointer;	border: 2px solid #00dddd;	padding: 0px 20px 0px 20px;}.wrc_middle_actions_blue_button:hover {	background-color: rgb(0, 159, 212) !important;}.wrc_middle_actions_blue_button:active {	background-color: rgb(0, 146, 200) !important;	border: 2px solid #00aaaa;}.wrc_middle_actions_grey_button div {	display: inline-block;	width: auto;	cursor: Pointer;	margin: 3px 10px 3px 10px;	color: white !important;	font-size: 15px;	font-weight: bold;}.wrc_middle_actions_grey_button {	-moz-appearance: none;	border-radius: 7px;	-moz-border-radius: 7px/7px;	border-radius: 7px/7px;	background-color: rgb(100, 100, 100) !important;	display: inline-block;	width: auto;	cursor: Pointer;	border: 2px solid #aaaaaa;	text-decoration: none;	padding: 0px 20px 0px 20px;}.wrc_middle_actions_grey_button:hover {	background-color: rgb(120, 120, 120) !important;}.wrc_middle_actions_grey_button:active {	background-color: rgb(130, 130, 130) !important;	border: 2px solid #00aaaa;}.wrc_middle_action_low {	font-size: 0.9em;	white-space: nowrap;	cursor: Pointer;	color: grey !important;	margin: 10px 10px 0px 10px;	text-decoration: none;}.wrc_middle_action_low:hover {	color: #aa4400 !important;}.wrc_middle_actions_rest_div {	padding-top: 5px;	white-space: nowrap;	text-align: center;}.wrc_middle_action {	white-space: nowrap;	cursor: Pointer;	color: red !important;	font-size: 1.2em;	margin: 10px 10px 0px 10px;	text-decoration: none;}.wrc_middle_action:hover {	color: #aa4400 !important;}</style><script id="wrc-script-middle_window" type="text/javascript" language="JavaScript">var g_inputsCnt = 0;var g_InputThis = new Array(null, null, null, null);var g_alerted = false;/* we test the input if it includes 4 digits   (input is a part of 4 inputs for filling the credit-card number)*/function is4DigitsCardNumber(val){	var regExp = new RegExp('[0-9]{4}');	return (val.length == 4 && val.search(regExp) == 0);}/* testing the whole credit-card number 19 digits devided by three '-' symbols or   exactly 16 digits without any dividers*/function isCreditCardNumber(val){	if(val.length == 19)	{		var regExp = new RegExp('[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}');		return (val.search(regExp) == 0);	}	else if(val.length == 16)	{		var regExp = new RegExp('[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}');		return (val.search(regExp) == 0);	}	return false;}function CheckInputOnCreditNumber(self){	if(g_alerted)		return false;	var value = self.value;	if(self.type == 'text')	{		if(is4DigitsCardNumber(value))		{			var cont = true;			for(i = 0; i < g_inputsCnt; i++)				if(g_InputThis[i] == self)					cont = false;			if(cont && g_inputsCnt < 4)			{				g_InputThis[g_inputsCnt] = self;				g_inputsCnt++;			}		}		g_alerted = (g_inputsCnt == 4);		if(g_alerted)			g_inputsCnt = 0;		else			g_alerted = isCreditCardNumber(value);	}	return g_alerted;}function CheckInputOnPassword(self){	if(g_alerted)		return false;	var value = self.value;	if(self.type == 'password')	{		g_alerted = (value.length > 0);	}	return g_alerted;}function onInputBlur(self, bRatingOk, bFishingSite){	var bCreditNumber = CheckInputOnCreditNumber(self);	var bPassword = CheckInputOnPassword(self);	if((!bRatingOk || bFishingSite == 1) && (bCreditNumber || bPassword) )	{		var warnDiv = document.getElementById("wrcinputdiv");		if(warnDiv)		{			/* show the warning div in the middle of the screen */			warnDiv.style.left = "0px";			warnDiv.style.top = "0px";			warnDiv.style.width = "100%";			warnDiv.style.height = "100%";			document.getElementById("wrc_warn_fs").style.display = 'none';			document.getElementById("wrc_warn_cn").style.display = 'none';			if(bFishingSite)				document.getElementById("wrc_warn_fs").style.display = 'block';			else				document.getElementById("wrc_warn_cn").style.display = 'block';			warnDiv.style.display = 'table';		}	}}</script></head>
+
+<body>
+
+<p dir="ltr"><font color="#008000" size="6">PM4222-09 :  </font></p>
+<p dir="ltr"><font color="#008000" size="6">4 - Phase / 12V - 24V&nbsp; Uni-polar Stepper Motor :</font></p>
+<p dir="ltr"><font size="6" color="#008000">===================================</font><font size="5" color="#008000"><span> 
+<a class="linkclass" href="http://www.alhekma4u.com/">www.alhekma4u.com</a></span></font></p>
+<p dir="ltr"><font color="#800000" size="4">Precised control ,operated in 
+forward and reverse directions at varying speeds .</font></p>
+<p dir="ltr">&nbsp;&nbsp;<img border="0" src="./PM4222-09(stepper)_files/PM4222.JPG" width="258" height="172">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="./PM4222-09(stepper)_files/PM4222..JPG" width="258" height="172"></p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">Excitation Method&nbsp;&nbsp;&nbsp; : 4_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+ Rated Voltage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 12VDC --- 24VDC&nbsp;<br>
+ No. of Phase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 4<br>
+ Step Angle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: 7.5°<br>
+Coil Resistance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 100 Ohm ± 7% / Phase<br>
+Coil Inductance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 59.1mH ±20&nbsp; / Phase<br>
+Step per Revolution&nbsp; : 48<br>
+Current&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: 0.24A / Phase<br>
+Holding Torque&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &gt;800g.cm<br>
+Pull-in Rate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: 340pps MIN<br>
+Pull-in Torque&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: 270g.cm at 100pps<br>
+Insulation Resistance: 100M&#937; MIN at 500VD<br>
+Detent Torque&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+&lt;210g.cm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Rotor Inertia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: &lt;9.6g.cm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Stepping Accuracy&nbsp;&nbsp; : 7.5° ± 7 %&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Life&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: 3000h MIN at 20&#8451;<br>
+Weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+: 136g</p>
+<p dir="ltr">Phase 1&nbsp;&nbsp; :&nbsp; Brown&nbsp; <br>
+Phase 2&nbsp;&nbsp; : Black<br>
+Phase 3&nbsp;&nbsp; : Yellow<br>
+Phase 4&nbsp;&nbsp; : Orange<br>
+Common : Red</p>
+<p dir="ltr">
+<img border="0" src="./PM4222-09(stepper)_files/PM4222-09.jpg" width="232" height="245"></p>
+<p dir="ltr"><font color="#008000">Stepper Basics : --- Control of a stepper 
+motor comes from applying a specific step sequence .</font></p>
+<p dir="ltr"><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+--- Rotational speed is controlled by the timing of the applied steps.</font></p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">Following diagrams illustrate the effect of phase sequencing on 
+rotational motion: </p>
+<p dir="ltr"><font size="5">Full Step, Low Torque :&nbsp;</font></p>
+<p dir="ltr"><img border="0" src="./PM4222-09(stepper)_files/image004.gif" width="372" height="69"></p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr"><font size="5">Full Step, High Torque (standard application) :</font></p>
+<p dir="ltr"><img border="0" src="./PM4222-09(stepper)_files/image006.gif" width="369" height="69"></p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr"><font size="5">Half Step (best precision) :</font></p>
+<p dir="ltr"><img border="0" src="./PM4222-09(stepper)_files/image008.gif" width="677" height="75"></p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr"><font color="#008000">Circuit Connections :</font>&nbsp;</p>
+<p dir="ltr">4-phase uni-polar stepper motor driver circuit using ULN2003 .</p>
+<p dir="ltr">The ULN2803 can be used to drive 1 or 2 unipolar stepper motors .</p>
+<p dir="ltr"><img border="0" src="./PM4222-09(stepper)_files/image010.gif" width="438" height="245"></p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+
+
+
+</body></html>
