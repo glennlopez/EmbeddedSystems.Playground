@@ -1,0 +1,19 @@
+# USB-UART
+# 2015-01-03 05:05:30Z
+
+# IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 6
+# IO_7@[IOP=(0)][IoId=(7)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 7
+# IO_0@[IOP=(6)][IoId=(0)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 0
+# IO_1@[IOP=(6)][IoId=(1)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 1
+dont_use_location 0 1
+dont_use_location 1 0
+dont_use_location 1 1
+dont_use_location p4abufcell -1 -1 1
+dont_use_location p4abufcell -1 -1 2
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\UART:rx(0)\" iocell 3 4
+set_io "\UART:tx(0)\" iocell 3 5

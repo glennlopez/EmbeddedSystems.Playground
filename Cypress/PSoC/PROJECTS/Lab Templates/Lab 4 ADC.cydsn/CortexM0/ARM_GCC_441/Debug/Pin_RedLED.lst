@@ -1,0 +1,1069 @@
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 18, 4
+  11              		.code	16
+  12              		.file	"Pin_RedLED.c"
+  13              		.section	.debug_abbrev,"",%progbits
+  14              	.Ldebug_abbrev0:
+  15              		.section	.debug_info,"",%progbits
+  16              	.Ldebug_info0:
+  17              		.section	.debug_line,"",%progbits
+  18              	.Ldebug_line0:
+  19 0000 C6000000 		.text
+  19      02006300 
+  19      00000201 
+  19      FB0E0D00 
+  19      01010101 
+  20              	.Ltext0:
+  21              		.cfi_sections	.debug_frame
+  22              		.section	.text.Pin_RedLED_Write,"ax",%progbits
+  23              		.align	2
+  24              		.global	Pin_RedLED_Write
+  25              		.code	16
+  26              		.thumb_func
+  27              		.type	Pin_RedLED_Write, %function
+  28              	Pin_RedLED_Write:
+  29              	.LFB0:
+  30              		.file 1 ".\\Generated_Source\\PSoC4\\Pin_RedLED.c"
+   1:.\Generated_Source\PSoC4/Pin_RedLED.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/Pin_RedLED.c **** * File Name: Pin_RedLED.c  
+   3:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Version 1.90
+   4:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+   5:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Description:
+   6:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+   8:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Note:
+   9:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  10:.\Generated_Source\PSoC4/Pin_RedLED.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/Pin_RedLED.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/Pin_RedLED.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/Pin_RedLED.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/Pin_RedLED.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  17:.\Generated_Source\PSoC4/Pin_RedLED.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC4/Pin_RedLED.c **** #include "Pin_RedLED.h"
+  19:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  20:.\Generated_Source\PSoC4/Pin_RedLED.c **** #define SetP4PinDriveMode(shift, mode)  \
+  21:.\Generated_Source\PSoC4/Pin_RedLED.c ****     do { \
+  22:.\Generated_Source\PSoC4/Pin_RedLED.c ****         Pin_RedLED_PC =   (Pin_RedLED_PC & \
+  23:.\Generated_Source\PSoC4/Pin_RedLED.c ****                                 (uint32)(~(uint32)(Pin_RedLED_DRIVE_MODE_IND_MASK << (Pin_RedLED_DR
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 2
+
+
+  24:.\Generated_Source\PSoC4/Pin_RedLED.c ****                                 (uint32)((uint32)(mode) << (Pin_RedLED_DRIVE_MODE_BITS * (shift)));
+  25:.\Generated_Source\PSoC4/Pin_RedLED.c ****     } while (0)
+  26:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  27:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  28:.\Generated_Source\PSoC4/Pin_RedLED.c **** /*******************************************************************************
+  29:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Function Name: Pin_RedLED_Write
+  30:.\Generated_Source\PSoC4/Pin_RedLED.c **** ********************************************************************************
+  31:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  32:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Summary:
+  33:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  Assign a new value to the digital port's data output register.  
+  34:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  35:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Parameters:  
+  36:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  37:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  38:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Return: 
+  39:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  None 
+  40:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  
+  41:.\Generated_Source\PSoC4/Pin_RedLED.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC4/Pin_RedLED.c **** void Pin_RedLED_Write(uint8 value) 
+  43:.\Generated_Source\PSoC4/Pin_RedLED.c **** {
+  31              		.loc 1 43 0
+  32              		.cfi_startproc
+  33 0000 80B5     		push	{r7, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+  37              		.cfi_offset 14, -4
+  38 0002 84B0     		sub	sp, sp, #16
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 24
+  41 0004 00AF     		add	r7, sp, #0
+  42              	.LCFI2:
+  43              		.cfi_def_cfa_register 7
+  44 0006 021C     		mov	r2, r0
+  45 0008 FB1D     		add	r3, r7, #7
+  46 000a 1A70     		strb	r2, [r3]
+  44:.\Generated_Source\PSoC4/Pin_RedLED.c ****     uint8 drVal = (uint8)(Pin_RedLED_DR & (uint8)(~Pin_RedLED_MASK));
+  47              		.loc 1 44 0
+  48 000c 0E4B     		ldr	r3, .L3
+  49 000e 1B68     		ldr	r3, [r3]
+  50 0010 DAB2     		uxtb	r2, r3
+  51 0012 3B1C     		mov	r3, r7
+  52 0014 0F33     		add	r3, r3, #15
+  53 0016 4021     		mov	r1, #64
+  54 0018 8A43     		bic	r2, r2, r1
+  55 001a 1A70     		strb	r2, [r3]
+  45:.\Generated_Source\PSoC4/Pin_RedLED.c ****     drVal = (drVal | ((uint8)(value << Pin_RedLED_SHIFT) & Pin_RedLED_MASK));
+  56              		.loc 1 45 0
+  57 001c FB1D     		add	r3, r7, #7
+  58 001e 1B78     		ldrb	r3, [r3]
+  59 0020 9B01     		lsl	r3, r3, #6
+  60 0022 DBB2     		uxtb	r3, r3
+  61 0024 4022     		mov	r2, #64
+  62 0026 1340     		and	r3, r3, r2
+  63 0028 3A1C     		mov	r2, r7
+  64 002a 0F32     		add	r2, r2, #15
+  65 002c 391C     		mov	r1, r7
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 3
+
+
+  66 002e 0F31     		add	r1, r1, #15
+  67 0030 0978     		ldrb	r1, [r1]
+  68 0032 0B43     		orr	r3, r3, r1
+  69 0034 1370     		strb	r3, [r2]
+  46:.\Generated_Source\PSoC4/Pin_RedLED.c ****     Pin_RedLED_DR = (uint32)drVal;
+  70              		.loc 1 46 0
+  71 0036 044B     		ldr	r3, .L3
+  72 0038 3A1C     		mov	r2, r7
+  73 003a 0F32     		add	r2, r2, #15
+  74 003c 1278     		ldrb	r2, [r2]
+  75 003e 1A60     		str	r2, [r3]
+  47:.\Generated_Source\PSoC4/Pin_RedLED.c **** }
+  76              		.loc 1 47 0
+  77 0040 BD46     		mov	sp, r7
+  78 0042 04B0     		add	sp, sp, #16
+  79              		@ sp needed for prologue
+  80 0044 80BD     		pop	{r7, pc}
+  81              	.L4:
+  82 0046 C046     		.align	2
+  83              	.L3:
+  84 0048 00010440 		.word	1074004224
+  85              		.cfi_endproc
+  86              	.LFE0:
+  87              		.size	Pin_RedLED_Write, .-Pin_RedLED_Write
+  88              		.section	.text.Pin_RedLED_SetDriveMode,"ax",%progbits
+  89              		.align	2
+  90              		.global	Pin_RedLED_SetDriveMode
+  91              		.code	16
+  92              		.thumb_func
+  93              		.type	Pin_RedLED_SetDriveMode, %function
+  94              	Pin_RedLED_SetDriveMode:
+  95              	.LFB1:
+  48:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  49:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  50:.\Generated_Source\PSoC4/Pin_RedLED.c **** /*******************************************************************************
+  51:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Function Name: Pin_RedLED_SetDriveMode
+  52:.\Generated_Source\PSoC4/Pin_RedLED.c **** ********************************************************************************
+  53:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  54:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Summary:
+  55:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  Change the drive mode on the pins of the port.
+  56:.\Generated_Source\PSoC4/Pin_RedLED.c **** * 
+  57:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Parameters:  
+  58:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  mode:  Change the pins to this drive mode.
+  59:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  60:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Return: 
+  61:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  None
+  62:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  63:.\Generated_Source\PSoC4/Pin_RedLED.c **** *******************************************************************************/
+  64:.\Generated_Source\PSoC4/Pin_RedLED.c **** void Pin_RedLED_SetDriveMode(uint8 mode) 
+  65:.\Generated_Source\PSoC4/Pin_RedLED.c **** {
+  96              		.loc 1 65 0
+  97              		.cfi_startproc
+  98 0000 80B5     		push	{r7, lr}
+  99              	.LCFI3:
+ 100              		.cfi_def_cfa_offset 8
+ 101              		.cfi_offset 7, -8
+ 102              		.cfi_offset 14, -4
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 4
+
+
+ 103 0002 82B0     		sub	sp, sp, #8
+ 104              	.LCFI4:
+ 105              		.cfi_def_cfa_offset 16
+ 106 0004 00AF     		add	r7, sp, #0
+ 107              	.LCFI5:
+ 108              		.cfi_def_cfa_register 7
+ 109 0006 021C     		mov	r2, r0
+ 110 0008 FB1D     		add	r3, r7, #7
+ 111 000a 1A70     		strb	r2, [r3]
+  66:.\Generated_Source\PSoC4/Pin_RedLED.c **** 	SetP4PinDriveMode(Pin_RedLED__0__SHIFT, mode);
+ 112              		.loc 1 66 0
+ 113 000c 064B     		ldr	r3, .L7
+ 114 000e 064A     		ldr	r2, .L7
+ 115 0010 1168     		ldr	r1, [r2]
+ 116 0012 064A     		ldr	r2, .L7+4
+ 117 0014 1140     		and	r1, r1, r2
+ 118 0016 FA1D     		add	r2, r7, #7
+ 119 0018 1278     		ldrb	r2, [r2]
+ 120 001a 9204     		lsl	r2, r2, #18
+ 121 001c 0A43     		orr	r2, r2, r1
+ 122 001e 1A60     		str	r2, [r3]
+  67:.\Generated_Source\PSoC4/Pin_RedLED.c **** }
+ 123              		.loc 1 67 0
+ 124 0020 BD46     		mov	sp, r7
+ 125 0022 02B0     		add	sp, sp, #8
+ 126              		@ sp needed for prologue
+ 127 0024 80BD     		pop	{r7, pc}
+ 128              	.L8:
+ 129 0026 C046     		.align	2
+ 130              	.L7:
+ 131 0028 08010440 		.word	1074004232
+ 132 002c FFFFE3FF 		.word	-1835009
+ 133              		.cfi_endproc
+ 134              	.LFE1:
+ 135              		.size	Pin_RedLED_SetDriveMode, .-Pin_RedLED_SetDriveMode
+ 136              		.section	.text.Pin_RedLED_Read,"ax",%progbits
+ 137              		.align	2
+ 138              		.global	Pin_RedLED_Read
+ 139              		.code	16
+ 140              		.thumb_func
+ 141              		.type	Pin_RedLED_Read, %function
+ 142              	Pin_RedLED_Read:
+ 143              	.LFB2:
+  68:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  69:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  70:.\Generated_Source\PSoC4/Pin_RedLED.c **** /*******************************************************************************
+  71:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Function Name: Pin_RedLED_Read
+  72:.\Generated_Source\PSoC4/Pin_RedLED.c **** ********************************************************************************
+  73:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  74:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Summary:
+  75:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  76:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  form.
+  77:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  78:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Parameters:  
+  79:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  None 
+  80:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  81:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Return: 
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 5
+
+
+  82:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  Returns the current value of the Digital Port as a right justified number
+  83:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  
+  84:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Note:
+  85:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  Macro Pin_RedLED_ReadPS calls this function. 
+  86:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  
+  87:.\Generated_Source\PSoC4/Pin_RedLED.c **** *******************************************************************************/
+  88:.\Generated_Source\PSoC4/Pin_RedLED.c **** uint8 Pin_RedLED_Read(void) 
+  89:.\Generated_Source\PSoC4/Pin_RedLED.c **** {
+ 144              		.loc 1 89 0
+ 145              		.cfi_startproc
+ 146 0000 80B5     		push	{r7, lr}
+ 147              	.LCFI6:
+ 148              		.cfi_def_cfa_offset 8
+ 149              		.cfi_offset 7, -8
+ 150              		.cfi_offset 14, -4
+ 151 0002 00AF     		add	r7, sp, #0
+ 152              	.LCFI7:
+ 153              		.cfi_def_cfa_register 7
+  90:.\Generated_Source\PSoC4/Pin_RedLED.c ****     return (uint8)((Pin_RedLED_PS & Pin_RedLED_MASK) >> Pin_RedLED_SHIFT);
+ 154              		.loc 1 90 0
+ 155 0004 044B     		ldr	r3, .L11
+ 156 0006 1A68     		ldr	r2, [r3]
+ 157 0008 4023     		mov	r3, #64
+ 158 000a 1340     		and	r3, r3, r2
+ 159 000c 9B09     		lsr	r3, r3, #6
+ 160 000e DBB2     		uxtb	r3, r3
+  91:.\Generated_Source\PSoC4/Pin_RedLED.c **** }
+ 161              		.loc 1 91 0
+ 162 0010 181C     		mov	r0, r3
+ 163 0012 BD46     		mov	sp, r7
+ 164              		@ sp needed for prologue
+ 165 0014 80BD     		pop	{r7, pc}
+ 166              	.L12:
+ 167 0016 C046     		.align	2
+ 168              	.L11:
+ 169 0018 04010440 		.word	1074004228
+ 170              		.cfi_endproc
+ 171              	.LFE2:
+ 172              		.size	Pin_RedLED_Read, .-Pin_RedLED_Read
+ 173              		.section	.text.Pin_RedLED_ReadDataReg,"ax",%progbits
+ 174              		.align	2
+ 175              		.global	Pin_RedLED_ReadDataReg
+ 176              		.code	16
+ 177              		.thumb_func
+ 178              		.type	Pin_RedLED_ReadDataReg, %function
+ 179              	Pin_RedLED_ReadDataReg:
+ 180              	.LFB3:
+  92:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  93:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+  94:.\Generated_Source\PSoC4/Pin_RedLED.c **** /*******************************************************************************
+  95:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Function Name: Pin_RedLED_ReadDataReg
+  96:.\Generated_Source\PSoC4/Pin_RedLED.c **** ********************************************************************************
+  97:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+  98:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Summary:
+  99:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  Read the current value assigned to a Digital Port's data output register
+ 100:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+ 101:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Parameters:  
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 6
+
+
+ 102:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  None 
+ 103:.\Generated_Source\PSoC4/Pin_RedLED.c **** *
+ 104:.\Generated_Source\PSoC4/Pin_RedLED.c **** * Return: 
+ 105:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 106:.\Generated_Source\PSoC4/Pin_RedLED.c **** *  
+ 107:.\Generated_Source\PSoC4/Pin_RedLED.c **** *******************************************************************************/
+ 108:.\Generated_Source\PSoC4/Pin_RedLED.c **** uint8 Pin_RedLED_ReadDataReg(void) 
+ 109:.\Generated_Source\PSoC4/Pin_RedLED.c **** {
+ 181              		.loc 1 109 0
+ 182              		.cfi_startproc
+ 183 0000 80B5     		push	{r7, lr}
+ 184              	.LCFI8:
+ 185              		.cfi_def_cfa_offset 8
+ 186              		.cfi_offset 7, -8
+ 187              		.cfi_offset 14, -4
+ 188 0002 00AF     		add	r7, sp, #0
+ 189              	.LCFI9:
+ 190              		.cfi_def_cfa_register 7
+ 110:.\Generated_Source\PSoC4/Pin_RedLED.c ****     return (uint8)((Pin_RedLED_DR & Pin_RedLED_MASK) >> Pin_RedLED_SHIFT);
+ 191              		.loc 1 110 0
+ 192 0004 044B     		ldr	r3, .L15
+ 193 0006 1A68     		ldr	r2, [r3]
+ 194 0008 4023     		mov	r3, #64
+ 195 000a 1340     		and	r3, r3, r2
+ 196 000c 9B09     		lsr	r3, r3, #6
+ 197 000e DBB2     		uxtb	r3, r3
+ 111:.\Generated_Source\PSoC4/Pin_RedLED.c **** }
+ 198              		.loc 1 111 0
+ 199 0010 181C     		mov	r0, r3
+ 200 0012 BD46     		mov	sp, r7
+ 201              		@ sp needed for prologue
+ 202 0014 80BD     		pop	{r7, pc}
+ 203              	.L16:
+ 204 0016 C046     		.align	2
+ 205              	.L15:
+ 206 0018 00010440 		.word	1074004224
+ 207              		.cfi_endproc
+ 208              	.LFE3:
+ 209              		.size	Pin_RedLED_ReadDataReg, .-Pin_RedLED_ReadDataReg
+ 210              		.section	.text.Pin_RedLED_ClearInterrupt,"ax",%progbits
+ 211              		.align	2
+ 212              		.global	Pin_RedLED_ClearInterrupt
+ 213              		.code	16
+ 214              		.thumb_func
+ 215              		.type	Pin_RedLED_ClearInterrupt, %function
+ 216              	Pin_RedLED_ClearInterrupt:
+ 217              	.LFB4:
+ 112:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+ 113:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+ 114:.\Generated_Source\PSoC4/Pin_RedLED.c **** /* If Interrupts Are Enabled for this Pins component */ 
+ 115:.\Generated_Source\PSoC4/Pin_RedLED.c **** #if defined(Pin_RedLED_INTSTAT) 
+ 116:.\Generated_Source\PSoC4/Pin_RedLED.c **** 
+ 117:.\Generated_Source\PSoC4/Pin_RedLED.c ****     /*******************************************************************************
+ 118:.\Generated_Source\PSoC4/Pin_RedLED.c ****     * Function Name: Pin_RedLED_ClearInterrupt
+ 119:.\Generated_Source\PSoC4/Pin_RedLED.c ****     ********************************************************************************
+ 120:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *
+ 121:.\Generated_Source\PSoC4/Pin_RedLED.c ****     * Summary:
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 7
+
+
+ 122:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *  Clears any active interrupts attached to port and returns the value of the 
+ 123:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *  interrupt status register.
+ 124:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *
+ 125:.\Generated_Source\PSoC4/Pin_RedLED.c ****     * Parameters:  
+ 126:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *  None 
+ 127:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *
+ 128:.\Generated_Source\PSoC4/Pin_RedLED.c ****     * Return: 
+ 129:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *  Returns the value of the interrupt status register
+ 130:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *  
+ 131:.\Generated_Source\PSoC4/Pin_RedLED.c ****     *******************************************************************************/
+ 132:.\Generated_Source\PSoC4/Pin_RedLED.c ****     uint8 Pin_RedLED_ClearInterrupt(void) 
+ 133:.\Generated_Source\PSoC4/Pin_RedLED.c ****     {
+ 218              		.loc 1 133 0
+ 219              		.cfi_startproc
+ 220 0000 80B5     		push	{r7, lr}
+ 221              	.LCFI10:
+ 222              		.cfi_def_cfa_offset 8
+ 223              		.cfi_offset 7, -8
+ 224              		.cfi_offset 14, -4
+ 225 0002 82B0     		sub	sp, sp, #8
+ 226              	.LCFI11:
+ 227              		.cfi_def_cfa_offset 16
+ 228 0004 00AF     		add	r7, sp, #0
+ 229              	.LCFI12:
+ 230              		.cfi_def_cfa_register 7
+ 134:.\Generated_Source\PSoC4/Pin_RedLED.c **** 		uint8 maskedStatus = (uint8)(Pin_RedLED_INTSTAT & Pin_RedLED_MASK);
+ 231              		.loc 1 134 0
+ 232 0006 094B     		ldr	r3, .L19
+ 233 0008 1B68     		ldr	r3, [r3]
+ 234 000a D9B2     		uxtb	r1, r3
+ 235 000c FB1D     		add	r3, r7, #7
+ 236 000e 4022     		mov	r2, #64
+ 237 0010 0A40     		and	r2, r2, r1
+ 238 0012 1A70     		strb	r2, [r3]
+ 135:.\Generated_Source\PSoC4/Pin_RedLED.c **** 		Pin_RedLED_INTSTAT = maskedStatus;
+ 239              		.loc 1 135 0
+ 240 0014 054B     		ldr	r3, .L19
+ 241 0016 FA1D     		add	r2, r7, #7
+ 242 0018 1278     		ldrb	r2, [r2]
+ 243 001a 1A60     		str	r2, [r3]
+ 136:.\Generated_Source\PSoC4/Pin_RedLED.c ****         return maskedStatus >> Pin_RedLED_SHIFT;
+ 244              		.loc 1 136 0
+ 245 001c FB1D     		add	r3, r7, #7
+ 246 001e 1B78     		ldrb	r3, [r3]
+ 247 0020 9B09     		lsr	r3, r3, #6
+ 248 0022 DBB2     		uxtb	r3, r3
+ 137:.\Generated_Source\PSoC4/Pin_RedLED.c ****     }
+ 249              		.loc 1 137 0
+ 250 0024 181C     		mov	r0, r3
+ 251 0026 BD46     		mov	sp, r7
+ 252 0028 02B0     		add	sp, sp, #8
+ 253              		@ sp needed for prologue
+ 254 002a 80BD     		pop	{r7, pc}
+ 255              	.L20:
+ 256              		.align	2
+ 257              	.L19:
+ 258 002c 10010440 		.word	1074004240
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 8
+
+
+ 259              		.cfi_endproc
+ 260              	.LFE4:
+ 261              		.size	Pin_RedLED_ClearInterrupt, .-Pin_RedLED_ClearInterrupt
+ 262              		.text
+ 263              	.Letext0:
+ 264              		.section	.debug_loc,"",%progbits
+ 265              	.Ldebug_loc0:
+ 266              	.LLST0:
+ 267 0000 00000000 		.4byte	.LFB0
+ 268 0004 02000000 		.4byte	.LCFI0
+ 269 0008 0100     		.2byte	0x1
+ 270 000a 5D       		.byte	0x5d
+ 271 000b 02000000 		.4byte	.LCFI0
+ 272 000f 04000000 		.4byte	.LCFI1
+ 273 0013 0200     		.2byte	0x2
+ 274 0015 7D       		.byte	0x7d
+ 275 0016 08       		.sleb128 8
+ 276 0017 04000000 		.4byte	.LCFI1
+ 277 001b 06000000 		.4byte	.LCFI2
+ 278 001f 0200     		.2byte	0x2
+ 279 0021 7D       		.byte	0x7d
+ 280 0022 18       		.sleb128 24
+ 281 0023 06000000 		.4byte	.LCFI2
+ 282 0027 4C000000 		.4byte	.LFE0
+ 283 002b 0200     		.2byte	0x2
+ 284 002d 77       		.byte	0x77
+ 285 002e 18       		.sleb128 24
+ 286 002f 00000000 		.4byte	0x0
+ 287 0033 00000000 		.4byte	0x0
+ 288              	.LLST1:
+ 289 0037 00000000 		.4byte	.LFB1
+ 290 003b 02000000 		.4byte	.LCFI3
+ 291 003f 0100     		.2byte	0x1
+ 292 0041 5D       		.byte	0x5d
+ 293 0042 02000000 		.4byte	.LCFI3
+ 294 0046 04000000 		.4byte	.LCFI4
+ 295 004a 0200     		.2byte	0x2
+ 296 004c 7D       		.byte	0x7d
+ 297 004d 08       		.sleb128 8
+ 298 004e 04000000 		.4byte	.LCFI4
+ 299 0052 06000000 		.4byte	.LCFI5
+ 300 0056 0200     		.2byte	0x2
+ 301 0058 7D       		.byte	0x7d
+ 302 0059 10       		.sleb128 16
+ 303 005a 06000000 		.4byte	.LCFI5
+ 304 005e 30000000 		.4byte	.LFE1
+ 305 0062 0200     		.2byte	0x2
+ 306 0064 77       		.byte	0x77
+ 307 0065 10       		.sleb128 16
+ 308 0066 00000000 		.4byte	0x0
+ 309 006a 00000000 		.4byte	0x0
+ 310              	.LLST2:
+ 311 006e 00000000 		.4byte	.LFB2
+ 312 0072 02000000 		.4byte	.LCFI6
+ 313 0076 0100     		.2byte	0x1
+ 314 0078 5D       		.byte	0x5d
+ 315 0079 02000000 		.4byte	.LCFI6
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 9
+
+
+ 316 007d 04000000 		.4byte	.LCFI7
+ 317 0081 0200     		.2byte	0x2
+ 318 0083 7D       		.byte	0x7d
+ 319 0084 08       		.sleb128 8
+ 320 0085 04000000 		.4byte	.LCFI7
+ 321 0089 1C000000 		.4byte	.LFE2
+ 322 008d 0200     		.2byte	0x2
+ 323 008f 77       		.byte	0x77
+ 324 0090 08       		.sleb128 8
+ 325 0091 00000000 		.4byte	0x0
+ 326 0095 00000000 		.4byte	0x0
+ 327              	.LLST3:
+ 328 0099 00000000 		.4byte	.LFB3
+ 329 009d 02000000 		.4byte	.LCFI8
+ 330 00a1 0100     		.2byte	0x1
+ 331 00a3 5D       		.byte	0x5d
+ 332 00a4 02000000 		.4byte	.LCFI8
+ 333 00a8 04000000 		.4byte	.LCFI9
+ 334 00ac 0200     		.2byte	0x2
+ 335 00ae 7D       		.byte	0x7d
+ 336 00af 08       		.sleb128 8
+ 337 00b0 04000000 		.4byte	.LCFI9
+ 338 00b4 1C000000 		.4byte	.LFE3
+ 339 00b8 0200     		.2byte	0x2
+ 340 00ba 77       		.byte	0x77
+ 341 00bb 08       		.sleb128 8
+ 342 00bc 00000000 		.4byte	0x0
+ 343 00c0 00000000 		.4byte	0x0
+ 344              	.LLST4:
+ 345 00c4 00000000 		.4byte	.LFB4
+ 346 00c8 02000000 		.4byte	.LCFI10
+ 347 00cc 0100     		.2byte	0x1
+ 348 00ce 5D       		.byte	0x5d
+ 349 00cf 02000000 		.4byte	.LCFI10
+ 350 00d3 04000000 		.4byte	.LCFI11
+ 351 00d7 0200     		.2byte	0x2
+ 352 00d9 7D       		.byte	0x7d
+ 353 00da 08       		.sleb128 8
+ 354 00db 04000000 		.4byte	.LCFI11
+ 355 00df 06000000 		.4byte	.LCFI12
+ 356 00e3 0200     		.2byte	0x2
+ 357 00e5 7D       		.byte	0x7d
+ 358 00e6 10       		.sleb128 16
+ 359 00e7 06000000 		.4byte	.LCFI12
+ 360 00eb 30000000 		.4byte	.LFE4
+ 361 00ef 0200     		.2byte	0x2
+ 362 00f1 77       		.byte	0x77
+ 363 00f2 10       		.sleb128 16
+ 364 00f3 00000000 		.4byte	0x0
+ 365 00f7 00000000 		.4byte	0x0
+ 366              		.file 2 ".\\Generated_Source\\PSoC4\\/cytypes.h"
+ 367              		.section	.debug_info
+ 368 0000 44010000 		.4byte	0x144
+ 369 0004 0200     		.2byte	0x2
+ 370 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 371 000a 04       		.byte	0x4
+ 372 000b 01       		.uleb128 0x1
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 10
+
+
+ 373 000c 69010000 		.4byte	.LASF21
+ 374 0010 01       		.byte	0x1
+ 375 0011 5C000000 		.4byte	.LASF22
+ 376 0015 EA000000 		.4byte	.LASF23
+ 377 0019 00000000 		.4byte	0x0
+ 378 001d 00000000 		.4byte	0x0
+ 379 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 380 0025 00000000 		.4byte	.Ldebug_line0
+ 381 0029 02       		.uleb128 0x2
+ 382 002a 01       		.byte	0x1
+ 383 002b 06       		.byte	0x6
+ 384 002c A0010000 		.4byte	.LASF0
+ 385 0030 02       		.uleb128 0x2
+ 386 0031 01       		.byte	0x1
+ 387 0032 08       		.byte	0x8
+ 388 0033 93000000 		.4byte	.LASF1
+ 389 0037 02       		.uleb128 0x2
+ 390 0038 02       		.byte	0x2
+ 391 0039 05       		.byte	0x5
+ 392 003a 87010000 		.4byte	.LASF2
+ 393 003e 02       		.uleb128 0x2
+ 394 003f 02       		.byte	0x2
+ 395 0040 07       		.byte	0x7
+ 396 0041 D0000000 		.4byte	.LASF3
+ 397 0045 02       		.uleb128 0x2
+ 398 0046 04       		.byte	0x4
+ 399 0047 05       		.byte	0x5
+ 400 0048 97010000 		.4byte	.LASF4
+ 401 004c 02       		.uleb128 0x2
+ 402 004d 04       		.byte	0x4
+ 403 004e 07       		.byte	0x7
+ 404 004f BE000000 		.4byte	.LASF5
+ 405 0053 02       		.uleb128 0x2
+ 406 0054 08       		.byte	0x8
+ 407 0055 05       		.byte	0x5
+ 408 0056 00000000 		.4byte	.LASF6
+ 409 005a 02       		.uleb128 0x2
+ 410 005b 08       		.byte	0x8
+ 411 005c 07       		.byte	0x7
+ 412 005d 4D010000 		.4byte	.LASF7
+ 413 0061 03       		.uleb128 0x3
+ 414 0062 04       		.byte	0x4
+ 415 0063 05       		.byte	0x5
+ 416 0064 696E7400 		.ascii	"int\000"
+ 417 0068 02       		.uleb128 0x2
+ 418 0069 04       		.byte	0x4
+ 419 006a 07       		.byte	0x7
+ 420 006b 40010000 		.4byte	.LASF8
+ 421 006f 04       		.uleb128 0x4
+ 422 0070 91010000 		.4byte	.LASF24
+ 423 0074 02       		.byte	0x2
+ 424 0075 4C       		.byte	0x4c
+ 425 0076 30000000 		.4byte	0x30
+ 426 007a 02       		.uleb128 0x2
+ 427 007b 04       		.byte	0x4
+ 428 007c 04       		.byte	0x4
+ 429 007d 56000000 		.4byte	.LASF9
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 11
+
+
+ 430 0081 02       		.uleb128 0x2
+ 431 0082 08       		.byte	0x8
+ 432 0083 04       		.byte	0x4
+ 433 0084 E3000000 		.4byte	.LASF10
+ 434 0088 02       		.uleb128 0x2
+ 435 0089 01       		.byte	0x1
+ 436 008a 08       		.byte	0x8
+ 437 008b 82010000 		.4byte	.LASF11
+ 438 008f 05       		.uleb128 0x5
+ 439 0090 01       		.byte	0x1
+ 440 0091 82000000 		.4byte	.LASF12
+ 441 0095 01       		.byte	0x1
+ 442 0096 2A       		.byte	0x2a
+ 443 0097 01       		.byte	0x1
+ 444 0098 00000000 		.4byte	.LFB0
+ 445 009c 4C000000 		.4byte	.LFE0
+ 446 00a0 00000000 		.4byte	.LLST0
+ 447 00a4 C5000000 		.4byte	0xc5
+ 448 00a8 06       		.uleb128 0x6
+ 449 00a9 28000000 		.4byte	.LASF14
+ 450 00ad 01       		.byte	0x1
+ 451 00ae 2A       		.byte	0x2a
+ 452 00af 6F000000 		.4byte	0x6f
+ 453 00b3 02       		.byte	0x2
+ 454 00b4 91       		.byte	0x91
+ 455 00b5 6F       		.sleb128 -17
+ 456 00b6 07       		.uleb128 0x7
+ 457 00b7 B8000000 		.4byte	.LASF19
+ 458 00bb 01       		.byte	0x1
+ 459 00bc 2C       		.byte	0x2c
+ 460 00bd 6F000000 		.4byte	0x6f
+ 461 00c1 02       		.byte	0x2
+ 462 00c2 91       		.byte	0x91
+ 463 00c3 77       		.sleb128 -9
+ 464 00c4 00       		.byte	0x0
+ 465 00c5 05       		.uleb128 0x5
+ 466 00c6 01       		.byte	0x1
+ 467 00c7 2E000000 		.4byte	.LASF13
+ 468 00cb 01       		.byte	0x1
+ 469 00cc 40       		.byte	0x40
+ 470 00cd 01       		.byte	0x1
+ 471 00ce 00000000 		.4byte	.LFB1
+ 472 00d2 30000000 		.4byte	.LFE1
+ 473 00d6 37000000 		.4byte	.LLST1
+ 474 00da ED000000 		.4byte	0xed
+ 475 00de 06       		.uleb128 0x6
+ 476 00df 64010000 		.4byte	.LASF15
+ 477 00e3 01       		.byte	0x1
+ 478 00e4 40       		.byte	0x40
+ 479 00e5 6F000000 		.4byte	0x6f
+ 480 00e9 02       		.byte	0x2
+ 481 00ea 91       		.byte	0x91
+ 482 00eb 77       		.sleb128 -9
+ 483 00ec 00       		.byte	0x0
+ 484 00ed 08       		.uleb128 0x8
+ 485 00ee 01       		.byte	0x1
+ 486 00ef 46000000 		.4byte	.LASF16
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 12
+
+
+ 487 00f3 01       		.byte	0x1
+ 488 00f4 58       		.byte	0x58
+ 489 00f5 01       		.byte	0x1
+ 490 00f6 6F000000 		.4byte	0x6f
+ 491 00fa 00000000 		.4byte	.LFB2
+ 492 00fe 1C000000 		.4byte	.LFE2
+ 493 0102 6E000000 		.4byte	.LLST2
+ 494 0106 08       		.uleb128 0x8
+ 495 0107 01       		.byte	0x1
+ 496 0108 A1000000 		.4byte	.LASF17
+ 497 010c 01       		.byte	0x1
+ 498 010d 6C       		.byte	0x6c
+ 499 010e 01       		.byte	0x1
+ 500 010f 6F000000 		.4byte	0x6f
+ 501 0113 00000000 		.4byte	.LFB3
+ 502 0117 1C000000 		.4byte	.LFE3
+ 503 011b 99000000 		.4byte	.LLST3
+ 504 011f 09       		.uleb128 0x9
+ 505 0120 01       		.byte	0x1
+ 506 0121 0E000000 		.4byte	.LASF18
+ 507 0125 01       		.byte	0x1
+ 508 0126 84       		.byte	0x84
+ 509 0127 01       		.byte	0x1
+ 510 0128 6F000000 		.4byte	0x6f
+ 511 012c 00000000 		.4byte	.LFB4
+ 512 0130 30000000 		.4byte	.LFE4
+ 513 0134 C4000000 		.4byte	.LLST4
+ 514 0138 07       		.uleb128 0x7
+ 515 0139 75010000 		.4byte	.LASF20
+ 516 013d 01       		.byte	0x1
+ 517 013e 86       		.byte	0x86
+ 518 013f 6F000000 		.4byte	0x6f
+ 519 0143 02       		.byte	0x2
+ 520 0144 91       		.byte	0x91
+ 521 0145 77       		.sleb128 -9
+ 522 0146 00       		.byte	0x0
+ 523 0147 00       		.byte	0x0
+ 524              		.section	.debug_abbrev
+ 525 0000 01       		.uleb128 0x1
+ 526 0001 11       		.uleb128 0x11
+ 527 0002 01       		.byte	0x1
+ 528 0003 25       		.uleb128 0x25
+ 529 0004 0E       		.uleb128 0xe
+ 530 0005 13       		.uleb128 0x13
+ 531 0006 0B       		.uleb128 0xb
+ 532 0007 03       		.uleb128 0x3
+ 533 0008 0E       		.uleb128 0xe
+ 534 0009 1B       		.uleb128 0x1b
+ 535 000a 0E       		.uleb128 0xe
+ 536 000b 11       		.uleb128 0x11
+ 537 000c 01       		.uleb128 0x1
+ 538 000d 52       		.uleb128 0x52
+ 539 000e 01       		.uleb128 0x1
+ 540 000f 55       		.uleb128 0x55
+ 541 0010 06       		.uleb128 0x6
+ 542 0011 10       		.uleb128 0x10
+ 543 0012 06       		.uleb128 0x6
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 13
+
+
+ 544 0013 00       		.byte	0x0
+ 545 0014 00       		.byte	0x0
+ 546 0015 02       		.uleb128 0x2
+ 547 0016 24       		.uleb128 0x24
+ 548 0017 00       		.byte	0x0
+ 549 0018 0B       		.uleb128 0xb
+ 550 0019 0B       		.uleb128 0xb
+ 551 001a 3E       		.uleb128 0x3e
+ 552 001b 0B       		.uleb128 0xb
+ 553 001c 03       		.uleb128 0x3
+ 554 001d 0E       		.uleb128 0xe
+ 555 001e 00       		.byte	0x0
+ 556 001f 00       		.byte	0x0
+ 557 0020 03       		.uleb128 0x3
+ 558 0021 24       		.uleb128 0x24
+ 559 0022 00       		.byte	0x0
+ 560 0023 0B       		.uleb128 0xb
+ 561 0024 0B       		.uleb128 0xb
+ 562 0025 3E       		.uleb128 0x3e
+ 563 0026 0B       		.uleb128 0xb
+ 564 0027 03       		.uleb128 0x3
+ 565 0028 08       		.uleb128 0x8
+ 566 0029 00       		.byte	0x0
+ 567 002a 00       		.byte	0x0
+ 568 002b 04       		.uleb128 0x4
+ 569 002c 16       		.uleb128 0x16
+ 570 002d 00       		.byte	0x0
+ 571 002e 03       		.uleb128 0x3
+ 572 002f 0E       		.uleb128 0xe
+ 573 0030 3A       		.uleb128 0x3a
+ 574 0031 0B       		.uleb128 0xb
+ 575 0032 3B       		.uleb128 0x3b
+ 576 0033 0B       		.uleb128 0xb
+ 577 0034 49       		.uleb128 0x49
+ 578 0035 13       		.uleb128 0x13
+ 579 0036 00       		.byte	0x0
+ 580 0037 00       		.byte	0x0
+ 581 0038 05       		.uleb128 0x5
+ 582 0039 2E       		.uleb128 0x2e
+ 583 003a 01       		.byte	0x1
+ 584 003b 3F       		.uleb128 0x3f
+ 585 003c 0C       		.uleb128 0xc
+ 586 003d 03       		.uleb128 0x3
+ 587 003e 0E       		.uleb128 0xe
+ 588 003f 3A       		.uleb128 0x3a
+ 589 0040 0B       		.uleb128 0xb
+ 590 0041 3B       		.uleb128 0x3b
+ 591 0042 0B       		.uleb128 0xb
+ 592 0043 27       		.uleb128 0x27
+ 593 0044 0C       		.uleb128 0xc
+ 594 0045 11       		.uleb128 0x11
+ 595 0046 01       		.uleb128 0x1
+ 596 0047 12       		.uleb128 0x12
+ 597 0048 01       		.uleb128 0x1
+ 598 0049 40       		.uleb128 0x40
+ 599 004a 06       		.uleb128 0x6
+ 600 004b 01       		.uleb128 0x1
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 14
+
+
+ 601 004c 13       		.uleb128 0x13
+ 602 004d 00       		.byte	0x0
+ 603 004e 00       		.byte	0x0
+ 604 004f 06       		.uleb128 0x6
+ 605 0050 05       		.uleb128 0x5
+ 606 0051 00       		.byte	0x0
+ 607 0052 03       		.uleb128 0x3
+ 608 0053 0E       		.uleb128 0xe
+ 609 0054 3A       		.uleb128 0x3a
+ 610 0055 0B       		.uleb128 0xb
+ 611 0056 3B       		.uleb128 0x3b
+ 612 0057 0B       		.uleb128 0xb
+ 613 0058 49       		.uleb128 0x49
+ 614 0059 13       		.uleb128 0x13
+ 615 005a 02       		.uleb128 0x2
+ 616 005b 0A       		.uleb128 0xa
+ 617 005c 00       		.byte	0x0
+ 618 005d 00       		.byte	0x0
+ 619 005e 07       		.uleb128 0x7
+ 620 005f 34       		.uleb128 0x34
+ 621 0060 00       		.byte	0x0
+ 622 0061 03       		.uleb128 0x3
+ 623 0062 0E       		.uleb128 0xe
+ 624 0063 3A       		.uleb128 0x3a
+ 625 0064 0B       		.uleb128 0xb
+ 626 0065 3B       		.uleb128 0x3b
+ 627 0066 0B       		.uleb128 0xb
+ 628 0067 49       		.uleb128 0x49
+ 629 0068 13       		.uleb128 0x13
+ 630 0069 02       		.uleb128 0x2
+ 631 006a 0A       		.uleb128 0xa
+ 632 006b 00       		.byte	0x0
+ 633 006c 00       		.byte	0x0
+ 634 006d 08       		.uleb128 0x8
+ 635 006e 2E       		.uleb128 0x2e
+ 636 006f 00       		.byte	0x0
+ 637 0070 3F       		.uleb128 0x3f
+ 638 0071 0C       		.uleb128 0xc
+ 639 0072 03       		.uleb128 0x3
+ 640 0073 0E       		.uleb128 0xe
+ 641 0074 3A       		.uleb128 0x3a
+ 642 0075 0B       		.uleb128 0xb
+ 643 0076 3B       		.uleb128 0x3b
+ 644 0077 0B       		.uleb128 0xb
+ 645 0078 27       		.uleb128 0x27
+ 646 0079 0C       		.uleb128 0xc
+ 647 007a 49       		.uleb128 0x49
+ 648 007b 13       		.uleb128 0x13
+ 649 007c 11       		.uleb128 0x11
+ 650 007d 01       		.uleb128 0x1
+ 651 007e 12       		.uleb128 0x12
+ 652 007f 01       		.uleb128 0x1
+ 653 0080 40       		.uleb128 0x40
+ 654 0081 06       		.uleb128 0x6
+ 655 0082 00       		.byte	0x0
+ 656 0083 00       		.byte	0x0
+ 657 0084 09       		.uleb128 0x9
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 15
+
+
+ 658 0085 2E       		.uleb128 0x2e
+ 659 0086 01       		.byte	0x1
+ 660 0087 3F       		.uleb128 0x3f
+ 661 0088 0C       		.uleb128 0xc
+ 662 0089 03       		.uleb128 0x3
+ 663 008a 0E       		.uleb128 0xe
+ 664 008b 3A       		.uleb128 0x3a
+ 665 008c 0B       		.uleb128 0xb
+ 666 008d 3B       		.uleb128 0x3b
+ 667 008e 0B       		.uleb128 0xb
+ 668 008f 27       		.uleb128 0x27
+ 669 0090 0C       		.uleb128 0xc
+ 670 0091 49       		.uleb128 0x49
+ 671 0092 13       		.uleb128 0x13
+ 672 0093 11       		.uleb128 0x11
+ 673 0094 01       		.uleb128 0x1
+ 674 0095 12       		.uleb128 0x12
+ 675 0096 01       		.uleb128 0x1
+ 676 0097 40       		.uleb128 0x40
+ 677 0098 06       		.uleb128 0x6
+ 678 0099 00       		.byte	0x0
+ 679 009a 00       		.byte	0x0
+ 680 009b 00       		.byte	0x0
+ 681              		.section	.debug_pubnames,"",%progbits
+ 682 0000 8C000000 		.4byte	0x8c
+ 683 0004 0200     		.2byte	0x2
+ 684 0006 00000000 		.4byte	.Ldebug_info0
+ 685 000a 48010000 		.4byte	0x148
+ 686 000e 8F000000 		.4byte	0x8f
+ 687 0012 50696E5F 		.ascii	"Pin_RedLED_Write\000"
+ 687      5265644C 
+ 687      45445F57 
+ 687      72697465 
+ 687      00
+ 688 0023 C5000000 		.4byte	0xc5
+ 689 0027 50696E5F 		.ascii	"Pin_RedLED_SetDriveMode\000"
+ 689      5265644C 
+ 689      45445F53 
+ 689      65744472 
+ 689      6976654D 
+ 690 003f ED000000 		.4byte	0xed
+ 691 0043 50696E5F 		.ascii	"Pin_RedLED_Read\000"
+ 691      5265644C 
+ 691      45445F52 
+ 691      65616400 
+ 692 0053 06010000 		.4byte	0x106
+ 693 0057 50696E5F 		.ascii	"Pin_RedLED_ReadDataReg\000"
+ 693      5265644C 
+ 693      45445F52 
+ 693      65616444 
+ 693      61746152 
+ 694 006e 1F010000 		.4byte	0x11f
+ 695 0072 50696E5F 		.ascii	"Pin_RedLED_ClearInterrupt\000"
+ 695      5265644C 
+ 695      45445F43 
+ 695      6C656172 
+ 695      496E7465 
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 16
+
+
+ 696 008c 00000000 		.4byte	0x0
+ 697              		.section	.debug_aranges,"",%progbits
+ 698 0000 3C000000 		.4byte	0x3c
+ 699 0004 0200     		.2byte	0x2
+ 700 0006 00000000 		.4byte	.Ldebug_info0
+ 701 000a 04       		.byte	0x4
+ 702 000b 00       		.byte	0x0
+ 703 000c 0000     		.2byte	0x0
+ 704 000e 0000     		.2byte	0x0
+ 705 0010 00000000 		.4byte	.LFB0
+ 706 0014 4C000000 		.4byte	.LFE0-.LFB0
+ 707 0018 00000000 		.4byte	.LFB1
+ 708 001c 30000000 		.4byte	.LFE1-.LFB1
+ 709 0020 00000000 		.4byte	.LFB2
+ 710 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 711 0028 00000000 		.4byte	.LFB3
+ 712 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 713 0030 00000000 		.4byte	.LFB4
+ 714 0034 30000000 		.4byte	.LFE4-.LFB4
+ 715 0038 00000000 		.4byte	0x0
+ 716 003c 00000000 		.4byte	0x0
+ 717              		.section	.debug_ranges,"",%progbits
+ 718              	.Ldebug_ranges0:
+ 719 0000 00000000 		.4byte	.Ltext0
+ 720 0004 00000000 		.4byte	.Letext0
+ 721 0008 00000000 		.4byte	.LFB0
+ 722 000c 4C000000 		.4byte	.LFE0
+ 723 0010 00000000 		.4byte	.LFB1
+ 724 0014 30000000 		.4byte	.LFE1
+ 725 0018 00000000 		.4byte	.LFB2
+ 726 001c 1C000000 		.4byte	.LFE2
+ 727 0020 00000000 		.4byte	.LFB3
+ 728 0024 1C000000 		.4byte	.LFE3
+ 729 0028 00000000 		.4byte	.LFB4
+ 730 002c 30000000 		.4byte	.LFE4
+ 731 0030 00000000 		.4byte	0x0
+ 732 0034 00000000 		.4byte	0x0
+ 733              		.section	.debug_str,"MS",%progbits,1
+ 734              	.LASF6:
+ 735 0000 6C6F6E67 		.ascii	"long long int\000"
+ 735      206C6F6E 
+ 735      6720696E 
+ 735      7400
+ 736              	.LASF18:
+ 737 000e 50696E5F 		.ascii	"Pin_RedLED_ClearInterrupt\000"
+ 737      5265644C 
+ 737      45445F43 
+ 737      6C656172 
+ 737      496E7465 
+ 738              	.LASF14:
+ 739 0028 76616C75 		.ascii	"value\000"
+ 739      6500
+ 740              	.LASF13:
+ 741 002e 50696E5F 		.ascii	"Pin_RedLED_SetDriveMode\000"
+ 741      5265644C 
+ 741      45445F53 
+ 741      65744472 
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 17
+
+
+ 741      6976654D 
+ 742              	.LASF16:
+ 743 0046 50696E5F 		.ascii	"Pin_RedLED_Read\000"
+ 743      5265644C 
+ 743      45445F52 
+ 743      65616400 
+ 744              	.LASF9:
+ 745 0056 666C6F61 		.ascii	"float\000"
+ 745      7400
+ 746              	.LASF22:
+ 747 005c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Pin_RedLED.c\000"
+ 747      6E657261 
+ 747      7465645F 
+ 747      536F7572 
+ 747      63655C50 
+ 748              	.LASF12:
+ 749 0082 50696E5F 		.ascii	"Pin_RedLED_Write\000"
+ 749      5265644C 
+ 749      45445F57 
+ 749      72697465 
+ 749      00
+ 750              	.LASF1:
+ 751 0093 756E7369 		.ascii	"unsigned char\000"
+ 751      676E6564 
+ 751      20636861 
+ 751      7200
+ 752              	.LASF17:
+ 753 00a1 50696E5F 		.ascii	"Pin_RedLED_ReadDataReg\000"
+ 753      5265644C 
+ 753      45445F52 
+ 753      65616444 
+ 753      61746152 
+ 754              	.LASF19:
+ 755 00b8 64725661 		.ascii	"drVal\000"
+ 755      6C00
+ 756              	.LASF5:
+ 757 00be 6C6F6E67 		.ascii	"long unsigned int\000"
+ 757      20756E73 
+ 757      69676E65 
+ 757      6420696E 
+ 757      7400
+ 758              	.LASF3:
+ 759 00d0 73686F72 		.ascii	"short unsigned int\000"
+ 759      7420756E 
+ 759      7369676E 
+ 759      65642069 
+ 759      6E7400
+ 760              	.LASF10:
+ 761 00e3 646F7562 		.ascii	"double\000"
+ 761      6C6500
+ 762              	.LASF23:
+ 763 00ea 433A5C55 		.ascii	"C:\\Users\\maxk\\Desktop\\PSoC 4A\\FAE Workshop\\La"
+ 763      73657273 
+ 763      5C6D6178 
+ 763      6B5C4465 
+ 763      736B746F 
+ 764 0117 62205072 		.ascii	"b Projects\\Lab Templates\\Lab 4 ADC.cydsn\000"
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccML8gi3.s 			page 18
+
+
+ 764      6F6A6563 
+ 764      74735C4C 
+ 764      61622054 
+ 764      656D706C 
+ 765              	.LASF8:
+ 766 0140 756E7369 		.ascii	"unsigned int\000"
+ 766      676E6564 
+ 766      20696E74 
+ 766      00
+ 767              	.LASF7:
+ 768 014d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 768      206C6F6E 
+ 768      6720756E 
+ 768      7369676E 
+ 768      65642069 
+ 769              	.LASF15:
+ 770 0164 6D6F6465 		.ascii	"mode\000"
+ 770      00
+ 771              	.LASF21:
+ 772 0169 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 772      4320342E 
+ 772      342E3100 
+ 773              	.LASF20:
+ 774 0175 6D61736B 		.ascii	"maskedStatus\000"
+ 774      65645374 
+ 774      61747573 
+ 774      00
+ 775              	.LASF11:
+ 776 0182 63686172 		.ascii	"char\000"
+ 776      00
+ 777              	.LASF2:
+ 778 0187 73686F72 		.ascii	"short int\000"
+ 778      7420696E 
+ 778      7400
+ 779              	.LASF24:
+ 780 0191 75696E74 		.ascii	"uint8\000"
+ 780      3800
+ 781              	.LASF4:
+ 782 0197 6C6F6E67 		.ascii	"long int\000"
+ 782      20696E74 
+ 782      00
+ 783              	.LASF0:
+ 784 01a0 7369676E 		.ascii	"signed char\000"
+ 784      65642063 
+ 784      68617200 
+ 785              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

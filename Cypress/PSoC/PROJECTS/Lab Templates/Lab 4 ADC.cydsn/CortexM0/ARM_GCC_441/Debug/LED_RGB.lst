@@ -1,0 +1,1973 @@
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 18, 4
+  11              		.code	16
+  12              		.file	"LED_RGB.c"
+  13              		.section	.debug_abbrev,"",%progbits
+  14              	.Ldebug_abbrev0:
+  15              		.section	.debug_info,"",%progbits
+  16              	.Ldebug_info0:
+  17              		.section	.debug_line,"",%progbits
+  18              	.Ldebug_line0:
+  19 0000 04010000 		.text
+  19      02004800 
+  19      00000201 
+  19      FB0E0D00 
+  19      01010101 
+  20              	.Ltext0:
+  21              		.cfi_sections	.debug_frame
+  22              		.section	.text.LED_RGB_Start,"ax",%progbits
+  23              		.align	2
+  24              		.global	LED_RGB_Start
+  25              		.code	16
+  26              		.thumb_func
+  27              		.type	LED_RGB_Start, %function
+  28              	LED_RGB_Start:
+  29              	.LFB20:
+  30              		.file 1 ".\\LED_RGB.c"
+   1:.\LED_RGB.c   **** /* ========================================
+   2:.\LED_RGB.c   ****  *
+   3:.\LED_RGB.c   ****  * The following firmware was developed by Cypress Semiconductor
+   4:.\LED_RGB.c   ****  * This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+   5:.\LED_RGB.c   ****  * 
+   6:.\LED_RGB.c   ****  * http://creativecommons.org/licenses/by/3.0/deed.en_US
+   7:.\LED_RGB.c   ****  * 
+   8:.\LED_RGB.c   ****  * You are free to:
+   9:.\LED_RGB.c   ****  * -To Share — to copy, distribute and transmit the work 
+  10:.\LED_RGB.c   ****  * -To Remix — to adapt the work 
+  11:.\LED_RGB.c   ****  * -To make commercial use of the work
+  12:.\LED_RGB.c   ****  *
+  13:.\LED_RGB.c   ****  * ========================================
+  14:.\LED_RGB.c   ****  */
+  15:.\LED_RGB.c   **** 
+  16:.\LED_RGB.c   **** /* ========================================
+  17:.\LED_RGB.c   ****  * CY8CKIT-042 LED RGB Driver Module
+  18:.\LED_RGB.c   ****  * This module was designed to drive the RGB LEDs on the KIT-042 with pleasing
+  19:.\LED_RGB.c   ****  * colors. This module requires that three 16- or 8-bit PWMs be placed and named
+  20:.\LED_RGB.c   ****  * PWM_R, PWM_G, and PWM_B. Their outputs should be inverted because the LEDs on
+  21:.\LED_RGB.c   ****  * the kit are sunk by the PSoC 4 GPIOs. LEDs are on P1[6], P0[2], P0[3] (RGB).
+  22:.\LED_RGB.c   ****  * The PWMs should be clocked at a rate such that the output frequency is 45 Hz
+  23:.\LED_RGB.c   ****  * or greater to avoid weird blinking.
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 2
+
+
+  24:.\LED_RGB.c   ****  * ========================================
+  25:.\LED_RGB.c   ****  */
+  26:.\LED_RGB.c   **** 
+  27:.\LED_RGB.c   **** #include <LED_RGB.h>
+  28:.\LED_RGB.c   **** 
+  29:.\LED_RGB.c   **** /*****************************************************************************
+  30:.\LED_RGB.c   **** * Function Name: LED_RGB_Start()
+  31:.\LED_RGB.c   **** ******************************************************************************
+  32:.\LED_RGB.c   **** * Summary:
+  33:.\LED_RGB.c   **** *  Starts the LED PWM components.
+  34:.\LED_RGB.c   **** *
+  35:.\LED_RGB.c   **** *****************************************************************************/
+  36:.\LED_RGB.c   **** void LED_RGB_Start(void)
+  37:.\LED_RGB.c   **** {
+  31              		.loc 1 37 0
+  32              		.cfi_startproc
+  33 0000 80B5     		push	{r7, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+  37              		.cfi_offset 14, -4
+  38 0002 00AF     		add	r7, sp, #0
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_register 7
+  38:.\LED_RGB.c   ****     PWM_R_Start();
+  41              		.loc 1 38 0
+  42 0004 FFF7FEFF 		bl	PWM_R_Start
+  39:.\LED_RGB.c   ****     PWM_G_Start();
+  43              		.loc 1 39 0
+  44 0008 FFF7FEFF 		bl	PWM_G_Start
+  40:.\LED_RGB.c   ****     PWM_B_Start();
+  45              		.loc 1 40 0
+  46 000c FFF7FEFF 		bl	PWM_B_Start
+  41:.\LED_RGB.c   **** }
+  47              		.loc 1 41 0
+  48 0010 BD46     		mov	sp, r7
+  49              		@ sp needed for prologue
+  50 0012 80BD     		pop	{r7, pc}
+  51              		.cfi_endproc
+  52              	.LFE20:
+  53              		.size	LED_RGB_Start, .-LED_RGB_Start
+  54              		.section	.text.LED_RGB_Stop,"ax",%progbits
+  55              		.align	2
+  56              		.global	LED_RGB_Stop
+  57              		.code	16
+  58              		.thumb_func
+  59              		.type	LED_RGB_Stop, %function
+  60              	LED_RGB_Stop:
+  61              	.LFB21:
+  42:.\LED_RGB.c   **** 
+  43:.\LED_RGB.c   **** /*****************************************************************************
+  44:.\LED_RGB.c   **** * Function Name: LED_RGB_Stop()
+  45:.\LED_RGB.c   **** ******************************************************************************
+  46:.\LED_RGB.c   **** * Summary:
+  47:.\LED_RGB.c   **** *  Stops the LED PWM components.
+  48:.\LED_RGB.c   **** *
+  49:.\LED_RGB.c   **** *****************************************************************************/
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 3
+
+
+  50:.\LED_RGB.c   **** void LED_RGB_Stop(void)
+  51:.\LED_RGB.c   **** {
+  62              		.loc 1 51 0
+  63              		.cfi_startproc
+  64 0000 80B5     		push	{r7, lr}
+  65              	.LCFI2:
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 7, -8
+  68              		.cfi_offset 14, -4
+  69 0002 00AF     		add	r7, sp, #0
+  70              	.LCFI3:
+  71              		.cfi_def_cfa_register 7
+  52:.\LED_RGB.c   ****     PWM_R_Stop();
+  72              		.loc 1 52 0
+  73 0004 FFF7FEFF 		bl	PWM_R_Stop
+  53:.\LED_RGB.c   ****     PWM_G_Stop();
+  74              		.loc 1 53 0
+  75 0008 FFF7FEFF 		bl	PWM_G_Stop
+  54:.\LED_RGB.c   ****     PWM_B_Stop();
+  76              		.loc 1 54 0
+  77 000c FFF7FEFF 		bl	PWM_B_Stop
+  55:.\LED_RGB.c   **** }
+  78              		.loc 1 55 0
+  79 0010 BD46     		mov	sp, r7
+  80              		@ sp needed for prologue
+  81 0012 80BD     		pop	{r7, pc}
+  82              		.cfi_endproc
+  83              	.LFE21:
+  84              		.size	LED_RGB_Stop, .-LED_RGB_Stop
+  85              		.section	.text.LED_RGB_DCWrite,"ax",%progbits
+  86              		.align	2
+  87              		.global	LED_RGB_DCWrite
+  88              		.code	16
+  89              		.thumb_func
+  90              		.type	LED_RGB_DCWrite, %function
+  91              	LED_RGB_DCWrite:
+  92              	.LFB22:
+  56:.\LED_RGB.c   **** 
+  57:.\LED_RGB.c   **** /*****************************************************************************
+  58:.\LED_RGB.c   **** * Function Name: LED_RGB_DCWrite()
+  59:.\LED_RGB.c   **** ******************************************************************************
+  60:.\LED_RGB.c   **** * Summary:
+  61:.\LED_RGB.c   **** *  Writes one of the three LED color duty cycles
+  62:.\LED_RGB.c   **** *
+  63:.\LED_RGB.c   **** * Parameters:
+  64:.\LED_RGB.c   **** *  LED_Color: Describes which LED color is to be written.
+  65:.\LED_RGB.c   **** *  LED_NewDutyCycle: Describes the new duty cycle to be written to the PWM.
+  66:.\LED_RGB.c   **** *   Tested with 16-bit values(0-65535 dark to bright), but should work with
+  67:.\LED_RGB.c   **** *   8-bit values if the PWMs are 8-bit.
+  68:.\LED_RGB.c   **** *
+  69:.\LED_RGB.c   **** *****************************************************************************/
+  70:.\LED_RGB.c   **** void LED_RGB_DCWrite(uint8 LED_Color, uint16 LED_NewDutyCycle)
+  71:.\LED_RGB.c   **** {
+  93              		.loc 1 71 0
+  94              		.cfi_startproc
+  95 0000 80B5     		push	{r7, lr}
+  96              	.LCFI4:
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 4
+
+
+  97              		.cfi_def_cfa_offset 8
+  98              		.cfi_offset 7, -8
+  99              		.cfi_offset 14, -4
+ 100 0002 82B0     		sub	sp, sp, #8
+ 101              	.LCFI5:
+ 102              		.cfi_def_cfa_offset 16
+ 103 0004 00AF     		add	r7, sp, #0
+ 104              	.LCFI6:
+ 105              		.cfi_def_cfa_register 7
+ 106 0006 0A1C     		mov	r2, r1
+ 107 0008 FB1D     		add	r3, r7, #7
+ 108 000a 011C     		add	r1, r0, #0
+ 109 000c 1970     		strb	r1, [r3]
+ 110 000e 3B1D     		add	r3, r7, #4
+ 111 0010 1A80     		strh	r2, [r3]
+  72:.\LED_RGB.c   ****     #if ( LED_RGB_PWM_RESOLUTION == 16 )
+  73:.\LED_RGB.c   ****     
+  74:.\LED_RGB.c   ****     switch(LED_Color)
+ 112              		.loc 1 74 0
+ 113 0012 FB1D     		add	r3, r7, #7
+ 114 0014 1B78     		ldrb	r3, [r3]
+ 115 0016 022B     		cmp	r3, #2
+ 116 0018 09D0     		beq	.L8
+ 117 001a 032B     		cmp	r3, #3
+ 118 001c 0DD0     		beq	.L9
+ 119 001e 012B     		cmp	r3, #1
+ 120 0020 10D1     		bne	.L10
+ 121              	.L7:
+  75:.\LED_RGB.c   ****     {
+  76:.\LED_RGB.c   ****     case LED_RED:
+  77:.\LED_RGB.c   ****         PWM_R_WriteCompare(LED_NewDutyCycle);
+ 122              		.loc 1 77 0
+ 123 0022 3B1D     		add	r3, r7, #4
+ 124 0024 1B88     		ldrh	r3, [r3]
+ 125 0026 181C     		mov	r0, r3
+ 126 0028 FFF7FEFF 		bl	PWM_R_WriteCompare
+  78:.\LED_RGB.c   ****         break;
+ 127              		.loc 1 78 0
+ 128 002c 0AE0     		b	.L10
+ 129              	.L8:
+  79:.\LED_RGB.c   ****     case LED_GREEN:
+  80:.\LED_RGB.c   ****         PWM_G_WriteCompare(LED_NewDutyCycle);
+ 130              		.loc 1 80 0
+ 131 002e 3B1D     		add	r3, r7, #4
+ 132 0030 1B88     		ldrh	r3, [r3]
+ 133 0032 181C     		mov	r0, r3
+ 134 0034 FFF7FEFF 		bl	PWM_G_WriteCompare
+  81:.\LED_RGB.c   ****         break;
+ 135              		.loc 1 81 0
+ 136 0038 04E0     		b	.L10
+ 137              	.L9:
+  82:.\LED_RGB.c   ****     case LED_BLUE:
+  83:.\LED_RGB.c   ****         PWM_B_WriteCompare(LED_NewDutyCycle);
+ 138              		.loc 1 83 0
+ 139 003a 3B1D     		add	r3, r7, #4
+ 140 003c 1B88     		ldrh	r3, [r3]
+ 141 003e 181C     		mov	r0, r3
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 5
+
+
+ 142 0040 FFF7FEFF 		bl	PWM_B_WriteCompare
+ 143              	.L10:
+  84:.\LED_RGB.c   ****         break;
+  85:.\LED_RGB.c   ****     default:
+  86:.\LED_RGB.c   ****         break;
+  87:.\LED_RGB.c   ****     }
+  88:.\LED_RGB.c   ****     
+  89:.\LED_RGB.c   ****     #elif ( LED_RGB_PWM_RESOLUTION == 8 )
+  90:.\LED_RGB.c   ****     
+  91:.\LED_RGB.c   ****     switch(LED_Color)
+  92:.\LED_RGB.c   ****     {
+  93:.\LED_RGB.c   ****     case LED_RED:
+  94:.\LED_RGB.c   ****         PWM_RG_WriteCompare1(LED_NewDutyCycle>>8);
+  95:.\LED_RGB.c   ****         break;
+  96:.\LED_RGB.c   ****     case LED_GREEN:
+  97:.\LED_RGB.c   ****         PWM_RG_WriteCompare2(LED_NewDutyCycle>>8);
+  98:.\LED_RGB.c   ****         break;
+  99:.\LED_RGB.c   ****     case LED_BLUE:
+ 100:.\LED_RGB.c   ****         PWM_B_WriteCompare(LED_NewDutyCycle>>8);
+ 101:.\LED_RGB.c   ****         break;
+ 102:.\LED_RGB.c   ****     default:
+ 103:.\LED_RGB.c   ****         break;
+ 104:.\LED_RGB.c   ****     }
+ 105:.\LED_RGB.c   ****     
+ 106:.\LED_RGB.c   ****     #else
+ 107:.\LED_RGB.c   ****     
+ 108:.\LED_RGB.c   ****     /* This should never happen so we force a compile error. Use 8 or 16 bit! */
+ 109:.\LED_RGB.c   ****     Use 8 or 16 bit only!
+ 110:.\LED_RGB.c   ****     
+ 111:.\LED_RGB.c   ****     #endif
+ 112:.\LED_RGB.c   **** }
+ 144              		.loc 1 112 0
+ 145 0044 BD46     		mov	sp, r7
+ 146 0046 02B0     		add	sp, sp, #8
+ 147              		@ sp needed for prologue
+ 148 0048 80BD     		pop	{r7, pc}
+ 149              		.cfi_endproc
+ 150              	.LFE22:
+ 151              		.size	LED_RGB_DCWrite, .-LED_RGB_DCWrite
+ 152 004a C046     		.section	.text.LED_RGB_SetColorRGB,"ax",%progbits
+ 153              		.align	2
+ 154              		.global	LED_RGB_SetColorRGB
+ 155              		.code	16
+ 156              		.thumb_func
+ 157              		.type	LED_RGB_SetColorRGB, %function
+ 158              	LED_RGB_SetColorRGB:
+ 159              	.LFB23:
+ 113:.\LED_RGB.c   **** 
+ 114:.\LED_RGB.c   **** /*****************************************************************************
+ 115:.\LED_RGB.c   **** * Function Name: LED_RGB_SetColorRGB()
+ 116:.\LED_RGB.c   **** ******************************************************************************
+ 117:.\LED_RGB.c   **** * Summary:
+ 118:.\LED_RGB.c   **** *  Writes all three of the LED duty cycles at once
+ 119:.\LED_RGB.c   **** *
+ 120:.\LED_RGB.c   **** * Parameters:
+ 121:.\LED_RGB.c   **** *  redIntensity: Describes the new red LED intensity
+ 122:.\LED_RGB.c   **** *  greenIntensity: Describes the new green LED intensity
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 6
+
+
+ 123:.\LED_RGB.c   **** *  blueIntensity: Describes the new blue LED intensity
+ 124:.\LED_RGB.c   **** *
+ 125:.\LED_RGB.c   **** *  Note: Each intensity value should be 0-65535 dark to bright full scale.
+ 126:.\LED_RGB.c   **** *
+ 127:.\LED_RGB.c   **** *****************************************************************************/
+ 128:.\LED_RGB.c   **** void LED_RGB_SetColorRGB(uint16 redIntensity, uint16 greenIntensity, uint16 blueIntensity)
+ 129:.\LED_RGB.c   **** {     
+ 160              		.loc 1 129 0
+ 161              		.cfi_startproc
+ 162 0000 80B5     		push	{r7, lr}
+ 163              	.LCFI7:
+ 164              		.cfi_def_cfa_offset 8
+ 165              		.cfi_offset 7, -8
+ 166              		.cfi_offset 14, -4
+ 167 0002 82B0     		sub	sp, sp, #8
+ 168              	.LCFI8:
+ 169              		.cfi_def_cfa_offset 16
+ 170 0004 00AF     		add	r7, sp, #0
+ 171              	.LCFI9:
+ 172              		.cfi_def_cfa_register 7
+ 173 0006 BB1D     		add	r3, r7, #6
+ 174 0008 1880     		strh	r0, [r3]
+ 175 000a 3B1D     		add	r3, r7, #4
+ 176 000c 1980     		strh	r1, [r3]
+ 177 000e BB1C     		add	r3, r7, #2
+ 178 0010 1A80     		strh	r2, [r3]
+ 130:.\LED_RGB.c   ****     LED_RGB_DCWrite(LED_RED, (uint32) redIntensity);
+ 179              		.loc 1 130 0
+ 180 0012 BB1D     		add	r3, r7, #6
+ 181 0014 1B88     		ldrh	r3, [r3]
+ 182 0016 0120     		mov	r0, #1
+ 183 0018 191C     		mov	r1, r3
+ 184 001a FFF7FEFF 		bl	LED_RGB_DCWrite
+ 131:.\LED_RGB.c   ****     LED_RGB_DCWrite(LED_GREEN, (uint32) greenIntensity);
+ 185              		.loc 1 131 0
+ 186 001e 3B1D     		add	r3, r7, #4
+ 187 0020 1B88     		ldrh	r3, [r3]
+ 188 0022 0220     		mov	r0, #2
+ 189 0024 191C     		mov	r1, r3
+ 190 0026 FFF7FEFF 		bl	LED_RGB_DCWrite
+ 132:.\LED_RGB.c   ****     LED_RGB_DCWrite(LED_BLUE, (uint32) blueIntensity);
+ 191              		.loc 1 132 0
+ 192 002a BB1C     		add	r3, r7, #2
+ 193 002c 1B88     		ldrh	r3, [r3]
+ 194 002e 0320     		mov	r0, #3
+ 195 0030 191C     		mov	r1, r3
+ 196 0032 FFF7FEFF 		bl	LED_RGB_DCWrite
+ 133:.\LED_RGB.c   **** }
+ 197              		.loc 1 133 0
+ 198 0036 BD46     		mov	sp, r7
+ 199 0038 02B0     		add	sp, sp, #8
+ 200              		@ sp needed for prologue
+ 201 003a 80BD     		pop	{r7, pc}
+ 202              		.cfi_endproc
+ 203              	.LFE23:
+ 204              		.size	LED_RGB_SetColorRGB, .-LED_RGB_SetColorRGB
+ 205              		.section	.text.LED_RGB_SetColorCircle,"ax",%progbits
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 7
+
+
+ 206              		.align	2
+ 207              		.global	LED_RGB_SetColorCircle
+ 208              		.code	16
+ 209              		.thumb_func
+ 210              		.type	LED_RGB_SetColorCircle, %function
+ 211              	LED_RGB_SetColorCircle:
+ 212              	.LFB24:
+ 134:.\LED_RGB.c   **** 
+ 135:.\LED_RGB.c   **** /*****************************************************************************
+ 136:.\LED_RGB.c   **** * Function Name: LED_RGB_SetColorCircle()
+ 137:.\LED_RGB.c   **** ******************************************************************************
+ 138:.\LED_RGB.c   **** * Summary:
+ 139:.\LED_RGB.c   **** *  Sets the three LEDs to produce the specified hue at 100% saturation and
+ 140:.\LED_RGB.c   **** * value. This will produce the most saturated version of the color.
+ 141:.\LED_RGB.c   **** *
+ 142:.\LED_RGB.c   **** * Parameters:
+ 143:.\LED_RGB.c   **** *  hue: Describes the LED color hue 
+ 144:.\LED_RGB.c   **** *   (0-65535 full scale, red->green->blue->red)
+ 145:.\LED_RGB.c   **** *
+ 146:.\LED_RGB.c   **** *****************************************************************************/
+ 147:.\LED_RGB.c   **** void LED_RGB_SetColorCircle(uint16 hue)
+ 148:.\LED_RGB.c   **** {
+ 213              		.loc 1 148 0
+ 214              		.cfi_startproc
+ 215 0000 80B5     		push	{r7, lr}
+ 216              	.LCFI10:
+ 217              		.cfi_def_cfa_offset 8
+ 218              		.cfi_offset 7, -8
+ 219              		.cfi_offset 14, -4
+ 220 0002 84B0     		sub	sp, sp, #16
+ 221              	.LCFI11:
+ 222              		.cfi_def_cfa_offset 24
+ 223 0004 00AF     		add	r7, sp, #0
+ 224              	.LCFI12:
+ 225              		.cfi_def_cfa_register 7
+ 226 0006 021C     		mov	r2, r0
+ 227 0008 BB1D     		add	r3, r7, #6
+ 228 000a 1A80     		strh	r2, [r3]
+ 149:.\LED_RGB.c   ****     uint16 redIntensity, greenIntensity, blueIntensity;
+ 150:.\LED_RGB.c   **** 
+ 151:.\LED_RGB.c   ****     if(hue < UINT16_1_6TH_MAX)
+ 229              		.loc 1 151 0
+ 230 000c BB1D     		add	r3, r7, #6
+ 231 000e 1A88     		ldrh	r2, [r3]
+ 232 0010 534B     		ldr	r3, .L21
+ 233 0012 9A42     		cmp	r2, r3
+ 234 0014 12D8     		bhi	.L14
+ 152:.\LED_RGB.c   ****     {
+ 153:.\LED_RGB.c   ****         //red on, green increasing
+ 154:.\LED_RGB.c   ****         redIntensity = UINT16_MAX;
+ 235              		.loc 1 154 0
+ 236 0016 3A1C     		mov	r2, r7
+ 237 0018 0A32     		add	r2, r2, #10
+ 238 001a 0123     		mov	r3, #1
+ 239 001c 5B42     		neg	r3, r3
+ 240 001e 1380     		strh	r3, [r2]
+ 155:.\LED_RGB.c   ****         greenIntensity = hue * 6;
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 8
+
+
+ 241              		.loc 1 155 0
+ 242 0020 3A1C     		mov	r2, r7
+ 243 0022 0C32     		add	r2, r2, #12
+ 244 0024 BB1D     		add	r3, r7, #6
+ 245 0026 1B88     		ldrh	r3, [r3]
+ 246 0028 191C     		add	r1, r3, #0
+ 247 002a 4900     		lsl	r1, r1, #1
+ 248 002c CB18     		add	r3, r1, r3
+ 249 002e 5B00     		lsl	r3, r3, #1
+ 250 0030 1380     		strh	r3, [r2]
+ 156:.\LED_RGB.c   ****         blueIntensity = 0;
+ 251              		.loc 1 156 0
+ 252 0032 3B1C     		mov	r3, r7
+ 253 0034 0E33     		add	r3, r3, #14
+ 254 0036 0022     		mov	r2, #0
+ 255 0038 1A80     		strh	r2, [r3]
+ 256 003a 7FE0     		b	.L15
+ 257              	.L14:
+ 157:.\LED_RGB.c   ****     }
+ 158:.\LED_RGB.c   ****     else if(hue < UINT16_2_6TH_MAX)
+ 258              		.loc 1 158 0
+ 259 003c BB1D     		add	r3, r7, #6
+ 260 003e 1A88     		ldrh	r2, [r3]
+ 261 0040 484B     		ldr	r3, .L21+4
+ 262 0042 9A42     		cmp	r2, r3
+ 263 0044 15D8     		bhi	.L16
+ 159:.\LED_RGB.c   ****     {
+ 160:.\LED_RGB.c   ****         //green on, red decreasing
+ 161:.\LED_RGB.c   ****         redIntensity = (UINT16_2_6TH_MAX - hue) * 6;
+ 264              		.loc 1 161 0
+ 265 0046 BB1D     		add	r3, r7, #6
+ 266 0048 1B88     		ldrh	r3, [r3]
+ 267 004a 474A     		ldr	r2, .L21+8
+ 268 004c D31A     		sub	r3, r2, r3
+ 269 004e 9BB2     		uxth	r3, r3
+ 270 0050 3A1C     		mov	r2, r7
+ 271 0052 0A32     		add	r2, r2, #10
+ 272 0054 191C     		add	r1, r3, #0
+ 273 0056 4900     		lsl	r1, r1, #1
+ 274 0058 CB18     		add	r3, r1, r3
+ 275 005a 5B00     		lsl	r3, r3, #1
+ 276 005c 1380     		strh	r3, [r2]
+ 162:.\LED_RGB.c   ****         greenIntensity = UINT16_MAX;
+ 277              		.loc 1 162 0
+ 278 005e 3A1C     		mov	r2, r7
+ 279 0060 0C32     		add	r2, r2, #12
+ 280 0062 0123     		mov	r3, #1
+ 281 0064 5B42     		neg	r3, r3
+ 282 0066 1380     		strh	r3, [r2]
+ 163:.\LED_RGB.c   ****         blueIntensity = 0;
+ 283              		.loc 1 163 0
+ 284 0068 3B1C     		mov	r3, r7
+ 285 006a 0E33     		add	r3, r3, #14
+ 286 006c 0022     		mov	r2, #0
+ 287 006e 1A80     		strh	r2, [r3]
+ 288 0070 64E0     		b	.L15
+ 289              	.L16:
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 9
+
+
+ 164:.\LED_RGB.c   ****     }
+ 165:.\LED_RGB.c   ****     else if(hue < UINT16_3_6TH_MAX)
+ 290              		.loc 1 165 0
+ 291 0072 BB1D     		add	r3, r7, #6
+ 292 0074 1A88     		ldrh	r2, [r3]
+ 293 0076 3D4B     		ldr	r3, .L21+12
+ 294 0078 9A42     		cmp	r2, r3
+ 295 007a 15D8     		bhi	.L17
+ 166:.\LED_RGB.c   ****     {
+ 167:.\LED_RGB.c   ****         //green on, blue increasing
+ 168:.\LED_RGB.c   ****         redIntensity = 0;
+ 296              		.loc 1 168 0
+ 297 007c 3B1C     		mov	r3, r7
+ 298 007e 0A33     		add	r3, r3, #10
+ 299 0080 0022     		mov	r2, #0
+ 300 0082 1A80     		strh	r2, [r3]
+ 169:.\LED_RGB.c   ****         greenIntensity = UINT16_MAX;
+ 301              		.loc 1 169 0
+ 302 0084 3A1C     		mov	r2, r7
+ 303 0086 0C32     		add	r2, r2, #12
+ 304 0088 0123     		mov	r3, #1
+ 305 008a 5B42     		neg	r3, r3
+ 306 008c 1380     		strh	r3, [r2]
+ 170:.\LED_RGB.c   ****         blueIntensity = (hue - UINT16_2_6TH_MAX) * 6;
+ 307              		.loc 1 170 0
+ 308 008e BB1D     		add	r3, r7, #6
+ 309 0090 1B88     		ldrh	r3, [r3]
+ 310 0092 1A1C     		add	r2, r3, #0
+ 311 0094 5200     		lsl	r2, r2, #1
+ 312 0096 D318     		add	r3, r2, r3
+ 313 0098 9BB2     		uxth	r3, r3
+ 314 009a 0133     		add	r3, r3, #1
+ 315 009c 9AB2     		uxth	r2, r3
+ 316 009e 3B1C     		mov	r3, r7
+ 317 00a0 0E33     		add	r3, r3, #14
+ 318 00a2 5200     		lsl	r2, r2, #1
+ 319 00a4 1A80     		strh	r2, [r3]
+ 320 00a6 49E0     		b	.L15
+ 321              	.L17:
+ 171:.\LED_RGB.c   ****     }
+ 172:.\LED_RGB.c   ****     else if(hue < UINT16_4_6TH_MAX)
+ 322              		.loc 1 172 0
+ 323 00a8 BB1D     		add	r3, r7, #6
+ 324 00aa 1A88     		ldrh	r2, [r3]
+ 325 00ac 304B     		ldr	r3, .L21+16
+ 326 00ae 9A42     		cmp	r2, r3
+ 327 00b0 15D8     		bhi	.L18
+ 173:.\LED_RGB.c   ****     {
+ 174:.\LED_RGB.c   ****         //blue on, green decreasing
+ 175:.\LED_RGB.c   ****         redIntensity = 0;
+ 328              		.loc 1 175 0
+ 329 00b2 3B1C     		mov	r3, r7
+ 330 00b4 0A33     		add	r3, r3, #10
+ 331 00b6 0022     		mov	r2, #0
+ 332 00b8 1A80     		strh	r2, [r3]
+ 176:.\LED_RGB.c   ****         greenIntensity = (UINT16_4_6TH_MAX - hue) * 6;
+ 333              		.loc 1 176 0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 10
+
+
+ 334 00ba BB1D     		add	r3, r7, #6
+ 335 00bc 1B88     		ldrh	r3, [r3]
+ 336 00be 2D4A     		ldr	r2, .L21+20
+ 337 00c0 D31A     		sub	r3, r2, r3
+ 338 00c2 9BB2     		uxth	r3, r3
+ 339 00c4 3A1C     		mov	r2, r7
+ 340 00c6 0C32     		add	r2, r2, #12
+ 341 00c8 191C     		add	r1, r3, #0
+ 342 00ca 4900     		lsl	r1, r1, #1
+ 343 00cc CB18     		add	r3, r1, r3
+ 344 00ce 5B00     		lsl	r3, r3, #1
+ 345 00d0 1380     		strh	r3, [r2]
+ 177:.\LED_RGB.c   ****         blueIntensity = UINT16_MAX;
+ 346              		.loc 1 177 0
+ 347 00d2 3A1C     		mov	r2, r7
+ 348 00d4 0E32     		add	r2, r2, #14
+ 349 00d6 0123     		mov	r3, #1
+ 350 00d8 5B42     		neg	r3, r3
+ 351 00da 1380     		strh	r3, [r2]
+ 352 00dc 2EE0     		b	.L15
+ 353              	.L18:
+ 178:.\LED_RGB.c   ****     }
+ 179:.\LED_RGB.c   ****     else if(hue < UINT16_5_6TH_MAX)
+ 354              		.loc 1 179 0
+ 355 00de BB1D     		add	r3, r7, #6
+ 356 00e0 1A88     		ldrh	r2, [r3]
+ 357 00e2 254B     		ldr	r3, .L21+24
+ 358 00e4 9A42     		cmp	r2, r3
+ 359 00e6 14D8     		bhi	.L19
+ 180:.\LED_RGB.c   ****     {
+ 181:.\LED_RGB.c   ****         //blue on, red increasing
+ 182:.\LED_RGB.c   ****         redIntensity =  (hue - UINT16_4_6TH_MAX) * 6;
+ 360              		.loc 1 182 0
+ 361 00e8 BB1D     		add	r3, r7, #6
+ 362 00ea 1B88     		ldrh	r3, [r3]
+ 363 00ec 1A1C     		add	r2, r3, #0
+ 364 00ee 5200     		lsl	r2, r2, #1
+ 365 00f0 D318     		add	r3, r2, r3
+ 366 00f2 5B00     		lsl	r3, r3, #1
+ 367 00f4 9AB2     		uxth	r2, r3
+ 368 00f6 3B1C     		mov	r3, r7
+ 369 00f8 0A33     		add	r3, r3, #10
+ 370 00fa 0432     		add	r2, r2, #4
+ 371 00fc 1A80     		strh	r2, [r3]
+ 183:.\LED_RGB.c   ****         greenIntensity = 0;
+ 372              		.loc 1 183 0
+ 373 00fe 3B1C     		mov	r3, r7
+ 374 0100 0C33     		add	r3, r3, #12
+ 375 0102 0022     		mov	r2, #0
+ 376 0104 1A80     		strh	r2, [r3]
+ 184:.\LED_RGB.c   ****         blueIntensity = UINT16_MAX;
+ 377              		.loc 1 184 0
+ 378 0106 3A1C     		mov	r2, r7
+ 379 0108 0E32     		add	r2, r2, #14
+ 380 010a 0123     		mov	r3, #1
+ 381 010c 5B42     		neg	r3, r3
+ 382 010e 1380     		strh	r3, [r2]
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 11
+
+
+ 383 0110 14E0     		b	.L15
+ 384              	.L19:
+ 185:.\LED_RGB.c   ****     }
+ 186:.\LED_RGB.c   ****     else
+ 187:.\LED_RGB.c   ****     {
+ 188:.\LED_RGB.c   ****         //red on, blue decreasing
+ 189:.\LED_RGB.c   ****         redIntensity = UINT16_MAX;
+ 385              		.loc 1 189 0
+ 386 0112 3A1C     		mov	r2, r7
+ 387 0114 0A32     		add	r2, r2, #10
+ 388 0116 0123     		mov	r3, #1
+ 389 0118 5B42     		neg	r3, r3
+ 390 011a 1380     		strh	r3, [r2]
+ 190:.\LED_RGB.c   ****         greenIntensity = 0;
+ 391              		.loc 1 190 0
+ 392 011c 3B1C     		mov	r3, r7
+ 393 011e 0C33     		add	r3, r3, #12
+ 394 0120 0022     		mov	r2, #0
+ 395 0122 1A80     		strh	r2, [r3]
+ 191:.\LED_RGB.c   ****         blueIntensity = (UINT16_MAX - hue) * 6;
+ 396              		.loc 1 191 0
+ 397 0124 BB1D     		add	r3, r7, #6
+ 398 0126 1B88     		ldrh	r3, [r3]
+ 399 0128 144A     		ldr	r2, .L21+28
+ 400 012a D31A     		sub	r3, r2, r3
+ 401 012c 9BB2     		uxth	r3, r3
+ 402 012e 3A1C     		mov	r2, r7
+ 403 0130 0E32     		add	r2, r2, #14
+ 404 0132 191C     		add	r1, r3, #0
+ 405 0134 4900     		lsl	r1, r1, #1
+ 406 0136 CB18     		add	r3, r1, r3
+ 407 0138 5B00     		lsl	r3, r3, #1
+ 408 013a 1380     		strh	r3, [r2]
+ 409              	.L15:
+ 192:.\LED_RGB.c   ****     }
+ 193:.\LED_RGB.c   ****     
+ 194:.\LED_RGB.c   ****     LED_RGB_SetColorRGB(redIntensity, greenIntensity, blueIntensity);
+ 410              		.loc 1 194 0
+ 411 013c 3B1C     		mov	r3, r7
+ 412 013e 0A33     		add	r3, r3, #10
+ 413 0140 1988     		ldrh	r1, [r3]
+ 414 0142 3B1C     		mov	r3, r7
+ 415 0144 0C33     		add	r3, r3, #12
+ 416 0146 1A88     		ldrh	r2, [r3]
+ 417 0148 3B1C     		mov	r3, r7
+ 418 014a 0E33     		add	r3, r3, #14
+ 419 014c 1B88     		ldrh	r3, [r3]
+ 420 014e 081C     		mov	r0, r1
+ 421 0150 111C     		mov	r1, r2
+ 422 0152 1A1C     		mov	r2, r3
+ 423 0154 FFF7FEFF 		bl	LED_RGB_SetColorRGB
+ 195:.\LED_RGB.c   **** }
+ 424              		.loc 1 195 0
+ 425 0158 BD46     		mov	sp, r7
+ 426 015a 04B0     		add	sp, sp, #16
+ 427              		@ sp needed for prologue
+ 428 015c 80BD     		pop	{r7, pc}
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 12
+
+
+ 429              	.L22:
+ 430 015e C046     		.align	2
+ 431              	.L21:
+ 432 0160 A92A0000 		.word	10921
+ 433 0164 54550000 		.word	21844
+ 434 0168 55550000 		.word	21845
+ 435 016c FE7F0000 		.word	32766
+ 436 0170 A9AA0000 		.word	43689
+ 437 0174 AAAA0000 		.word	43690
+ 438 0178 53D50000 		.word	54611
+ 439 017c FFFF0000 		.word	65535
+ 440              		.cfi_endproc
+ 441              	.LFE24:
+ 442              		.size	LED_RGB_SetColorCircle, .-LED_RGB_SetColorCircle
+ 443              		.global	__aeabi_uidiv
+ 444              		.section	.text.LED_RGB_SetColorCircleHSV,"ax",%progbits
+ 445              		.align	2
+ 446              		.global	LED_RGB_SetColorCircleHSV
+ 447              		.code	16
+ 448              		.thumb_func
+ 449              		.type	LED_RGB_SetColorCircleHSV, %function
+ 450              	LED_RGB_SetColorCircleHSV:
+ 451              	.LFB25:
+ 196:.\LED_RGB.c   **** 
+ 197:.\LED_RGB.c   **** /*****************************************************************************
+ 198:.\LED_RGB.c   **** * Function Name: LED_RGB_SetColorCircleHSV()
+ 199:.\LED_RGB.c   **** ******************************************************************************
+ 200:.\LED_RGB.c   **** * Summary:
+ 201:.\LED_RGB.c   **** *  Sets the three LEDs to produce the specified hue, saturation and value.
+ 202:.\LED_RGB.c   **** *
+ 203:.\LED_RGB.c   **** * Parameters:
+ 204:.\LED_RGB.c   **** *  hue: Describes the LED array hue (color)
+ 205:.\LED_RGB.c   **** *   (0-65535 full scale, red->green->blue->red)
+ 206:.\LED_RGB.c   **** *  saturation: Describes the LED array saturation (un-whiteness)
+ 207:.\LED_RGB.c   **** *   (0-65535 full scale, white->hue)
+ 208:.\LED_RGB.c   **** *  value: Describes the LED array value (un-blackness)
+ 209:.\LED_RGB.c   **** *   (0-65535 full scale, black->hue)
+ 210:.\LED_RGB.c   **** *
+ 211:.\LED_RGB.c   **** *****************************************************************************/
+ 212:.\LED_RGB.c   **** void LED_RGB_SetColorCircleHSV(uint16 hue, uint16 saturation, uint16 value)
+ 213:.\LED_RGB.c   **** {
+ 452              		.loc 1 213 0
+ 453              		.cfi_startproc
+ 454 0000 80B5     		push	{r7, lr}
+ 455              	.LCFI13:
+ 456              		.cfi_def_cfa_offset 8
+ 457              		.cfi_offset 7, -8
+ 458              		.cfi_offset 14, -4
+ 459 0002 88B0     		sub	sp, sp, #32
+ 460              	.LCFI14:
+ 461              		.cfi_def_cfa_offset 40
+ 462 0004 00AF     		add	r7, sp, #0
+ 463              	.LCFI15:
+ 464              		.cfi_def_cfa_register 7
+ 465 0006 BB1D     		add	r3, r7, #6
+ 466 0008 1880     		strh	r0, [r3]
+ 467 000a 3B1D     		add	r3, r7, #4
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 13
+
+
+ 468 000c 1980     		strh	r1, [r3]
+ 469 000e BB1C     		add	r3, r7, #2
+ 470 0010 1A80     		strh	r2, [r3]
+ 214:.\LED_RGB.c   ****     int32 redIntensity, greenIntensity, blueIntensity;
+ 215:.\LED_RGB.c   ****     
+ 216:.\LED_RGB.c   ****     uint32 dominantIntensityC = ((uint32)saturation) * value / UINT16_MAX;
+ 471              		.loc 1 216 0
+ 472 0012 3B1D     		add	r3, r7, #4
+ 473 0014 1B88     		ldrh	r3, [r3]
+ 474 0016 BA1C     		add	r2, r7, #2
+ 475 0018 1288     		ldrh	r2, [r2]
+ 476 001a 5343     		mul	r3, r2
+ 477 001c 181C     		mov	r0, r3
+ 478 001e 6449     		ldr	r1, .L37
+ 479 0020 FFF7FEFF 		bl	__aeabi_uidiv
+ 480 0024 031C     		mov	r3, r0
+ 481 0026 BB61     		str	r3, [r7, #24]
+ 217:.\LED_RGB.c   ****     
+ 218:.\LED_RGB.c   ****     int32 intensityShiftM = ((int32)value) - dominantIntensityC;
+ 482              		.loc 1 218 0
+ 483 0028 BB1C     		add	r3, r7, #2
+ 484 002a 1A88     		ldrh	r2, [r3]
+ 485 002c BB69     		ldr	r3, [r7, #24]
+ 486 002e D31A     		sub	r3, r2, r3
+ 487 0030 FB61     		str	r3, [r7, #28]
+ 219:.\LED_RGB.c   ****     
+ 220:.\LED_RGB.c   ****     if(hue < UINT16_1_6TH_MAX)
+ 488              		.loc 1 220 0
+ 489 0032 BB1D     		add	r3, r7, #6
+ 490 0034 1A88     		ldrh	r2, [r3]
+ 491 0036 5F4B     		ldr	r3, .L37+4
+ 492 0038 9A42     		cmp	r2, r3
+ 493 003a 12D8     		bhi	.L24
+ 221:.\LED_RGB.c   ****     {
+ 222:.\LED_RGB.c   ****         //red on, green increasing
+ 223:.\LED_RGB.c   ****         redIntensity = dominantIntensityC;
+ 494              		.loc 1 223 0
+ 495 003c BB69     		ldr	r3, [r7, #24]
+ 496 003e FB60     		str	r3, [r7, #12]
+ 224:.\LED_RGB.c   ****         greenIntensity = (hue * 6) * dominantIntensityC / UINT16_2_6TH_MAX ;
+ 497              		.loc 1 224 0
+ 498 0040 BB1D     		add	r3, r7, #6
+ 499 0042 1B88     		ldrh	r3, [r3]
+ 500 0044 BA69     		ldr	r2, [r7, #24]
+ 501 0046 5A43     		mul	r2, r3
+ 502 0048 131C     		mov	r3, r2
+ 503 004a 5B00     		lsl	r3, r3, #1
+ 504 004c 9B18     		add	r3, r3, r2
+ 505 004e 5B00     		lsl	r3, r3, #1
+ 506 0050 181C     		mov	r0, r3
+ 507 0052 5949     		ldr	r1, .L37+8
+ 508 0054 FFF7FEFF 		bl	__aeabi_uidiv
+ 509 0058 031C     		mov	r3, r0
+ 510 005a 3B61     		str	r3, [r7, #16]
+ 225:.\LED_RGB.c   ****         blueIntensity = 0;
+ 511              		.loc 1 225 0
+ 512 005c 0023     		mov	r3, #0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 14
+
+
+ 513 005e 7B61     		str	r3, [r7, #20]
+ 514 0060 67E0     		b	.L25
+ 515              	.L24:
+ 226:.\LED_RGB.c   ****     }
+ 227:.\LED_RGB.c   ****     else if(hue < UINT16_2_6TH_MAX)
+ 516              		.loc 1 227 0
+ 517 0062 BB1D     		add	r3, r7, #6
+ 518 0064 1A88     		ldrh	r2, [r3]
+ 519 0066 554B     		ldr	r3, .L37+12
+ 520 0068 9A42     		cmp	r2, r3
+ 521 006a 10D8     		bhi	.L26
+ 228:.\LED_RGB.c   ****     {
+ 229:.\LED_RGB.c   ****         //green on, red decreasing
+ 230:.\LED_RGB.c   ****         redIntensity = (UINT16_2_6TH_MAX - hue) * dominantIntensityC / UINT16_1_6TH_MAX;
+ 522              		.loc 1 230 0
+ 523 006c BB1D     		add	r3, r7, #6
+ 524 006e 1B88     		ldrh	r3, [r3]
+ 525 0070 514A     		ldr	r2, .L37+8
+ 526 0072 D31A     		sub	r3, r2, r3
+ 527 0074 BA69     		ldr	r2, [r7, #24]
+ 528 0076 5343     		mul	r3, r2
+ 529 0078 181C     		mov	r0, r3
+ 530 007a 5149     		ldr	r1, .L37+16
+ 531 007c FFF7FEFF 		bl	__aeabi_uidiv
+ 532 0080 031C     		mov	r3, r0
+ 533 0082 FB60     		str	r3, [r7, #12]
+ 231:.\LED_RGB.c   ****         greenIntensity = dominantIntensityC;
+ 534              		.loc 1 231 0
+ 535 0084 BB69     		ldr	r3, [r7, #24]
+ 536 0086 3B61     		str	r3, [r7, #16]
+ 232:.\LED_RGB.c   ****         blueIntensity = 0;
+ 537              		.loc 1 232 0
+ 538 0088 0023     		mov	r3, #0
+ 539 008a 7B61     		str	r3, [r7, #20]
+ 540 008c 51E0     		b	.L25
+ 541              	.L26:
+ 233:.\LED_RGB.c   ****     }
+ 234:.\LED_RGB.c   ****     else if(hue < UINT16_3_6TH_MAX)
+ 542              		.loc 1 234 0
+ 543 008e BB1D     		add	r3, r7, #6
+ 544 0090 1A88     		ldrh	r2, [r3]
+ 545 0092 4C4B     		ldr	r3, .L37+20
+ 546 0094 9A42     		cmp	r2, r3
+ 547 0096 10D8     		bhi	.L27
+ 235:.\LED_RGB.c   ****     {
+ 236:.\LED_RGB.c   ****         //green on, blue increasing
+ 237:.\LED_RGB.c   ****         redIntensity = 0;
+ 548              		.loc 1 237 0
+ 549 0098 0023     		mov	r3, #0
+ 550 009a FB60     		str	r3, [r7, #12]
+ 238:.\LED_RGB.c   ****         greenIntensity = dominantIntensityC;
+ 551              		.loc 1 238 0
+ 552 009c BB69     		ldr	r3, [r7, #24]
+ 553 009e 3B61     		str	r3, [r7, #16]
+ 239:.\LED_RGB.c   ****         blueIntensity = (hue - UINT16_2_6TH_MAX) * dominantIntensityC / UINT16_1_6TH_MAX;
+ 554              		.loc 1 239 0
+ 555 00a0 BB1D     		add	r3, r7, #6
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 15
+
+
+ 556 00a2 1B88     		ldrh	r3, [r3]
+ 557 00a4 484A     		ldr	r2, .L37+24
+ 558 00a6 9B18     		add	r3, r3, r2
+ 559 00a8 BA69     		ldr	r2, [r7, #24]
+ 560 00aa 5343     		mul	r3, r2
+ 561 00ac 181C     		mov	r0, r3
+ 562 00ae 4449     		ldr	r1, .L37+16
+ 563 00b0 FFF7FEFF 		bl	__aeabi_uidiv
+ 564 00b4 031C     		mov	r3, r0
+ 565 00b6 7B61     		str	r3, [r7, #20]
+ 566 00b8 3BE0     		b	.L25
+ 567              	.L27:
+ 240:.\LED_RGB.c   ****     }
+ 241:.\LED_RGB.c   ****     else if(hue < UINT16_4_6TH_MAX)
+ 568              		.loc 1 241 0
+ 569 00ba BB1D     		add	r3, r7, #6
+ 570 00bc 1A88     		ldrh	r2, [r3]
+ 571 00be 434B     		ldr	r3, .L37+28
+ 572 00c0 9A42     		cmp	r2, r3
+ 573 00c2 10D8     		bhi	.L28
+ 242:.\LED_RGB.c   ****     {
+ 243:.\LED_RGB.c   ****         //blue on, green decreasing
+ 244:.\LED_RGB.c   ****         redIntensity = 0;
+ 574              		.loc 1 244 0
+ 575 00c4 0023     		mov	r3, #0
+ 576 00c6 FB60     		str	r3, [r7, #12]
+ 245:.\LED_RGB.c   ****         greenIntensity = (UINT16_4_6TH_MAX - hue) * dominantIntensityC / UINT16_1_6TH_MAX;
+ 577              		.loc 1 245 0
+ 578 00c8 BB1D     		add	r3, r7, #6
+ 579 00ca 1B88     		ldrh	r3, [r3]
+ 580 00cc 404A     		ldr	r2, .L37+32
+ 581 00ce D31A     		sub	r3, r2, r3
+ 582 00d0 BA69     		ldr	r2, [r7, #24]
+ 583 00d2 5343     		mul	r3, r2
+ 584 00d4 181C     		mov	r0, r3
+ 585 00d6 3A49     		ldr	r1, .L37+16
+ 586 00d8 FFF7FEFF 		bl	__aeabi_uidiv
+ 587 00dc 031C     		mov	r3, r0
+ 588 00de 3B61     		str	r3, [r7, #16]
+ 246:.\LED_RGB.c   ****         blueIntensity = dominantIntensityC;
+ 589              		.loc 1 246 0
+ 590 00e0 BB69     		ldr	r3, [r7, #24]
+ 591 00e2 7B61     		str	r3, [r7, #20]
+ 592 00e4 25E0     		b	.L25
+ 593              	.L28:
+ 247:.\LED_RGB.c   ****     }
+ 248:.\LED_RGB.c   ****     else if(hue < UINT16_5_6TH_MAX)
+ 594              		.loc 1 248 0
+ 595 00e6 BB1D     		add	r3, r7, #6
+ 596 00e8 1A88     		ldrh	r2, [r3]
+ 597 00ea 3A4B     		ldr	r3, .L37+36
+ 598 00ec 9A42     		cmp	r2, r3
+ 599 00ee 10D8     		bhi	.L29
+ 249:.\LED_RGB.c   ****     {
+ 250:.\LED_RGB.c   ****         //blue on, red increasing
+ 251:.\LED_RGB.c   ****         redIntensity =  (hue - UINT16_4_6TH_MAX) * dominantIntensityC / UINT16_1_6TH_MAX;
+ 600              		.loc 1 251 0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 16
+
+
+ 601 00f0 BB1D     		add	r3, r7, #6
+ 602 00f2 1B88     		ldrh	r3, [r3]
+ 603 00f4 384A     		ldr	r2, .L37+40
+ 604 00f6 9B18     		add	r3, r3, r2
+ 605 00f8 BA69     		ldr	r2, [r7, #24]
+ 606 00fa 5343     		mul	r3, r2
+ 607 00fc 181C     		mov	r0, r3
+ 608 00fe 3049     		ldr	r1, .L37+16
+ 609 0100 FFF7FEFF 		bl	__aeabi_uidiv
+ 610 0104 031C     		mov	r3, r0
+ 611 0106 FB60     		str	r3, [r7, #12]
+ 252:.\LED_RGB.c   ****         greenIntensity = 0;
+ 612              		.loc 1 252 0
+ 613 0108 0023     		mov	r3, #0
+ 614 010a 3B61     		str	r3, [r7, #16]
+ 253:.\LED_RGB.c   ****         blueIntensity = dominantIntensityC;
+ 615              		.loc 1 253 0
+ 616 010c BB69     		ldr	r3, [r7, #24]
+ 617 010e 7B61     		str	r3, [r7, #20]
+ 618 0110 0FE0     		b	.L25
+ 619              	.L29:
+ 254:.\LED_RGB.c   ****     }
+ 255:.\LED_RGB.c   ****     else
+ 256:.\LED_RGB.c   ****     {
+ 257:.\LED_RGB.c   ****         //red on, blue decreasing
+ 258:.\LED_RGB.c   ****         redIntensity = dominantIntensityC;
+ 620              		.loc 1 258 0
+ 621 0112 BB69     		ldr	r3, [r7, #24]
+ 622 0114 FB60     		str	r3, [r7, #12]
+ 259:.\LED_RGB.c   ****         greenIntensity = 0;
+ 623              		.loc 1 259 0
+ 624 0116 0023     		mov	r3, #0
+ 625 0118 3B61     		str	r3, [r7, #16]
+ 260:.\LED_RGB.c   ****         blueIntensity = (UINT16_MAX - hue) * dominantIntensityC / UINT16_1_6TH_MAX;
+ 626              		.loc 1 260 0
+ 627 011a BB1D     		add	r3, r7, #6
+ 628 011c 1B88     		ldrh	r3, [r3]
+ 629 011e 244A     		ldr	r2, .L37
+ 630 0120 D31A     		sub	r3, r2, r3
+ 631 0122 BA69     		ldr	r2, [r7, #24]
+ 632 0124 5343     		mul	r3, r2
+ 633 0126 181C     		mov	r0, r3
+ 634 0128 2549     		ldr	r1, .L37+16
+ 635 012a FFF7FEFF 		bl	__aeabi_uidiv
+ 636 012e 031C     		mov	r3, r0
+ 637 0130 7B61     		str	r3, [r7, #20]
+ 638              	.L25:
+ 261:.\LED_RGB.c   ****     }
+ 262:.\LED_RGB.c   **** 
+ 263:.\LED_RGB.c   ****     /* Scale for Saturation and Value */
+ 264:.\LED_RGB.c   ****     redIntensity += intensityShiftM;
+ 639              		.loc 1 264 0
+ 640 0132 FA68     		ldr	r2, [r7, #12]
+ 641 0134 FB69     		ldr	r3, [r7, #28]
+ 642 0136 D318     		add	r3, r2, r3
+ 643 0138 FB60     		str	r3, [r7, #12]
+ 265:.\LED_RGB.c   ****     greenIntensity += intensityShiftM;
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 17
+
+
+ 644              		.loc 1 265 0
+ 645 013a 3A69     		ldr	r2, [r7, #16]
+ 646 013c FB69     		ldr	r3, [r7, #28]
+ 647 013e D318     		add	r3, r2, r3
+ 648 0140 3B61     		str	r3, [r7, #16]
+ 266:.\LED_RGB.c   ****     blueIntensity += intensityShiftM;
+ 649              		.loc 1 266 0
+ 650 0142 7A69     		ldr	r2, [r7, #20]
+ 651 0144 FB69     		ldr	r3, [r7, #28]
+ 652 0146 D318     		add	r3, r2, r3
+ 653 0148 7B61     		str	r3, [r7, #20]
+ 267:.\LED_RGB.c   ****     
+ 268:.\LED_RGB.c   ****     /* fix the overflow and underflow cases */
+ 269:.\LED_RGB.c   ****     if(redIntensity>UINT16_MAX)
+ 654              		.loc 1 269 0
+ 655 014a FA68     		ldr	r2, [r7, #12]
+ 656 014c 184B     		ldr	r3, .L37
+ 657 014e 9A42     		cmp	r2, r3
+ 658 0150 02DD     		ble	.L30
+ 270:.\LED_RGB.c   ****     {
+ 271:.\LED_RGB.c   ****         redIntensity=UINT16_MAX;
+ 659              		.loc 1 271 0
+ 660 0152 174B     		ldr	r3, .L37
+ 661 0154 FB60     		str	r3, [r7, #12]
+ 662 0156 04E0     		b	.L31
+ 663              	.L30:
+ 272:.\LED_RGB.c   ****     }
+ 273:.\LED_RGB.c   ****     else if(redIntensity<0)
+ 664              		.loc 1 273 0
+ 665 0158 FB68     		ldr	r3, [r7, #12]
+ 666 015a 002B     		cmp	r3, #0
+ 667 015c 01DA     		bge	.L31
+ 274:.\LED_RGB.c   ****     {
+ 275:.\LED_RGB.c   ****         redIntensity=0;
+ 668              		.loc 1 275 0
+ 669 015e 0023     		mov	r3, #0
+ 670 0160 FB60     		str	r3, [r7, #12]
+ 671              	.L31:
+ 276:.\LED_RGB.c   ****     }
+ 277:.\LED_RGB.c   ****     
+ 278:.\LED_RGB.c   ****     if(greenIntensity>UINT16_MAX)
+ 672              		.loc 1 278 0
+ 673 0162 3A69     		ldr	r2, [r7, #16]
+ 674 0164 124B     		ldr	r3, .L37
+ 675 0166 9A42     		cmp	r2, r3
+ 676 0168 02DD     		ble	.L32
+ 279:.\LED_RGB.c   ****     {
+ 280:.\LED_RGB.c   ****         greenIntensity=UINT16_MAX;
+ 677              		.loc 1 280 0
+ 678 016a 114B     		ldr	r3, .L37
+ 679 016c 3B61     		str	r3, [r7, #16]
+ 680 016e 04E0     		b	.L33
+ 681              	.L32:
+ 281:.\LED_RGB.c   ****     }
+ 282:.\LED_RGB.c   ****     else if(greenIntensity<0)
+ 682              		.loc 1 282 0
+ 683 0170 3B69     		ldr	r3, [r7, #16]
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 18
+
+
+ 684 0172 002B     		cmp	r3, #0
+ 685 0174 01DA     		bge	.L33
+ 283:.\LED_RGB.c   ****     {
+ 284:.\LED_RGB.c   ****         greenIntensity=0;
+ 686              		.loc 1 284 0
+ 687 0176 0023     		mov	r3, #0
+ 688 0178 3B61     		str	r3, [r7, #16]
+ 689              	.L33:
+ 285:.\LED_RGB.c   ****     }
+ 286:.\LED_RGB.c   ****     
+ 287:.\LED_RGB.c   ****     if(blueIntensity>UINT16_MAX)
+ 690              		.loc 1 287 0
+ 691 017a 7A69     		ldr	r2, [r7, #20]
+ 692 017c 0C4B     		ldr	r3, .L37
+ 693 017e 9A42     		cmp	r2, r3
+ 694 0180 02DD     		ble	.L34
+ 288:.\LED_RGB.c   ****     {
+ 289:.\LED_RGB.c   ****         blueIntensity=UINT16_MAX;
+ 695              		.loc 1 289 0
+ 696 0182 0B4B     		ldr	r3, .L37
+ 697 0184 7B61     		str	r3, [r7, #20]
+ 698 0186 04E0     		b	.L35
+ 699              	.L34:
+ 290:.\LED_RGB.c   ****     }
+ 291:.\LED_RGB.c   ****     else if(blueIntensity<0)
+ 700              		.loc 1 291 0
+ 701 0188 7B69     		ldr	r3, [r7, #20]
+ 702 018a 002B     		cmp	r3, #0
+ 703 018c 01DA     		bge	.L35
+ 292:.\LED_RGB.c   ****     {
+ 293:.\LED_RGB.c   ****         blueIntensity=0;
+ 704              		.loc 1 293 0
+ 705 018e 0023     		mov	r3, #0
+ 706 0190 7B61     		str	r3, [r7, #20]
+ 707              	.L35:
+ 294:.\LED_RGB.c   ****     }
+ 295:.\LED_RGB.c   ****     
+ 296:.\LED_RGB.c   ****     LED_RGB_SetColorRGB(redIntensity, greenIntensity, blueIntensity);
+ 708              		.loc 1 296 0
+ 709 0192 FB68     		ldr	r3, [r7, #12]
+ 710 0194 99B2     		uxth	r1, r3
+ 711 0196 3B69     		ldr	r3, [r7, #16]
+ 712 0198 9AB2     		uxth	r2, r3
+ 713 019a 7B69     		ldr	r3, [r7, #20]
+ 714 019c 9BB2     		uxth	r3, r3
+ 715 019e 081C     		mov	r0, r1
+ 716 01a0 111C     		mov	r1, r2
+ 717 01a2 1A1C     		mov	r2, r3
+ 718 01a4 FFF7FEFF 		bl	LED_RGB_SetColorRGB
+ 297:.\LED_RGB.c   **** }
+ 719              		.loc 1 297 0
+ 720 01a8 BD46     		mov	sp, r7
+ 721 01aa 08B0     		add	sp, sp, #32
+ 722              		@ sp needed for prologue
+ 723 01ac 80BD     		pop	{r7, pc}
+ 724              	.L38:
+ 725 01ae C046     		.align	2
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 19
+
+
+ 726              	.L37:
+ 727 01b0 FFFF0000 		.word	65535
+ 728 01b4 A92A0000 		.word	10921
+ 729 01b8 55550000 		.word	21845
+ 730 01bc 54550000 		.word	21844
+ 731 01c0 AA2A0000 		.word	10922
+ 732 01c4 FE7F0000 		.word	32766
+ 733 01c8 ABAAFFFF 		.word	-21845
+ 734 01cc A9AA0000 		.word	43689
+ 735 01d0 AAAA0000 		.word	43690
+ 736 01d4 53D50000 		.word	54611
+ 737 01d8 5655FFFF 		.word	-43690
+ 738              		.cfi_endproc
+ 739              	.LFE25:
+ 740              		.size	LED_RGB_SetColorCircleHSV, .-LED_RGB_SetColorCircleHSV
+ 741              		.text
+ 742              	.Letext0:
+ 743              		.section	.debug_loc,"",%progbits
+ 744              	.Ldebug_loc0:
+ 745              	.LLST0:
+ 746 0000 00000000 		.4byte	.LFB20
+ 747 0004 02000000 		.4byte	.LCFI0
+ 748 0008 0100     		.2byte	0x1
+ 749 000a 5D       		.byte	0x5d
+ 750 000b 02000000 		.4byte	.LCFI0
+ 751 000f 04000000 		.4byte	.LCFI1
+ 752 0013 0200     		.2byte	0x2
+ 753 0015 7D       		.byte	0x7d
+ 754 0016 08       		.sleb128 8
+ 755 0017 04000000 		.4byte	.LCFI1
+ 756 001b 14000000 		.4byte	.LFE20
+ 757 001f 0200     		.2byte	0x2
+ 758 0021 77       		.byte	0x77
+ 759 0022 08       		.sleb128 8
+ 760 0023 00000000 		.4byte	0x0
+ 761 0027 00000000 		.4byte	0x0
+ 762              	.LLST1:
+ 763 002b 00000000 		.4byte	.LFB21
+ 764 002f 02000000 		.4byte	.LCFI2
+ 765 0033 0100     		.2byte	0x1
+ 766 0035 5D       		.byte	0x5d
+ 767 0036 02000000 		.4byte	.LCFI2
+ 768 003a 04000000 		.4byte	.LCFI3
+ 769 003e 0200     		.2byte	0x2
+ 770 0040 7D       		.byte	0x7d
+ 771 0041 08       		.sleb128 8
+ 772 0042 04000000 		.4byte	.LCFI3
+ 773 0046 14000000 		.4byte	.LFE21
+ 774 004a 0200     		.2byte	0x2
+ 775 004c 77       		.byte	0x77
+ 776 004d 08       		.sleb128 8
+ 777 004e 00000000 		.4byte	0x0
+ 778 0052 00000000 		.4byte	0x0
+ 779              	.LLST2:
+ 780 0056 00000000 		.4byte	.LFB22
+ 781 005a 02000000 		.4byte	.LCFI4
+ 782 005e 0100     		.2byte	0x1
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 20
+
+
+ 783 0060 5D       		.byte	0x5d
+ 784 0061 02000000 		.4byte	.LCFI4
+ 785 0065 04000000 		.4byte	.LCFI5
+ 786 0069 0200     		.2byte	0x2
+ 787 006b 7D       		.byte	0x7d
+ 788 006c 08       		.sleb128 8
+ 789 006d 04000000 		.4byte	.LCFI5
+ 790 0071 06000000 		.4byte	.LCFI6
+ 791 0075 0200     		.2byte	0x2
+ 792 0077 7D       		.byte	0x7d
+ 793 0078 10       		.sleb128 16
+ 794 0079 06000000 		.4byte	.LCFI6
+ 795 007d 4A000000 		.4byte	.LFE22
+ 796 0081 0200     		.2byte	0x2
+ 797 0083 77       		.byte	0x77
+ 798 0084 10       		.sleb128 16
+ 799 0085 00000000 		.4byte	0x0
+ 800 0089 00000000 		.4byte	0x0
+ 801              	.LLST3:
+ 802 008d 00000000 		.4byte	.LFB23
+ 803 0091 02000000 		.4byte	.LCFI7
+ 804 0095 0100     		.2byte	0x1
+ 805 0097 5D       		.byte	0x5d
+ 806 0098 02000000 		.4byte	.LCFI7
+ 807 009c 04000000 		.4byte	.LCFI8
+ 808 00a0 0200     		.2byte	0x2
+ 809 00a2 7D       		.byte	0x7d
+ 810 00a3 08       		.sleb128 8
+ 811 00a4 04000000 		.4byte	.LCFI8
+ 812 00a8 06000000 		.4byte	.LCFI9
+ 813 00ac 0200     		.2byte	0x2
+ 814 00ae 7D       		.byte	0x7d
+ 815 00af 10       		.sleb128 16
+ 816 00b0 06000000 		.4byte	.LCFI9
+ 817 00b4 3C000000 		.4byte	.LFE23
+ 818 00b8 0200     		.2byte	0x2
+ 819 00ba 77       		.byte	0x77
+ 820 00bb 10       		.sleb128 16
+ 821 00bc 00000000 		.4byte	0x0
+ 822 00c0 00000000 		.4byte	0x0
+ 823              	.LLST4:
+ 824 00c4 00000000 		.4byte	.LFB24
+ 825 00c8 02000000 		.4byte	.LCFI10
+ 826 00cc 0100     		.2byte	0x1
+ 827 00ce 5D       		.byte	0x5d
+ 828 00cf 02000000 		.4byte	.LCFI10
+ 829 00d3 04000000 		.4byte	.LCFI11
+ 830 00d7 0200     		.2byte	0x2
+ 831 00d9 7D       		.byte	0x7d
+ 832 00da 08       		.sleb128 8
+ 833 00db 04000000 		.4byte	.LCFI11
+ 834 00df 06000000 		.4byte	.LCFI12
+ 835 00e3 0200     		.2byte	0x2
+ 836 00e5 7D       		.byte	0x7d
+ 837 00e6 18       		.sleb128 24
+ 838 00e7 06000000 		.4byte	.LCFI12
+ 839 00eb 80010000 		.4byte	.LFE24
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 21
+
+
+ 840 00ef 0200     		.2byte	0x2
+ 841 00f1 77       		.byte	0x77
+ 842 00f2 18       		.sleb128 24
+ 843 00f3 00000000 		.4byte	0x0
+ 844 00f7 00000000 		.4byte	0x0
+ 845              	.LLST5:
+ 846 00fb 00000000 		.4byte	.LFB25
+ 847 00ff 02000000 		.4byte	.LCFI13
+ 848 0103 0100     		.2byte	0x1
+ 849 0105 5D       		.byte	0x5d
+ 850 0106 02000000 		.4byte	.LCFI13
+ 851 010a 04000000 		.4byte	.LCFI14
+ 852 010e 0200     		.2byte	0x2
+ 853 0110 7D       		.byte	0x7d
+ 854 0111 08       		.sleb128 8
+ 855 0112 04000000 		.4byte	.LCFI14
+ 856 0116 06000000 		.4byte	.LCFI15
+ 857 011a 0200     		.2byte	0x2
+ 858 011c 7D       		.byte	0x7d
+ 859 011d 28       		.sleb128 40
+ 860 011e 06000000 		.4byte	.LCFI15
+ 861 0122 DC010000 		.4byte	.LFE25
+ 862 0126 0200     		.2byte	0x2
+ 863 0128 77       		.byte	0x77
+ 864 0129 28       		.sleb128 40
+ 865 012a 00000000 		.4byte	0x0
+ 866 012e 00000000 		.4byte	0x0
+ 867              		.file 2 "./Generated_Source/PSoC4/cytypes.h"
+ 868              		.section	.debug_info
+ 869 0000 2C020000 		.4byte	0x22c
+ 870 0004 0200     		.2byte	0x2
+ 871 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 872 000a 04       		.byte	0x4
+ 873 000b 01       		.uleb128 0x1
+ 874 000c 70010000 		.4byte	.LASF30
+ 875 0010 01       		.byte	0x1
+ 876 0011 9C010000 		.4byte	.LASF31
+ 877 0015 9C000000 		.4byte	.LASF32
+ 878 0019 00000000 		.4byte	0x0
+ 879 001d 00000000 		.4byte	0x0
+ 880 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 881 0025 00000000 		.4byte	.Ldebug_line0
+ 882 0029 02       		.uleb128 0x2
+ 883 002a 01       		.byte	0x1
+ 884 002b 06       		.byte	0x6
+ 885 002c DE010000 		.4byte	.LASF0
+ 886 0030 02       		.uleb128 0x2
+ 887 0031 01       		.byte	0x1
+ 888 0032 08       		.byte	0x8
+ 889 0033 60000000 		.4byte	.LASF1
+ 890 0037 02       		.uleb128 0x2
+ 891 0038 02       		.byte	0x2
+ 892 0039 05       		.byte	0x5
+ 893 003a 92010000 		.4byte	.LASF2
+ 894 003e 02       		.uleb128 0x2
+ 895 003f 02       		.byte	0x2
+ 896 0040 07       		.byte	0x7
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 22
+
+
+ 897 0041 2B000000 		.4byte	.LASF3
+ 898 0045 02       		.uleb128 0x2
+ 899 0046 04       		.byte	0x4
+ 900 0047 05       		.byte	0x5
+ 901 0048 C2010000 		.4byte	.LASF4
+ 902 004c 02       		.uleb128 0x2
+ 903 004d 04       		.byte	0x4
+ 904 004e 07       		.byte	0x7
+ 905 004f 7D000000 		.4byte	.LASF5
+ 906 0053 02       		.uleb128 0x2
+ 907 0054 08       		.byte	0x8
+ 908 0055 05       		.byte	0x5
+ 909 0056 00000000 		.4byte	.LASF6
+ 910 005a 02       		.uleb128 0x2
+ 911 005b 08       		.byte	0x8
+ 912 005c 07       		.byte	0x7
+ 913 005d 0D010000 		.4byte	.LASF7
+ 914 0061 03       		.uleb128 0x3
+ 915 0062 04       		.byte	0x4
+ 916 0063 05       		.byte	0x5
+ 917 0064 696E7400 		.ascii	"int\000"
+ 918 0068 02       		.uleb128 0x2
+ 919 0069 04       		.byte	0x4
+ 920 006a 07       		.byte	0x7
+ 921 006b 00010000 		.4byte	.LASF8
+ 922 006f 04       		.uleb128 0x4
+ 923 0070 A8010000 		.4byte	.LASF9
+ 924 0074 02       		.byte	0x2
+ 925 0075 4C       		.byte	0x4c
+ 926 0076 30000000 		.4byte	0x30
+ 927 007a 04       		.uleb128 0x4
+ 928 007b F2000000 		.4byte	.LASF10
+ 929 007f 02       		.byte	0x2
+ 930 0080 4D       		.byte	0x4d
+ 931 0081 3E000000 		.4byte	0x3e
+ 932 0085 04       		.uleb128 0x4
+ 933 0086 F9000000 		.4byte	.LASF11
+ 934 008a 02       		.byte	0x2
+ 935 008b 4E       		.byte	0x4e
+ 936 008c 4C000000 		.4byte	0x4c
+ 937 0090 04       		.uleb128 0x4
+ 938 0091 8F000000 		.4byte	.LASF12
+ 939 0095 02       		.byte	0x2
+ 940 0096 51       		.byte	0x51
+ 941 0097 45000000 		.4byte	0x45
+ 942 009b 02       		.uleb128 0x2
+ 943 009c 04       		.byte	0x4
+ 944 009d 04       		.byte	0x4
+ 945 009e 4C000000 		.4byte	.LASF13
+ 946 00a2 02       		.uleb128 0x2
+ 947 00a3 08       		.byte	0x8
+ 948 00a4 04       		.byte	0x4
+ 949 00a5 95000000 		.4byte	.LASF14
+ 950 00a9 02       		.uleb128 0x2
+ 951 00aa 01       		.byte	0x1
+ 952 00ab 08       		.byte	0x8
+ 953 00ac 7C010000 		.4byte	.LASF15
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 23
+
+
+ 954 00b0 05       		.uleb128 0x5
+ 955 00b1 04       		.byte	0x4
+ 956 00b2 07       		.byte	0x7
+ 957 00b3 06       		.uleb128 0x6
+ 958 00b4 01       		.byte	0x1
+ 959 00b5 52000000 		.4byte	.LASF16
+ 960 00b9 01       		.byte	0x1
+ 961 00ba 24       		.byte	0x24
+ 962 00bb 01       		.byte	0x1
+ 963 00bc 00000000 		.4byte	.LFB20
+ 964 00c0 14000000 		.4byte	.LFE20
+ 965 00c4 00000000 		.4byte	.LLST0
+ 966 00c8 06       		.uleb128 0x6
+ 967 00c9 01       		.byte	0x1
+ 968 00ca EA010000 		.4byte	.LASF17
+ 969 00ce 01       		.byte	0x1
+ 970 00cf 32       		.byte	0x32
+ 971 00d0 01       		.byte	0x1
+ 972 00d1 00000000 		.4byte	.LFB21
+ 973 00d5 14000000 		.4byte	.LFE21
+ 974 00d9 2B000000 		.4byte	.LLST1
+ 975 00dd 07       		.uleb128 0x7
+ 976 00de 01       		.byte	0x1
+ 977 00df 46010000 		.4byte	.LASF20
+ 978 00e3 01       		.byte	0x1
+ 979 00e4 46       		.byte	0x46
+ 980 00e5 01       		.byte	0x1
+ 981 00e6 00000000 		.4byte	.LFB22
+ 982 00ea 4A000000 		.4byte	.LFE22
+ 983 00ee 56000000 		.4byte	.LLST2
+ 984 00f2 13010000 		.4byte	0x113
+ 985 00f6 08       		.uleb128 0x8
+ 986 00f7 0E000000 		.4byte	.LASF18
+ 987 00fb 01       		.byte	0x1
+ 988 00fc 46       		.byte	0x46
+ 989 00fd 6F000000 		.4byte	0x6f
+ 990 0101 02       		.byte	0x2
+ 991 0102 91       		.byte	0x91
+ 992 0103 77       		.sleb128 -9
+ 993 0104 08       		.uleb128 0x8
+ 994 0105 81010000 		.4byte	.LASF19
+ 995 0109 01       		.byte	0x1
+ 996 010a 46       		.byte	0x46
+ 997 010b 7A000000 		.4byte	0x7a
+ 998 010f 02       		.byte	0x2
+ 999 0110 91       		.byte	0x91
+ 1000 0111 74       		.sleb128 -12
+ 1001 0112 00       		.byte	0x0
+ 1002 0113 07       		.uleb128 0x7
+ 1003 0114 01       		.byte	0x1
+ 1004 0115 AE010000 		.4byte	.LASF21
+ 1005 0119 01       		.byte	0x1
+ 1006 011a 80       		.byte	0x80
+ 1007 011b 01       		.byte	0x1
+ 1008 011c 00000000 		.4byte	.LFB23
+ 1009 0120 3C000000 		.4byte	.LFE23
+ 1010 0124 8D000000 		.4byte	.LLST3
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 24
+
+
+ 1011 0128 57010000 		.4byte	0x157
+ 1012 012c 08       		.uleb128 0x8
+ 1013 012d 1E000000 		.4byte	.LASF22
+ 1014 0131 01       		.byte	0x1
+ 1015 0132 80       		.byte	0x80
+ 1016 0133 7A000000 		.4byte	0x7a
+ 1017 0137 02       		.byte	0x2
+ 1018 0138 91       		.byte	0x91
+ 1019 0139 76       		.sleb128 -10
+ 1020 013a 08       		.uleb128 0x8
+ 1021 013b 6E000000 		.4byte	.LASF23
+ 1022 013f 01       		.byte	0x1
+ 1023 0140 80       		.byte	0x80
+ 1024 0141 7A000000 		.4byte	0x7a
+ 1025 0145 02       		.byte	0x2
+ 1026 0146 91       		.byte	0x91
+ 1027 0147 74       		.sleb128 -12
+ 1028 0148 08       		.uleb128 0x8
+ 1029 0149 3E000000 		.4byte	.LASF24
+ 1030 014d 01       		.byte	0x1
+ 1031 014e 80       		.byte	0x80
+ 1032 014f 7A000000 		.4byte	0x7a
+ 1033 0153 02       		.byte	0x2
+ 1034 0154 91       		.byte	0x91
+ 1035 0155 72       		.sleb128 -14
+ 1036 0156 00       		.byte	0x0
+ 1037 0157 07       		.uleb128 0x7
+ 1038 0158 01       		.byte	0x1
+ 1039 0159 2F010000 		.4byte	.LASF25
+ 1040 015d 01       		.byte	0x1
+ 1041 015e 93       		.byte	0x93
+ 1042 015f 01       		.byte	0x1
+ 1043 0160 00000000 		.4byte	.LFB24
+ 1044 0164 80010000 		.4byte	.LFE24
+ 1045 0168 C4000000 		.4byte	.LLST4
+ 1046 016c A9010000 		.4byte	0x1a9
+ 1047 0170 09       		.uleb128 0x9
+ 1048 0171 68756500 		.ascii	"hue\000"
+ 1049 0175 01       		.byte	0x1
+ 1050 0176 93       		.byte	0x93
+ 1051 0177 7A000000 		.4byte	0x7a
+ 1052 017b 02       		.byte	0x2
+ 1053 017c 91       		.byte	0x91
+ 1054 017d 6E       		.sleb128 -18
+ 1055 017e 0A       		.uleb128 0xa
+ 1056 017f 1E000000 		.4byte	.LASF22
+ 1057 0183 01       		.byte	0x1
+ 1058 0184 95       		.byte	0x95
+ 1059 0185 7A000000 		.4byte	0x7a
+ 1060 0189 02       		.byte	0x2
+ 1061 018a 91       		.byte	0x91
+ 1062 018b 72       		.sleb128 -14
+ 1063 018c 0A       		.uleb128 0xa
+ 1064 018d 6E000000 		.4byte	.LASF23
+ 1065 0191 01       		.byte	0x1
+ 1066 0192 95       		.byte	0x95
+ 1067 0193 7A000000 		.4byte	0x7a
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 25
+
+
+ 1068 0197 02       		.byte	0x2
+ 1069 0198 91       		.byte	0x91
+ 1070 0199 74       		.sleb128 -12
+ 1071 019a 0A       		.uleb128 0xa
+ 1072 019b 3E000000 		.4byte	.LASF24
+ 1073 019f 01       		.byte	0x1
+ 1074 01a0 95       		.byte	0x95
+ 1075 01a1 7A000000 		.4byte	0x7a
+ 1076 01a5 02       		.byte	0x2
+ 1077 01a6 91       		.byte	0x91
+ 1078 01a7 76       		.sleb128 -10
+ 1079 01a8 00       		.byte	0x0
+ 1080 01a9 0B       		.uleb128 0xb
+ 1081 01aa 01       		.byte	0x1
+ 1082 01ab 56010000 		.4byte	.LASF33
+ 1083 01af 01       		.byte	0x1
+ 1084 01b0 D4       		.byte	0xd4
+ 1085 01b1 01       		.byte	0x1
+ 1086 01b2 00000000 		.4byte	.LFB25
+ 1087 01b6 DC010000 		.4byte	.LFE25
+ 1088 01ba FB000000 		.4byte	.LLST5
+ 1089 01be 09       		.uleb128 0x9
+ 1090 01bf 68756500 		.ascii	"hue\000"
+ 1091 01c3 01       		.byte	0x1
+ 1092 01c4 D4       		.byte	0xd4
+ 1093 01c5 7A000000 		.4byte	0x7a
+ 1094 01c9 02       		.byte	0x2
+ 1095 01ca 91       		.byte	0x91
+ 1096 01cb 5E       		.sleb128 -34
+ 1097 01cc 08       		.uleb128 0x8
+ 1098 01cd 24010000 		.4byte	.LASF26
+ 1099 01d1 01       		.byte	0x1
+ 1100 01d2 D4       		.byte	0xd4
+ 1101 01d3 7A000000 		.4byte	0x7a
+ 1102 01d7 02       		.byte	0x2
+ 1103 01d8 91       		.byte	0x91
+ 1104 01d9 5C       		.sleb128 -36
+ 1105 01da 08       		.uleb128 0x8
+ 1106 01db 18000000 		.4byte	.LASF27
+ 1107 01df 01       		.byte	0x1
+ 1108 01e0 D4       		.byte	0xd4
+ 1109 01e1 7A000000 		.4byte	0x7a
+ 1110 01e5 02       		.byte	0x2
+ 1111 01e6 91       		.byte	0x91
+ 1112 01e7 5A       		.sleb128 -38
+ 1113 01e8 0A       		.uleb128 0xa
+ 1114 01e9 1E000000 		.4byte	.LASF22
+ 1115 01ed 01       		.byte	0x1
+ 1116 01ee D6       		.byte	0xd6
+ 1117 01ef 90000000 		.4byte	0x90
+ 1118 01f3 02       		.byte	0x2
+ 1119 01f4 91       		.byte	0x91
+ 1120 01f5 64       		.sleb128 -28
+ 1121 01f6 0A       		.uleb128 0xa
+ 1122 01f7 6E000000 		.4byte	.LASF23
+ 1123 01fb 01       		.byte	0x1
+ 1124 01fc D6       		.byte	0xd6
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 26
+
+
+ 1125 01fd 90000000 		.4byte	0x90
+ 1126 0201 02       		.byte	0x2
+ 1127 0202 91       		.byte	0x91
+ 1128 0203 68       		.sleb128 -24
+ 1129 0204 0A       		.uleb128 0xa
+ 1130 0205 3E000000 		.4byte	.LASF24
+ 1131 0209 01       		.byte	0x1
+ 1132 020a D6       		.byte	0xd6
+ 1133 020b 90000000 		.4byte	0x90
+ 1134 020f 02       		.byte	0x2
+ 1135 0210 91       		.byte	0x91
+ 1136 0211 6C       		.sleb128 -20
+ 1137 0212 0A       		.uleb128 0xa
+ 1138 0213 CB010000 		.4byte	.LASF28
+ 1139 0217 01       		.byte	0x1
+ 1140 0218 D8       		.byte	0xd8
+ 1141 0219 85000000 		.4byte	0x85
+ 1142 021d 02       		.byte	0x2
+ 1143 021e 91       		.byte	0x91
+ 1144 021f 70       		.sleb128 -16
+ 1145 0220 0A       		.uleb128 0xa
+ 1146 0221 F7010000 		.4byte	.LASF29
+ 1147 0225 01       		.byte	0x1
+ 1148 0226 DA       		.byte	0xda
+ 1149 0227 90000000 		.4byte	0x90
+ 1150 022b 02       		.byte	0x2
+ 1151 022c 91       		.byte	0x91
+ 1152 022d 74       		.sleb128 -12
+ 1153 022e 00       		.byte	0x0
+ 1154 022f 00       		.byte	0x0
+ 1155              		.section	.debug_abbrev
+ 1156 0000 01       		.uleb128 0x1
+ 1157 0001 11       		.uleb128 0x11
+ 1158 0002 01       		.byte	0x1
+ 1159 0003 25       		.uleb128 0x25
+ 1160 0004 0E       		.uleb128 0xe
+ 1161 0005 13       		.uleb128 0x13
+ 1162 0006 0B       		.uleb128 0xb
+ 1163 0007 03       		.uleb128 0x3
+ 1164 0008 0E       		.uleb128 0xe
+ 1165 0009 1B       		.uleb128 0x1b
+ 1166 000a 0E       		.uleb128 0xe
+ 1167 000b 11       		.uleb128 0x11
+ 1168 000c 01       		.uleb128 0x1
+ 1169 000d 52       		.uleb128 0x52
+ 1170 000e 01       		.uleb128 0x1
+ 1171 000f 55       		.uleb128 0x55
+ 1172 0010 06       		.uleb128 0x6
+ 1173 0011 10       		.uleb128 0x10
+ 1174 0012 06       		.uleb128 0x6
+ 1175 0013 00       		.byte	0x0
+ 1176 0014 00       		.byte	0x0
+ 1177 0015 02       		.uleb128 0x2
+ 1178 0016 24       		.uleb128 0x24
+ 1179 0017 00       		.byte	0x0
+ 1180 0018 0B       		.uleb128 0xb
+ 1181 0019 0B       		.uleb128 0xb
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 27
+
+
+ 1182 001a 3E       		.uleb128 0x3e
+ 1183 001b 0B       		.uleb128 0xb
+ 1184 001c 03       		.uleb128 0x3
+ 1185 001d 0E       		.uleb128 0xe
+ 1186 001e 00       		.byte	0x0
+ 1187 001f 00       		.byte	0x0
+ 1188 0020 03       		.uleb128 0x3
+ 1189 0021 24       		.uleb128 0x24
+ 1190 0022 00       		.byte	0x0
+ 1191 0023 0B       		.uleb128 0xb
+ 1192 0024 0B       		.uleb128 0xb
+ 1193 0025 3E       		.uleb128 0x3e
+ 1194 0026 0B       		.uleb128 0xb
+ 1195 0027 03       		.uleb128 0x3
+ 1196 0028 08       		.uleb128 0x8
+ 1197 0029 00       		.byte	0x0
+ 1198 002a 00       		.byte	0x0
+ 1199 002b 04       		.uleb128 0x4
+ 1200 002c 16       		.uleb128 0x16
+ 1201 002d 00       		.byte	0x0
+ 1202 002e 03       		.uleb128 0x3
+ 1203 002f 0E       		.uleb128 0xe
+ 1204 0030 3A       		.uleb128 0x3a
+ 1205 0031 0B       		.uleb128 0xb
+ 1206 0032 3B       		.uleb128 0x3b
+ 1207 0033 0B       		.uleb128 0xb
+ 1208 0034 49       		.uleb128 0x49
+ 1209 0035 13       		.uleb128 0x13
+ 1210 0036 00       		.byte	0x0
+ 1211 0037 00       		.byte	0x0
+ 1212 0038 05       		.uleb128 0x5
+ 1213 0039 24       		.uleb128 0x24
+ 1214 003a 00       		.byte	0x0
+ 1215 003b 0B       		.uleb128 0xb
+ 1216 003c 0B       		.uleb128 0xb
+ 1217 003d 3E       		.uleb128 0x3e
+ 1218 003e 0B       		.uleb128 0xb
+ 1219 003f 00       		.byte	0x0
+ 1220 0040 00       		.byte	0x0
+ 1221 0041 06       		.uleb128 0x6
+ 1222 0042 2E       		.uleb128 0x2e
+ 1223 0043 00       		.byte	0x0
+ 1224 0044 3F       		.uleb128 0x3f
+ 1225 0045 0C       		.uleb128 0xc
+ 1226 0046 03       		.uleb128 0x3
+ 1227 0047 0E       		.uleb128 0xe
+ 1228 0048 3A       		.uleb128 0x3a
+ 1229 0049 0B       		.uleb128 0xb
+ 1230 004a 3B       		.uleb128 0x3b
+ 1231 004b 0B       		.uleb128 0xb
+ 1232 004c 27       		.uleb128 0x27
+ 1233 004d 0C       		.uleb128 0xc
+ 1234 004e 11       		.uleb128 0x11
+ 1235 004f 01       		.uleb128 0x1
+ 1236 0050 12       		.uleb128 0x12
+ 1237 0051 01       		.uleb128 0x1
+ 1238 0052 40       		.uleb128 0x40
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 28
+
+
+ 1239 0053 06       		.uleb128 0x6
+ 1240 0054 00       		.byte	0x0
+ 1241 0055 00       		.byte	0x0
+ 1242 0056 07       		.uleb128 0x7
+ 1243 0057 2E       		.uleb128 0x2e
+ 1244 0058 01       		.byte	0x1
+ 1245 0059 3F       		.uleb128 0x3f
+ 1246 005a 0C       		.uleb128 0xc
+ 1247 005b 03       		.uleb128 0x3
+ 1248 005c 0E       		.uleb128 0xe
+ 1249 005d 3A       		.uleb128 0x3a
+ 1250 005e 0B       		.uleb128 0xb
+ 1251 005f 3B       		.uleb128 0x3b
+ 1252 0060 0B       		.uleb128 0xb
+ 1253 0061 27       		.uleb128 0x27
+ 1254 0062 0C       		.uleb128 0xc
+ 1255 0063 11       		.uleb128 0x11
+ 1256 0064 01       		.uleb128 0x1
+ 1257 0065 12       		.uleb128 0x12
+ 1258 0066 01       		.uleb128 0x1
+ 1259 0067 40       		.uleb128 0x40
+ 1260 0068 06       		.uleb128 0x6
+ 1261 0069 01       		.uleb128 0x1
+ 1262 006a 13       		.uleb128 0x13
+ 1263 006b 00       		.byte	0x0
+ 1264 006c 00       		.byte	0x0
+ 1265 006d 08       		.uleb128 0x8
+ 1266 006e 05       		.uleb128 0x5
+ 1267 006f 00       		.byte	0x0
+ 1268 0070 03       		.uleb128 0x3
+ 1269 0071 0E       		.uleb128 0xe
+ 1270 0072 3A       		.uleb128 0x3a
+ 1271 0073 0B       		.uleb128 0xb
+ 1272 0074 3B       		.uleb128 0x3b
+ 1273 0075 0B       		.uleb128 0xb
+ 1274 0076 49       		.uleb128 0x49
+ 1275 0077 13       		.uleb128 0x13
+ 1276 0078 02       		.uleb128 0x2
+ 1277 0079 0A       		.uleb128 0xa
+ 1278 007a 00       		.byte	0x0
+ 1279 007b 00       		.byte	0x0
+ 1280 007c 09       		.uleb128 0x9
+ 1281 007d 05       		.uleb128 0x5
+ 1282 007e 00       		.byte	0x0
+ 1283 007f 03       		.uleb128 0x3
+ 1284 0080 08       		.uleb128 0x8
+ 1285 0081 3A       		.uleb128 0x3a
+ 1286 0082 0B       		.uleb128 0xb
+ 1287 0083 3B       		.uleb128 0x3b
+ 1288 0084 0B       		.uleb128 0xb
+ 1289 0085 49       		.uleb128 0x49
+ 1290 0086 13       		.uleb128 0x13
+ 1291 0087 02       		.uleb128 0x2
+ 1292 0088 0A       		.uleb128 0xa
+ 1293 0089 00       		.byte	0x0
+ 1294 008a 00       		.byte	0x0
+ 1295 008b 0A       		.uleb128 0xa
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 29
+
+
+ 1296 008c 34       		.uleb128 0x34
+ 1297 008d 00       		.byte	0x0
+ 1298 008e 03       		.uleb128 0x3
+ 1299 008f 0E       		.uleb128 0xe
+ 1300 0090 3A       		.uleb128 0x3a
+ 1301 0091 0B       		.uleb128 0xb
+ 1302 0092 3B       		.uleb128 0x3b
+ 1303 0093 0B       		.uleb128 0xb
+ 1304 0094 49       		.uleb128 0x49
+ 1305 0095 13       		.uleb128 0x13
+ 1306 0096 02       		.uleb128 0x2
+ 1307 0097 0A       		.uleb128 0xa
+ 1308 0098 00       		.byte	0x0
+ 1309 0099 00       		.byte	0x0
+ 1310 009a 0B       		.uleb128 0xb
+ 1311 009b 2E       		.uleb128 0x2e
+ 1312 009c 01       		.byte	0x1
+ 1313 009d 3F       		.uleb128 0x3f
+ 1314 009e 0C       		.uleb128 0xc
+ 1315 009f 03       		.uleb128 0x3
+ 1316 00a0 0E       		.uleb128 0xe
+ 1317 00a1 3A       		.uleb128 0x3a
+ 1318 00a2 0B       		.uleb128 0xb
+ 1319 00a3 3B       		.uleb128 0x3b
+ 1320 00a4 0B       		.uleb128 0xb
+ 1321 00a5 27       		.uleb128 0x27
+ 1322 00a6 0C       		.uleb128 0xc
+ 1323 00a7 11       		.uleb128 0x11
+ 1324 00a8 01       		.uleb128 0x1
+ 1325 00a9 12       		.uleb128 0x12
+ 1326 00aa 01       		.uleb128 0x1
+ 1327 00ab 40       		.uleb128 0x40
+ 1328 00ac 06       		.uleb128 0x6
+ 1329 00ad 00       		.byte	0x0
+ 1330 00ae 00       		.byte	0x0
+ 1331 00af 00       		.byte	0x0
+ 1332              		.section	.debug_pubnames,"",%progbits
+ 1333 0000 96000000 		.4byte	0x96
+ 1334 0004 0200     		.2byte	0x2
+ 1335 0006 00000000 		.4byte	.Ldebug_info0
+ 1336 000a 30020000 		.4byte	0x230
+ 1337 000e B3000000 		.4byte	0xb3
+ 1338 0012 4C45445F 		.ascii	"LED_RGB_Start\000"
+ 1338      5247425F 
+ 1338      53746172 
+ 1338      7400
+ 1339 0020 C8000000 		.4byte	0xc8
+ 1340 0024 4C45445F 		.ascii	"LED_RGB_Stop\000"
+ 1340      5247425F 
+ 1340      53746F70 
+ 1340      00
+ 1341 0031 DD000000 		.4byte	0xdd
+ 1342 0035 4C45445F 		.ascii	"LED_RGB_DCWrite\000"
+ 1342      5247425F 
+ 1342      44435772 
+ 1342      69746500 
+ 1343 0045 13010000 		.4byte	0x113
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 30
+
+
+ 1344 0049 4C45445F 		.ascii	"LED_RGB_SetColorRGB\000"
+ 1344      5247425F 
+ 1344      53657443 
+ 1344      6F6C6F72 
+ 1344      52474200 
+ 1345 005d 57010000 		.4byte	0x157
+ 1346 0061 4C45445F 		.ascii	"LED_RGB_SetColorCircle\000"
+ 1346      5247425F 
+ 1346      53657443 
+ 1346      6F6C6F72 
+ 1346      43697263 
+ 1347 0078 A9010000 		.4byte	0x1a9
+ 1348 007c 4C45445F 		.ascii	"LED_RGB_SetColorCircleHSV\000"
+ 1348      5247425F 
+ 1348      53657443 
+ 1348      6F6C6F72 
+ 1348      43697263 
+ 1349 0096 00000000 		.4byte	0x0
+ 1350              		.section	.debug_aranges,"",%progbits
+ 1351 0000 44000000 		.4byte	0x44
+ 1352 0004 0200     		.2byte	0x2
+ 1353 0006 00000000 		.4byte	.Ldebug_info0
+ 1354 000a 04       		.byte	0x4
+ 1355 000b 00       		.byte	0x0
+ 1356 000c 0000     		.2byte	0x0
+ 1357 000e 0000     		.2byte	0x0
+ 1358 0010 00000000 		.4byte	.LFB20
+ 1359 0014 14000000 		.4byte	.LFE20-.LFB20
+ 1360 0018 00000000 		.4byte	.LFB21
+ 1361 001c 14000000 		.4byte	.LFE21-.LFB21
+ 1362 0020 00000000 		.4byte	.LFB22
+ 1363 0024 4A000000 		.4byte	.LFE22-.LFB22
+ 1364 0028 00000000 		.4byte	.LFB23
+ 1365 002c 3C000000 		.4byte	.LFE23-.LFB23
+ 1366 0030 00000000 		.4byte	.LFB24
+ 1367 0034 80010000 		.4byte	.LFE24-.LFB24
+ 1368 0038 00000000 		.4byte	.LFB25
+ 1369 003c DC010000 		.4byte	.LFE25-.LFB25
+ 1370 0040 00000000 		.4byte	0x0
+ 1371 0044 00000000 		.4byte	0x0
+ 1372              		.section	.debug_ranges,"",%progbits
+ 1373              	.Ldebug_ranges0:
+ 1374 0000 00000000 		.4byte	.Ltext0
+ 1375 0004 00000000 		.4byte	.Letext0
+ 1376 0008 00000000 		.4byte	.LFB20
+ 1377 000c 14000000 		.4byte	.LFE20
+ 1378 0010 00000000 		.4byte	.LFB21
+ 1379 0014 14000000 		.4byte	.LFE21
+ 1380 0018 00000000 		.4byte	.LFB22
+ 1381 001c 4A000000 		.4byte	.LFE22
+ 1382 0020 00000000 		.4byte	.LFB23
+ 1383 0024 3C000000 		.4byte	.LFE23
+ 1384 0028 00000000 		.4byte	.LFB24
+ 1385 002c 80010000 		.4byte	.LFE24
+ 1386 0030 00000000 		.4byte	.LFB25
+ 1387 0034 DC010000 		.4byte	.LFE25
+ 1388 0038 00000000 		.4byte	0x0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 31
+
+
+ 1389 003c 00000000 		.4byte	0x0
+ 1390              		.section	.debug_str,"MS",%progbits,1
+ 1391              	.LASF6:
+ 1392 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1392      206C6F6E 
+ 1392      6720696E 
+ 1392      7400
+ 1393              	.LASF18:
+ 1394 000e 4C45445F 		.ascii	"LED_Color\000"
+ 1394      436F6C6F 
+ 1394      7200
+ 1395              	.LASF27:
+ 1396 0018 76616C75 		.ascii	"value\000"
+ 1396      6500
+ 1397              	.LASF22:
+ 1398 001e 72656449 		.ascii	"redIntensity\000"
+ 1398      6E74656E 
+ 1398      73697479 
+ 1398      00
+ 1399              	.LASF3:
+ 1400 002b 73686F72 		.ascii	"short unsigned int\000"
+ 1400      7420756E 
+ 1400      7369676E 
+ 1400      65642069 
+ 1400      6E7400
+ 1401              	.LASF24:
+ 1402 003e 626C7565 		.ascii	"blueIntensity\000"
+ 1402      496E7465 
+ 1402      6E736974 
+ 1402      7900
+ 1403              	.LASF13:
+ 1404 004c 666C6F61 		.ascii	"float\000"
+ 1404      7400
+ 1405              	.LASF16:
+ 1406 0052 4C45445F 		.ascii	"LED_RGB_Start\000"
+ 1406      5247425F 
+ 1406      53746172 
+ 1406      7400
+ 1407              	.LASF1:
+ 1408 0060 756E7369 		.ascii	"unsigned char\000"
+ 1408      676E6564 
+ 1408      20636861 
+ 1408      7200
+ 1409              	.LASF23:
+ 1410 006e 67726565 		.ascii	"greenIntensity\000"
+ 1410      6E496E74 
+ 1410      656E7369 
+ 1410      747900
+ 1411              	.LASF5:
+ 1412 007d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1412      20756E73 
+ 1412      69676E65 
+ 1412      6420696E 
+ 1412      7400
+ 1413              	.LASF12:
+ 1414 008f 696E7433 		.ascii	"int32\000"
+ 1414      3200
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 32
+
+
+ 1415              	.LASF14:
+ 1416 0095 646F7562 		.ascii	"double\000"
+ 1416      6C6500
+ 1417              	.LASF32:
+ 1418 009c 433A5C55 		.ascii	"C:\\Users\\maxk\\Desktop\\PSoC 4A\\FAE Workshop\\La"
+ 1418      73657273 
+ 1418      5C6D6178 
+ 1418      6B5C4465 
+ 1418      736B746F 
+ 1419 00c9 62205072 		.ascii	"b Projects\\Lab Templates\\Lab 4 ADC.cydsn\000"
+ 1419      6F6A6563 
+ 1419      74735C4C 
+ 1419      61622054 
+ 1419      656D706C 
+ 1420              	.LASF10:
+ 1421 00f2 75696E74 		.ascii	"uint16\000"
+ 1421      313600
+ 1422              	.LASF11:
+ 1423 00f9 75696E74 		.ascii	"uint32\000"
+ 1423      333200
+ 1424              	.LASF8:
+ 1425 0100 756E7369 		.ascii	"unsigned int\000"
+ 1425      676E6564 
+ 1425      20696E74 
+ 1425      00
+ 1426              	.LASF7:
+ 1427 010d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1427      206C6F6E 
+ 1427      6720756E 
+ 1427      7369676E 
+ 1427      65642069 
+ 1428              	.LASF26:
+ 1429 0124 73617475 		.ascii	"saturation\000"
+ 1429      72617469 
+ 1429      6F6E00
+ 1430              	.LASF25:
+ 1431 012f 4C45445F 		.ascii	"LED_RGB_SetColorCircle\000"
+ 1431      5247425F 
+ 1431      53657443 
+ 1431      6F6C6F72 
+ 1431      43697263 
+ 1432              	.LASF20:
+ 1433 0146 4C45445F 		.ascii	"LED_RGB_DCWrite\000"
+ 1433      5247425F 
+ 1433      44435772 
+ 1433      69746500 
+ 1434              	.LASF33:
+ 1435 0156 4C45445F 		.ascii	"LED_RGB_SetColorCircleHSV\000"
+ 1435      5247425F 
+ 1435      53657443 
+ 1435      6F6C6F72 
+ 1435      43697263 
+ 1436              	.LASF30:
+ 1437 0170 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 1437      4320342E 
+ 1437      342E3100 
+ 1438              	.LASF15:
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cc1xCJ7K.s 			page 33
+
+
+ 1439 017c 63686172 		.ascii	"char\000"
+ 1439      00
+ 1440              	.LASF19:
+ 1441 0181 4C45445F 		.ascii	"LED_NewDutyCycle\000"
+ 1441      4E657744 
+ 1441      75747943 
+ 1441      79636C65 
+ 1441      00
+ 1442              	.LASF2:
+ 1443 0192 73686F72 		.ascii	"short int\000"
+ 1443      7420696E 
+ 1443      7400
+ 1444              	.LASF31:
+ 1445 019c 2E5C4C45 		.ascii	".\\LED_RGB.c\000"
+ 1445      445F5247 
+ 1445      422E6300 
+ 1446              	.LASF9:
+ 1447 01a8 75696E74 		.ascii	"uint8\000"
+ 1447      3800
+ 1448              	.LASF21:
+ 1449 01ae 4C45445F 		.ascii	"LED_RGB_SetColorRGB\000"
+ 1449      5247425F 
+ 1449      53657443 
+ 1449      6F6C6F72 
+ 1449      52474200 
+ 1450              	.LASF4:
+ 1451 01c2 6C6F6E67 		.ascii	"long int\000"
+ 1451      20696E74 
+ 1451      00
+ 1452              	.LASF28:
+ 1453 01cb 646F6D69 		.ascii	"dominantIntensityC\000"
+ 1453      6E616E74 
+ 1453      496E7465 
+ 1453      6E736974 
+ 1453      794300
+ 1454              	.LASF0:
+ 1455 01de 7369676E 		.ascii	"signed char\000"
+ 1455      65642063 
+ 1455      68617200 
+ 1456              	.LASF17:
+ 1457 01ea 4C45445F 		.ascii	"LED_RGB_Stop\000"
+ 1457      5247425F 
+ 1457      53746F70 
+ 1457      00
+ 1458              	.LASF29:
+ 1459 01f7 696E7465 		.ascii	"intensityShiftM\000"
+ 1459      6E736974 
+ 1459      79536869 
+ 1459      66744D00 
+ 1460              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

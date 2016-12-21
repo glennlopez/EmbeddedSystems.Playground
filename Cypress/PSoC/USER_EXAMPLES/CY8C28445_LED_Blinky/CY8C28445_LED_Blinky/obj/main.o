@@ -1,0 +1,29 @@
+XH
+H 1 areas 2 global symbols
+M main.c
+S __r0 Ref0000
+A text size 1A flags 0
+dbfile ./main.c
+dbfile C:\Users\wbz\Perforce\PERFOR~1\WBZ_WB~1\software\products\psoc1\software\Docs\SOFTWA~1\PD51_SP3\ONLINE~1\02-LED~1\CY8C28~1\CY8C28~1\main.c
+dbfunc e main 0 fV
+dbline FFFFFFFF 0
+dbline A 0
+dbline C 2
+dbline D 2
+dbline F E
+dbline F E
+dbline 10 11
+dbline 12 13
+dbline 13 13
+dbline 14 16
+dbline 15 16
+dbline B 16
+dbline FFFFFFFE 18
+dbline 0 18
+S _main Def0000
+T 00 00 80 15 5D 00 62 D0 00 00 53 00 00 47 00 00
+R 00 00 00 00 43 08 00 00 03 0B 00 00 03 0E 00 00
+T 00 0B 01 A0 06 41 04 FE 80 04 43 04 01 8F EB 8F
+R 00 00 00 00
+T 00 19 FF
+R 00 00 00 00

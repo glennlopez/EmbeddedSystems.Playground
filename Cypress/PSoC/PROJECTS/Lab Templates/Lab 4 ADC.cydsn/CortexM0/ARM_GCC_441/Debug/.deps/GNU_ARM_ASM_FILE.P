@@ -1,0 +1,4 @@
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/CyBootAsmGnu.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
+

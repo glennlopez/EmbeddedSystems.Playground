@@ -1,0 +1,165 @@
+#***************************************************************************
+
+#sjplacer
+
+#Version:            1.1
+
+#Build Date:         Jun 19 2012 09:55:54
+
+#File Generated:     Oct 10 2012 15:06:10
+
+#Purpose:            
+
+#Copyright (C) 2010-2011 by Softjin Technologies Pvt Ltd. All rights reserved.
+
+#***************************************************************************
+
+Executing : C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\bin/sjplacer.exe --proj-name TestBench --netlist-vh2 TestBench_p.vh2 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\dev/psoc3/psoc35_placer.ark --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\dev/psoc3/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\dev/psoc3/psoc3_irqconn.cydata --drq-file C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\dev/psoc3/psoc3_dmaconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\dev/psoc3/psoc3_dsiconn.cydata --pins-file PSoC3_Leopard_100-TQFP.xml --lib-file TestBench_p.lib --sdc-file TestBench.sdc --io-pcf TestBench.pci --outdir .
+
+		Softjin Techologies Placer, Version 1.1
+
+Build Date : Jun 19 2012	09:59:06
+
+D2004: Option and Settings Summary
+=============================================================
+Netlist vh2 file          - TestBench_p.vh2
+Architecture file         - C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\dev/psoc3/psoc35_placer.ark
+Package                   - 
+Defparam file             - 
+SDC file                  - TestBench.sdc
+Output directory          - .
+Timing library            - TestBench_p.lib
+IO Placement file         - TestBench.pci
+
+D2050: Starting reading inputs for placer
+=============================================================
+D2065: Reading netlist file : "TestBench_p.vh2"
+D2065: Reading arch file : "C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\dev/psoc3/psoc35_placer.ark"
+D2051: Reading of inputs for placer completed successfully
+
+D2053: Starting placement of the design
+=============================================================
+
+Phase 2
+Phase 3
+
+Design Statistics after Packing
+    Number of Combinational MCs 	:	5
+    Number of Sequential MCs    	:	5
+    Number of DPs               	:	1
+    Number of Controls          	:	3
+    Number of Status            	:	1
+    Number of SyncCells         	:	0
+    Number of count7cells       	:	0
+
+Device Utilization Summary after Packing
+    Macrocells                  :	10/192
+    UDBS                        :	3/24
+    IOs                         :	13/672
+
+
+D2088: Phase 3, elapsed time : 0.0 (sec)
+
+Phase 4
+D2088: Phase 4, elapsed time : 0.0 (sec)
+
+Phase 5
+D2088: Phase 5, elapsed time : 0.0 (sec)
+
+Phase 6
+
+######################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+======================================================================
+
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 8
+Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
+Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
+Clock: LED_PWM_Clock        | Frequency:  53.4 MHz | Target:   0.3 MHz
+Clock: LED_Refresh_Clock    | Frequency: N/A       | Target:   0.0 MHz
+Clock: LED_Refresh_Clock(routed) | Frequency: N/A       | Target:   0.0 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+
+D2088: Phase 6, elapsed time : 0.0 (sec)
+
+Phase 7
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 8
+Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
+Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
+Clock: LED_PWM_Clock        | Frequency:  53.4 MHz | Target:   0.3 MHz
+Clock: LED_Refresh_Clock    | Frequency: N/A       | Target:   0.0 MHz
+Clock: LED_Refresh_Clock(routed) | Frequency: N/A       | Target:   0.0 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+D2088: Phase 7, elapsed time : 0.2 (sec)
+
+Final Design Statistics
+    Number of Combinational MCs 	:	5
+    Number of Sequential MCs    	:	5
+    Number of DPs               	:	1
+    Number of Controls          	:	3
+    Number of Status            	:	1
+    Number of SyncCells         	:	0
+    Number of count7cells       	:	0
+    Number of IOs       	:	13
+
+Device Utilization Summary
+    Macrocells                  :	10/192
+    IOs                         :	13/672
+
+
+
+######################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+======================================================================
+
+
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 8
+Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
+Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
+Clock: LED_PWM_Clock        | Frequency:  53.4 MHz | Target:   0.3 MHz
+Clock: LED_Refresh_Clock    | Frequency: N/A       | Target:   0.0 MHz
+Clock: LED_Refresh_Clock(routed) | Frequency: N/A       | Target:   0.0 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+
+Phase 8
+D2088: Phase 8, elapsed time : 0.0 (sec)
+
+D2054: Placement of the design completed successfully
+
+I2076: Total run-time: 1.1 sec.
+

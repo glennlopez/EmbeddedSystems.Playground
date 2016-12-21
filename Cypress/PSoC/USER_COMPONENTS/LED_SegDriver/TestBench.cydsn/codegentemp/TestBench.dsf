@@ -1,0 +1,11 @@
+Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v32+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v34==>:dma_idmux_0.in_0
+:udbswitch@[UDB=(2,4)][side=top]:103,19_f
+:udbswitch@[UDB=(2,4)][side=top]:103,22_f
+:udbswitch@[UDB=(2,4)][side=top]:103,25_f
+:udbswitch@[UDB=(2,4)][side=top]:103,28_f
+:udbswitch@[UDB=(2,4)][side=top]:103,49_f
+:udbswitch@[UDB=(2,4)][side=top]:103,52_f
+:udbswitch@[UDB=(2,4)][side=top]:103,90_f
+:udbswitch@[UDB=(2,4)][side=top]:103,93_f
+Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v33+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v35==>:dma_idmux_1.in_0
+Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v36+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v38==>:dma_idmux_2.in_0

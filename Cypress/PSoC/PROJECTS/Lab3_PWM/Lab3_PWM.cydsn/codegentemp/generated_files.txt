@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+<fileSet version="1" anchorPath="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyfitter_cfg.h" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyfitter_cfg.c" value="ARM_C_FILE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\protect.hex" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cymetadata.c" value="ARM_C_FILE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cydevice_trm.h" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cydevicegnu_trm.inc" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cydevicerv_trm.inc" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cydeviceiar_trm.inc" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyfittergnu.inc" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyfitterrv.inc" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyfitteriar.inc" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyfitter.h" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cydisabledsheets.h" value="NONE;" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\PWM.c" value="ARM_C_FILE;PWM" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\PWM.h" value="NONE;PWM" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\PWM_PM.c" value="ARM_C_FILE;PWM" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\clk.c" value="ARM_C_FILE;clk" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\clk.h" value="NONE;clk" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\LEDR.c" value="ARM_C_FILE;LEDR" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\LEDR.h" value="NONE;LEDR" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\LEDR_aliases.h" value="NONE;LEDR" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\SW1.c" value="ARM_C_FILE;SW1" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\SW1.h" value="NONE;SW1" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\SW1_aliases.h" value="NONE;SW1" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\LEDB.c" value="ARM_C_FILE;LEDB" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\LEDB.h" value="NONE;LEDB" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\LEDB_aliases.h" value="NONE;LEDB" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\PWM2.c" value="ARM_C_FILE;PWM2" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\PWM2.h" value="NONE;PWM2" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\PWM2_PM.c" value="ARM_C_FILE;PWM2" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\clk2.c" value="ARM_C_FILE;clk2" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\clk2.h" value="NONE;clk2" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cm0gcc.ld" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\Cm0RealView.scat" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\Cm0Start.c" value="ARM_C_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\core_cm0_psoc4.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\core_cm0.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\CyBootAsmGnu.s" value="GNU_ARM_ASM_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\CyBootAsmRv.s" value="REALVIEW_ARM_ASM_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\CyFlash.c" value="ARM_C_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\CyFlash.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\CyLib.c" value="ARM_C_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\CyLib.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyPm.c" value="ARM_C_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyPm.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cytypes.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cyutils.c" value="ARM_C_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\cypins.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\core_cmFunc.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\core_cmInstr.h" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\Cm0Iar.icf" value="NONE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\CyBootAsmIar.s" value="IAR_ASM_FILE;cy_boot" />
+  <file name="\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\codegentemp\project.h" value="NONE;" />
+</fileSet>

@@ -1,0 +1,5 @@
+\\vmware-host\Shared Folders\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab3_PWM\Lab3_PWM.cydsn\Lab3_PWM.cyprj|19aa9258-1bca-4b7f-bdc9-3abaa41cab72
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|bc15889a-af5c-41da-8bad-1c03047cb5b8
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|28204a96-484d-48fa-ac20-25a6bc5c240f
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8e964c4e-7261-4abc-b623-b38d763b7d53
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|719706e7-5501-4b09-bff0-8799491c0106

@@ -1,0 +1,285 @@
+C51 COMPILER V9.03   LED_SEGDRIVER_1_COMMON_DMA_DMA                                        03/29/2012 15:33:59 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE LED_SEGDRIVER_1_COMMON_DMA_DMA
+OBJECT MODULE PLACED IN .\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_Common_DMA_dma.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\import\keil\pk51\9.03\C51\BIN\c51.exe 
+                    -.\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug
+                    -\LED_SegDriver_1_Common_DMA_dma.lst) CD DB NOIP OT(2,SIZE) INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\De
+                    -bug\LED_SegDriver_1_Common_DMA_dma.obj)
+
+line level    source
+
+   1          /***************************************************************************
+   2          * File Name: LED_SegDriver_1_Common_DMA_dma.c  
+   3          * Version 1.50
+   4          *
+   5          *  Description:
+   6          *   Provides an API for the DMAC component. The API includes functions
+   7          *   for the DMA controller, DMA channels and Transfer Descriptors.
+   8          *
+   9          *
+  10          *   Note:
+  11          *     This module requires the developer to finish or fill in the auto
+  12          *     generated funcions and setup the dma channel and TD's.
+  13          *
+  14          ********************************************************************************
+  15          * Copyright 2008-2010, Cypress Semiconductor Corporation.  All rights reserved.
+  16          * You may use this file only in accordance with the license, terms, conditions, 
+  17          * disclaimers, and limitations in the end user license agreement accompanying 
+  18          * the software package with which this file was provided.
+  19          ********************************************************************************/
+  20          #include <CYLIB.H>
+  21          #include <CYDMAC.H>
+  22          #include <LED_SegDriver_1_Common_DMA_dma.H>
+  23          
+  24          
+  25          
+  26          /****************************************************************************
+  27          * 
+  28          * The following defines are available in Cyfitter.h
+  29          * 
+  30          * 
+  31          * 
+  32          * LED_SegDriver_1_Common_DMA__DRQ_CTL_REG
+  33          * 
+  34          * 
+  35          * LED_SegDriver_1_Common_DMA__DRQ_NUMBER
+  36          * 
+  37          * Number of TD's used by this channel.
+  38          * LED_SegDriver_1_Common_DMA__NUMBEROF_TDS
+  39          * 
+  40          * Priority of this channel.
+  41          * LED_SegDriver_1_Common_DMA__PRIORITY
+  42          * 
+  43          * True if LED_SegDriver_1_Common_DMA_TERMIN_SEL is used.
+  44          * LED_SegDriver_1_Common_DMA__TERMIN_EN
+  45          * 
+  46          * TERMIN interrupt line to signal terminate.
+  47          * LED_SegDriver_1_Common_DMA__TERMIN_SEL
+  48          * 
+  49          * 
+  50          * True if LED_SegDriver_1_Common_DMA_TERMOUT0_SEL is used.
+  51          * LED_SegDriver_1_Common_DMA__TERMOUT0_EN
+  52          * 
+C51 COMPILER V9.03   LED_SEGDRIVER_1_COMMON_DMA_DMA                                        03/29/2012 15:33:59 PAGE 2   
+
+  53          * 
+  54          * TERMOUT0 interrupt line to signal completion.
+  55          * LED_SegDriver_1_Common_DMA__TERMOUT0_SEL
+  56          * 
+  57          * 
+  58          * True if LED_SegDriver_1_Common_DMA_TERMOUT1_SEL is used.
+  59          * LED_SegDriver_1_Common_DMA__TERMOUT1_EN
+  60          * 
+  61          * 
+  62          * TERMOUT1 interrupt line to signal completion.
+  63          * LED_SegDriver_1_Common_DMA__TERMOUT1_SEL
+  64          * 
+  65          ****************************************************************************/
+  66          
+  67          
+  68          /* Zero based index of LED_SegDriver_1_Common_DMA dma channel */
+  69          uint8 LED_SegDriver_1_Common_DMA_DmaHandle = DMA_INVALID_CHANNEL;
+  70          
+  71          /*********************************************************************
+  72          * Function Name: uint8 LED_SegDriver_1_Common_DMA_DmaInitalize
+  73          **********************************************************************
+  74          * Summary:
+  75          *   Allocates and initialises a channel of the DMAC to be used by the
+  76          *   caller.
+  77          *
+  78          * Parameters:
+  79          *   BurstCount.
+  80          *       
+  81          *       
+  82          *   ReqestPerBurst.
+  83          *       
+  84          *       
+  85          *   UpperSrcAddress.
+  86          *       
+  87          *       
+  88          *   UpperDestAddress.
+  89          *       
+  90          *
+  91          * Return:
+  92          *   The channel that can be used by the caller for DMA activity.
+  93          *   DMA_INVALID_CHANNEL (0xFF) if there are no channels left. 
+  94          *
+  95          *
+  96          *******************************************************************/
+  97          uint8 LED_SegDriver_1_Common_DMA_DmaInitialize(uint8 BurstCount, uint8 ReqestPerBurst, uint16 UpperSrcAddr
+             -ess, uint16 UpperDestAddress)
+  98          {
+  99   1      
+ 100   1          /* Allocate a DMA channel. */
+ 101   1          LED_SegDriver_1_Common_DMA_DmaHandle = LED_SegDriver_1_Common_DMA__DRQ_NUMBER;
+ 102   1      
+ 103   1          if(LED_SegDriver_1_Common_DMA_DmaHandle != DMA_INVALID_CHANNEL)
+ 104   1          {
+ 105   2              /* Configure the channel. */
+ 106   2              CyDmaChSetConfiguration(LED_SegDriver_1_Common_DMA_DmaHandle,
+ 107   2                                      BurstCount,
+ 108   2                                      ReqestPerBurst,
+ 109   2                                      LED_SegDriver_1_Common_DMA__TERMOUT0_SEL,
+ 110   2                                      LED_SegDriver_1_Common_DMA__TERMOUT1_SEL,
+ 111   2                                      LED_SegDriver_1_Common_DMA__TERMIN_SEL);
+ 112   2      
+ 113   2              /* Set the extended address for the transfers */
+C51 COMPILER V9.03   LED_SEGDRIVER_1_COMMON_DMA_DMA                                        03/29/2012 15:33:59 PAGE 3   
+
+ 114   2              CyDmaChSetExtendedAddress(LED_SegDriver_1_Common_DMA_DmaHandle, UpperSrcAddress, UpperDestAddress)
+             -;
+ 115   2      
+ 116   2              /* Set the priority for this channel */
+ 117   2              CyDmaChPriority(LED_SegDriver_1_Common_DMA_DmaHandle, LED_SegDriver_1_Common_DMA__PRIORITY);
+ 118   2          }
+ 119   1      
+ 120   1          return LED_SegDriver_1_Common_DMA_DmaHandle;
+ 121   1      }
+ 122          
+ 123          /*********************************************************************
+ 124          * Function Name: void LED_SegDriver_1_Common_DMA_DmaRelease
+ 125          **********************************************************************
+ 126          * Summary:
+ 127          *   Frees the channel associated with LED_SegDriver_1_Common_DMA.
+ 128          *
+ 129          *
+ 130          * Parameters:
+ 131          *   void.
+ 132          *
+ 133          *
+ 134          *
+ 135          * Return:
+ 136          *   void.
+ 137          *
+ 138          *******************************************************************/
+ 139          void LED_SegDriver_1_Common_DMA_DmaRelease(void) 
+ 140          {
+ 141   1          /* Disable the channel, even if someone just did! */
+ 142   1          CyDmaChDisable(LED_SegDriver_1_Common_DMA_DmaHandle);
+ 143   1      
+ 144   1      
+ 145   1          /* Free Transfer Descriptors. */
+ 146   1      
+ 147   1      
+ 148   1      }
+ 149          
+C51 COMPILER V9.03   LED_SEGDRIVER_1_COMMON_DMA_DMA                                        03/29/2012 15:33:59 PAGE 4   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION _LED_SegDriver_1_Common_DMA_DmaInitialize (BEGIN)
+                                           ; SOURCE LINE # 97
+0000 900000      R     MOV     DPTR,#BurstCount
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#ReqestPerBurst
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+000A 900000      R     MOV     DPTR,#UpperSrcAddress
+000D EA                MOV     A,R2
+000E F0                MOVX    @DPTR,A
+000F A3                INC     DPTR
+0010 EB                MOV     A,R3
+0011 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 98
+                                           ; SOURCE LINE # 101
+0012 900000      R     MOV     DPTR,#LED_SegDriver_1_Common_DMA_DmaHandle
+0015 7413              MOV     A,#013H
+0017 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 103
+0018 900000      R     MOV     DPTR,#LED_SegDriver_1_Common_DMA_DmaHandle
+001B E0                MOVX    A,@DPTR
+001C FF                MOV     R7,A
+001D EF                MOV     A,R7
+001E 64FF              XRL     A,#0FFH
+0020 6043              JZ      ?C0001
+                                           ; SOURCE LINE # 104
+                                           ; SOURCE LINE # 106
+0022 900000      R     MOV     DPTR,#LED_SegDriver_1_Common_DMA_DmaHandle
+0025 E0                MOVX    A,@DPTR
+0026 FF                MOV     R7,A
+0027 900000      R     MOV     DPTR,#BurstCount
+002A E0                MOVX    A,@DPTR
+002B FD                MOV     R5,A
+002C 900000      R     MOV     DPTR,#ReqestPerBurst
+002F E0                MOVX    A,@DPTR
+0030 FB                MOV     R3,A
+0031 900000      E     MOV     DPTR,#?_CyDmaChSetConfiguration?BYTE+03H
+0034 E4                CLR     A
+0035 F0                MOVX    @DPTR,A
+0036 900000      E     MOV     DPTR,#?_CyDmaChSetConfiguration?BYTE+04H
+0039 E4                CLR     A
+003A F0                MOVX    @DPTR,A
+003B 900000      E     MOV     DPTR,#?_CyDmaChSetConfiguration?BYTE+05H
+003E E4                CLR     A
+003F F0                MOVX    @DPTR,A
+0040 120000      E     LCALL   _CyDmaChSetConfiguration
+                                           ; SOURCE LINE # 114
+0043 900000      R     MOV     DPTR,#LED_SegDriver_1_Common_DMA_DmaHandle
+0046 E0                MOVX    A,@DPTR
+0047 FF                MOV     R7,A
+0048 900000      R     MOV     DPTR,#UpperSrcAddress
+004B E0                MOVX    A,@DPTR
+004C FC                MOV     R4,A
+004D A3                INC     DPTR
+004E E0                MOVX    A,@DPTR
+004F FD                MOV     R5,A
+0050 900000      R     MOV     DPTR,#UpperDestAddress
+0053 E0                MOVX    A,@DPTR
+C51 COMPILER V9.03   LED_SEGDRIVER_1_COMMON_DMA_DMA                                        03/29/2012 15:33:59 PAGE 5   
+
+0054 FA                MOV     R2,A
+0055 A3                INC     DPTR
+0056 E0                MOVX    A,@DPTR
+0057 FB                MOV     R3,A
+0058 120000      E     LCALL   _CyDmaChSetExtendedAddress
+                                           ; SOURCE LINE # 117
+005B 900000      R     MOV     DPTR,#LED_SegDriver_1_Common_DMA_DmaHandle
+005E E0                MOVX    A,@DPTR
+005F FF                MOV     R7,A
+0060 7D02              MOV     R5,#02H
+0062 120000      E     LCALL   _CyDmaChPriority
+                                           ; SOURCE LINE # 118
+0065         ?C0001:
+                                           ; SOURCE LINE # 120
+0065 900000      R     MOV     DPTR,#LED_SegDriver_1_Common_DMA_DmaHandle
+0068 E0                MOVX    A,@DPTR
+0069 FF                MOV     R7,A
+                                           ; SOURCE LINE # 121
+006A         ?C0002:
+006A 22                RET     
+             ; FUNCTION _LED_SegDriver_1_Common_DMA_DmaInitialize (END)
+
+             ; FUNCTION LED_SegDriver_1_Common_DMA_DmaRelease (BEGIN)
+                                           ; SOURCE LINE # 139
+                                           ; SOURCE LINE # 140
+                                           ; SOURCE LINE # 142
+0000 900000      R     MOV     DPTR,#LED_SegDriver_1_Common_DMA_DmaHandle
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+0005 120000      E     LCALL   _CyDmaChDisable
+                                           ; SOURCE LINE # 148
+0008 22                RET     
+             ; FUNCTION LED_SegDriver_1_Common_DMA_DmaRelease (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    116    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      1       6
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

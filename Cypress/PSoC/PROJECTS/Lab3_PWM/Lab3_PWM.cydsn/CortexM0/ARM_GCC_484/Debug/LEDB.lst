@@ -1,0 +1,968 @@
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"LEDB.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.LEDB_Write,"ax",%progbits
+  18              		.align	2
+  19              		.global	LEDB_Write
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	LEDB_Write, %function
+  23              	LEDB_Write:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\LEDB.c"
+   1:.\Generated_Source\PSoC4/LEDB.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/LEDB.c **** * File Name: LEDB.c  
+   3:.\Generated_Source\PSoC4/LEDB.c **** * Version 2.10
+   4:.\Generated_Source\PSoC4/LEDB.c **** *
+   5:.\Generated_Source\PSoC4/LEDB.c **** * Description:
+   6:.\Generated_Source\PSoC4/LEDB.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC4/LEDB.c **** *
+   8:.\Generated_Source\PSoC4/LEDB.c **** * Note:
+   9:.\Generated_Source\PSoC4/LEDB.c **** *
+  10:.\Generated_Source\PSoC4/LEDB.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/LEDB.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/LEDB.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/LEDB.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/LEDB.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/LEDB.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/LEDB.c **** 
+  17:.\Generated_Source\PSoC4/LEDB.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC4/LEDB.c **** #include "LEDB.h"
+  19:.\Generated_Source\PSoC4/LEDB.c **** 
+  20:.\Generated_Source\PSoC4/LEDB.c **** #define SetP4PinDriveMode(shift, mode)  \
+  21:.\Generated_Source\PSoC4/LEDB.c ****     do { \
+  22:.\Generated_Source\PSoC4/LEDB.c ****         LEDB_PC =   (LEDB_PC & \
+  23:.\Generated_Source\PSoC4/LEDB.c ****                                 (uint32)(~(uint32)(LEDB_DRIVE_MODE_IND_MASK << (LEDB_DRIVE_MODE_BIT
+  24:.\Generated_Source\PSoC4/LEDB.c ****                                 (uint32)((uint32)(mode) << (LEDB_DRIVE_MODE_BITS * (shift))); \
+  25:.\Generated_Source\PSoC4/LEDB.c ****     } while (0)
+  26:.\Generated_Source\PSoC4/LEDB.c **** 
+  27:.\Generated_Source\PSoC4/LEDB.c **** 
+  28:.\Generated_Source\PSoC4/LEDB.c **** /*******************************************************************************
+  29:.\Generated_Source\PSoC4/LEDB.c **** * Function Name: LEDB_Write
+  30:.\Generated_Source\PSoC4/LEDB.c **** ********************************************************************************
+  31:.\Generated_Source\PSoC4/LEDB.c **** *
+  32:.\Generated_Source\PSoC4/LEDB.c **** * Summary:
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/LEDB.c **** *  Assign a new value to the digital port's data output register.  
+  34:.\Generated_Source\PSoC4/LEDB.c **** *
+  35:.\Generated_Source\PSoC4/LEDB.c **** * Parameters:  
+  36:.\Generated_Source\PSoC4/LEDB.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  37:.\Generated_Source\PSoC4/LEDB.c **** *
+  38:.\Generated_Source\PSoC4/LEDB.c **** * Return: 
+  39:.\Generated_Source\PSoC4/LEDB.c **** *  None 
+  40:.\Generated_Source\PSoC4/LEDB.c **** *  
+  41:.\Generated_Source\PSoC4/LEDB.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC4/LEDB.c **** void LEDB_Write(uint8 value) 
+  43:.\Generated_Source\PSoC4/LEDB.c **** {
+  26              		.loc 1 43 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 84B0     		sub	sp, sp, #16
+  33              		.cfi_def_cfa_offset 24
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 021C     		mov	r2, r0
+  37 0008 FB1D     		add	r3, r7, #7
+  38 000a 1A70     		strb	r2, [r3]
+  44:.\Generated_Source\PSoC4/LEDB.c ****     uint8 drVal = (uint8)(LEDB_DR & (uint8)(~LEDB_MASK));
+  39              		.loc 1 44 0
+  40 000c 0D4B     		ldr	r3, .L2
+  41 000e 1B68     		ldr	r3, [r3]
+  42 0010 D9B2     		uxtb	r1, r3
+  43 0012 3B1C     		mov	r3, r7
+  44 0014 0F33     		add	r3, r3, #15
+  45 0016 7F22     		mov	r2, #127
+  46 0018 0A40     		and	r2, r1
+  47 001a 1A70     		strb	r2, [r3]
+  45:.\Generated_Source\PSoC4/LEDB.c ****     drVal = (drVal | ((uint8)(value << LEDB_SHIFT) & LEDB_MASK));
+  48              		.loc 1 45 0
+  49 001c FB1D     		add	r3, r7, #7
+  50 001e 1B78     		ldrb	r3, [r3]
+  51 0020 DB01     		lsl	r3, r3, #7
+  52 0022 D9B2     		uxtb	r1, r3
+  53 0024 3B1C     		mov	r3, r7
+  54 0026 0F33     		add	r3, r3, #15
+  55 0028 3A1C     		mov	r2, r7
+  56 002a 0F32     		add	r2, r2, #15
+  57 002c 1278     		ldrb	r2, [r2]
+  58 002e 0A43     		orr	r2, r1
+  59 0030 1A70     		strb	r2, [r3]
+  46:.\Generated_Source\PSoC4/LEDB.c ****     LEDB_DR = (uint32)drVal;
+  60              		.loc 1 46 0
+  61 0032 044B     		ldr	r3, .L2
+  62 0034 3A1C     		mov	r2, r7
+  63 0036 0F32     		add	r2, r2, #15
+  64 0038 1278     		ldrb	r2, [r2]
+  65 003a 1A60     		str	r2, [r3]
+  47:.\Generated_Source\PSoC4/LEDB.c **** }
+  66              		.loc 1 47 0
+  67 003c BD46     		mov	sp, r7
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 3
+
+
+  68 003e 04B0     		add	sp, sp, #16
+  69              		@ sp needed
+  70 0040 80BD     		pop	{r7, pc}
+  71              	.L3:
+  72 0042 C046     		.align	2
+  73              	.L2:
+  74 0044 00030440 		.word	1074004736
+  75              		.cfi_endproc
+  76              	.LFE0:
+  77              		.size	LEDB_Write, .-LEDB_Write
+  78              		.section	.text.LEDB_SetDriveMode,"ax",%progbits
+  79              		.align	2
+  80              		.global	LEDB_SetDriveMode
+  81              		.code	16
+  82              		.thumb_func
+  83              		.type	LEDB_SetDriveMode, %function
+  84              	LEDB_SetDriveMode:
+  85              	.LFB1:
+  48:.\Generated_Source\PSoC4/LEDB.c **** 
+  49:.\Generated_Source\PSoC4/LEDB.c **** 
+  50:.\Generated_Source\PSoC4/LEDB.c **** /*******************************************************************************
+  51:.\Generated_Source\PSoC4/LEDB.c **** * Function Name: LEDB_SetDriveMode
+  52:.\Generated_Source\PSoC4/LEDB.c **** ********************************************************************************
+  53:.\Generated_Source\PSoC4/LEDB.c **** *
+  54:.\Generated_Source\PSoC4/LEDB.c **** * Summary:
+  55:.\Generated_Source\PSoC4/LEDB.c **** *  Change the drive mode on the pins of the port.
+  56:.\Generated_Source\PSoC4/LEDB.c **** * 
+  57:.\Generated_Source\PSoC4/LEDB.c **** * Parameters:  
+  58:.\Generated_Source\PSoC4/LEDB.c **** *  mode:  Change the pins to one of the following drive modes.
+  59:.\Generated_Source\PSoC4/LEDB.c **** *
+  60:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_STRONG     Strong Drive 
+  61:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_OD_HI      Open Drain, Drives High 
+  62:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_OD_LO      Open Drain, Drives Low 
+  63:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_RES_UP     Resistive Pull Up 
+  64:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_RES_DWN    Resistive Pull Down 
+  65:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_RES_UPDWN  Resistive Pull Up/Down 
+  66:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_DIG_HIZ    High Impedance Digital 
+  67:.\Generated_Source\PSoC4/LEDB.c **** *  LEDB_DM_ALG_HIZ    High Impedance Analog 
+  68:.\Generated_Source\PSoC4/LEDB.c **** *
+  69:.\Generated_Source\PSoC4/LEDB.c **** * Return: 
+  70:.\Generated_Source\PSoC4/LEDB.c **** *  None
+  71:.\Generated_Source\PSoC4/LEDB.c **** *
+  72:.\Generated_Source\PSoC4/LEDB.c **** *******************************************************************************/
+  73:.\Generated_Source\PSoC4/LEDB.c **** void LEDB_SetDriveMode(uint8 mode) 
+  74:.\Generated_Source\PSoC4/LEDB.c **** {
+  86              		.loc 1 74 0
+  87              		.cfi_startproc
+  88 0000 80B5     		push	{r7, lr}
+  89              		.cfi_def_cfa_offset 8
+  90              		.cfi_offset 7, -8
+  91              		.cfi_offset 14, -4
+  92 0002 82B0     		sub	sp, sp, #8
+  93              		.cfi_def_cfa_offset 16
+  94 0004 00AF     		add	r7, sp, #0
+  95              		.cfi_def_cfa_register 7
+  96 0006 021C     		mov	r2, r0
+  97 0008 FB1D     		add	r3, r7, #7
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 4
+
+
+  98 000a 1A70     		strb	r2, [r3]
+  75:.\Generated_Source\PSoC4/LEDB.c **** 	SetP4PinDriveMode(LEDB__0__SHIFT, mode);
+  99              		.loc 1 75 0
+ 100 000c 064B     		ldr	r3, .L5
+ 101 000e 064A     		ldr	r2, .L5
+ 102 0010 1168     		ldr	r1, [r2]
+ 103 0012 064A     		ldr	r2, .L5+4
+ 104 0014 1140     		and	r1, r2
+ 105 0016 FA1D     		add	r2, r7, #7
+ 106 0018 1278     		ldrb	r2, [r2]
+ 107 001a 5205     		lsl	r2, r2, #21
+ 108 001c 0A43     		orr	r2, r1
+ 109 001e 1A60     		str	r2, [r3]
+  76:.\Generated_Source\PSoC4/LEDB.c **** }
+ 110              		.loc 1 76 0
+ 111 0020 BD46     		mov	sp, r7
+ 112 0022 02B0     		add	sp, sp, #8
+ 113              		@ sp needed
+ 114 0024 80BD     		pop	{r7, pc}
+ 115              	.L6:
+ 116 0026 C046     		.align	2
+ 117              	.L5:
+ 118 0028 08030440 		.word	1074004744
+ 119 002c FFFF1FFF 		.word	-14680065
+ 120              		.cfi_endproc
+ 121              	.LFE1:
+ 122              		.size	LEDB_SetDriveMode, .-LEDB_SetDriveMode
+ 123              		.section	.text.LEDB_Read,"ax",%progbits
+ 124              		.align	2
+ 125              		.global	LEDB_Read
+ 126              		.code	16
+ 127              		.thumb_func
+ 128              		.type	LEDB_Read, %function
+ 129              	LEDB_Read:
+ 130              	.LFB2:
+  77:.\Generated_Source\PSoC4/LEDB.c **** 
+  78:.\Generated_Source\PSoC4/LEDB.c **** 
+  79:.\Generated_Source\PSoC4/LEDB.c **** /*******************************************************************************
+  80:.\Generated_Source\PSoC4/LEDB.c **** * Function Name: LEDB_Read
+  81:.\Generated_Source\PSoC4/LEDB.c **** ********************************************************************************
+  82:.\Generated_Source\PSoC4/LEDB.c **** *
+  83:.\Generated_Source\PSoC4/LEDB.c **** * Summary:
+  84:.\Generated_Source\PSoC4/LEDB.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  85:.\Generated_Source\PSoC4/LEDB.c **** *  form.
+  86:.\Generated_Source\PSoC4/LEDB.c **** *
+  87:.\Generated_Source\PSoC4/LEDB.c **** * Parameters:  
+  88:.\Generated_Source\PSoC4/LEDB.c **** *  None 
+  89:.\Generated_Source\PSoC4/LEDB.c **** *
+  90:.\Generated_Source\PSoC4/LEDB.c **** * Return: 
+  91:.\Generated_Source\PSoC4/LEDB.c **** *  Returns the current value of the Digital Port as a right justified number
+  92:.\Generated_Source\PSoC4/LEDB.c **** *  
+  93:.\Generated_Source\PSoC4/LEDB.c **** * Note:
+  94:.\Generated_Source\PSoC4/LEDB.c **** *  Macro LEDB_ReadPS calls this function. 
+  95:.\Generated_Source\PSoC4/LEDB.c **** *  
+  96:.\Generated_Source\PSoC4/LEDB.c **** *******************************************************************************/
+  97:.\Generated_Source\PSoC4/LEDB.c **** uint8 LEDB_Read(void) 
+  98:.\Generated_Source\PSoC4/LEDB.c **** {
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 5
+
+
+ 131              		.loc 1 98 0
+ 132              		.cfi_startproc
+ 133 0000 80B5     		push	{r7, lr}
+ 134              		.cfi_def_cfa_offset 8
+ 135              		.cfi_offset 7, -8
+ 136              		.cfi_offset 14, -4
+ 137 0002 00AF     		add	r7, sp, #0
+ 138              		.cfi_def_cfa_register 7
+  99:.\Generated_Source\PSoC4/LEDB.c ****     return (uint8)((LEDB_PS & LEDB_MASK) >> LEDB_SHIFT);
+ 139              		.loc 1 99 0
+ 140 0004 044B     		ldr	r3, .L9
+ 141 0006 1A68     		ldr	r2, [r3]
+ 142 0008 8023     		mov	r3, #128
+ 143 000a 1340     		and	r3, r2
+ 144 000c DB09     		lsr	r3, r3, #7
+ 145 000e DBB2     		uxtb	r3, r3
+ 100:.\Generated_Source\PSoC4/LEDB.c **** }
+ 146              		.loc 1 100 0
+ 147 0010 181C     		mov	r0, r3
+ 148 0012 BD46     		mov	sp, r7
+ 149              		@ sp needed
+ 150 0014 80BD     		pop	{r7, pc}
+ 151              	.L10:
+ 152 0016 C046     		.align	2
+ 153              	.L9:
+ 154 0018 04030440 		.word	1074004740
+ 155              		.cfi_endproc
+ 156              	.LFE2:
+ 157              		.size	LEDB_Read, .-LEDB_Read
+ 158              		.section	.text.LEDB_ReadDataReg,"ax",%progbits
+ 159              		.align	2
+ 160              		.global	LEDB_ReadDataReg
+ 161              		.code	16
+ 162              		.thumb_func
+ 163              		.type	LEDB_ReadDataReg, %function
+ 164              	LEDB_ReadDataReg:
+ 165              	.LFB3:
+ 101:.\Generated_Source\PSoC4/LEDB.c **** 
+ 102:.\Generated_Source\PSoC4/LEDB.c **** 
+ 103:.\Generated_Source\PSoC4/LEDB.c **** /*******************************************************************************
+ 104:.\Generated_Source\PSoC4/LEDB.c **** * Function Name: LEDB_ReadDataReg
+ 105:.\Generated_Source\PSoC4/LEDB.c **** ********************************************************************************
+ 106:.\Generated_Source\PSoC4/LEDB.c **** *
+ 107:.\Generated_Source\PSoC4/LEDB.c **** * Summary:
+ 108:.\Generated_Source\PSoC4/LEDB.c **** *  Read the current value assigned to a Digital Port's data output register
+ 109:.\Generated_Source\PSoC4/LEDB.c **** *
+ 110:.\Generated_Source\PSoC4/LEDB.c **** * Parameters:  
+ 111:.\Generated_Source\PSoC4/LEDB.c **** *  None 
+ 112:.\Generated_Source\PSoC4/LEDB.c **** *
+ 113:.\Generated_Source\PSoC4/LEDB.c **** * Return: 
+ 114:.\Generated_Source\PSoC4/LEDB.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 115:.\Generated_Source\PSoC4/LEDB.c **** *  
+ 116:.\Generated_Source\PSoC4/LEDB.c **** *******************************************************************************/
+ 117:.\Generated_Source\PSoC4/LEDB.c **** uint8 LEDB_ReadDataReg(void) 
+ 118:.\Generated_Source\PSoC4/LEDB.c **** {
+ 166              		.loc 1 118 0
+ 167              		.cfi_startproc
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 6
+
+
+ 168 0000 80B5     		push	{r7, lr}
+ 169              		.cfi_def_cfa_offset 8
+ 170              		.cfi_offset 7, -8
+ 171              		.cfi_offset 14, -4
+ 172 0002 00AF     		add	r7, sp, #0
+ 173              		.cfi_def_cfa_register 7
+ 119:.\Generated_Source\PSoC4/LEDB.c ****     return (uint8)((LEDB_DR & LEDB_MASK) >> LEDB_SHIFT);
+ 174              		.loc 1 119 0
+ 175 0004 044B     		ldr	r3, .L13
+ 176 0006 1A68     		ldr	r2, [r3]
+ 177 0008 8023     		mov	r3, #128
+ 178 000a 1340     		and	r3, r2
+ 179 000c DB09     		lsr	r3, r3, #7
+ 180 000e DBB2     		uxtb	r3, r3
+ 120:.\Generated_Source\PSoC4/LEDB.c **** }
+ 181              		.loc 1 120 0
+ 182 0010 181C     		mov	r0, r3
+ 183 0012 BD46     		mov	sp, r7
+ 184              		@ sp needed
+ 185 0014 80BD     		pop	{r7, pc}
+ 186              	.L14:
+ 187 0016 C046     		.align	2
+ 188              	.L13:
+ 189 0018 00030440 		.word	1074004736
+ 190              		.cfi_endproc
+ 191              	.LFE3:
+ 192              		.size	LEDB_ReadDataReg, .-LEDB_ReadDataReg
+ 193              		.section	.text.LEDB_ClearInterrupt,"ax",%progbits
+ 194              		.align	2
+ 195              		.global	LEDB_ClearInterrupt
+ 196              		.code	16
+ 197              		.thumb_func
+ 198              		.type	LEDB_ClearInterrupt, %function
+ 199              	LEDB_ClearInterrupt:
+ 200              	.LFB4:
+ 121:.\Generated_Source\PSoC4/LEDB.c **** 
+ 122:.\Generated_Source\PSoC4/LEDB.c **** 
+ 123:.\Generated_Source\PSoC4/LEDB.c **** /* If Interrupts Are Enabled for this Pins component */ 
+ 124:.\Generated_Source\PSoC4/LEDB.c **** #if defined(LEDB_INTSTAT) 
+ 125:.\Generated_Source\PSoC4/LEDB.c **** 
+ 126:.\Generated_Source\PSoC4/LEDB.c ****     /*******************************************************************************
+ 127:.\Generated_Source\PSoC4/LEDB.c ****     * Function Name: LEDB_ClearInterrupt
+ 128:.\Generated_Source\PSoC4/LEDB.c ****     ********************************************************************************
+ 129:.\Generated_Source\PSoC4/LEDB.c ****     *
+ 130:.\Generated_Source\PSoC4/LEDB.c ****     * Summary:
+ 131:.\Generated_Source\PSoC4/LEDB.c ****     *  Clears any active interrupts attached to port and returns the value of the 
+ 132:.\Generated_Source\PSoC4/LEDB.c ****     *  interrupt status register.
+ 133:.\Generated_Source\PSoC4/LEDB.c ****     *
+ 134:.\Generated_Source\PSoC4/LEDB.c ****     * Parameters:  
+ 135:.\Generated_Source\PSoC4/LEDB.c ****     *  None 
+ 136:.\Generated_Source\PSoC4/LEDB.c ****     *
+ 137:.\Generated_Source\PSoC4/LEDB.c ****     * Return: 
+ 138:.\Generated_Source\PSoC4/LEDB.c ****     *  Returns the value of the interrupt status register
+ 139:.\Generated_Source\PSoC4/LEDB.c ****     *  
+ 140:.\Generated_Source\PSoC4/LEDB.c ****     *******************************************************************************/
+ 141:.\Generated_Source\PSoC4/LEDB.c ****     uint8 LEDB_ClearInterrupt(void) 
+ 142:.\Generated_Source\PSoC4/LEDB.c ****     {
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 7
+
+
+ 201              		.loc 1 142 0
+ 202              		.cfi_startproc
+ 203 0000 80B5     		push	{r7, lr}
+ 204              		.cfi_def_cfa_offset 8
+ 205              		.cfi_offset 7, -8
+ 206              		.cfi_offset 14, -4
+ 207 0002 82B0     		sub	sp, sp, #8
+ 208              		.cfi_def_cfa_offset 16
+ 209 0004 00AF     		add	r7, sp, #0
+ 210              		.cfi_def_cfa_register 7
+ 143:.\Generated_Source\PSoC4/LEDB.c **** 		uint8 maskedStatus = (uint8)(LEDB_INTSTAT & LEDB_MASK);
+ 211              		.loc 1 143 0
+ 212 0006 094B     		ldr	r3, .L17
+ 213 0008 1B68     		ldr	r3, [r3]
+ 214 000a DAB2     		uxtb	r2, r3
+ 215 000c FB1D     		add	r3, r7, #7
+ 216 000e 7F21     		mov	r1, #127
+ 217 0010 8A43     		bic	r2, r1
+ 218 0012 1A70     		strb	r2, [r3]
+ 144:.\Generated_Source\PSoC4/LEDB.c **** 		LEDB_INTSTAT = maskedStatus;
+ 219              		.loc 1 144 0
+ 220 0014 054B     		ldr	r3, .L17
+ 221 0016 FA1D     		add	r2, r7, #7
+ 222 0018 1278     		ldrb	r2, [r2]
+ 223 001a 1A60     		str	r2, [r3]
+ 145:.\Generated_Source\PSoC4/LEDB.c ****         return maskedStatus >> LEDB_SHIFT;
+ 224              		.loc 1 145 0
+ 225 001c FB1D     		add	r3, r7, #7
+ 226 001e 1B78     		ldrb	r3, [r3]
+ 227 0020 DB09     		lsr	r3, r3, #7
+ 228 0022 DBB2     		uxtb	r3, r3
+ 146:.\Generated_Source\PSoC4/LEDB.c ****     }
+ 229              		.loc 1 146 0
+ 230 0024 181C     		mov	r0, r3
+ 231 0026 BD46     		mov	sp, r7
+ 232 0028 02B0     		add	sp, sp, #8
+ 233              		@ sp needed
+ 234 002a 80BD     		pop	{r7, pc}
+ 235              	.L18:
+ 236              		.align	2
+ 237              	.L17:
+ 238 002c 10030440 		.word	1074004752
+ 239              		.cfi_endproc
+ 240              	.LFE4:
+ 241              		.size	LEDB_ClearInterrupt, .-LEDB_ClearInterrupt
+ 242              		.text
+ 243              	.Letext0:
+ 244              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 245              		.section	.debug_info,"",%progbits
+ 246              	.Ldebug_info0:
+ 247 0000 48010000 		.4byte	0x148
+ 248 0004 0400     		.2byte	0x4
+ 249 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 250 000a 04       		.byte	0x4
+ 251 000b 01       		.uleb128 0x1
+ 252 000c 22010000 		.4byte	.LASF24
+ 253 0010 01       		.byte	0x1
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 8
+
+
+ 254 0011 E3000000 		.4byte	.LASF25
+ 255 0015 7D000000 		.4byte	.LASF26
+ 256 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 257 001d 00000000 		.4byte	0
+ 258 0021 00000000 		.4byte	.Ldebug_line0
+ 259 0025 02       		.uleb128 0x2
+ 260 0026 01       		.byte	0x1
+ 261 0027 06       		.byte	0x6
+ 262 0028 09020000 		.4byte	.LASF0
+ 263 002c 02       		.uleb128 0x2
+ 264 002d 01       		.byte	0x1
+ 265 002e 08       		.byte	0x8
+ 266 002f 30000000 		.4byte	.LASF1
+ 267 0033 02       		.uleb128 0x2
+ 268 0034 02       		.byte	0x2
+ 269 0035 05       		.byte	0x5
+ 270 0036 DF010000 		.4byte	.LASF2
+ 271 003a 02       		.uleb128 0x2
+ 272 003b 02       		.byte	0x2
+ 273 003c 07       		.byte	0x7
+ 274 003d 56000000 		.4byte	.LASF3
+ 275 0041 02       		.uleb128 0x2
+ 276 0042 04       		.byte	0x4
+ 277 0043 05       		.byte	0x5
+ 278 0044 00020000 		.4byte	.LASF4
+ 279 0048 02       		.uleb128 0x2
+ 280 0049 04       		.byte	0x4
+ 281 004a 07       		.byte	0x7
+ 282 004b 44000000 		.4byte	.LASF5
+ 283 004f 02       		.uleb128 0x2
+ 284 0050 08       		.byte	0x8
+ 285 0051 05       		.byte	0x5
+ 286 0052 AD010000 		.4byte	.LASF6
+ 287 0056 02       		.uleb128 0x2
+ 288 0057 08       		.byte	0x8
+ 289 0058 07       		.byte	0x7
+ 290 0059 19000000 		.4byte	.LASF7
+ 291 005d 03       		.uleb128 0x3
+ 292 005e 04       		.byte	0x4
+ 293 005f 05       		.byte	0x5
+ 294 0060 696E7400 		.ascii	"int\000"
+ 295 0064 02       		.uleb128 0x2
+ 296 0065 04       		.byte	0x4
+ 297 0066 07       		.byte	0x7
+ 298 0067 15010000 		.4byte	.LASF8
+ 299 006b 04       		.uleb128 0x4
+ 300 006c FA010000 		.4byte	.LASF9
+ 301 0070 02       		.byte	0x2
+ 302 0071 A1       		.byte	0xa1
+ 303 0072 2C000000 		.4byte	0x2c
+ 304 0076 04       		.uleb128 0x4
+ 305 0077 0E010000 		.4byte	.LASF10
+ 306 007b 02       		.byte	0x2
+ 307 007c A3       		.byte	0xa3
+ 308 007d 48000000 		.4byte	0x48
+ 309 0081 02       		.uleb128 0x2
+ 310 0082 04       		.byte	0x4
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 9
+
+
+ 311 0083 04       		.byte	0x4
+ 312 0084 13000000 		.4byte	.LASF11
+ 313 0088 02       		.uleb128 0x2
+ 314 0089 08       		.byte	0x8
+ 315 008a 04       		.byte	0x4
+ 316 008b 0C000000 		.4byte	.LASF12
+ 317 008f 02       		.uleb128 0x2
+ 318 0090 01       		.byte	0x1
+ 319 0091 08       		.byte	0x8
+ 320 0092 C8010000 		.4byte	.LASF13
+ 321 0096 05       		.uleb128 0x5
+ 322 0097 00000000 		.4byte	.LASF14
+ 323 009b 02       		.byte	0x2
+ 324 009c 4D01     		.2byte	0x14d
+ 325 009e A2000000 		.4byte	0xa2
+ 326 00a2 06       		.uleb128 0x6
+ 327 00a3 76000000 		.4byte	0x76
+ 328 00a7 07       		.uleb128 0x7
+ 329 00a8 03010000 		.4byte	.LASF15
+ 330 00ac 01       		.byte	0x1
+ 331 00ad 2A       		.byte	0x2a
+ 332 00ae 00000000 		.4byte	.LFB0
+ 333 00b2 48000000 		.4byte	.LFE0-.LFB0
+ 334 00b6 01       		.uleb128 0x1
+ 335 00b7 9C       		.byte	0x9c
+ 336 00b8 D9000000 		.4byte	0xd9
+ 337 00bc 08       		.uleb128 0x8
+ 338 00bd 06000000 		.4byte	.LASF17
+ 339 00c1 01       		.byte	0x1
+ 340 00c2 2A       		.byte	0x2a
+ 341 00c3 6B000000 		.4byte	0x6b
+ 342 00c7 02       		.uleb128 0x2
+ 343 00c8 91       		.byte	0x91
+ 344 00c9 6F       		.sleb128 -17
+ 345 00ca 09       		.uleb128 0x9
+ 346 00cb 3E000000 		.4byte	.LASF22
+ 347 00cf 01       		.byte	0x1
+ 348 00d0 2C       		.byte	0x2c
+ 349 00d1 6B000000 		.4byte	0x6b
+ 350 00d5 02       		.uleb128 0x2
+ 351 00d6 91       		.byte	0x91
+ 352 00d7 77       		.sleb128 -9
+ 353 00d8 00       		.byte	0
+ 354 00d9 07       		.uleb128 0x7
+ 355 00da CD010000 		.4byte	.LASF16
+ 356 00de 01       		.byte	0x1
+ 357 00df 49       		.byte	0x49
+ 358 00e0 00000000 		.4byte	.LFB1
+ 359 00e4 30000000 		.4byte	.LFE1-.LFB1
+ 360 00e8 01       		.uleb128 0x1
+ 361 00e9 9C       		.byte	0x9c
+ 362 00ea FD000000 		.4byte	0xfd
+ 363 00ee 08       		.uleb128 0x8
+ 364 00ef 9E010000 		.4byte	.LASF18
+ 365 00f3 01       		.byte	0x1
+ 366 00f4 49       		.byte	0x49
+ 367 00f5 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 10
+
+
+ 368 00f9 02       		.uleb128 0x2
+ 369 00fa 91       		.byte	0x91
+ 370 00fb 77       		.sleb128 -9
+ 371 00fc 00       		.byte	0
+ 372 00fd 0A       		.uleb128 0xa
+ 373 00fe A3010000 		.4byte	.LASF19
+ 374 0102 01       		.byte	0x1
+ 375 0103 61       		.byte	0x61
+ 376 0104 6B000000 		.4byte	0x6b
+ 377 0108 00000000 		.4byte	.LFB2
+ 378 010c 1C000000 		.4byte	.LFE2-.LFB2
+ 379 0110 01       		.uleb128 0x1
+ 380 0111 9C       		.byte	0x9c
+ 381 0112 0A       		.uleb128 0xa
+ 382 0113 E9010000 		.4byte	.LASF20
+ 383 0117 01       		.byte	0x1
+ 384 0118 75       		.byte	0x75
+ 385 0119 6B000000 		.4byte	0x6b
+ 386 011d 00000000 		.4byte	.LFB3
+ 387 0121 1C000000 		.4byte	.LFE3-.LFB3
+ 388 0125 01       		.uleb128 0x1
+ 389 0126 9C       		.byte	0x9c
+ 390 0127 0B       		.uleb128 0xb
+ 391 0128 69000000 		.4byte	.LASF21
+ 392 012c 01       		.byte	0x1
+ 393 012d 8D       		.byte	0x8d
+ 394 012e 6B000000 		.4byte	0x6b
+ 395 0132 00000000 		.4byte	.LFB4
+ 396 0136 30000000 		.4byte	.LFE4-.LFB4
+ 397 013a 01       		.uleb128 0x1
+ 398 013b 9C       		.byte	0x9c
+ 399 013c 09       		.uleb128 0x9
+ 400 013d BB010000 		.4byte	.LASF23
+ 401 0141 01       		.byte	0x1
+ 402 0142 8F       		.byte	0x8f
+ 403 0143 6B000000 		.4byte	0x6b
+ 404 0147 02       		.uleb128 0x2
+ 405 0148 91       		.byte	0x91
+ 406 0149 77       		.sleb128 -9
+ 407 014a 00       		.byte	0
+ 408 014b 00       		.byte	0
+ 409              		.section	.debug_abbrev,"",%progbits
+ 410              	.Ldebug_abbrev0:
+ 411 0000 01       		.uleb128 0x1
+ 412 0001 11       		.uleb128 0x11
+ 413 0002 01       		.byte	0x1
+ 414 0003 25       		.uleb128 0x25
+ 415 0004 0E       		.uleb128 0xe
+ 416 0005 13       		.uleb128 0x13
+ 417 0006 0B       		.uleb128 0xb
+ 418 0007 03       		.uleb128 0x3
+ 419 0008 0E       		.uleb128 0xe
+ 420 0009 1B       		.uleb128 0x1b
+ 421 000a 0E       		.uleb128 0xe
+ 422 000b 55       		.uleb128 0x55
+ 423 000c 17       		.uleb128 0x17
+ 424 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 11
+
+
+ 425 000e 01       		.uleb128 0x1
+ 426 000f 10       		.uleb128 0x10
+ 427 0010 17       		.uleb128 0x17
+ 428 0011 00       		.byte	0
+ 429 0012 00       		.byte	0
+ 430 0013 02       		.uleb128 0x2
+ 431 0014 24       		.uleb128 0x24
+ 432 0015 00       		.byte	0
+ 433 0016 0B       		.uleb128 0xb
+ 434 0017 0B       		.uleb128 0xb
+ 435 0018 3E       		.uleb128 0x3e
+ 436 0019 0B       		.uleb128 0xb
+ 437 001a 03       		.uleb128 0x3
+ 438 001b 0E       		.uleb128 0xe
+ 439 001c 00       		.byte	0
+ 440 001d 00       		.byte	0
+ 441 001e 03       		.uleb128 0x3
+ 442 001f 24       		.uleb128 0x24
+ 443 0020 00       		.byte	0
+ 444 0021 0B       		.uleb128 0xb
+ 445 0022 0B       		.uleb128 0xb
+ 446 0023 3E       		.uleb128 0x3e
+ 447 0024 0B       		.uleb128 0xb
+ 448 0025 03       		.uleb128 0x3
+ 449 0026 08       		.uleb128 0x8
+ 450 0027 00       		.byte	0
+ 451 0028 00       		.byte	0
+ 452 0029 04       		.uleb128 0x4
+ 453 002a 16       		.uleb128 0x16
+ 454 002b 00       		.byte	0
+ 455 002c 03       		.uleb128 0x3
+ 456 002d 0E       		.uleb128 0xe
+ 457 002e 3A       		.uleb128 0x3a
+ 458 002f 0B       		.uleb128 0xb
+ 459 0030 3B       		.uleb128 0x3b
+ 460 0031 0B       		.uleb128 0xb
+ 461 0032 49       		.uleb128 0x49
+ 462 0033 13       		.uleb128 0x13
+ 463 0034 00       		.byte	0
+ 464 0035 00       		.byte	0
+ 465 0036 05       		.uleb128 0x5
+ 466 0037 16       		.uleb128 0x16
+ 467 0038 00       		.byte	0
+ 468 0039 03       		.uleb128 0x3
+ 469 003a 0E       		.uleb128 0xe
+ 470 003b 3A       		.uleb128 0x3a
+ 471 003c 0B       		.uleb128 0xb
+ 472 003d 3B       		.uleb128 0x3b
+ 473 003e 05       		.uleb128 0x5
+ 474 003f 49       		.uleb128 0x49
+ 475 0040 13       		.uleb128 0x13
+ 476 0041 00       		.byte	0
+ 477 0042 00       		.byte	0
+ 478 0043 06       		.uleb128 0x6
+ 479 0044 35       		.uleb128 0x35
+ 480 0045 00       		.byte	0
+ 481 0046 49       		.uleb128 0x49
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 12
+
+
+ 482 0047 13       		.uleb128 0x13
+ 483 0048 00       		.byte	0
+ 484 0049 00       		.byte	0
+ 485 004a 07       		.uleb128 0x7
+ 486 004b 2E       		.uleb128 0x2e
+ 487 004c 01       		.byte	0x1
+ 488 004d 3F       		.uleb128 0x3f
+ 489 004e 19       		.uleb128 0x19
+ 490 004f 03       		.uleb128 0x3
+ 491 0050 0E       		.uleb128 0xe
+ 492 0051 3A       		.uleb128 0x3a
+ 493 0052 0B       		.uleb128 0xb
+ 494 0053 3B       		.uleb128 0x3b
+ 495 0054 0B       		.uleb128 0xb
+ 496 0055 27       		.uleb128 0x27
+ 497 0056 19       		.uleb128 0x19
+ 498 0057 11       		.uleb128 0x11
+ 499 0058 01       		.uleb128 0x1
+ 500 0059 12       		.uleb128 0x12
+ 501 005a 06       		.uleb128 0x6
+ 502 005b 40       		.uleb128 0x40
+ 503 005c 18       		.uleb128 0x18
+ 504 005d 9742     		.uleb128 0x2117
+ 505 005f 19       		.uleb128 0x19
+ 506 0060 01       		.uleb128 0x1
+ 507 0061 13       		.uleb128 0x13
+ 508 0062 00       		.byte	0
+ 509 0063 00       		.byte	0
+ 510 0064 08       		.uleb128 0x8
+ 511 0065 05       		.uleb128 0x5
+ 512 0066 00       		.byte	0
+ 513 0067 03       		.uleb128 0x3
+ 514 0068 0E       		.uleb128 0xe
+ 515 0069 3A       		.uleb128 0x3a
+ 516 006a 0B       		.uleb128 0xb
+ 517 006b 3B       		.uleb128 0x3b
+ 518 006c 0B       		.uleb128 0xb
+ 519 006d 49       		.uleb128 0x49
+ 520 006e 13       		.uleb128 0x13
+ 521 006f 02       		.uleb128 0x2
+ 522 0070 18       		.uleb128 0x18
+ 523 0071 00       		.byte	0
+ 524 0072 00       		.byte	0
+ 525 0073 09       		.uleb128 0x9
+ 526 0074 34       		.uleb128 0x34
+ 527 0075 00       		.byte	0
+ 528 0076 03       		.uleb128 0x3
+ 529 0077 0E       		.uleb128 0xe
+ 530 0078 3A       		.uleb128 0x3a
+ 531 0079 0B       		.uleb128 0xb
+ 532 007a 3B       		.uleb128 0x3b
+ 533 007b 0B       		.uleb128 0xb
+ 534 007c 49       		.uleb128 0x49
+ 535 007d 13       		.uleb128 0x13
+ 536 007e 02       		.uleb128 0x2
+ 537 007f 18       		.uleb128 0x18
+ 538 0080 00       		.byte	0
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 13
+
+
+ 539 0081 00       		.byte	0
+ 540 0082 0A       		.uleb128 0xa
+ 541 0083 2E       		.uleb128 0x2e
+ 542 0084 00       		.byte	0
+ 543 0085 3F       		.uleb128 0x3f
+ 544 0086 19       		.uleb128 0x19
+ 545 0087 03       		.uleb128 0x3
+ 546 0088 0E       		.uleb128 0xe
+ 547 0089 3A       		.uleb128 0x3a
+ 548 008a 0B       		.uleb128 0xb
+ 549 008b 3B       		.uleb128 0x3b
+ 550 008c 0B       		.uleb128 0xb
+ 551 008d 27       		.uleb128 0x27
+ 552 008e 19       		.uleb128 0x19
+ 553 008f 49       		.uleb128 0x49
+ 554 0090 13       		.uleb128 0x13
+ 555 0091 11       		.uleb128 0x11
+ 556 0092 01       		.uleb128 0x1
+ 557 0093 12       		.uleb128 0x12
+ 558 0094 06       		.uleb128 0x6
+ 559 0095 40       		.uleb128 0x40
+ 560 0096 18       		.uleb128 0x18
+ 561 0097 9742     		.uleb128 0x2117
+ 562 0099 19       		.uleb128 0x19
+ 563 009a 00       		.byte	0
+ 564 009b 00       		.byte	0
+ 565 009c 0B       		.uleb128 0xb
+ 566 009d 2E       		.uleb128 0x2e
+ 567 009e 01       		.byte	0x1
+ 568 009f 3F       		.uleb128 0x3f
+ 569 00a0 19       		.uleb128 0x19
+ 570 00a1 03       		.uleb128 0x3
+ 571 00a2 0E       		.uleb128 0xe
+ 572 00a3 3A       		.uleb128 0x3a
+ 573 00a4 0B       		.uleb128 0xb
+ 574 00a5 3B       		.uleb128 0x3b
+ 575 00a6 0B       		.uleb128 0xb
+ 576 00a7 27       		.uleb128 0x27
+ 577 00a8 19       		.uleb128 0x19
+ 578 00a9 49       		.uleb128 0x49
+ 579 00aa 13       		.uleb128 0x13
+ 580 00ab 11       		.uleb128 0x11
+ 581 00ac 01       		.uleb128 0x1
+ 582 00ad 12       		.uleb128 0x12
+ 583 00ae 06       		.uleb128 0x6
+ 584 00af 40       		.uleb128 0x40
+ 585 00b0 18       		.uleb128 0x18
+ 586 00b1 9742     		.uleb128 0x2117
+ 587 00b3 19       		.uleb128 0x19
+ 588 00b4 00       		.byte	0
+ 589 00b5 00       		.byte	0
+ 590 00b6 00       		.byte	0
+ 591              		.section	.debug_aranges,"",%progbits
+ 592 0000 3C000000 		.4byte	0x3c
+ 593 0004 0200     		.2byte	0x2
+ 594 0006 00000000 		.4byte	.Ldebug_info0
+ 595 000a 04       		.byte	0x4
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 14
+
+
+ 596 000b 00       		.byte	0
+ 597 000c 0000     		.2byte	0
+ 598 000e 0000     		.2byte	0
+ 599 0010 00000000 		.4byte	.LFB0
+ 600 0014 48000000 		.4byte	.LFE0-.LFB0
+ 601 0018 00000000 		.4byte	.LFB1
+ 602 001c 30000000 		.4byte	.LFE1-.LFB1
+ 603 0020 00000000 		.4byte	.LFB2
+ 604 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 605 0028 00000000 		.4byte	.LFB3
+ 606 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 607 0030 00000000 		.4byte	.LFB4
+ 608 0034 30000000 		.4byte	.LFE4-.LFB4
+ 609 0038 00000000 		.4byte	0
+ 610 003c 00000000 		.4byte	0
+ 611              		.section	.debug_ranges,"",%progbits
+ 612              	.Ldebug_ranges0:
+ 613 0000 00000000 		.4byte	.LFB0
+ 614 0004 48000000 		.4byte	.LFE0
+ 615 0008 00000000 		.4byte	.LFB1
+ 616 000c 30000000 		.4byte	.LFE1
+ 617 0010 00000000 		.4byte	.LFB2
+ 618 0014 1C000000 		.4byte	.LFE2
+ 619 0018 00000000 		.4byte	.LFB3
+ 620 001c 1C000000 		.4byte	.LFE3
+ 621 0020 00000000 		.4byte	.LFB4
+ 622 0024 30000000 		.4byte	.LFE4
+ 623 0028 00000000 		.4byte	0
+ 624 002c 00000000 		.4byte	0
+ 625              		.section	.debug_line,"",%progbits
+ 626              	.Ldebug_line0:
+ 627 0000 A6000000 		.section	.debug_str,"MS",%progbits,1
+ 627      02004300 
+ 627      00000201 
+ 627      FB0E0D00 
+ 627      01010101 
+ 628              	.LASF14:
+ 629 0000 72656733 		.ascii	"reg32\000"
+ 629      3200
+ 630              	.LASF17:
+ 631 0006 76616C75 		.ascii	"value\000"
+ 631      6500
+ 632              	.LASF12:
+ 633 000c 646F7562 		.ascii	"double\000"
+ 633      6C6500
+ 634              	.LASF11:
+ 635 0013 666C6F61 		.ascii	"float\000"
+ 635      7400
+ 636              	.LASF7:
+ 637 0019 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 637      206C6F6E 
+ 637      6720756E 
+ 637      7369676E 
+ 637      65642069 
+ 638              	.LASF1:
+ 639 0030 756E7369 		.ascii	"unsigned char\000"
+ 639      676E6564 
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 15
+
+
+ 639      20636861 
+ 639      7200
+ 640              	.LASF22:
+ 641 003e 64725661 		.ascii	"drVal\000"
+ 641      6C00
+ 642              	.LASF5:
+ 643 0044 6C6F6E67 		.ascii	"long unsigned int\000"
+ 643      20756E73 
+ 643      69676E65 
+ 643      6420696E 
+ 643      7400
+ 644              	.LASF3:
+ 645 0056 73686F72 		.ascii	"short unsigned int\000"
+ 645      7420756E 
+ 645      7369676E 
+ 645      65642069 
+ 645      6E7400
+ 646              	.LASF21:
+ 647 0069 4C454442 		.ascii	"LEDB_ClearInterrupt\000"
+ 647      5F436C65 
+ 647      6172496E 
+ 647      74657272 
+ 647      75707400 
+ 648              	.LASF26:
+ 649 007d 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\Documents\\Github "
+ 649      77617265 
+ 649      2D686F73 
+ 649      745C5368 
+ 649      61726564 
+ 650 00ab 436C6F6E 		.ascii	"Clones\\PSoC.Playground\\PROJECTS\\Lab3_PWM\\Lab3_P"
+ 650      65735C50 
+ 650      536F432E 
+ 650      506C6179 
+ 650      67726F75 
+ 651 00da 574D2E63 		.ascii	"WM.cydsn\000"
+ 651      7964736E 
+ 651      00
+ 652              	.LASF25:
+ 653 00e3 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\LEDB.c\000"
+ 653      6E657261 
+ 653      7465645F 
+ 653      536F7572 
+ 653      63655C50 
+ 654              	.LASF15:
+ 655 0103 4C454442 		.ascii	"LEDB_Write\000"
+ 655      5F577269 
+ 655      746500
+ 656              	.LASF10:
+ 657 010e 75696E74 		.ascii	"uint32\000"
+ 657      333200
+ 658              	.LASF8:
+ 659 0115 756E7369 		.ascii	"unsigned int\000"
+ 659      676E6564 
+ 659      20696E74 
+ 659      00
+ 660              	.LASF24:
+ 661 0122 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 16
+
+
+ 661      4320342E 
+ 661      382E3420 
+ 661      32303134 
+ 661      30353236 
+ 662 0155 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 662      20726576 
+ 662      6973696F 
+ 662      6E203231 
+ 662      31333538 
+ 663 0188 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 663      66756E63 
+ 663      74696F6E 
+ 663      2D736563 
+ 663      74696F6E 
+ 664              	.LASF18:
+ 665 019e 6D6F6465 		.ascii	"mode\000"
+ 665      00
+ 666              	.LASF19:
+ 667 01a3 4C454442 		.ascii	"LEDB_Read\000"
+ 667      5F526561 
+ 667      6400
+ 668              	.LASF6:
+ 669 01ad 6C6F6E67 		.ascii	"long long int\000"
+ 669      206C6F6E 
+ 669      6720696E 
+ 669      7400
+ 670              	.LASF23:
+ 671 01bb 6D61736B 		.ascii	"maskedStatus\000"
+ 671      65645374 
+ 671      61747573 
+ 671      00
+ 672              	.LASF13:
+ 673 01c8 63686172 		.ascii	"char\000"
+ 673      00
+ 674              	.LASF16:
+ 675 01cd 4C454442 		.ascii	"LEDB_SetDriveMode\000"
+ 675      5F536574 
+ 675      44726976 
+ 675      654D6F64 
+ 675      6500
+ 676              	.LASF2:
+ 677 01df 73686F72 		.ascii	"short int\000"
+ 677      7420696E 
+ 677      7400
+ 678              	.LASF20:
+ 679 01e9 4C454442 		.ascii	"LEDB_ReadDataReg\000"
+ 679      5F526561 
+ 679      64446174 
+ 679      61526567 
+ 679      00
+ 680              	.LASF9:
+ 681 01fa 75696E74 		.ascii	"uint8\000"
+ 681      3800
+ 682              	.LASF4:
+ 683 0200 6C6F6E67 		.ascii	"long int\000"
+ 683      20696E74 
+ 683      00
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cchbnBAL.s 			page 17
+
+
+ 684              	.LASF0:
+ 685 0209 7369676E 		.ascii	"signed char\000"
+ 685      65642063 
+ 685      68617200 
+ 686              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

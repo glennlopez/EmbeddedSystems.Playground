@@ -1,0 +1,1798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_7a7929f8-5e3b-4f86-a093-2d4ee6513111 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtProjectCustomData" version="1">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="47ec7058-2f43-4a2f-ae73-172624e235df">
+<CyGuid_47ec7058-2f43-4a2f-ae73-172624e235df type_name="CyDesigner.Common.ProjMgmt.Model.CyConfDepList" version="1">
+<boot_component v="cy_boot_v2_40" />
+<name v="cmpl_deps">
+<CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
+<dependency_info name="4bd5669a-0e4e-4e1c-9625-e982dd945372@Debug@DP8051" xml_contents_version="2">
+<CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\DP8051\DP8051_Keil_903\Debug\main.obj">
+<dep name=".\Generated_Source\PSoC3\Button.h" />
+<dep name=".\Generated_Source\PSoC3\Button_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\Common_0.h" />
+<dep name=".\Generated_Source\PSoC3\Common_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\CySpc.h" />
+<dep name=".\Generated_Source\PSoC3\LED.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\LED_COM_PWM.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\LED_PWM_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\LED_RAM_1.h" />
+<dep name=".\Generated_Source\PSoC3\LED_RAM_2.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Refresh_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\project.h" />
+<dep name=".\device.h" />
+<dep name=".\main.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Button.h" />
+<file name=".\Generated_Source\PSoC3\Button_aliases.h" />
+<file name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<file name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<file name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<file name=".\Generated_Source\PSoC3\CYLIB.H" />
+<file name=".\Generated_Source\PSoC3\CYSPC.H" />
+<file name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<file name=".\Generated_Source\PSoC3\Common_0.h" />
+<file name=".\Generated_Source\PSoC3\Common_0_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Common_1.h" />
+<file name=".\Generated_Source\PSoC3\Common_1_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Common_2.h" />
+<file name=".\Generated_Source\PSoC3\Common_2_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Common_3.h" />
+<file name=".\Generated_Source\PSoC3\Common_3_aliases.h" />
+<file name=".\Generated_Source\PSoC3\CyDmac.h" />
+<file name=".\Generated_Source\PSoC3\CyFlash.h" />
+<file name=".\Generated_Source\PSoC3\CyLib.h" />
+<file name=".\Generated_Source\PSoC3\CySpc.h" />
+<file name=".\Generated_Source\PSoC3\LED.h" />
+<file name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.h" />
+<file name=".\Generated_Source\PSoC3\LED_COM_PWM.h" />
+<file name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.h" />
+<file name=".\Generated_Source\PSoC3\LED_PWM_Clock.h" />
+<file name=".\Generated_Source\PSoC3\LED_RAM_1.h" />
+<file name=".\Generated_Source\PSoC3\LED_RAM_2.h" />
+<file name=".\Generated_Source\PSoC3\LED_Refresh_Clock.h" />
+<file name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.h" />
+<file name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<file name=".\Generated_Source\PSoC3\Segment_0.h" />
+<file name=".\Generated_Source\PSoC3\Segment_0_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Segment_1.h" />
+<file name=".\Generated_Source\PSoC3\Segment_1_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Segment_2.h" />
+<file name=".\Generated_Source\PSoC3\Segment_2_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Segment_3.h" />
+<file name=".\Generated_Source\PSoC3\Segment_3_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Segment_4.h" />
+<file name=".\Generated_Source\PSoC3\Segment_4_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Segment_5.h" />
+<file name=".\Generated_Source\PSoC3\Segment_5_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Segment_6.h" />
+<file name=".\Generated_Source\PSoC3\Segment_6_aliases.h" />
+<file name=".\Generated_Source\PSoC3\Segment_7.h" />
+<file name=".\Generated_Source\PSoC3\Segment_7_aliases.h" />
+<file name=".\Generated_Source\PSoC3\cyPm.h" />
+<file name=".\Generated_Source\PSoC3\cydevice.h" />
+<file name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<file name=".\Generated_Source\PSoC3\cyfitter.h" />
+<file name=".\Generated_Source\PSoC3\cyfitter_cfg.h" />
+<file name=".\Generated_Source\PSoC3\cypins.h" />
+<file name=".\Generated_Source\PSoC3\cytypes.h" />
+<file name=".\Generated_Source\PSoC3\project.h" />
+<file name=".\device.h" />
+<file name=".\main.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Button.obj">
+<dep name=".\Generated_Source\PSoC3\Button.h" />
+<dep name=".\Generated_Source\PSoC3\Button_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Button.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Button.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Common_0.obj">
+<dep name=".\Generated_Source\PSoC3\Common_0.h" />
+<dep name=".\Generated_Source\PSoC3\Common_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Common_0.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Common_0.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Common_1.obj">
+<dep name=".\Generated_Source\PSoC3\Common_1.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Common_1.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Common_2.obj">
+<dep name=".\Generated_Source\PSoC3\Common_2.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Common_2.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Common_3.obj">
+<dep name=".\Generated_Source\PSoC3\Common_3.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Common_3.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\CyDmac.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\CyDmac.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\CyDmac.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\CyFlash.obj">
+<dep name=".\Generated_Source\PSoC3\CYFLASH.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\Cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\CYFLASH.H" />
+<file name=".\Generated_Source\PSoC3\Cydevice_trm.h" />
+<file name=".\Generated_Source\PSoC3\CyFlash.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\CyLib.obj">
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\CyLib.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\CySpc.obj">
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\CySpc.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\CySpc.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\CySpc.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED.obj">
+<dep name=".\Generated_Source\PSoC3\Button.h" />
+<dep name=".\Generated_Source\PSoC3\Button_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\Common_0.h" />
+<dep name=".\Generated_Source\PSoC3\Common_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\CySpc.h" />
+<dep name=".\Generated_Source\PSoC3\LED.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\LED_COM_PWM.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\LED_PWM_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\LED_RAM_1.h" />
+<dep name=".\Generated_Source\PSoC3\LED_RAM_2.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Refresh_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\project.h" />
+<dep name=".\Generated_Source\PSoC3\LED.c" />
+<dep name=".\device.h" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_Brightness_DMA_dma.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.H" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.H" />
+<file name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.obj">
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_COM_PWM.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_COM_PWM.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_COM_PWM.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM_PM.obj">
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_COM_PWM.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_COM_PWM_PM.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_COM_PWM_PM.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_Common_DMA_dma.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.H" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.H" />
+<file name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_PWM_Clock.obj">
+<dep name=".\Generated_Source\PSoC3\LED_PWM_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_PWM_Clock.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_PWM_Clock.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_RAM_1.obj">
+<dep name=".\Generated_Source\PSoC3\LED_RAM_1.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_RAM_1.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_RAM_1.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_RAM_2.obj">
+<dep name=".\Generated_Source\PSoC3\LED_RAM_2.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_RAM_2.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_RAM_2.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_Refresh_Clock.obj">
+<dep name=".\Generated_Source\PSoC3\LED_Refresh_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Refresh_Clock.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_Refresh_Clock.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_Segment_DMA_dma.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.H" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.H" />
+<file name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_0.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_0.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_0.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_1.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_1.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_1.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_2.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_2.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_2.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_3.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_3.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_3.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_4.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_4.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_4.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_5.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_5.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_5.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_6.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_6.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_6.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\Segment_7.obj">
+<dep name=".\Generated_Source\PSoC3\Segment_7.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\Segment_7.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\cyPm.obj">
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\cyPm.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\cyfitter_cfg.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter_cfg.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\cyfitter_cfg.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\cyutils.obj">
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\cyutils.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\cyutils.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\CyBootAsmKeil.obj">
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.inc" />
+<dep name=".\Generated_Source\PSoC3\cydevicekeil.inc" />
+<dep name=".\Generated_Source\PSoC3\cydevicekeil_trm.inc" />
+<dep name=".\Generated_Source\PSoC3\cyfitterkeil.inc" />
+<dep name=".\Generated_Source\PSoC3\CyBootAsmKeil.a51" />
+</file>
+<file name=".\Generated_Source\PSoC3\PSoC3_8051.inc" />
+<file name=".\Generated_Source\PSoC3\cydevicekeil.inc" />
+<file name=".\Generated_Source\PSoC3\cydevicekeil_trm.inc" />
+<file name=".\Generated_Source\PSoC3\cyfitterkeil.inc" />
+<file name=".\Generated_Source\PSoC3\CyBootAsmKeil.a51" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\KeilStart.obj">
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.inc" />
+<dep name=".\Generated_Source\PSoC3\cydevicekeil.inc" />
+<dep name=".\Generated_Source\PSoC3\cydevicekeil_trm.inc" />
+<dep name=".\Generated_Source\PSoC3\cyfitterkeil.inc" />
+<dep name=".\Generated_Source\PSoC3\KeilStart.a51" />
+</file>
+<file name=".\Generated_Source\PSoC3\KeilStart.a51" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\cymem.obj">
+<dep name=".\Generated_Source\PSoC3\cymem.a51" />
+</file>
+<file name=".\Generated_Source\PSoC3\cymem.a51" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.h" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.h" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1.obj">
+<dep name=".\Generated_Source\PSoC3\Button.h" />
+<dep name=".\Generated_Source\PSoC3\Button_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\Common_0.h" />
+<dep name=".\Generated_Source\PSoC3\Common_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1.h" />
+<dep name=".\Generated_Source\PSoC3\Common_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2.h" />
+<dep name=".\Generated_Source\PSoC3\Common_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3.h" />
+<dep name=".\Generated_Source\PSoC3\Common_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\CySpc.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_0_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_4_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_5_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_6_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7.h" />
+<dep name=".\Generated_Source\PSoC3\Segment_7_aliases.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC3\cypins.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\project.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1.c" />
+<dep name=".\device.h" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_Brightness_DMA_dma.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.H" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.H" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_COM_PWM.obj">
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_COM_PWM_PM.obj">
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.h" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM_PM.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM_PM.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_Common_DMA_dma.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.H" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.H" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_PWM_Clock.obj">
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_RAM_1.obj">
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_RAM_2.obj">
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_Refresh_Clock.obj">
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.c" />
+<file name=".\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_Segment_DMA_dma.obj">
+<dep name=".\Generated_Source\PSoC3\CYDEVICE_TRM.H" />
+<dep name=".\Generated_Source\PSoC3\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC3\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC3\CYLIB.H" />
+<dep name=".\Generated_Source\PSoC3\CYSPC.H" />
+<dep name=".\Generated_Source\PSoC3\CYTYPES.H" />
+<dep name=".\Generated_Source\PSoC3\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC3\CyLib.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.H" />
+<dep name=".\Generated_Source\PSoC3\PSoC3_8051.h" />
+<dep name=".\Generated_Source\PSoC3\cyPm.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice.h" />
+<dep name=".\Generated_Source\PSoC3\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC3\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC3\cytypes.h" />
+<dep name=".\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.c" />
+</file>
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.H" />
+<file name=".\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.c" />
+</CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
+</dependency_info>
+</CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
+</name>
+<name v="link_deps">
+<CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
+<dependency_info name="4bd5669a-0e4e-4e1c-9625-e982dd945372@Debug@DP8051" xml_contents_version="2">
+<CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\DP8051\DP8051_Keil_903\Debug\TestBench.hex">
+<dep name=".\DP8051\DP8051_Keil_903\Debug\main.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_0.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Common_0.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_1.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_2.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_3.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_4.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_5.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_6.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Segment_7.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Common_1.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Common_2.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Common_3.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_RAM_1.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_RAM_2.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_PWM_Clock.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_Refresh_Clock.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM_PM.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_Brightness_DMA_dma.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_Common_DMA_dma.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\LED_Segment_DMA_dma.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\CyBootAsmKeil.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\CyDmac.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\CyFlash.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\CyLib.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\cymem.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\cyPm.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\CySpc.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\cyutils.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\KeilStart.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\Button.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\cyfitter_cfg.obj" />
+<dep name=".\DP8051\DP8051_Keil_903\Debug\TestBench.lib" />
+<dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\DP8051\DP8051_Keil_903\Debug\CyComponentLibrary.lib" />
+</file>
+</CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
+</dependency_info>
+</CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
+</name>
+</CyGuid_47ec7058-2f43-4a2f-ae73-172624e235df>
+</dataGuid>
+<dataGuid v="b0374e30-ce3a-47f2-ad85-821643292c68">
+<CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68 type_name="CyDesigner.Common.ProjMgmt.Common.CyCmdLineData" version="2">
+<genericCmdLineData>
+<name v="4bd5669a-0e4e-4e1c-9625-e982dd945372@Debug@DP8051">
+<name_val_pair name=".\main.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_0.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Common_0.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_1.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_2.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_3.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_4.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_5.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_6.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Segment_7.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Common_1.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Common_2.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Common_3.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_RAM_1.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_RAM_2.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_PWM_Clock.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_Refresh_Clock.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_COM_PWM.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_COM_PWM_PM.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_Brightness_DMA_dma.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_Common_DMA_dma.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_Segment_DMA_dma.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\CyBootAsmKeil.a51" v="&quot;NOCO &quot;&quot;MACRO &quot;&quot;DB &quot;&quot;PR(${OutputDir}/${CompileFile}.lst) &quot;&quot;CASE &quot;&quot;EP &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\CyDmac.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\CyFlash.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\CyLib.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\cymem.a51" v="&quot;NOCO &quot;&quot;MACRO &quot;&quot;DB &quot;&quot;PR(${OutputDir}/${CompileFile}.lst) &quot;&quot;CASE &quot;&quot;EP &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\cyPm.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\CySpc.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\cyutils.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\KeilStart.a51" v="&quot;NOCO &quot;&quot;MACRO &quot;&quot;DB &quot;&quot;PR(${OutputDir}/${CompileFile}.lst) &quot;&quot;CASE &quot;&quot;EP &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\cyfitter_cfg.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name="C:\Users\kees\Documents\test_projects\Libraries\LED_SegDriver\TestBench.cydsn\DP8051\DP8051_Keil_903\Debug\TestBench.hex" v="&quot; TO &quot;&quot;'${OutputDir}\${ProjectShortName}.omf' &quot;&quot;PR(${OutputDir}\${ProjectShortName}.map) &quot;&quot;IX &quot;&quot;CODE &quot;&quot;DW(16) &quot;&quot;RU &quot;&quot;CL(XDATA(X:0x0000-X:0x1FFF)) &quot;&quot;CL(CODE(C:0x0000-C:0xFFFF)) &quot;&quot;CL(CONST(C:0x0000-C:0xFFFF)) &quot;&quot;CASE &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\Button.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM_PM.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.c" v="&quot;NOIV &quot;&quot;LARGE &quot;&quot;MODDP2 &quot;&quot;OMF2 &quot;&quot;VB(1) &quot;&quot;PR(${OutputDir}\${CompileFile}.lst) &quot;&quot;CD &quot;&quot;DB &quot;&quot;NOIP &quot;&quot;OT(2, Size) &quot;&quot; &quot;&quot;INCDIR(Generated_Source\PSoC3) &quot;" />
+<name_val_pair name="C:\perforce\kees_KEESCMSLAP2\apps\content\creator\LED_SegDriver\TestBench.cydsn\DP8051\DP8051_Keil_903\Debug\TestBench.hex" v="&quot; TO &quot;&quot;'${OutputDir}\${ProjectShortName}.omf' &quot;&quot;PR(${OutputDir}\${ProjectShortName}.map) &quot;&quot;IX &quot;&quot;CODE &quot;&quot;DW(16) &quot;&quot;RU &quot;&quot;CL(XDATA(X:0x0000-X:0x1FFF)) &quot;&quot;CL(CODE(C:0x0000-C:0xFFFF)) &quot;&quot;CL(CONST(C:0x0000-C:0xFFFF)) &quot;" />
+</name>
+</genericCmdLineData>
+<codeGenCmdLineTag v="&quot;-.appdatapath&quot; &quot;C:\Users\kees\AppData\Local\Cypress Semiconductor\PSoC Creator\2.1&quot; &quot;-.fdsnotice&quot; &quot;-.fdswarpdepfile=warp_dependencies.txt&quot; &quot;-.fdselabdepfile=elab_dependencies.txt&quot; &quot;-.fdsbldfile=generated_files.txt&quot; &quot;-p&quot; &quot;C:\perforce\kees_KEESCMSLAP2\apps\content\creator\LED_SegDriver\TestBench.cydsn\TestBench.cyprj&quot; &quot;-d&quot; &quot;CY8C3866AXI-040&quot; &quot;-s&quot; &quot;C:\perforce\kees_KEESCMSLAP2\apps\content\creator\LED_SegDriver\TestBench.cydsn\Generated_Source\PSoC3&quot; &quot;--&quot; &quot;-yv2&quot; &quot;-v3&quot; &quot;-ygs&quot; &quot;-q10&quot; &quot;-o2&quot; &quot;-.fftcfgtype=BE&quot; " />
+</CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
+</dataGuid>
+<dataGuid v="597c5b74-0c46-4204-8b7f-96f3570671dc">
+<CyGuid_597c5b74-0c46-4204-8b7f-96f3570671dc type_name="CyDesigner.Common.ProjMgmt.DeviceSelector.CyDeviceSelectorState" version="1">
+<name_val_pair name="Dialog Bounds" v="0, 0, 0, 0" />
+<name_val_pair name="Column Order" v="PartNumber;DesignFits;Architecture;SPEED_MHZ;FLASH_BYTES;SRAM_BYTES;EEPROM_BYTES;TRACEBUFF_BYTES;DMACHANNELS_COUNT;PLL_COUNT;DIRDRIVELCD;CAPSENSE;PVT_COMPLEX_ADC;DAC8_COUNT;ANALOGBLOCKS_COUNT;DFB_COUNT;COMP_COUNT;OPAMP_COUNT;USB_TYPE;CAN20B_COUNT;UDB_COUNT;TIMERCOUNTERPWM_COUNT;GPIO_COUNT;SIO_COUNT;USBIO_COUNT;BOOSTCONVERTER_VOLTS;VDDMIN_VOLTS;VDDMAX_VOLTS;AUTOMOTIVE_QUALIFIED;TEMPMIN_CELSIUS;TEMPMAX_CELSIUS;PACKAGE;JTAGID;ETM;" />
+<name_val_pair name="Filter Options" v="Architecture:PSoC3;" />
+<name_val_pair name="Visible Columns" v="PartNumber;DesignFits;Architecture;SPEED_MHZ;FLASH_BYTES;SRAM_BYTES;EEPROM_BYTES;TRACEBUFF_BYTES;DMACHANNELS_COUNT;PLL_COUNT;DIRDRIVELCD;CAPSENSE;PVT_COMPLEX_ADC;DAC8_COUNT;ANALOGBLOCKS_COUNT;DFB_COUNT;" />
+<name_val_pair name="Sort" v="PartNumber;Ascending" />
+</CyGuid_597c5b74-0c46-4204-8b7f-96f3570671dc>
+</dataGuid>
+<dataGuid v="925cc1e1-309e-4e08-b0a1-09a83c35b157">
+<CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtProjectPSoCExe+CyCodeGenDepUserInfo" version="1">
+<deps_list>
+<v>.\TopDesign\TopDesign.cysch</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>..\LED_SegDriver.cylib\KEES_LED_SegDriver_v1_0\KEES_LED_SegDriver_v1_0.cysym</v>
+<v>..\LED_SegDriver.cylib\KEES_LED_SegDriver_v1_0\KEES_LED_SegDriver_v1_0.cysch</v>
+<v>..\LED_SegDriver.cylib\KEES_LED_SegDriver_v1_0\KEES_LED_SegDriver_v1_0.pdf</v>
+<v>..\LED_SegDriver.cylib\KEES_LED_SegDriver_v1_0\API\LED_SegDriver.c</v>
+<v>..\LED_SegDriver.cylib\KEES_LED_SegDriver_v1_0\API\LED_SegDriver.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\API\CyControlReg.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\API\CyControlReg.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\ControlRegParameters.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\cybitfieldcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\cybitfieldcontrol.designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\cybitfieldcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\Resources.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\API\CyControlReg.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\API\CyControlReg.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\ControlRegParameters.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\cybitfieldcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\cybitfieldcontrol.designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\cybitfieldcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\Custom\Resources.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\cy_clock_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\API\clk.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\PWM_v2_10.cysch</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\PWM_v2_10.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\PWM_v2_10.pdf</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\PWM_v2_10.cystate</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\API\PWM.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\API\PWM.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\API\PWM_PM.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\cypwmcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\cypwmcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\cypwmcontroladv.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\cypwmcontroladv.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\CyPWMCustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\PWMParameters.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\cypwmcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v2_10\Custom\cypwmcontroladv.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\API\dma.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\API\dma.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\API\dma.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\API\dma.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\cy_dma_v1_50.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\API\dma.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\API\dma.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_50\Custom\cydmacontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\cy_pins_v1_60.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\cytypecontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_60\PSoC3\API\aliases.h</v>
+<v>.\TestBench.cydwr</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CyBootAsmKeil.a51</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cybtldr.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cybtldr.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cybtldr_common.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cybtldr_common.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cybtldr_loadable.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cybtldr_loadable.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cybtldrhelper.a51</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CyDmac.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CyDmac.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CyFlash.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CyFlash.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CyLib.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CyLib.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cymem.a51</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cypins.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cyPm.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cyPm.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CySpc.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\CySpc.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cytypes.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\cyutils.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\KeilStart.a51</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\PSoC3_8051.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v2_40\PSoC3\API\PSoC3_8051.inc</v>
+</deps_list>
+<gen_list>
+<v>.\Generated_Source\PSoC3\cyfitter_cfg.h</v>
+<v>.\Generated_Source\PSoC3\cyfitter_cfg.c</v>
+<v>.\Generated_Source\PSoC3\config.hex</v>
+<v>.\Generated_Source\PSoC3\protect.hex</v>
+<v>.\Generated_Source\PSoC3\cydevice.h</v>
+<v>.\Generated_Source\PSoC3\cydevicekeil.inc</v>
+<v>.\Generated_Source\PSoC3\cydevice_trm.h</v>
+<v>.\Generated_Source\PSoC3\cydevicekeil_trm.inc</v>
+<v>.\Generated_Source\PSoC3\cyfitterkeil.inc</v>
+<v>.\Generated_Source\PSoC3\cyfitter.h</v>
+<v>.\Generated_Source\PSoC3\LED.c</v>
+<v>.\Generated_Source\PSoC3\LED.h</v>
+<v>.\Generated_Source\PSoC3\Segment_0.c</v>
+<v>.\Generated_Source\PSoC3\Segment_0.h</v>
+<v>.\Generated_Source\PSoC3\Segment_0_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Common_0.c</v>
+<v>.\Generated_Source\PSoC3\Common_0.h</v>
+<v>.\Generated_Source\PSoC3\Common_0_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Segment_1.c</v>
+<v>.\Generated_Source\PSoC3\Segment_1.h</v>
+<v>.\Generated_Source\PSoC3\Segment_1_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Segment_2.c</v>
+<v>.\Generated_Source\PSoC3\Segment_2.h</v>
+<v>.\Generated_Source\PSoC3\Segment_2_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Segment_3.c</v>
+<v>.\Generated_Source\PSoC3\Segment_3.h</v>
+<v>.\Generated_Source\PSoC3\Segment_3_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Segment_4.c</v>
+<v>.\Generated_Source\PSoC3\Segment_4.h</v>
+<v>.\Generated_Source\PSoC3\Segment_4_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Segment_5.c</v>
+<v>.\Generated_Source\PSoC3\Segment_5.h</v>
+<v>.\Generated_Source\PSoC3\Segment_5_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Segment_6.c</v>
+<v>.\Generated_Source\PSoC3\Segment_6.h</v>
+<v>.\Generated_Source\PSoC3\Segment_6_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Segment_7.c</v>
+<v>.\Generated_Source\PSoC3\Segment_7.h</v>
+<v>.\Generated_Source\PSoC3\Segment_7_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Common_1.c</v>
+<v>.\Generated_Source\PSoC3\Common_1.h</v>
+<v>.\Generated_Source\PSoC3\Common_1_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Common_2.c</v>
+<v>.\Generated_Source\PSoC3\Common_2.h</v>
+<v>.\Generated_Source\PSoC3\Common_2_aliases.h</v>
+<v>.\Generated_Source\PSoC3\Common_3.c</v>
+<v>.\Generated_Source\PSoC3\Common_3.h</v>
+<v>.\Generated_Source\PSoC3\Common_3_aliases.h</v>
+<v>.\Generated_Source\PSoC3\LED_RAM_1.c</v>
+<v>.\Generated_Source\PSoC3\LED_RAM_1.h</v>
+<v>.\Generated_Source\PSoC3\LED_RAM_2.c</v>
+<v>.\Generated_Source\PSoC3\LED_RAM_2.h</v>
+<v>.\Generated_Source\PSoC3\LED_PWM_Clock.c</v>
+<v>.\Generated_Source\PSoC3\LED_PWM_Clock.h</v>
+<v>.\Generated_Source\PSoC3\LED_Refresh_Clock.c</v>
+<v>.\Generated_Source\PSoC3\LED_Refresh_Clock.h</v>
+<v>.\Generated_Source\PSoC3\LED_COM_PWM.c</v>
+<v>.\Generated_Source\PSoC3\LED_COM_PWM.h</v>
+<v>.\Generated_Source\PSoC3\LED_COM_PWM_PM.c</v>
+<v>.\Generated_Source\PSoC3\LED_Brightness_DMA_dma.c</v>
+<v>.\Generated_Source\PSoC3\LED_Brightness_DMA_dma.h</v>
+<v>.\Generated_Source\PSoC3\LED_Common_DMA_dma.c</v>
+<v>.\Generated_Source\PSoC3\LED_Common_DMA_dma.h</v>
+<v>.\Generated_Source\PSoC3\LED_Segment_DMA_dma.c</v>
+<v>.\Generated_Source\PSoC3\LED_Segment_DMA_dma.h</v>
+<v>.\Generated_Source\PSoC3\CyBootAsmKeil.a51</v>
+<v>.\Generated_Source\PSoC3\CyDmac.c</v>
+<v>.\Generated_Source\PSoC3\CyDmac.h</v>
+<v>.\Generated_Source\PSoC3\CyFlash.c</v>
+<v>.\Generated_Source\PSoC3\CyFlash.h</v>
+<v>.\Generated_Source\PSoC3\CyLib.c</v>
+<v>.\Generated_Source\PSoC3\CyLib.h</v>
+<v>.\Generated_Source\PSoC3\cymem.a51</v>
+<v>.\Generated_Source\PSoC3\cypins.h</v>
+<v>.\Generated_Source\PSoC3\cyPm.c</v>
+<v>.\Generated_Source\PSoC3\cyPm.h</v>
+<v>.\Generated_Source\PSoC3\CySpc.c</v>
+<v>.\Generated_Source\PSoC3\CySpc.h</v>
+<v>.\Generated_Source\PSoC3\cytypes.h</v>
+<v>.\Generated_Source\PSoC3\cyutils.c</v>
+<v>.\Generated_Source\PSoC3\KeilStart.a51</v>
+<v>.\Generated_Source\PSoC3\PSoC3_8051.h</v>
+<v>.\Generated_Source\PSoC3\PSoC3_8051.inc</v>
+<v>.\Generated_Source\PSoC3\project.h</v>
+<v>.\Generated_Source\PSoC3\Button.c</v>
+<v>.\Generated_Source\PSoC3\Button.h</v>
+<v>.\Generated_Source\PSoC3\Button_aliases.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_RAM_2.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_PWM_Clock.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Refresh_Clock.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_COM_PWM_PM.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Brightness_DMA_dma.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Common_DMA_dma.h</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.c</v>
+<v>.\Generated_Source\PSoC3\LED_SegDriver_1_Segment_DMA_dma.h</v>
+</gen_list>
+<warp_dep>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_60\CyControlReg_v1_60.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\warp\lib\common\cypress.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\xor_v1_0\xor_v1_0.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
+</warp_dep>
+<deps_time v="129943803772266151" />
+</CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
+</dataGuid>
+<dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
+<CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
+<debugger_breakpoint_list>
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\Generated_Source\PSoC3\LED.c" linenumber="216" />
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\Generated_Source\PSoC3\LED.c" linenumber="256" />
+</debugger_breakpoint_list>
+</CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
+</dataGuid>
+<dataGuid v="bf610382-39c6-441f-80b8-b04622ea7845">
+<CyGuid_bf610382-39c6-441f-80b8-b04622ea7845 type_name="CyDesigner.Common.Debugger.CyWatchedVariableList" version="1">
+<debugger_watch_list />
+</CyGuid_bf610382-39c6-441f-80b8-b04622ea7845>
+</dataGuid>
+<dataGuid v="86d01f21-b452-4e2c-a46e-44cabf408646">
+<CyGuid_86d01f21-b452-4e2c-a46e-44cabf408646 type_name="CyDesigner.Gde.Schematic.CySymbolToolboxControl+CyCompCatalogData" version="1" last_tab_used="Community">
+<NOOP />
+</CyGuid_86d01f21-b452-4e2c-a46e-44cabf408646>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<properties />
+</CyGuid_7a7929f8-5e3b-4f86-a093-2d4ee6513111>
+</CyXmlSerializer>

@@ -1,0 +1,134 @@
+C51 COMPILER V9.03   LED_SEGDRIVER_1_RAM_1                                                 03/29/2012 15:33:58 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE LED_SEGDRIVER_1_RAM_1
+OBJECT MODULE PLACED IN .\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_1_RAM_1.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\import\keil\pk51\9.03\C51\BIN\c51.exe 
+                    -.\Generated_Source\PSoC3\LED_SegDriver_1_RAM_1.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_SegD
+                    -river_1_RAM_1.lst) CD DB NOIP OT(2,SIZE) INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_SegDriver_
+                    -1_RAM_1.obj)
+
+line level    source
+
+   1          /*******************************************************************************
+   2          * File Name: LED_SegDriver_1_RAM_1.c  
+   3          * Version 1.60
+   4          *
+   5          * Description:
+   6          *  This file contains API to enable firmware control of a control register.
+   7          *
+   8          * Note:
+   9          *
+  10          ********************************************************************************
+  11          * Copyright 2008-2011, Cypress Semiconductor Corporation.  All rights reserved.
+  12          * You may use this file only in accordance with the license, terms, conditions, 
+  13          * disclaimers, and limitations in the end user license agreement accompanying 
+  14          * the software package with which this file was provided.
+  15          ********************************************************************************/
+  16          
+  17          #include "cytypes.h"
+  18          #include "LED_SegDriver_1_RAM_1.h"
+  19          
+  20          #if !defined(LED_SegDriver_1_RAM_1_ctrl_reg__REMOVED) /* Check for removal by optimization */
+  21          
+  22          
+  23          /*******************************************************************************
+  24          * Function Name: LED_SegDriver_1_RAM_1_Write
+  25          ********************************************************************************
+  26          *
+  27          * Summary:
+  28          *  Write a byte to a control register.
+  29          *
+  30          * Parameters:  
+  31          *  control:  The value to be assigned to the control register. 
+  32          *
+  33          * Return: 
+  34          *  void 
+  35          *
+  36          * Reentrant:
+  37          *  Yes
+  38          *  
+  39          *******************************************************************************/
+  40          void LED_SegDriver_1_RAM_1_Write(uint8 control) 
+  41          {
+  42   1          LED_SegDriver_1_RAM_1_Control = control;
+  43   1      }
+  44          
+  45          
+  46          /*******************************************************************************
+  47          * Function Name: LED_SegDriver_1_RAM_1_Read
+  48          ********************************************************************************
+  49          *
+  50          * Summary:
+  51          *  Read the current value assigned to a control register.
+  52          *
+C51 COMPILER V9.03   LED_SEGDRIVER_1_RAM_1                                                 03/29/2012 15:33:58 PAGE 2   
+
+  53          * Parameters:  
+  54          *  void 
+  55          *
+  56          * Return: 
+  57          *  Returns the current value assigned to the control register
+  58          *
+  59          * Reentrant:
+  60          *  Yes
+  61          *  
+  62          *******************************************************************************/
+  63          uint8 LED_SegDriver_1_RAM_1_Read(void) 
+  64          {
+  65   1          return LED_SegDriver_1_RAM_1_Control;
+  66   1      }
+  67          
+  68          #endif /* End check for removal by optimization */
+C51 COMPILER V9.03   LED_SEGDRIVER_1_RAM_1                                                 03/29/2012 15:33:58 PAGE 3   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION _LED_SegDriver_1_RAM_1_Write (BEGIN)
+                                           ; SOURCE LINE # 40
+0000 900000      R     MOV     DPTR,#control
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 41
+                                           ; SOURCE LINE # 42
+0005 900000      R     MOV     DPTR,#control
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A 906575            MOV     DPTR,#06575H
+000D EF                MOV     A,R7
+000E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 43
+000F 22                RET     
+             ; FUNCTION _LED_SegDriver_1_RAM_1_Write (END)
+
+             ; FUNCTION LED_SegDriver_1_RAM_1_Read (BEGIN)
+                                           ; SOURCE LINE # 63
+                                           ; SOURCE LINE # 64
+                                           ; SOURCE LINE # 65
+0000 906575            MOV     DPTR,#06575H
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+                                           ; SOURCE LINE # 66
+0005         ?C0002:
+0005 22                RET     
+             ; FUNCTION LED_SegDriver_1_RAM_1_Read (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     22    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----       1
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

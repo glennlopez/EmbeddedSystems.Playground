@@ -1,0 +1,938 @@
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE LED_COM_PWM
+OBJECT MODULE PLACED IN .\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\import\keil\pk51\9.03\C51\BIN\c51.exe 
+                    -.\Generated_Source\PSoC3\LED_COM_PWM.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.lst) C
+                    -D DB NOIP OT(2,SIZE) INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.obj)
+
+line level    source
+
+   1          /*******************************************************************************
+   2          * File Name: LED_COM_PWM.c  
+   3          * Version 2.10
+   4          *
+   5          * Description:
+   6          *  The PWM User Module consist of an 8 or 16-bit counter with two 8 or 16-bit
+   7          *  comparitors. Each instance of this user module is capable of generating
+   8          *  two PWM outputs with the same period. The pulse width is selectable between
+   9          *  1 and 255/65535. The period is selectable between 2 and 255/65536 clocks. 
+  10          *  The compare value output may be configured to be active when the present 
+  11          *  counter is less than or less than/equal to the compare value.
+  12          *  A terminal count output is also provided. It generates a pulse one clock
+  13          *  width wide when the counter is equal to zero.
+  14          *
+  15          * Note:
+  16          *
+  17          *******************************************************************************
+  18          * Copyright 2008-2011, Cypress Semiconductor Corporation.  All rights reserved.
+  19          * You may use this file only in accordance with the license, terms, conditions, 
+  20          * disclaimers, and limitations in the end user license agreement accompanying 
+  21          * the software package with which this file was provided.
+  22          ********************************************************************************/
+  23          
+  24          #include "cytypes.h"
+  25          #include "LED_COM_PWM.h"
+  26          
+  27          uint8 LED_COM_PWM_initVar = 0u;
+  28          
+  29          /*******************************************************************************
+  30          * Function Name: LED_COM_PWM_Start
+  31          ********************************************************************************
+  32          *
+  33          * Summary:
+  34          *  The start function initializes the pwm with the default values, the 
+  35          *  enables the counter to begin counting.  It does not enable interrupts,
+  36          *  the EnableInt command should be called if interrupt generation is required.
+  37          *
+  38          * Parameters:  
+  39          *  void  
+  40          *
+  41          * Return: 
+  42          *  void
+  43          *
+  44          * Global variables:
+  45          *  LED_COM_PWM_initVar: Is modified when this function is called for the first 
+  46          *   time. Is used to ensure that initialization happens only once.
+  47          *
+  48          * Reentrant:
+  49          *  Yes
+  50          *
+  51          *******************************************************************************/
+  52          void LED_COM_PWM_Start(void) 
+  53          {
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 2   
+
+  54   1          /* If not Initialized then initialize all required hardware and software */
+  55   1          if(LED_COM_PWM_initVar == 0u)
+  56   1          {
+  57   2              LED_COM_PWM_Init();
+  58   2              LED_COM_PWM_initVar = 1u;
+  59   2          }
+  60   1          LED_COM_PWM_Enable();
+  61   1      
+  62   1      }
+  63          
+  64          
+  65          /*******************************************************************************
+  66          * Function Name: LED_COM_PWM_Init
+  67          ********************************************************************************
+  68          *
+  69          * Summary:
+  70          *  Initialize component's parameters to the parameters set by user in the 
+  71          *  customizer of the component placed onto schematic. Usually called in 
+  72          *  LED_COM_PWM_Start().
+  73          *
+  74          * Parameters:  
+  75          *  void
+  76          *
+  77          * Return: 
+  78          *  void
+  79          *
+  80          * Reentrant:
+  81          *  Yes
+  82          *
+  83          *******************************************************************************/
+  84          void LED_COM_PWM_Init(void) 
+  85          {
+  86   1          #if (LED_COM_PWM_UsingFixedFunction || LED_COM_PWM_UseControl)
+  87   1              uint8 ctrl;
+  88   1          #endif
+  89   1          
+  90   1          #if(!LED_COM_PWM_UsingFixedFunction) 
+  91   1              #if(LED_COM_PWM_UseStatus)
+  92   1                  /* Interrupt State Backup for Critical Region*/
+  93   1                  uint8 LED_COM_PWM_interruptState;
+  94   1              #endif
+  95   1          #endif
+  96   1          
+  97   1         #if (LED_COM_PWM_UsingFixedFunction)
+                      /* You are allowed to write the compare value (FF only) */
+                      LED_COM_PWM_CONTROL |= LED_COM_PWM_CFG0_MODE;
+                      #if (LED_COM_PWM_DeadBand2_4)
+                          LED_COM_PWM_CONTROL |= LED_COM_PWM_CFG0_DB;
+                      #endif
+                              
+                      /* Set the default Compare Mode */
+                      #if(LED_COM_PWM_PSOC3_ES2 || LED_COM_PWM_PSOC5_ES1)
+                              ctrl = LED_COM_PWM_CONTROL2 & ~LED_COM_PWM_CTRL_CMPMODE1_MASK;
+                              LED_COM_PWM_CONTROL2 = ctrl | LED_COM_PWM_DEFAULT_COMPARE1_MODE;
+                      #endif
+                      #if(LED_COM_PWM_PSOC3_ES3 || LED_COM_PWM_PSOC5_ES2)
+                              ctrl = LED_COM_PWM_CONTROL3 & ~LED_COM_PWM_CTRL_CMPMODE1_MASK;
+                              LED_COM_PWM_CONTROL3 = ctrl | LED_COM_PWM_DEFAULT_COMPARE1_MODE;
+                      #endif
+                      
+                       /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+                      LED_COM_PWM_RT1 &= ~LED_COM_PWM_RT1_MASK;
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 3   
+
+                      LED_COM_PWM_RT1 |= LED_COM_PWM_SYNC;     
+                              
+                      /*Enable DSI Sync all all inputs of the PWM*/
+                      LED_COM_PWM_RT1 &= ~(LED_COM_PWM_SYNCDSI_MASK);
+                      LED_COM_PWM_RT1 |= LED_COM_PWM_SYNCDSI_EN;
+                     
+                  #elif (LED_COM_PWM_UseControl)
+ 123   1              /* Set the default compare mode defined in the parameter */
+ 124   1              ctrl = LED_COM_PWM_CONTROL & ~LED_COM_PWM_CTRL_CMPMODE2_MASK & ~LED_COM_PWM_CTRL_CMPMODE1_MASK;
+ 125   1              LED_COM_PWM_CONTROL = ctrl | LED_COM_PWM_DEFAULT_COMPARE2_MODE | LED_COM_PWM_DEFAULT_COMPARE1_MODE
+             -;
+ 126   1          #endif 
+ 127   1              
+ 128   1          #if (!LED_COM_PWM_UsingFixedFunction)
+ 129   1              #if (LED_COM_PWM_Resolution == 8)
+ 130   1                  /* Set FIFO 0 to 1 byte register for period*/
+ 131   1                  LED_COM_PWM_AUX_CONTROLDP0 |= (LED_COM_PWM_AUX_CTRL_FIFO0_CLR);
+ 132   1              #else /* (LED_COM_PWM_Resolution == 16)*/
+                          /* Set FIFO 0 to 1 byte register for period */
+                          LED_COM_PWM_AUX_CONTROLDP0 |= (LED_COM_PWM_AUX_CTRL_FIFO0_CLR);
+                          LED_COM_PWM_AUX_CONTROLDP1 |= (LED_COM_PWM_AUX_CTRL_FIFO0_CLR);
+                      #endif
+ 137   1          #endif
+ 138   1              
+ 139   1          LED_COM_PWM_WritePeriod(LED_COM_PWM_INIT_PERIOD_VALUE);
+ 140   1          LED_COM_PWM_WriteCounter(LED_COM_PWM_INIT_PERIOD_VALUE);
+ 141   1              
+ 142   1              #if (LED_COM_PWM_UseOneCompareMode)
+ 143   1                  LED_COM_PWM_WriteCompare(LED_COM_PWM_INIT_COMPARE_VALUE1);
+ 144   1              #else
+                          LED_COM_PWM_WriteCompare1(LED_COM_PWM_INIT_COMPARE_VALUE1);
+                          LED_COM_PWM_WriteCompare2(LED_COM_PWM_INIT_COMPARE_VALUE2);
+                      #endif
+ 148   1              
+ 149   1              #if (LED_COM_PWM_KillModeMinTime)
+                          LED_COM_PWM_WriteKillTime(LED_COM_PWM_MinimumKillTime);
+                      #endif
+ 152   1              
+ 153   1              #if (LED_COM_PWM_DeadBandUsed)
+                          LED_COM_PWM_WriteDeadTime(LED_COM_PWM_INIT_DEAD_TIME);
+                      #endif
+ 156   1      
+ 157   1          #if (LED_COM_PWM_UseStatus || LED_COM_PWM_UsingFixedFunction)
+ 158   1              LED_COM_PWM_SetInterruptMode(LED_COM_PWM_INIT_INTERRUPTS_MODE);
+ 159   1          #endif
+ 160   1              
+ 161   1          #if (LED_COM_PWM_UsingFixedFunction)
+                      /* Globally Enable the Fixed Function Block chosen */
+                      LED_COM_PWM_GLOBAL_ENABLE |= LED_COM_PWM_BLOCK_EN_MASK;
+                      /* Set the Interrupt source to come from the status register */
+                      LED_COM_PWM_CONTROL2 |= LED_COM_PWM_CTRL2_IRQ_SEL;
+                  #else
+ 167   1              #if(LED_COM_PWM_UseStatus)
+ 168   1                  
+ 169   1                  /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region critical*/
+ 170   1                  /* Enter Critical Region*/
+ 171   1                  LED_COM_PWM_interruptState = CyEnterCriticalSection();
+ 172   1                  /* Use the interrupt output of the status register for IRQ output */
+ 173   1                  LED_COM_PWM_STATUS_AUX_CTRL |= LED_COM_PWM_STATUS_ACTL_INT_EN_MASK;
+ 174   1                  
+ 175   1                   /* Exit Critical Region*/
+ 176   1                  CyExitCriticalSection(LED_COM_PWM_interruptState);
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 4   
+
+ 177   1                  
+ 178   1                  /* Clear the FIFO to enable the LED_COM_PWM_STATUS_FIFOFULL
+ 179   1                         bit to be set on FIFO full. */
+ 180   1                  LED_COM_PWM_ClearFIFO();
+ 181   1              #endif
+ 182   1          #endif
+ 183   1      }
+ 184          
+ 185          
+ 186          /*******************************************************************************
+ 187          * Function Name: LED_COM_PWM_Enable
+ 188          ********************************************************************************
+ 189          *
+ 190          * Summary: 
+ 191          *  Enables the PWM block operation
+ 192          *
+ 193          * Parameters:  
+ 194          *  void
+ 195          *
+ 196          * Return: 
+ 197          *  void
+ 198          *
+ 199          * Side Effects: 
+ 200          *  This works only if software enable mode is chosen
+ 201          *
+ 202          * Reentrant:
+ 203          *  Yes
+ 204          *
+ 205          *******************************************************************************/
+ 206          void LED_COM_PWM_Enable(void) 
+ 207          {
+ 208   1          /* Globally Enable the Fixed Function Block chosen */
+ 209   1          #if (LED_COM_PWM_UsingFixedFunction)
+                      LED_COM_PWM_GLOBAL_ENABLE |= LED_COM_PWM_BLOCK_EN_MASK;
+                      LED_COM_PWM_GLOBAL_STBY_ENABLE |= LED_COM_PWM_BLOCK_STBY_EN_MASK;
+                  #endif 
+ 213   1          
+ 214   1          /* Enable the PWM from the control register  */
+ 215   1          #if (LED_COM_PWM_UseControl || LED_COM_PWM_UsingFixedFunction)
+ 216   1              LED_COM_PWM_CONTROL |= LED_COM_PWM_CTRL_ENABLE;
+ 217   1          #endif
+ 218   1      }
+ 219          
+ 220          
+ 221          /*******************************************************************************
+ 222          * Function Name: LED_COM_PWM_Stop
+ 223          ********************************************************************************
+ 224          *
+ 225          * Summary:
+ 226          *  The stop function halts the PWM, but does not change any modes or disable
+ 227          *  interrupts.
+ 228          *
+ 229          * Parameters:  
+ 230          *  void  
+ 231          *
+ 232          * Return: 
+ 233          *  void
+ 234          *
+ 235          * Side Effects:
+ 236          *  If the Enable mode is set to Hardware only then this function
+ 237          *  has no effect on the operation of the PWM
+ 238          *
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 5   
+
+ 239          * Reentrant:
+ 240          *  Yes
+ 241          *
+ 242          *******************************************************************************/
+ 243          void LED_COM_PWM_Stop(void) 
+ 244          {
+ 245   1          #if (LED_COM_PWM_UseControl || LED_COM_PWM_UsingFixedFunction)
+ 246   1              LED_COM_PWM_CONTROL &= ~LED_COM_PWM_CTRL_ENABLE;
+ 247   1          #endif
+ 248   1          
+ 249   1          /* Globally disable the Fixed Function Block chosen */
+ 250   1          #if (LED_COM_PWM_UsingFixedFunction)
+                      LED_COM_PWM_GLOBAL_ENABLE &= ~LED_COM_PWM_BLOCK_EN_MASK;
+                      LED_COM_PWM_GLOBAL_STBY_ENABLE &= ~LED_COM_PWM_BLOCK_STBY_EN_MASK;
+                  #endif
+ 254   1      }
+ 255          
+ 256          
+ 257          #if (LED_COM_PWM_UseOneCompareMode)
+ 258          #if (LED_COM_PWM_CompareMode1SW)
+              /*******************************************************************************
+              * Function Name: LED_COM_PWM_SetCompareMode
+              ********************************************************************************
+              * 
+              * Summary:
+              *  This function writes the Compare Mode for the pwm output when in Dither mode,
+              *  Center Align Mode or One Output Mode.
+              *
+              * Parameters:
+              *  comparemode:  The new compare mode for the PWM output. Use the compare types
+              *                defined in the H file as input arguments.
+              *
+              * Return:
+              *  void
+              *
+              * Reentrant:
+              *  Yes
+              *
+              *******************************************************************************/
+              void LED_COM_PWM_SetCompareMode(uint8 comparemode) 
+              {
+                  #if(LED_COM_PWM_UsingFixedFunction)
+                          #if(LED_COM_PWM_PSOC3_ES2 || LED_COM_PWM_PSOC5_ES1)
+                                      uint8 comparemodemasked = (comparemode << LED_COM_PWM_CTRL_CMPMODE1_SHIFT);
+                                      LED_COM_PWM_CONTROL2 &= ~LED_COM_PWM_CTRL_CMPMODE1_MASK; /*Clear Existing Data */
+                                      LED_COM_PWM_CONTROL2 |= comparemodemasked;  
+                              #endif
+                              
+                          #if(LED_COM_PWM_PSOC3_ES3 || LED_COM_PWM_PSOC5_ES2)
+                                  uint8 comparemodemasked = (comparemode << LED_COM_PWM_CTRL_CMPMODE1_SHIFT);
+                          LED_COM_PWM_CONTROL3 &= ~LED_COM_PWM_CTRL_CMPMODE1_MASK; /*Clear Existing Data */
+                          LED_COM_PWM_CONTROL3 |= comparemodemasked;     
+                              #endif
+                              
+                  #elif (LED_COM_PWM_UseControl)
+                      uint8 comparemode1masked = (comparemode << LED_COM_PWM_CTRL_CMPMODE1_SHIFT) & LED_COM_PWM_CTRL_CMP
+             -MODE1_MASK;
+                      uint8 comparemode2masked = (comparemode << LED_COM_PWM_CTRL_CMPMODE2_SHIFT) & LED_COM_PWM_CTRL_CMP
+             -MODE2_MASK;
+                      LED_COM_PWM_CONTROL &= ~(LED_COM_PWM_CTRL_CMPMODE1_MASK | LED_COM_PWM_CTRL_CMPMODE2_MASK); /*Clear
+             - existing mode */
+                      LED_COM_PWM_CONTROL |= (comparemode1masked | comparemode2masked);
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 6   
+
+                      
+                  #else
+                      uint8 temp = comparemode;
+                  #endif
+              }
+              #endif /* LED_COM_PWM_CompareMode1SW */
+ 304          
+ 305          #else /* UseOneCompareMode */
+              
+              
+              #if (LED_COM_PWM_CompareMode1SW)
+              /*******************************************************************************
+              * Function Name: LED_COM_PWM_SetCompareMode1
+              ********************************************************************************
+              * 
+              * Summary:
+              *  This function writes the Compare Mode for the pwm or pwm1 output
+              *
+              * Parameters:  
+              *  comparemode:  The new compare mode for the PWM output. Use the compare types
+              *                defined in the H file as input arguments.
+              *
+              * Return: 
+              *  void
+              *
+              * Reentrant:
+              *  Yes
+              *
+              *******************************************************************************/
+              void LED_COM_PWM_SetCompareMode1(uint8 comparemode) 
+              {
+                  uint8 comparemodemasked = (comparemode << LED_COM_PWM_CTRL_CMPMODE1_SHIFT) & LED_COM_PWM_CTRL_CMPMODE1
+             -_MASK;
+                  #if(LED_COM_PWM_UsingFixedFunction)
+                          #if(LED_COM_PWM_PSOC3_ES2 || LED_COM_PWM_PSOC5_ES1)
+                                      LED_COM_PWM_CONTROL2 &= LED_COM_PWM_CTRL_CMPMODE1_MASK; /*Clear existing mode */
+                                      LED_COM_PWM_CONTROL2 |= comparemodemasked; 
+                          #endif
+                              
+                              #if(LED_COM_PWM_PSOC3_ES3 || LED_COM_PWM_PSOC5_ES2)
+                                  LED_COM_PWM_CONTROL3 &= LED_COM_PWM_CTRL_CMPMODE1_MASK; /*Clear existing mode */
+                                      LED_COM_PWM_CONTROL3 |= comparemodemasked; 
+                          #endif
+                              
+                  #elif (LED_COM_PWM_UseControl)
+                      LED_COM_PWM_CONTROL &= LED_COM_PWM_CTRL_CMPMODE1_MASK; /*Clear existing mode */
+                      LED_COM_PWM_CONTROL |= comparemodemasked;
+                  #endif    
+              }
+              #endif /* LED_COM_PWM_CompareMode1SW */
+              
+              
+              #if (LED_COM_PWM_CompareMode2SW)
+              /*******************************************************************************
+              * Function Name: LED_COM_PWM_SetCompareMode2
+              ********************************************************************************
+              * 
+              * Summary:
+              *  This function writes the Compare Mode for the pwm or pwm2 output
+              *
+              * Parameters:  
+              *  comparemode:  The new compare mode for the PWM output. Use the compare types
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 7   
+
+              *                defined in the H file as input arguments.
+              *
+              * Return: 
+              *  void
+              *
+              * Reentrant:
+              *  Yes
+              *
+              *******************************************************************************/
+              void LED_COM_PWM_SetCompareMode2(uint8 comparemode) 
+              {
+                  #if(LED_COM_PWM_UsingFixedFunction)
+                      /* Do Nothing because there is no second Compare Mode Register in FF block*/ 
+                  #elif (LED_COM_PWM_UseControl)
+                  uint8 comparemodemasked = (comparemode << LED_COM_PWM_CTRL_CMPMODE2_SHIFT) & LED_COM_PWM_CTRL_CMPMODE2
+             -_MASK;
+                  LED_COM_PWM_CONTROL &= LED_COM_PWM_CTRL_CMPMODE2_MASK; /*Clear existing mode */
+                  LED_COM_PWM_CONTROL |= comparemodemasked;
+                  #endif    
+              }
+              #endif /*LED_COM_PWM_CompareMode2SW */
+              #endif /* UseOneCompareMode */
+ 380          
+ 381          
+ 382          /*******************************************************************************
+ 383          * Function Name: LED_COM_PWM_WriteCounter
+ 384          ********************************************************************************
+ 385          * 
+ 386          * Summary:
+ 387          *  This function is used to change the counter value.
+ 388          *
+ 389          * Parameters:  
+ 390          *  counter:  This value may be between 1 and (2^Resolution)-1.   
+ 391          *
+ 392          * Return: 
+ 393          *  void
+ 394          *
+ 395          * Reentrant:
+ 396          *  Yes
+ 397          *
+ 398          *******************************************************************************/
+ 399          void LED_COM_PWM_WriteCounter(uint8 counter) 
+ 400          {
+ 401   1          #if(LED_COM_PWM_UsingFixedFunction)
+                      CY_SET_REG16(LED_COM_PWM_COUNTER_LSB_PTR, (uint16)counter);
+                  #else
+ 404   1              CY_SET_REG8(LED_COM_PWM_COUNTER_LSB_PTR, counter);
+ 405   1          #endif
+ 406   1      }
+ 407          
+ 408          
+ 409          #if (!LED_COM_PWM_UsingFixedFunction)
+ 410          /*******************************************************************************
+ 411          * Function Name: LED_COM_PWM_ReadCounter
+ 412          ********************************************************************************
+ 413          * 
+ 414          * Summary:
+ 415          *  This function returns the current value of the counter.  It doesn't matter
+ 416          *  if the counter is enabled or running.
+ 417          *
+ 418          * Parameters:  
+ 419          *  void  
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 8   
+
+ 420          *
+ 421          * Return: 
+ 422          *  The current value of the counter.
+ 423          *
+ 424          * Reentrant:
+ 425          *  Yes
+ 426          *
+ 427          *******************************************************************************/
+ 428          uint8 LED_COM_PWM_ReadCounter(void) 
+ 429          {
+ 430   1          /* Force capture by reading Accumulator */
+ 431   1          /* Must first do a software capture to be able to read the counter */
+ 432   1          /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 433   1          CY_GET_REG8(LED_COM_PWM_COUNTERCAP_LSB_PTR);
+ 434   1          
+ 435   1          /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 436   1          return (CY_GET_REG8(LED_COM_PWM_CAPTURE_LSB_PTR));
+ 437   1      }
+ 438          
+ 439          
+ 440          #if (LED_COM_PWM_UseStatus)
+ 441          /*******************************************************************************
+ 442          * Function Name: LED_COM_PWM_ClearFIFO
+ 443          ********************************************************************************
+ 444          * 
+ 445          * Summary:
+ 446          *  This function clears all capture data from the capture FIFO
+ 447          *
+ 448          * Parameters:  
+ 449          *  void
+ 450          *
+ 451          * Return: 
+ 452          *  void
+ 453          *
+ 454          * Reentrant:
+ 455          *  Yes
+ 456          *
+ 457          *******************************************************************************/
+ 458          void LED_COM_PWM_ClearFIFO(void) 
+ 459          {
+ 460   1          while(LED_COM_PWM_ReadStatusRegister() & LED_COM_PWM_STATUS_FIFONEMPTY)
+ 461   1              LED_COM_PWM_ReadCapture();
+ 462   1      }
+ 463          #endif /* LED_COM_PWM_UseStatus */
+ 464          #endif /* !LED_COM_PWM_UsingFixedFunction */
+ 465          
+ 466          
+ 467          /*******************************************************************************
+ 468          * Function Name: LED_COM_PWM_WritePeriod
+ 469          ********************************************************************************
+ 470          * 
+ 471          * Summary:
+ 472          *  This function is used to change the period of the counter.  The new period 
+ 473          *  will be loaded the next time terminal count is detected.
+ 474          *
+ 475          * Parameters:  
+ 476          *  period:  Period value. May be between 1 and (2^Resolution)-1.  A value of 0 
+ 477          *           will result in the counter remaining at zero.
+ 478          *
+ 479          * Return: 
+ 480          *  void
+ 481          *
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 9   
+
+ 482          * Reentrant:
+ 483          *  Yes
+ 484          *
+ 485          *******************************************************************************/
+ 486          void LED_COM_PWM_WritePeriod(uint8 period) 
+ 487          {
+ 488   1          #if(LED_COM_PWM_UsingFixedFunction)
+                      CY_SET_REG16(LED_COM_PWM_PERIOD_LSB_PTR, (uint16)period);
+                  #else
+ 491   1              CY_SET_REG8(LED_COM_PWM_PERIOD_LSB_PTR, period);
+ 492   1          #endif
+ 493   1      }
+ 494          
+ 495          
+ 496          #if (LED_COM_PWM_UseOneCompareMode)
+ 497          /*******************************************************************************
+ 498          * Function Name: LED_COM_PWM_WriteCompare
+ 499          ********************************************************************************
+ 500          * 
+ 501          * Summary:
+ 502          *  This funtion is used to change the compare1 value when the PWM is in Dither
+ 503          *  mode. The compare output will reflect the new value on the next UDB clock. 
+ 504          *  The compare output will be driven high when the present counter value is 
+ 505          *  compared to the compare value based on the compare mode defined in 
+ 506          *  Dither Mode.
+ 507          *
+ 508          * Parameters:  
+ 509          *  compare:  New compare value.  
+ 510          *
+ 511          * Return: 
+ 512          *  void
+ 513          *
+ 514          * Side Effects:
+ 515          *  This function is only available if the PWM mode parameter is set to
+ 516          *  Dither Mode, Center Aligned Mode or One Output Mode
+ 517          *
+ 518          * Reentrant:
+ 519          *  Yes
+ 520          *
+ 521          *******************************************************************************/
+ 522          void LED_COM_PWM_WriteCompare(uint8 compare) 
+ 523          {
+ 524   1         CY_SET_REG8(LED_COM_PWM_COMPARE1_LSB_PTR, compare);
+ 525   1         #if (LED_COM_PWM_PWMMode == LED_COM_PWM__B_PWM__DITHER)
+                      CY_SET_REG8(LED_COM_PWM_COMPARE2_LSB_PTR, compare+1);
+                 #endif
+ 528   1      }
+ 529          
+ 530          
+ 531          #else
+              
+              
+              /*******************************************************************************
+              * Function Name: LED_COM_PWM_WriteCompare1
+              ********************************************************************************
+              * 
+              * Summary:
+              *  This funtion is used to change the compare1 value.  The compare output will 
+              *  reflect the new value on the next UDB clock.  The compare output will be 
+              *  driven high when the present counter value is less than or less than or 
+              *  equal to the compare register, depending on the mode.
+              *
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 10  
+
+              * Parameters:  
+              *  compare:  New compare value.  
+              *
+              * Return: 
+              *  void
+              *
+              * Reentrant:
+              *  Yes
+              *
+              *******************************************************************************/
+              void LED_COM_PWM_WriteCompare1(uint8 compare) 
+              {
+                  #if(LED_COM_PWM_UsingFixedFunction)
+                      CY_SET_REG16(LED_COM_PWM_COMPARE1_LSB_PTR, (uint16)compare);
+                  #else
+                      CY_SET_REG8(LED_COM_PWM_COMPARE1_LSB_PTR, compare);
+                  #endif
+              }
+              
+              
+              /*******************************************************************************
+              * Function Name: LED_COM_PWM_WriteCompare2
+              ********************************************************************************
+              * 
+              * Summary:
+              *  This funtion is used to change the compare value, for compare1 output.  
+              *  The compare output will reflect the new value on the next UDB clock.  
+              *  The compare output will be driven high when the present counter value is 
+              *  less than or less than or equal to the compare register, depending on the 
+              *  mode.
+              *
+              * Parameters:  
+              *  compare:  New compare value.  
+              *
+              * Return: 
+              *  void
+              *
+              * Reentrant:
+              *  Yes
+              *
+              *******************************************************************************/
+              void LED_COM_PWM_WriteCompare2(uint8 compare) 
+              {
+                  #if(LED_COM_PWM_UsingFixedFunction)
+                      CY_SET_REG16(LED_COM_PWM_COMPARE2_LSB_PTR, compare);
+                  #else
+                      CY_SET_REG8(LED_COM_PWM_COMPARE2_LSB_PTR, compare);
+                  #endif
+              }
+              #endif /* UseOneCompareMode */
+ 594          
+ 595          
+ 596          #if (LED_COM_PWM_DeadBandUsed)
+              /*******************************************************************************
+              * Function Name: LED_COM_PWM_WriteDeadTime
+              ********************************************************************************
+              * 
+              * Summary:
+              *  This function writes the dead-band counts to the corresponding register
+              *
+              * Parameters:  
+              *  deadtime:  Number of counts for dead time 
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 11  
+
+              *
+              * Return: 
+              *  void
+              *
+              * Reentrant:
+              *  Yes
+              *
+              *******************************************************************************/
+              void LED_COM_PWM_WriteDeadTime(uint8 deadtime) 
+              {
+                  /* If using the Dead Band 1-255 mode then just write the register */
+                  #if(!LED_COM_PWM_DeadBand2_4)
+                      CY_SET_REG8(LED_COM_PWM_DEADBAND_COUNT_PTR, deadtime);
+                  #else
+                      /* Otherwise the data has to be masked and offset */        
+                      /* Clear existing data */
+                      LED_COM_PWM_DEADBAND_COUNT &= ~LED_COM_PWM_DEADBAND_COUNT_MASK; 
+                          /* Set new dead time */
+                      LED_COM_PWM_DEADBAND_COUNT |= (deadtime << LED_COM_PWM_DEADBAND_COUNT_SHIFT) & LED_COM_PWM_DEADBAN
+             -D_COUNT_MASK; 
+                  #endif
+              }
+              
+              
+              /*******************************************************************************
+              * Function Name: LED_COM_PWM_ReadDeadTime
+              ********************************************************************************
+              * 
+              * Summary:
+              *  This function reads the dead-band counts from the corresponding register
+              *
+              * Parameters:  
+              *  void
+              *
+              * Return: 
+              *  Dead Band Counts
+              *
+              * Reentrant:
+              *  Yes
+              *
+              *******************************************************************************/
+              uint8 LED_COM_PWM_ReadDeadTime(void) 
+              {
+                  /* If using the Dead Band 1-255 mode then just read the register */
+                  #if(!LED_COM_PWM_DeadBand2_4)
+                      return (CY_GET_REG8(LED_COM_PWM_DEADBAND_COUNT_PTR));
+                  #else
+                      /* Otherwise the data has to be masked and offset */
+                      return ((LED_COM_PWM_DEADBAND_COUNT & LED_COM_PWM_DEADBAND_COUNT_MASK) >> LED_COM_PWM_DEADBAND_COU
+             -NT_SHIFT);
+                  #endif
+              }
+              #endif /* DeadBandUsed */
+ 657          
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 12  
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION LED_COM_PWM_Start (BEGIN)
+                                           ; SOURCE LINE # 52
+                                           ; SOURCE LINE # 53
+                                           ; SOURCE LINE # 55
+0000 900000      R     MOV     DPTR,#LED_COM_PWM_initVar
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+0005 EF                MOV     A,R7
+0006 7009              JNZ     ?C0001
+                                           ; SOURCE LINE # 56
+                                           ; SOURCE LINE # 57
+0008 120000      R     LCALL   LED_COM_PWM_Init
+                                           ; SOURCE LINE # 58
+000B 900000      R     MOV     DPTR,#LED_COM_PWM_initVar
+000E 7401              MOV     A,#01H
+0010 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 59
+0011         ?C0001:
+                                           ; SOURCE LINE # 60
+0011 120000      R     LCALL   LED_COM_PWM_Enable
+                                           ; SOURCE LINE # 62
+0014 22                RET     
+             ; FUNCTION LED_COM_PWM_Start (END)
+
+             ; FUNCTION LED_COM_PWM_Init (BEGIN)
+                                           ; SOURCE LINE # 84
+                                           ; SOURCE LINE # 85
+                                           ; SOURCE LINE # 124
+0000 906472            MOV     DPTR,#06472H
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+0005 EF                MOV     A,R7
+0006 54C0              ANL     A,#0C0H
+0008 FF                MOV     R7,A
+0009 900000      R     MOV     DPTR,#ctrl
+000C EF                MOV     A,R7
+000D F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 125
+000E 900000      R     MOV     DPTR,#ctrl
+0011 E0                MOVX    A,@DPTR
+0012 FF                MOV     R7,A
+0013 EF                MOV     A,R7
+0014 4409              ORL     A,#09H
+0016 FF                MOV     R7,A
+0017 906472            MOV     DPTR,#06472H
+001A EF                MOV     A,R7
+001B F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 131
+001C 906492            MOV     DPTR,#06492H
+001F E0                MOVX    A,@DPTR
+0020 FF                MOV     R7,A
+0021 EF                MOV     A,R7
+0022 4401              ORL     A,#01H
+0024 FF                MOV     R7,A
+0025 EF                MOV     A,R7
+0026 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 139
+0027 7FFF              MOV     R7,#0FFH
+0029 120000      R     LCALL   _LED_COM_PWM_WritePeriod
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 13  
+
+                                           ; SOURCE LINE # 140
+002C 7FFF              MOV     R7,#0FFH
+002E 120000      R     LCALL   _LED_COM_PWM_WriteCounter
+                                           ; SOURCE LINE # 143
+0031 7F7F              MOV     R7,#07FH
+0033 120000      R     LCALL   _LED_COM_PWM_WriteCompare
+                                           ; SOURCE LINE # 158
+0036 906482            MOV     DPTR,#06482H
+0039 E4                CLR     A
+003A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 171
+003B 120000      E     LCALL   CyEnterCriticalSection
+003E 900000      R     MOV     DPTR,#LED_COM_PWM_interruptState
+0041 EF                MOV     A,R7
+0042 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 173
+0043 906492            MOV     DPTR,#06492H
+0046 E0                MOVX    A,@DPTR
+0047 FF                MOV     R7,A
+0048 EF                MOV     A,R7
+0049 4410              ORL     A,#010H
+004B FF                MOV     R7,A
+004C EF                MOV     A,R7
+004D F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 176
+004E 900000      R     MOV     DPTR,#LED_COM_PWM_interruptState
+0051 E0                MOVX    A,@DPTR
+0052 FF                MOV     R7,A
+0053 120000      E     LCALL   _CyExitCriticalSection
+                                           ; SOURCE LINE # 180
+0056 120000      R     LCALL   LED_COM_PWM_ClearFIFO
+                                           ; SOURCE LINE # 183
+0059 22                RET     
+             ; FUNCTION LED_COM_PWM_Init (END)
+
+             ; FUNCTION LED_COM_PWM_Enable (BEGIN)
+                                           ; SOURCE LINE # 206
+                                           ; SOURCE LINE # 207
+                                           ; SOURCE LINE # 216
+0000 906472            MOV     DPTR,#06472H
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+0005 EF                MOV     A,R7
+0006 4480              ORL     A,#080H
+0008 FF                MOV     R7,A
+0009 EF                MOV     A,R7
+000A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 218
+000B 22                RET     
+             ; FUNCTION LED_COM_PWM_Enable (END)
+
+             ; FUNCTION LED_COM_PWM_Stop (BEGIN)
+                                           ; SOURCE LINE # 243
+                                           ; SOURCE LINE # 244
+                                           ; SOURCE LINE # 246
+0000 906472            MOV     DPTR,#06472H
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+0005 EF                MOV     A,R7
+0006 547F              ANL     A,#07FH
+0008 FF                MOV     R7,A
+0009 EF                MOV     A,R7
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 14  
+
+000A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 254
+000B 22                RET     
+             ; FUNCTION LED_COM_PWM_Stop (END)
+
+             ; FUNCTION _LED_COM_PWM_WriteCounter (BEGIN)
+                                           ; SOURCE LINE # 399
+0000 900000      R     MOV     DPTR,#counter
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 400
+                                           ; SOURCE LINE # 404
+0005 900000      R     MOV     DPTR,#counter
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A 906402            MOV     DPTR,#06402H
+000D EF                MOV     A,R7
+000E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 406
+000F 22                RET     
+             ; FUNCTION _LED_COM_PWM_WriteCounter (END)
+
+             ; FUNCTION LED_COM_PWM_ReadCounter (BEGIN)
+                                           ; SOURCE LINE # 428
+                                           ; SOURCE LINE # 429
+                                           ; SOURCE LINE # 433
+0000 906412            MOV     DPTR,#06412H
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+                                           ; SOURCE LINE # 436
+0005 906452            MOV     DPTR,#06452H
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+                                           ; SOURCE LINE # 437
+000A         ?C0007:
+000A 22                RET     
+             ; FUNCTION LED_COM_PWM_ReadCounter (END)
+
+             ; FUNCTION LED_COM_PWM_ClearFIFO (BEGIN)
+                                           ; SOURCE LINE # 458
+                                           ; SOURCE LINE # 459
+0000         ?C0008:
+                                           ; SOURCE LINE # 460
+0000 906462            MOV     DPTR,#06462H
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+0005 EF                MOV     A,R7
+0006 30E407            JNB     ACC.4,?C0010
+                                           ; SOURCE LINE # 461
+0009 906452            MOV     DPTR,#06452H
+000C E0                MOVX    A,@DPTR
+000D FF                MOV     R7,A
+000E 80F0              SJMP    ?C0008
+                                           ; SOURCE LINE # 462
+0010         ?C0010:
+0010 22                RET     
+             ; FUNCTION LED_COM_PWM_ClearFIFO (END)
+
+             ; FUNCTION _LED_COM_PWM_WritePeriod (BEGIN)
+                                           ; SOURCE LINE # 486
+0000 900000      R     MOV     DPTR,#period
+0003 EF                MOV     A,R7
+C51 COMPILER V9.03   LED_COM_PWM                                                           10/10/2012 15:06:20 PAGE 15  
+
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 487
+                                           ; SOURCE LINE # 491
+0005 900000      R     MOV     DPTR,#period
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A 906442            MOV     DPTR,#06442H
+000D EF                MOV     A,R7
+000E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 493
+000F 22                RET     
+             ; FUNCTION _LED_COM_PWM_WritePeriod (END)
+
+             ; FUNCTION _LED_COM_PWM_WriteCompare (BEGIN)
+                                           ; SOURCE LINE # 522
+0000 900000      R     MOV     DPTR,#compare
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 523
+                                           ; SOURCE LINE # 524
+0005 900000      R     MOV     DPTR,#compare
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A 906422            MOV     DPTR,#06422H
+000D EF                MOV     A,R7
+000E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 528
+000F 22                RET     
+             ; FUNCTION _LED_COM_PWM_WriteCompare (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    211    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      1       5
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

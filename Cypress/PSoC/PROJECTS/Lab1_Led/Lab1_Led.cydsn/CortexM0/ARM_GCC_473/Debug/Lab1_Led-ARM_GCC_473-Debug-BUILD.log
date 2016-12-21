@@ -1,0 +1,11 @@
+--------------- Build Started: 12/30/2014 00:07:19 Project: Lab1_Led, Configuration: ARM GCC 4.7.3 Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM0\ARM_GCC_473\Debug\main.o
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_473\Debug\Lab1_Led.a .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_473\Debug\LEDR.o .\CortexM0\ARM_GCC_473\Debug\LEDG.o .\CortexM0\ARM_GCC_473\Debug\LEDB.o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o .\CortexM0\ARM_GCC_473\Debug\CyLib.o .\CortexM0\ARM_GCC_473\Debug\cyPm.o .\CortexM0\ARM_GCC_473\Debug\cyutils.o .\CortexM0\ARM_GCC_473\Debug\SW1.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_473\Debug\Lab1_Led.a
+arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\Lab1_Led.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\Lab1_Led.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\Lab1_Led.a "C:\program files\cypress\psoc creator\3.0\psoc creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
+cyelftool.exe -C "Z:\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab1_Led\Lab1_Led.cydsn\CortexM0\ARM_GCC_473\Debug\Lab1_Led.elf" --flash_size 32768 --flash_row_size 128
+cyelftool.exe -S "Z:\Documents\Github Clones\PSoC.Playground\PROJECTS\Lab1_Led\Lab1_Led.cydsn\CortexM0\ARM_GCC_473\Debug\Lab1_Led.elf"
+Flash used: 1806 of 32768 bytes (5.5 %).
+SRAM used: 1532 of 4096 bytes (37.4 %).
+--------------- Build Succeeded: 12/30/2014 00:07:28 ---------------

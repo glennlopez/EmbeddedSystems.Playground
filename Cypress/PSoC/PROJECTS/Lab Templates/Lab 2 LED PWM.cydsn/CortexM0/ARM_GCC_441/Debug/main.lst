@@ -1,0 +1,392 @@
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cchODVKY.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 18, 4
+  11              		.code	16
+  12              		.file	"main.c"
+  13              		.section	.debug_abbrev,"",%progbits
+  14              	.Ldebug_abbrev0:
+  15              		.section	.debug_info,"",%progbits
+  16              	.Ldebug_info0:
+  17              		.section	.debug_line,"",%progbits
+  18              	.Ldebug_line0:
+  19 0000 39000000 		.text
+  19      02001F00 
+  19      00000201 
+  19      FB0E0D00 
+  19      01010101 
+  20              	.Ltext0:
+  21              		.cfi_sections	.debug_frame
+  22              		.section	.text.main,"ax",%progbits
+  23              		.align	2
+  24              		.global	main
+  25              		.code	16
+  26              		.thumb_func
+  27              		.type	main, %function
+  28              	main:
+  29              	.LFB20:
+  30              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <device.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** void main()
+  15:.\main.c      **** {
+  31              		.loc 1 15 0
+  32              		.cfi_startproc
+  33 0000 80B5     		push	{r7, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+  37              		.cfi_offset 14, -4
+  38 0002 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cchODVKY.s 			page 2
+
+
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_register 7
+  41              	.L2:
+  16:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  17:.\main.c      **** 
+  18:.\main.c      ****     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+  19:.\main.c      ****     for(;;)
+  20:.\main.c      ****     {
+  21:.\main.c      ****         /* Place your application code here. */
+  22:.\main.c      ****          Pin_Red_Write(0xff);
+  42              		.loc 1 22 0
+  43 0004 FF20     		mov	r0, #255
+  44 0006 FFF7FEFF 		bl	Pin_Red_Write
+  23:.\main.c      ****          CyDelay(500);
+  45              		.loc 1 23 0
+  46 000a FA23     		mov	r3, #250
+  47 000c 5B00     		lsl	r3, r3, #1
+  48 000e 181C     		mov	r0, r3
+  49 0010 FFF7FEFF 		bl	CyDelay
+  24:.\main.c      ****          Pin_Red_Write(0x00);
+  50              		.loc 1 24 0
+  51 0014 0020     		mov	r0, #0
+  52 0016 FFF7FEFF 		bl	Pin_Red_Write
+  25:.\main.c      ****          CyDelay(500);
+  53              		.loc 1 25 0
+  54 001a FA23     		mov	r3, #250
+  55 001c 5B00     		lsl	r3, r3, #1
+  56 001e 181C     		mov	r0, r3
+  57 0020 FFF7FEFF 		bl	CyDelay
+  26:.\main.c      ****     }
+  58              		.loc 1 26 0
+  59 0024 EEE7     		b	.L2
+  60              		.cfi_endproc
+  61              	.LFE20:
+  62              		.size	main, .-main
+  63 0026 C046     		.text
+  64              	.Letext0:
+  65              		.section	.debug_loc,"",%progbits
+  66              	.Ldebug_loc0:
+  67              	.LLST0:
+  68 0000 00000000 		.4byte	.LFB20
+  69 0004 02000000 		.4byte	.LCFI0
+  70 0008 0100     		.2byte	0x1
+  71 000a 5D       		.byte	0x5d
+  72 000b 02000000 		.4byte	.LCFI0
+  73 000f 04000000 		.4byte	.LCFI1
+  74 0013 0200     		.2byte	0x2
+  75 0015 7D       		.byte	0x7d
+  76 0016 08       		.sleb128 8
+  77 0017 04000000 		.4byte	.LCFI1
+  78 001b 26000000 		.4byte	.LFE20
+  79 001f 0200     		.2byte	0x2
+  80 0021 77       		.byte	0x77
+  81 0022 08       		.sleb128 8
+  82 0023 00000000 		.4byte	0x0
+  83 0027 00000000 		.4byte	0x0
+  84              		.section	.debug_info
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cchODVKY.s 			page 3
+
+
+  85 0000 98000000 		.4byte	0x98
+  86 0004 0200     		.2byte	0x2
+  87 0006 00000000 		.4byte	.Ldebug_abbrev0
+  88 000a 04       		.byte	0x4
+  89 000b 01       		.uleb128 0x1
+  90 000c 49000000 		.4byte	.LASF12
+  91 0010 01       		.byte	0x1
+  92 0011 FD000000 		.4byte	.LASF13
+  93 0015 82000000 		.4byte	.LASF14
+  94 0019 00000000 		.4byte	0x0
+  95 001d 00000000 		.4byte	0x0
+  96 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+  97 0025 00000000 		.4byte	.Ldebug_line0
+  98 0029 02       		.uleb128 0x2
+  99 002a 01       		.byte	0x1
+ 100 002b 06       		.byte	0x6
+ 101 002c EB000000 		.4byte	.LASF0
+ 102 0030 02       		.uleb128 0x2
+ 103 0031 01       		.byte	0x1
+ 104 0032 08       		.byte	0x8
+ 105 0033 55000000 		.4byte	.LASF1
+ 106 0037 02       		.uleb128 0x2
+ 107 0038 02       		.byte	0x2
+ 108 0039 05       		.byte	0x5
+ 109 003a 71000000 		.4byte	.LASF2
+ 110 003e 02       		.uleb128 0x2
+ 111 003f 02       		.byte	0x2
+ 112 0040 07       		.byte	0x7
+ 113 0041 D8000000 		.4byte	.LASF3
+ 114 0045 02       		.uleb128 0x2
+ 115 0046 04       		.byte	0x4
+ 116 0047 05       		.byte	0x5
+ 117 0048 68000000 		.4byte	.LASF4
+ 118 004c 02       		.uleb128 0x2
+ 119 004d 04       		.byte	0x4
+ 120 004e 07       		.byte	0x7
+ 121 004f 20000000 		.4byte	.LASF5
+ 122 0053 02       		.uleb128 0x2
+ 123 0054 08       		.byte	0x8
+ 124 0055 05       		.byte	0x5
+ 125 0056 00000000 		.4byte	.LASF6
+ 126 005a 02       		.uleb128 0x2
+ 127 005b 08       		.byte	0x8
+ 128 005c 07       		.byte	0x7
+ 129 005d 32000000 		.4byte	.LASF7
+ 130 0061 03       		.uleb128 0x3
+ 131 0062 04       		.byte	0x4
+ 132 0063 05       		.byte	0x5
+ 133 0064 696E7400 		.ascii	"int\000"
+ 134 0068 02       		.uleb128 0x2
+ 135 0069 04       		.byte	0x4
+ 136 006a 07       		.byte	0x7
+ 137 006b 0E000000 		.4byte	.LASF8
+ 138 006f 02       		.uleb128 0x2
+ 139 0070 04       		.byte	0x4
+ 140 0071 04       		.byte	0x4
+ 141 0072 F7000000 		.4byte	.LASF9
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cchODVKY.s 			page 4
+
+
+ 142 0076 02       		.uleb128 0x2
+ 143 0077 08       		.byte	0x8
+ 144 0078 04       		.byte	0x4
+ 145 0079 7B000000 		.4byte	.LASF10
+ 146 007d 02       		.uleb128 0x2
+ 147 007e 01       		.byte	0x1
+ 148 007f 08       		.byte	0x8
+ 149 0080 63000000 		.4byte	.LASF11
+ 150 0084 04       		.uleb128 0x4
+ 151 0085 04       		.byte	0x4
+ 152 0086 07       		.byte	0x7
+ 153 0087 05       		.uleb128 0x5
+ 154 0088 01       		.byte	0x1
+ 155 0089 1B000000 		.4byte	.LASF15
+ 156 008d 01       		.byte	0x1
+ 157 008e 0E       		.byte	0xe
+ 158 008f 00000000 		.4byte	.LFB20
+ 159 0093 26000000 		.4byte	.LFE20
+ 160 0097 00000000 		.4byte	.LLST0
+ 161 009b 00       		.byte	0x0
+ 162              		.section	.debug_abbrev
+ 163 0000 01       		.uleb128 0x1
+ 164 0001 11       		.uleb128 0x11
+ 165 0002 01       		.byte	0x1
+ 166 0003 25       		.uleb128 0x25
+ 167 0004 0E       		.uleb128 0xe
+ 168 0005 13       		.uleb128 0x13
+ 169 0006 0B       		.uleb128 0xb
+ 170 0007 03       		.uleb128 0x3
+ 171 0008 0E       		.uleb128 0xe
+ 172 0009 1B       		.uleb128 0x1b
+ 173 000a 0E       		.uleb128 0xe
+ 174 000b 11       		.uleb128 0x11
+ 175 000c 01       		.uleb128 0x1
+ 176 000d 52       		.uleb128 0x52
+ 177 000e 01       		.uleb128 0x1
+ 178 000f 55       		.uleb128 0x55
+ 179 0010 06       		.uleb128 0x6
+ 180 0011 10       		.uleb128 0x10
+ 181 0012 06       		.uleb128 0x6
+ 182 0013 00       		.byte	0x0
+ 183 0014 00       		.byte	0x0
+ 184 0015 02       		.uleb128 0x2
+ 185 0016 24       		.uleb128 0x24
+ 186 0017 00       		.byte	0x0
+ 187 0018 0B       		.uleb128 0xb
+ 188 0019 0B       		.uleb128 0xb
+ 189 001a 3E       		.uleb128 0x3e
+ 190 001b 0B       		.uleb128 0xb
+ 191 001c 03       		.uleb128 0x3
+ 192 001d 0E       		.uleb128 0xe
+ 193 001e 00       		.byte	0x0
+ 194 001f 00       		.byte	0x0
+ 195 0020 03       		.uleb128 0x3
+ 196 0021 24       		.uleb128 0x24
+ 197 0022 00       		.byte	0x0
+ 198 0023 0B       		.uleb128 0xb
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cchODVKY.s 			page 5
+
+
+ 199 0024 0B       		.uleb128 0xb
+ 200 0025 3E       		.uleb128 0x3e
+ 201 0026 0B       		.uleb128 0xb
+ 202 0027 03       		.uleb128 0x3
+ 203 0028 08       		.uleb128 0x8
+ 204 0029 00       		.byte	0x0
+ 205 002a 00       		.byte	0x0
+ 206 002b 04       		.uleb128 0x4
+ 207 002c 24       		.uleb128 0x24
+ 208 002d 00       		.byte	0x0
+ 209 002e 0B       		.uleb128 0xb
+ 210 002f 0B       		.uleb128 0xb
+ 211 0030 3E       		.uleb128 0x3e
+ 212 0031 0B       		.uleb128 0xb
+ 213 0032 00       		.byte	0x0
+ 214 0033 00       		.byte	0x0
+ 215 0034 05       		.uleb128 0x5
+ 216 0035 2E       		.uleb128 0x2e
+ 217 0036 00       		.byte	0x0
+ 218 0037 3F       		.uleb128 0x3f
+ 219 0038 0C       		.uleb128 0xc
+ 220 0039 03       		.uleb128 0x3
+ 221 003a 0E       		.uleb128 0xe
+ 222 003b 3A       		.uleb128 0x3a
+ 223 003c 0B       		.uleb128 0xb
+ 224 003d 3B       		.uleb128 0x3b
+ 225 003e 0B       		.uleb128 0xb
+ 226 003f 11       		.uleb128 0x11
+ 227 0040 01       		.uleb128 0x1
+ 228 0041 12       		.uleb128 0x12
+ 229 0042 01       		.uleb128 0x1
+ 230 0043 40       		.uleb128 0x40
+ 231 0044 06       		.uleb128 0x6
+ 232 0045 00       		.byte	0x0
+ 233 0046 00       		.byte	0x0
+ 234 0047 00       		.byte	0x0
+ 235              		.section	.debug_pubnames,"",%progbits
+ 236 0000 17000000 		.4byte	0x17
+ 237 0004 0200     		.2byte	0x2
+ 238 0006 00000000 		.4byte	.Ldebug_info0
+ 239 000a 9C000000 		.4byte	0x9c
+ 240 000e 87000000 		.4byte	0x87
+ 241 0012 6D61696E 		.ascii	"main\000"
+ 241      00
+ 242 0017 00000000 		.4byte	0x0
+ 243              		.section	.debug_aranges,"",%progbits
+ 244 0000 1C000000 		.4byte	0x1c
+ 245 0004 0200     		.2byte	0x2
+ 246 0006 00000000 		.4byte	.Ldebug_info0
+ 247 000a 04       		.byte	0x4
+ 248 000b 00       		.byte	0x0
+ 249 000c 0000     		.2byte	0x0
+ 250 000e 0000     		.2byte	0x0
+ 251 0010 00000000 		.4byte	.LFB20
+ 252 0014 26000000 		.4byte	.LFE20-.LFB20
+ 253 0018 00000000 		.4byte	0x0
+ 254 001c 00000000 		.4byte	0x0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cchODVKY.s 			page 6
+
+
+ 255              		.section	.debug_ranges,"",%progbits
+ 256              	.Ldebug_ranges0:
+ 257 0000 00000000 		.4byte	.Ltext0
+ 258 0004 00000000 		.4byte	.Letext0
+ 259 0008 00000000 		.4byte	.LFB20
+ 260 000c 26000000 		.4byte	.LFE20
+ 261 0010 00000000 		.4byte	0x0
+ 262 0014 00000000 		.4byte	0x0
+ 263              		.section	.debug_str,"MS",%progbits,1
+ 264              	.LASF6:
+ 265 0000 6C6F6E67 		.ascii	"long long int\000"
+ 265      206C6F6E 
+ 265      6720696E 
+ 265      7400
+ 266              	.LASF8:
+ 267 000e 756E7369 		.ascii	"unsigned int\000"
+ 267      676E6564 
+ 267      20696E74 
+ 267      00
+ 268              	.LASF15:
+ 269 001b 6D61696E 		.ascii	"main\000"
+ 269      00
+ 270              	.LASF5:
+ 271 0020 6C6F6E67 		.ascii	"long unsigned int\000"
+ 271      20756E73 
+ 271      69676E65 
+ 271      6420696E 
+ 271      7400
+ 272              	.LASF7:
+ 273 0032 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 273      206C6F6E 
+ 273      6720756E 
+ 273      7369676E 
+ 273      65642069 
+ 274              	.LASF12:
+ 275 0049 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 275      4320342E 
+ 275      342E3100 
+ 276              	.LASF1:
+ 277 0055 756E7369 		.ascii	"unsigned char\000"
+ 277      676E6564 
+ 277      20636861 
+ 277      7200
+ 278              	.LASF11:
+ 279 0063 63686172 		.ascii	"char\000"
+ 279      00
+ 280              	.LASF4:
+ 281 0068 6C6F6E67 		.ascii	"long int\000"
+ 281      20696E74 
+ 281      00
+ 282              	.LASF2:
+ 283 0071 73686F72 		.ascii	"short int\000"
+ 283      7420696E 
+ 283      7400
+ 284              	.LASF10:
+ 285 007b 646F7562 		.ascii	"double\000"
+ 285      6C6500
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\cchODVKY.s 			page 7
+
+
+ 286              	.LASF14:
+ 287 0082 433A5C55 		.ascii	"C:\\Users\\maxk\\Desktop\\PSoC 4A\\FAE Workshop\\La"
+ 287      73657273 
+ 287      5C6D6178 
+ 287      6B5C4465 
+ 287      736B746F 
+ 288 00af 62205072 		.ascii	"b Projects\\Lab 1 Blink\\Lab 1 Blink.cydsn\000"
+ 288      6F6A6563 
+ 288      74735C4C 
+ 288      61622031 
+ 288      20426C69 
+ 289              	.LASF3:
+ 290 00d8 73686F72 		.ascii	"short unsigned int\000"
+ 290      7420756E 
+ 290      7369676E 
+ 290      65642069 
+ 290      6E7400
+ 291              	.LASF0:
+ 292 00eb 7369676E 		.ascii	"signed char\000"
+ 292      65642063 
+ 292      68617200 
+ 293              	.LASF9:
+ 294 00f7 666C6F61 		.ascii	"float\000"
+ 294      7400
+ 295              	.LASF13:
+ 296 00fd 2E5C6D61 		.ascii	".\\main.c\000"
+ 296      696E2E63 
+ 296      00
+ 297              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

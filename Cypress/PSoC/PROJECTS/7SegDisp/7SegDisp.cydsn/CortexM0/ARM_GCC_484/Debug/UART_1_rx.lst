@@ -1,0 +1,970 @@
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"UART_1_rx.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.UART_1_rx_Write,"ax",%progbits
+  18              		.align	2
+  19              		.global	UART_1_rx_Write
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	UART_1_rx_Write, %function
+  23              	UART_1_rx_Write:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\UART_1_rx.c"
+   1:.\Generated_Source\PSoC4/UART_1_rx.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/UART_1_rx.c **** * File Name: UART_1_rx.c  
+   3:.\Generated_Source\PSoC4/UART_1_rx.c **** * Version 2.10
+   4:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+   5:.\Generated_Source\PSoC4/UART_1_rx.c **** * Description:
+   6:.\Generated_Source\PSoC4/UART_1_rx.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+   8:.\Generated_Source\PSoC4/UART_1_rx.c **** * Note:
+   9:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  10:.\Generated_Source\PSoC4/UART_1_rx.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/UART_1_rx.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/UART_1_rx.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/UART_1_rx.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/UART_1_rx.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/UART_1_rx.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  17:.\Generated_Source\PSoC4/UART_1_rx.c **** #include "cytypes.h"
+  18:.\Generated_Source\PSoC4/UART_1_rx.c **** #include "UART_1_rx.h"
+  19:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  20:.\Generated_Source\PSoC4/UART_1_rx.c **** #define SetP4PinDriveMode(shift, mode)  \
+  21:.\Generated_Source\PSoC4/UART_1_rx.c ****     do { \
+  22:.\Generated_Source\PSoC4/UART_1_rx.c ****         UART_1_rx_PC =   (UART_1_rx_PC & \
+  23:.\Generated_Source\PSoC4/UART_1_rx.c ****                                 (uint32)(~(uint32)(UART_1_rx_DRIVE_MODE_IND_MASK << (UART_1_rx_DRIV
+  24:.\Generated_Source\PSoC4/UART_1_rx.c ****                                 (uint32)((uint32)(mode) << (UART_1_rx_DRIVE_MODE_BITS * (shift))); 
+  25:.\Generated_Source\PSoC4/UART_1_rx.c ****     } while (0)
+  26:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  27:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  28:.\Generated_Source\PSoC4/UART_1_rx.c **** /*******************************************************************************
+  29:.\Generated_Source\PSoC4/UART_1_rx.c **** * Function Name: UART_1_rx_Write
+  30:.\Generated_Source\PSoC4/UART_1_rx.c **** ********************************************************************************
+  31:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  32:.\Generated_Source\PSoC4/UART_1_rx.c **** * Summary:
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/UART_1_rx.c **** *  Assign a new value to the digital port's data output register.  
+  34:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  35:.\Generated_Source\PSoC4/UART_1_rx.c **** * Parameters:  
+  36:.\Generated_Source\PSoC4/UART_1_rx.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  37:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  38:.\Generated_Source\PSoC4/UART_1_rx.c **** * Return: 
+  39:.\Generated_Source\PSoC4/UART_1_rx.c **** *  None 
+  40:.\Generated_Source\PSoC4/UART_1_rx.c **** *  
+  41:.\Generated_Source\PSoC4/UART_1_rx.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC4/UART_1_rx.c **** void UART_1_rx_Write(uint8 value) 
+  43:.\Generated_Source\PSoC4/UART_1_rx.c **** {
+  26              		.loc 1 43 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 84B0     		sub	sp, sp, #16
+  33              		.cfi_def_cfa_offset 24
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 021C     		mov	r2, r0
+  37 0008 FB1D     		add	r3, r7, #7
+  38 000a 1A70     		strb	r2, [r3]
+  44:.\Generated_Source\PSoC4/UART_1_rx.c ****     uint8 drVal = (uint8)(UART_1_rx_DR & (uint8)(~UART_1_rx_MASK));
+  39              		.loc 1 44 0
+  40 000c 0E4B     		ldr	r3, .L2
+  41 000e 1B68     		ldr	r3, [r3]
+  42 0010 DAB2     		uxtb	r2, r3
+  43 0012 3B1C     		mov	r3, r7
+  44 0014 0F33     		add	r3, r3, #15
+  45 0016 1021     		mov	r1, #16
+  46 0018 8A43     		bic	r2, r1
+  47 001a 1A70     		strb	r2, [r3]
+  45:.\Generated_Source\PSoC4/UART_1_rx.c ****     drVal = (drVal | ((uint8)(value << UART_1_rx_SHIFT) & UART_1_rx_MASK));
+  48              		.loc 1 45 0
+  49 001c FB1D     		add	r3, r7, #7
+  50 001e 1B78     		ldrb	r3, [r3]
+  51 0020 1B01     		lsl	r3, r3, #4
+  52 0022 DAB2     		uxtb	r2, r3
+  53 0024 1023     		mov	r3, #16
+  54 0026 1340     		and	r3, r2
+  55 0028 D9B2     		uxtb	r1, r3
+  56 002a 3B1C     		mov	r3, r7
+  57 002c 0F33     		add	r3, r3, #15
+  58 002e 3A1C     		mov	r2, r7
+  59 0030 0F32     		add	r2, r2, #15
+  60 0032 1278     		ldrb	r2, [r2]
+  61 0034 0A43     		orr	r2, r1
+  62 0036 1A70     		strb	r2, [r3]
+  46:.\Generated_Source\PSoC4/UART_1_rx.c ****     UART_1_rx_DR = (uint32)drVal;
+  63              		.loc 1 46 0
+  64 0038 034B     		ldr	r3, .L2
+  65 003a 3A1C     		mov	r2, r7
+  66 003c 0F32     		add	r2, r2, #15
+  67 003e 1278     		ldrb	r2, [r2]
+  68 0040 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 3
+
+
+  47:.\Generated_Source\PSoC4/UART_1_rx.c **** }
+  69              		.loc 1 47 0
+  70 0042 BD46     		mov	sp, r7
+  71 0044 04B0     		add	sp, sp, #16
+  72              		@ sp needed
+  73 0046 80BD     		pop	{r7, pc}
+  74              	.L3:
+  75              		.align	2
+  76              	.L2:
+  77 0048 00000440 		.word	1074003968
+  78              		.cfi_endproc
+  79              	.LFE0:
+  80              		.size	UART_1_rx_Write, .-UART_1_rx_Write
+  81              		.section	.text.UART_1_rx_SetDriveMode,"ax",%progbits
+  82              		.align	2
+  83              		.global	UART_1_rx_SetDriveMode
+  84              		.code	16
+  85              		.thumb_func
+  86              		.type	UART_1_rx_SetDriveMode, %function
+  87              	UART_1_rx_SetDriveMode:
+  88              	.LFB1:
+  48:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  49:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  50:.\Generated_Source\PSoC4/UART_1_rx.c **** /*******************************************************************************
+  51:.\Generated_Source\PSoC4/UART_1_rx.c **** * Function Name: UART_1_rx_SetDriveMode
+  52:.\Generated_Source\PSoC4/UART_1_rx.c **** ********************************************************************************
+  53:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  54:.\Generated_Source\PSoC4/UART_1_rx.c **** * Summary:
+  55:.\Generated_Source\PSoC4/UART_1_rx.c **** *  Change the drive mode on the pins of the port.
+  56:.\Generated_Source\PSoC4/UART_1_rx.c **** * 
+  57:.\Generated_Source\PSoC4/UART_1_rx.c **** * Parameters:  
+  58:.\Generated_Source\PSoC4/UART_1_rx.c **** *  mode:  Change the pins to one of the following drive modes.
+  59:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  60:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_STRONG     Strong Drive 
+  61:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_OD_HI      Open Drain, Drives High 
+  62:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_OD_LO      Open Drain, Drives Low 
+  63:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_RES_UP     Resistive Pull Up 
+  64:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_RES_DWN    Resistive Pull Down 
+  65:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_RES_UPDWN  Resistive Pull Up/Down 
+  66:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_DIG_HIZ    High Impedance Digital 
+  67:.\Generated_Source\PSoC4/UART_1_rx.c **** *  UART_1_rx_DM_ALG_HIZ    High Impedance Analog 
+  68:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  69:.\Generated_Source\PSoC4/UART_1_rx.c **** * Return: 
+  70:.\Generated_Source\PSoC4/UART_1_rx.c **** *  None
+  71:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  72:.\Generated_Source\PSoC4/UART_1_rx.c **** *******************************************************************************/
+  73:.\Generated_Source\PSoC4/UART_1_rx.c **** void UART_1_rx_SetDriveMode(uint8 mode) 
+  74:.\Generated_Source\PSoC4/UART_1_rx.c **** {
+  89              		.loc 1 74 0
+  90              		.cfi_startproc
+  91 0000 80B5     		push	{r7, lr}
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 7, -8
+  94              		.cfi_offset 14, -4
+  95 0002 82B0     		sub	sp, sp, #8
+  96              		.cfi_def_cfa_offset 16
+  97 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 4
+
+
+  98              		.cfi_def_cfa_register 7
+  99 0006 021C     		mov	r2, r0
+ 100 0008 FB1D     		add	r3, r7, #7
+ 101 000a 1A70     		strb	r2, [r3]
+  75:.\Generated_Source\PSoC4/UART_1_rx.c **** 	SetP4PinDriveMode(UART_1_rx__0__SHIFT, mode);
+ 102              		.loc 1 75 0
+ 103 000c 064B     		ldr	r3, .L5
+ 104 000e 064A     		ldr	r2, .L5
+ 105 0010 1168     		ldr	r1, [r2]
+ 106 0012 064A     		ldr	r2, .L5+4
+ 107 0014 1140     		and	r1, r2
+ 108 0016 FA1D     		add	r2, r7, #7
+ 109 0018 1278     		ldrb	r2, [r2]
+ 110 001a 1203     		lsl	r2, r2, #12
+ 111 001c 0A43     		orr	r2, r1
+ 112 001e 1A60     		str	r2, [r3]
+  76:.\Generated_Source\PSoC4/UART_1_rx.c **** }
+ 113              		.loc 1 76 0
+ 114 0020 BD46     		mov	sp, r7
+ 115 0022 02B0     		add	sp, sp, #8
+ 116              		@ sp needed
+ 117 0024 80BD     		pop	{r7, pc}
+ 118              	.L6:
+ 119 0026 C046     		.align	2
+ 120              	.L5:
+ 121 0028 08000440 		.word	1074003976
+ 122 002c FF8FFFFF 		.word	-28673
+ 123              		.cfi_endproc
+ 124              	.LFE1:
+ 125              		.size	UART_1_rx_SetDriveMode, .-UART_1_rx_SetDriveMode
+ 126              		.section	.text.UART_1_rx_Read,"ax",%progbits
+ 127              		.align	2
+ 128              		.global	UART_1_rx_Read
+ 129              		.code	16
+ 130              		.thumb_func
+ 131              		.type	UART_1_rx_Read, %function
+ 132              	UART_1_rx_Read:
+ 133              	.LFB2:
+  77:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  78:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+  79:.\Generated_Source\PSoC4/UART_1_rx.c **** /*******************************************************************************
+  80:.\Generated_Source\PSoC4/UART_1_rx.c **** * Function Name: UART_1_rx_Read
+  81:.\Generated_Source\PSoC4/UART_1_rx.c **** ********************************************************************************
+  82:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  83:.\Generated_Source\PSoC4/UART_1_rx.c **** * Summary:
+  84:.\Generated_Source\PSoC4/UART_1_rx.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  85:.\Generated_Source\PSoC4/UART_1_rx.c **** *  form.
+  86:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  87:.\Generated_Source\PSoC4/UART_1_rx.c **** * Parameters:  
+  88:.\Generated_Source\PSoC4/UART_1_rx.c **** *  None 
+  89:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+  90:.\Generated_Source\PSoC4/UART_1_rx.c **** * Return: 
+  91:.\Generated_Source\PSoC4/UART_1_rx.c **** *  Returns the current value of the Digital Port as a right justified number
+  92:.\Generated_Source\PSoC4/UART_1_rx.c **** *  
+  93:.\Generated_Source\PSoC4/UART_1_rx.c **** * Note:
+  94:.\Generated_Source\PSoC4/UART_1_rx.c **** *  Macro UART_1_rx_ReadPS calls this function. 
+  95:.\Generated_Source\PSoC4/UART_1_rx.c **** *  
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 5
+
+
+  96:.\Generated_Source\PSoC4/UART_1_rx.c **** *******************************************************************************/
+  97:.\Generated_Source\PSoC4/UART_1_rx.c **** uint8 UART_1_rx_Read(void) 
+  98:.\Generated_Source\PSoC4/UART_1_rx.c **** {
+ 134              		.loc 1 98 0
+ 135              		.cfi_startproc
+ 136 0000 80B5     		push	{r7, lr}
+ 137              		.cfi_def_cfa_offset 8
+ 138              		.cfi_offset 7, -8
+ 139              		.cfi_offset 14, -4
+ 140 0002 00AF     		add	r7, sp, #0
+ 141              		.cfi_def_cfa_register 7
+  99:.\Generated_Source\PSoC4/UART_1_rx.c ****     return (uint8)((UART_1_rx_PS & UART_1_rx_MASK) >> UART_1_rx_SHIFT);
+ 142              		.loc 1 99 0
+ 143 0004 044B     		ldr	r3, .L9
+ 144 0006 1A68     		ldr	r2, [r3]
+ 145 0008 1023     		mov	r3, #16
+ 146 000a 1340     		and	r3, r2
+ 147 000c 1B09     		lsr	r3, r3, #4
+ 148 000e DBB2     		uxtb	r3, r3
+ 100:.\Generated_Source\PSoC4/UART_1_rx.c **** }
+ 149              		.loc 1 100 0
+ 150 0010 181C     		mov	r0, r3
+ 151 0012 BD46     		mov	sp, r7
+ 152              		@ sp needed
+ 153 0014 80BD     		pop	{r7, pc}
+ 154              	.L10:
+ 155 0016 C046     		.align	2
+ 156              	.L9:
+ 157 0018 04000440 		.word	1074003972
+ 158              		.cfi_endproc
+ 159              	.LFE2:
+ 160              		.size	UART_1_rx_Read, .-UART_1_rx_Read
+ 161              		.section	.text.UART_1_rx_ReadDataReg,"ax",%progbits
+ 162              		.align	2
+ 163              		.global	UART_1_rx_ReadDataReg
+ 164              		.code	16
+ 165              		.thumb_func
+ 166              		.type	UART_1_rx_ReadDataReg, %function
+ 167              	UART_1_rx_ReadDataReg:
+ 168              	.LFB3:
+ 101:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+ 102:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+ 103:.\Generated_Source\PSoC4/UART_1_rx.c **** /*******************************************************************************
+ 104:.\Generated_Source\PSoC4/UART_1_rx.c **** * Function Name: UART_1_rx_ReadDataReg
+ 105:.\Generated_Source\PSoC4/UART_1_rx.c **** ********************************************************************************
+ 106:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+ 107:.\Generated_Source\PSoC4/UART_1_rx.c **** * Summary:
+ 108:.\Generated_Source\PSoC4/UART_1_rx.c **** *  Read the current value assigned to a Digital Port's data output register
+ 109:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+ 110:.\Generated_Source\PSoC4/UART_1_rx.c **** * Parameters:  
+ 111:.\Generated_Source\PSoC4/UART_1_rx.c **** *  None 
+ 112:.\Generated_Source\PSoC4/UART_1_rx.c **** *
+ 113:.\Generated_Source\PSoC4/UART_1_rx.c **** * Return: 
+ 114:.\Generated_Source\PSoC4/UART_1_rx.c **** *  Returns the current value assigned to the Digital Port's data output register
+ 115:.\Generated_Source\PSoC4/UART_1_rx.c **** *  
+ 116:.\Generated_Source\PSoC4/UART_1_rx.c **** *******************************************************************************/
+ 117:.\Generated_Source\PSoC4/UART_1_rx.c **** uint8 UART_1_rx_ReadDataReg(void) 
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 6
+
+
+ 118:.\Generated_Source\PSoC4/UART_1_rx.c **** {
+ 169              		.loc 1 118 0
+ 170              		.cfi_startproc
+ 171 0000 80B5     		push	{r7, lr}
+ 172              		.cfi_def_cfa_offset 8
+ 173              		.cfi_offset 7, -8
+ 174              		.cfi_offset 14, -4
+ 175 0002 00AF     		add	r7, sp, #0
+ 176              		.cfi_def_cfa_register 7
+ 119:.\Generated_Source\PSoC4/UART_1_rx.c ****     return (uint8)((UART_1_rx_DR & UART_1_rx_MASK) >> UART_1_rx_SHIFT);
+ 177              		.loc 1 119 0
+ 178 0004 044B     		ldr	r3, .L13
+ 179 0006 1A68     		ldr	r2, [r3]
+ 180 0008 1023     		mov	r3, #16
+ 181 000a 1340     		and	r3, r2
+ 182 000c 1B09     		lsr	r3, r3, #4
+ 183 000e DBB2     		uxtb	r3, r3
+ 120:.\Generated_Source\PSoC4/UART_1_rx.c **** }
+ 184              		.loc 1 120 0
+ 185 0010 181C     		mov	r0, r3
+ 186 0012 BD46     		mov	sp, r7
+ 187              		@ sp needed
+ 188 0014 80BD     		pop	{r7, pc}
+ 189              	.L14:
+ 190 0016 C046     		.align	2
+ 191              	.L13:
+ 192 0018 00000440 		.word	1074003968
+ 193              		.cfi_endproc
+ 194              	.LFE3:
+ 195              		.size	UART_1_rx_ReadDataReg, .-UART_1_rx_ReadDataReg
+ 196              		.section	.text.UART_1_rx_ClearInterrupt,"ax",%progbits
+ 197              		.align	2
+ 198              		.global	UART_1_rx_ClearInterrupt
+ 199              		.code	16
+ 200              		.thumb_func
+ 201              		.type	UART_1_rx_ClearInterrupt, %function
+ 202              	UART_1_rx_ClearInterrupt:
+ 203              	.LFB4:
+ 121:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+ 122:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+ 123:.\Generated_Source\PSoC4/UART_1_rx.c **** /* If Interrupts Are Enabled for this Pins component */ 
+ 124:.\Generated_Source\PSoC4/UART_1_rx.c **** #if defined(UART_1_rx_INTSTAT) 
+ 125:.\Generated_Source\PSoC4/UART_1_rx.c **** 
+ 126:.\Generated_Source\PSoC4/UART_1_rx.c ****     /*******************************************************************************
+ 127:.\Generated_Source\PSoC4/UART_1_rx.c ****     * Function Name: UART_1_rx_ClearInterrupt
+ 128:.\Generated_Source\PSoC4/UART_1_rx.c ****     ********************************************************************************
+ 129:.\Generated_Source\PSoC4/UART_1_rx.c ****     *
+ 130:.\Generated_Source\PSoC4/UART_1_rx.c ****     * Summary:
+ 131:.\Generated_Source\PSoC4/UART_1_rx.c ****     *  Clears any active interrupts attached to port and returns the value of the 
+ 132:.\Generated_Source\PSoC4/UART_1_rx.c ****     *  interrupt status register.
+ 133:.\Generated_Source\PSoC4/UART_1_rx.c ****     *
+ 134:.\Generated_Source\PSoC4/UART_1_rx.c ****     * Parameters:  
+ 135:.\Generated_Source\PSoC4/UART_1_rx.c ****     *  None 
+ 136:.\Generated_Source\PSoC4/UART_1_rx.c ****     *
+ 137:.\Generated_Source\PSoC4/UART_1_rx.c ****     * Return: 
+ 138:.\Generated_Source\PSoC4/UART_1_rx.c ****     *  Returns the value of the interrupt status register
+ 139:.\Generated_Source\PSoC4/UART_1_rx.c ****     *  
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 7
+
+
+ 140:.\Generated_Source\PSoC4/UART_1_rx.c ****     *******************************************************************************/
+ 141:.\Generated_Source\PSoC4/UART_1_rx.c ****     uint8 UART_1_rx_ClearInterrupt(void) 
+ 142:.\Generated_Source\PSoC4/UART_1_rx.c ****     {
+ 204              		.loc 1 142 0
+ 205              		.cfi_startproc
+ 206 0000 80B5     		push	{r7, lr}
+ 207              		.cfi_def_cfa_offset 8
+ 208              		.cfi_offset 7, -8
+ 209              		.cfi_offset 14, -4
+ 210 0002 82B0     		sub	sp, sp, #8
+ 211              		.cfi_def_cfa_offset 16
+ 212 0004 00AF     		add	r7, sp, #0
+ 213              		.cfi_def_cfa_register 7
+ 143:.\Generated_Source\PSoC4/UART_1_rx.c **** 		uint8 maskedStatus = (uint8)(UART_1_rx_INTSTAT & UART_1_rx_MASK);
+ 214              		.loc 1 143 0
+ 215 0006 094B     		ldr	r3, .L17
+ 216 0008 1B68     		ldr	r3, [r3]
+ 217 000a D9B2     		uxtb	r1, r3
+ 218 000c FB1D     		add	r3, r7, #7
+ 219 000e 1022     		mov	r2, #16
+ 220 0010 0A40     		and	r2, r1
+ 221 0012 1A70     		strb	r2, [r3]
+ 144:.\Generated_Source\PSoC4/UART_1_rx.c **** 		UART_1_rx_INTSTAT = maskedStatus;
+ 222              		.loc 1 144 0
+ 223 0014 054B     		ldr	r3, .L17
+ 224 0016 FA1D     		add	r2, r7, #7
+ 225 0018 1278     		ldrb	r2, [r2]
+ 226 001a 1A60     		str	r2, [r3]
+ 145:.\Generated_Source\PSoC4/UART_1_rx.c ****         return maskedStatus >> UART_1_rx_SHIFT;
+ 227              		.loc 1 145 0
+ 228 001c FB1D     		add	r3, r7, #7
+ 229 001e 1B78     		ldrb	r3, [r3]
+ 230 0020 1B09     		lsr	r3, r3, #4
+ 231 0022 DBB2     		uxtb	r3, r3
+ 146:.\Generated_Source\PSoC4/UART_1_rx.c ****     }
+ 232              		.loc 1 146 0
+ 233 0024 181C     		mov	r0, r3
+ 234 0026 BD46     		mov	sp, r7
+ 235 0028 02B0     		add	sp, sp, #8
+ 236              		@ sp needed
+ 237 002a 80BD     		pop	{r7, pc}
+ 238              	.L18:
+ 239              		.align	2
+ 240              	.L17:
+ 241 002c 10000440 		.word	1074003984
+ 242              		.cfi_endproc
+ 243              	.LFE4:
+ 244              		.size	UART_1_rx_ClearInterrupt, .-UART_1_rx_ClearInterrupt
+ 245              		.text
+ 246              	.Letext0:
+ 247              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 248              		.section	.debug_info,"",%progbits
+ 249              	.Ldebug_info0:
+ 250 0000 48010000 		.4byte	0x148
+ 251 0004 0400     		.2byte	0x4
+ 252 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 253 000a 04       		.byte	0x4
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 8
+
+
+ 254 000b 01       		.uleb128 0x1
+ 255 000c 15010000 		.4byte	.LASF24
+ 256 0010 01       		.byte	0x1
+ 257 0011 F4010000 		.4byte	.LASF25
+ 258 0015 BC000000 		.4byte	.LASF26
+ 259 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 260 001d 00000000 		.4byte	0
+ 261 0021 00000000 		.4byte	.Ldebug_line0
+ 262 0025 02       		.uleb128 0x2
+ 263 0026 01       		.byte	0x1
+ 264 0027 06       		.byte	0x6
+ 265 0028 CF010000 		.4byte	.LASF0
+ 266 002c 02       		.uleb128 0x2
+ 267 002d 01       		.byte	0x1
+ 268 002e 08       		.byte	0x8
+ 269 002f 5E000000 		.4byte	.LASF1
+ 270 0033 02       		.uleb128 0x2
+ 271 0034 02       		.byte	0x2
+ 272 0035 05       		.byte	0x5
+ 273 0036 B6010000 		.4byte	.LASF2
+ 274 003a 02       		.uleb128 0x2
+ 275 003b 02       		.byte	0x2
+ 276 003c 07       		.byte	0x7
+ 277 003d 84000000 		.4byte	.LASF3
+ 278 0041 02       		.uleb128 0x2
+ 279 0042 04       		.byte	0x4
+ 280 0043 05       		.byte	0x5
+ 281 0044 C6010000 		.4byte	.LASF4
+ 282 0048 02       		.uleb128 0x2
+ 283 0049 04       		.byte	0x4
+ 284 004a 07       		.byte	0x7
+ 285 004b 72000000 		.4byte	.LASF5
+ 286 004f 02       		.uleb128 0x2
+ 287 0050 08       		.byte	0x8
+ 288 0051 05       		.byte	0x5
+ 289 0052 96010000 		.4byte	.LASF6
+ 290 0056 02       		.uleb128 0x2
+ 291 0057 08       		.byte	0x8
+ 292 0058 07       		.byte	0x7
+ 293 0059 47000000 		.4byte	.LASF7
+ 294 005d 03       		.uleb128 0x3
+ 295 005e 04       		.byte	0x4
+ 296 005f 05       		.byte	0x5
+ 297 0060 696E7400 		.ascii	"int\000"
+ 298 0064 02       		.uleb128 0x2
+ 299 0065 04       		.byte	0x4
+ 300 0066 07       		.byte	0x7
+ 301 0067 08010000 		.4byte	.LASF8
+ 302 006b 04       		.uleb128 0x4
+ 303 006c C0010000 		.4byte	.LASF9
+ 304 0070 02       		.byte	0x2
+ 305 0071 A1       		.byte	0xa1
+ 306 0072 2C000000 		.4byte	0x2c
+ 307 0076 04       		.uleb128 0x4
+ 308 0077 B5000000 		.4byte	.LASF10
+ 309 007b 02       		.byte	0x2
+ 310 007c A3       		.byte	0xa3
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 9
+
+
+ 311 007d 48000000 		.4byte	0x48
+ 312 0081 02       		.uleb128 0x2
+ 313 0082 04       		.byte	0x4
+ 314 0083 04       		.byte	0x4
+ 315 0084 41000000 		.4byte	.LASF11
+ 316 0088 02       		.uleb128 0x2
+ 317 0089 08       		.byte	0x8
+ 318 008a 04       		.byte	0x4
+ 319 008b 97000000 		.4byte	.LASF12
+ 320 008f 02       		.uleb128 0x2
+ 321 0090 01       		.byte	0x1
+ 322 0091 08       		.byte	0x8
+ 323 0092 B1010000 		.4byte	.LASF13
+ 324 0096 05       		.uleb128 0x5
+ 325 0097 00000000 		.4byte	.LASF14
+ 326 009b 02       		.byte	0x2
+ 327 009c 4D01     		.2byte	0x14d
+ 328 009e A2000000 		.4byte	0xa2
+ 329 00a2 06       		.uleb128 0x6
+ 330 00a3 76000000 		.4byte	0x76
+ 331 00a7 07       		.uleb128 0x7
+ 332 00a8 22000000 		.4byte	.LASF15
+ 333 00ac 01       		.byte	0x1
+ 334 00ad 2A       		.byte	0x2a
+ 335 00ae 00000000 		.4byte	.LFB0
+ 336 00b2 4C000000 		.4byte	.LFE0-.LFB0
+ 337 00b6 01       		.uleb128 0x1
+ 338 00b7 9C       		.byte	0x9c
+ 339 00b8 D9000000 		.4byte	0xd9
+ 340 00bc 08       		.uleb128 0x8
+ 341 00bd 1C000000 		.4byte	.LASF17
+ 342 00c1 01       		.byte	0x1
+ 343 00c2 2A       		.byte	0x2a
+ 344 00c3 6B000000 		.4byte	0x6b
+ 345 00c7 02       		.uleb128 0x2
+ 346 00c8 91       		.byte	0x91
+ 347 00c9 6F       		.sleb128 -17
+ 348 00ca 09       		.uleb128 0x9
+ 349 00cb 6C000000 		.4byte	.LASF22
+ 350 00cf 01       		.byte	0x1
+ 351 00d0 2C       		.byte	0x2c
+ 352 00d1 6B000000 		.4byte	0x6b
+ 353 00d5 02       		.uleb128 0x2
+ 354 00d6 91       		.byte	0x91
+ 355 00d7 77       		.sleb128 -9
+ 356 00d8 00       		.byte	0
+ 357 00d9 07       		.uleb128 0x7
+ 358 00da 9E000000 		.4byte	.LASF16
+ 359 00de 01       		.byte	0x1
+ 360 00df 49       		.byte	0x49
+ 361 00e0 00000000 		.4byte	.LFB1
+ 362 00e4 30000000 		.4byte	.LFE1-.LFB1
+ 363 00e8 01       		.uleb128 0x1
+ 364 00e9 9C       		.byte	0x9c
+ 365 00ea FD000000 		.4byte	0xfd
+ 366 00ee 08       		.uleb128 0x8
+ 367 00ef 91010000 		.4byte	.LASF18
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 10
+
+
+ 368 00f3 01       		.byte	0x1
+ 369 00f4 49       		.byte	0x49
+ 370 00f5 6B000000 		.4byte	0x6b
+ 371 00f9 02       		.uleb128 0x2
+ 372 00fa 91       		.byte	0x91
+ 373 00fb 77       		.sleb128 -9
+ 374 00fc 00       		.byte	0
+ 375 00fd 0A       		.uleb128 0xa
+ 376 00fe 32000000 		.4byte	.LASF19
+ 377 0102 01       		.byte	0x1
+ 378 0103 61       		.byte	0x61
+ 379 0104 6B000000 		.4byte	0x6b
+ 380 0108 00000000 		.4byte	.LFB2
+ 381 010c 1C000000 		.4byte	.LFE2-.LFB2
+ 382 0110 01       		.uleb128 0x1
+ 383 0111 9C       		.byte	0x9c
+ 384 0112 0A       		.uleb128 0xa
+ 385 0113 06000000 		.4byte	.LASF20
+ 386 0117 01       		.byte	0x1
+ 387 0118 75       		.byte	0x75
+ 388 0119 6B000000 		.4byte	0x6b
+ 389 011d 00000000 		.4byte	.LFB3
+ 390 0121 1C000000 		.4byte	.LFE3-.LFB3
+ 391 0125 01       		.uleb128 0x1
+ 392 0126 9C       		.byte	0x9c
+ 393 0127 0B       		.uleb128 0xb
+ 394 0128 DB010000 		.4byte	.LASF21
+ 395 012c 01       		.byte	0x1
+ 396 012d 8D       		.byte	0x8d
+ 397 012e 6B000000 		.4byte	0x6b
+ 398 0132 00000000 		.4byte	.LFB4
+ 399 0136 30000000 		.4byte	.LFE4-.LFB4
+ 400 013a 01       		.uleb128 0x1
+ 401 013b 9C       		.byte	0x9c
+ 402 013c 09       		.uleb128 0x9
+ 403 013d A4010000 		.4byte	.LASF23
+ 404 0141 01       		.byte	0x1
+ 405 0142 8F       		.byte	0x8f
+ 406 0143 6B000000 		.4byte	0x6b
+ 407 0147 02       		.uleb128 0x2
+ 408 0148 91       		.byte	0x91
+ 409 0149 77       		.sleb128 -9
+ 410 014a 00       		.byte	0
+ 411 014b 00       		.byte	0
+ 412              		.section	.debug_abbrev,"",%progbits
+ 413              	.Ldebug_abbrev0:
+ 414 0000 01       		.uleb128 0x1
+ 415 0001 11       		.uleb128 0x11
+ 416 0002 01       		.byte	0x1
+ 417 0003 25       		.uleb128 0x25
+ 418 0004 0E       		.uleb128 0xe
+ 419 0005 13       		.uleb128 0x13
+ 420 0006 0B       		.uleb128 0xb
+ 421 0007 03       		.uleb128 0x3
+ 422 0008 0E       		.uleb128 0xe
+ 423 0009 1B       		.uleb128 0x1b
+ 424 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 11
+
+
+ 425 000b 55       		.uleb128 0x55
+ 426 000c 17       		.uleb128 0x17
+ 427 000d 11       		.uleb128 0x11
+ 428 000e 01       		.uleb128 0x1
+ 429 000f 10       		.uleb128 0x10
+ 430 0010 17       		.uleb128 0x17
+ 431 0011 00       		.byte	0
+ 432 0012 00       		.byte	0
+ 433 0013 02       		.uleb128 0x2
+ 434 0014 24       		.uleb128 0x24
+ 435 0015 00       		.byte	0
+ 436 0016 0B       		.uleb128 0xb
+ 437 0017 0B       		.uleb128 0xb
+ 438 0018 3E       		.uleb128 0x3e
+ 439 0019 0B       		.uleb128 0xb
+ 440 001a 03       		.uleb128 0x3
+ 441 001b 0E       		.uleb128 0xe
+ 442 001c 00       		.byte	0
+ 443 001d 00       		.byte	0
+ 444 001e 03       		.uleb128 0x3
+ 445 001f 24       		.uleb128 0x24
+ 446 0020 00       		.byte	0
+ 447 0021 0B       		.uleb128 0xb
+ 448 0022 0B       		.uleb128 0xb
+ 449 0023 3E       		.uleb128 0x3e
+ 450 0024 0B       		.uleb128 0xb
+ 451 0025 03       		.uleb128 0x3
+ 452 0026 08       		.uleb128 0x8
+ 453 0027 00       		.byte	0
+ 454 0028 00       		.byte	0
+ 455 0029 04       		.uleb128 0x4
+ 456 002a 16       		.uleb128 0x16
+ 457 002b 00       		.byte	0
+ 458 002c 03       		.uleb128 0x3
+ 459 002d 0E       		.uleb128 0xe
+ 460 002e 3A       		.uleb128 0x3a
+ 461 002f 0B       		.uleb128 0xb
+ 462 0030 3B       		.uleb128 0x3b
+ 463 0031 0B       		.uleb128 0xb
+ 464 0032 49       		.uleb128 0x49
+ 465 0033 13       		.uleb128 0x13
+ 466 0034 00       		.byte	0
+ 467 0035 00       		.byte	0
+ 468 0036 05       		.uleb128 0x5
+ 469 0037 16       		.uleb128 0x16
+ 470 0038 00       		.byte	0
+ 471 0039 03       		.uleb128 0x3
+ 472 003a 0E       		.uleb128 0xe
+ 473 003b 3A       		.uleb128 0x3a
+ 474 003c 0B       		.uleb128 0xb
+ 475 003d 3B       		.uleb128 0x3b
+ 476 003e 05       		.uleb128 0x5
+ 477 003f 49       		.uleb128 0x49
+ 478 0040 13       		.uleb128 0x13
+ 479 0041 00       		.byte	0
+ 480 0042 00       		.byte	0
+ 481 0043 06       		.uleb128 0x6
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 12
+
+
+ 482 0044 35       		.uleb128 0x35
+ 483 0045 00       		.byte	0
+ 484 0046 49       		.uleb128 0x49
+ 485 0047 13       		.uleb128 0x13
+ 486 0048 00       		.byte	0
+ 487 0049 00       		.byte	0
+ 488 004a 07       		.uleb128 0x7
+ 489 004b 2E       		.uleb128 0x2e
+ 490 004c 01       		.byte	0x1
+ 491 004d 3F       		.uleb128 0x3f
+ 492 004e 19       		.uleb128 0x19
+ 493 004f 03       		.uleb128 0x3
+ 494 0050 0E       		.uleb128 0xe
+ 495 0051 3A       		.uleb128 0x3a
+ 496 0052 0B       		.uleb128 0xb
+ 497 0053 3B       		.uleb128 0x3b
+ 498 0054 0B       		.uleb128 0xb
+ 499 0055 27       		.uleb128 0x27
+ 500 0056 19       		.uleb128 0x19
+ 501 0057 11       		.uleb128 0x11
+ 502 0058 01       		.uleb128 0x1
+ 503 0059 12       		.uleb128 0x12
+ 504 005a 06       		.uleb128 0x6
+ 505 005b 40       		.uleb128 0x40
+ 506 005c 18       		.uleb128 0x18
+ 507 005d 9742     		.uleb128 0x2117
+ 508 005f 19       		.uleb128 0x19
+ 509 0060 01       		.uleb128 0x1
+ 510 0061 13       		.uleb128 0x13
+ 511 0062 00       		.byte	0
+ 512 0063 00       		.byte	0
+ 513 0064 08       		.uleb128 0x8
+ 514 0065 05       		.uleb128 0x5
+ 515 0066 00       		.byte	0
+ 516 0067 03       		.uleb128 0x3
+ 517 0068 0E       		.uleb128 0xe
+ 518 0069 3A       		.uleb128 0x3a
+ 519 006a 0B       		.uleb128 0xb
+ 520 006b 3B       		.uleb128 0x3b
+ 521 006c 0B       		.uleb128 0xb
+ 522 006d 49       		.uleb128 0x49
+ 523 006e 13       		.uleb128 0x13
+ 524 006f 02       		.uleb128 0x2
+ 525 0070 18       		.uleb128 0x18
+ 526 0071 00       		.byte	0
+ 527 0072 00       		.byte	0
+ 528 0073 09       		.uleb128 0x9
+ 529 0074 34       		.uleb128 0x34
+ 530 0075 00       		.byte	0
+ 531 0076 03       		.uleb128 0x3
+ 532 0077 0E       		.uleb128 0xe
+ 533 0078 3A       		.uleb128 0x3a
+ 534 0079 0B       		.uleb128 0xb
+ 535 007a 3B       		.uleb128 0x3b
+ 536 007b 0B       		.uleb128 0xb
+ 537 007c 49       		.uleb128 0x49
+ 538 007d 13       		.uleb128 0x13
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 13
+
+
+ 539 007e 02       		.uleb128 0x2
+ 540 007f 18       		.uleb128 0x18
+ 541 0080 00       		.byte	0
+ 542 0081 00       		.byte	0
+ 543 0082 0A       		.uleb128 0xa
+ 544 0083 2E       		.uleb128 0x2e
+ 545 0084 00       		.byte	0
+ 546 0085 3F       		.uleb128 0x3f
+ 547 0086 19       		.uleb128 0x19
+ 548 0087 03       		.uleb128 0x3
+ 549 0088 0E       		.uleb128 0xe
+ 550 0089 3A       		.uleb128 0x3a
+ 551 008a 0B       		.uleb128 0xb
+ 552 008b 3B       		.uleb128 0x3b
+ 553 008c 0B       		.uleb128 0xb
+ 554 008d 27       		.uleb128 0x27
+ 555 008e 19       		.uleb128 0x19
+ 556 008f 49       		.uleb128 0x49
+ 557 0090 13       		.uleb128 0x13
+ 558 0091 11       		.uleb128 0x11
+ 559 0092 01       		.uleb128 0x1
+ 560 0093 12       		.uleb128 0x12
+ 561 0094 06       		.uleb128 0x6
+ 562 0095 40       		.uleb128 0x40
+ 563 0096 18       		.uleb128 0x18
+ 564 0097 9742     		.uleb128 0x2117
+ 565 0099 19       		.uleb128 0x19
+ 566 009a 00       		.byte	0
+ 567 009b 00       		.byte	0
+ 568 009c 0B       		.uleb128 0xb
+ 569 009d 2E       		.uleb128 0x2e
+ 570 009e 01       		.byte	0x1
+ 571 009f 3F       		.uleb128 0x3f
+ 572 00a0 19       		.uleb128 0x19
+ 573 00a1 03       		.uleb128 0x3
+ 574 00a2 0E       		.uleb128 0xe
+ 575 00a3 3A       		.uleb128 0x3a
+ 576 00a4 0B       		.uleb128 0xb
+ 577 00a5 3B       		.uleb128 0x3b
+ 578 00a6 0B       		.uleb128 0xb
+ 579 00a7 27       		.uleb128 0x27
+ 580 00a8 19       		.uleb128 0x19
+ 581 00a9 49       		.uleb128 0x49
+ 582 00aa 13       		.uleb128 0x13
+ 583 00ab 11       		.uleb128 0x11
+ 584 00ac 01       		.uleb128 0x1
+ 585 00ad 12       		.uleb128 0x12
+ 586 00ae 06       		.uleb128 0x6
+ 587 00af 40       		.uleb128 0x40
+ 588 00b0 18       		.uleb128 0x18
+ 589 00b1 9742     		.uleb128 0x2117
+ 590 00b3 19       		.uleb128 0x19
+ 591 00b4 00       		.byte	0
+ 592 00b5 00       		.byte	0
+ 593 00b6 00       		.byte	0
+ 594              		.section	.debug_aranges,"",%progbits
+ 595 0000 3C000000 		.4byte	0x3c
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 14
+
+
+ 596 0004 0200     		.2byte	0x2
+ 597 0006 00000000 		.4byte	.Ldebug_info0
+ 598 000a 04       		.byte	0x4
+ 599 000b 00       		.byte	0
+ 600 000c 0000     		.2byte	0
+ 601 000e 0000     		.2byte	0
+ 602 0010 00000000 		.4byte	.LFB0
+ 603 0014 4C000000 		.4byte	.LFE0-.LFB0
+ 604 0018 00000000 		.4byte	.LFB1
+ 605 001c 30000000 		.4byte	.LFE1-.LFB1
+ 606 0020 00000000 		.4byte	.LFB2
+ 607 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 608 0028 00000000 		.4byte	.LFB3
+ 609 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 610 0030 00000000 		.4byte	.LFB4
+ 611 0034 30000000 		.4byte	.LFE4-.LFB4
+ 612 0038 00000000 		.4byte	0
+ 613 003c 00000000 		.4byte	0
+ 614              		.section	.debug_ranges,"",%progbits
+ 615              	.Ldebug_ranges0:
+ 616 0000 00000000 		.4byte	.LFB0
+ 617 0004 4C000000 		.4byte	.LFE0
+ 618 0008 00000000 		.4byte	.LFB1
+ 619 000c 30000000 		.4byte	.LFE1
+ 620 0010 00000000 		.4byte	.LFB2
+ 621 0014 1C000000 		.4byte	.LFE2
+ 622 0018 00000000 		.4byte	.LFB3
+ 623 001c 1C000000 		.4byte	.LFE3
+ 624 0020 00000000 		.4byte	.LFB4
+ 625 0024 30000000 		.4byte	.LFE4
+ 626 0028 00000000 		.4byte	0
+ 627 002c 00000000 		.4byte	0
+ 628              		.section	.debug_line,"",%progbits
+ 629              	.Ldebug_line0:
+ 630 0000 AB000000 		.section	.debug_str,"MS",%progbits,1
+ 630      02004800 
+ 630      00000201 
+ 630      FB0E0D00 
+ 630      01010101 
+ 631              	.LASF14:
+ 632 0000 72656733 		.ascii	"reg32\000"
+ 632      3200
+ 633              	.LASF20:
+ 634 0006 55415254 		.ascii	"UART_1_rx_ReadDataReg\000"
+ 634      5F315F72 
+ 634      785F5265 
+ 634      61644461 
+ 634      74615265 
+ 635              	.LASF17:
+ 636 001c 76616C75 		.ascii	"value\000"
+ 636      6500
+ 637              	.LASF15:
+ 638 0022 55415254 		.ascii	"UART_1_rx_Write\000"
+ 638      5F315F72 
+ 638      785F5772 
+ 638      69746500 
+ 639              	.LASF19:
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 15
+
+
+ 640 0032 55415254 		.ascii	"UART_1_rx_Read\000"
+ 640      5F315F72 
+ 640      785F5265 
+ 640      616400
+ 641              	.LASF11:
+ 642 0041 666C6F61 		.ascii	"float\000"
+ 642      7400
+ 643              	.LASF7:
+ 644 0047 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 644      206C6F6E 
+ 644      6720756E 
+ 644      7369676E 
+ 644      65642069 
+ 645              	.LASF1:
+ 646 005e 756E7369 		.ascii	"unsigned char\000"
+ 646      676E6564 
+ 646      20636861 
+ 646      7200
+ 647              	.LASF22:
+ 648 006c 64725661 		.ascii	"drVal\000"
+ 648      6C00
+ 649              	.LASF5:
+ 650 0072 6C6F6E67 		.ascii	"long unsigned int\000"
+ 650      20756E73 
+ 650      69676E65 
+ 650      6420696E 
+ 650      7400
+ 651              	.LASF3:
+ 652 0084 73686F72 		.ascii	"short unsigned int\000"
+ 652      7420756E 
+ 652      7369676E 
+ 652      65642069 
+ 652      6E7400
+ 653              	.LASF12:
+ 654 0097 646F7562 		.ascii	"double\000"
+ 654      6C6500
+ 655              	.LASF16:
+ 656 009e 55415254 		.ascii	"UART_1_rx_SetDriveMode\000"
+ 656      5F315F72 
+ 656      785F5365 
+ 656      74447269 
+ 656      76654D6F 
+ 657              	.LASF10:
+ 658 00b5 75696E74 		.ascii	"uint32\000"
+ 658      333200
+ 659              	.LASF26:
+ 660 00bc 5A3A5C44 		.ascii	"Z:\\Documents\\Github Clones\\PSoC.Playground\\PROJ"
+ 660      6F63756D 
+ 660      656E7473 
+ 660      5C476974 
+ 660      68756220 
+ 661 00eb 45435453 		.ascii	"ECTS\\7SegDisp\\7SegDisp.cydsn\000"
+ 661      5C375365 
+ 661      67446973 
+ 661      705C3753 
+ 661      65674469 
+ 662              	.LASF8:
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 16
+
+
+ 663 0108 756E7369 		.ascii	"unsigned int\000"
+ 663      676E6564 
+ 663      20696E74 
+ 663      00
+ 664              	.LASF24:
+ 665 0115 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 665      4320342E 
+ 665      382E3420 
+ 665      32303134 
+ 665      30353236 
+ 666 0148 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 666      20726576 
+ 666      6973696F 
+ 666      6E203231 
+ 666      31333538 
+ 667 017b 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 667      66756E63 
+ 667      74696F6E 
+ 667      2D736563 
+ 667      74696F6E 
+ 668              	.LASF18:
+ 669 0191 6D6F6465 		.ascii	"mode\000"
+ 669      00
+ 670              	.LASF6:
+ 671 0196 6C6F6E67 		.ascii	"long long int\000"
+ 671      206C6F6E 
+ 671      6720696E 
+ 671      7400
+ 672              	.LASF23:
+ 673 01a4 6D61736B 		.ascii	"maskedStatus\000"
+ 673      65645374 
+ 673      61747573 
+ 673      00
+ 674              	.LASF13:
+ 675 01b1 63686172 		.ascii	"char\000"
+ 675      00
+ 676              	.LASF2:
+ 677 01b6 73686F72 		.ascii	"short int\000"
+ 677      7420696E 
+ 677      7400
+ 678              	.LASF9:
+ 679 01c0 75696E74 		.ascii	"uint8\000"
+ 679      3800
+ 680              	.LASF4:
+ 681 01c6 6C6F6E67 		.ascii	"long int\000"
+ 681      20696E74 
+ 681      00
+ 682              	.LASF0:
+ 683 01cf 7369676E 		.ascii	"signed char\000"
+ 683      65642063 
+ 683      68617200 
+ 684              	.LASF21:
+ 685 01db 55415254 		.ascii	"UART_1_rx_ClearInterrupt\000"
+ 685      5F315F72 
+ 685      785F436C 
+ 685      65617249 
+ 685      6E746572 
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccb6DSM9.s 			page 17
+
+
+ 686              	.LASF25:
+ 687 01f4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\UART_1_rx.c\000"
+ 687      6E657261 
+ 687      7465645F 
+ 687      536F7572 
+ 687      63655C50 
+ 688              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,263 @@
+.start
+XH
+H 3 areas 3 global symbols
+M psocconfigtbl.asm
+A text size 0 flags 0
+dbfile lib/psocconfigtbl.asm
+dbfunc 0 ? 0 I
+dbfile C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/include/CY8C28~1/m8c.inc
+dbfunc 0 ? 0 I
+A lit size F2 flags 0
+S LoadConfigTBL_cy8c28445_led_blinky_Bank0 Def0000
+S LoadConfigTBL_cy8c28445_led_blinky_Bank1 Def0063
+A psoc_config size C5 flags 0
+dbfile lib/psocconfigtbl.asm
+dbfunc 0 ? 0 I
+dbline 2 0
+dbline 8B 2
+dbline 2 5
+dbline 8D 7
+dbline 8E A
+dbline 2 D
+dbline 90 F
+dbline 91 12
+dbline 2 15
+dbline 93 17
+dbline 94 1A
+dbline 2 1D
+dbline 96 1F
+dbline 97 22
+dbline 2 25
+dbline 99 27
+dbline 9A 2A
+dbline 2 2D
+dbline 9C 2F
+dbline 9D 32
+dbline 2 35
+dbline 9F 37
+dbline A0 3A
+dbline 2 3D
+dbline A2 3F
+dbline A3 42
+dbline 2 45
+dbline A5 47
+dbline A6 4A
+dbline 2 4D
+dbline A8 4F
+dbline A9 52
+dbline 2 55
+dbline AB 57
+dbline AC 5A
+dbline 2 5D
+dbline AE 5F
+dbline AF 62
+dbline 2 65
+dbline B1 67
+dbline B2 6A
+dbline 2 6D
+dbline B4 6F
+dbline B5 72
+dbline 2 75
+dbline B7 77
+dbline B8 7A
+dbline 2 7D
+dbline BA 7F
+dbline BB 82
+dbline 2 85
+dbline BD 87
+dbline BE 8A
+dbline 2 8D
+dbline C0 8F
+dbline C1 92
+dbline 2 95
+dbline C3 97
+dbline C4 9A
+dbline 2 9D
+dbline C6 9F
+dbline C7 A2
+dbline 2 A5
+dbline C9 A7
+dbline CA AA
+dbline 2 AD
+dbline CC AF
+dbline CD B2
+dbline 2 B5
+dbline CF B7
+dbline D0 BA
+dbline 2 BD
+dbline D2 BF
+dbline 2 C2
+dbline D4 C4
+S LoadConfigTBL_cy8c28445_led_blinky_Ordered Def0000
+T 00 00 6A 00 6B 00 62 00 60 29 66 00 61 00 FC 00
+R 00 00 00 01
+T 00 0E FD 00 63 05 65 00 E6 00 E7 00 A0 00 A2 00
+R 00 00 00 01
+T 00 1C A4 00 A6 00 A1 00 A3 00 A5 00 A7 00 D6 00
+R 00 00 00 01
+T 00 2A E8 00 E9 00 A8 00 A9 00 B7 00 BF 00 C7 00
+R 00 00 00 01
+T 00 38 B0 00 B1 00 B2 00 B3 33 B4 33 B5 00 B6 00
+R 00 00 00 01
+T 00 46 B8 55 B9 00 BA 10 BB 33 BC 33 BD 00 BE 00
+R 00 00 00 01
+T 00 54 C0 AA C1 00 C2 00 C3 33 C4 33 C5 00 C6 00
+R 00 00 00 01
+T 00 62 FF A8 00 A9 00 AA 00 AB 00 AC 00 61 00 69
+R 00 00 00 01
+T 00 70 00 8B 00 60 00 8A 00 89 00 75 09 76 00 77
+R 00 00 00 01
+T 00 7E 00 7A 33 62 00 67 33 68 33 63 00 66 00 6A
+R 00 00 00 01
+T 00 8C 00 AF 00 7B 00 79 00 64 00 65 00 FD 00 DC
+R 00 00 00 01
+T 00 9A 00 91 00 95 00 99 00 9D 00 9A 00 92 00 96
+R 00 00 00 01
+T 00 A8 00 D4 00 D5 00 D6 00 D7 00 D1 00 A1 00 D3
+R 00 00 00 01
+T 00 B6 00 A3 00 D0 00 A0 00 D2 00 A2 00 AD 00 AE
+R 00 00 00 01
+T 00 C4 00 6B 00 E7 00 E1 FF E2 00 DF FF DE 02 DD
+R 00 00 00 01
+T 00 D2 00 85 00 D8 00 D9 00 DA 00 DB 00 EC 00 ED
+R 00 00 00 01
+T 00 E0 00 A7 00 A4 00 A5 00 A6 00 82 00 81 00 71
+R 00 00 00 01
+T 00 EE 00 72 00 FF
+R 00 00 00 01
+T 00 00 70 EF 62 00 01 71 10 62 00 01 62 01 FF 70
+R 00 00 00 02
+T 00 0E EF 62 03 FE 62 02 00 71 10 62 02 00 62 03
+R 00 00 00 02
+T 00 1C 00 70 EF 62 01 00 62 04 00 71 10 62 04 01
+R 00 00 00 02
+T 00 2A 62 05 FE 70 EF 62 07 FE 62 06 00 71 10 62
+R 00 00 00 02
+T 00 38 06 00 62 07 00 70 EF 62 05 00 62 08 00 71
+R 00 00 00 02
+T 00 46 10 62 08 00 62 09 FF 70 EF 62 0B FF 62 0A
+R 00 00 00 02
+T 00 54 00 71 10 62 0A 00 62 0B 00 70 EF 62 09 00
+R 00 00 00 02
+T 00 62 62 0C 00 71 10 62 0C 00 62 0D 00 70 EF 62
+R 00 00 00 02
+T 00 70 0F 00 62 0E 00 71 10 62 0E 00 62 0F 00 70
+R 00 00 00 02
+T 00 7E EF 62 0D 00 62 10 00 71 10 62 10 00 62 11
+R 00 00 00 02
+T 00 8C 00 70 EF 62 13 00 62 12 00 71 10 62 12 00
+R 00 00 00 02
+T 00 9A 62 13 00 70 EF 62 11 00 62 14 00 71 10 62
+R 00 00 00 02
+T 00 A8 14 00 62 15 00 70 EF 62 17 00 62 16 00 71
+R 00 00 00 02
+T 00 B6 10 62 16 00 62 17 00 70 EF 62 15 00 70 EF
+R 00 00 00 02
+T 00 C4 7F
+R 00 00 00 02
+.end
+.start
+XH
+H 3 areas 9 global symbols
+M psocconfig.asm
+S LoadConfigTBL_cy8c28445_led_blinky_Bank0 Ref0000
+S LoadConfigTBL_cy8c28445_led_blinky_Bank1 Ref0000
+S LoadConfigTBL_cy8c28445_led_blinky_Ordered Ref0000
+A text size 0 flags 0
+dbfile lib/psocconfig.asm
+dbfunc 0 ? 0 I
+dbfile ./lib/GlobalParams.inc
+dbfunc 0 ? 0 I
+dbfile lib/psocconfig.asm
+dbfunc 0 ? 0 I
+dbfile memory.inc
+dbfunc 0 ? 0 I
+dbfile lib/psocconfig.asm
+dbfunc 0 ? 0 I
+dbfile C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/include/CY8C28~1/m8c.inc
+dbfunc 0 ? 0 I
+A psoc_config size 62 flags 0
+dbfile lib/psocconfig.asm
+dbfunc 0 ? 0 I
+dbline 3A 0
+dbline 3B 3
+dbline 3F 6
+dbline 58 7
+dbline 2 8
+dbline 5A A
+dbline 5B C
+dbline 5D D
+dbline 5E F
+dbline 5F 11
+dbline 61 14
+dbline 62 16
+dbline 64 17
+dbline 65 19
+dbline 66 1B
+dbline 2 1E
+dbline 69 20
+dbline 6C 21
+dbline 82 22
+dbline 83 24
+dbline 84 25
+dbline 85 26
+dbline 86 27
+dbline 87 2A
+dbline 88 2C
+dbline 8A 2F
+dbline 8B 30
+dbline 2 31
+dbline 2 33
+dbline 90 36
+dbline 91 37
+dbline 92 38
+dbline 93 39
+dbline 94 3B
+dbline 95 3D
+dbline 96 3E
+dbline 97 41
+dbline 2 43
+dbline 9A 45
+dbline 9B 47
+dbline 9C 48
+dbline 9D 49
+dbline 9E 4A
+dbline 9F 4C
+dbline A0 4D
+dbline A1 4E
+dbline A2 4F
+dbline A3 50
+dbline A4 52
+dbline A5 54
+dbline A6 55
+dbline A7 56
+dbline A8 57
+dbline A9 59
+dbline AB 5B
+dbline 3 5D
+dbline 4 5F
+dbline AD 61
+S LoadConfig_cy8c28445_led_blinky Def0007
+S LoadConfigInit Def0000
+S _LoadConfig_cy8c28445_led_blinky Def0007
+S _LoadConfigInit Def0000
+A InterruptRAM size 0 flags 20
+S _NO_SHADOW Def0000
+S NO_SHADOW Def0000
+T 00 00 7C 00 07 7C 00 00 7F 10 70 EF 50 00 67 50
+R 00 00 00 01 00 03 00 01 02 06 00 02
+T 00 0E 00 00 57 00 00 7C 00 22 50 01 67 50
+R 00 00 00 01 43 02 00 00 03 05 00 00 00 08 00 01
+T 00 18 00 00 57 00 00 7C 00 22 70 EF 20 7F 38 02
+R 00 00 00 01 43 02 00 01 03 05 00 01 00 08 00 01
+T 00 24 10 08 4F 56 FC 00 D0 04 56 FC 01 18 20 70
+R 00 00 00 01
+T 00 32 EF 62 E3 00 10 08 28 39 FF A0 1F 4F 48 FC
+R 00 00 00 01
+T 00 40 01 A0 03 71 10 54 FD 18 20 75 09 00 10 08
+R 00 00 00 01
+T 00 4E 28 4F 59 FD 61 00 18 20 75 09 00 8F D7 38
+R 00 00 00 01
+T 00 5C FC 70 3F 71 C0 7F
+R 00 00 00 01
+.end

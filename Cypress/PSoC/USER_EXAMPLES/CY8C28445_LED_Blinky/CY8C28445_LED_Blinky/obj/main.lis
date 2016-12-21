@@ -1,0 +1,60 @@
+ 0000                   cpu LMM
+                        .module main.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile ./main.c
+ 0000                   .dbfile C:\Users\wbz\Perforce\PERFOR~1\WBZ_WB~1\software\products\psoc1\software\Docs\SOFTWA~1\PD51_SP3\ONLINE~1\02-LED~1\CY8C28~1\CY8C28~1\main.c
+ 0000                   .dbfunc e main _main fV
+ 0000           _main::
+ 0000                   .dbline -1
+ 0000                   .dbline 10
+ 0000           ; //----------------------------------------------------------------------------
+ 0000           ; // C main line
+ 0000           ; //----------------------------------------------------------------------------
+ 0000           ; 
+ 0000           ; #include <m8c.h>        // part specific constants and macros
+ 0000           ; #include "PSoCAPI.h"    // PSoC API definitions for all User Modules
+ 0000           ; 
+ 0000           ; 
+ 0000           ; void main(void)
+ 0000           ; {
+ 0000 8015              xjmp L3
+ 0002           L2:
+ 0002                   .dbline 12
+ 0002           ;     while(1)
+ 0002           ;     {
+ 0002                   .dbline 13
+ 0002           ;       if (PRT0DR & 0x01) //Checks the state of the button. If the button is pressed then it will execute.
+ 0002 5D00              mov A,REG[0]
+ 0004 62D000            mov REG[0xd0],>__r0
+ 0007 5300              mov [__r0],A
+ 0009 470001            tst [__r0],1
+ 000C A006              jz L5
+ 000E                   .dbline 15
+ 000E           ;       {
+ 000E           ;               PRT1DR &= ~0x01; //Turns the LED On.
+ 000E                   .dbline 15
+ 000E 4104FE            and REG[0x4],-2
+ 0011                   .dbline 16
+ 0011           ;       }
+ 0011 8004              xjmp L6
+ 0013           L5:
+ 0013                   .dbline 18
+ 0013           ;       else
+ 0013           ;       {
+ 0013                   .dbline 19
+ 0013           ;               PRT1DR |=  0x01; //Turns the LED Off.
+ 0013 430401            or REG[0x4],1
+ 0016                   .dbline 20
+ 0016           ;       }
+ 0016           L6:
+ 0016                   .dbline 21
+ 0016           ;     }
+ 0016           L3:
+ 0016                   .dbline 11
+ 0016 8FEB              xjmp L2
+ 0018           X0:
+ 0018                   .dbline -2
+ 0018           L1:
+ 0018                   .dbline 0 ; func end
+ 0018 8FFF              jmp .
+ 001A                   .dbend

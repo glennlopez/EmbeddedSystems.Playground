@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="SW_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="R_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="GND_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="PWM2" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="VMux_capture_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="or_clk" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="PWMUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="PWM2_COMPARE_Reg_" address="0x400F0023" bitWidth="8" desc="UDB.D0 - Assigned Compare Value" />
+    <register name="PWM2_Control_Reg" address="0x400F0073" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
+      <field name="CTRL_ENABLE" from="7" to="7" access="RW" resetVal="" desc="Enable the PWM" />
+      <field name="CTRL_CMPMODE2" from="5" to="3" access="RW" resetVal="" desc="Compare mode 2" />
+      <field name="CTRL_CMPMODE1" from="2" to="0" access="RW" resetVal="" desc="Compare mode 1" />
+    </register>
+    <register name="PWM2_STATUS_MASK" address="0x400F0083" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
+      <field name="PWM_STS_CMP1" from="0" to="0" access="R" resetVal="" desc="Enables the Interrupt on Compare 1" />
+      <field name="PWM_STS_CMP2" from="1" to="1" access="R" resetVal="" desc="Enables the Interrupt on Compare 2" />
+      <field name="PWM_STS_TC" from="2" to="2" access="R" resetVal="" desc="Enables the Interrupt on Terminal Count" />
+      <field name="PWM_STS_FIFO_FULL" from="3" to="3" access="R" resetVal="" desc="FIFO Full Status Mask " />
+      <field name="PWM_STS_KILL" from="5" to="5" access="R" resetVal="" desc="Enables the Interrupt on Kill" />
+    </register>
+    <register name="PWM2_STATUS_AUX_CTRL" address="0x400F0093" bitWidth="8" desc="UDB Auxilliary Control Register">
+      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
+        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
+        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
+      </field>
+      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_CNT_START0" value="0" desc="Disable counter" />
+        <value name="E_CNT_START1" value="1" desc="Enable counter" />
+      </field>
+    </register>
+  </block>
+  <block name="clk2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="PWR_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="R_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="PWR_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="R_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="PWR_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="or_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="LEDR" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="SW1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="PWM" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="VMux_capture_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_capture_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="or_clk" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="PWMUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VMux_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="PWM_COMPARE_Reg_" address="0x400F0022" bitWidth="8" desc="UDB.D0 - Assigned Compare Value" />
+    <register name="PWM_Control_Reg" address="0x400F0072" bitWidth="8" desc="UDB Control Register - Assigned Control Register Value">
+      <field name="CTRL_ENABLE" from="7" to="7" access="RW" resetVal="" desc="Enable the PWM" />
+      <field name="CTRL_CMPMODE2" from="5" to="3" access="RW" resetVal="" desc="Compare mode 2" />
+      <field name="CTRL_CMPMODE1" from="2" to="0" access="RW" resetVal="" desc="Compare mode 1" />
+    </register>
+    <register name="PWM_STATUS_MASK" address="0x400F0082" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
+      <field name="PWM_STS_CMP1" from="0" to="0" access="R" resetVal="" desc="Enables the Interrupt on Compare 1" />
+      <field name="PWM_STS_CMP2" from="1" to="1" access="R" resetVal="" desc="Enables the Interrupt on Compare 2" />
+      <field name="PWM_STS_TC" from="2" to="2" access="R" resetVal="" desc="Enables the Interrupt on Terminal Count" />
+      <field name="PWM_STS_FIFO_FULL" from="3" to="3" access="R" resetVal="" desc="FIFO Full Status Mask " />
+      <field name="PWM_STS_KILL" from="5" to="5" access="R" resetVal="" desc="Enables the Interrupt on Kill" />
+    </register>
+    <register name="PWM_STATUS_AUX_CTRL" address="0x400F0092" bitWidth="8" desc="UDB Auxilliary Control Register">
+      <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO1_CLR" from="1" to="1" access="RW" resetVal="" desc="FIFO1 clear">
+        <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
+        <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
+      </field>
+      <field name="FIFO0_LVL" from="2" to="2" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="FIFO1_LVL" from="3" to="3" access="RW" resetVal="" desc="FIFO level">
+        <value name="E_FIFO_LVL_0" value="0" desc="FIFO LVL: input mode: FIFO not full; output mode: FIFO not empty" />
+        <value name="E_FIFO_LVL_1" value="1" desc="FIFO LVL: input mode: FIFO at least 1/2 empty; output mode: FIFO at least 1/2 full" />
+      </field>
+      <field name="INT_EN" from="4" to="4" access="RW" resetVal="" desc="">
+        <value name="E_INT_EN0" value="0" desc="Interrupt disabled" />
+        <value name="E_INT_EN1" value="1" desc="Interrupt enabled" />
+      </field>
+      <field name="CNT_START" from="5" to="5" access="RW" resetVal="" desc="FIFO0 clear">
+        <value name="E_CNT_START0" value="0" desc="Disable counter" />
+        <value name="E_CNT_START1" value="1" desc="Enable counter" />
+      </field>
+    </register>
+  </block>
+  <block name="clk" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="LEDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="cy_constant_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="or_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="cy_tff_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+</blockRegMap>

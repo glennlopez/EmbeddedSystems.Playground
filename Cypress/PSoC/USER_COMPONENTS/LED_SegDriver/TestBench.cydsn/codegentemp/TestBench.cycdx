@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="Segment_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Segment_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Segment_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Common_0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Button" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="LED" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="xor_13" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_14" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_12" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_10" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_11" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Brightness_DMA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="COM_PWM" BASE="0x0" SIZE="0x0" desc="" visible="true">
+      <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+      <block name="FFKillMux" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+      <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+      <block name="vmTC" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+      <block name="PWMUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+      <block name="vmCompare" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+      <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    </block>
+    <block name="xor_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="OneTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Segment_DMA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_9" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Common_DMA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="PWM_Clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="RAM_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="RAM_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_15" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_16" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Refresh_Clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="xor_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="OneTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="and_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  </block>
+  <block name="Segment_0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Common_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Common_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Common_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Segment_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Segment_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Segment_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Segment_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+</blockRegMap>

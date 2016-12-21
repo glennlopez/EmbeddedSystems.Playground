@@ -1,0 +1,248 @@
+C51 COMPILER V9.03   MAIN                                                                  10/10/2012 15:06:17 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\DP8051\DP8051_Keil_903\Debug\main.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\import\keil\pk51\9.03\C51\BIN\c51.exe 
+                    -.\main.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\main.lst) CD DB NOIP OT(2,SIZE) INCDIR(Generated
+                    -_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\main.obj)
+
+line level    source
+
+   1          /* ========================================
+   2           *
+   3           * Copyright YOUR COMPANY, THE YEAR
+   4           * All Rights Reserved
+   5           * UNPUBLISHED, LICENSED SOFTWARE.
+   6           *
+   7           * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8           * WHICH IS THE PROPERTY OF your company.
+   9           *
+  10           * ========================================
+  11          */
+  12          #include <device.h>
+  13          #include <string.h>
+  14          
+  15          void sparkles(void);
+  16          
+  17          CYCODE char four_score[] = ".     Four score and seven years ago our fathers brought forth on this contine
+             -nt, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.  Now we are eng
+             -aged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We
+             - are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place
+             - for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do 
+             -this. But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brav
+             -e men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world w
+             -ill little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living
+             -, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is 
+             -rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increas
+             -ed devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that thes
+             -e dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that governm
+             -ent of the people, by the people, for the people, shall not perish from the earth.     ";
+  18          // 1484
+  19          //CYCODE char four_score[] = "  0123456789abcdefghijklmnopqrstuvwxyz.-=_   ";
+  20          void main()
+  21          {
+  22   1              char snippet[5];
+  23   1              int8 j = 0;
+  24   1              
+  25   1              LED_Start();
+  26   1              
+  27   1          while(1)
+  28   1              {
+  29   2                      j %= 1482;
+  30   2                      memmove(&snippet[0], &four_score[j], 4);
+  31   2                      snippet[4] = 0;
+  32   2                      LED_ClearDisplayAll();
+  33   2                      LED_PutString(snippet, 0);
+  34   2                      while(Button_Read() > 0);
+  35   2                      CyDelay(350);
+  36   2                      j++;
+  37   2              }
+  38   1      }
+  39          
+  40          void sparkles(void)
+  41          {
+C51 COMPILER V9.03   MAIN                                                                  10/10/2012 15:06:17 PAGE 2   
+
+  42   1              LED_Segment_RAM[0] += 5; 
+  43   1              LED_Segment_RAM[1] +=3;
+  44   1              LED_Segment_RAM[2] +=7;
+  45   1              LED_Segment_RAM[3] +=1;
+  46   1          
+  47   1              LED_Brightness_RAM[0] -= 15;
+  48   1              LED_Brightness_RAM[1] -= 13;
+  49   1              LED_Brightness_RAM[2] -= 17;
+  50   1              LED_Brightness_RAM[3] -= 11;
+  51   1              CyDelay(25);
+  52   1      }
+  53          
+  54          /* [] END OF FILE */
+C51 COMPILER V9.03   MAIN                                                                  10/10/2012 15:06:17 PAGE 3   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 20
+                                           ; SOURCE LINE # 21
+                                           ; SOURCE LINE # 23
+0000 900000      R     MOV     DPTR,#j
+0003 E4                CLR     A
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 25
+0005 120000      E     LCALL   LED_Start
+0008         ?C0001:
+                                           ; SOURCE LINE # 27
+                                           ; SOURCE LINE # 28
+                                           ; SOURCE LINE # 29
+0008 900000      R     MOV     DPTR,#j
+000B E0                MOVX    A,@DPTR
+000C FF                MOV     R7,A
+000D EF                MOV     A,R7
+000E 75F0CA            MOV     B,#0CAH
+0011 120000      E     LCALL   ?C?SCDIV
+0014 AFF0              MOV     R7,B
+0016 900000      R     MOV     DPTR,#j
+0019 EF                MOV     A,R7
+001A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 30
+001B 900000      R     MOV     DPTR,#j
+001E E0                MOVX    A,@DPTR
+001F FF                MOV     R7,A
+0020 EF                MOV     A,R7
+0021 33                RLC     A
+0022 95E0              SUBB    A,ACC
+0024 FE                MOV     R6,A
+0025 7400        R     MOV     A,#LOW four_score
+0027 2F                ADD     A,R7
+0028 F9                MOV     R1,A
+0029 7400        R     MOV     A,#HIGH four_score
+002B 3E                ADDC    A,R6
+002C FA                MOV     R2,A
+002D 7BFF              MOV     R3,#0FFH
+002F C003              PUSH    AR3
+0031 C002              PUSH    AR2
+0033 C001              PUSH    AR1
+0035 7B01              MOV     R3,#01H
+0037 7A00        R     MOV     R2,#HIGH snippet
+0039 7900        R     MOV     R1,#LOW snippet
+003B A801              MOV     R0,AR1
+003D AC02              MOV     R4,AR2
+003F AD03              MOV     R5,AR3
+0041 D001              POP     AR1
+0043 D002              POP     AR2
+0045 D003              POP     AR3
+0047 7E00              MOV     R6,#00H
+0049 7F04              MOV     R7,#04H
+004B 120000      E     LCALL   ?C?MEMMOVEAMD
+                                           ; SOURCE LINE # 31
+004E 900000      R     MOV     DPTR,#snippet+04H
+0051 E4                CLR     A
+0052 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 32
+0053 120000      E     LCALL   LED_ClearDisplayAll
+C51 COMPILER V9.03   MAIN                                                                  10/10/2012 15:06:17 PAGE 4   
+
+                                           ; SOURCE LINE # 33
+0056 7B01              MOV     R3,#01H
+0058 7A00        R     MOV     R2,#HIGH snippet
+005A 7900        R     MOV     R1,#LOW snippet
+005C 7D00              MOV     R5,#00H
+005E 120000      E     LCALL   _LED_PutString
+0061         ?C0003:
+                                           ; SOURCE LINE # 34
+0061 120000      E     LCALL   Button_Read
+0064 EF                MOV     A,R7
+0065 D3                SETB    C
+0066 9400              SUBB    A,#00H
+0068 50F7              JNC     ?C0003
+006A         ?C0004:
+                                           ; SOURCE LINE # 35
+006A 7F5E              MOV     R7,#05EH
+006C 7E01              MOV     R6,#01H
+006E 7D00              MOV     R5,#00H
+0070 7C00              MOV     R4,#00H
+0072 120000      E     LCALL   _?CyDelay
+                                           ; SOURCE LINE # 36
+0075 900000      R     MOV     DPTR,#j
+0078 E0                MOVX    A,@DPTR
+0079 04                INC     A
+007A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 37
+007B 808B              SJMP    ?C0001
+007D 22                RET     
+             ; FUNCTION main (END)
+
+             ; FUNCTION sparkles (BEGIN)
+                                           ; SOURCE LINE # 40
+                                           ; SOURCE LINE # 41
+                                           ; SOURCE LINE # 42
+0000 900000      E     MOV     DPTR,#LED_Segment_RAM
+0003 E0                MOVX    A,@DPTR
+0004 2405              ADD     A,#05H
+0006 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 43
+0007 900000      E     MOV     DPTR,#LED_Segment_RAM+01H
+000A E0                MOVX    A,@DPTR
+000B 2403              ADD     A,#03H
+000D F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 44
+000E 900000      E     MOV     DPTR,#LED_Segment_RAM+02H
+0011 E0                MOVX    A,@DPTR
+0012 2407              ADD     A,#07H
+0014 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 45
+0015 900000      E     MOV     DPTR,#LED_Segment_RAM+03H
+0018 E0                MOVX    A,@DPTR
+0019 04                INC     A
+001A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 47
+001B 900000      E     MOV     DPTR,#LED_Brightness_RAM
+001E E0                MOVX    A,@DPTR
+001F 24F1              ADD     A,#0F1H
+0021 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 48
+0022 900000      E     MOV     DPTR,#LED_Brightness_RAM+01H
+0025 E0                MOVX    A,@DPTR
+0026 24F3              ADD     A,#0F3H
+C51 COMPILER V9.03   MAIN                                                                  10/10/2012 15:06:17 PAGE 5   
+
+0028 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 49
+0029 900000      E     MOV     DPTR,#LED_Brightness_RAM+02H
+002C E0                MOVX    A,@DPTR
+002D 24EF              ADD     A,#0EFH
+002F F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 50
+0030 900000      E     MOV     DPTR,#LED_Brightness_RAM+03H
+0033 E0                MOVX    A,@DPTR
+0034 24F5              ADD     A,#0F5H
+0036 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 51
+0037 7F19              MOV     R7,#019H
+0039 7E00              MOV     R6,#00H
+003B 7D00              MOV     R5,#00H
+003D 7C00              MOV     R4,#00H
+003F 120000      E     LCALL   _?CyDelay
+                                           ; SOURCE LINE # 52
+0042 22                RET     
+             ; FUNCTION sparkles (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    193    ----
+   CONSTANT SIZE    =   1486    ----
+   XDATA SIZE       =   ----       6
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

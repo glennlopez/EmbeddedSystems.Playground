@@ -1,0 +1,2081 @@
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE LED
+OBJECT MODULE PLACED IN .\DP8051\DP8051_Keil_903\Debug\LED.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\import\keil\pk51\9.03\C51\BIN\c51.exe 
+                    -.\Generated_Source\PSoC3\LED.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED.lst) CD DB NOIP OT(2,S
+                    -IZE) INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED.obj)
+
+line level    source
+
+   1          /* ========================================
+   2           *
+   3           * Copyright YOUR COMPANY, THE YEAR
+   4           * All Rights Reserved
+   5           * UNPUBLISHED, LICENSED SOFTWARE.
+   6           *
+   7           * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8           * WHICH IS THE PROPERTY OF your company.
+   9           *
+  10           * ========================================
+  11          */
+  12          
+  13          #include "LED.h"
+  14          
+  15          /* variables */
+  16          
+  17          #if LED_Seg7_Support
+  18                  /* number 0 - 15 to 7 segment decoder table */
+  19                  uint8 LED_seg7_Table[16] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f, 0x77, 0x7c, 0x39,
+             - 0x5e, 0x79, 0x71};
+  20                  uint8 LED_seg7_Alpha_Table[26] = {0x77,0x7C,0x58,0x5E,0x79,0x71,0x3d,0x74,0x10,0x1e,0x76,0x38,0x55,0x54,0
+             -x5c,0x73,0x67,0x50,0x6d,0x78,0x1c,0x1c,0x1d,0x76,0x6e,0x5b};
+  21          #endif
+  22          
+  23          /* storage for the display buffer */
+  24          uint8 LED_Segment_RAM[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+  25          
+  26          /* data array for the common control register */
+  27          uint8 LED_Common_RAM[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+  28          
+  29          #if LED_PWM_Enable
+  30                  /* data array for the PWM */
+  31                  uint8 LED_Brightness_RAM[8] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+  32          #endif
+  33          
+  34          static uint8 LED_Segment_DMA_Chan;
+  35          static uint8 LED_Segment_DMA_TD;
+  36          
+  37          static uint8 LED_Common_DMA_Chan;
+  38          static uint8 LED_Common_DMA_TD;
+  39          
+  40          #if LED_PWM_Enable
+  41                  static uint8 LED_Brightness_DMA_Chan;
+  42                  static uint8 LED_Brightness_DMA_TD;
+  43          #endif
+  44          
+  45          /* Defines */
+  46          
+  47          /* DMA Configuration for LED_Segment_DMA */
+  48          #define LED_Segment_DMA_BYTES_PER_BURST 1
+  49          #define LED_Segment_DMA_REQUEST_PER_BURST 1
+  50          #define LED_Segment_DMA_SRC_BASE (CYDEV_SRAM_BASE)
+  51          #define LED_Segment_DMA_DST_BASE (CYDEV_SRAM_BASE)
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 2   
+
+  52          
+  53          /* DMA Configuration for LED_Common_DMA */
+  54          #define LED_Common_DMA_BYTES_PER_BURST 1
+  55          #define LED_Common_DMA_REQUEST_PER_BURST 1
+  56          #define LED_Common_DMA_SRC_BASE (CYDEV_SRAM_BASE)
+  57          #define LED_Common_DMA_DST_BASE (CYDEV_SRAM_BASE)
+  58          
+  59          #if LED_PWM_Enable
+  60                  /* DMA Configuration for LED_Brightness_DMA */
+  61                  #define LED_Brightness_DMA_BYTES_PER_BURST 1
+  62                  #define LED_Brightness_DMA_REQUEST_PER_BURST 1
+  63                  #define LED_Brightness_DMA_SRC_BASE (CYDEV_SRAM_BASE)
+  64                  #define LED_Brightness_DMA_DST_BASE (CYDEV_SRAM_BASE)
+  65          #endif
+  66          
+  67          /* allocates Transaction descriptors for the DMA channels, and configures each DMA channel
+  68          optionally starts the PWM*/
+  69          void LED_Start()
+  70          {
+  71   1              static uint8 LED_InitVar = 0; /* The LED_InitVar ensures that the TDs are only allocated once */
+  72   1              
+  73   1              if(LED_InitVar == 0)
+  74   1              {
+  75   2                      /* allocate TDs */
+  76   2                      LED_Segment_DMA_TD = CyDmaTdAllocate();
+  77   2                      LED_Common_DMA_TD = CyDmaTdAllocate();
+  78   2                      #if LED_PWM_Enable
+  79   2                              LED_Brightness_DMA_TD = CyDmaTdAllocate();
+  80   2                      #endif
+  81   2                      
+  82   2                      LED_InitVar = 1;
+  83   2              }
+  84   1              
+  85   1              #ifndef LED_RAM_1_ctrl_reg__REMOVED /* removes this code if the control register is optimized out, this p
+             -revents build errors if nothing is connected to the LED compnent */
+  86   1                      /* Segment DMA configuration
+  87   1                      Set DMA channels Bytes per burst, requests per burst, and upper 16 bits of source and destination */
+  88   1                      LED_Segment_DMA_Chan = LED_Segment_DMA_DmaInitialize(LED_Segment_DMA_BYTES_PER_BURST, LED_Segment_DMA_RE
+             -QUEST_PER_BURST, HI16(LED_Segment_DMA_SRC_BASE), HI16(LED_Segment_DMA_DST_BASE));
+  89   1                      /* Configure the TD to transfer LED_Num_Commons bytes total, chain to itself, increment source address (
+             -read throught the segment ram array) and issue a NRQ on completion */
+  90   1                      CyDmaTdSetConfiguration(LED_Segment_DMA_TD, LED_Num_Commons , LED_Segment_DMA_TD, LED_Segment_DMA__TD_TE
+             -RMOUT_EN | TD_INC_SRC_ADR);
+  91   1                      /* Configure the TD to grab from the Segment_RAM array and write it into the RAM_1 control register */
+  92   1                      CyDmaTdSetAddress(LED_Segment_DMA_TD, LO16((uint32)&(LED_Segment_RAM[0])), LO16((uint32)&LED_RAM_1_Contr
+             -ol));
+  93   1                      /* set the channels initial TD */
+  94   1                      CyDmaChSetInitialTd(LED_Segment_DMA_Chan, LED_Segment_DMA_TD);
+  95   1                      /* clear spurious queued requests */
+  96   1                      CyDmaChSetRequest(LED_Segment_DMA_Chan, CPU_TERM_CHAIN);
+  97   1                      CyDmaChEnable(LED_Segment_DMA_Chan, 1);
+  98   1                      CyDmaChEnable(LED_Segment_DMA_Chan, 1);
+  99   1              #endif
+ 100   1              
+ 101   1              #ifndef LED_RAM_2_ctrl_reg__REMOVED /* removes this code if the control register is optimized out, this p
+             -revents build errors if nothing is connected to the LED compnent */
+ 102   1                      /* Common DMA configuration
+ 103   1                      Set DMA channels Bytes per burst, requests per burst, and upper 16 bits of source and destination */
+ 104   1                      LED_Common_DMA_Chan = LED_Common_DMA_DmaInitialize(LED_Common_DMA_BYTES_PER_BURST, LED_Common_DMA_REQUES
+             -T_PER_BURST, HI16(LED_Common_DMA_SRC_BASE), HI16(LED_Common_DMA_DST_BASE));
+ 105   1                      /* Configure the TD to transfer LED_Num_Commons bytes total, chain to itself, increment source address (
+             -read throught the common ram array) and issue a NRQ on completion */
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 3   
+
+ 106   1                      CyDmaTdSetConfiguration(LED_Common_DMA_TD, LED_Num_Commons , LED_Common_DMA_TD, LED_Common_DMA__TD_TERMO
+             -UT_EN | TD_INC_SRC_ADR);
+ 107   1                      /* Configure the TD to grab from the Common_RAM array and write it into the RAM_2 control register */
+ 108   1                      CyDmaTdSetAddress(LED_Common_DMA_TD, LO16((uint32)&(LED_Common_RAM[0])), LO16((uint32)&LED_RAM_2_Control
+             -));
+ 109   1                      /* set the channels initial TD */
+ 110   1                      CyDmaChSetInitialTd(LED_Common_DMA_Chan, LED_Common_DMA_TD);
+ 111   1                      /* clear spurious queued requests */
+ 112   1                      CyDmaChSetRequest(LED_Common_DMA_Chan, CPU_TERM_CHAIN);
+ 113   1                      CyDmaChEnable(LED_Common_DMA_Chan, 1);
+ 114   1                      CyDmaChEnable(LED_Common_DMA_Chan, 1);
+ 115   1              #endif
+ 116   1      
+ 117   1              #if LED_PWM_Enable
+ 118   1      
+ 119   1                      /* Brightness DMA configuration
+ 120   1                      Set DMA channels Bytes per burst, requests per burst, and upper 16 bits of source and destination */
+ 121   1                      LED_Brightness_DMA_Chan = LED_Brightness_DMA_DmaInitialize(LED_Brightness_DMA_BYTES_PER_BURST, LED_Brigh
+             -tness_DMA_REQUEST_PER_BURST, HI16(LED_Brightness_DMA_SRC_BASE), HI16(LED_Brightness_DMA_DST_BASE));
+ 122   1                      /* Configure the TD to transfer LED_Num_Commons bytes total, chain to itself, increment source address (
+             -read throught the brightness ram array) and issue a NRQ on completion */
+ 123   1                      CyDmaTdSetConfiguration(LED_Brightness_DMA_TD, LED_Num_Commons , LED_Brightness_DMA_TD, LED_Brightness_D
+             -MA__TD_TERMOUT_EN | TD_INC_SRC_ADR);
+ 124   1                      /* Configure the TD to grab from the Brightness_RAM array and write it into the PWM Duty Cycle register 
+             -*/
+ 125   1                      CyDmaTdSetAddress(LED_Brightness_DMA_TD, LO16((uint32)&(LED_Brightness_RAM[0])), LO16((uint32)LED_COM_PW
+             -M_COMPARE1_LSB_PTR));
+ 126   1                      /* set the channels initial TD */
+ 127   1                      CyDmaChSetInitialTd(LED_Brightness_DMA_Chan, LED_Brightness_DMA_TD);
+ 128   1                      /* clear spurious queued requests */
+ 129   1                      CyDmaChSetRequest(LED_Brightness_DMA_Chan, CPU_TERM_CHAIN);
+ 130   1                      CyDmaChEnable(LED_Brightness_DMA_Chan, 1);
+ 131   1                      CyDmaChEnable(LED_Brightness_DMA_Chan, 1);
+ 132   1                      
+ 133   1                      LED_COM_PWM_Start();
+ 134   1                      
+ 135   1              #endif
+ 136   1      }
+ 137          
+ 138          void LED_Stop()
+ 139          {
+ 140   1              LED_ClearDisplayAll(); /* clear the display ram to prevent LEDs from being driven while disabled */
+ 141   1              /* disable the DMA channels */
+ 142   1              CyDmaChSetRequest(LED_Segment_DMA_Chan, CPU_TERM_CHAIN);
+ 143   1              CyDmaChSetRequest(LED_Common_DMA_Chan, CPU_TERM_CHAIN);
+ 144   1              
+ 145   1              #if LED_PWM_Enable
+ 146   1                      /* disable the PWM */
+ 147   1                      LED_COM_PWM_Stop();
+ 148   1                      CyDmaChSetRequest(LED_Brightness_DMA_Chan, CPU_TERM_CHAIN);
+ 149   1              #endif
+ 150   1              
+ 151   1              return;
+ 152   1      }
+ 153          
+ 154          /* matrix LED display APIs */
+ 155          
+ 156          /* set the LED in the corresponding row and column.  Rows are the segments and the columns are the commons
+             -.  
+ 157          Rows greater than 8 will wrap (row % 8) and columns greater than LED_Num_Commons will wrap (col % LED_Num_
+             -Commons) */
+ 158          void LED_SetRC(uint8 row, uint8 col)
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 4   
+
+ 159          {
+ 160   1              LED_Segment_RAM[col % LED_Num_Commons] |= 1 << (row % 8);
+ 161   1              return;
+ 162   1      }
+ 163          
+ 164          /* clear the LED in the corresponding row and column.  Rows are the segments and the columns are the commo
+             -ns.  
+ 165          Rows greater than 8 will wrap (row % 8) and columns greater than LED_Num_Commons will wrap (col % LED_Num_
+             -Commons) */
+ 166          void LED_ClearRC(uint8 row, uint8 col)
+ 167          {
+ 168   1              LED_Segment_RAM[col % LED_Num_Commons] &= ~(1 << (row % 8));
+ 169   1              return;
+ 170   1      }
+ 171          
+ 172          /* toggle the LED in the corresponding row and column.  Rows are the segments and the columns are the comm
+             -ons. 
+ 173          Rows greater than 8 will wrap (row % 8) and columns greater than LED_Num_Commons will wrap (col % LED_Num_
+             -Commons) */
+ 174          void LED_ToggleRC(uint8 row, uint8 col)
+ 175          {
+ 176   1              LED_Segment_RAM[col % LED_Num_Commons] ^= 1 << (row % 8);
+ 177   1              return;
+ 178   1      }
+ 179          
+ 180          /* returns the state of the LED in the corresponding row and column.  Rows are the segments and the column
+             -s are the commons.  
+ 181          Rows greater than 8 will wrap (row % 8) and columns greater than LED_Num_Commons will wrap (col % LED_Num_
+             -Commons) */
+ 182          uint8 LED_GetRC(uint8 row, uint8 col)
+ 183          {
+ 184   1              return ((LED_Segment_RAM[col % LED_Num_Commons] & (1 << (row % 8))) >> row % 8) & 0x01;
+ 185   1      }
+ 186          
+ 187          /* write directly to the correspinding display ram.  The display number will wrap at LED_Num_Commons (disp
+             -lay % LED_Num_Commons) */
+ 188          void LED_SetDisplayRAM(uint8 value, uint8 display)
+ 189          {
+ 190   1              LED_Segment_RAM[display % LED_Num_Commons] = value;
+ 191   1              return;
+ 192   1      }
+ 193          
+ 194          /* Read the correspinding display ram.  The display number will wrap at LED_Num_Commons (display % LED_Num
+             -_Commons) */
+ 195          uint8 LED_GetDisplayRAM(uint8 display)
+ 196          {
+ 197   1              return LED_Segment_RAM[display % LED_Num_Commons];
+ 198   1      }
+ 199          
+ 200          /* clears the specified display.  if "display" is greater than the number of commons, the number will wrap
+             - (display % LED_Num_Commons) */
+ 201          void LED_ClearDisplay(uint8 display)
+ 202          {
+ 203   1              LED_Segment_RAM[display % LED_Num_Commons] = 0;
+ 204   1      }
+ 205          
+ 206          /* clears the entire display */
+ 207          void LED_ClearDisplayAll(void)
+ 208          {
+ 209   1              uint8 j;
+ 210   1              
+ 211   1              for(j = 0; j < LED_Num_Commons; j++)
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 5   
+
+ 212   1              {
+ 213   2                      LED_Segment_RAM[j] = 0;
+ 214   2              }
+ 215   1              return;
+ 216   1      }
+ 217          
+ 218          #if LED_Seg7_Support
+ 219                  
+ 220                  /* returns the value to be written into the LED_Segment_RAM[] in order to display the particular number *
+             -/
+ 221                  uint8 LED_DecodeNumber(uint8 input)
+ 222                  {
+ 223   1                      return LED_seg7_Table[(input & 0x0f)];
+ 224   1              }
+ 225                  
+ 226                  /* returns the value to be written into the LED_Segment_RAM[] in order to display the ascii alphabet char
+             -acter */
+ 227                  uint8 LED_DecodeAlpha(char input)
+ 228                  {
+ 229   1                      return LED_seg7_Alpha_Table[((input >= 97) ? input - 97 : input - 65) % 26];
+ 230   1              }
+ 231                  
+ 232                  /* sets or clears the decimal point on "display" based on the value of "value".  If the LSb of value is s
+             -et, the decimal point will be set
+ 233                  if the LSb of "value" is clear, the decimal point will be cleared. */
+ 234                  void LED_PutDecimalPoint(uint8 value, uint8 display)
+ 235                  {
+ 236   1                      LED_Segment_RAM[display % LED_Num_Commons] &= 0x7f; /* clear the DP */
+ 237   1                      LED_Segment_RAM[display % LED_Num_Commons] |= ((value << 7) & 0x80); /* set the DP (if requested) */
+ 238   1                      return;
+ 239   1              }
+ 240                  
+ 241                  /* returns the state of the decimal point for "display".  If the returned value is '1', the decimal point
+             - is set.  If the returned value is '0', the decimal point is not set */
+ 242                  uint8 LED_GetDecimalPoint(uint8 display)
+ 243                  {
+ 244   1                      return (LED_Segment_RAM[display % LED_Num_Commons] >> 7) & 0x01;
+ 245   1              }
+ 246                  
+ 247                  /* writes the ascii character "value" to the display "display"  if "display" is greater than the number o
+             -f commons, the number will wrap (display % LED_Num_Commons) */
+ 248                  void LED_PutCharacter(char value, uint8 display)
+ 249                  {
+ 250   1                      if(value >= 97 && value <= 122) /* a-z */
+ 251   1                      {
+ 252   2                              LED_Segment_RAM[display % LED_Num_Commons] = LED_seg7_Alpha_Table[value - 97];
+ 253   2                      }
+ 254   1                      else if(value >= 65 && value <= 90) /* A-Z */
+ 255   1                      {
+ 256   2                              LED_Segment_RAM[display % LED_Num_Commons] = LED_seg7_Alpha_Table[value - 65];
+ 257   2                      }
+ 258   1                      else if(value >= 48 && value <= 57) /* 0-9 */
+ 259   1                      {
+ 260   2                              LED_Segment_RAM[display % LED_Num_Commons] = LED_seg7_Table[value - 48];
+ 261   2                      }
+ 262   1                      else if(value == 45) /* - */
+ 263   1                      {
+ 264   2                              LED_Segment_RAM[display % LED_Num_Commons] = 0x40;
+ 265   2                      }
+ 266   1                      else if(value == 46) /* . */
+ 267   1                      {
+ 268   2                              LED_Segment_RAM[display % LED_Num_Commons] = 0x80;
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 6   
+
+ 269   2                      }
+ 270   1                      else if(value == 61) /* = */
+ 271   1                      {
+ 272   2                              LED_Segment_RAM[display % LED_Num_Commons] = 0x48;
+ 273   2                      }
+ 274   1                      else if(value == 95) /* _ */
+ 275   1                      {
+ 276   2                              LED_Segment_RAM[display % LED_Num_Commons] = 0x08;
+ 277   2                      }
+ 278   1                      else
+ 279   1                      {
+ 280   2                              LED_Segment_RAM[display % LED_Num_Commons] = 0;
+ 281   2                      }
+ 282   1                      return;
+ 283   1              }
+ 284                  
+ 285                  /* writes a string to the 7 segment display, starting with the the display "display".  if the string exte
+             -nds beyond LED_Num_Commons, then the string will be truncated */
+ 286                  void LED_PutString(char * string, uint8 display)
+ 287                  {
+ 288   1                      uint8 j;
+ 289   1                      
+ 290   1                      j = 0;
+ 291   1                      while((string[j] != 0) && (j < (LED_Num_Commons - display)))
+ 292   1                      {
+ 293   2                              LED_PutCharacter(string[j], display + j);
+ 294   2                              j++;
+ 295   2                      }
+ 296   1                      return;
+ 297   1              }
+ 298                  
+ 299                  /* draws the specified digit 0-9 onto the the display "display". if "display" is greater than the number 
+             -of commons, the number will wrap (display % LED_Num_Commons) */
+ 300                  void LED_SetNumberDec(uint8 value, uint8 display)
+ 301                  {
+ 302   1                      LED_Segment_RAM[display % LED_Num_Commons] = LED_seg7_Table[value % 10];
+ 303   1                      return;
+ 304   1              }
+ 305                  
+ 306                  /* draws the specified digit 0-F onto the the display "display". if "display" is greater than the number 
+             -of commons, the number will wrap (display % LED_Num_Commons) */
+ 307                  void LED_SetNumberHex(uint8 value, uint8 display)
+ 308                  {
+ 309   1                      LED_Segment_RAM[display % LED_Num_Commons] = LED_seg7_Table[value & 0x0f];
+ 310   1                      return;
+ 311   1              }
+ 312                  
+ 313                  /* displays signed integer values up to 8 characters long */
+ 314                  void LED_PutNumberInt(int32 value, uint8 display, uint8 digits)
+ 315                  {
+ 316   1                      uint8 j;
+ 317   1                      int32 divisors[8] = {1,10,100,1000,10000,100000,1000000,10000000}; 
+ 318   1                      int8 max_digits;
+ 319   1                      
+ 320   1                      if(value < 0) /* determine if the number needs a negative sign */
+ 321   1                      {
+ 322   2                              LED_PutCharacter( '-', display);
+ 323   2                              display++;
+ 324   2                              digits--;
+ 325   2                              value = -value;
+ 326   2                      }
+ 327   1                      
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 7   
+
+ 328   1                      max_digits = (display > 8 ? 8 : digits);
+ 329   1                      
+ 330   1                      for(j = 0; j < max_digits; j++)
+ 331   1                      {
+ 332   2                              LED_SetNumberDec((value / divisors[max_digits - j-1]) % 10, display + j);
+ 333   2                      }
+ 334   1                      return;
+ 335   1              }
+ 336                  
+ 337                  /* displays hexadecimal values, up to 8 characters longs */
+ 338                  void LED_PutNumberHex(uint32 value, uint8 display, uint8 digits)
+ 339                  {
+ 340   1                      uint8 j;
+ 341   1                      int8 max_digits;
+ 342   1                      
+ 343   1                      max_digits = (display > 8 ? 8 : digits);
+ 344   1                      
+ 345   1                      for(j = 0; j < max_digits; j++)
+ 346   1                      {
+ 347   2                              LED_SetNumberHex(value >> ((max_digits-1)*4 - (j*4)) & 0x0f, display + j);
+ 348   2                      }
+ 349   1                      return;
+ 350   1              }
+ 351          #endif
+ 352          
+ 353          #if LED_PWM_Enable
+ 354          
+ 355                  /* write directly to the correspinding brightness ram.  The display number will wrap at LED_Num_Commons (
+             -display % LED_Num_Commons) */
+ 356                  void LED_SetBrightnessRAM(uint8 value, uint8 display)
+ 357                  {
+ 358   1                      LED_Brightness_RAM[display % LED_Num_Commons] = value;
+ 359   1                      return;
+ 360   1              }
+ 361          
+ 362                  /* Read the correspinding brightness ram.  The display number will wrap at LED_Num_Commons (display % LED
+             -_Num_Commons) */
+ 363                  uint8 LED_GetBrightnessRAM(uint8 display)
+ 364                  {
+ 365   1                      return LED_Brightness_RAM[display % LED_Num_Commons];
+ 366   1              }
+ 367                  
+ 368          #endif
+ 369          
+ 370          /* [] END OF FILE */
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 8   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION LED_Start (BEGIN)
+                                           ; SOURCE LINE # 69
+                                           ; SOURCE LINE # 70
+                                           ; SOURCE LINE # 73
+0000 900000      R     MOV     DPTR,#LED_InitVar
+0003 E0                MOVX    A,@DPTR
+0004 FF                MOV     R7,A
+0005 EF                MOV     A,R7
+0006 701E              JNZ     ?C0001
+                                           ; SOURCE LINE # 74
+                                           ; SOURCE LINE # 76
+0008 120000      E     LCALL   CyDmaTdAllocate
+000B 900000      R     MOV     DPTR,#LED_Segment_DMA_TD
+000E EF                MOV     A,R7
+000F F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 77
+0010 120000      E     LCALL   CyDmaTdAllocate
+0013 900000      R     MOV     DPTR,#LED_Common_DMA_TD
+0016 EF                MOV     A,R7
+0017 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 79
+0018 120000      E     LCALL   CyDmaTdAllocate
+001B 900000      R     MOV     DPTR,#LED_Brightness_DMA_TD
+001E EF                MOV     A,R7
+001F F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 82
+0020 900000      R     MOV     DPTR,#LED_InitVar
+0023 7401              MOV     A,#01H
+0025 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 83
+0026         ?C0001:
+                                           ; SOURCE LINE # 88
+0026 900000      E     MOV     DPTR,#?_LED_Segment_DMA_DmaInitialize?BYTE+04H
+0029 E4                CLR     A
+002A F0                MOVX    @DPTR,A
+002B A3                INC     DPTR
+002C E4                CLR     A
+002D F0                MOVX    @DPTR,A
+002E 7B00              MOV     R3,#00H
+0030 7A00              MOV     R2,#00H
+0032 7D01              MOV     R5,#01H
+0034 7F01              MOV     R7,#01H
+0036 120000      E     LCALL   _LED_Segment_DMA_DmaInitialize
+0039 900000      R     MOV     DPTR,#LED_Segment_DMA_Chan
+003C EF                MOV     A,R7
+003D F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 90
+003E 900000      R     MOV     DPTR,#LED_Segment_DMA_TD
+0041 E0                MOVX    A,@DPTR
+0042 FF                MOV     R7,A
+0043 900000      R     MOV     DPTR,#LED_Segment_DMA_TD
+0046 E0                MOVX    A,@DPTR
+0047 FB                MOV     R3,A
+0048 900000      E     MOV     DPTR,#?_CyDmaTdSetConfiguration?BYTE+04H
+004B 7401              MOV     A,#01H
+004D F0                MOVX    @DPTR,A
+004E 7D04              MOV     R5,#04H
+0050 7C00              MOV     R4,#00H
+0052 120000      E     LCALL   _CyDmaTdSetConfiguration
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 9   
+
+                                           ; SOURCE LINE # 92
+0055 900000      R     MOV     DPTR,#LED_Segment_DMA_TD
+0058 E0                MOVX    A,@DPTR
+0059 FF                MOV     R7,A
+005A 7B01              MOV     R3,#01H
+005C 7A00        R     MOV     R2,#HIGH LED_Segment_RAM
+005E 7900        R     MOV     R1,#LOW LED_Segment_RAM
+0060 AC02              MOV     R4,AR2
+0062 AD01              MOV     R5,AR1
+0064 7B77              MOV     R3,#077H
+0066 7A65              MOV     R2,#065H
+0068 120000      E     LCALL   _CyDmaTdSetAddress
+                                           ; SOURCE LINE # 94
+006B 900000      R     MOV     DPTR,#LED_Segment_DMA_Chan
+006E E0                MOVX    A,@DPTR
+006F FF                MOV     R7,A
+0070 900000      R     MOV     DPTR,#LED_Segment_DMA_TD
+0073 E0                MOVX    A,@DPTR
+0074 FD                MOV     R5,A
+0075 120000      E     LCALL   _CyDmaChSetInitialTd
+                                           ; SOURCE LINE # 96
+0078 900000      R     MOV     DPTR,#LED_Segment_DMA_Chan
+007B E0                MOVX    A,@DPTR
+007C FF                MOV     R7,A
+007D 7D04              MOV     R5,#04H
+007F 120000      E     LCALL   _CyDmaChSetRequest
+                                           ; SOURCE LINE # 97
+0082 900000      R     MOV     DPTR,#LED_Segment_DMA_Chan
+0085 E0                MOVX    A,@DPTR
+0086 FF                MOV     R7,A
+0087 7D01              MOV     R5,#01H
+0089 120000      E     LCALL   _CyDmaChEnable
+                                           ; SOURCE LINE # 98
+008C 900000      R     MOV     DPTR,#LED_Segment_DMA_Chan
+008F E0                MOVX    A,@DPTR
+0090 FF                MOV     R7,A
+0091 7D01              MOV     R5,#01H
+0093 120000      E     LCALL   _CyDmaChEnable
+                                           ; SOURCE LINE # 104
+0096 900000      E     MOV     DPTR,#?_LED_Common_DMA_DmaInitialize?BYTE+04H
+0099 E4                CLR     A
+009A F0                MOVX    @DPTR,A
+009B A3                INC     DPTR
+009C E4                CLR     A
+009D F0                MOVX    @DPTR,A
+009E 7B00              MOV     R3,#00H
+00A0 7A00              MOV     R2,#00H
+00A2 7D01              MOV     R5,#01H
+00A4 7F01              MOV     R7,#01H
+00A6 120000      E     LCALL   _LED_Common_DMA_DmaInitialize
+00A9 900000      R     MOV     DPTR,#LED_Common_DMA_Chan
+00AC EF                MOV     A,R7
+00AD F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 106
+00AE 900000      R     MOV     DPTR,#LED_Common_DMA_TD
+00B1 E0                MOVX    A,@DPTR
+00B2 FF                MOV     R7,A
+00B3 900000      R     MOV     DPTR,#LED_Common_DMA_TD
+00B6 E0                MOVX    A,@DPTR
+00B7 FB                MOV     R3,A
+00B8 900000      E     MOV     DPTR,#?_CyDmaTdSetConfiguration?BYTE+04H
+00BB 7401              MOV     A,#01H
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 10  
+
+00BD F0                MOVX    @DPTR,A
+00BE 7D04              MOV     R5,#04H
+00C0 7C00              MOV     R4,#00H
+00C2 120000      E     LCALL   _CyDmaTdSetConfiguration
+                                           ; SOURCE LINE # 108
+00C5 900000      R     MOV     DPTR,#LED_Common_DMA_TD
+00C8 E0                MOVX    A,@DPTR
+00C9 FF                MOV     R7,A
+00CA 7B01              MOV     R3,#01H
+00CC 7A00        R     MOV     R2,#HIGH LED_Common_RAM
+00CE 7900        R     MOV     R1,#LOW LED_Common_RAM
+00D0 AC02              MOV     R4,AR2
+00D2 AD01              MOV     R5,AR1
+00D4 7B73              MOV     R3,#073H
+00D6 7A64              MOV     R2,#064H
+00D8 120000      E     LCALL   _CyDmaTdSetAddress
+                                           ; SOURCE LINE # 110
+00DB 900000      R     MOV     DPTR,#LED_Common_DMA_Chan
+00DE E0                MOVX    A,@DPTR
+00DF FF                MOV     R7,A
+00E0 900000      R     MOV     DPTR,#LED_Common_DMA_TD
+00E3 E0                MOVX    A,@DPTR
+00E4 FD                MOV     R5,A
+00E5 120000      E     LCALL   _CyDmaChSetInitialTd
+                                           ; SOURCE LINE # 112
+00E8 900000      R     MOV     DPTR,#LED_Common_DMA_Chan
+00EB E0                MOVX    A,@DPTR
+00EC FF                MOV     R7,A
+00ED 7D04              MOV     R5,#04H
+00EF 120000      E     LCALL   _CyDmaChSetRequest
+                                           ; SOURCE LINE # 113
+00F2 900000      R     MOV     DPTR,#LED_Common_DMA_Chan
+00F5 E0                MOVX    A,@DPTR
+00F6 FF                MOV     R7,A
+00F7 7D01              MOV     R5,#01H
+00F9 120000      E     LCALL   _CyDmaChEnable
+                                           ; SOURCE LINE # 114
+00FC 900000      R     MOV     DPTR,#LED_Common_DMA_Chan
+00FF E0                MOVX    A,@DPTR
+0100 FF                MOV     R7,A
+0101 7D01              MOV     R5,#01H
+0103 120000      E     LCALL   _CyDmaChEnable
+                                           ; SOURCE LINE # 121
+0106 900000      E     MOV     DPTR,#?_LED_Brightness_DMA_DmaInitialize?BYTE+04H
+0109 E4                CLR     A
+010A F0                MOVX    @DPTR,A
+010B A3                INC     DPTR
+010C E4                CLR     A
+010D F0                MOVX    @DPTR,A
+010E 7B00              MOV     R3,#00H
+0110 7A00              MOV     R2,#00H
+0112 7D01              MOV     R5,#01H
+0114 7F01              MOV     R7,#01H
+0116 120000      E     LCALL   _LED_Brightness_DMA_DmaInitialize
+0119 900000      R     MOV     DPTR,#LED_Brightness_DMA_Chan
+011C EF                MOV     A,R7
+011D F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 123
+011E 900000      R     MOV     DPTR,#LED_Brightness_DMA_TD
+0121 E0                MOVX    A,@DPTR
+0122 FF                MOV     R7,A
+0123 900000      R     MOV     DPTR,#LED_Brightness_DMA_TD
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 11  
+
+0126 E0                MOVX    A,@DPTR
+0127 FB                MOV     R3,A
+0128 900000      E     MOV     DPTR,#?_CyDmaTdSetConfiguration?BYTE+04H
+012B 7401              MOV     A,#01H
+012D F0                MOVX    @DPTR,A
+012E 7D04              MOV     R5,#04H
+0130 7C00              MOV     R4,#00H
+0132 120000      E     LCALL   _CyDmaTdSetConfiguration
+                                           ; SOURCE LINE # 125
+0135 900000      R     MOV     DPTR,#LED_Brightness_DMA_TD
+0138 E0                MOVX    A,@DPTR
+0139 FF                MOV     R7,A
+013A 7B01              MOV     R3,#01H
+013C 7A00        R     MOV     R2,#HIGH LED_Brightness_RAM
+013E 7900        R     MOV     R1,#LOW LED_Brightness_RAM
+0140 AC02              MOV     R4,AR2
+0142 AD01              MOV     R5,AR1
+0144 7B22              MOV     R3,#022H
+0146 7A64              MOV     R2,#064H
+0148 120000      E     LCALL   _CyDmaTdSetAddress
+                                           ; SOURCE LINE # 127
+014B 900000      R     MOV     DPTR,#LED_Brightness_DMA_Chan
+014E E0                MOVX    A,@DPTR
+014F FF                MOV     R7,A
+0150 900000      R     MOV     DPTR,#LED_Brightness_DMA_TD
+0153 E0                MOVX    A,@DPTR
+0154 FD                MOV     R5,A
+0155 120000      E     LCALL   _CyDmaChSetInitialTd
+                                           ; SOURCE LINE # 129
+0158 900000      R     MOV     DPTR,#LED_Brightness_DMA_Chan
+015B E0                MOVX    A,@DPTR
+015C FF                MOV     R7,A
+015D 7D04              MOV     R5,#04H
+015F 120000      E     LCALL   _CyDmaChSetRequest
+                                           ; SOURCE LINE # 130
+0162 900000      R     MOV     DPTR,#LED_Brightness_DMA_Chan
+0165 E0                MOVX    A,@DPTR
+0166 FF                MOV     R7,A
+0167 7D01              MOV     R5,#01H
+0169 120000      E     LCALL   _CyDmaChEnable
+                                           ; SOURCE LINE # 131
+016C 900000      R     MOV     DPTR,#LED_Brightness_DMA_Chan
+016F E0                MOVX    A,@DPTR
+0170 FF                MOV     R7,A
+0171 7D01              MOV     R5,#01H
+0173 120000      E     LCALL   _CyDmaChEnable
+                                           ; SOURCE LINE # 133
+0176 120000      E     LCALL   LED_COM_PWM_Start
+                                           ; SOURCE LINE # 136
+0179 22                RET     
+             ; FUNCTION LED_Start (END)
+
+             ; FUNCTION LED_Stop (BEGIN)
+                                           ; SOURCE LINE # 138
+                                           ; SOURCE LINE # 139
+                                           ; SOURCE LINE # 140
+0000 120000      R     LCALL   LED_ClearDisplayAll
+                                           ; SOURCE LINE # 142
+0003 900000      R     MOV     DPTR,#LED_Segment_DMA_Chan
+0006 E0                MOVX    A,@DPTR
+0007 FF                MOV     R7,A
+0008 7D04              MOV     R5,#04H
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 12  
+
+000A 120000      E     LCALL   _CyDmaChSetRequest
+                                           ; SOURCE LINE # 143
+000D 900000      R     MOV     DPTR,#LED_Common_DMA_Chan
+0010 E0                MOVX    A,@DPTR
+0011 FF                MOV     R7,A
+0012 7D04              MOV     R5,#04H
+0014 120000      E     LCALL   _CyDmaChSetRequest
+                                           ; SOURCE LINE # 147
+0017 120000      E     LCALL   LED_COM_PWM_Stop
+                                           ; SOURCE LINE # 148
+001A 900000      R     MOV     DPTR,#LED_Brightness_DMA_Chan
+001D E0                MOVX    A,@DPTR
+001E FF                MOV     R7,A
+001F 7D04              MOV     R5,#04H
+0021 120000      E     LCALL   _CyDmaChSetRequest
+                                           ; SOURCE LINE # 152
+0024         ?C0003:
+0024 22                RET     
+             ; FUNCTION LED_Stop (END)
+
+             ; FUNCTION _LED_SetRC (BEGIN)
+                                           ; SOURCE LINE # 158
+0000 900000      R     MOV     DPTR,#row
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#col
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 159
+                                           ; SOURCE LINE # 160
+000A 900000      R     MOV     DPTR,#col
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F EF                MOV     A,R7
+0010 5403              ANL     A,#03H
+0012 FF                MOV     R7,A
+0013 7400        R     MOV     A,#LOW LED_Segment_RAM
+0015 2F                ADD     A,R7
+0016 F582              MOV     DPL,A
+0018 E4                CLR     A
+0019 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+001B F583              MOV     DPH,A
+001D C083              PUSH    DPH
+001F C082              PUSH    DPL
+0021 E0                MOVX    A,@DPTR
+0022 FF                MOV     R7,A
+0023 900000      R     MOV     DPTR,#row
+0026 E0                MOVX    A,@DPTR
+0027 FE                MOV     R6,A
+0028 EE                MOV     A,R6
+0029 5407              ANL     A,#07H
+002B FE                MOV     R6,A
+002C 7401              MOV     A,#01H
+002E A806              MOV     R0,AR6
+0030 08                INC     R0
+0031 8002              SJMP    ?C0057
+0033         ?C0056:
+0033 C3                CLR     C
+0034 33                RLC     A
+0035         ?C0057:
+0035 D8FC              DJNZ    R0,?C0056
+0037 FE                MOV     R6,A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 13  
+
+0038 EF                MOV     A,R7
+0039 4E                ORL     A,R6
+003A FF                MOV     R7,A
+003B D082              POP     DPL
+003D D083              POP     DPH
+003F EF                MOV     A,R7
+0040 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 162
+0041         ?C0004:
+0041 22                RET     
+             ; FUNCTION _LED_SetRC (END)
+
+             ; FUNCTION _LED_ClearRC (BEGIN)
+                                           ; SOURCE LINE # 166
+0000 900000      R     MOV     DPTR,#row
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#col
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 167
+                                           ; SOURCE LINE # 168
+000A 900000      R     MOV     DPTR,#col
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F EF                MOV     A,R7
+0010 5403              ANL     A,#03H
+0012 FF                MOV     R7,A
+0013 7400        R     MOV     A,#LOW LED_Segment_RAM
+0015 2F                ADD     A,R7
+0016 F582              MOV     DPL,A
+0018 E4                CLR     A
+0019 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+001B F583              MOV     DPH,A
+001D C083              PUSH    DPH
+001F C082              PUSH    DPL
+0021 E0                MOVX    A,@DPTR
+0022 FF                MOV     R7,A
+0023 900000      R     MOV     DPTR,#row
+0026 E0                MOVX    A,@DPTR
+0027 FE                MOV     R6,A
+0028 EE                MOV     A,R6
+0029 5407              ANL     A,#07H
+002B FE                MOV     R6,A
+002C 7401              MOV     A,#01H
+002E A806              MOV     R0,AR6
+0030 08                INC     R0
+0031 8002              SJMP    ?C0059
+0033         ?C0058:
+0033 C3                CLR     C
+0034 33                RLC     A
+0035         ?C0059:
+0035 D8FC              DJNZ    R0,?C0058
+0037 FE                MOV     R6,A
+0038 EE                MOV     A,R6
+0039 F4                CPL     A
+003A FE                MOV     R6,A
+003B EF                MOV     A,R7
+003C 5E                ANL     A,R6
+003D FF                MOV     R7,A
+003E D082              POP     DPL
+0040 D083              POP     DPH
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 14  
+
+0042 EF                MOV     A,R7
+0043 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 170
+0044         ?C0005:
+0044 22                RET     
+             ; FUNCTION _LED_ClearRC (END)
+
+             ; FUNCTION _LED_ToggleRC (BEGIN)
+                                           ; SOURCE LINE # 174
+0000 900000      R     MOV     DPTR,#row
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#col
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 175
+                                           ; SOURCE LINE # 176
+000A 900000      R     MOV     DPTR,#col
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F EF                MOV     A,R7
+0010 5403              ANL     A,#03H
+0012 FF                MOV     R7,A
+0013 7400        R     MOV     A,#LOW LED_Segment_RAM
+0015 2F                ADD     A,R7
+0016 F582              MOV     DPL,A
+0018 E4                CLR     A
+0019 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+001B F583              MOV     DPH,A
+001D C083              PUSH    DPH
+001F C082              PUSH    DPL
+0021 E0                MOVX    A,@DPTR
+0022 FF                MOV     R7,A
+0023 900000      R     MOV     DPTR,#row
+0026 E0                MOVX    A,@DPTR
+0027 FE                MOV     R6,A
+0028 EE                MOV     A,R6
+0029 5407              ANL     A,#07H
+002B FE                MOV     R6,A
+002C 7401              MOV     A,#01H
+002E A806              MOV     R0,AR6
+0030 08                INC     R0
+0031 8002              SJMP    ?C0061
+0033         ?C0060:
+0033 C3                CLR     C
+0034 33                RLC     A
+0035         ?C0061:
+0035 D8FC              DJNZ    R0,?C0060
+0037 FE                MOV     R6,A
+0038 EF                MOV     A,R7
+0039 6E                XRL     A,R6
+003A FF                MOV     R7,A
+003B D082              POP     DPL
+003D D083              POP     DPH
+003F EF                MOV     A,R7
+0040 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 178
+0041         ?C0006:
+0041 22                RET     
+             ; FUNCTION _LED_ToggleRC (END)
+
+             ; FUNCTION _LED_GetRC (BEGIN)
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 15  
+
+                                           ; SOURCE LINE # 182
+0000 900000      R     MOV     DPTR,#row
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#col
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 183
+                                           ; SOURCE LINE # 184
+000A 900000      R     MOV     DPTR,#col
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F EF                MOV     A,R7
+0010 5403              ANL     A,#03H
+0012 FF                MOV     R7,A
+0013 7400        R     MOV     A,#LOW LED_Segment_RAM
+0015 2F                ADD     A,R7
+0016 F582              MOV     DPL,A
+0018 E4                CLR     A
+0019 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+001B F583              MOV     DPH,A
+001D E0                MOVX    A,@DPTR
+001E FF                MOV     R7,A
+001F EF                MOV     A,R7
+0020 FD                MOV     R5,A
+0021 7C00              MOV     R4,#00H
+0023 900000      R     MOV     DPTR,#row
+0026 E0                MOVX    A,@DPTR
+0027 FF                MOV     R7,A
+0028 EF                MOV     A,R7
+0029 5407              ANL     A,#07H
+002B FF                MOV     R7,A
+002C 7401              MOV     A,#01H
+002E 7E00              MOV     R6,#00H
+0030 A807              MOV     R0,AR7
+0032 08                INC     R0
+0033 8005              SJMP    ?C0063
+0035         ?C0062:
+0035 C3                CLR     C
+0036 33                RLC     A
+0037 CE                XCH     A,R6
+0038 33                RLC     A
+0039 CE                XCH     A,R6
+003A         ?C0063:
+003A D8F9              DJNZ    R0,?C0062
+003C FF                MOV     R7,A
+003D EE                MOV     A,R6
+003E 5C                ANL     A,R4
+003F FE                MOV     R6,A
+0040 EF                MOV     A,R7
+0041 5D                ANL     A,R5
+0042 FF                MOV     R7,A
+0043 900000      R     MOV     DPTR,#row
+0046 E0                MOVX    A,@DPTR
+0047 FD                MOV     R5,A
+0048 ED                MOV     A,R5
+0049 5407              ANL     A,#07H
+004B FD                MOV     R5,A
+004C EF                MOV     A,R7
+004D A805              MOV     R0,AR5
+004F 08                INC     R0
+0050 8006              SJMP    ?C0065
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 16  
+
+0052         ?C0064:
+0052 CE                XCH     A,R6
+0053 A2E7              MOV     C,ACC.7
+0055 13                RRC     A
+0056 CE                XCH     A,R6
+0057 13                RRC     A
+0058         ?C0065:
+0058 D8F8              DJNZ    R0,?C0064
+005A FF                MOV     R7,A
+005B EF                MOV     A,R7
+005C 5401              ANL     A,#01H
+005E FF                MOV     R7,A
+                                           ; SOURCE LINE # 185
+005F         ?C0007:
+005F 22                RET     
+             ; FUNCTION _LED_GetRC (END)
+
+             ; FUNCTION _LED_SetDisplayRAM (BEGIN)
+                                           ; SOURCE LINE # 188
+0000 900000      R     MOV     DPTR,#value
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#display
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 189
+                                           ; SOURCE LINE # 190
+000A 900000      R     MOV     DPTR,#value
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F 900000      R     MOV     DPTR,#display
+0012 E0                MOVX    A,@DPTR
+0013 FE                MOV     R6,A
+0014 EE                MOV     A,R6
+0015 5403              ANL     A,#03H
+0017 FE                MOV     R6,A
+0018 7400        R     MOV     A,#LOW LED_Segment_RAM
+001A 2E                ADD     A,R6
+001B F582              MOV     DPL,A
+001D E4                CLR     A
+001E 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0020 F583              MOV     DPH,A
+0022 EF                MOV     A,R7
+0023 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 192
+0024         ?C0008:
+0024 22                RET     
+             ; FUNCTION _LED_SetDisplayRAM (END)
+
+             ; FUNCTION _LED_GetDisplayRAM (BEGIN)
+                                           ; SOURCE LINE # 195
+0000 900000      R     MOV     DPTR,#display
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 196
+                                           ; SOURCE LINE # 197
+0005 900000      R     MOV     DPTR,#display
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A EF                MOV     A,R7
+000B 5403              ANL     A,#03H
+000D FF                MOV     R7,A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 17  
+
+000E 7400        R     MOV     A,#LOW LED_Segment_RAM
+0010 2F                ADD     A,R7
+0011 F582              MOV     DPL,A
+0013 E4                CLR     A
+0014 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0016 F583              MOV     DPH,A
+0018 E0                MOVX    A,@DPTR
+0019 FF                MOV     R7,A
+                                           ; SOURCE LINE # 198
+001A         ?C0009:
+001A 22                RET     
+             ; FUNCTION _LED_GetDisplayRAM (END)
+
+             ; FUNCTION _LED_ClearDisplay (BEGIN)
+                                           ; SOURCE LINE # 201
+0000 900000      R     MOV     DPTR,#display
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 202
+                                           ; SOURCE LINE # 203
+0005 900000      R     MOV     DPTR,#display
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A EF                MOV     A,R7
+000B 5403              ANL     A,#03H
+000D FF                MOV     R7,A
+000E 7400        R     MOV     A,#LOW LED_Segment_RAM
+0010 2F                ADD     A,R7
+0011 F582              MOV     DPL,A
+0013 E4                CLR     A
+0014 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0016 F583              MOV     DPH,A
+0018 E4                CLR     A
+0019 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 204
+001A 22                RET     
+             ; FUNCTION _LED_ClearDisplay (END)
+
+             ; FUNCTION LED_ClearDisplayAll (BEGIN)
+                                           ; SOURCE LINE # 207
+                                           ; SOURCE LINE # 208
+                                           ; SOURCE LINE # 211
+0000 900000      R     MOV     DPTR,#j
+0003 E4                CLR     A
+0004 F0                MOVX    @DPTR,A
+0005         ?C0011:
+0005 900000      R     MOV     DPTR,#j
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A EF                MOV     A,R7
+000B C3                CLR     C
+000C 9404              SUBB    A,#04H
+000E 5019              JNC     ?C0014
+                                           ; SOURCE LINE # 212
+                                           ; SOURCE LINE # 213
+0010 900000      R     MOV     DPTR,#j
+0013 E0                MOVX    A,@DPTR
+0014 FF                MOV     R7,A
+0015 7400        R     MOV     A,#LOW LED_Segment_RAM
+0017 2F                ADD     A,R7
+0018 F582              MOV     DPL,A
+001A E4                CLR     A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 18  
+
+001B 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+001D F583              MOV     DPH,A
+001F E4                CLR     A
+0020 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 214
+0021 900000      R     MOV     DPTR,#j
+0024 E0                MOVX    A,@DPTR
+0025 04                INC     A
+0026 F0                MOVX    @DPTR,A
+0027 80DC              SJMP    ?C0011
+                                           ; SOURCE LINE # 216
+0029         ?C0014:
+0029 22                RET     
+             ; FUNCTION LED_ClearDisplayAll (END)
+
+             ; FUNCTION _LED_DecodeNumber (BEGIN)
+                                           ; SOURCE LINE # 221
+0000 900000      R     MOV     DPTR,#input
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 222
+                                           ; SOURCE LINE # 223
+0005 900000      R     MOV     DPTR,#input
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A EF                MOV     A,R7
+000B 540F              ANL     A,#0FH
+000D FF                MOV     R7,A
+000E 7400        R     MOV     A,#LOW LED_seg7_Table
+0010 2F                ADD     A,R7
+0011 F582              MOV     DPL,A
+0013 E4                CLR     A
+0014 3400        R     ADDC    A,#HIGH LED_seg7_Table
+0016 F583              MOV     DPH,A
+0018 E0                MOVX    A,@DPTR
+0019 FF                MOV     R7,A
+                                           ; SOURCE LINE # 224
+001A         ?C0015:
+001A 22                RET     
+             ; FUNCTION _LED_DecodeNumber (END)
+
+             ; FUNCTION _LED_DecodeAlpha (BEGIN)
+                                           ; SOURCE LINE # 227
+0000 900000      R     MOV     DPTR,#input
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 228
+                                           ; SOURCE LINE # 229
+0005 900000      R     MOV     DPTR,#input
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A C3                CLR     C
+000B EF                MOV     A,R7
+000C 6480              XRL     A,#080H
+000E 94E1              SUBB    A,#0E1H
+0010 400B              JC      ?C0016
+0012 900000      R     MOV     DPTR,#input
+0015 E0                MOVX    A,@DPTR
+0016 FF                MOV     R7,A
+0017 EF                MOV     A,R7
+0018 249F              ADD     A,#09FH
+001A FF                MOV     R7,A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 19  
+
+001B 8009              SJMP    ?C0017
+001D         ?C0016:
+001D 900000      R     MOV     DPTR,#input
+0020 E0                MOVX    A,@DPTR
+0021 FF                MOV     R7,A
+0022 EF                MOV     A,R7
+0023 24BF              ADD     A,#0BFH
+0025 FF                MOV     R7,A
+0026         ?C0017:
+0026 EF                MOV     A,R7
+0027 75F01A            MOV     B,#01AH
+002A 120000      E     LCALL   ?C?SCDIV
+002D AFF0              MOV     R7,B
+002F EF                MOV     A,R7
+0030 33                RLC     A
+0031 95E0              SUBB    A,ACC
+0033 FE                MOV     R6,A
+0034 7400        R     MOV     A,#LOW LED_seg7_Alpha_Table
+0036 2F                ADD     A,R7
+0037 F582              MOV     DPL,A
+0039 7400        R     MOV     A,#HIGH LED_seg7_Alpha_Table
+003B 3E                ADDC    A,R6
+003C F583              MOV     DPH,A
+003E E0                MOVX    A,@DPTR
+003F FF                MOV     R7,A
+                                           ; SOURCE LINE # 230
+0040         ?C0018:
+0040 22                RET     
+             ; FUNCTION _LED_DecodeAlpha (END)
+
+             ; FUNCTION _LED_PutDecimalPoint (BEGIN)
+                                           ; SOURCE LINE # 234
+0000 900000      R     MOV     DPTR,#value
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#display
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 235
+                                           ; SOURCE LINE # 236
+000A 900000      R     MOV     DPTR,#display
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F EF                MOV     A,R7
+0010 5403              ANL     A,#03H
+0012 FF                MOV     R7,A
+0013 7400        R     MOV     A,#LOW LED_Segment_RAM
+0015 2F                ADD     A,R7
+0016 F582              MOV     DPL,A
+0018 E4                CLR     A
+0019 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+001B F583              MOV     DPH,A
+001D E0                MOVX    A,@DPTR
+001E FF                MOV     R7,A
+001F EF                MOV     A,R7
+0020 547F              ANL     A,#07FH
+0022 FF                MOV     R7,A
+0023 EF                MOV     A,R7
+0024 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 237
+0025 900000      R     MOV     DPTR,#display
+0028 E0                MOVX    A,@DPTR
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 20  
+
+0029 FF                MOV     R7,A
+002A EF                MOV     A,R7
+002B 5403              ANL     A,#03H
+002D FF                MOV     R7,A
+002E 7400        R     MOV     A,#LOW LED_Segment_RAM
+0030 2F                ADD     A,R7
+0031 F582              MOV     DPL,A
+0033 E4                CLR     A
+0034 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0036 F583              MOV     DPH,A
+0038 C083              PUSH    DPH
+003A C082              PUSH    DPL
+003C E0                MOVX    A,@DPTR
+003D FF                MOV     R7,A
+003E 900000      R     MOV     DPTR,#value
+0041 E0                MOVX    A,@DPTR
+0042 FE                MOV     R6,A
+0043 EE                MOV     A,R6
+0044 C4                SWAP    A
+0045 33                RLC     A
+0046 33                RLC     A
+0047 33                RLC     A
+0048 5480              ANL     A,#080H
+004A FE                MOV     R6,A
+004B EE                MOV     A,R6
+004C 5480              ANL     A,#080H
+004E FE                MOV     R6,A
+004F EF                MOV     A,R7
+0050 4E                ORL     A,R6
+0051 FF                MOV     R7,A
+0052 D082              POP     DPL
+0054 D083              POP     DPH
+0056 EF                MOV     A,R7
+0057 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 239
+0058         ?C0019:
+0058 22                RET     
+             ; FUNCTION _LED_PutDecimalPoint (END)
+
+             ; FUNCTION _LED_GetDecimalPoint (BEGIN)
+                                           ; SOURCE LINE # 242
+0000 900000      R     MOV     DPTR,#display
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 243
+                                           ; SOURCE LINE # 244
+0005 900000      R     MOV     DPTR,#display
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A EF                MOV     A,R7
+000B 5403              ANL     A,#03H
+000D FF                MOV     R7,A
+000E 7400        R     MOV     A,#LOW LED_Segment_RAM
+0010 2F                ADD     A,R7
+0011 F582              MOV     DPL,A
+0013 E4                CLR     A
+0014 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0016 F583              MOV     DPH,A
+0018 E0                MOVX    A,@DPTR
+0019 FF                MOV     R7,A
+001A EF                MOV     A,R7
+001B C4                SWAP    A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 21  
+
+001C 13                RRC     A
+001D 13                RRC     A
+001E 13                RRC     A
+001F 5401              ANL     A,#01H
+0021 FF                MOV     R7,A
+0022 EF                MOV     A,R7
+0023 5401              ANL     A,#01H
+0025 FF                MOV     R7,A
+                                           ; SOURCE LINE # 245
+0026         ?C0020:
+0026 22                RET     
+             ; FUNCTION _LED_GetDecimalPoint (END)
+
+             ; FUNCTION _LED_PutCharacter (BEGIN)
+                                           ; SOURCE LINE # 248
+0000 900000      R     MOV     DPTR,#value
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#display
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 249
+                                           ; SOURCE LINE # 250
+000A 900000      R     MOV     DPTR,#value
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F C3                CLR     C
+0010 EF                MOV     A,R7
+0011 6480              XRL     A,#080H
+0013 94E1              SUBB    A,#0E1H
+0015 4039              JC      ?C0021
+0017 900000      R     MOV     DPTR,#value
+001A E0                MOVX    A,@DPTR
+001B FF                MOV     R7,A
+001C D3                SETB    C
+001D EF                MOV     A,R7
+001E 6480              XRL     A,#080H
+0020 94FA              SUBB    A,#0FAH
+0022 502C              JNC     ?C0021
+                                           ; SOURCE LINE # 251
+                                           ; SOURCE LINE # 252
+0024 900000      R     MOV     DPTR,#value
+0027 E0                MOVX    A,@DPTR
+0028 FF                MOV     R7,A
+0029 EF                MOV     A,R7
+002A 33                RLC     A
+002B 95E0              SUBB    A,ACC
+002D FE                MOV     R6,A
+002E 7400        R     MOV     A,#LOW LED_seg7_Alpha_Table+0FF9FH
+0030 2F                ADD     A,R7
+0031 F582              MOV     DPL,A
+0033 7400        R     MOV     A,#HIGH LED_seg7_Alpha_Table+0FF9FH
+0035 3E                ADDC    A,R6
+0036 F583              MOV     DPH,A
+0038 E0                MOVX    A,@DPTR
+0039 FF                MOV     R7,A
+003A 900000      R     MOV     DPTR,#display
+003D E0                MOVX    A,@DPTR
+003E FE                MOV     R6,A
+003F EE                MOV     A,R6
+0040 5403              ANL     A,#03H
+0042 FE                MOV     R6,A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 22  
+
+0043 7400        R     MOV     A,#LOW LED_Segment_RAM
+0045 2E                ADD     A,R6
+0046 F582              MOV     DPL,A
+0048 E4                CLR     A
+0049 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+004B F583              MOV     DPH,A
+004D EF                MOV     A,R7
+004E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 253
+004F 22                RET     
+0050         ?C0021:
+                                           ; SOURCE LINE # 254
+0050 900000      R     MOV     DPTR,#value
+0053 E0                MOVX    A,@DPTR
+0054 FF                MOV     R7,A
+0055 C3                CLR     C
+0056 EF                MOV     A,R7
+0057 6480              XRL     A,#080H
+0059 94C1              SUBB    A,#0C1H
+005B 4039              JC      ?C0023
+005D 900000      R     MOV     DPTR,#value
+0060 E0                MOVX    A,@DPTR
+0061 FF                MOV     R7,A
+0062 D3                SETB    C
+0063 EF                MOV     A,R7
+0064 6480              XRL     A,#080H
+0066 94DA              SUBB    A,#0DAH
+0068 502C              JNC     ?C0023
+                                           ; SOURCE LINE # 255
+                                           ; SOURCE LINE # 256
+006A 900000      R     MOV     DPTR,#value
+006D E0                MOVX    A,@DPTR
+006E FF                MOV     R7,A
+006F EF                MOV     A,R7
+0070 33                RLC     A
+0071 95E0              SUBB    A,ACC
+0073 FE                MOV     R6,A
+0074 7400        R     MOV     A,#LOW LED_seg7_Alpha_Table+0FFBFH
+0076 2F                ADD     A,R7
+0077 F582              MOV     DPL,A
+0079 7400        R     MOV     A,#HIGH LED_seg7_Alpha_Table+0FFBFH
+007B 3E                ADDC    A,R6
+007C F583              MOV     DPH,A
+007E E0                MOVX    A,@DPTR
+007F FF                MOV     R7,A
+0080 900000      R     MOV     DPTR,#display
+0083 E0                MOVX    A,@DPTR
+0084 FE                MOV     R6,A
+0085 EE                MOV     A,R6
+0086 5403              ANL     A,#03H
+0088 FE                MOV     R6,A
+0089 7400        R     MOV     A,#LOW LED_Segment_RAM
+008B 2E                ADD     A,R6
+008C F582              MOV     DPL,A
+008E E4                CLR     A
+008F 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0091 F583              MOV     DPH,A
+0093 EF                MOV     A,R7
+0094 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 257
+0095 22                RET     
+0096         ?C0023:
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 23  
+
+                                           ; SOURCE LINE # 258
+0096 900000      R     MOV     DPTR,#value
+0099 E0                MOVX    A,@DPTR
+009A FF                MOV     R7,A
+009B C3                CLR     C
+009C EF                MOV     A,R7
+009D 6480              XRL     A,#080H
+009F 94B0              SUBB    A,#0B0H
+00A1 4039              JC      ?C0025
+00A3 900000      R     MOV     DPTR,#value
+00A6 E0                MOVX    A,@DPTR
+00A7 FF                MOV     R7,A
+00A8 D3                SETB    C
+00A9 EF                MOV     A,R7
+00AA 6480              XRL     A,#080H
+00AC 94B9              SUBB    A,#0B9H
+00AE 502C              JNC     ?C0025
+                                           ; SOURCE LINE # 259
+                                           ; SOURCE LINE # 260
+00B0 900000      R     MOV     DPTR,#value
+00B3 E0                MOVX    A,@DPTR
+00B4 FF                MOV     R7,A
+00B5 EF                MOV     A,R7
+00B6 33                RLC     A
+00B7 95E0              SUBB    A,ACC
+00B9 FE                MOV     R6,A
+00BA 7400        R     MOV     A,#LOW LED_seg7_Table+0FFD0H
+00BC 2F                ADD     A,R7
+00BD F582              MOV     DPL,A
+00BF 7400        R     MOV     A,#HIGH LED_seg7_Table+0FFD0H
+00C1 3E                ADDC    A,R6
+00C2 F583              MOV     DPH,A
+00C4 E0                MOVX    A,@DPTR
+00C5 FF                MOV     R7,A
+00C6 900000      R     MOV     DPTR,#display
+00C9 E0                MOVX    A,@DPTR
+00CA FE                MOV     R6,A
+00CB EE                MOV     A,R6
+00CC 5403              ANL     A,#03H
+00CE FE                MOV     R6,A
+00CF 7400        R     MOV     A,#LOW LED_Segment_RAM
+00D1 2E                ADD     A,R6
+00D2 F582              MOV     DPL,A
+00D4 E4                CLR     A
+00D5 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+00D7 F583              MOV     DPH,A
+00D9 EF                MOV     A,R7
+00DA F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 261
+00DB 22                RET     
+00DC         ?C0025:
+                                           ; SOURCE LINE # 262
+00DC 900000      R     MOV     DPTR,#value
+00DF E0                MOVX    A,@DPTR
+00E0 FF                MOV     R7,A
+00E1 EF                MOV     A,R7
+00E2 B42D17            CJNE    A,#02DH,?C0027
+                                           ; SOURCE LINE # 263
+                                           ; SOURCE LINE # 264
+00E5 900000      R     MOV     DPTR,#display
+00E8 E0                MOVX    A,@DPTR
+00E9 FF                MOV     R7,A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 24  
+
+00EA EF                MOV     A,R7
+00EB 5403              ANL     A,#03H
+00ED FF                MOV     R7,A
+00EE 7400        R     MOV     A,#LOW LED_Segment_RAM
+00F0 2F                ADD     A,R7
+00F1 F582              MOV     DPL,A
+00F3 E4                CLR     A
+00F4 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+00F6 F583              MOV     DPH,A
+00F8 7440              MOV     A,#040H
+00FA F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 265
+00FB 22                RET     
+00FC         ?C0027:
+                                           ; SOURCE LINE # 266
+00FC 900000      R     MOV     DPTR,#value
+00FF E0                MOVX    A,@DPTR
+0100 FF                MOV     R7,A
+0101 EF                MOV     A,R7
+0102 B42E17            CJNE    A,#02EH,?C0029
+                                           ; SOURCE LINE # 267
+                                           ; SOURCE LINE # 268
+0105 900000      R     MOV     DPTR,#display
+0108 E0                MOVX    A,@DPTR
+0109 FF                MOV     R7,A
+010A EF                MOV     A,R7
+010B 5403              ANL     A,#03H
+010D FF                MOV     R7,A
+010E 7400        R     MOV     A,#LOW LED_Segment_RAM
+0110 2F                ADD     A,R7
+0111 F582              MOV     DPL,A
+0113 E4                CLR     A
+0114 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0116 F583              MOV     DPH,A
+0118 7480              MOV     A,#080H
+011A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 269
+011B 22                RET     
+011C         ?C0029:
+                                           ; SOURCE LINE # 270
+011C 900000      R     MOV     DPTR,#value
+011F E0                MOVX    A,@DPTR
+0120 FF                MOV     R7,A
+0121 EF                MOV     A,R7
+0122 B43D17            CJNE    A,#03DH,?C0031
+                                           ; SOURCE LINE # 271
+                                           ; SOURCE LINE # 272
+0125 900000      R     MOV     DPTR,#display
+0128 E0                MOVX    A,@DPTR
+0129 FF                MOV     R7,A
+012A EF                MOV     A,R7
+012B 5403              ANL     A,#03H
+012D FF                MOV     R7,A
+012E 7400        R     MOV     A,#LOW LED_Segment_RAM
+0130 2F                ADD     A,R7
+0131 F582              MOV     DPL,A
+0133 E4                CLR     A
+0134 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0136 F583              MOV     DPH,A
+0138 7448              MOV     A,#048H
+013A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 273
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 25  
+
+013B 22                RET     
+013C         ?C0031:
+                                           ; SOURCE LINE # 274
+013C 900000      R     MOV     DPTR,#value
+013F E0                MOVX    A,@DPTR
+0140 FF                MOV     R7,A
+0141 EF                MOV     A,R7
+0142 B45F17            CJNE    A,#05FH,?C0033
+                                           ; SOURCE LINE # 275
+                                           ; SOURCE LINE # 276
+0145 900000      R     MOV     DPTR,#display
+0148 E0                MOVX    A,@DPTR
+0149 FF                MOV     R7,A
+014A EF                MOV     A,R7
+014B 5403              ANL     A,#03H
+014D FF                MOV     R7,A
+014E 7400        R     MOV     A,#LOW LED_Segment_RAM
+0150 2F                ADD     A,R7
+0151 F582              MOV     DPL,A
+0153 E4                CLR     A
+0154 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0156 F583              MOV     DPH,A
+0158 7408              MOV     A,#08H
+015A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 277
+015B 22                RET     
+015C         ?C0033:
+                                           ; SOURCE LINE # 279
+                                           ; SOURCE LINE # 280
+015C 900000      R     MOV     DPTR,#display
+015F E0                MOVX    A,@DPTR
+0160 FF                MOV     R7,A
+0161 EF                MOV     A,R7
+0162 5403              ANL     A,#03H
+0164 FF                MOV     R7,A
+0165 7400        R     MOV     A,#LOW LED_Segment_RAM
+0167 2F                ADD     A,R7
+0168 F582              MOV     DPL,A
+016A E4                CLR     A
+016B 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+016D F583              MOV     DPH,A
+016F E4                CLR     A
+0170 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 281
+                                           ; SOURCE LINE # 283
+0171         ?C0035:
+0171 22                RET     
+             ; FUNCTION _LED_PutCharacter (END)
+
+             ; FUNCTION _LED_PutString (BEGIN)
+                                           ; SOURCE LINE # 286
+0000 900000      R     MOV     DPTR,#string
+0003 120000      E     LCALL   ?C?PSTXDATA
+0006 900000      R     MOV     DPTR,#display
+0009 ED                MOV     A,R5
+000A F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 287
+                                           ; SOURCE LINE # 290
+000B 900000      R     MOV     DPTR,#j
+000E E4                CLR     A
+000F F0                MOVX    @DPTR,A
+0010         ?C0036:
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 26  
+
+                                           ; SOURCE LINE # 291
+0010 900000      R     MOV     DPTR,#string
+0013 120000      E     LCALL   ?C?PLDXDATA
+0016 900000      R     MOV     DPTR,#j
+0019 E0                MOVX    A,@DPTR
+001A FF                MOV     R7,A
+001B E9                MOV     A,R1
+001C 2F                ADD     A,R7
+001D F9                MOV     R1,A
+001E E4                CLR     A
+001F 3A                ADDC    A,R2
+0020 FA                MOV     R2,A
+0021 120000      E     LCALL   ?C?CLDPTR
+0024 FF                MOV     R7,A
+0025 EF                MOV     A,R7
+0026 6041              JZ      ?C0038
+0028 900000      R     MOV     DPTR,#display
+002B E0                MOVX    A,@DPTR
+002C FF                MOV     R7,A
+002D C3                CLR     C
+002E 7404              MOV     A,#04H
+0030 9F                SUBB    A,R7
+0031 FF                MOV     R7,A
+0032 900000      R     MOV     DPTR,#j
+0035 E0                MOVX    A,@DPTR
+0036 FE                MOV     R6,A
+0037 EE                MOV     A,R6
+0038 C3                CLR     C
+0039 9F                SUBB    A,R7
+003A 502D              JNC     ?C0038
+                                           ; SOURCE LINE # 292
+                                           ; SOURCE LINE # 293
+003C 900000      R     MOV     DPTR,#string
+003F 120000      E     LCALL   ?C?PLDXDATA
+0042 900000      R     MOV     DPTR,#j
+0045 E0                MOVX    A,@DPTR
+0046 FF                MOV     R7,A
+0047 E9                MOV     A,R1
+0048 2F                ADD     A,R7
+0049 F9                MOV     R1,A
+004A E4                CLR     A
+004B 3A                ADDC    A,R2
+004C FA                MOV     R2,A
+004D 120000      E     LCALL   ?C?CLDPTR
+0050 FF                MOV     R7,A
+0051 900000      R     MOV     DPTR,#j
+0054 E0                MOVX    A,@DPTR
+0055 FE                MOV     R6,A
+0056 900000      R     MOV     DPTR,#display
+0059 E0                MOVX    A,@DPTR
+005A FD                MOV     R5,A
+005B ED                MOV     A,R5
+005C 2E                ADD     A,R6
+005D FD                MOV     R5,A
+005E 120000      R     LCALL   _LED_PutCharacter
+                                           ; SOURCE LINE # 294
+0061 900000      R     MOV     DPTR,#j
+0064 E0                MOVX    A,@DPTR
+0065 04                INC     A
+0066 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 295
+0067 80A7              SJMP    ?C0036
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 27  
+
+                                           ; SOURCE LINE # 297
+0069         ?C0038:
+0069 22                RET     
+             ; FUNCTION _LED_PutString (END)
+
+             ; FUNCTION _LED_SetNumberDec (BEGIN)
+                                           ; SOURCE LINE # 300
+0000 900000      R     MOV     DPTR,#value
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#display
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 301
+                                           ; SOURCE LINE # 302
+000A 900000      R     MOV     DPTR,#value
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F EF                MOV     A,R7
+0010 75F00A            MOV     B,#0AH
+0013 84                DIV     AB
+0014 AFF0              MOV     R7,B
+0016 7400        R     MOV     A,#LOW LED_seg7_Table
+0018 2F                ADD     A,R7
+0019 F582              MOV     DPL,A
+001B E4                CLR     A
+001C 3400        R     ADDC    A,#HIGH LED_seg7_Table
+001E F583              MOV     DPH,A
+0020 E0                MOVX    A,@DPTR
+0021 FF                MOV     R7,A
+0022 900000      R     MOV     DPTR,#display
+0025 E0                MOVX    A,@DPTR
+0026 FE                MOV     R6,A
+0027 EE                MOV     A,R6
+0028 5403              ANL     A,#03H
+002A FE                MOV     R6,A
+002B 7400        R     MOV     A,#LOW LED_Segment_RAM
+002D 2E                ADD     A,R6
+002E F582              MOV     DPL,A
+0030 E4                CLR     A
+0031 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0033 F583              MOV     DPH,A
+0035 EF                MOV     A,R7
+0036 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 304
+0037         ?C0039:
+0037 22                RET     
+             ; FUNCTION _LED_SetNumberDec (END)
+
+             ; FUNCTION _LED_SetNumberHex (BEGIN)
+                                           ; SOURCE LINE # 307
+0000 900000      R     MOV     DPTR,#value
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#display
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 308
+                                           ; SOURCE LINE # 309
+000A 900000      R     MOV     DPTR,#value
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 28  
+
+000F EF                MOV     A,R7
+0010 540F              ANL     A,#0FH
+0012 FF                MOV     R7,A
+0013 7400        R     MOV     A,#LOW LED_seg7_Table
+0015 2F                ADD     A,R7
+0016 F582              MOV     DPL,A
+0018 E4                CLR     A
+0019 3400        R     ADDC    A,#HIGH LED_seg7_Table
+001B F583              MOV     DPH,A
+001D E0                MOVX    A,@DPTR
+001E FF                MOV     R7,A
+001F 900000      R     MOV     DPTR,#display
+0022 E0                MOVX    A,@DPTR
+0023 FE                MOV     R6,A
+0024 EE                MOV     A,R6
+0025 5403              ANL     A,#03H
+0027 FE                MOV     R6,A
+0028 7400        R     MOV     A,#LOW LED_Segment_RAM
+002A 2E                ADD     A,R6
+002B F582              MOV     DPL,A
+002D E4                CLR     A
+002E 3400        R     ADDC    A,#HIGH LED_Segment_RAM
+0030 F583              MOV     DPH,A
+0032 EF                MOV     A,R7
+0033 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 311
+0034         ?C0040:
+0034 22                RET     
+             ; FUNCTION _LED_SetNumberHex (END)
+
+             ; FUNCTION _LED_PutNumberInt (BEGIN)
+                                           ; SOURCE LINE # 314
+0000 900000      R     MOV     DPTR,#value
+0003 120000      E     LCALL   ?C?LSTXDATA
+                                           ; SOURCE LINE # 315
+                                           ; SOURCE LINE # 317
+0006 7BFF              MOV     R3,#0FFH
+0008 7A00        R     MOV     R2,#HIGH _?ix1000
+000A 7900        R     MOV     R1,#LOW _?ix1000
+000C C003              PUSH    AR3
+000E C002              PUSH    AR2
+0010 C001              PUSH    AR1
+0012 7B01              MOV     R3,#01H
+0014 7A00        R     MOV     R2,#HIGH divisors
+0016 7900        R     MOV     R1,#LOW divisors
+0018 A801              MOV     R0,AR1
+001A AC02              MOV     R4,AR2
+001C AD03              MOV     R5,AR3
+001E D001              POP     AR1
+0020 D002              POP     AR2
+0022 D003              POP     AR3
+0024 7E00              MOV     R6,#00H
+0026 7F20              MOV     R7,#020H
+0028 120000      E     LCALL   ?C?COPYAMD
+                                           ; SOURCE LINE # 320
+002B 7F00              MOV     R7,#00H
+002D 7E00              MOV     R6,#00H
+002F 7D00              MOV     R5,#00H
+0031 7C00              MOV     R4,#00H
+0033 900000      R     MOV     DPTR,#value
+0036 120000      E     LCALL   ?C?LLDXDATA0
+0039 C3                CLR     C
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 29  
+
+003A 120000      E     LCALL   ?C?SLCMP
+003D 5025              JNC     ?C0041
+                                           ; SOURCE LINE # 321
+                                           ; SOURCE LINE # 322
+003F 900000      R     MOV     DPTR,#display
+0042 E0                MOVX    A,@DPTR
+0043 FD                MOV     R5,A
+0044 7F2D              MOV     R7,#02DH
+0046 120000      R     LCALL   _LED_PutCharacter
+                                           ; SOURCE LINE # 323
+0049 900000      R     MOV     DPTR,#display
+004C E0                MOVX    A,@DPTR
+004D 04                INC     A
+004E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 324
+004F 900000      R     MOV     DPTR,#digits
+0052 E0                MOVX    A,@DPTR
+0053 14                DEC     A
+0054 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 325
+0055 900000      R     MOV     DPTR,#value
+0058 120000      E     LCALL   ?C?LLDXDATA
+005B 120000      E     LCALL   ?C?LNEG
+005E 900000      R     MOV     DPTR,#value
+0061 120000      E     LCALL   ?C?LSTXDATA
+                                           ; SOURCE LINE # 326
+0064         ?C0041:
+                                           ; SOURCE LINE # 328
+0064 900000      R     MOV     DPTR,#display
+0067 E0                MOVX    A,@DPTR
+0068 FF                MOV     R7,A
+0069 EF                MOV     A,R7
+006A D3                SETB    C
+006B 9408              SUBB    A,#08H
+006D 4004              JC      ?C0042
+006F 7F08              MOV     R7,#08H
+0071 8005              SJMP    ?C0043
+0073         ?C0042:
+0073 900000      R     MOV     DPTR,#digits
+0076 E0                MOVX    A,@DPTR
+0077 FF                MOV     R7,A
+0078         ?C0043:
+0078 900000      R     MOV     DPTR,#max_digits
+007B EF                MOV     A,R7
+007C F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 330
+007D 900000      R     MOV     DPTR,#j
+0080 E4                CLR     A
+0081 F0                MOVX    @DPTR,A
+0082         ?C0044:
+0082 900000      R     MOV     DPTR,#max_digits
+0085 E0                MOVX    A,@DPTR
+0086 FF                MOV     R7,A
+0087 900000      R     MOV     DPTR,#j
+008A E0                MOVX    A,@DPTR
+008B FE                MOV     R6,A
+008C C3                CLR     C
+008D EF                MOV     A,R7
+008E 6480              XRL     A,#080H
+0090 F8                MOV     R0,A
+0091 EE                MOV     A,R6
+0092 6480              XRL     A,#080H
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 30  
+
+0094 98                SUBB    A,R0
+0095 5053              JNC     ?C0047
+                                           ; SOURCE LINE # 331
+                                           ; SOURCE LINE # 332
+0097 900000      R     MOV     DPTR,#j
+009A E0                MOVX    A,@DPTR
+009B FF                MOV     R7,A
+009C 900000      R     MOV     DPTR,#max_digits
+009F E0                MOVX    A,@DPTR
+00A0 FE                MOV     R6,A
+00A1 C3                CLR     C
+00A2 EE                MOV     A,R6
+00A3 9F                SUBB    A,R7
+00A4 FF                MOV     R7,A
+00A5 EF                MOV     A,R7
+00A6 25E0              ADD     A,ACC
+00A8 25E0              ADD     A,ACC
+00AA 2400        R     ADD     A,#LOW divisors+0FFFCH
+00AC F582              MOV     DPL,A
+00AE E4                CLR     A
+00AF 3400        R     ADDC    A,#HIGH divisors+0FFFCH
+00B1 F583              MOV     DPH,A
+00B3 120000      E     LCALL   ?C?LLDXDATA0
+00B6 900000      R     MOV     DPTR,#value
+00B9 120000      E     LCALL   ?C?LLDXDATA
+00BC 120000      E     LCALL   ?C?SLDIV
+00BF 7B0A              MOV     R3,#0AH
+00C1 7A00              MOV     R2,#00H
+00C3 7900              MOV     R1,#00H
+00C5 7800              MOV     R0,#00H
+00C7 120000      E     LCALL   ?C?SLDIV
+00CA AC00              MOV     R4,AR0
+00CC AD01              MOV     R5,AR1
+00CE AE02              MOV     R6,AR2
+00D0 AF03              MOV     R7,AR3
+00D2 900000      R     MOV     DPTR,#j
+00D5 E0                MOVX    A,@DPTR
+00D6 FE                MOV     R6,A
+00D7 900000      R     MOV     DPTR,#display
+00DA E0                MOVX    A,@DPTR
+00DB FD                MOV     R5,A
+00DC ED                MOV     A,R5
+00DD 2E                ADD     A,R6
+00DE FD                MOV     R5,A
+00DF 120000      R     LCALL   _LED_SetNumberDec
+                                           ; SOURCE LINE # 333
+00E2 900000      R     MOV     DPTR,#j
+00E5 E0                MOVX    A,@DPTR
+00E6 04                INC     A
+00E7 F0                MOVX    @DPTR,A
+00E8 8098              SJMP    ?C0044
+                                           ; SOURCE LINE # 335
+00EA         ?C0047:
+00EA 22                RET     
+             ; FUNCTION _LED_PutNumberInt (END)
+
+             ; FUNCTION _LED_PutNumberHex (BEGIN)
+                                           ; SOURCE LINE # 338
+0000 900000      R     MOV     DPTR,#value
+0003 120000      E     LCALL   ?C?LSTXDATA
+                                           ; SOURCE LINE # 339
+                                           ; SOURCE LINE # 343
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 31  
+
+0006 900000      R     MOV     DPTR,#display
+0009 E0                MOVX    A,@DPTR
+000A FF                MOV     R7,A
+000B EF                MOV     A,R7
+000C D3                SETB    C
+000D 9408              SUBB    A,#08H
+000F 4004              JC      ?C0048
+0011 7F08              MOV     R7,#08H
+0013 8005              SJMP    ?C0049
+0015         ?C0048:
+0015 900000      R     MOV     DPTR,#digits
+0018 E0                MOVX    A,@DPTR
+0019 FF                MOV     R7,A
+001A         ?C0049:
+001A 900000      R     MOV     DPTR,#max_digits
+001D EF                MOV     A,R7
+001E F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 345
+001F 900000      R     MOV     DPTR,#j
+0022 E4                CLR     A
+0023 F0                MOVX    @DPTR,A
+0024         ?C0050:
+0024 900000      R     MOV     DPTR,#max_digits
+0027 E0                MOVX    A,@DPTR
+0028 FF                MOV     R7,A
+0029 900000      R     MOV     DPTR,#j
+002C E0                MOVX    A,@DPTR
+002D FE                MOV     R6,A
+002E C3                CLR     C
+002F EF                MOV     A,R7
+0030 6480              XRL     A,#080H
+0032 F8                MOV     R0,A
+0033 EE                MOV     A,R6
+0034 6480              XRL     A,#080H
+0036 98                SUBB    A,R0
+0037 5050              JNC     ?C0053
+                                           ; SOURCE LINE # 346
+                                           ; SOURCE LINE # 347
+0039 900000      R     MOV     DPTR,#max_digits
+003C E0                MOVX    A,@DPTR
+003D FF                MOV     R7,A
+003E EF                MOV     A,R7
+003F 14                DEC     A
+0040 FF                MOV     R7,A
+0041 EF                MOV     A,R7
+0042 25E0              ADD     A,ACC
+0044 25E0              ADD     A,ACC
+0046 FF                MOV     R7,A
+0047 900000      R     MOV     DPTR,#j
+004A E0                MOVX    A,@DPTR
+004B FE                MOV     R6,A
+004C EE                MOV     A,R6
+004D 25E0              ADD     A,ACC
+004F 25E0              ADD     A,ACC
+0051 FE                MOV     R6,A
+0052 C3                CLR     C
+0053 EF                MOV     A,R7
+0054 9E                SUBB    A,R6
+0055 F9                MOV     R1,A
+0056 900000      R     MOV     DPTR,#value
+0059 120000      E     LCALL   ?C?LLDXDATA
+005C A801              MOV     R0,AR1
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 32  
+
+005E 120000      E     LCALL   ?C?ULSHR
+0061 EF                MOV     A,R7
+0062 540F              ANL     A,#0FH
+0064 FF                MOV     R7,A
+0065 EE                MOV     A,R6
+0066 5400              ANL     A,#00H
+0068 FE                MOV     R6,A
+0069 ED                MOV     A,R5
+006A 5400              ANL     A,#00H
+006C FD                MOV     R5,A
+006D EC                MOV     A,R4
+006E 5400              ANL     A,#00H
+0070 FC                MOV     R4,A
+0071 900000      R     MOV     DPTR,#j
+0074 E0                MOVX    A,@DPTR
+0075 FE                MOV     R6,A
+0076 900000      R     MOV     DPTR,#display
+0079 E0                MOVX    A,@DPTR
+007A FD                MOV     R5,A
+007B ED                MOV     A,R5
+007C 2E                ADD     A,R6
+007D FD                MOV     R5,A
+007E 120000      R     LCALL   _LED_SetNumberHex
+                                           ; SOURCE LINE # 348
+0081 900000      R     MOV     DPTR,#j
+0084 E0                MOVX    A,@DPTR
+0085 04                INC     A
+0086 F0                MOVX    @DPTR,A
+0087 809B              SJMP    ?C0050
+                                           ; SOURCE LINE # 350
+0089         ?C0053:
+0089 22                RET     
+             ; FUNCTION _LED_PutNumberHex (END)
+
+             ; FUNCTION _LED_SetBrightnessRAM (BEGIN)
+                                           ; SOURCE LINE # 356
+0000 900000      R     MOV     DPTR,#value
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+0005 900000      R     MOV     DPTR,#display
+0008 ED                MOV     A,R5
+0009 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 357
+                                           ; SOURCE LINE # 358
+000A 900000      R     MOV     DPTR,#value
+000D E0                MOVX    A,@DPTR
+000E FF                MOV     R7,A
+000F 900000      R     MOV     DPTR,#display
+0012 E0                MOVX    A,@DPTR
+0013 FE                MOV     R6,A
+0014 EE                MOV     A,R6
+0015 5403              ANL     A,#03H
+0017 FE                MOV     R6,A
+0018 7400        R     MOV     A,#LOW LED_Brightness_RAM
+001A 2E                ADD     A,R6
+001B F582              MOV     DPL,A
+001D E4                CLR     A
+001E 3400        R     ADDC    A,#HIGH LED_Brightness_RAM
+0020 F583              MOV     DPH,A
+0022 EF                MOV     A,R7
+0023 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 360
+C51 COMPILER V9.03   LED                                                                   10/10/2012 15:06:17 PAGE 33  
+
+0024         ?C0054:
+0024 22                RET     
+             ; FUNCTION _LED_SetBrightnessRAM (END)
+
+             ; FUNCTION _LED_GetBrightnessRAM (BEGIN)
+                                           ; SOURCE LINE # 363
+0000 900000      R     MOV     DPTR,#display
+0003 EF                MOV     A,R7
+0004 F0                MOVX    @DPTR,A
+                                           ; SOURCE LINE # 364
+                                           ; SOURCE LINE # 365
+0005 900000      R     MOV     DPTR,#display
+0008 E0                MOVX    A,@DPTR
+0009 FF                MOV     R7,A
+000A EF                MOV     A,R7
+000B 5403              ANL     A,#03H
+000D FF                MOV     R7,A
+000E 7400        R     MOV     A,#LOW LED_Brightness_RAM
+0010 2F                ADD     A,R7
+0011 F582              MOV     DPL,A
+0013 E4                CLR     A
+0014 3400        R     ADDC    A,#HIGH LED_Brightness_RAM
+0016 F583              MOV     DPH,A
+0018 E0                MOVX    A,@DPTR
+0019 FF                MOV     R7,A
+                                           ; SOURCE LINE # 366
+001A         ?C0055:
+001A 22                RET     
+             ; FUNCTION _LED_GetBrightnessRAM (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   2087    ----
+   CONSTANT SIZE    =     32    ----
+   XDATA SIZE       =     73      80
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

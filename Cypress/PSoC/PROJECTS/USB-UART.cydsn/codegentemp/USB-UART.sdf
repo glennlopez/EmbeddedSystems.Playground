@@ -1,0 +1,25 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2015-01-03T05:05:35Z")
+ (DESIGN "USB-UART")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 3.1")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "USB-UART")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT \\UART\:rx\(0\)\\.fb \\UART\:SCB\\.rx (1.000:1.000:1.000))
+    (INTERCONNECT \\UART\:SCB\\.tx \\UART\:tx\(0\)\\.pin_input (1.000:1.000:1.000))
+    (INTERCONNECT ClockBlock.ff_div_2 \\UART\:SCB\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT \\UART\:tx\(0\)\\.pad_out \\UART\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\UART\:rx\(0\)_PAD\\ \\UART\:rx\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\UART\:tx\(0\)\\.pad_out \\UART\:tx\(0\)_PAD\\ (0.000:0.000:0.000))
+    (INTERCONNECT \\UART\:tx\(0\)_PAD\\ \\UART\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

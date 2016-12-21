@@ -1,0 +1,437 @@
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB33:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** int main()
+  15:.\main.c      **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_register 7
+  36              	.L2:
+  16:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  17:.\main.c      **** 
+  18:.\main.c      ****     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+  19:.\main.c      ****     for(;;)
+  20:.\main.c      ****     {
+  21:.\main.c      ****         /* Place your application code here. */
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 2
+
+
+  22:.\main.c      **** 
+  23:.\main.c      ****         LEDR_Write(0);
+  37              		.loc 1 23 0 discriminator 1
+  38 0004 0020     		mov	r0, #0
+  39 0006 FFF7FEFF 		bl	LEDR_Write
+  24:.\main.c      ****         CyDelay(500);
+  40              		.loc 1 24 0 discriminator 1
+  41 000a FA23     		mov	r3, #250
+  42 000c 5B00     		lsl	r3, r3, #1
+  43 000e 181C     		mov	r0, r3
+  44 0010 FFF7FEFF 		bl	CyDelay
+  25:.\main.c      ****         LEDR_Write(1);
+  45              		.loc 1 25 0 discriminator 1
+  46 0014 0120     		mov	r0, #1
+  47 0016 FFF7FEFF 		bl	LEDR_Write
+  26:.\main.c      ****         CyDelay(500);
+  48              		.loc 1 26 0 discriminator 1
+  49 001a FA23     		mov	r3, #250
+  50 001c 5B00     		lsl	r3, r3, #1
+  51 001e 181C     		mov	r0, r3
+  52 0020 FFF7FEFF 		bl	CyDelay
+  27:.\main.c      ****         
+  28:.\main.c      ****         LEDG_Write(0);
+  53              		.loc 1 28 0 discriminator 1
+  54 0024 0020     		mov	r0, #0
+  55 0026 FFF7FEFF 		bl	LEDG_Write
+  29:.\main.c      ****         CyDelay(500);
+  56              		.loc 1 29 0 discriminator 1
+  57 002a FA23     		mov	r3, #250
+  58 002c 5B00     		lsl	r3, r3, #1
+  59 002e 181C     		mov	r0, r3
+  60 0030 FFF7FEFF 		bl	CyDelay
+  30:.\main.c      ****         LEDG_Write(1);
+  61              		.loc 1 30 0 discriminator 1
+  62 0034 0120     		mov	r0, #1
+  63 0036 FFF7FEFF 		bl	LEDG_Write
+  31:.\main.c      ****         CyDelay(500);
+  64              		.loc 1 31 0 discriminator 1
+  65 003a FA23     		mov	r3, #250
+  66 003c 5B00     		lsl	r3, r3, #1
+  67 003e 181C     		mov	r0, r3
+  68 0040 FFF7FEFF 		bl	CyDelay
+  32:.\main.c      ****         
+  33:.\main.c      ****         LEDB_Write(0);
+  69              		.loc 1 33 0 discriminator 1
+  70 0044 0020     		mov	r0, #0
+  71 0046 FFF7FEFF 		bl	LEDB_Write
+  34:.\main.c      ****         CyDelay(500);
+  72              		.loc 1 34 0 discriminator 1
+  73 004a FA23     		mov	r3, #250
+  74 004c 5B00     		lsl	r3, r3, #1
+  75 004e 181C     		mov	r0, r3
+  76 0050 FFF7FEFF 		bl	CyDelay
+  35:.\main.c      ****         LEDB_Write(1);
+  77              		.loc 1 35 0 discriminator 1
+  78 0054 0120     		mov	r0, #1
+  79 0056 FFF7FEFF 		bl	LEDB_Write
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 3
+
+
+  36:.\main.c      ****         CyDelay(500);
+  80              		.loc 1 36 0 discriminator 1
+  81 005a FA23     		mov	r3, #250
+  82 005c 5B00     		lsl	r3, r3, #1
+  83 005e 181C     		mov	r0, r3
+  84 0060 FFF7FEFF 		bl	CyDelay
+  37:.\main.c      **** 
+  38:.\main.c      ****     }
+  85              		.loc 1 38 0 discriminator 1
+  86 0064 CEE7     		b	.L2
+  87              		.cfi_endproc
+  88              	.LFE33:
+  89              		.size	main, .-main
+  90 0066 C046     		.text
+  91              	.Letext0:
+  92              		.section	.debug_info,"",%progbits
+  93              	.Ldebug_info0:
+  94 0000 A1000000 		.4byte	0xa1
+  95 0004 0200     		.2byte	0x2
+  96 0006 00000000 		.4byte	.Ldebug_abbrev0
+  97 000a 04       		.byte	0x4
+  98 000b 01       		.uleb128 0x1
+  99 000c 20000000 		.4byte	.LASF13
+ 100 0010 01       		.byte	0x1
+ 101 0011 30010000 		.4byte	.LASF14
+ 102 0015 DE000000 		.4byte	.LASF15
+ 103 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 104 001d 00000000 		.4byte	0
+ 105 0021 00000000 		.4byte	0
+ 106 0025 00000000 		.4byte	.Ldebug_line0
+ 107 0029 02       		.uleb128 0x2
+ 108 002a 01       		.byte	0x1
+ 109 002b 06       		.byte	0x6
+ 110 002c D2000000 		.4byte	.LASF0
+ 111 0030 02       		.uleb128 0x2
+ 112 0031 01       		.byte	0x1
+ 113 0032 08       		.byte	0x8
+ 114 0033 92000000 		.4byte	.LASF1
+ 115 0037 02       		.uleb128 0x2
+ 116 0038 02       		.byte	0x2
+ 117 0039 05       		.byte	0x5
+ 118 003a AE000000 		.4byte	.LASF2
+ 119 003e 02       		.uleb128 0x2
+ 120 003f 02       		.byte	0x2
+ 121 0040 07       		.byte	0x7
+ 122 0041 BF000000 		.4byte	.LASF3
+ 123 0045 02       		.uleb128 0x2
+ 124 0046 04       		.byte	0x4
+ 125 0047 05       		.byte	0x5
+ 126 0048 A5000000 		.4byte	.LASF4
+ 127 004c 02       		.uleb128 0x2
+ 128 004d 04       		.byte	0x4
+ 129 004e 07       		.byte	0x7
+ 130 004f 69000000 		.4byte	.LASF5
+ 131 0053 02       		.uleb128 0x2
+ 132 0054 08       		.byte	0x8
+ 133 0055 05       		.byte	0x5
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 4
+
+
+ 134 0056 00000000 		.4byte	.LASF6
+ 135 005a 02       		.uleb128 0x2
+ 136 005b 08       		.byte	0x8
+ 137 005c 07       		.byte	0x7
+ 138 005d 7B000000 		.4byte	.LASF7
+ 139 0061 03       		.uleb128 0x3
+ 140 0062 04       		.byte	0x4
+ 141 0063 05       		.byte	0x5
+ 142 0064 696E7400 		.ascii	"int\000"
+ 143 0068 02       		.uleb128 0x2
+ 144 0069 04       		.byte	0x4
+ 145 006a 07       		.byte	0x7
+ 146 006b 0E000000 		.4byte	.LASF8
+ 147 006f 02       		.uleb128 0x2
+ 148 0070 04       		.byte	0x4
+ 149 0071 04       		.byte	0x4
+ 150 0072 2A010000 		.4byte	.LASF9
+ 151 0076 02       		.uleb128 0x2
+ 152 0077 08       		.byte	0x8
+ 153 0078 04       		.byte	0x4
+ 154 0079 B8000000 		.4byte	.LASF10
+ 155 007d 02       		.uleb128 0x2
+ 156 007e 01       		.byte	0x1
+ 157 007f 08       		.byte	0x8
+ 158 0080 A0000000 		.4byte	.LASF11
+ 159 0084 02       		.uleb128 0x2
+ 160 0085 04       		.byte	0x4
+ 161 0086 07       		.byte	0x7
+ 162 0087 39010000 		.4byte	.LASF12
+ 163 008b 04       		.uleb128 0x4
+ 164 008c 01       		.byte	0x1
+ 165 008d 1B000000 		.4byte	.LASF16
+ 166 0091 01       		.byte	0x1
+ 167 0092 0E       		.byte	0xe
+ 168 0093 61000000 		.4byte	0x61
+ 169 0097 00000000 		.4byte	.LFB33
+ 170 009b 66000000 		.4byte	.LFE33
+ 171 009f 00000000 		.4byte	.LLST0
+ 172 00a3 01       		.byte	0x1
+ 173 00a4 00       		.byte	0
+ 174              		.section	.debug_abbrev,"",%progbits
+ 175              	.Ldebug_abbrev0:
+ 176 0000 01       		.uleb128 0x1
+ 177 0001 11       		.uleb128 0x11
+ 178 0002 01       		.byte	0x1
+ 179 0003 25       		.uleb128 0x25
+ 180 0004 0E       		.uleb128 0xe
+ 181 0005 13       		.uleb128 0x13
+ 182 0006 0B       		.uleb128 0xb
+ 183 0007 03       		.uleb128 0x3
+ 184 0008 0E       		.uleb128 0xe
+ 185 0009 1B       		.uleb128 0x1b
+ 186 000a 0E       		.uleb128 0xe
+ 187 000b 55       		.uleb128 0x55
+ 188 000c 06       		.uleb128 0x6
+ 189 000d 11       		.uleb128 0x11
+ 190 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 5
+
+
+ 191 000f 52       		.uleb128 0x52
+ 192 0010 01       		.uleb128 0x1
+ 193 0011 10       		.uleb128 0x10
+ 194 0012 06       		.uleb128 0x6
+ 195 0013 00       		.byte	0
+ 196 0014 00       		.byte	0
+ 197 0015 02       		.uleb128 0x2
+ 198 0016 24       		.uleb128 0x24
+ 199 0017 00       		.byte	0
+ 200 0018 0B       		.uleb128 0xb
+ 201 0019 0B       		.uleb128 0xb
+ 202 001a 3E       		.uleb128 0x3e
+ 203 001b 0B       		.uleb128 0xb
+ 204 001c 03       		.uleb128 0x3
+ 205 001d 0E       		.uleb128 0xe
+ 206 001e 00       		.byte	0
+ 207 001f 00       		.byte	0
+ 208 0020 03       		.uleb128 0x3
+ 209 0021 24       		.uleb128 0x24
+ 210 0022 00       		.byte	0
+ 211 0023 0B       		.uleb128 0xb
+ 212 0024 0B       		.uleb128 0xb
+ 213 0025 3E       		.uleb128 0x3e
+ 214 0026 0B       		.uleb128 0xb
+ 215 0027 03       		.uleb128 0x3
+ 216 0028 08       		.uleb128 0x8
+ 217 0029 00       		.byte	0
+ 218 002a 00       		.byte	0
+ 219 002b 04       		.uleb128 0x4
+ 220 002c 2E       		.uleb128 0x2e
+ 221 002d 00       		.byte	0
+ 222 002e 3F       		.uleb128 0x3f
+ 223 002f 0C       		.uleb128 0xc
+ 224 0030 03       		.uleb128 0x3
+ 225 0031 0E       		.uleb128 0xe
+ 226 0032 3A       		.uleb128 0x3a
+ 227 0033 0B       		.uleb128 0xb
+ 228 0034 3B       		.uleb128 0x3b
+ 229 0035 0B       		.uleb128 0xb
+ 230 0036 49       		.uleb128 0x49
+ 231 0037 13       		.uleb128 0x13
+ 232 0038 11       		.uleb128 0x11
+ 233 0039 01       		.uleb128 0x1
+ 234 003a 12       		.uleb128 0x12
+ 235 003b 01       		.uleb128 0x1
+ 236 003c 40       		.uleb128 0x40
+ 237 003d 06       		.uleb128 0x6
+ 238 003e 9642     		.uleb128 0x2116
+ 239 0040 0C       		.uleb128 0xc
+ 240 0041 00       		.byte	0
+ 241 0042 00       		.byte	0
+ 242 0043 00       		.byte	0
+ 243              		.section	.debug_loc,"",%progbits
+ 244              	.Ldebug_loc0:
+ 245              	.LLST0:
+ 246 0000 00000000 		.4byte	.LFB33
+ 247 0004 02000000 		.4byte	.LCFI0
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 6
+
+
+ 248 0008 0200     		.2byte	0x2
+ 249 000a 7D       		.byte	0x7d
+ 250 000b 00       		.sleb128 0
+ 251 000c 02000000 		.4byte	.LCFI0
+ 252 0010 04000000 		.4byte	.LCFI1
+ 253 0014 0200     		.2byte	0x2
+ 254 0016 7D       		.byte	0x7d
+ 255 0017 08       		.sleb128 8
+ 256 0018 04000000 		.4byte	.LCFI1
+ 257 001c 66000000 		.4byte	.LFE33
+ 258 0020 0200     		.2byte	0x2
+ 259 0022 77       		.byte	0x77
+ 260 0023 08       		.sleb128 8
+ 261 0024 00000000 		.4byte	0
+ 262 0028 00000000 		.4byte	0
+ 263              		.section	.debug_aranges,"",%progbits
+ 264 0000 1C000000 		.4byte	0x1c
+ 265 0004 0200     		.2byte	0x2
+ 266 0006 00000000 		.4byte	.Ldebug_info0
+ 267 000a 04       		.byte	0x4
+ 268 000b 00       		.byte	0
+ 269 000c 0000     		.2byte	0
+ 270 000e 0000     		.2byte	0
+ 271 0010 00000000 		.4byte	.LFB33
+ 272 0014 66000000 		.4byte	.LFE33-.LFB33
+ 273 0018 00000000 		.4byte	0
+ 274 001c 00000000 		.4byte	0
+ 275              		.section	.debug_ranges,"",%progbits
+ 276              	.Ldebug_ranges0:
+ 277 0000 00000000 		.4byte	.LFB33
+ 278 0004 66000000 		.4byte	.LFE33
+ 279 0008 00000000 		.4byte	0
+ 280 000c 00000000 		.4byte	0
+ 281              		.section	.debug_line,"",%progbits
+ 282              	.Ldebug_line0:
+ 283 0000 75000000 		.section	.debug_str,"MS",%progbits,1
+ 283      02001F00 
+ 283      00000201 
+ 283      FB0E0D00 
+ 283      01010101 
+ 284              	.LASF6:
+ 285 0000 6C6F6E67 		.ascii	"long long int\000"
+ 285      206C6F6E 
+ 285      6720696E 
+ 285      7400
+ 286              	.LASF8:
+ 287 000e 756E7369 		.ascii	"unsigned int\000"
+ 287      676E6564 
+ 287      20696E74 
+ 287      00
+ 288              	.LASF16:
+ 289 001b 6D61696E 		.ascii	"main\000"
+ 289      00
+ 290              	.LASF13:
+ 291 0020 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 291      4320342E 
+ 291      372E3320 
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 7
+
+
+ 291      32303133 
+ 291      30333132 
+ 292 0053 616E6368 		.ascii	"anch revision 196615]\000"
+ 292      20726576 
+ 292      6973696F 
+ 292      6E203139 
+ 292      36363135 
+ 293              	.LASF5:
+ 294 0069 6C6F6E67 		.ascii	"long unsigned int\000"
+ 294      20756E73 
+ 294      69676E65 
+ 294      6420696E 
+ 294      7400
+ 295              	.LASF7:
+ 296 007b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 296      206C6F6E 
+ 296      6720756E 
+ 296      7369676E 
+ 296      65642069 
+ 297              	.LASF1:
+ 298 0092 756E7369 		.ascii	"unsigned char\000"
+ 298      676E6564 
+ 298      20636861 
+ 298      7200
+ 299              	.LASF11:
+ 300 00a0 63686172 		.ascii	"char\000"
+ 300      00
+ 301              	.LASF4:
+ 302 00a5 6C6F6E67 		.ascii	"long int\000"
+ 302      20696E74 
+ 302      00
+ 303              	.LASF2:
+ 304 00ae 73686F72 		.ascii	"short int\000"
+ 304      7420696E 
+ 304      7400
+ 305              	.LASF10:
+ 306 00b8 646F7562 		.ascii	"double\000"
+ 306      6C6500
+ 307              	.LASF3:
+ 308 00bf 73686F72 		.ascii	"short unsigned int\000"
+ 308      7420756E 
+ 308      7369676E 
+ 308      65642069 
+ 308      6E7400
+ 309              	.LASF0:
+ 310 00d2 7369676E 		.ascii	"signed char\000"
+ 310      65642063 
+ 310      68617200 
+ 311              	.LASF15:
+ 312 00de 5A3A5C44 		.ascii	"Z:\\Documents\\Github Clones\\PSoC.Playground\\PROJ"
+ 312      6F63756D 
+ 312      656E7473 
+ 312      5C476974 
+ 312      68756220 
+ 313 010d 45435453 		.ascii	"ECTS\\Lab1_Led\\Lab1_Led.cydsn\000"
+ 313      5C4C6162 
+ 313      315F4C65 
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccksg5xL.s 			page 8
+
+
+ 313      645C4C61 
+ 313      62315F4C 
+ 314              	.LASF9:
+ 315 012a 666C6F61 		.ascii	"float\000"
+ 315      7400
+ 316              	.LASF14:
+ 317 0130 2E5C6D61 		.ascii	".\\main.c\000"
+ 317      696E2E63 
+ 317      00
+ 318              	.LASF12:
+ 319 0139 73697A65 		.ascii	"sizetype\000"
+ 319      74797065 
+ 319      00
+ 320              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

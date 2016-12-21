@@ -1,0 +1,12 @@
+# Lab1_Led
+# 2014-12-30 06:05:32Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "LEDB(0)" iocell 1 6
+set_io "LEDG(0)" iocell 0 2
+set_io "LEDR(0)" iocell 0 3
+set_io "SW1(0)" iocell 0 7

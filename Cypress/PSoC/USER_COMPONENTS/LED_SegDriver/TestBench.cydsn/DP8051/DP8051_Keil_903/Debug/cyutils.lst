@@ -1,0 +1,65 @@
+C51 COMPILER V9.03   CYUTILS                                                               10/10/2012 15:06:22 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE CYUTILS
+OBJECT MODULE PLACED IN .\DP8051\DP8051_Keil_903\Debug\cyutils.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\import\keil\pk51\9.03\C51\BIN\c51.exe 
+                    -.\Generated_Source\PSoC3\cyutils.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\cyutils.lst) CD DB NOI
+                    -P OT(2,SIZE) INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\cyutils.obj)
+
+line level    source
+
+   1          /*******************************************************************************
+   2          * FILENAME: cyutils.c
+   3          * Version 2.40
+   4          *  
+   5          *  Description:
+   6          *   CyUtils provides functions to handles endian issues for 16 and 32-bit 
+   7          *   registers.
+   8          * 
+   9          *  Note:
+  10          *
+  11          *******************************************************************************
+  12          * Copyright 2008-2011, Cypress Semiconductor Corporation.  All rights reserved.
+  13          * You may use this file only in accordance with the license, terms, conditions, 
+  14          * disclaimers, and limitations in the end user license agreement accompanying 
+  15          * the software package with which this file was provided.
+  16          ********************************************************************************/
+  17          
+  18          #include <cytypes.h>
+  19          
+  20          #if defined(__GNUC__) || defined(__ARMCC_VERSION)
+              void CySetReg24(uint8 volatile *addr, uint32 value)
+              {
+                      *addr = (uint8)value;
+                      addr++;
+                      value >>= 8;
+                      *addr = (uint8)value;
+                      addr++;
+                      value >>= 8;
+                      *addr = (uint8)value;
+              }
+              #endif
+C51 COMPILER V9.03   CYUTILS                                                               10/10/2012 15:06:22 PAGE 2   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

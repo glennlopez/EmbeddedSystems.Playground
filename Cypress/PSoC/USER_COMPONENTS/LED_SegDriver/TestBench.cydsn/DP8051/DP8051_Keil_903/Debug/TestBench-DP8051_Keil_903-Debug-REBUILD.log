@@ -1,0 +1,88 @@
+--------------- Rebuild Started: 10/10/2012 15:05:56 Project: TestBench, Configuration: DP8051 Keil 9.03 Debug ---------------
+The compile step is up to date, no work needs to be done.
+The library generation step is up to date, no work needs to be done.
+Deleting file ".\DP8051\DP8051_Keil_903\Debug\LED.obj"
+Deleting file ".\DP8051\DP8051_Keil_903\Debug\LED_RAM_1.obj"
+Deleting file ".\DP8051\DP8051_Keil_903\Debug\LED_RAM_2.obj"
+Deleting file ".\DP8051\DP8051_Keil_903\Debug\LED_Refresh_Clock.obj"
+Deleting file ".\DP8051\DP8051_Keil_903\Debug\LED_Common_DMA_dma.obj"
+Deleting file ".\DP8051\DP8051_Keil_903\Debug\LED_Segment_DMA_dma.obj"
+Deleting file ".\TestBench.cycdx"
+Deleting file ".\TestBench.rpt"
+Deleting file ".\TestBench_timing.html"
+cydsfit.exe "-.appdatapath" "C:\Users\kees\AppData\Local\Cypress Semiconductor\PSoC Creator\2.1" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "C:\perforce\kees_KEESCMSLAP2\apps\content\creator\LED_SegDriver\TestBench.cydsn\TestBench.cyprj" "-d" "CY8C3866AXI-040" "-s" "C:\perforce\kees_KEESCMSLAP2\apps\content\creator\LED_SegDriver\TestBench.cydsn\Generated_Source\PSoC3" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=BE"
+Elaborating Design...
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Analog Placement ...
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Log: plm.M0038: The pin named Common_0(0) at location P0[0] prevents usage of special purposes: OpAmp:out. (App=cydsfit)
+Log: plm.M0038: The pin named Common_1(0) at location P0[1] prevents usage of special purposes: OpAmp:out. (App=cydsfit)
+Log: plm.M0040: The pin named Common_2(0) at location P0[2] prevents a direct input connection to an Opamp. (App=cydsfit)
+Log: plm.M0040: The pin named Common_3(0) at location P0[3] prevents a direct input connection to an Opamp. (App=cydsfit)
+Log: plm.M0039: The pin named Segment_0(0) at location P3[0] prevents usage of the high current (2mA) feature of an IDAC. (App=cydsfit)
+Log: plm.M0039: The pin named Segment_1(0) at location P3[1] prevents usage of the high current (2mA) feature of an IDAC. (App=cydsfit)
+Log: plm.M0040: The pin named Segment_2(0) at location P3[2] prevents a direct input connection to an Opamp. (App=cydsfit)
+Log: plm.M0040: The pin named Segment_3(0) at location P3[3] prevents a direct input connection to an Opamp. (App=cydsfit)
+Log: plm.M0040: The pin named Segment_4(0) at location P3[4] prevents a direct input connection to an Opamp. (App=cydsfit)
+Log: plm.M0040: The pin named Segment_5(0) at location P3[5] prevents a direct input connection to an Opamp. (App=cydsfit)
+Log: plm.M0038: The pin named Segment_6(0) at location P3[6] prevents usage of special purposes: OpAmp:out. (App=cydsfit)
+Log: plm.M0038: The pin named Segment_7(0) at location P3[7] prevents usage of special purposes: OpAmp:out. (App=cydsfit)
+Info: plm.M0037: TestBench.rpt: 
+      Certain internal analog resources use the following pins for preferred routing: P0[0], P0[1], P0[2], P0[3], P3[0], P3[1], P3[2], P3[3], P3[4], P3[5], P3[6], P3[7].
+      Please check the "Final Placement Details" section of the report file (TestBench.rpt) to see what resources are impacted by your pin selections.
+     (File=C:\perforce\kees_KEESCMSLAP2\apps\content\creator\LED_SegDriver\TestBench.cydsn\TestBench.rpt(1))
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+c51.exe .\main.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\main.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\main.obj)
+c51.exe .\Generated_Source\PSoC3\LED.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_0.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_0.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_0.obj)
+c51.exe .\Generated_Source\PSoC3\Common_0.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Common_0.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Common_0.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_1.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_1.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_1.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_2.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_2.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_2.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_3.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_3.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_3.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_4.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_4.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_4.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_5.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_5.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_5.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_6.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_6.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_6.obj)
+c51.exe .\Generated_Source\PSoC3\Segment_7.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Segment_7.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Segment_7.obj)
+c51.exe .\Generated_Source\PSoC3\Common_1.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Common_1.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Common_1.obj)
+c51.exe .\Generated_Source\PSoC3\Common_2.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Common_2.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Common_2.obj)
+c51.exe .\Generated_Source\PSoC3\Common_3.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Common_3.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Common_3.obj)
+c51.exe .\Generated_Source\PSoC3\LED_RAM_1.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_RAM_1.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_RAM_1.obj)
+c51.exe .\Generated_Source\PSoC3\LED_RAM_2.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_RAM_2.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_RAM_2.obj)
+c51.exe .\Generated_Source\PSoC3\LED_PWM_Clock.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_PWM_Clock.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_PWM_Clock.obj)
+c51.exe .\Generated_Source\PSoC3\LED_Refresh_Clock.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_Refresh_Clock.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_Refresh_Clock.obj)
+c51.exe .\Generated_Source\PSoC3\LED_COM_PWM.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.obj)
+c51.exe .\Generated_Source\PSoC3\LED_COM_PWM_PM.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM_PM.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM_PM.obj)
+c51.exe .\Generated_Source\PSoC3\LED_Brightness_DMA_dma.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_Brightness_DMA_dma.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_Brightness_DMA_dma.obj)
+c51.exe .\Generated_Source\PSoC3\LED_Common_DMA_dma.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_Common_DMA_dma.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_Common_DMA_dma.obj)
+c51.exe .\Generated_Source\PSoC3\LED_Segment_DMA_dma.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\LED_Segment_DMA_dma.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\LED_Segment_DMA_dma.obj)
+Ax51.exe .\Generated_Source\PSoC3\CyBootAsmKeil.a51 NOCO MACRO DB PR(.\DP8051\DP8051_Keil_903\Debug/CyBootAsmKeil.lst) CASE EP INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\CyBootAsmKeil.obj)
+c51.exe .\Generated_Source\PSoC3\CyDmac.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\CyDmac.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\CyDmac.obj)
+c51.exe .\Generated_Source\PSoC3\CyFlash.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\CyFlash.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\CyFlash.obj)
+c51.exe .\Generated_Source\PSoC3\CyLib.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\CyLib.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\CyLib.obj)
+Ax51.exe .\Generated_Source\PSoC3\cymem.a51 NOCO MACRO DB PR(.\DP8051\DP8051_Keil_903\Debug/cymem.lst) CASE EP INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\cymem.obj)
+c51.exe .\Generated_Source\PSoC3\cyPm.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\cyPm.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\cyPm.obj)
+c51.exe .\Generated_Source\PSoC3\CySpc.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\CySpc.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\CySpc.obj)
+c51.exe .\Generated_Source\PSoC3\cyutils.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\cyutils.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\cyutils.obj)
+Ax51.exe .\Generated_Source\PSoC3\KeilStart.a51 NOCO MACRO DB PR(.\DP8051\DP8051_Keil_903\Debug/KeilStart.lst) CASE EP INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\KeilStart.obj)
+c51.exe .\Generated_Source\PSoC3\Button.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\Button.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\Button.obj)
+c51.exe .\Generated_Source\PSoC3\cyfitter_cfg.c NOIV LARGE MODDP2 OMF2 VB(1) PR(.\DP8051\DP8051_Keil_903\Debug\cyfitter_cfg.lst) CD DB NOIP "OT(2, Size)" INCDIR(Generated_Source\PSoC3) OJ(.\DP8051\DP8051_Keil_903\Debug\cyfitter_cfg.obj)
+LIBX51.exe TRANSFER '.\DP8051\DP8051_Keil_903\Debug\LED.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_0.obj', '.\DP8051\DP8051_Keil_903\Debug\Common_0.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_1.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_2.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_3.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_4.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_5.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_6.obj', '.\DP8051\DP8051_Keil_903\Debug\Segment_7.obj', '.\DP8051\DP8051_Keil_903\Debug\Common_1.obj', '.\DP8051\DP8051_Keil_903\Debug\Common_2.obj', '.\DP8051\DP8051_Keil_903\Debug\Common_3.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_RAM_1.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_RAM_2.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_PWM_Clock.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_Refresh_Clock.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_COM_PWM_PM.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_Brightness_DMA_dma.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_Common_DMA_dma.obj', '.\DP8051\DP8051_Keil_903\Debug\LED_Segment_DMA_dma.obj', '.\DP8051\DP8051_Keil_903\Debug\CyBootAsmKeil.obj', '.\DP8051\DP8051_Keil_903\Debug\CyDmac.obj', '.\DP8051\DP8051_Keil_903\Debug\CyFlash.obj', '.\DP8051\DP8051_Keil_903\Debug\CyLib.obj', '.\DP8051\DP8051_Keil_903\Debug\cymem.obj', '.\DP8051\DP8051_Keil_903\Debug\cyPm.obj', '.\DP8051\DP8051_Keil_903\Debug\CySpc.obj', '.\DP8051\DP8051_Keil_903\Debug\cyutils.obj', '.\DP8051\DP8051_Keil_903\Debug\KeilStart.obj', '.\DP8051\DP8051_Keil_903\Debug\Button.obj', '.\DP8051\DP8051_Keil_903\Debug\cyfitter_cfg.obj' TO '.\DP8051\DP8051_Keil_903\Debug\TestBench.lib'
+LX51.exe '.\DP8051\DP8051_Keil_903\Debug\main.obj', '.\DP8051\DP8051_Keil_903\Debug\TestBench.lib', 'C:\Program Files (x86)\Cypress\PSoC Creator\2.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\DP8051\DP8051_Keil_903\Debug\CyComponentLibrary.lib'  TO '.\DP8051\DP8051_Keil_903\Debug\TestBench.omf' PR(.\DP8051\DP8051_Keil_903\Debug\TestBench.map) IX CODE DW(16) RU CL(XDATA(X:0x0000-X:0x1FFF)) CL(CODE(C:0x0000-C:0xFFFF)) CL(CONST(C:0x0000-C:0xFFFF))
+Program Size: data=11.0 xdata=202 const=1899 code=6252
+OHx51.exe TestBench.omf HEXFILE(TestBench.ihx)
+c8051-elf-omf2elf.exe TestBench.omf TestBench.elf
+cyhextool -o .\DP8051\DP8051_Keil_903\Debug\TestBench.hex -f .\DP8051\DP8051_Keil_903\Debug\TestBench.ihx -prot .\Generated_Source\PSoC3\protect.hex -id 1E028069 -a EEPROM=90200000:800,PROGRAM=00000000:10000,CONFIG=80000000:2000,PROTECT=90400000:40 -meta 0301 -cunv 00000005 -wonv AFAC90BC -ecc .\Generated_Source\PSoC3\config.hex
+Flash used: 8151 of 65536 bytes (12.4 %).
+SRAM used: 202 of 8192 bytes (2.5 %).
+--------------- Rebuild Succeeded: 10/10/2012 15:06:28 ---------------

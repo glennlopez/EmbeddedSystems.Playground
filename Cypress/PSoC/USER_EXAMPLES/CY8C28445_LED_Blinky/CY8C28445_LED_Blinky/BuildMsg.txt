@@ -1,0 +1,15 @@
+Starting MAKE...
+creating project.mk 
+lib/psocconfig.asm
+lib/psocconfigtbl.asm
+./boot.asm
+./main.c
+Linking..
+LMM info: area 'virtual_registers' uses 2 bytes in SRAM page 0
+idata dump at output/CY8C28445_LED_Blinky.idata
+  ROM 4% full. 565 out of 16384 bytes used (does not include absolute areas).
+  RAM 1% full. 2 bytes used (does not include stack usage).
+Built with ICCM8C STD V7.05.00
+ 
+CY8C28445_LED_Blinky - 0 error(s) 0 warning(s) 15:08:58
+

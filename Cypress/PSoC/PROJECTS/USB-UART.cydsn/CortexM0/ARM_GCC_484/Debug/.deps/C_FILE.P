@@ -1,0 +1,56 @@
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/CortexM0/ARM_GCC_484/Debug/main.o : Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/CyFlash.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_BOOT.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_PINS.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_PVT.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_SCBCLK.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART_PVT.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_rx.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_rx_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_tx.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_tx_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cm0.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cmFunc.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cmInstr.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cyPm.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cydisabledsheets.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cypins.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/project.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/device.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/main.c 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_BOOT.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_PINS.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_PVT.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_SCBCLK.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART_PVT.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_rx.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_rx_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_tx.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/UART_tx_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cmFunc.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/core_cmInstr.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/Generated_Source/PSoC4/project.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/device.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/USB-UART.cydsn/main.c : 
+

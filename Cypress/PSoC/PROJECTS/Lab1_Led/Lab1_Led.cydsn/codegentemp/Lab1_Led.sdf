@@ -1,0 +1,23 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2014-12-30T06:05:35Z")
+ (DESIGN "Lab1_Led")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "cydsfit")
+ (VERSION "No Version Information Found")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "Lab1_Led")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.hfclk SW1\(0\).in_clock (0.000:0.000:0.000))
+    (INTERCONNECT LEDB\(0\)_PAD LEDB\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LEDG\(0\)_PAD LEDG\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LEDR\(0\)_PAD LEDR\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT SW1\(0\)_PAD SW1\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

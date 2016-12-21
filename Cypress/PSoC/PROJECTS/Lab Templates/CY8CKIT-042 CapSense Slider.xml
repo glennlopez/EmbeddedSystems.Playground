@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-16"?>
+<CapSense_CSD_P4 xmlns:Version="1_0">
+  <m_globalEditMode>true</m_globalEditMode>
+  <Widgets>
+    <ListMainTerminal>
+      <CyTerminal NameIndex="0" WidgetName="LinearSlider0__LS" />
+      <CyTerminal NameIndex="1" WidgetName="LinearSlider0__LS" />
+      <CyTerminal NameIndex="2" WidgetName="LinearSlider0__LS" />
+      <CyTerminal NameIndex="3" WidgetName="LinearSlider0__LS" />
+      <CyTerminal NameIndex="4" WidgetName="LinearSlider0__LS" />
+    </ListMainTerminal>
+    <ListButtons />
+    <ListMatrixButtons />
+    <ListTouchPads />
+    <ListSliders>
+      <CySlider Name="LinearSlider0" Type="SliderLinear" Count="5" Angle="0" Fliped="false" Fliped2D="false" ScaleFactor="1" Diplexing="false" Resolution="255" FilterPropertiesPos="FirstOrderIIR0_75">
+        <Location>
+          <X>2147483647</X>
+          <Y>2147483647</Y>
+        </Location>
+        <Properties>
+          <Hysteresis>0</Hysteresis>
+          <Debounce>1</Debounce>
+          <FingerThreshold>100</FingerThreshold>
+          <NoiseThreshold>20</NoiseThreshold>
+          <ScanResolution>_12</ScanResolution>
+        </Properties>
+      </CySlider>
+    </ListSliders>
+    <GuardSensor Name="GuardSensor" Type="Button" Count="1" Angle="0" Fliped="false" Fliped2D="false" ScaleFactor="1">
+      <Location>
+        <X>2147483647</X>
+        <Y>2147483647</Y>
+      </Location>
+      <Properties>
+        <Hysteresis>10</Hysteresis>
+        <Debounce>5</Debounce>
+        <FingerThreshold>100</FingerThreshold>
+        <NoiseThreshold>20</NoiseThreshold>
+        <ScanResolution>_12</ScanResolution>
+      </Properties>
+    </GuardSensor>
+    <GuardSensorTerminal NameIndex="0" WidgetName="GuardSensor__GRD" />
+    <CyScanSlotsList>
+      <ListScanSlots>
+        <CyScanSlot IDAC1Settings="60" IDAC2Settings="80" Sensitivity="2" AnalogSwitchDivider="2" ModulatorDivider="2" WidgetName="LinearSlider0__LS">
+          <ListTerminalsNames>
+            <string>LinearSlider0_e0__LS</string>
+          </ListTerminalsNames>
+        </CyScanSlot>
+        <CyScanSlot IDAC1Settings="120" IDAC2Settings="80" Sensitivity="2" AnalogSwitchDivider="2" ModulatorDivider="2" WidgetName="LinearSlider0__LS">
+          <ListTerminalsNames>
+            <string>LinearSlider0_e1__LS</string>
+          </ListTerminalsNames>
+        </CyScanSlot>
+        <CyScanSlot IDAC1Settings="120" IDAC2Settings="80" Sensitivity="2" AnalogSwitchDivider="2" ModulatorDivider="2" WidgetName="LinearSlider0__LS">
+          <ListTerminalsNames>
+            <string>LinearSlider0_e2__LS</string>
+          </ListTerminalsNames>
+        </CyScanSlot>
+        <CyScanSlot IDAC1Settings="120" IDAC2Settings="80" Sensitivity="2" AnalogSwitchDivider="2" ModulatorDivider="2" WidgetName="LinearSlider0__LS">
+          <ListTerminalsNames>
+            <string>LinearSlider0_e3__LS</string>
+          </ListTerminalsNames>
+        </CyScanSlot>
+        <CyScanSlot IDAC1Settings="120" IDAC2Settings="80" Sensitivity="2" AnalogSwitchDivider="2" ModulatorDivider="2" WidgetName="LinearSlider0__LS">
+          <ListTerminalsNames>
+            <string>LinearSlider0_e4__LS</string>
+          </ListTerminalsNames>
+        </CyScanSlot>
+      </ListScanSlots>
+      <GuardSensorScanSlot IDAC1Settings="120" IDAC2Settings="80" Sensitivity="2" AnalogSwitchDivider="2" ModulatorDivider="2" WidgetName="GuardSensor__GRD">
+        <ListTerminalsNames>
+          <string>GuardSensor__GRD</string>
+        </ListTerminalsNames>
+      </GuardSensorScanSlot>
+    </CyScanSlotsList>
+  </Widgets>
+  <Settings>
+    <Prs>Prs_None</Prs>
+    <CurrentSource>IDAC_Source</CurrentSource>
+    <ShieldEnable>false</ShieldEnable>
+    <ShieldDelay>ShieldDelay_0</ShieldDelay>
+    <ShieldTankEnable>false</ShieldTankEnable>
+    <AnalogSwitchDivider>12</AnalogSwitchDivider>
+    <ModulatorDivider>12</ModulatorDivider>
+    <MultipleAnalogSwitchDivider>false</MultipleAnalogSwitchDivider>
+    <GuardSensorEnable>false</GuardSensorEnable>
+    <WidgetResolution>Res8</WidgetResolution>
+    <SensorAutoReset>false</SensorAutoReset>
+    <ConnectInactiveSensors>Ground</ConnectInactiveSensors>
+    <IdacRange>IDAC_4x</IdacRange>
+    <IdacCount>1</IdacCount>
+    <RawDataFilterType>None</RawDataFilterType>
+    <ScanSpeed>Normal</ScanSpeed>
+    <TuningMethod>Tuning_None</TuningMethod>
+    <NegativeNoiseThreshold>20</NegativeNoiseThreshold>
+    <EnableTuneHelper>false</EnableTuneHelper>
+    <WaterProofing>false</WaterProofing>
+    <CustomEzI2CInstanceName>SCB</CustomEzI2CInstanceName>
+    <LowBaselineReset>5</LowBaselineReset>
+    <MeasureType>MeasureType_SelfCap</MeasureType>
+    <CmodPrecharge>CapPrVref</CmodPrecharge>
+    <Csh_tankPrecharge>CapPrVref</Csh_tankPrecharge>
+    <TunerIntfAddress>8</TunerIntfAddress>
+    <TunerIntfDataRate>400</TunerIntfDataRate>
+  </Settings>
+</CapSense_CSD_P4>

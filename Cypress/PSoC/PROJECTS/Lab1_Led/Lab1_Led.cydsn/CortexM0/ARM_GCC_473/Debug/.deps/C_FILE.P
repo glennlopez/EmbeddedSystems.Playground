@@ -1,0 +1,48 @@
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/CortexM0/ARM_GCC_473/Debug/main.o : Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/CyFlash.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDB.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDB_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDG.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDG_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDR.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDR_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/SW1.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/SW1_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cm0.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cmFunc.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cmInstr.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cyPm.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cydisabledsheets.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cypins.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/project.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/main.c 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDB.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDB_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDG.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDG_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDR.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/LEDR_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/SW1.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/SW1_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cmFunc.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/core_cmInstr.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/Generated_Source/PSoC4/project.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/Lab1_Led/Lab1_Led.cydsn/main.c : 
+

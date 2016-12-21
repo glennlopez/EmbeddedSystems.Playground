@@ -1,0 +1,8 @@
+--------------- Build Started: 05/10/2013 08:55:26 Project: Lab 2 LED PWM, Configuration: ARM GCC 4.4.1 Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC4 -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_441\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM0\ARM_GCC_441\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:7: error: 'Change1' undeclared (first use in this function)
+.\main.c:16: error: 'Change2' undeclared (first use in this function)
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 05/10/2013 08:55:27 ---------------

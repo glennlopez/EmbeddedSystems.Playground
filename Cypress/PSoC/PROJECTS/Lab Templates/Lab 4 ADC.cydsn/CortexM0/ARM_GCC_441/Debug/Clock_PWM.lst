@@ -1,0 +1,1029 @@
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 18, 4
+  11              		.code	16
+  12              		.file	"Clock_PWM.c"
+  13              		.section	.debug_abbrev,"",%progbits
+  14              	.Ldebug_abbrev0:
+  15              		.section	.debug_info,"",%progbits
+  16              	.Ldebug_info0:
+  17              		.section	.debug_line,"",%progbits
+  18              	.Ldebug_line0:
+  19 0000 C3000000 		.text
+  19      02006100 
+  19      00000201 
+  19      FB0E0D00 
+  19      01010101 
+  20              	.Ltext0:
+  21              		.cfi_sections	.debug_frame
+  22              		.section	.text.Clock_PWM_Start,"ax",%progbits
+  23              		.align	2
+  24              		.global	Clock_PWM_Start
+  25              		.code	16
+  26              		.thumb_func
+  27              		.type	Clock_PWM_Start, %function
+  28              	Clock_PWM_Start:
+  29              	.LFB0:
+  30              		.file 1 ".\\Generated_Source\\PSoC4\\Clock_PWM.c"
+   1:.\Generated_Source\PSoC4/Clock_PWM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/Clock_PWM.c **** * File Name: Clock_PWM.c
+   3:.\Generated_Source\PSoC4/Clock_PWM.c **** * Version 2.0
+   4:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+   5:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Description:
+   6:.\Generated_Source\PSoC4/Clock_PWM.c **** *   Provides system API for the clocking, interrupts and watchdog timer.
+   7:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+   8:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Note:
+   9:.\Generated_Source\PSoC4/Clock_PWM.c **** *   Documentation of the API's in this file is located in the
+  10:.\Generated_Source\PSoC4/Clock_PWM.c **** *   System Reference Guide provided with PSoC Creator.
+  11:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  12:.\Generated_Source\PSoC4/Clock_PWM.c **** ********************************************************************************
+  13:.\Generated_Source\PSoC4/Clock_PWM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC4/Clock_PWM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:.\Generated_Source\PSoC4/Clock_PWM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:.\Generated_Source\PSoC4/Clock_PWM.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC4/Clock_PWM.c **** *******************************************************************************/
+  18:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+  19:.\Generated_Source\PSoC4/Clock_PWM.c **** #include <cydevice_trm.h>
+  20:.\Generated_Source\PSoC4/Clock_PWM.c **** #include "Clock_PWM.h"
+  21:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+  22:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+  23:.\Generated_Source\PSoC4/Clock_PWM.c **** /*******************************************************************************
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 2
+
+
+  24:.\Generated_Source\PSoC4/Clock_PWM.c **** * Function Name: Clock_PWM_Start
+  25:.\Generated_Source\PSoC4/Clock_PWM.c **** ********************************************************************************
+  26:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  27:.\Generated_Source\PSoC4/Clock_PWM.c **** * Summary:
+  28:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Starts the clock.
+  29:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  30:.\Generated_Source\PSoC4/Clock_PWM.c **** * Parameters:
+  31:.\Generated_Source\PSoC4/Clock_PWM.c **** *  None
+  32:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  33:.\Generated_Source\PSoC4/Clock_PWM.c **** * Returns:
+  34:.\Generated_Source\PSoC4/Clock_PWM.c **** *  None
+  35:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  36:.\Generated_Source\PSoC4/Clock_PWM.c **** *******************************************************************************/
+  37:.\Generated_Source\PSoC4/Clock_PWM.c **** void Clock_PWM_Start(void)
+  38:.\Generated_Source\PSoC4/Clock_PWM.c **** {
+  31              		.loc 1 38 0
+  32              		.cfi_startproc
+  33 0000 80B5     		push	{r7, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+  37              		.cfi_offset 14, -4
+  38 0002 00AF     		add	r7, sp, #0
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_register 7
+  39:.\Generated_Source\PSoC4/Clock_PWM.c ****     /* Set the bit to enable the clock. */
+  40:.\Generated_Source\PSoC4/Clock_PWM.c ****     Clock_PWM_ENABLE_REG |= Clock_PWM__ENABLE_MASK;
+  41              		.loc 1 40 0
+  42 0004 044A     		ldr	r2, .L3
+  43 0006 044B     		ldr	r3, .L3
+  44 0008 1968     		ldr	r1, [r3]
+  45 000a 8023     		mov	r3, #128
+  46 000c 1B06     		lsl	r3, r3, #24
+  47 000e 0B43     		orr	r3, r3, r1
+  48 0010 1360     		str	r3, [r2]
+  41:.\Generated_Source\PSoC4/Clock_PWM.c **** }
+  49              		.loc 1 41 0
+  50 0012 BD46     		mov	sp, r7
+  51              		@ sp needed for prologue
+  52 0014 80BD     		pop	{r7, pc}
+  53              	.L4:
+  54 0016 C046     		.align	2
+  55              	.L3:
+  56 0018 00000240 		.word	1073872896
+  57              		.cfi_endproc
+  58              	.LFE0:
+  59              		.size	Clock_PWM_Start, .-Clock_PWM_Start
+  60              		.section	.text.Clock_PWM_Stop,"ax",%progbits
+  61              		.align	2
+  62              		.global	Clock_PWM_Stop
+  63              		.code	16
+  64              		.thumb_func
+  65              		.type	Clock_PWM_Stop, %function
+  66              	Clock_PWM_Stop:
+  67              	.LFB1:
+  42:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+  43:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 3
+
+
+  44:.\Generated_Source\PSoC4/Clock_PWM.c **** /*******************************************************************************
+  45:.\Generated_Source\PSoC4/Clock_PWM.c **** * Function Name: Clock_PWM_Stop
+  46:.\Generated_Source\PSoC4/Clock_PWM.c **** ********************************************************************************
+  47:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  48:.\Generated_Source\PSoC4/Clock_PWM.c **** * Summary:
+  49:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Stops the clock and returns immediately. This API does not require the
+  50:.\Generated_Source\PSoC4/Clock_PWM.c **** *  source clock to be running but may return before the hardware is actually
+  51:.\Generated_Source\PSoC4/Clock_PWM.c **** *  disabled.
+  52:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  53:.\Generated_Source\PSoC4/Clock_PWM.c **** * Parameters:
+  54:.\Generated_Source\PSoC4/Clock_PWM.c **** *  None
+  55:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  56:.\Generated_Source\PSoC4/Clock_PWM.c **** * Returns:
+  57:.\Generated_Source\PSoC4/Clock_PWM.c **** *  None
+  58:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  59:.\Generated_Source\PSoC4/Clock_PWM.c **** *******************************************************************************/
+  60:.\Generated_Source\PSoC4/Clock_PWM.c **** void Clock_PWM_Stop(void)
+  61:.\Generated_Source\PSoC4/Clock_PWM.c **** {
+  68              		.loc 1 61 0
+  69              		.cfi_startproc
+  70 0000 80B5     		push	{r7, lr}
+  71              	.LCFI2:
+  72              		.cfi_def_cfa_offset 8
+  73              		.cfi_offset 7, -8
+  74              		.cfi_offset 14, -4
+  75 0002 00AF     		add	r7, sp, #0
+  76              	.LCFI3:
+  77              		.cfi_def_cfa_register 7
+  62:.\Generated_Source\PSoC4/Clock_PWM.c ****     /* Clear the bit to disable the clock. */
+  63:.\Generated_Source\PSoC4/Clock_PWM.c ****     Clock_PWM_ENABLE_REG &= (uint32)(~Clock_PWM__ENABLE_MASK);
+  78              		.loc 1 63 0
+  79 0004 034B     		ldr	r3, .L7
+  80 0006 034A     		ldr	r2, .L7
+  81 0008 1268     		ldr	r2, [r2]
+  82 000a 5200     		lsl	r2, r2, #1
+  83 000c 5208     		lsr	r2, r2, #1
+  84 000e 1A60     		str	r2, [r3]
+  64:.\Generated_Source\PSoC4/Clock_PWM.c **** }
+  85              		.loc 1 64 0
+  86 0010 BD46     		mov	sp, r7
+  87              		@ sp needed for prologue
+  88 0012 80BD     		pop	{r7, pc}
+  89              	.L8:
+  90              		.align	2
+  91              	.L7:
+  92 0014 00000240 		.word	1073872896
+  93              		.cfi_endproc
+  94              	.LFE1:
+  95              		.size	Clock_PWM_Stop, .-Clock_PWM_Stop
+  96              		.section	.text.Clock_PWM_SetFractionalDividerRegister,"ax",%progbits
+  97              		.align	2
+  98              		.global	Clock_PWM_SetFractionalDividerRegister
+  99              		.code	16
+ 100              		.thumb_func
+ 101              		.type	Clock_PWM_SetFractionalDividerRegister, %function
+ 102              	Clock_PWM_SetFractionalDividerRegister:
+ 103              	.LFB2:
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 4
+
+
+  65:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+  66:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+  67:.\Generated_Source\PSoC4/Clock_PWM.c **** /*******************************************************************************
+  68:.\Generated_Source\PSoC4/Clock_PWM.c **** * Function Name: Clock_PWM_SetFractionalDividerRegister
+  69:.\Generated_Source\PSoC4/Clock_PWM.c **** ********************************************************************************
+  70:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  71:.\Generated_Source\PSoC4/Clock_PWM.c **** * Summary:
+  72:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Modifies the clock divider and the fractional divider.
+  73:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  74:.\Generated_Source\PSoC4/Clock_PWM.c **** * Parameters:
+  75:.\Generated_Source\PSoC4/Clock_PWM.c **** *  clkDivider:  Divider register value (0-65535). This value is NOT the
+  76:.\Generated_Source\PSoC4/Clock_PWM.c **** *    divider; the clock hardware divides by clkDivider plus one. For example,
+  77:.\Generated_Source\PSoC4/Clock_PWM.c **** *    to divide the clock by 2, this parameter should be set to 1.
+  78:.\Generated_Source\PSoC4/Clock_PWM.c **** *  fracDivider:  Fractional Divider register value (0-31).
+  79:.\Generated_Source\PSoC4/Clock_PWM.c **** * Returns:
+  80:.\Generated_Source\PSoC4/Clock_PWM.c **** *  None
+  81:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+  82:.\Generated_Source\PSoC4/Clock_PWM.c **** *******************************************************************************/
+  83:.\Generated_Source\PSoC4/Clock_PWM.c **** void Clock_PWM_SetFractionalDividerRegister(uint16 clkDivider, uint8 clkFractional)
+  84:.\Generated_Source\PSoC4/Clock_PWM.c **** {
+ 104              		.loc 1 84 0
+ 105              		.cfi_startproc
+ 106 0000 80B5     		push	{r7, lr}
+ 107              	.LCFI4:
+ 108              		.cfi_def_cfa_offset 8
+ 109              		.cfi_offset 7, -8
+ 110              		.cfi_offset 14, -4
+ 111 0002 84B0     		sub	sp, sp, #16
+ 112              	.LCFI5:
+ 113              		.cfi_def_cfa_offset 24
+ 114 0004 00AF     		add	r7, sp, #0
+ 115              	.LCFI6:
+ 116              		.cfi_def_cfa_register 7
+ 117 0006 0A1C     		mov	r2, r1
+ 118 0008 BB1D     		add	r3, r7, #6
+ 119 000a 011C     		add	r1, r0, #0
+ 120 000c 1980     		strh	r1, [r3]
+ 121 000e 7B1D     		add	r3, r7, #5
+ 122 0010 1A70     		strb	r2, [r3]
+  85:.\Generated_Source\PSoC4/Clock_PWM.c **** #if defined (Clock_PWM__FRAC_MASK)
+  86:.\Generated_Source\PSoC4/Clock_PWM.c **** 	/* get all but divider bits */
+  87:.\Generated_Source\PSoC4/Clock_PWM.c ****     uint32 maskVal = Clock_PWM_DIV_REG & 
+  88:.\Generated_Source\PSoC4/Clock_PWM.c ****                     (uint32)(~(Clock_PWM__DIVIDER_MASK | Clock_PWM__FRAC_MASK)); 
+  89:.\Generated_Source\PSoC4/Clock_PWM.c **** 	/* combine mask and new divider val into 32-bit value */
+  90:.\Generated_Source\PSoC4/Clock_PWM.c ****     uint32 regVal = clkDivider | (((uint32)clkFractional << 16) & Clock_PWM__FRAC_MASK) | maskVal;
+  91:.\Generated_Source\PSoC4/Clock_PWM.c **** #else
+  92:.\Generated_Source\PSoC4/Clock_PWM.c ****     /* get all but integer divider bits */
+  93:.\Generated_Source\PSoC4/Clock_PWM.c ****     uint32 maskVal = Clock_PWM_DIV_REG & (uint32)(~(uint32)Clock_PWM__DIVIDER_MASK);
+ 123              		.loc 1 93 0
+ 124 0012 084B     		ldr	r3, .L11
+ 125 0014 1B68     		ldr	r3, [r3]
+ 126 0016 1B0C     		lsr	r3, r3, #16
+ 127 0018 1B04     		lsl	r3, r3, #16
+ 128 001a BB60     		str	r3, [r7, #8]
+  94:.\Generated_Source\PSoC4/Clock_PWM.c ****     /* combine mask and new divider val into 32-bit value */
+  95:.\Generated_Source\PSoC4/Clock_PWM.c ****     uint32 regVal = clkDivider | maskVal;
+ 129              		.loc 1 95 0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 5
+
+
+ 130 001c BB1D     		add	r3, r7, #6
+ 131 001e 1A88     		ldrh	r2, [r3]
+ 132 0020 BB68     		ldr	r3, [r7, #8]
+ 133 0022 1343     		orr	r3, r3, r2
+ 134 0024 FB60     		str	r3, [r7, #12]
+  96:.\Generated_Source\PSoC4/Clock_PWM.c **** #endif /* Clock_PWM__FRAC_MASK */
+  97:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+  98:.\Generated_Source\PSoC4/Clock_PWM.c **** 	Clock_PWM_DIV_REG = regVal;
+ 135              		.loc 1 98 0
+ 136 0026 034B     		ldr	r3, .L11
+ 137 0028 FA68     		ldr	r2, [r7, #12]
+ 138 002a 1A60     		str	r2, [r3]
+  99:.\Generated_Source\PSoC4/Clock_PWM.c **** }
+ 139              		.loc 1 99 0
+ 140 002c BD46     		mov	sp, r7
+ 141 002e 04B0     		add	sp, sp, #16
+ 142              		@ sp needed for prologue
+ 143 0030 80BD     		pop	{r7, pc}
+ 144              	.L12:
+ 145 0032 C046     		.align	2
+ 146              	.L11:
+ 147 0034 00000240 		.word	1073872896
+ 148              		.cfi_endproc
+ 149              	.LFE2:
+ 150              		.size	Clock_PWM_SetFractionalDividerRegister, .-Clock_PWM_SetFractionalDividerRegister
+ 151              		.section	.text.Clock_PWM_GetDividerRegister,"ax",%progbits
+ 152              		.align	2
+ 153              		.global	Clock_PWM_GetDividerRegister
+ 154              		.code	16
+ 155              		.thumb_func
+ 156              		.type	Clock_PWM_GetDividerRegister, %function
+ 157              	Clock_PWM_GetDividerRegister:
+ 158              	.LFB3:
+ 100:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+ 101:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+ 102:.\Generated_Source\PSoC4/Clock_PWM.c **** /*******************************************************************************
+ 103:.\Generated_Source\PSoC4/Clock_PWM.c **** * Function Name: Clock_PWM_GetDividerRegister
+ 104:.\Generated_Source\PSoC4/Clock_PWM.c **** ********************************************************************************
+ 105:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 106:.\Generated_Source\PSoC4/Clock_PWM.c **** * Summary:
+ 107:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Gets the clock divider register value.
+ 108:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 109:.\Generated_Source\PSoC4/Clock_PWM.c **** * Parameters:
+ 110:.\Generated_Source\PSoC4/Clock_PWM.c **** *  None
+ 111:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 112:.\Generated_Source\PSoC4/Clock_PWM.c **** * Returns:
+ 113:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Divide value of the clock minus 1. For example, if the clock is set to
+ 114:.\Generated_Source\PSoC4/Clock_PWM.c **** *  divide by 2, the return value will be 1.
+ 115:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 116:.\Generated_Source\PSoC4/Clock_PWM.c **** *******************************************************************************/
+ 117:.\Generated_Source\PSoC4/Clock_PWM.c **** uint16 Clock_PWM_GetDividerRegister(void)
+ 118:.\Generated_Source\PSoC4/Clock_PWM.c **** {
+ 159              		.loc 1 118 0
+ 160              		.cfi_startproc
+ 161 0000 80B5     		push	{r7, lr}
+ 162              	.LCFI7:
+ 163              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 6
+
+
+ 164              		.cfi_offset 7, -8
+ 165              		.cfi_offset 14, -4
+ 166 0002 00AF     		add	r7, sp, #0
+ 167              	.LCFI8:
+ 168              		.cfi_def_cfa_register 7
+ 119:.\Generated_Source\PSoC4/Clock_PWM.c ****     return (uint16)Clock_PWM_DIV_REG;
+ 169              		.loc 1 119 0
+ 170 0004 024B     		ldr	r3, .L15
+ 171 0006 1B68     		ldr	r3, [r3]
+ 172 0008 9BB2     		uxth	r3, r3
+ 120:.\Generated_Source\PSoC4/Clock_PWM.c **** }
+ 173              		.loc 1 120 0
+ 174 000a 181C     		mov	r0, r3
+ 175 000c BD46     		mov	sp, r7
+ 176              		@ sp needed for prologue
+ 177 000e 80BD     		pop	{r7, pc}
+ 178              	.L16:
+ 179              		.align	2
+ 180              	.L15:
+ 181 0010 00000240 		.word	1073872896
+ 182              		.cfi_endproc
+ 183              	.LFE3:
+ 184              		.size	Clock_PWM_GetDividerRegister, .-Clock_PWM_GetDividerRegister
+ 185              		.section	.text.Clock_PWM_GetFractionalDividerRegister,"ax",%progbits
+ 186              		.align	2
+ 187              		.global	Clock_PWM_GetFractionalDividerRegister
+ 188              		.code	16
+ 189              		.thumb_func
+ 190              		.type	Clock_PWM_GetFractionalDividerRegister, %function
+ 191              	Clock_PWM_GetFractionalDividerRegister:
+ 192              	.LFB4:
+ 121:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+ 122:.\Generated_Source\PSoC4/Clock_PWM.c **** 
+ 123:.\Generated_Source\PSoC4/Clock_PWM.c **** /*******************************************************************************
+ 124:.\Generated_Source\PSoC4/Clock_PWM.c **** * Function Name: Clock_PWM_GetFractionalDividerRegister
+ 125:.\Generated_Source\PSoC4/Clock_PWM.c **** ********************************************************************************
+ 126:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 127:.\Generated_Source\PSoC4/Clock_PWM.c **** * Summary:
+ 128:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Gets the clock fractional divider register value.
+ 129:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 130:.\Generated_Source\PSoC4/Clock_PWM.c **** * Parameters:
+ 131:.\Generated_Source\PSoC4/Clock_PWM.c **** *  None
+ 132:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 133:.\Generated_Source\PSoC4/Clock_PWM.c **** * Returns:
+ 134:.\Generated_Source\PSoC4/Clock_PWM.c **** *  Fractional Divide value of the clock
+ 135:.\Generated_Source\PSoC4/Clock_PWM.c **** *  0 if the fractional divider is not in use.
+ 136:.\Generated_Source\PSoC4/Clock_PWM.c **** *
+ 137:.\Generated_Source\PSoC4/Clock_PWM.c **** *******************************************************************************/
+ 138:.\Generated_Source\PSoC4/Clock_PWM.c **** uint8 Clock_PWM_GetFractionalDividerRegister(void)
+ 139:.\Generated_Source\PSoC4/Clock_PWM.c **** {
+ 193              		.loc 1 139 0
+ 194              		.cfi_startproc
+ 195 0000 80B5     		push	{r7, lr}
+ 196              	.LCFI9:
+ 197              		.cfi_def_cfa_offset 8
+ 198              		.cfi_offset 7, -8
+ 199              		.cfi_offset 14, -4
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 7
+
+
+ 200 0002 00AF     		add	r7, sp, #0
+ 201              	.LCFI10:
+ 202              		.cfi_def_cfa_register 7
+ 140:.\Generated_Source\PSoC4/Clock_PWM.c **** #if defined (Clock_PWM__FRAC_MASK)
+ 141:.\Generated_Source\PSoC4/Clock_PWM.c ****     /* get fractional divider bits */
+ 142:.\Generated_Source\PSoC4/Clock_PWM.c ****     uint32 maskVal = Clock_PWM_DIV_REG & Clock_PWM__FRAC_MASK;
+ 143:.\Generated_Source\PSoC4/Clock_PWM.c ****     return (maskVal >> 16);
+ 144:.\Generated_Source\PSoC4/Clock_PWM.c **** #else
+ 145:.\Generated_Source\PSoC4/Clock_PWM.c ****     return 0u;
+ 203              		.loc 1 145 0
+ 204 0004 0023     		mov	r3, #0
+ 146:.\Generated_Source\PSoC4/Clock_PWM.c **** #endif /* Clock_PWM__FRAC_MASK */
+ 147:.\Generated_Source\PSoC4/Clock_PWM.c **** }
+ 205              		.loc 1 147 0
+ 206 0006 181C     		mov	r0, r3
+ 207 0008 BD46     		mov	sp, r7
+ 208              		@ sp needed for prologue
+ 209 000a 80BD     		pop	{r7, pc}
+ 210              		.cfi_endproc
+ 211              	.LFE4:
+ 212              		.size	Clock_PWM_GetFractionalDividerRegister, .-Clock_PWM_GetFractionalDividerRegister
+ 213              		.text
+ 214              	.Letext0:
+ 215              		.section	.debug_loc,"",%progbits
+ 216              	.Ldebug_loc0:
+ 217              	.LLST0:
+ 218 0000 00000000 		.4byte	.LFB0
+ 219 0004 02000000 		.4byte	.LCFI0
+ 220 0008 0100     		.2byte	0x1
+ 221 000a 5D       		.byte	0x5d
+ 222 000b 02000000 		.4byte	.LCFI0
+ 223 000f 04000000 		.4byte	.LCFI1
+ 224 0013 0200     		.2byte	0x2
+ 225 0015 7D       		.byte	0x7d
+ 226 0016 08       		.sleb128 8
+ 227 0017 04000000 		.4byte	.LCFI1
+ 228 001b 1C000000 		.4byte	.LFE0
+ 229 001f 0200     		.2byte	0x2
+ 230 0021 77       		.byte	0x77
+ 231 0022 08       		.sleb128 8
+ 232 0023 00000000 		.4byte	0x0
+ 233 0027 00000000 		.4byte	0x0
+ 234              	.LLST1:
+ 235 002b 00000000 		.4byte	.LFB1
+ 236 002f 02000000 		.4byte	.LCFI2
+ 237 0033 0100     		.2byte	0x1
+ 238 0035 5D       		.byte	0x5d
+ 239 0036 02000000 		.4byte	.LCFI2
+ 240 003a 04000000 		.4byte	.LCFI3
+ 241 003e 0200     		.2byte	0x2
+ 242 0040 7D       		.byte	0x7d
+ 243 0041 08       		.sleb128 8
+ 244 0042 04000000 		.4byte	.LCFI3
+ 245 0046 18000000 		.4byte	.LFE1
+ 246 004a 0200     		.2byte	0x2
+ 247 004c 77       		.byte	0x77
+ 248 004d 08       		.sleb128 8
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 8
+
+
+ 249 004e 00000000 		.4byte	0x0
+ 250 0052 00000000 		.4byte	0x0
+ 251              	.LLST2:
+ 252 0056 00000000 		.4byte	.LFB2
+ 253 005a 02000000 		.4byte	.LCFI4
+ 254 005e 0100     		.2byte	0x1
+ 255 0060 5D       		.byte	0x5d
+ 256 0061 02000000 		.4byte	.LCFI4
+ 257 0065 04000000 		.4byte	.LCFI5
+ 258 0069 0200     		.2byte	0x2
+ 259 006b 7D       		.byte	0x7d
+ 260 006c 08       		.sleb128 8
+ 261 006d 04000000 		.4byte	.LCFI5
+ 262 0071 06000000 		.4byte	.LCFI6
+ 263 0075 0200     		.2byte	0x2
+ 264 0077 7D       		.byte	0x7d
+ 265 0078 18       		.sleb128 24
+ 266 0079 06000000 		.4byte	.LCFI6
+ 267 007d 38000000 		.4byte	.LFE2
+ 268 0081 0200     		.2byte	0x2
+ 269 0083 77       		.byte	0x77
+ 270 0084 18       		.sleb128 24
+ 271 0085 00000000 		.4byte	0x0
+ 272 0089 00000000 		.4byte	0x0
+ 273              	.LLST3:
+ 274 008d 00000000 		.4byte	.LFB3
+ 275 0091 02000000 		.4byte	.LCFI7
+ 276 0095 0100     		.2byte	0x1
+ 277 0097 5D       		.byte	0x5d
+ 278 0098 02000000 		.4byte	.LCFI7
+ 279 009c 04000000 		.4byte	.LCFI8
+ 280 00a0 0200     		.2byte	0x2
+ 281 00a2 7D       		.byte	0x7d
+ 282 00a3 08       		.sleb128 8
+ 283 00a4 04000000 		.4byte	.LCFI8
+ 284 00a8 14000000 		.4byte	.LFE3
+ 285 00ac 0200     		.2byte	0x2
+ 286 00ae 77       		.byte	0x77
+ 287 00af 08       		.sleb128 8
+ 288 00b0 00000000 		.4byte	0x0
+ 289 00b4 00000000 		.4byte	0x0
+ 290              	.LLST4:
+ 291 00b8 00000000 		.4byte	.LFB4
+ 292 00bc 02000000 		.4byte	.LCFI9
+ 293 00c0 0100     		.2byte	0x1
+ 294 00c2 5D       		.byte	0x5d
+ 295 00c3 02000000 		.4byte	.LCFI9
+ 296 00c7 04000000 		.4byte	.LCFI10
+ 297 00cb 0200     		.2byte	0x2
+ 298 00cd 7D       		.byte	0x7d
+ 299 00ce 08       		.sleb128 8
+ 300 00cf 04000000 		.4byte	.LCFI10
+ 301 00d3 0C000000 		.4byte	.LFE4
+ 302 00d7 0200     		.2byte	0x2
+ 303 00d9 77       		.byte	0x77
+ 304 00da 08       		.sleb128 8
+ 305 00db 00000000 		.4byte	0x0
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 9
+
+
+ 306 00df 00000000 		.4byte	0x0
+ 307              		.file 2 "./Generated_Source/PSoC4/cytypes.h"
+ 308              		.section	.debug_info
+ 309 0000 50010000 		.4byte	0x150
+ 310 0004 0200     		.2byte	0x2
+ 311 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 312 000a 04       		.byte	0x4
+ 313 000b 01       		.uleb128 0x1
+ 314 000c 76010000 		.4byte	.LASF23
+ 315 0010 01       		.byte	0x1
+ 316 0011 1D000000 		.4byte	.LASF24
+ 317 0015 C7000000 		.4byte	.LASF25
+ 318 0019 00000000 		.4byte	0x0
+ 319 001d 00000000 		.4byte	0x0
+ 320 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 321 0025 00000000 		.4byte	.Ldebug_line0
+ 322 0029 02       		.uleb128 0x2
+ 323 002a 01       		.byte	0x1
+ 324 002b 06       		.byte	0x6
+ 325 002c D7010000 		.4byte	.LASF0
+ 326 0030 02       		.uleb128 0x2
+ 327 0031 01       		.byte	0x1
+ 328 0032 08       		.byte	0x8
+ 329 0033 50000000 		.4byte	.LASF1
+ 330 0037 02       		.uleb128 0x2
+ 331 0038 02       		.byte	0x2
+ 332 0039 05       		.byte	0x5
+ 333 003a 97010000 		.4byte	.LASF2
+ 334 003e 02       		.uleb128 0x2
+ 335 003f 02       		.byte	0x2
+ 336 0040 07       		.byte	0x7
+ 337 0041 8D000000 		.4byte	.LASF3
+ 338 0045 02       		.uleb128 0x2
+ 339 0046 04       		.byte	0x4
+ 340 0047 05       		.byte	0x5
+ 341 0048 CE010000 		.4byte	.LASF4
+ 342 004c 02       		.uleb128 0x2
+ 343 004d 04       		.byte	0x4
+ 344 004e 07       		.byte	0x7
+ 345 004f 7B000000 		.4byte	.LASF5
+ 346 0053 02       		.uleb128 0x2
+ 347 0054 08       		.byte	0x8
+ 348 0055 05       		.byte	0x5
+ 349 0056 00000000 		.4byte	.LASF6
+ 350 005a 02       		.uleb128 0x2
+ 351 005b 08       		.byte	0x8
+ 352 005c 07       		.byte	0x7
+ 353 005d 38010000 		.4byte	.LASF7
+ 354 0061 03       		.uleb128 0x3
+ 355 0062 04       		.byte	0x4
+ 356 0063 05       		.byte	0x5
+ 357 0064 696E7400 		.ascii	"int\000"
+ 358 0068 02       		.uleb128 0x2
+ 359 0069 04       		.byte	0x4
+ 360 006a 07       		.byte	0x7
+ 361 006b 2B010000 		.4byte	.LASF8
+ 362 006f 04       		.uleb128 0x4
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 10
+
+
+ 363 0070 A1010000 		.4byte	.LASF9
+ 364 0074 02       		.byte	0x2
+ 365 0075 4C       		.byte	0x4c
+ 366 0076 30000000 		.4byte	0x30
+ 367 007a 04       		.uleb128 0x4
+ 368 007b 1D010000 		.4byte	.LASF10
+ 369 007f 02       		.byte	0x2
+ 370 0080 4D       		.byte	0x4d
+ 371 0081 3E000000 		.4byte	0x3e
+ 372 0085 04       		.uleb128 0x4
+ 373 0086 24010000 		.4byte	.LASF11
+ 374 008a 02       		.byte	0x2
+ 375 008b 4E       		.byte	0x4e
+ 376 008c 4C000000 		.4byte	0x4c
+ 377 0090 02       		.uleb128 0x2
+ 378 0091 04       		.byte	0x4
+ 379 0092 04       		.byte	0x4
+ 380 0093 4A000000 		.4byte	.LASF12
+ 381 0097 02       		.uleb128 0x2
+ 382 0098 08       		.byte	0x8
+ 383 0099 04       		.byte	0x4
+ 384 009a AB000000 		.4byte	.LASF13
+ 385 009e 02       		.uleb128 0x2
+ 386 009f 01       		.byte	0x1
+ 387 00a0 08       		.byte	0x8
+ 388 00a1 82010000 		.4byte	.LASF14
+ 389 00a5 05       		.uleb128 0x5
+ 390 00a6 01       		.byte	0x1
+ 391 00a7 87010000 		.4byte	.LASF15
+ 392 00ab 01       		.byte	0x1
+ 393 00ac 25       		.byte	0x25
+ 394 00ad 01       		.byte	0x1
+ 395 00ae 00000000 		.4byte	.LFB0
+ 396 00b2 1C000000 		.4byte	.LFE0
+ 397 00b6 00000000 		.4byte	.LLST0
+ 398 00ba 05       		.uleb128 0x5
+ 399 00bb 01       		.byte	0x1
+ 400 00bc 0E000000 		.4byte	.LASF16
+ 401 00c0 01       		.byte	0x1
+ 402 00c1 3C       		.byte	0x3c
+ 403 00c2 01       		.byte	0x1
+ 404 00c3 00000000 		.4byte	.LFB1
+ 405 00c7 18000000 		.4byte	.LFE1
+ 406 00cb 2B000000 		.4byte	.LLST1
+ 407 00cf 06       		.uleb128 0x6
+ 408 00d0 01       		.byte	0x1
+ 409 00d1 A7010000 		.4byte	.LASF26
+ 410 00d5 01       		.byte	0x1
+ 411 00d6 53       		.byte	0x53
+ 412 00d7 01       		.byte	0x1
+ 413 00d8 00000000 		.4byte	.LFB2
+ 414 00dc 38000000 		.4byte	.LFE2
+ 415 00e0 56000000 		.4byte	.LLST2
+ 416 00e4 21010000 		.4byte	0x121
+ 417 00e8 07       		.uleb128 0x7
+ 418 00e9 A0000000 		.4byte	.LASF17
+ 419 00ed 01       		.byte	0x1
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 11
+
+
+ 420 00ee 53       		.byte	0x53
+ 421 00ef 7A000000 		.4byte	0x7a
+ 422 00f3 02       		.byte	0x2
+ 423 00f4 91       		.byte	0x91
+ 424 00f5 6E       		.sleb128 -18
+ 425 00f6 07       		.uleb128 0x7
+ 426 00f7 B9000000 		.4byte	.LASF18
+ 427 00fb 01       		.byte	0x1
+ 428 00fc 53       		.byte	0x53
+ 429 00fd 6F000000 		.4byte	0x6f
+ 430 0101 02       		.byte	0x2
+ 431 0102 91       		.byte	0x91
+ 432 0103 6D       		.sleb128 -19
+ 433 0104 08       		.uleb128 0x8
+ 434 0105 42000000 		.4byte	.LASF19
+ 435 0109 01       		.byte	0x1
+ 436 010a 5D       		.byte	0x5d
+ 437 010b 85000000 		.4byte	0x85
+ 438 010f 02       		.byte	0x2
+ 439 0110 91       		.byte	0x91
+ 440 0111 70       		.sleb128 -16
+ 441 0112 08       		.uleb128 0x8
+ 442 0113 B2000000 		.4byte	.LASF20
+ 443 0117 01       		.byte	0x1
+ 444 0118 5F       		.byte	0x5f
+ 445 0119 85000000 		.4byte	0x85
+ 446 011d 02       		.byte	0x2
+ 447 011e 91       		.byte	0x91
+ 448 011f 74       		.sleb128 -12
+ 449 0120 00       		.byte	0x0
+ 450 0121 09       		.uleb128 0x9
+ 451 0122 01       		.byte	0x1
+ 452 0123 5E000000 		.4byte	.LASF21
+ 453 0127 01       		.byte	0x1
+ 454 0128 75       		.byte	0x75
+ 455 0129 01       		.byte	0x1
+ 456 012a 7A000000 		.4byte	0x7a
+ 457 012e 00000000 		.4byte	.LFB3
+ 458 0132 14000000 		.4byte	.LFE3
+ 459 0136 8D000000 		.4byte	.LLST3
+ 460 013a 09       		.uleb128 0x9
+ 461 013b 01       		.byte	0x1
+ 462 013c 4F010000 		.4byte	.LASF22
+ 463 0140 01       		.byte	0x1
+ 464 0141 8A       		.byte	0x8a
+ 465 0142 01       		.byte	0x1
+ 466 0143 6F000000 		.4byte	0x6f
+ 467 0147 00000000 		.4byte	.LFB4
+ 468 014b 0C000000 		.4byte	.LFE4
+ 469 014f B8000000 		.4byte	.LLST4
+ 470 0153 00       		.byte	0x0
+ 471              		.section	.debug_abbrev
+ 472 0000 01       		.uleb128 0x1
+ 473 0001 11       		.uleb128 0x11
+ 474 0002 01       		.byte	0x1
+ 475 0003 25       		.uleb128 0x25
+ 476 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 12
+
+
+ 477 0005 13       		.uleb128 0x13
+ 478 0006 0B       		.uleb128 0xb
+ 479 0007 03       		.uleb128 0x3
+ 480 0008 0E       		.uleb128 0xe
+ 481 0009 1B       		.uleb128 0x1b
+ 482 000a 0E       		.uleb128 0xe
+ 483 000b 11       		.uleb128 0x11
+ 484 000c 01       		.uleb128 0x1
+ 485 000d 52       		.uleb128 0x52
+ 486 000e 01       		.uleb128 0x1
+ 487 000f 55       		.uleb128 0x55
+ 488 0010 06       		.uleb128 0x6
+ 489 0011 10       		.uleb128 0x10
+ 490 0012 06       		.uleb128 0x6
+ 491 0013 00       		.byte	0x0
+ 492 0014 00       		.byte	0x0
+ 493 0015 02       		.uleb128 0x2
+ 494 0016 24       		.uleb128 0x24
+ 495 0017 00       		.byte	0x0
+ 496 0018 0B       		.uleb128 0xb
+ 497 0019 0B       		.uleb128 0xb
+ 498 001a 3E       		.uleb128 0x3e
+ 499 001b 0B       		.uleb128 0xb
+ 500 001c 03       		.uleb128 0x3
+ 501 001d 0E       		.uleb128 0xe
+ 502 001e 00       		.byte	0x0
+ 503 001f 00       		.byte	0x0
+ 504 0020 03       		.uleb128 0x3
+ 505 0021 24       		.uleb128 0x24
+ 506 0022 00       		.byte	0x0
+ 507 0023 0B       		.uleb128 0xb
+ 508 0024 0B       		.uleb128 0xb
+ 509 0025 3E       		.uleb128 0x3e
+ 510 0026 0B       		.uleb128 0xb
+ 511 0027 03       		.uleb128 0x3
+ 512 0028 08       		.uleb128 0x8
+ 513 0029 00       		.byte	0x0
+ 514 002a 00       		.byte	0x0
+ 515 002b 04       		.uleb128 0x4
+ 516 002c 16       		.uleb128 0x16
+ 517 002d 00       		.byte	0x0
+ 518 002e 03       		.uleb128 0x3
+ 519 002f 0E       		.uleb128 0xe
+ 520 0030 3A       		.uleb128 0x3a
+ 521 0031 0B       		.uleb128 0xb
+ 522 0032 3B       		.uleb128 0x3b
+ 523 0033 0B       		.uleb128 0xb
+ 524 0034 49       		.uleb128 0x49
+ 525 0035 13       		.uleb128 0x13
+ 526 0036 00       		.byte	0x0
+ 527 0037 00       		.byte	0x0
+ 528 0038 05       		.uleb128 0x5
+ 529 0039 2E       		.uleb128 0x2e
+ 530 003a 00       		.byte	0x0
+ 531 003b 3F       		.uleb128 0x3f
+ 532 003c 0C       		.uleb128 0xc
+ 533 003d 03       		.uleb128 0x3
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 13
+
+
+ 534 003e 0E       		.uleb128 0xe
+ 535 003f 3A       		.uleb128 0x3a
+ 536 0040 0B       		.uleb128 0xb
+ 537 0041 3B       		.uleb128 0x3b
+ 538 0042 0B       		.uleb128 0xb
+ 539 0043 27       		.uleb128 0x27
+ 540 0044 0C       		.uleb128 0xc
+ 541 0045 11       		.uleb128 0x11
+ 542 0046 01       		.uleb128 0x1
+ 543 0047 12       		.uleb128 0x12
+ 544 0048 01       		.uleb128 0x1
+ 545 0049 40       		.uleb128 0x40
+ 546 004a 06       		.uleb128 0x6
+ 547 004b 00       		.byte	0x0
+ 548 004c 00       		.byte	0x0
+ 549 004d 06       		.uleb128 0x6
+ 550 004e 2E       		.uleb128 0x2e
+ 551 004f 01       		.byte	0x1
+ 552 0050 3F       		.uleb128 0x3f
+ 553 0051 0C       		.uleb128 0xc
+ 554 0052 03       		.uleb128 0x3
+ 555 0053 0E       		.uleb128 0xe
+ 556 0054 3A       		.uleb128 0x3a
+ 557 0055 0B       		.uleb128 0xb
+ 558 0056 3B       		.uleb128 0x3b
+ 559 0057 0B       		.uleb128 0xb
+ 560 0058 27       		.uleb128 0x27
+ 561 0059 0C       		.uleb128 0xc
+ 562 005a 11       		.uleb128 0x11
+ 563 005b 01       		.uleb128 0x1
+ 564 005c 12       		.uleb128 0x12
+ 565 005d 01       		.uleb128 0x1
+ 566 005e 40       		.uleb128 0x40
+ 567 005f 06       		.uleb128 0x6
+ 568 0060 01       		.uleb128 0x1
+ 569 0061 13       		.uleb128 0x13
+ 570 0062 00       		.byte	0x0
+ 571 0063 00       		.byte	0x0
+ 572 0064 07       		.uleb128 0x7
+ 573 0065 05       		.uleb128 0x5
+ 574 0066 00       		.byte	0x0
+ 575 0067 03       		.uleb128 0x3
+ 576 0068 0E       		.uleb128 0xe
+ 577 0069 3A       		.uleb128 0x3a
+ 578 006a 0B       		.uleb128 0xb
+ 579 006b 3B       		.uleb128 0x3b
+ 580 006c 0B       		.uleb128 0xb
+ 581 006d 49       		.uleb128 0x49
+ 582 006e 13       		.uleb128 0x13
+ 583 006f 02       		.uleb128 0x2
+ 584 0070 0A       		.uleb128 0xa
+ 585 0071 00       		.byte	0x0
+ 586 0072 00       		.byte	0x0
+ 587 0073 08       		.uleb128 0x8
+ 588 0074 34       		.uleb128 0x34
+ 589 0075 00       		.byte	0x0
+ 590 0076 03       		.uleb128 0x3
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 14
+
+
+ 591 0077 0E       		.uleb128 0xe
+ 592 0078 3A       		.uleb128 0x3a
+ 593 0079 0B       		.uleb128 0xb
+ 594 007a 3B       		.uleb128 0x3b
+ 595 007b 0B       		.uleb128 0xb
+ 596 007c 49       		.uleb128 0x49
+ 597 007d 13       		.uleb128 0x13
+ 598 007e 02       		.uleb128 0x2
+ 599 007f 0A       		.uleb128 0xa
+ 600 0080 00       		.byte	0x0
+ 601 0081 00       		.byte	0x0
+ 602 0082 09       		.uleb128 0x9
+ 603 0083 2E       		.uleb128 0x2e
+ 604 0084 00       		.byte	0x0
+ 605 0085 3F       		.uleb128 0x3f
+ 606 0086 0C       		.uleb128 0xc
+ 607 0087 03       		.uleb128 0x3
+ 608 0088 0E       		.uleb128 0xe
+ 609 0089 3A       		.uleb128 0x3a
+ 610 008a 0B       		.uleb128 0xb
+ 611 008b 3B       		.uleb128 0x3b
+ 612 008c 0B       		.uleb128 0xb
+ 613 008d 27       		.uleb128 0x27
+ 614 008e 0C       		.uleb128 0xc
+ 615 008f 49       		.uleb128 0x49
+ 616 0090 13       		.uleb128 0x13
+ 617 0091 11       		.uleb128 0x11
+ 618 0092 01       		.uleb128 0x1
+ 619 0093 12       		.uleb128 0x12
+ 620 0094 01       		.uleb128 0x1
+ 621 0095 40       		.uleb128 0x40
+ 622 0096 06       		.uleb128 0x6
+ 623 0097 00       		.byte	0x0
+ 624 0098 00       		.byte	0x0
+ 625 0099 00       		.byte	0x0
+ 626              		.section	.debug_pubnames,"",%progbits
+ 627 0000 AC000000 		.4byte	0xac
+ 628 0004 0200     		.2byte	0x2
+ 629 0006 00000000 		.4byte	.Ldebug_info0
+ 630 000a 54010000 		.4byte	0x154
+ 631 000e A5000000 		.4byte	0xa5
+ 632 0012 436C6F63 		.ascii	"Clock_PWM_Start\000"
+ 632      6B5F5057 
+ 632      4D5F5374 
+ 632      61727400 
+ 633 0022 BA000000 		.4byte	0xba
+ 634 0026 436C6F63 		.ascii	"Clock_PWM_Stop\000"
+ 634      6B5F5057 
+ 634      4D5F5374 
+ 634      6F7000
+ 635 0035 CF000000 		.4byte	0xcf
+ 636 0039 436C6F63 		.ascii	"Clock_PWM_SetFractionalDividerRegister\000"
+ 636      6B5F5057 
+ 636      4D5F5365 
+ 636      74467261 
+ 636      6374696F 
+ 637 0060 21010000 		.4byte	0x121
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 15
+
+
+ 638 0064 436C6F63 		.ascii	"Clock_PWM_GetDividerRegister\000"
+ 638      6B5F5057 
+ 638      4D5F4765 
+ 638      74446976 
+ 638      69646572 
+ 639 0081 3A010000 		.4byte	0x13a
+ 640 0085 436C6F63 		.ascii	"Clock_PWM_GetFractionalDividerRegister\000"
+ 640      6B5F5057 
+ 640      4D5F4765 
+ 640      74467261 
+ 640      6374696F 
+ 641 00ac 00000000 		.4byte	0x0
+ 642              		.section	.debug_aranges,"",%progbits
+ 643 0000 3C000000 		.4byte	0x3c
+ 644 0004 0200     		.2byte	0x2
+ 645 0006 00000000 		.4byte	.Ldebug_info0
+ 646 000a 04       		.byte	0x4
+ 647 000b 00       		.byte	0x0
+ 648 000c 0000     		.2byte	0x0
+ 649 000e 0000     		.2byte	0x0
+ 650 0010 00000000 		.4byte	.LFB0
+ 651 0014 1C000000 		.4byte	.LFE0-.LFB0
+ 652 0018 00000000 		.4byte	.LFB1
+ 653 001c 18000000 		.4byte	.LFE1-.LFB1
+ 654 0020 00000000 		.4byte	.LFB2
+ 655 0024 38000000 		.4byte	.LFE2-.LFB2
+ 656 0028 00000000 		.4byte	.LFB3
+ 657 002c 14000000 		.4byte	.LFE3-.LFB3
+ 658 0030 00000000 		.4byte	.LFB4
+ 659 0034 0C000000 		.4byte	.LFE4-.LFB4
+ 660 0038 00000000 		.4byte	0x0
+ 661 003c 00000000 		.4byte	0x0
+ 662              		.section	.debug_ranges,"",%progbits
+ 663              	.Ldebug_ranges0:
+ 664 0000 00000000 		.4byte	.Ltext0
+ 665 0004 00000000 		.4byte	.Letext0
+ 666 0008 00000000 		.4byte	.LFB0
+ 667 000c 1C000000 		.4byte	.LFE0
+ 668 0010 00000000 		.4byte	.LFB1
+ 669 0014 18000000 		.4byte	.LFE1
+ 670 0018 00000000 		.4byte	.LFB2
+ 671 001c 38000000 		.4byte	.LFE2
+ 672 0020 00000000 		.4byte	.LFB3
+ 673 0024 14000000 		.4byte	.LFE3
+ 674 0028 00000000 		.4byte	.LFB4
+ 675 002c 0C000000 		.4byte	.LFE4
+ 676 0030 00000000 		.4byte	0x0
+ 677 0034 00000000 		.4byte	0x0
+ 678              		.section	.debug_str,"MS",%progbits,1
+ 679              	.LASF6:
+ 680 0000 6C6F6E67 		.ascii	"long long int\000"
+ 680      206C6F6E 
+ 680      6720696E 
+ 680      7400
+ 681              	.LASF16:
+ 682 000e 436C6F63 		.ascii	"Clock_PWM_Stop\000"
+ 682      6B5F5057 
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 16
+
+
+ 682      4D5F5374 
+ 682      6F7000
+ 683              	.LASF24:
+ 684 001d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\Clock_PWM.c\000"
+ 684      6E657261 
+ 684      7465645F 
+ 684      536F7572 
+ 684      63655C50 
+ 685              	.LASF19:
+ 686 0042 6D61736B 		.ascii	"maskVal\000"
+ 686      56616C00 
+ 687              	.LASF12:
+ 688 004a 666C6F61 		.ascii	"float\000"
+ 688      7400
+ 689              	.LASF1:
+ 690 0050 756E7369 		.ascii	"unsigned char\000"
+ 690      676E6564 
+ 690      20636861 
+ 690      7200
+ 691              	.LASF21:
+ 692 005e 436C6F63 		.ascii	"Clock_PWM_GetDividerRegister\000"
+ 692      6B5F5057 
+ 692      4D5F4765 
+ 692      74446976 
+ 692      69646572 
+ 693              	.LASF5:
+ 694 007b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 694      20756E73 
+ 694      69676E65 
+ 694      6420696E 
+ 694      7400
+ 695              	.LASF3:
+ 696 008d 73686F72 		.ascii	"short unsigned int\000"
+ 696      7420756E 
+ 696      7369676E 
+ 696      65642069 
+ 696      6E7400
+ 697              	.LASF17:
+ 698 00a0 636C6B44 		.ascii	"clkDivider\000"
+ 698      69766964 
+ 698      657200
+ 699              	.LASF13:
+ 700 00ab 646F7562 		.ascii	"double\000"
+ 700      6C6500
+ 701              	.LASF20:
+ 702 00b2 72656756 		.ascii	"regVal\000"
+ 702      616C00
+ 703              	.LASF18:
+ 704 00b9 636C6B46 		.ascii	"clkFractional\000"
+ 704      72616374 
+ 704      696F6E61 
+ 704      6C00
+ 705              	.LASF25:
+ 706 00c7 433A5C55 		.ascii	"C:\\Users\\maxk\\Desktop\\PSoC 4A\\FAE Workshop\\La"
+ 706      73657273 
+ 706      5C6D6178 
+ 706      6B5C4465 
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 17
+
+
+ 706      736B746F 
+ 707 00f4 62205072 		.ascii	"b Projects\\Lab Templates\\Lab 4 ADC.cydsn\000"
+ 707      6F6A6563 
+ 707      74735C4C 
+ 707      61622054 
+ 707      656D706C 
+ 708              	.LASF10:
+ 709 011d 75696E74 		.ascii	"uint16\000"
+ 709      313600
+ 710              	.LASF11:
+ 711 0124 75696E74 		.ascii	"uint32\000"
+ 711      333200
+ 712              	.LASF8:
+ 713 012b 756E7369 		.ascii	"unsigned int\000"
+ 713      676E6564 
+ 713      20696E74 
+ 713      00
+ 714              	.LASF7:
+ 715 0138 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 715      206C6F6E 
+ 715      6720756E 
+ 715      7369676E 
+ 715      65642069 
+ 716              	.LASF22:
+ 717 014f 436C6F63 		.ascii	"Clock_PWM_GetFractionalDividerRegister\000"
+ 717      6B5F5057 
+ 717      4D5F4765 
+ 717      74467261 
+ 717      6374696F 
+ 718              	.LASF23:
+ 719 0176 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 719      4320342E 
+ 719      342E3100 
+ 720              	.LASF14:
+ 721 0182 63686172 		.ascii	"char\000"
+ 721      00
+ 722              	.LASF15:
+ 723 0187 436C6F63 		.ascii	"Clock_PWM_Start\000"
+ 723      6B5F5057 
+ 723      4D5F5374 
+ 723      61727400 
+ 724              	.LASF2:
+ 725 0197 73686F72 		.ascii	"short int\000"
+ 725      7420696E 
+ 725      7400
+ 726              	.LASF9:
+ 727 01a1 75696E74 		.ascii	"uint8\000"
+ 727      3800
+ 728              	.LASF26:
+ 729 01a7 436C6F63 		.ascii	"Clock_PWM_SetFractionalDividerRegister\000"
+ 729      6B5F5057 
+ 729      4D5F5365 
+ 729      74467261 
+ 729      6374696F 
+ 730              	.LASF4:
+ 731 01ce 6C6F6E67 		.ascii	"long int\000"
+ 731      20696E74 
+ARM GAS  C:\Users\maxk\AppData\Local\Temp\ccpjUkfa.s 			page 18
+
+
+ 731      00
+ 732              	.LASF0:
+ 733 01d7 7369676E 		.ascii	"signed char\000"
+ 733      65642063 
+ 733      68617200 
+ 734              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

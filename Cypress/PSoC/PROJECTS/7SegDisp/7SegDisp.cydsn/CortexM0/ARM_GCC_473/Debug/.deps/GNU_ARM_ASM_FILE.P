@@ -1,0 +1,4 @@
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/CortexM0/ARM_GCC_473/Debug/CyBootAsmGnu.o : Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
+

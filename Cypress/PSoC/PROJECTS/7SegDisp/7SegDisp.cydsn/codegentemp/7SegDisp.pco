@@ -1,0 +1,31 @@
+# 7SegDisp
+# 2015-01-02 07:28:08Z
+
+# IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 6
+# IO_7@[IOP=(0)][IoId=(7)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 7
+# IO_0@[IOP=(6)][IoId=(0)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 0
+# IO_1@[IOP=(6)][IoId=(1)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 1
+set_io "AnalogIn(0)" iocell 3 5
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "LED_A(0)" iocell 1 7
+set_io "LED_B(0)" iocell 1 5
+set_io "LED_C(0)" iocell 1 6
+set_io "LED_D(0)" iocell 3 0
+set_io "LED_E(0)" iocell 3 1
+set_io "LED_F(0)" iocell 3 2
+set_io "LED_G(0)" iocell 3 3
+set_location "Net_1024" 1 0 0 0
+set_location "Net_257" 1 0 0 1
+set_location "Net_268" 1 0 1 1
+set_location "Net_277" 0 0 1 0
+set_location "Net_284" 1 0 1 2
+set_location "Net_346" 0 0 0 1
+set_location "Net_70" 0 0 0 0
+set_location "\ADC:IRQ\" interrupt -1 -1 15
+set_location "\ADC:cy_psoc4_sar\" p4sarcell -1 -1 0
+set_location "\binReg:Sync:ctrl_reg\" 1 0 6

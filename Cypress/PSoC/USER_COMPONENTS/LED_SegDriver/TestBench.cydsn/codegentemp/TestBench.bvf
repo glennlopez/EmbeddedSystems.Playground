@@ -1,0 +1,240 @@
+
+----------------------------------------------------------------------
+
+Verifying bitstream.
+
+-----------------------------------------------------------------------
+
+
+---------Mapping jacks.---------
+
+
+---------Processing bitstream.---------
+
+Utilized "udb_hv_b@[UDB Pair=(1,0)]"
+Utilized "udb_hv_a@[UDB Pair=(1,1)]"
+Utilized "udb_hc@[UDB Pair=(1,1)]"
+Utilized "udb_hv_a@[UDB Pair=(1,3)]"
+Utilized "udb_hv_b@[UDB Pair=(1,4)]"
+Utilized "udb_hc@[UDB Pair=(1,4)]"
+Utilized "dsi_hc@[DSI=(1,0)][side=bottom]"
+Utilized "dsi_hv_a@[DSI=(1,0)][side=bottom]"
+Utilized "dsi_hc@[DSI=(1,1)][side=bottom]"
+Utilized "dsi_hv_b@[DSI=(1,1)][side=bottom]"
+Utilized "dsi_hv_b@[DSI=(1,3)][side=bottom]"
+Utilized "dsi_hc@[DSI=(1,4)][side=bottom]"
+Utilized "dsi_hc@[DSI=(1,5)][side=bottom]"
+
+---------Propagating signals.---------
+
+Found signal "Segment_0" on jack "statctrl:out0[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_0[IOP=(3)]"
+    
+    
+
+Found signal "Segment_1" on jack "statctrl:out1[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_1[IOP=(3)]"
+    
+    
+
+Found signal "Segment_2" on jack "statctrl:out2[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_2[IOP=(3)]"
+    
+    
+
+Found signal "Segment_3" on jack "statctrl:out3[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_3[IOP=(3)]"
+    
+    
+
+Found signal "Segment_4" on jack "statctrl:out4[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_4[IOP=(3)]"
+    
+    
+
+Found signal "Segment_5" on jack "statctrl:out5[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_5[IOP=(3)]"
+    
+    
+
+Found signal "Segment_6" on jack "statctrl:out6[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_6[IOP=(3)]"
+    
+    
+
+Found signal "Segment_7" on jack "statctrl:out7[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_7[IOP=(3)]"
+    
+    
+
+Found signal "Common_3" on jack "pld0:out0[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_3[IOP=(0)]"
+    
+    
+
+Found signal "Common_0" on jack "pld0:out1[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_0[IOP=(0)]"
+    
+    
+
+Found signal "Common_2" on jack "pld0:out2[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_2[IOP=(0)]"
+    
+    
+
+Found signal "Common_1" on jack "pld0:out3[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_1[IOP=(0)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:final_kill_reg\" on jack "pld1:out0[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in4[UDB=(2,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:status_5\" on jack "pld1:out2[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout1[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:Com_0\" on jack "statctrl:out0[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in11[UDB=(2,4)]"
+    
+    
+
+Found signal "\LED:Com_1\" on jack "statctrl:out1[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in10[UDB=(2,4)]"
+    
+    
+
+Found signal "\LED:Com_2\" on jack "statctrl:out2[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in9[UDB=(2,4)]"
+    
+    
+
+Found signal "\LED:Com_3\" on jack "statctrl:out3[UDB=(2,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in8[UDB=(2,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:status_0\" on jack "pld0:out0[UDB=(3,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in0[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:prevCompare1\" on jack "pld0:out1[UDB=(3,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in5[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:Brightness\" on jack "pld0:out3[UDB=(3,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in7[UDB=(2,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:runmode_enable\" on jack "pld1:out0[UDB=(3,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in0[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:status_3\" on jack "dp:out1[UDB=(3,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in3[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:tc_i\" on jack "dp:out2[UDB=(3,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:in2[UDB=(3,4)]"
+    
+    2. Connected jack name: "dp:in4[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:compare1\" on jack "dp:out3[UDB=(3,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in9[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:COM_PWM:PWMUDB:ctrl_enable\" on jack "statctrl:out7[UDB=(3,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld1:in0[UDB=(3,4)]"
+    
+    2. Connected jack name: "pld0:in0[UDB=(3,4)]"
+    
+    
+
+Found signal "\LED:Net_97_local\" on jack "dclk[1][FFB(Clock,0)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "dma_0_drq[DrqHod=(0)]"
+    
+    2. Connected jack name: "dma_1_drq[DrqHod=(0)]"
+    
+    3. Connected jack name: "dma_2_drq[DrqHod=(0)]"
+    
+    
+
+
+---------Verifying signals (routing).---------
+
+
+---------Verifying configuration.---------
+
+
+
+----------------------------------------------------------------------
+
+Bitstream verification passed.
+
+-----------------------------------------------------------------------
+

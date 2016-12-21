@@ -1,0 +1,6 @@
+Z:\Documents\Github Clones\PSoC.Playground\PROJECTS\USB-UART.cydsn\USB-UART.cyprj|0b4597c6-1bc8-479d-b884-360171f3623b
+C:\program files\cypress\psoc creator\3.1\psoc creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0e7af855-d166-4889-8c5a-5a6cdada34fa
+C:\program files\cypress\psoc creator\3.1\psoc creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f05e96f1-cb76-4c87-b6f0-49c0bd2f891f
+C:\program files\cypress\psoc creator\3.1\psoc creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|86daacb3-6f42-4b07-b3f3-d9fb7898799e
+C:\program files\cypress\psoc creator\3.1\psoc creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2552e99f-1dbe-4467-ad55-307823567ce2
+C:\program files\cypress\psoc creator\3.1\psoc creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|c9dc52cf-1174-4d67-add2-66acd2c3b703

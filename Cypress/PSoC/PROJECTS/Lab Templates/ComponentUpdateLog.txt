@@ -1,0 +1,33 @@
+Last Modified Date & Time: 01/03/2015 00:09:57
+
+Lab 2 LED PWM: TopDesign
+	Pin_Red [v1.90] to [v2.10]
+
+Lab 3 CapSense UART: TopDesign
+	Pin_RedLED [v1.90] to [v2.10]
+	Pin_GreenLED [v1.90] to [v2.10]
+	Pin_BlueLED [v1.90] to [v2.10]
+	Clock_PWM [v2.0] to [v2.20]
+	PWM_R [v1.0] to [v2.0]
+	PWM_G [v1.0] to [v2.0]
+	PWM_B [v1.0] to [v2.0]
+
+Lab 4 ADC: TopDesign
+	Pin_RedLED [v1.90] to [v2.10]
+	Pin_GreenLED [v1.90] to [v2.10]
+	Pin_BlueLED [v1.90] to [v2.10]
+	Clock_PWM [v2.0] to [v2.20]
+	PWM_R [v1.0] to [v2.0]
+	PWM_G [v1.0] to [v2.0]
+	PWM_B [v1.0] to [v2.0]
+
+Lab 2 LED PWM: Design Wide APIs
+	cy_boot [v3.40] to [v4.20]
+
+Lab 3 CapSense UART: Design Wide APIs
+	cy_boot [v3.40] to [v4.20]
+
+Lab 4 ADC: Design Wide APIs
+	cy_boot [v3.40] to [v4.20]
+
+

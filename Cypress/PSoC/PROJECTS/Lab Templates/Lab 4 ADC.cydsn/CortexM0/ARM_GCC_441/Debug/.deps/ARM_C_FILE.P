@@ -1,0 +1,104 @@
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/Clock_PWM.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Clock_PWM.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Clock_PWM.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Clock_PWM.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Clock_PWM.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/Cm0Start.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Cm0Start.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/CyFlash.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyFlash.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyFlash.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/CyLib.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/PWM_B.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_B.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_B.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_B.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyLib.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_B.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/PWM_B_PM.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_B.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_B_PM.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_B_PM.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/PWM_G.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_G.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_G.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_G.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_G.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/PWM_G_PM.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_G.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_G_PM.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_G_PM.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/PWM_R.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_R.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_R.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_R.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_R.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/PWM_R_PM.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_R.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_R_PM.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/PWM_R_PM.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/Pin_BlueLED.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_BlueLED.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_BlueLED_aliases.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_BlueLED.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_BlueLED.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_BlueLED_aliases.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_BlueLED.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/Pin_GreenLED.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_GreenLED.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_GreenLED_aliases.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_GreenLED.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_GreenLED.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_GreenLED_aliases.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_GreenLED.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/Pin_RedLED.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_RedLED.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_RedLED_aliases.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_RedLED.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_RedLED.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_RedLED_aliases.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/Pin_RedLED.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/core_cm0.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/core_cm0.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/core_cm0.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/cyPm.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyPm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyPm.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/cyfitter_cfg.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/CortexM0/ARM_GCC_441/Debug/cyutils.o : C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+C:/Users/maxk/Desktop/PSoC\ 4A/FAE\ Workshop/Lab\ Projects/Lab\ Templates/Lab\ 4\ ADC.cydsn/Generated_Source/PSoC4/cyutils.c : 
+

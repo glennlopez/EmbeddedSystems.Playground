@@ -1,0 +1,7 @@
+Z:\Documents\Github Clones\PSoC.Playground\PROJECTS\7SegDisp\7SegDisp.cydsn\7SegDisp.cyprj|14c84f34-2a25-419b-96e4-75a4b8fae8c1
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f20af272-0789-4984-af70-d312494c6d5f
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|66ded869-123b-4635-98bd-4ab61471d072
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c68d35de-58bc-4931-a1da-a2a59cbb2f5d
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|f0bb253d-ea24-40a0-a057-0a8750e5fcf6
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|e68d0005-481b-4970-baa5-5ca034048d9b
+C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\dev\psoc4\PSoC4AnalogDevice\psoc4arch.cydsn\psoc4arch.cyprj|1c52c4e7-09ea-4c76-ba02-cada449a0a14

@@ -1,0 +1,6 @@
+-F0x30 -g -blit:0x190.0x3fff 
+ -bdata:0.0x2ff -rwh:SSCParmBlk:0x00F7.0x00FF -BInterruptRAM:0 -Bvirtual_registers  
+ -Bcy8c28445_led_blinky_RAM 
+ -o"output/CY8C28445_LED_Blinky" 
+ ./obj/main.o  
+ C:/Users/wbz/Perforce/PERFOR~1/WBZ_WB~1/software/products/psoc1/software/Docs/SOFTWA~1/PD51_SP3/ONLINE~1/02-LED~1/CY8C28~1/CY8C28~1/lib/libPSoc.a -LC:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/lib/LMM/eightpages C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/lib/CY8C28045/cms.a C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/lib/LMM/UASW/MAC/arith.a  

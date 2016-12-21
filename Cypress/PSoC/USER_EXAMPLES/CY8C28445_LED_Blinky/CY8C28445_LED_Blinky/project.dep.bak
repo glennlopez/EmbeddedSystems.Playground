@@ -1,0 +1,13 @@
+# DO NOT DELETE
+./obj/boot.o : \
+   C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/include/CY8C28~1/m8c.inc\
+   C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/include/CY8C28~1/m8ssc.inc\
+   C:\Users\wbz\Perforce\PERFOR~1\WBZ_WB~1\software\products\psoc1\software\Docs\SOFTWA~1\PD51_SP3\ONLINE~1\02-LED~1\CY8C28~1\CY8C28~1\lib\GLOBAL~1.INC\
+   C:\Users\wbz\Perforce\PERFOR~1\WBZ_WB~1\software\products\psoc1\software\Docs\SOFTWA~1\PD51_SP3\ONLINE~1\02-LED~1\CY8C28~1\CY8C28~1\memory.inc
+./obj/main.o :  ./lib/PSoCAPI.h\
+   C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/include/CY8C28~1/m8c.h
+./lib/obj/psocconfig.o :  ./lib/GLOBAL~1.INC\
+   C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/include/CY8C28~1/m8c.inc\
+   C:\Users\wbz\Perforce\PERFOR~1\WBZ_WB~1\software\products\psoc1\software\Docs\SOFTWA~1\PD51_SP3\ONLINE~1\02-LED~1\CY8C28~1\CY8C28~1\memory.inc
+./lib/obj/psocconfigtbl.o : \
+   C:/PROGRA~1/Cypress/PSOCDE~1/5.2/Common/CY110F~1/tools/include/CY8C28~1/m8c.inc

@@ -1,0 +1,41 @@
+# TestBench
+# 2012-10-10 22:06:11Z
+
+# IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 0
+# IO_1@[IOP=(1)][IoId=(1)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 1
+# IO_3@[IOP=(1)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 3
+set_io "Button(0)" iocell 6 1
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "Common_0(0)" iocell 0 0
+set_location "Common_0_EQN" 2 4 0 1
+set_io "Common_1(0)" iocell 0 1
+set_location "Common_1_EQN" 2 4 0 2
+set_io "Common_2(0)" iocell 0 2
+set_location "Common_2_EQN" 2 4 0 3
+set_io "Common_3(0)" iocell 0 3
+set_location "Common_3_EQN" 2 4 0 0
+set_io "Segment_0(0)" iocell 3 0
+set_io "Segment_1(0)" iocell 3 1
+set_io "Segment_2(0)" iocell 3 2
+set_io "Segment_3(0)" iocell 3 3
+set_io "Segment_4(0)" iocell 3 4
+set_io "Segment_5(0)" iocell 3 5
+set_io "Segment_6(0)" iocell 3 6
+set_io "Segment_7(0)" iocell 3 7
+set_location "\LED:Brightness\" 3 4 0 0
+set_location "\LED:Brightness_DMA\" drqcell -1 -1 0
+set_location "\LED:COM_PWM:PWMUDB:final_kill_reg\" 2 4 1 1
+set_location "\LED:COM_PWM:PWMUDB:prevCompare1\" 3 4 0 2
+set_location "\LED:COM_PWM:PWMUDB:runmode_enable\" 3 4 1 1
+set_location "\LED:COM_PWM:PWMUDB:sCTRLReg:SyncCtl:ctrlreg\" 3 4 6
+set_location "\LED:COM_PWM:PWMUDB:sP8:pwmdp:u0\" 3 4 2
+set_location "\LED:COM_PWM:PWMUDB:sSTSReg:rstSts:stsreg\" 3 4 4
+set_location "\LED:COM_PWM:PWMUDB:status_0\" 3 4 0 3
+set_location "\LED:COM_PWM:PWMUDB:status_5\" 2 4 1 0
+set_location "\LED:Common_DMA\" drqcell -1 -1 1
+set_location "\LED:RAM_1:ctrl_reg\" 2 1 6
+set_location "\LED:RAM_2:ctrl_reg\" 2 4 6
+set_location "\LED:Segment_DMA\" drqcell -1 -1 2

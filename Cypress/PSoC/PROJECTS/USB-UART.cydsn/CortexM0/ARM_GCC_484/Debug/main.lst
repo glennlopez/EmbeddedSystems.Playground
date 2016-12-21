@@ -1,0 +1,410 @@
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccM1NmoL.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.rodata
+  18              		.align	2
+  19              	.LC0:
+  20 0000 48454C4C 		.ascii	"HELLO GLENN \012\015\000"
+  20      4F20474C 
+  20      454E4E20 
+  20      0A0D00
+  21 000f 00       		.section	.text.main,"ax",%progbits
+  22              		.align	2
+  23              		.global	main
+  24              		.code	16
+  25              		.thumb_func
+  26              		.type	main, %function
+  27              	main:
+  28              	.LFB35:
+  29              		.file 1 ".\\main.c"
+   1:.\main.c      **** /******************************************************************************
+   2:.\main.c      **** * Project Name		: USB-UART
+   3:.\main.c      **** * File Name			: main.c
+   4:.\main.c      **** * Version 			: 1.0
+   5:.\main.c      **** * Device Used		: CY8C4245AXI-483
+   6:.\main.c      **** * Software Used		: PSoC Creator 2.2 SP1
+   7:.\main.c      **** * Compiler    		: ARMGCC 4.4.1
+   8:.\main.c      **** * Related Hardware	: CY8CKIT-042 PSoC 4 Pioneer Kit 
+   9:.\main.c      **** *
+  10:.\main.c      **** ******************************************************************************
+  11:.\main.c      **** * ========================================
+  12:.\main.c      **** *
+  13:.\main.c      **** The following firmware was developed by Cypress Semiconductor
+  14:.\main.c      **** This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+  15:.\main.c      **** http://creativecommons.org/licenses/by/3.0/deed.en_US
+  16:.\main.c      **** You are free to:
+  17:.\main.c      **** -To Share — to copy, distribute and transmit the work 
+  18:.\main.c      **** -To Remix — to adapt the work 
+  19:.\main.c      **** -To make commercial use of the work
+  20:.\main.c      **** * ========================================
+  21:.\main.c      **** *
+  22:.\main.c      **** ******************************************************************************
+  23:.\main.c      **** *                           THEORY OF OPERATION
+  24:.\main.c      **** * This project demonstrates UART communication over the kit USB-UART Bridge. 
+  25:.\main.c      **** * The project uses the SCB based UART component which sends the string
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccM1NmoL.s 			page 2
+
+
+  26:.\main.c      **** * "CY8CKIT-042 USB-UART" and loops back the data sent over the COM terminal software.
+  27:.\main.c      **** * 
+  28:.\main.c      **** * UART is configured with
+  29:.\main.c      **** * UART Basic
+  30:.\main.c      **** * 	Mode: Standard
+  31:.\main.c      **** * 	Direction: TX+RX
+  32:.\main.c      **** * 	Baud rate (kbps): 9600
+  33:.\main.c      **** * 	Data bits: 8 bits
+  34:.\main.c      **** * 	Parity: None
+  35:.\main.c      **** * 	Stop bits: 1 bit
+  36:.\main.c      **** * 	Physical connections needed:
+  37:.\main.c      **** * 	Jumper between P0[5] and PSoC 5LP Header J8 P12[6]
+  38:.\main.c      **** * UART Advanced
+  39:.\main.c      **** * 	RX buffer size: 8
+  40:.\main.c      **** * 	TX buffer size: 8
+  41:.\main.c      **** * 	Interrupt: None
+  42:.\main.c      **** *
+  43:.\main.c      **** * Physical Connetion
+  44:.\main.c      **** * Connect jumper wire from the UART RX (P0[4]) of PSoC 4 to J8_10 (P12[7]) of PSoC 5LP
+  45:.\main.c      **** * Connect jumper wire from the UART TX (P0[5]) of PSoC 4 to J8_9 (P12[6]) of PSoC 5LP
+  46:.\main.c      **** * ******************************************************************************/ 
+  47:.\main.c      **** #include <device.h>
+  48:.\main.c      **** 
+  49:.\main.c      **** void main()
+  50:.\main.c      **** {   
+  30              		.loc 1 50 0
+  31              		.cfi_startproc
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  51:.\main.c      ****     //uint8 ch;
+  52:.\main.c      **** 
+  53:.\main.c      ****     /* Start SCB UART TX+RX operation */    
+  54:.\main.c      ****     UART_Start(); 
+  38              		.loc 1 54 0
+  39 0004 FFF7FEFF 		bl	UART_Start
+  40              	.L2:
+  55:.\main.c      ****     
+  56:.\main.c      **** 
+  57:.\main.c      **** 	
+  58:.\main.c      ****     for(;;)
+  59:.\main.c      ****     {
+  60:.\main.c      ****     /* Transmit String through UART TX Line */
+  61:.\main.c      **** 	UART_UartPutString("HELLO GLENN \n\r");
+  41              		.loc 1 61 0 discriminator 1
+  42 0008 034B     		ldr	r3, .L3
+  43 000a 181C     		mov	r0, r3
+  44 000c FFF7FEFF 		bl	UART_UartPutString
+  62:.\main.c      ****     
+  63:.\main.c      ****     // Adds a delay
+  64:.\main.c      ****     CyDelay(100);
+  45              		.loc 1 64 0 discriminator 1
+  46 0010 6420     		mov	r0, #100
+  47 0012 FFF7FEFF 		bl	CyDelay
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccM1NmoL.s 			page 3
+
+
+  65:.\main.c      **** 
+  66:.\main.c      ****     }
+  48              		.loc 1 66 0 discriminator 1
+  49 0016 F7E7     		b	.L2
+  50              	.L4:
+  51              		.align	2
+  52              	.L3:
+  53 0018 00000000 		.word	.LC0
+  54              		.cfi_endproc
+  55              	.LFE35:
+  56              		.size	main, .-main
+  57              		.text
+  58              	.Letext0:
+  59              		.section	.debug_info,"",%progbits
+  60              	.Ldebug_info0:
+  61 0000 95000000 		.4byte	0x95
+  62 0004 0400     		.2byte	0x4
+  63 0006 00000000 		.4byte	.Ldebug_abbrev0
+  64 000a 04       		.byte	0x4
+  65 000b 01       		.uleb128 0x1
+  66 000c 49000000 		.4byte	.LASF13
+  67 0010 01       		.byte	0x1
+  68 0011 5A010000 		.4byte	.LASF14
+  69 0015 F2000000 		.4byte	.LASF15
+  70 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  71 001d 00000000 		.4byte	0
+  72 0021 00000000 		.4byte	.Ldebug_line0
+  73 0025 02       		.uleb128 0x2
+  74 0026 01       		.byte	0x1
+  75 0027 06       		.byte	0x6
+  76 0028 48010000 		.4byte	.LASF0
+  77 002c 02       		.uleb128 0x2
+  78 002d 01       		.byte	0x1
+  79 002e 08       		.byte	0x8
+  80 002f C5000000 		.4byte	.LASF1
+  81 0033 02       		.uleb128 0x2
+  82 0034 02       		.byte	0x2
+  83 0035 05       		.byte	0x5
+  84 0036 E1000000 		.4byte	.LASF2
+  85 003a 02       		.uleb128 0x2
+  86 003b 02       		.byte	0x2
+  87 003c 07       		.byte	0x7
+  88 003d 35010000 		.4byte	.LASF3
+  89 0041 02       		.uleb128 0x2
+  90 0042 04       		.byte	0x4
+  91 0043 05       		.byte	0x5
+  92 0044 D8000000 		.4byte	.LASF4
+  93 0048 02       		.uleb128 0x2
+  94 0049 04       		.byte	0x4
+  95 004a 07       		.byte	0x7
+  96 004b 20000000 		.4byte	.LASF5
+  97 004f 02       		.uleb128 0x2
+  98 0050 08       		.byte	0x8
+  99 0051 05       		.byte	0x5
+ 100 0052 00000000 		.4byte	.LASF6
+ 101 0056 02       		.uleb128 0x2
+ 102 0057 08       		.byte	0x8
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccM1NmoL.s 			page 4
+
+
+ 103 0058 07       		.byte	0x7
+ 104 0059 32000000 		.4byte	.LASF7
+ 105 005d 03       		.uleb128 0x3
+ 106 005e 04       		.byte	0x4
+ 107 005f 05       		.byte	0x5
+ 108 0060 696E7400 		.ascii	"int\000"
+ 109 0064 02       		.uleb128 0x2
+ 110 0065 04       		.byte	0x4
+ 111 0066 07       		.byte	0x7
+ 112 0067 0E000000 		.4byte	.LASF8
+ 113 006b 02       		.uleb128 0x2
+ 114 006c 04       		.byte	0x4
+ 115 006d 04       		.byte	0x4
+ 116 006e 54010000 		.4byte	.LASF9
+ 117 0072 02       		.uleb128 0x2
+ 118 0073 08       		.byte	0x8
+ 119 0074 04       		.byte	0x4
+ 120 0075 EB000000 		.4byte	.LASF10
+ 121 0079 02       		.uleb128 0x2
+ 122 007a 01       		.byte	0x1
+ 123 007b 08       		.byte	0x8
+ 124 007c D3000000 		.4byte	.LASF11
+ 125 0080 02       		.uleb128 0x2
+ 126 0081 04       		.byte	0x4
+ 127 0082 07       		.byte	0x7
+ 128 0083 63010000 		.4byte	.LASF12
+ 129 0087 04       		.uleb128 0x4
+ 130 0088 1B000000 		.4byte	.LASF16
+ 131 008c 01       		.byte	0x1
+ 132 008d 31       		.byte	0x31
+ 133 008e 00000000 		.4byte	.LFB35
+ 134 0092 1C000000 		.4byte	.LFE35-.LFB35
+ 135 0096 01       		.uleb128 0x1
+ 136 0097 9C       		.byte	0x9c
+ 137 0098 00       		.byte	0
+ 138              		.section	.debug_abbrev,"",%progbits
+ 139              	.Ldebug_abbrev0:
+ 140 0000 01       		.uleb128 0x1
+ 141 0001 11       		.uleb128 0x11
+ 142 0002 01       		.byte	0x1
+ 143 0003 25       		.uleb128 0x25
+ 144 0004 0E       		.uleb128 0xe
+ 145 0005 13       		.uleb128 0x13
+ 146 0006 0B       		.uleb128 0xb
+ 147 0007 03       		.uleb128 0x3
+ 148 0008 0E       		.uleb128 0xe
+ 149 0009 1B       		.uleb128 0x1b
+ 150 000a 0E       		.uleb128 0xe
+ 151 000b 55       		.uleb128 0x55
+ 152 000c 17       		.uleb128 0x17
+ 153 000d 11       		.uleb128 0x11
+ 154 000e 01       		.uleb128 0x1
+ 155 000f 10       		.uleb128 0x10
+ 156 0010 17       		.uleb128 0x17
+ 157 0011 00       		.byte	0
+ 158 0012 00       		.byte	0
+ 159 0013 02       		.uleb128 0x2
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccM1NmoL.s 			page 5
+
+
+ 160 0014 24       		.uleb128 0x24
+ 161 0015 00       		.byte	0
+ 162 0016 0B       		.uleb128 0xb
+ 163 0017 0B       		.uleb128 0xb
+ 164 0018 3E       		.uleb128 0x3e
+ 165 0019 0B       		.uleb128 0xb
+ 166 001a 03       		.uleb128 0x3
+ 167 001b 0E       		.uleb128 0xe
+ 168 001c 00       		.byte	0
+ 169 001d 00       		.byte	0
+ 170 001e 03       		.uleb128 0x3
+ 171 001f 24       		.uleb128 0x24
+ 172 0020 00       		.byte	0
+ 173 0021 0B       		.uleb128 0xb
+ 174 0022 0B       		.uleb128 0xb
+ 175 0023 3E       		.uleb128 0x3e
+ 176 0024 0B       		.uleb128 0xb
+ 177 0025 03       		.uleb128 0x3
+ 178 0026 08       		.uleb128 0x8
+ 179 0027 00       		.byte	0
+ 180 0028 00       		.byte	0
+ 181 0029 04       		.uleb128 0x4
+ 182 002a 2E       		.uleb128 0x2e
+ 183 002b 00       		.byte	0
+ 184 002c 3F       		.uleb128 0x3f
+ 185 002d 19       		.uleb128 0x19
+ 186 002e 03       		.uleb128 0x3
+ 187 002f 0E       		.uleb128 0xe
+ 188 0030 3A       		.uleb128 0x3a
+ 189 0031 0B       		.uleb128 0xb
+ 190 0032 3B       		.uleb128 0x3b
+ 191 0033 0B       		.uleb128 0xb
+ 192 0034 11       		.uleb128 0x11
+ 193 0035 01       		.uleb128 0x1
+ 194 0036 12       		.uleb128 0x12
+ 195 0037 06       		.uleb128 0x6
+ 196 0038 40       		.uleb128 0x40
+ 197 0039 18       		.uleb128 0x18
+ 198 003a 9642     		.uleb128 0x2116
+ 199 003c 19       		.uleb128 0x19
+ 200 003d 00       		.byte	0
+ 201 003e 00       		.byte	0
+ 202 003f 00       		.byte	0
+ 203              		.section	.debug_aranges,"",%progbits
+ 204 0000 1C000000 		.4byte	0x1c
+ 205 0004 0200     		.2byte	0x2
+ 206 0006 00000000 		.4byte	.Ldebug_info0
+ 207 000a 04       		.byte	0x4
+ 208 000b 00       		.byte	0
+ 209 000c 0000     		.2byte	0
+ 210 000e 0000     		.2byte	0
+ 211 0010 00000000 		.4byte	.LFB35
+ 212 0014 1C000000 		.4byte	.LFE35-.LFB35
+ 213 0018 00000000 		.4byte	0
+ 214 001c 00000000 		.4byte	0
+ 215              		.section	.debug_ranges,"",%progbits
+ 216              	.Ldebug_ranges0:
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccM1NmoL.s 			page 6
+
+
+ 217 0000 00000000 		.4byte	.LFB35
+ 218 0004 1C000000 		.4byte	.LFE35
+ 219 0008 00000000 		.4byte	0
+ 220 000c 00000000 		.4byte	0
+ 221              		.section	.debug_line,"",%progbits
+ 222              	.Ldebug_line0:
+ 223 0000 44000000 		.section	.debug_str,"MS",%progbits,1
+ 223      02001F00 
+ 223      00000201 
+ 223      FB0E0D00 
+ 223      01010101 
+ 224              	.LASF6:
+ 225 0000 6C6F6E67 		.ascii	"long long int\000"
+ 225      206C6F6E 
+ 225      6720696E 
+ 225      7400
+ 226              	.LASF8:
+ 227 000e 756E7369 		.ascii	"unsigned int\000"
+ 227      676E6564 
+ 227      20696E74 
+ 227      00
+ 228              	.LASF16:
+ 229 001b 6D61696E 		.ascii	"main\000"
+ 229      00
+ 230              	.LASF5:
+ 231 0020 6C6F6E67 		.ascii	"long unsigned int\000"
+ 231      20756E73 
+ 231      69676E65 
+ 231      6420696E 
+ 231      7400
+ 232              	.LASF7:
+ 233 0032 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 233      206C6F6E 
+ 233      6720756E 
+ 233      7369676E 
+ 233      65642069 
+ 234              	.LASF13:
+ 235 0049 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 235      4320342E 
+ 235      382E3420 
+ 235      32303134 
+ 235      30353236 
+ 236 007c 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 236      20726576 
+ 236      6973696F 
+ 236      6E203231 
+ 236      31333538 
+ 237 00af 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 237      66756E63 
+ 237      74696F6E 
+ 237      2D736563 
+ 237      74696F6E 
+ 238              	.LASF1:
+ 239 00c5 756E7369 		.ascii	"unsigned char\000"
+ 239      676E6564 
+ 239      20636861 
+ 239      7200
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccM1NmoL.s 			page 7
+
+
+ 240              	.LASF11:
+ 241 00d3 63686172 		.ascii	"char\000"
+ 241      00
+ 242              	.LASF4:
+ 243 00d8 6C6F6E67 		.ascii	"long int\000"
+ 243      20696E74 
+ 243      00
+ 244              	.LASF2:
+ 245 00e1 73686F72 		.ascii	"short int\000"
+ 245      7420696E 
+ 245      7400
+ 246              	.LASF10:
+ 247 00eb 646F7562 		.ascii	"double\000"
+ 247      6C6500
+ 248              	.LASF15:
+ 249 00f2 5A3A5C44 		.ascii	"Z:\\Documents\\Github Clones\\PSoC.Playground\\PROJ"
+ 249      6F63756D 
+ 249      656E7473 
+ 249      5C476974 
+ 249      68756220 
+ 250 0121 45435453 		.ascii	"ECTS\\USB-UART.cydsn\000"
+ 250      5C555342 
+ 250      2D554152 
+ 250      542E6379 
+ 250      64736E00 
+ 251              	.LASF3:
+ 252 0135 73686F72 		.ascii	"short unsigned int\000"
+ 252      7420756E 
+ 252      7369676E 
+ 252      65642069 
+ 252      6E7400
+ 253              	.LASF0:
+ 254 0148 7369676E 		.ascii	"signed char\000"
+ 254      65642063 
+ 254      68617200 
+ 255              	.LASF9:
+ 256 0154 666C6F61 		.ascii	"float\000"
+ 256      7400
+ 257              	.LASF14:
+ 258 015a 2E5C6D61 		.ascii	".\\main.c\000"
+ 258      696E2E63 
+ 258      00
+ 259              	.LASF12:
+ 260 0163 73697A65 		.ascii	"sizetype\000"
+ 260      74797065 
+ 260      00
+ 261              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

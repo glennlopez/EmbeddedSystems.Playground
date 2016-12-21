@@ -1,0 +1,94 @@
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/CortexM0/ARM_GCC_484/Debug/main.o : Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/ADC.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/ADC_IRQ.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/ADC_intClock.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/AnalogIn.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/AnalogIn_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/CyFlash.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_A.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_A_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_B.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_B_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_C.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_C_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_D.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_D_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_E.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_E_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_F.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_F_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_G.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_G_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_BOOT.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_PINS.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_PVT.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_SCBCLK.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_SPI_UART.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_SPI_UART_PVT.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_rx.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_rx_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_tx.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_tx_aliases.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/binReg.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cm0.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cmFunc.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cmInstr.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cyPm.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cydisabledsheets.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cypins.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/project.h Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/main.c 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/ADC.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/ADC_IRQ.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/ADC_intClock.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/AnalogIn.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/AnalogIn_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_A.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_A_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_B.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_B_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_C.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_C_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_D.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_D_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_E.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_E_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_F.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_F_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_G.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/LED_G_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_BOOT.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_PINS.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_PVT.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_SCBCLK.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_SPI_UART.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_SPI_UART_PVT.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_rx.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_rx_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_tx.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/UART_1_tx_aliases.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/binReg.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cmFunc.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/core_cmInstr.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/Generated_Source/PSoC4/project.h : 
+
+Z:/Documents/Github\ Clones/PSoC.Playground/PROJECTS/7SegDisp/7SegDisp.cydsn/main.c : 
+

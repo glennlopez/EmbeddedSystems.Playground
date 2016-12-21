@@ -1,0 +1,127 @@
+ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
+
+
+   1              	/*******************************************************************************
+   2              	* File Name: CyBootAsmGnu.s
+   3              	* Version 4.11
+   4              	*
+   5              	*  Description:
+   6              	*   Assembly routines for GNU as.
+   7              	*
+   8              	********************************************************************************
+   9              	* Copyright 2010-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  10              	* You may use this file only in accordance with the license, terms, conditions,
+  11              	* disclaimers, and limitations in the end user license agreement accompanying
+  12              	* the software package with which this file was provided.
+  13              	*******************************************************************************/
+  14              	
+  15              	.syntax unified
+  16              	.text
+  17              	.thumb
+  18              	
+  19              	
+  20              	/*******************************************************************************
+  21              	* Function Name: CyDelayCycles
+  22              	********************************************************************************
+  23              	*
+  24              	* Summary:
+  25              	*  Delays for the specified number of cycles.
+  26              	*
+  27              	* Parameters:
+  28              	*  uint32 cycles: number of cycles to delay.
+  29              	*
+  30              	* Return:
+  31              	*  None
+  32              	*
+  33              	*******************************************************************************/
+  34              	/* void CyDelayCycles(uint32 cycles) */
+  35              	.align 3                    /* Align to 8 byte boundary (2^n) */
+  36              	.global CyDelayCycles
+  37              	.func CyDelayCycles, CyDelayCycles
+  38              	.type CyDelayCycles, %function
+  39              	.thumb_func
+  40              	CyDelayCycles:              /* cycles bytes */
+  41 0000 0230     		ADDS r0, r0, #2         /*	1	2	Round to nearest multiple of 4 */
+  42 0002 8008     		LSRS r0, r0, #2         /*	1	2	Divide by 4 and set flags */
+  43 0004 04D0     		BEQ CyDelayCycles_done  /*	2	2	Skip if 0 */
+  44 0006 C046     		NOP                     /*	1	2	Loop alignment padding */
+  45              	CyDelayCycles_loop:
+  46 0008 0138     		SUBS r0, r0, #1         /*	1	2   Decrement counter */ 
+  47 000a FDD1     		BNE CyDelayCycles_loop  /*	3	2   3 CPU cycles (if branche is taken)*/
+  48 000c C046     		NOP                     /*	1	2	Loop alignment padding */
+  49 000e C046     		NOP                     /*	1	2	Loop alignment padding */
+  50              	CyDelayCycles_done:
+  51 0010 7047     		BX lr                   /*	3	2 */
+  52              	.endfunc
+  53              	
+  54              	
+  55              	/*******************************************************************************
+  56              	* Function Name: CyEnterCriticalSection
+  57              	********************************************************************************
+ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 2
+
+
+  58              	*
+  59              	* Summary:
+  60              	*  CyEnterCriticalSection disables interrupts and returns a value indicating
+  61              	*  whether interrupts were previously enabled (the actual value depends on
+  62              	*  whether the device is PSoC 3 or PSoC 5).
+  63              	*
+  64              	*  Note Implementation of CyEnterCriticalSection manipulates the IRQ enable bit
+  65              	*  with interrupts still enabled. The test and set of the interrupt bits is not
+  66              	*  atomic; this is true for both PSoC 3 and PSoC 5. Therefore, to avoid a
+  67              	*  corrupting processor state, it must be the policy that all interrupt routines
+  68              	*  restore the interrupt enable bits as they were found on entry.
+  69              	*
+  70              	* Parameters:
+  71              	*  None
+  72              	*
+  73              	* Return:
+  74              	*  uint8
+  75              	*   Returns 0 if interrupts were previously enabled or 1 if interrupts
+  76              	*   were previously disabled.
+  77              	*
+  78              	*******************************************************************************/
+  79              	/* uint8 CyEnterCriticalSection(void) */
+  80              	.global CyEnterCriticalSection
+  81              	.func CyEnterCriticalSection, CyEnterCriticalSection
+  82              	.type CyEnterCriticalSection, %function
+  83              	.thumb_func
+  84              	CyEnterCriticalSection:
+  85 0012 EFF31080 		MRS r0, PRIMASK         /* Save and return interrupt state */
+  86 0016 72B6     		CPSID I                 /* Disable interrupts */
+  87 0018 7047     		BX lr
+  88              	.endfunc
+  89              	
+  90              	
+  91              	/*******************************************************************************
+  92              	* Function Name: CyExitCriticalSection
+  93              	********************************************************************************
+  94              	*
+  95              	* Summary:
+  96              	*  CyExitCriticalSection re-enables interrupts if they were enabled before
+  97              	*  CyEnterCriticalSection was called. The argument should be the value returned
+  98              	*  from CyEnterCriticalSection.
+  99              	*
+ 100              	* Parameters:
+ 101              	*  uint8 savedIntrStatus:
+ 102              	*   Saved interrupt status returned by the CyEnterCriticalSection function.
+ 103              	*
+ 104              	* Return:
+ 105              	*  None
+ 106              	*
+ 107              	*******************************************************************************/
+ 108              	/* void CyExitCriticalSection(uint8 savedIntrStatus) */
+ 109              	.global CyExitCriticalSection
+ 110              	.func CyExitCriticalSection, CyExitCriticalSection
+ 111              	.type CyExitCriticalSection, %function
+ 112              	.thumb_func
+ 113              	CyExitCriticalSection:
+ 114 001a 80F31088 		MSR PRIMASK, r0         /* Restore interrupt state */
+ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 3
+
+
+ 115 001e 7047     		BX lr
+ 116              	.endfunc
+ 117              	
+ 118              	.end

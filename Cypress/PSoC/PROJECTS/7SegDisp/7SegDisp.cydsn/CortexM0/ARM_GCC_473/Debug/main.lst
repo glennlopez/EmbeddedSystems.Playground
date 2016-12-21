@@ -1,0 +1,697 @@
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.comm	i,4,4
+  18              		.section	.text.count,"ax",%progbits
+  19              		.align	2
+  20              		.global	count
+  21              		.code	16
+  22              		.thumb_func
+  23              		.type	count, %function
+  24              	count:
+  25              	.LFB33:
+  26              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** int i;
+  14:.\main.c      **** 
+  15:.\main.c      **** void count (int j)
+  16:.\main.c      ****     {
+  27              		.loc 1 16 0
+  28              		.cfi_startproc
+  29 0000 80B5     		push	{r7, lr}
+  30              	.LCFI0:
+  31              		.cfi_def_cfa_offset 8
+  32              		.cfi_offset 7, -8
+  33              		.cfi_offset 14, -4
+  34 0002 82B0     		sub	sp, sp, #8
+  35              	.LCFI1:
+  36              		.cfi_def_cfa_offset 16
+  37 0004 00AF     		add	r7, sp, #0
+  38              	.LCFI2:
+  39              		.cfi_def_cfa_register 7
+  40 0006 7860     		str	r0, [r7, #4]
+  17:.\main.c      ****         switch(j)
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 2
+
+
+  41              		.loc 1 17 0
+  42 0008 7B68     		ldr	r3, [r7, #4]
+  43 000a 092B     		cmp	r3, #9
+  44 000c 2DD8     		bhi	.L1
+  45 000e 7B68     		ldr	r3, [r7, #4]
+  46 0010 9A00     		lsl	r2, r3, #2
+  47 0012 174B     		ldr	r3, .L14
+  48 0014 D318     		add	r3, r2, r3
+  49 0016 1B68     		ldr	r3, [r3]
+  50 0018 9F46     		mov	pc, r3
+  51              		.section	.rodata
+  52              		.align	2
+  53              	.L13:
+  54 0000 1A000000 		.word	.L3
+  55 0004 22000000 		.word	.L4
+  56 0008 2A000000 		.word	.L5
+  57 000c 32000000 		.word	.L6
+  58 0010 3A000000 		.word	.L7
+  59 0014 42000000 		.word	.L8
+  60 0018 4A000000 		.word	.L9
+  61 001c 52000000 		.word	.L10
+  62 0020 5A000000 		.word	.L11
+  63 0024 62000000 		.word	.L12
+  64              		.section	.text.count
+  65              	.L3:
+  18:.\main.c      ****         {
+  19:.\main.c      ****             case 0:{binReg_Write(0x00);
+  66              		.loc 1 19 0
+  67 001a 0020     		mov	r0, #0
+  68 001c FFF7FEFF 		bl	binReg_Write
+  20:.\main.c      ****             break;}
+  69              		.loc 1 20 0
+  70 0020 23E0     		b	.L1
+  71              	.L4:
+  21:.\main.c      ****            
+  22:.\main.c      ****             case 1:{binReg_Write(0x01);
+  72              		.loc 1 22 0
+  73 0022 0120     		mov	r0, #1
+  74 0024 FFF7FEFF 		bl	binReg_Write
+  23:.\main.c      ****             break;}
+  75              		.loc 1 23 0
+  76 0028 1FE0     		b	.L1
+  77              	.L5:
+  24:.\main.c      ****             
+  25:.\main.c      ****             case 2:{binReg_Write(0x02);
+  78              		.loc 1 25 0
+  79 002a 0220     		mov	r0, #2
+  80 002c FFF7FEFF 		bl	binReg_Write
+  26:.\main.c      ****             break;} 
+  81              		.loc 1 26 0
+  82 0030 1BE0     		b	.L1
+  83              	.L6:
+  27:.\main.c      ****             
+  28:.\main.c      ****             case 3:{binReg_Write(0x03);
+  84              		.loc 1 28 0
+  85 0032 0320     		mov	r0, #3
+  86 0034 FFF7FEFF 		bl	binReg_Write
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 3
+
+
+  29:.\main.c      ****             break;}
+  87              		.loc 1 29 0
+  88 0038 17E0     		b	.L1
+  89              	.L7:
+  30:.\main.c      ****             
+  31:.\main.c      ****             case 4:{binReg_Write(0x04);
+  90              		.loc 1 31 0
+  91 003a 0420     		mov	r0, #4
+  92 003c FFF7FEFF 		bl	binReg_Write
+  32:.\main.c      ****             break;}
+  93              		.loc 1 32 0
+  94 0040 13E0     		b	.L1
+  95              	.L8:
+  33:.\main.c      ****             
+  34:.\main.c      ****             case 5:{binReg_Write(0x05);
+  96              		.loc 1 34 0
+  97 0042 0520     		mov	r0, #5
+  98 0044 FFF7FEFF 		bl	binReg_Write
+  35:.\main.c      ****             break;}
+  99              		.loc 1 35 0
+ 100 0048 0FE0     		b	.L1
+ 101              	.L9:
+  36:.\main.c      ****            
+  37:.\main.c      ****             case 6:{binReg_Write(0x06);
+ 102              		.loc 1 37 0
+ 103 004a 0620     		mov	r0, #6
+ 104 004c FFF7FEFF 		bl	binReg_Write
+  38:.\main.c      ****             break;}
+ 105              		.loc 1 38 0
+ 106 0050 0BE0     		b	.L1
+ 107              	.L10:
+  39:.\main.c      ****             
+  40:.\main.c      ****             case 7:{binReg_Write(0x07);
+ 108              		.loc 1 40 0
+ 109 0052 0720     		mov	r0, #7
+ 110 0054 FFF7FEFF 		bl	binReg_Write
+  41:.\main.c      ****             break;} 
+ 111              		.loc 1 41 0
+ 112 0058 07E0     		b	.L1
+ 113              	.L11:
+  42:.\main.c      ****             
+  43:.\main.c      ****             case 8:{binReg_Write(0x08);
+ 114              		.loc 1 43 0
+ 115 005a 0820     		mov	r0, #8
+ 116 005c FFF7FEFF 		bl	binReg_Write
+  44:.\main.c      ****             break;}
+ 117              		.loc 1 44 0
+ 118 0060 03E0     		b	.L1
+ 119              	.L12:
+  45:.\main.c      ****             
+  46:.\main.c      ****             case 9:{binReg_Write(0x09);
+ 120              		.loc 1 46 0
+ 121 0062 0920     		mov	r0, #9
+ 122 0064 FFF7FEFF 		bl	binReg_Write
+  47:.\main.c      ****             break;}          
+ 123              		.loc 1 47 0
+ 124 0068 C046     		mov	r8, r8
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 4
+
+
+ 125              	.L1:
+  48:.\main.c      ****         }
+  49:.\main.c      ****     }
+ 126              		.loc 1 49 0
+ 127 006a BD46     		mov	sp, r7
+ 128 006c 02B0     		add	sp, sp, #8
+ 129              		@ sp needed for prologue
+ 130 006e 80BD     		pop	{r7, pc}
+ 131              	.L15:
+ 132              		.align	2
+ 133              	.L14:
+ 134 0070 00000000 		.word	.L13
+ 135              		.cfi_endproc
+ 136              	.LFE33:
+ 137              		.size	count, .-count
+ 138              		.section	.text.main,"ax",%progbits
+ 139              		.align	2
+ 140              		.global	main
+ 141              		.code	16
+ 142              		.thumb_func
+ 143              		.type	main, %function
+ 144              	main:
+ 145              	.LFB34:
+  50:.\main.c      **** 
+  51:.\main.c      **** int main()
+  52:.\main.c      **** {
+ 146              		.loc 1 52 0
+ 147              		.cfi_startproc
+ 148 0000 80B5     		push	{r7, lr}
+ 149              	.LCFI3:
+ 150              		.cfi_def_cfa_offset 8
+ 151              		.cfi_offset 7, -8
+ 152              		.cfi_offset 14, -4
+ 153 0002 00AF     		add	r7, sp, #0
+ 154              	.LCFI4:
+ 155              		.cfi_def_cfa_register 7
+ 156              	.L19:
+  53:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  54:.\main.c      **** 
+  55:.\main.c      ****     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+  56:.\main.c      ****     for(;;)
+  57:.\main.c      ****     {
+  58:.\main.c      ****         /* Place your application code here. */
+  59:.\main.c      ****         for(i=0;i<=9;i++)
+ 157              		.loc 1 59 0
+ 158 0004 0B4B     		ldr	r3, .L20
+ 159 0006 0022     		mov	r2, #0
+ 160 0008 1A60     		str	r2, [r3]
+ 161 000a 0EE0     		b	.L17
+ 162              	.L18:
+  60:.\main.c      ****         {
+  61:.\main.c      ****             count(i);
+ 163              		.loc 1 61 0 discriminator 2
+ 164 000c 094B     		ldr	r3, .L20
+ 165 000e 1B68     		ldr	r3, [r3]
+ 166 0010 181C     		mov	r0, r3
+ 167 0012 FFF7FEFF 		bl	count
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 5
+
+
+  62:.\main.c      ****             CyDelay(1000);
+ 168              		.loc 1 62 0 discriminator 2
+ 169 0016 FA23     		mov	r3, #250
+ 170 0018 9B00     		lsl	r3, r3, #2
+ 171 001a 181C     		mov	r0, r3
+ 172 001c FFF7FEFF 		bl	CyDelay
+  59:.\main.c      ****         for(i=0;i<=9;i++)
+ 173              		.loc 1 59 0 discriminator 2
+ 174 0020 044B     		ldr	r3, .L20
+ 175 0022 1B68     		ldr	r3, [r3]
+ 176 0024 5A1C     		add	r2, r3, #1
+ 177 0026 034B     		ldr	r3, .L20
+ 178 0028 1A60     		str	r2, [r3]
+ 179              	.L17:
+  59:.\main.c      ****         for(i=0;i<=9;i++)
+ 180              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 181 002a 024B     		ldr	r3, .L20
+ 182 002c 1B68     		ldr	r3, [r3]
+ 183 002e 092B     		cmp	r3, #9
+ 184 0030 ECDD     		ble	.L18
+  63:.\main.c      ****         }
+  64:.\main.c      ****     }
+ 185              		.loc 1 64 0 is_stmt 1
+ 186 0032 E7E7     		b	.L19
+ 187              	.L21:
+ 188              		.align	2
+ 189              	.L20:
+ 190 0034 00000000 		.word	i
+ 191              		.cfi_endproc
+ 192              	.LFE34:
+ 193              		.size	main, .-main
+ 194              		.text
+ 195              	.Letext0:
+ 196              		.section	.debug_info,"",%progbits
+ 197              	.Ldebug_info0:
+ 198 0000 D8000000 		.4byte	0xd8
+ 199 0004 0200     		.2byte	0x2
+ 200 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 201 000a 04       		.byte	0x4
+ 202 000b 01       		.uleb128 0x1
+ 203 000c 20000000 		.4byte	.LASF13
+ 204 0010 01       		.byte	0x1
+ 205 0011 36010000 		.4byte	.LASF14
+ 206 0015 E4000000 		.4byte	.LASF15
+ 207 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 208 001d 00000000 		.4byte	0
+ 209 0021 00000000 		.4byte	0
+ 210 0025 00000000 		.4byte	.Ldebug_line0
+ 211 0029 02       		.uleb128 0x2
+ 212 002a 01       		.byte	0x1
+ 213 002b 06       		.byte	0x6
+ 214 002c D8000000 		.4byte	.LASF0
+ 215 0030 02       		.uleb128 0x2
+ 216 0031 01       		.byte	0x1
+ 217 0032 08       		.byte	0x8
+ 218 0033 92000000 		.4byte	.LASF1
+ 219 0037 02       		.uleb128 0x2
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 6
+
+
+ 220 0038 02       		.byte	0x2
+ 221 0039 05       		.byte	0x5
+ 222 003a B4000000 		.4byte	.LASF2
+ 223 003e 02       		.uleb128 0x2
+ 224 003f 02       		.byte	0x2
+ 225 0040 07       		.byte	0x7
+ 226 0041 C5000000 		.4byte	.LASF3
+ 227 0045 02       		.uleb128 0x2
+ 228 0046 04       		.byte	0x4
+ 229 0047 05       		.byte	0x5
+ 230 0048 AB000000 		.4byte	.LASF4
+ 231 004c 02       		.uleb128 0x2
+ 232 004d 04       		.byte	0x4
+ 233 004e 07       		.byte	0x7
+ 234 004f 69000000 		.4byte	.LASF5
+ 235 0053 02       		.uleb128 0x2
+ 236 0054 08       		.byte	0x8
+ 237 0055 05       		.byte	0x5
+ 238 0056 00000000 		.4byte	.LASF6
+ 239 005a 02       		.uleb128 0x2
+ 240 005b 08       		.byte	0x8
+ 241 005c 07       		.byte	0x7
+ 242 005d 7B000000 		.4byte	.LASF7
+ 243 0061 03       		.uleb128 0x3
+ 244 0062 04       		.byte	0x4
+ 245 0063 05       		.byte	0x5
+ 246 0064 696E7400 		.ascii	"int\000"
+ 247 0068 02       		.uleb128 0x2
+ 248 0069 04       		.byte	0x4
+ 249 006a 07       		.byte	0x7
+ 250 006b 0E000000 		.4byte	.LASF8
+ 251 006f 02       		.uleb128 0x2
+ 252 0070 04       		.byte	0x4
+ 253 0071 04       		.byte	0x4
+ 254 0072 30010000 		.4byte	.LASF9
+ 255 0076 02       		.uleb128 0x2
+ 256 0077 08       		.byte	0x8
+ 257 0078 04       		.byte	0x4
+ 258 0079 BE000000 		.4byte	.LASF10
+ 259 007d 02       		.uleb128 0x2
+ 260 007e 01       		.byte	0x1
+ 261 007f 08       		.byte	0x8
+ 262 0080 A0000000 		.4byte	.LASF11
+ 263 0084 02       		.uleb128 0x2
+ 264 0085 04       		.byte	0x4
+ 265 0086 07       		.byte	0x7
+ 266 0087 3F010000 		.4byte	.LASF12
+ 267 008b 04       		.uleb128 0x4
+ 268 008c 01       		.byte	0x1
+ 269 008d A5000000 		.4byte	.LASF16
+ 270 0091 01       		.byte	0x1
+ 271 0092 0F       		.byte	0xf
+ 272 0093 01       		.byte	0x1
+ 273 0094 00000000 		.4byte	.LFB33
+ 274 0098 74000000 		.4byte	.LFE33
+ 275 009c 00000000 		.4byte	.LLST0
+ 276 00a0 01       		.byte	0x1
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 7
+
+
+ 277 00a1 B2000000 		.4byte	0xb2
+ 278 00a5 05       		.uleb128 0x5
+ 279 00a6 6A00     		.ascii	"j\000"
+ 280 00a8 01       		.byte	0x1
+ 281 00a9 0F       		.byte	0xf
+ 282 00aa 61000000 		.4byte	0x61
+ 283 00ae 02       		.byte	0x2
+ 284 00af 91       		.byte	0x91
+ 285 00b0 74       		.sleb128 -12
+ 286 00b1 00       		.byte	0
+ 287 00b2 06       		.uleb128 0x6
+ 288 00b3 01       		.byte	0x1
+ 289 00b4 1B000000 		.4byte	.LASF17
+ 290 00b8 01       		.byte	0x1
+ 291 00b9 33       		.byte	0x33
+ 292 00ba 61000000 		.4byte	0x61
+ 293 00be 00000000 		.4byte	.LFB34
+ 294 00c2 38000000 		.4byte	.LFE34
+ 295 00c6 38000000 		.4byte	.LLST1
+ 296 00ca 01       		.byte	0x1
+ 297 00cb 07       		.uleb128 0x7
+ 298 00cc 6900     		.ascii	"i\000"
+ 299 00ce 01       		.byte	0x1
+ 300 00cf 0D       		.byte	0xd
+ 301 00d0 61000000 		.4byte	0x61
+ 302 00d4 01       		.byte	0x1
+ 303 00d5 05       		.byte	0x5
+ 304 00d6 03       		.byte	0x3
+ 305 00d7 00000000 		.4byte	i
+ 306 00db 00       		.byte	0
+ 307              		.section	.debug_abbrev,"",%progbits
+ 308              	.Ldebug_abbrev0:
+ 309 0000 01       		.uleb128 0x1
+ 310 0001 11       		.uleb128 0x11
+ 311 0002 01       		.byte	0x1
+ 312 0003 25       		.uleb128 0x25
+ 313 0004 0E       		.uleb128 0xe
+ 314 0005 13       		.uleb128 0x13
+ 315 0006 0B       		.uleb128 0xb
+ 316 0007 03       		.uleb128 0x3
+ 317 0008 0E       		.uleb128 0xe
+ 318 0009 1B       		.uleb128 0x1b
+ 319 000a 0E       		.uleb128 0xe
+ 320 000b 55       		.uleb128 0x55
+ 321 000c 06       		.uleb128 0x6
+ 322 000d 11       		.uleb128 0x11
+ 323 000e 01       		.uleb128 0x1
+ 324 000f 52       		.uleb128 0x52
+ 325 0010 01       		.uleb128 0x1
+ 326 0011 10       		.uleb128 0x10
+ 327 0012 06       		.uleb128 0x6
+ 328 0013 00       		.byte	0
+ 329 0014 00       		.byte	0
+ 330 0015 02       		.uleb128 0x2
+ 331 0016 24       		.uleb128 0x24
+ 332 0017 00       		.byte	0
+ 333 0018 0B       		.uleb128 0xb
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 8
+
+
+ 334 0019 0B       		.uleb128 0xb
+ 335 001a 3E       		.uleb128 0x3e
+ 336 001b 0B       		.uleb128 0xb
+ 337 001c 03       		.uleb128 0x3
+ 338 001d 0E       		.uleb128 0xe
+ 339 001e 00       		.byte	0
+ 340 001f 00       		.byte	0
+ 341 0020 03       		.uleb128 0x3
+ 342 0021 24       		.uleb128 0x24
+ 343 0022 00       		.byte	0
+ 344 0023 0B       		.uleb128 0xb
+ 345 0024 0B       		.uleb128 0xb
+ 346 0025 3E       		.uleb128 0x3e
+ 347 0026 0B       		.uleb128 0xb
+ 348 0027 03       		.uleb128 0x3
+ 349 0028 08       		.uleb128 0x8
+ 350 0029 00       		.byte	0
+ 351 002a 00       		.byte	0
+ 352 002b 04       		.uleb128 0x4
+ 353 002c 2E       		.uleb128 0x2e
+ 354 002d 01       		.byte	0x1
+ 355 002e 3F       		.uleb128 0x3f
+ 356 002f 0C       		.uleb128 0xc
+ 357 0030 03       		.uleb128 0x3
+ 358 0031 0E       		.uleb128 0xe
+ 359 0032 3A       		.uleb128 0x3a
+ 360 0033 0B       		.uleb128 0xb
+ 361 0034 3B       		.uleb128 0x3b
+ 362 0035 0B       		.uleb128 0xb
+ 363 0036 27       		.uleb128 0x27
+ 364 0037 0C       		.uleb128 0xc
+ 365 0038 11       		.uleb128 0x11
+ 366 0039 01       		.uleb128 0x1
+ 367 003a 12       		.uleb128 0x12
+ 368 003b 01       		.uleb128 0x1
+ 369 003c 40       		.uleb128 0x40
+ 370 003d 06       		.uleb128 0x6
+ 371 003e 9642     		.uleb128 0x2116
+ 372 0040 0C       		.uleb128 0xc
+ 373 0041 01       		.uleb128 0x1
+ 374 0042 13       		.uleb128 0x13
+ 375 0043 00       		.byte	0
+ 376 0044 00       		.byte	0
+ 377 0045 05       		.uleb128 0x5
+ 378 0046 05       		.uleb128 0x5
+ 379 0047 00       		.byte	0
+ 380 0048 03       		.uleb128 0x3
+ 381 0049 08       		.uleb128 0x8
+ 382 004a 3A       		.uleb128 0x3a
+ 383 004b 0B       		.uleb128 0xb
+ 384 004c 3B       		.uleb128 0x3b
+ 385 004d 0B       		.uleb128 0xb
+ 386 004e 49       		.uleb128 0x49
+ 387 004f 13       		.uleb128 0x13
+ 388 0050 02       		.uleb128 0x2
+ 389 0051 0A       		.uleb128 0xa
+ 390 0052 00       		.byte	0
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 9
+
+
+ 391 0053 00       		.byte	0
+ 392 0054 06       		.uleb128 0x6
+ 393 0055 2E       		.uleb128 0x2e
+ 394 0056 00       		.byte	0
+ 395 0057 3F       		.uleb128 0x3f
+ 396 0058 0C       		.uleb128 0xc
+ 397 0059 03       		.uleb128 0x3
+ 398 005a 0E       		.uleb128 0xe
+ 399 005b 3A       		.uleb128 0x3a
+ 400 005c 0B       		.uleb128 0xb
+ 401 005d 3B       		.uleb128 0x3b
+ 402 005e 0B       		.uleb128 0xb
+ 403 005f 49       		.uleb128 0x49
+ 404 0060 13       		.uleb128 0x13
+ 405 0061 11       		.uleb128 0x11
+ 406 0062 01       		.uleb128 0x1
+ 407 0063 12       		.uleb128 0x12
+ 408 0064 01       		.uleb128 0x1
+ 409 0065 40       		.uleb128 0x40
+ 410 0066 06       		.uleb128 0x6
+ 411 0067 9642     		.uleb128 0x2116
+ 412 0069 0C       		.uleb128 0xc
+ 413 006a 00       		.byte	0
+ 414 006b 00       		.byte	0
+ 415 006c 07       		.uleb128 0x7
+ 416 006d 34       		.uleb128 0x34
+ 417 006e 00       		.byte	0
+ 418 006f 03       		.uleb128 0x3
+ 419 0070 08       		.uleb128 0x8
+ 420 0071 3A       		.uleb128 0x3a
+ 421 0072 0B       		.uleb128 0xb
+ 422 0073 3B       		.uleb128 0x3b
+ 423 0074 0B       		.uleb128 0xb
+ 424 0075 49       		.uleb128 0x49
+ 425 0076 13       		.uleb128 0x13
+ 426 0077 3F       		.uleb128 0x3f
+ 427 0078 0C       		.uleb128 0xc
+ 428 0079 02       		.uleb128 0x2
+ 429 007a 0A       		.uleb128 0xa
+ 430 007b 00       		.byte	0
+ 431 007c 00       		.byte	0
+ 432 007d 00       		.byte	0
+ 433              		.section	.debug_loc,"",%progbits
+ 434              	.Ldebug_loc0:
+ 435              	.LLST0:
+ 436 0000 00000000 		.4byte	.LFB33
+ 437 0004 02000000 		.4byte	.LCFI0
+ 438 0008 0200     		.2byte	0x2
+ 439 000a 7D       		.byte	0x7d
+ 440 000b 00       		.sleb128 0
+ 441 000c 02000000 		.4byte	.LCFI0
+ 442 0010 04000000 		.4byte	.LCFI1
+ 443 0014 0200     		.2byte	0x2
+ 444 0016 7D       		.byte	0x7d
+ 445 0017 08       		.sleb128 8
+ 446 0018 04000000 		.4byte	.LCFI1
+ 447 001c 06000000 		.4byte	.LCFI2
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 10
+
+
+ 448 0020 0200     		.2byte	0x2
+ 449 0022 7D       		.byte	0x7d
+ 450 0023 10       		.sleb128 16
+ 451 0024 06000000 		.4byte	.LCFI2
+ 452 0028 74000000 		.4byte	.LFE33
+ 453 002c 0200     		.2byte	0x2
+ 454 002e 77       		.byte	0x77
+ 455 002f 10       		.sleb128 16
+ 456 0030 00000000 		.4byte	0
+ 457 0034 00000000 		.4byte	0
+ 458              	.LLST1:
+ 459 0038 00000000 		.4byte	.LFB34
+ 460 003c 02000000 		.4byte	.LCFI3
+ 461 0040 0200     		.2byte	0x2
+ 462 0042 7D       		.byte	0x7d
+ 463 0043 00       		.sleb128 0
+ 464 0044 02000000 		.4byte	.LCFI3
+ 465 0048 04000000 		.4byte	.LCFI4
+ 466 004c 0200     		.2byte	0x2
+ 467 004e 7D       		.byte	0x7d
+ 468 004f 08       		.sleb128 8
+ 469 0050 04000000 		.4byte	.LCFI4
+ 470 0054 38000000 		.4byte	.LFE34
+ 471 0058 0200     		.2byte	0x2
+ 472 005a 77       		.byte	0x77
+ 473 005b 08       		.sleb128 8
+ 474 005c 00000000 		.4byte	0
+ 475 0060 00000000 		.4byte	0
+ 476              		.section	.debug_aranges,"",%progbits
+ 477 0000 24000000 		.4byte	0x24
+ 478 0004 0200     		.2byte	0x2
+ 479 0006 00000000 		.4byte	.Ldebug_info0
+ 480 000a 04       		.byte	0x4
+ 481 000b 00       		.byte	0
+ 482 000c 0000     		.2byte	0
+ 483 000e 0000     		.2byte	0
+ 484 0010 00000000 		.4byte	.LFB33
+ 485 0014 74000000 		.4byte	.LFE33-.LFB33
+ 486 0018 00000000 		.4byte	.LFB34
+ 487 001c 38000000 		.4byte	.LFE34-.LFB34
+ 488 0020 00000000 		.4byte	0
+ 489 0024 00000000 		.4byte	0
+ 490              		.section	.debug_ranges,"",%progbits
+ 491              	.Ldebug_ranges0:
+ 492 0000 00000000 		.4byte	.LFB33
+ 493 0004 74000000 		.4byte	.LFE33
+ 494 0008 00000000 		.4byte	.LFB34
+ 495 000c 38000000 		.4byte	.LFE34
+ 496 0010 00000000 		.4byte	0
+ 497 0014 00000000 		.4byte	0
+ 498              		.section	.debug_line,"",%progbits
+ 499              	.Ldebug_line0:
+ 500 0000 71000000 		.section	.debug_str,"MS",%progbits,1
+ 500      02001F00 
+ 500      00000201 
+ 500      FB0E0D00 
+ 500      01010101 
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 11
+
+
+ 501              	.LASF6:
+ 502 0000 6C6F6E67 		.ascii	"long long int\000"
+ 502      206C6F6E 
+ 502      6720696E 
+ 502      7400
+ 503              	.LASF8:
+ 504 000e 756E7369 		.ascii	"unsigned int\000"
+ 504      676E6564 
+ 504      20696E74 
+ 504      00
+ 505              	.LASF17:
+ 506 001b 6D61696E 		.ascii	"main\000"
+ 506      00
+ 507              	.LASF13:
+ 508 0020 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 508      4320342E 
+ 508      372E3320 
+ 508      32303133 
+ 508      30333132 
+ 509 0053 616E6368 		.ascii	"anch revision 196615]\000"
+ 509      20726576 
+ 509      6973696F 
+ 509      6E203139 
+ 509      36363135 
+ 510              	.LASF5:
+ 511 0069 6C6F6E67 		.ascii	"long unsigned int\000"
+ 511      20756E73 
+ 511      69676E65 
+ 511      6420696E 
+ 511      7400
+ 512              	.LASF7:
+ 513 007b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 513      206C6F6E 
+ 513      6720756E 
+ 513      7369676E 
+ 513      65642069 
+ 514              	.LASF1:
+ 515 0092 756E7369 		.ascii	"unsigned char\000"
+ 515      676E6564 
+ 515      20636861 
+ 515      7200
+ 516              	.LASF11:
+ 517 00a0 63686172 		.ascii	"char\000"
+ 517      00
+ 518              	.LASF16:
+ 519 00a5 636F756E 		.ascii	"count\000"
+ 519      7400
+ 520              	.LASF4:
+ 521 00ab 6C6F6E67 		.ascii	"long int\000"
+ 521      20696E74 
+ 521      00
+ 522              	.LASF2:
+ 523 00b4 73686F72 		.ascii	"short int\000"
+ 523      7420696E 
+ 523      7400
+ 524              	.LASF10:
+ 525 00be 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccQyzQ85.s 			page 12
+
+
+ 525      6C6500
+ 526              	.LASF3:
+ 527 00c5 73686F72 		.ascii	"short unsigned int\000"
+ 527      7420756E 
+ 527      7369676E 
+ 527      65642069 
+ 527      6E7400
+ 528              	.LASF0:
+ 529 00d8 7369676E 		.ascii	"signed char\000"
+ 529      65642063 
+ 529      68617200 
+ 530              	.LASF15:
+ 531 00e4 5A3A5C44 		.ascii	"Z:\\Documents\\Github Clones\\PSoC.Playground\\PROJ"
+ 531      6F63756D 
+ 531      656E7473 
+ 531      5C476974 
+ 531      68756220 
+ 532 0113 45435453 		.ascii	"ECTS\\7SegDisp\\7SegDisp.cydsn\000"
+ 532      5C375365 
+ 532      67446973 
+ 532      705C3753 
+ 532      65674469 
+ 533              	.LASF9:
+ 534 0130 666C6F61 		.ascii	"float\000"
+ 534      7400
+ 535              	.LASF14:
+ 536 0136 2E5C6D61 		.ascii	".\\main.c\000"
+ 536      696E2E63 
+ 536      00
+ 537              	.LASF12:
+ 538 013f 73697A65 		.ascii	"sizetype\000"
+ 538      74797065 
+ 538      00
+ 539              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

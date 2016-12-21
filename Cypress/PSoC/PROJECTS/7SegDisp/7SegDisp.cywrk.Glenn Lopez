@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="7SegDisp\7SegDisp\7SegDisp.cydwr">
+<ExpandedNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\TopDesign</v>
+<v>7SegDisp\7SegDisp\7SegDisp.cydwr</v>
+<v>7SegDisp\7SegDisp\Header Files</v>
+<v>7SegDisp\7SegDisp\Source Files</v>
+<v>7SegDisp\7SegDisp\Source Files\main.c</v>
+<v>7SegDisp\7SegDisp\Generated_Source</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydevicerv_trm.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cyfitter.h</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cyfitter_cfg.c</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cyfitter_cfg.h</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cyfittergnu.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cyfitteriar.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cyfitterrv.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cymetadata.c</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\TopDesign</v>
+<v>7SegDisp\7SegDisp\7SegDisp.cydwr</v>
+<v>7SegDisp\7SegDisp\Header Files</v>
+<v>7SegDisp\7SegDisp\Source Files</v>
+<v>7SegDisp\7SegDisp\Source Files\main.c</v>
+<v>7SegDisp\7SegDisp\Generated_Source</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
+<v>7SegDisp\7SegDisp\Generated_Source\PSoC4\cydevicerv_trm.inc</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="7SegDisp">
+<ExpandedNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\TopDesign</v>
+<v>7SegDisp\7SegDisp\TopDesign\TopDesign.cysch</v>
+<v>7SegDisp\7SegDisp\TopDesign\TopDesign.cysym</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\TopDesign</v>
+<v>7SegDisp\7SegDisp\TopDesign\TopDesign.cysch</v>
+<v>7SegDisp\7SegDisp\TopDesign\TopDesign.cysym</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\CortexM0</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files\main.lst</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\7SegDisp.elf</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\7SegDisp.hex</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\7SegDisp.map</v>
+<v>7SegDisp\7SegDisp\7SegDisp.rpt</v>
+<v>7SegDisp\7SegDisp\7SegDisp_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\CortexM0</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\Listing Files\main.lst</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\7SegDisp.elf</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\7SegDisp.hex</v>
+<v>7SegDisp\7SegDisp\CortexM0\ARM_GCC_484\Debug\7SegDisp.map</v>
+<v>7SegDisp\7SegDisp\7SegDisp.rpt</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\PSoC 4 Architecture TRM</v>
+<v>7SegDisp\7SegDisp\PSoC 4200 BLE Family Datasheet</v>
+<v>7SegDisp\7SegDisp\System Reference Guide v4_20</v>
+<v>7SegDisp\7SegDisp\ADC_SAR_SEQ_P4_v2_0</v>
+<v>7SegDisp\7SegDisp\and_v1_0</v>
+<v>7SegDisp\7SegDisp\cy_pins_v2_10</v>
+<v>7SegDisp\7SegDisp\CyControlReg_v1_70</v>
+<v>7SegDisp\7SegDisp\Gnd_v1_0</v>
+<v>7SegDisp\7SegDisp\not_v1_0</v>
+<v>7SegDisp\7SegDisp\or_v1_0</v>
+<v>7SegDisp\7SegDisp\PhotoResistor_v1_0</v>
+<v>7SegDisp\7SegDisp\Power_v1_0</v>
+<v>7SegDisp\7SegDisp\Resistor_v1_0</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>7SegDisp</v>
+<v>7SegDisp\7SegDisp</v>
+<v>7SegDisp\7SegDisp\PSoC 4 Architecture TRM</v>
+<v>7SegDisp\7SegDisp\PSoC 4200 BLE Family Datasheet</v>
+<v>7SegDisp\7SegDisp\System Reference Guide v4_20</v>
+<v>7SegDisp\7SegDisp\ADC_SAR_SEQ_P4_v2_0</v>
+<v>7SegDisp\7SegDisp\and_v1_0</v>
+<v>7SegDisp\7SegDisp\cy_pins_v2_10</v>
+<v>7SegDisp\7SegDisp\CyControlReg_v1_70</v>
+<v>7SegDisp\7SegDisp\Gnd_v1_0</v>
+<v>7SegDisp\7SegDisp\not_v1_0</v>
+<v>7SegDisp\7SegDisp\or_v1_0</v>
+<v>7SegDisp\7SegDisp\PhotoResistor_v1_0</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\7SegDisp.cydsn\7SegDisp.cydwr" />
+<name v=".\7SegDisp.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\7SegDisp.cydsn\main.c" />
+</OpenDocs>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

@@ -1,0 +1,598 @@
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"binReg.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.binReg_Write,"ax",%progbits
+  18              		.align	2
+  19              		.global	binReg_Write
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	binReg_Write, %function
+  23              	binReg_Write:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\binReg.c"
+   1:.\Generated_Source\PSoC4/binReg.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/binReg.c **** * File Name: binReg.c  
+   3:.\Generated_Source\PSoC4/binReg.c **** * Version 1.70
+   4:.\Generated_Source\PSoC4/binReg.c **** *
+   5:.\Generated_Source\PSoC4/binReg.c **** * Description:
+   6:.\Generated_Source\PSoC4/binReg.c **** *  This file contains API to enable firmware control of a Control Register.
+   7:.\Generated_Source\PSoC4/binReg.c **** *
+   8:.\Generated_Source\PSoC4/binReg.c **** * Note:
+   9:.\Generated_Source\PSoC4/binReg.c **** *
+  10:.\Generated_Source\PSoC4/binReg.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC4/binReg.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC4/binReg.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC4/binReg.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC4/binReg.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC4/binReg.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC4/binReg.c **** 
+  17:.\Generated_Source\PSoC4/binReg.c **** #include "binReg.h"
+  18:.\Generated_Source\PSoC4/binReg.c **** 
+  19:.\Generated_Source\PSoC4/binReg.c **** #if !defined(binReg_Sync_ctrl_reg__REMOVED) /* Check for removal by optimization */
+  20:.\Generated_Source\PSoC4/binReg.c **** 
+  21:.\Generated_Source\PSoC4/binReg.c **** /*******************************************************************************
+  22:.\Generated_Source\PSoC4/binReg.c **** * Function Name: binReg_Write
+  23:.\Generated_Source\PSoC4/binReg.c **** ********************************************************************************
+  24:.\Generated_Source\PSoC4/binReg.c **** *
+  25:.\Generated_Source\PSoC4/binReg.c **** * Summary:
+  26:.\Generated_Source\PSoC4/binReg.c **** *  Write a byte to the Control Register.
+  27:.\Generated_Source\PSoC4/binReg.c **** *
+  28:.\Generated_Source\PSoC4/binReg.c **** * Parameters:
+  29:.\Generated_Source\PSoC4/binReg.c **** *  control:  The value to be assigned to the Control Register.
+  30:.\Generated_Source\PSoC4/binReg.c **** *
+  31:.\Generated_Source\PSoC4/binReg.c **** * Return:
+  32:.\Generated_Source\PSoC4/binReg.c **** *  None.
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/binReg.c **** *
+  34:.\Generated_Source\PSoC4/binReg.c **** *******************************************************************************/
+  35:.\Generated_Source\PSoC4/binReg.c **** void binReg_Write(uint8 control) 
+  36:.\Generated_Source\PSoC4/binReg.c **** {
+  26              		.loc 1 36 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 82B0     		sub	sp, sp, #8
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_offset 16
+  36 0004 00AF     		add	r7, sp, #0
+  37              	.LCFI2:
+  38              		.cfi_def_cfa_register 7
+  39 0006 021C     		mov	r2, r0
+  40 0008 FB1D     		add	r3, r7, #7
+  41 000a 1A70     		strb	r2, [r3]
+  37:.\Generated_Source\PSoC4/binReg.c ****     binReg_Control = control;
+  42              		.loc 1 37 0
+  43 000c 034B     		ldr	r3, .L2
+  44 000e FA1D     		add	r2, r7, #7
+  45 0010 1278     		ldrb	r2, [r2]
+  46 0012 1A70     		strb	r2, [r3]
+  38:.\Generated_Source\PSoC4/binReg.c **** }
+  47              		.loc 1 38 0
+  48 0014 BD46     		mov	sp, r7
+  49 0016 02B0     		add	sp, sp, #8
+  50              		@ sp needed for prologue
+  51 0018 80BD     		pop	{r7, pc}
+  52              	.L3:
+  53 001a C046     		.align	2
+  54              	.L2:
+  55 001c 72000F40 		.word	1074724978
+  56              		.cfi_endproc
+  57              	.LFE0:
+  58              		.size	binReg_Write, .-binReg_Write
+  59              		.section	.text.binReg_Read,"ax",%progbits
+  60              		.align	2
+  61              		.global	binReg_Read
+  62              		.code	16
+  63              		.thumb_func
+  64              		.type	binReg_Read, %function
+  65              	binReg_Read:
+  66              	.LFB1:
+  39:.\Generated_Source\PSoC4/binReg.c **** 
+  40:.\Generated_Source\PSoC4/binReg.c **** 
+  41:.\Generated_Source\PSoC4/binReg.c **** /*******************************************************************************
+  42:.\Generated_Source\PSoC4/binReg.c **** * Function Name: binReg_Read
+  43:.\Generated_Source\PSoC4/binReg.c **** ********************************************************************************
+  44:.\Generated_Source\PSoC4/binReg.c **** *
+  45:.\Generated_Source\PSoC4/binReg.c **** * Summary:
+  46:.\Generated_Source\PSoC4/binReg.c **** *  Reads the current value assigned to the Control Register.
+  47:.\Generated_Source\PSoC4/binReg.c **** *
+  48:.\Generated_Source\PSoC4/binReg.c **** * Parameters:
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 3
+
+
+  49:.\Generated_Source\PSoC4/binReg.c **** *  None.
+  50:.\Generated_Source\PSoC4/binReg.c **** *
+  51:.\Generated_Source\PSoC4/binReg.c **** * Return:
+  52:.\Generated_Source\PSoC4/binReg.c **** *  Returns the current value in the Control Register.
+  53:.\Generated_Source\PSoC4/binReg.c **** *
+  54:.\Generated_Source\PSoC4/binReg.c **** *******************************************************************************/
+  55:.\Generated_Source\PSoC4/binReg.c **** uint8 binReg_Read(void) 
+  56:.\Generated_Source\PSoC4/binReg.c **** {
+  67              		.loc 1 56 0
+  68              		.cfi_startproc
+  69 0000 80B5     		push	{r7, lr}
+  70              	.LCFI3:
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 7, -8
+  73              		.cfi_offset 14, -4
+  74 0002 00AF     		add	r7, sp, #0
+  75              	.LCFI4:
+  76              		.cfi_def_cfa_register 7
+  57:.\Generated_Source\PSoC4/binReg.c ****     return binReg_Control;
+  77              		.loc 1 57 0
+  78 0004 024B     		ldr	r3, .L6
+  79 0006 1B78     		ldrb	r3, [r3]
+  80 0008 DBB2     		uxtb	r3, r3
+  58:.\Generated_Source\PSoC4/binReg.c **** }
+  81              		.loc 1 58 0
+  82 000a 181C     		mov	r0, r3
+  83 000c BD46     		mov	sp, r7
+  84              		@ sp needed for prologue
+  85 000e 80BD     		pop	{r7, pc}
+  86              	.L7:
+  87              		.align	2
+  88              	.L6:
+  89 0010 72000F40 		.word	1074724978
+  90              		.cfi_endproc
+  91              	.LFE1:
+  92              		.size	binReg_Read, .-binReg_Read
+  93              		.text
+  94              	.Letext0:
+  95              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+  96              		.section	.debug_info,"",%progbits
+  97              	.Ldebug_info0:
+  98 0000 DF000000 		.4byte	0xdf
+  99 0004 0200     		.2byte	0x2
+ 100 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 101 000a 04       		.byte	0x4
+ 102 000b 01       		.uleb128 0x1
+ 103 000c 1B010000 		.4byte	.LASF14
+ 104 0010 01       		.byte	0x1
+ 105 0011 00000000 		.4byte	.LASF15
+ 106 0015 6F000000 		.4byte	.LASF16
+ 107 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 108 001d 00000000 		.4byte	0
+ 109 0021 00000000 		.4byte	0
+ 110 0025 00000000 		.4byte	.Ldebug_line0
+ 111 0029 02       		.uleb128 0x2
+ 112 002a 01       		.byte	0x1
+ 113 002b 06       		.byte	0x6
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 4
+
+
+ 114 002c 6D010000 		.4byte	.LASF0
+ 115 0030 02       		.uleb128 0x2
+ 116 0031 01       		.byte	0x1
+ 117 0032 08       		.byte	0x8
+ 118 0033 28000000 		.4byte	.LASF1
+ 119 0037 02       		.uleb128 0x2
+ 120 0038 02       		.byte	0x2
+ 121 0039 05       		.byte	0x5
+ 122 003a 0B010000 		.4byte	.LASF2
+ 123 003e 02       		.uleb128 0x2
+ 124 003f 02       		.byte	0x2
+ 125 0040 07       		.byte	0x7
+ 126 0041 4D000000 		.4byte	.LASF3
+ 127 0045 02       		.uleb128 0x2
+ 128 0046 04       		.byte	0x4
+ 129 0047 05       		.byte	0x5
+ 130 0048 64010000 		.4byte	.LASF4
+ 131 004c 02       		.uleb128 0x2
+ 132 004d 04       		.byte	0x4
+ 133 004e 07       		.byte	0x7
+ 134 004f 3B000000 		.4byte	.LASF5
+ 135 0053 02       		.uleb128 0x2
+ 136 0054 08       		.byte	0x8
+ 137 0055 05       		.byte	0x5
+ 138 0056 F8000000 		.4byte	.LASF6
+ 139 005a 02       		.uleb128 0x2
+ 140 005b 08       		.byte	0x8
+ 141 005c 07       		.byte	0x7
+ 142 005d E1000000 		.4byte	.LASF7
+ 143 0061 03       		.uleb128 0x3
+ 144 0062 04       		.byte	0x4
+ 145 0063 05       		.byte	0x5
+ 146 0064 696E7400 		.ascii	"int\000"
+ 147 0068 02       		.uleb128 0x2
+ 148 0069 04       		.byte	0x4
+ 149 006a 07       		.byte	0x7
+ 150 006b BB000000 		.4byte	.LASF8
+ 151 006f 04       		.uleb128 0x4
+ 152 0070 15010000 		.4byte	.LASF12
+ 153 0074 02       		.byte	0x2
+ 154 0075 5B       		.byte	0x5b
+ 155 0076 30000000 		.4byte	0x30
+ 156 007a 02       		.uleb128 0x2
+ 157 007b 04       		.byte	0x4
+ 158 007c 04       		.byte	0x4
+ 159 007d 22000000 		.4byte	.LASF9
+ 160 0081 02       		.uleb128 0x2
+ 161 0082 08       		.byte	0x8
+ 162 0083 04       		.byte	0x4
+ 163 0084 68000000 		.4byte	.LASF10
+ 164 0088 02       		.uleb128 0x2
+ 165 0089 01       		.byte	0x1
+ 166 008a 08       		.byte	0x8
+ 167 008b 06010000 		.4byte	.LASF11
+ 168 008f 04       		.uleb128 0x4
+ 169 0090 36000000 		.4byte	.LASF13
+ 170 0094 02       		.byte	0x2
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 5
+
+
+ 171 0095 F0       		.byte	0xf0
+ 172 0096 9A000000 		.4byte	0x9a
+ 173 009a 05       		.uleb128 0x5
+ 174 009b 6F000000 		.4byte	0x6f
+ 175 009f 06       		.uleb128 0x6
+ 176 00a0 01       		.byte	0x1
+ 177 00a1 D4000000 		.4byte	.LASF17
+ 178 00a5 01       		.byte	0x1
+ 179 00a6 23       		.byte	0x23
+ 180 00a7 01       		.byte	0x1
+ 181 00a8 00000000 		.4byte	.LFB0
+ 182 00ac 20000000 		.4byte	.LFE0
+ 183 00b0 00000000 		.4byte	.LLST0
+ 184 00b4 01       		.byte	0x1
+ 185 00b5 C8000000 		.4byte	0xc8
+ 186 00b9 07       		.uleb128 0x7
+ 187 00ba 60000000 		.4byte	.LASF18
+ 188 00be 01       		.byte	0x1
+ 189 00bf 23       		.byte	0x23
+ 190 00c0 6F000000 		.4byte	0x6f
+ 191 00c4 02       		.byte	0x2
+ 192 00c5 91       		.byte	0x91
+ 193 00c6 77       		.sleb128 -9
+ 194 00c7 00       		.byte	0
+ 195 00c8 08       		.uleb128 0x8
+ 196 00c9 01       		.byte	0x1
+ 197 00ca C8000000 		.4byte	.LASF19
+ 198 00ce 01       		.byte	0x1
+ 199 00cf 37       		.byte	0x37
+ 200 00d0 01       		.byte	0x1
+ 201 00d1 6F000000 		.4byte	0x6f
+ 202 00d5 00000000 		.4byte	.LFB1
+ 203 00d9 14000000 		.4byte	.LFE1
+ 204 00dd 38000000 		.4byte	.LLST1
+ 205 00e1 01       		.byte	0x1
+ 206 00e2 00       		.byte	0
+ 207              		.section	.debug_abbrev,"",%progbits
+ 208              	.Ldebug_abbrev0:
+ 209 0000 01       		.uleb128 0x1
+ 210 0001 11       		.uleb128 0x11
+ 211 0002 01       		.byte	0x1
+ 212 0003 25       		.uleb128 0x25
+ 213 0004 0E       		.uleb128 0xe
+ 214 0005 13       		.uleb128 0x13
+ 215 0006 0B       		.uleb128 0xb
+ 216 0007 03       		.uleb128 0x3
+ 217 0008 0E       		.uleb128 0xe
+ 218 0009 1B       		.uleb128 0x1b
+ 219 000a 0E       		.uleb128 0xe
+ 220 000b 55       		.uleb128 0x55
+ 221 000c 06       		.uleb128 0x6
+ 222 000d 11       		.uleb128 0x11
+ 223 000e 01       		.uleb128 0x1
+ 224 000f 52       		.uleb128 0x52
+ 225 0010 01       		.uleb128 0x1
+ 226 0011 10       		.uleb128 0x10
+ 227 0012 06       		.uleb128 0x6
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 6
+
+
+ 228 0013 00       		.byte	0
+ 229 0014 00       		.byte	0
+ 230 0015 02       		.uleb128 0x2
+ 231 0016 24       		.uleb128 0x24
+ 232 0017 00       		.byte	0
+ 233 0018 0B       		.uleb128 0xb
+ 234 0019 0B       		.uleb128 0xb
+ 235 001a 3E       		.uleb128 0x3e
+ 236 001b 0B       		.uleb128 0xb
+ 237 001c 03       		.uleb128 0x3
+ 238 001d 0E       		.uleb128 0xe
+ 239 001e 00       		.byte	0
+ 240 001f 00       		.byte	0
+ 241 0020 03       		.uleb128 0x3
+ 242 0021 24       		.uleb128 0x24
+ 243 0022 00       		.byte	0
+ 244 0023 0B       		.uleb128 0xb
+ 245 0024 0B       		.uleb128 0xb
+ 246 0025 3E       		.uleb128 0x3e
+ 247 0026 0B       		.uleb128 0xb
+ 248 0027 03       		.uleb128 0x3
+ 249 0028 08       		.uleb128 0x8
+ 250 0029 00       		.byte	0
+ 251 002a 00       		.byte	0
+ 252 002b 04       		.uleb128 0x4
+ 253 002c 16       		.uleb128 0x16
+ 254 002d 00       		.byte	0
+ 255 002e 03       		.uleb128 0x3
+ 256 002f 0E       		.uleb128 0xe
+ 257 0030 3A       		.uleb128 0x3a
+ 258 0031 0B       		.uleb128 0xb
+ 259 0032 3B       		.uleb128 0x3b
+ 260 0033 0B       		.uleb128 0xb
+ 261 0034 49       		.uleb128 0x49
+ 262 0035 13       		.uleb128 0x13
+ 263 0036 00       		.byte	0
+ 264 0037 00       		.byte	0
+ 265 0038 05       		.uleb128 0x5
+ 266 0039 35       		.uleb128 0x35
+ 267 003a 00       		.byte	0
+ 268 003b 49       		.uleb128 0x49
+ 269 003c 13       		.uleb128 0x13
+ 270 003d 00       		.byte	0
+ 271 003e 00       		.byte	0
+ 272 003f 06       		.uleb128 0x6
+ 273 0040 2E       		.uleb128 0x2e
+ 274 0041 01       		.byte	0x1
+ 275 0042 3F       		.uleb128 0x3f
+ 276 0043 0C       		.uleb128 0xc
+ 277 0044 03       		.uleb128 0x3
+ 278 0045 0E       		.uleb128 0xe
+ 279 0046 3A       		.uleb128 0x3a
+ 280 0047 0B       		.uleb128 0xb
+ 281 0048 3B       		.uleb128 0x3b
+ 282 0049 0B       		.uleb128 0xb
+ 283 004a 27       		.uleb128 0x27
+ 284 004b 0C       		.uleb128 0xc
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 7
+
+
+ 285 004c 11       		.uleb128 0x11
+ 286 004d 01       		.uleb128 0x1
+ 287 004e 12       		.uleb128 0x12
+ 288 004f 01       		.uleb128 0x1
+ 289 0050 40       		.uleb128 0x40
+ 290 0051 06       		.uleb128 0x6
+ 291 0052 9742     		.uleb128 0x2117
+ 292 0054 0C       		.uleb128 0xc
+ 293 0055 01       		.uleb128 0x1
+ 294 0056 13       		.uleb128 0x13
+ 295 0057 00       		.byte	0
+ 296 0058 00       		.byte	0
+ 297 0059 07       		.uleb128 0x7
+ 298 005a 05       		.uleb128 0x5
+ 299 005b 00       		.byte	0
+ 300 005c 03       		.uleb128 0x3
+ 301 005d 0E       		.uleb128 0xe
+ 302 005e 3A       		.uleb128 0x3a
+ 303 005f 0B       		.uleb128 0xb
+ 304 0060 3B       		.uleb128 0x3b
+ 305 0061 0B       		.uleb128 0xb
+ 306 0062 49       		.uleb128 0x49
+ 307 0063 13       		.uleb128 0x13
+ 308 0064 02       		.uleb128 0x2
+ 309 0065 0A       		.uleb128 0xa
+ 310 0066 00       		.byte	0
+ 311 0067 00       		.byte	0
+ 312 0068 08       		.uleb128 0x8
+ 313 0069 2E       		.uleb128 0x2e
+ 314 006a 00       		.byte	0
+ 315 006b 3F       		.uleb128 0x3f
+ 316 006c 0C       		.uleb128 0xc
+ 317 006d 03       		.uleb128 0x3
+ 318 006e 0E       		.uleb128 0xe
+ 319 006f 3A       		.uleb128 0x3a
+ 320 0070 0B       		.uleb128 0xb
+ 321 0071 3B       		.uleb128 0x3b
+ 322 0072 0B       		.uleb128 0xb
+ 323 0073 27       		.uleb128 0x27
+ 324 0074 0C       		.uleb128 0xc
+ 325 0075 49       		.uleb128 0x49
+ 326 0076 13       		.uleb128 0x13
+ 327 0077 11       		.uleb128 0x11
+ 328 0078 01       		.uleb128 0x1
+ 329 0079 12       		.uleb128 0x12
+ 330 007a 01       		.uleb128 0x1
+ 331 007b 40       		.uleb128 0x40
+ 332 007c 06       		.uleb128 0x6
+ 333 007d 9742     		.uleb128 0x2117
+ 334 007f 0C       		.uleb128 0xc
+ 335 0080 00       		.byte	0
+ 336 0081 00       		.byte	0
+ 337 0082 00       		.byte	0
+ 338              		.section	.debug_loc,"",%progbits
+ 339              	.Ldebug_loc0:
+ 340              	.LLST0:
+ 341 0000 00000000 		.4byte	.LFB0
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 8
+
+
+ 342 0004 02000000 		.4byte	.LCFI0
+ 343 0008 0200     		.2byte	0x2
+ 344 000a 7D       		.byte	0x7d
+ 345 000b 00       		.sleb128 0
+ 346 000c 02000000 		.4byte	.LCFI0
+ 347 0010 04000000 		.4byte	.LCFI1
+ 348 0014 0200     		.2byte	0x2
+ 349 0016 7D       		.byte	0x7d
+ 350 0017 08       		.sleb128 8
+ 351 0018 04000000 		.4byte	.LCFI1
+ 352 001c 06000000 		.4byte	.LCFI2
+ 353 0020 0200     		.2byte	0x2
+ 354 0022 7D       		.byte	0x7d
+ 355 0023 10       		.sleb128 16
+ 356 0024 06000000 		.4byte	.LCFI2
+ 357 0028 20000000 		.4byte	.LFE0
+ 358 002c 0200     		.2byte	0x2
+ 359 002e 77       		.byte	0x77
+ 360 002f 10       		.sleb128 16
+ 361 0030 00000000 		.4byte	0
+ 362 0034 00000000 		.4byte	0
+ 363              	.LLST1:
+ 364 0038 00000000 		.4byte	.LFB1
+ 365 003c 02000000 		.4byte	.LCFI3
+ 366 0040 0200     		.2byte	0x2
+ 367 0042 7D       		.byte	0x7d
+ 368 0043 00       		.sleb128 0
+ 369 0044 02000000 		.4byte	.LCFI3
+ 370 0048 04000000 		.4byte	.LCFI4
+ 371 004c 0200     		.2byte	0x2
+ 372 004e 7D       		.byte	0x7d
+ 373 004f 08       		.sleb128 8
+ 374 0050 04000000 		.4byte	.LCFI4
+ 375 0054 14000000 		.4byte	.LFE1
+ 376 0058 0200     		.2byte	0x2
+ 377 005a 77       		.byte	0x77
+ 378 005b 08       		.sleb128 8
+ 379 005c 00000000 		.4byte	0
+ 380 0060 00000000 		.4byte	0
+ 381              		.section	.debug_aranges,"",%progbits
+ 382 0000 24000000 		.4byte	0x24
+ 383 0004 0200     		.2byte	0x2
+ 384 0006 00000000 		.4byte	.Ldebug_info0
+ 385 000a 04       		.byte	0x4
+ 386 000b 00       		.byte	0
+ 387 000c 0000     		.2byte	0
+ 388 000e 0000     		.2byte	0
+ 389 0010 00000000 		.4byte	.LFB0
+ 390 0014 20000000 		.4byte	.LFE0-.LFB0
+ 391 0018 00000000 		.4byte	.LFB1
+ 392 001c 14000000 		.4byte	.LFE1-.LFB1
+ 393 0020 00000000 		.4byte	0
+ 394 0024 00000000 		.4byte	0
+ 395              		.section	.debug_ranges,"",%progbits
+ 396              	.Ldebug_ranges0:
+ 397 0000 00000000 		.4byte	.LFB0
+ 398 0004 20000000 		.4byte	.LFE0
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 9
+
+
+ 399 0008 00000000 		.4byte	.LFB1
+ 400 000c 14000000 		.4byte	.LFE1
+ 401 0010 00000000 		.4byte	0
+ 402 0014 00000000 		.4byte	0
+ 403              		.section	.debug_line,"",%progbits
+ 404              	.Ldebug_line0:
+ 405 0000 6D000000 		.section	.debug_str,"MS",%progbits,1
+ 405      02004500 
+ 405      00000201 
+ 405      FB0E0D00 
+ 405      01010101 
+ 406              	.LASF15:
+ 407 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\binReg.c\000"
+ 407      6E657261 
+ 407      7465645F 
+ 407      536F7572 
+ 407      63655C50 
+ 408              	.LASF9:
+ 409 0022 666C6F61 		.ascii	"float\000"
+ 409      7400
+ 410              	.LASF1:
+ 411 0028 756E7369 		.ascii	"unsigned char\000"
+ 411      676E6564 
+ 411      20636861 
+ 411      7200
+ 412              	.LASF13:
+ 413 0036 72656738 		.ascii	"reg8\000"
+ 413      00
+ 414              	.LASF5:
+ 415 003b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 415      20756E73 
+ 415      69676E65 
+ 415      6420696E 
+ 415      7400
+ 416              	.LASF3:
+ 417 004d 73686F72 		.ascii	"short unsigned int\000"
+ 417      7420756E 
+ 417      7369676E 
+ 417      65642069 
+ 417      6E7400
+ 418              	.LASF18:
+ 419 0060 636F6E74 		.ascii	"control\000"
+ 419      726F6C00 
+ 420              	.LASF10:
+ 421 0068 646F7562 		.ascii	"double\000"
+ 421      6C6500
+ 422              	.LASF16:
+ 423 006f 5A3A5C44 		.ascii	"Z:\\Documents\\Github Clones\\PSoC.Playground\\PROJ"
+ 423      6F63756D 
+ 423      656E7473 
+ 423      5C476974 
+ 423      68756220 
+ 424 009e 45435453 		.ascii	"ECTS\\7SegDisp\\7SegDisp.cydsn\000"
+ 424      5C375365 
+ 424      67446973 
+ 424      705C3753 
+ 424      65674469 
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\cc6O9otf.s 			page 10
+
+
+ 425              	.LASF8:
+ 426 00bb 756E7369 		.ascii	"unsigned int\000"
+ 426      676E6564 
+ 426      20696E74 
+ 426      00
+ 427              	.LASF19:
+ 428 00c8 62696E52 		.ascii	"binReg_Read\000"
+ 428      65675F52 
+ 428      65616400 
+ 429              	.LASF17:
+ 430 00d4 62696E52 		.ascii	"binReg_Write\000"
+ 430      65675F57 
+ 430      72697465 
+ 430      00
+ 431              	.LASF7:
+ 432 00e1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 432      206C6F6E 
+ 432      6720756E 
+ 432      7369676E 
+ 432      65642069 
+ 433              	.LASF6:
+ 434 00f8 6C6F6E67 		.ascii	"long long int\000"
+ 434      206C6F6E 
+ 434      6720696E 
+ 434      7400
+ 435              	.LASF11:
+ 436 0106 63686172 		.ascii	"char\000"
+ 436      00
+ 437              	.LASF2:
+ 438 010b 73686F72 		.ascii	"short int\000"
+ 438      7420696E 
+ 438      7400
+ 439              	.LASF12:
+ 440 0115 75696E74 		.ascii	"uint8\000"
+ 440      3800
+ 441              	.LASF14:
+ 442 011b 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 442      4320342E 
+ 442      372E3320 
+ 442      32303133 
+ 442      30333132 
+ 443 014e 616E6368 		.ascii	"anch revision 196615]\000"
+ 443      20726576 
+ 443      6973696F 
+ 443      6E203139 
+ 443      36363135 
+ 444              	.LASF4:
+ 445 0164 6C6F6E67 		.ascii	"long int\000"
+ 445      20696E74 
+ 445      00
+ 446              	.LASF0:
+ 447 016d 7369676E 		.ascii	"signed char\000"
+ 447      65642063 
+ 447      68617200 
+ 448              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

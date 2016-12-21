@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pindata xsi:schemaLocation="http://cypress.com/xsd/cypindata_v2 ../../dtd/cypindata_v2.xsd" family="PSoC4_PSoC4A" package="44-TQFP" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypindata_v2">
+  <capabilities>
+    <capability name="DIGITAL" value="0x0000000000000001" />
+    <capability name="ANALOG" value="0x0000000000000002" />
+    <capability name="GPIO" value="0x0000000000000004" />
+    <capability name="SIO" value="0x0000000000000008" />
+    <capability name="DAC_HI_OUT" value="0x0000000000000010" />
+    <capability name="ABUF_POS" value="0x0000000000000020" />
+    <capability name="ABUF_OUT" value="0x0000000000000040" />
+    <capability name="ABUF_NEG" value="0x0000000000000080" />
+    <capability name="XRES" value="0x0000000000000100" />
+    <capability name="SWD_IO" value="0x0000000000000200" />
+    <capability name="SWD_CK" value="0x0000000000000400" />
+    <capability name="JTAG_NTRST" value="0x0000000000000800" />
+    <capability name="I2CWKUP_SDA" value="0x0000000000001000" />
+    <capability name="I2CWKUP_SCL" value="0x0000000000002000" />
+    <capability name="EXT_VREF" value="0x0000000000004000" />
+    <capability name="USB_D_PLUS" value="0x0000000000008000" />
+    <capability name="USB_D_MINUS" value="0x0000000000010000" />
+    <capability name="SWO" value="0x0000000000020000" />
+    <capability name="JTAG_TMS" value="0x0000000000040000" />
+    <capability name="JTAG_TDO" value="0x0000000000080000" />
+    <capability name="JTAG_TDI" value="0x0000000000100000" />
+    <capability name="JTAG_TCK" value="0x0000000000200000" />
+    <capability name="ECO_MHZ_XO" value="0x0000000000400000" />
+    <capability name="ECO_MHZ_XI" value="0x0000000000800000" />
+    <capability name="ECO_32KHZ_XO" value="0x0000000001000000" />
+    <capability name="ECO_32KHZ_XI" value="0x0000000002000000" />
+    <capability name="DSM_EXT_PIN_ONE" value="0x0000000004000000" />
+    <capability name="DSM_EXT_PIN_TWO" value="0x0000000008000000" />
+    <capability name="SAR_EXT_PIN" value="0x0000000010000000" />
+    <capability name="TRACE" value="0x0000000020000000" />
+    <capability name="SPI_MOSI" value="0x0000000040000000" />
+    <capability name="SPI_MISO" value="0x0000000080000000" />
+    <capability name="SPI_SS" value="0x0000000100000000" />
+    <capability name="SPI_SCLK" value="0x0000000200000000" />
+    <capability name="EXTSYNC" value="0x0000000400000000" />
+    <capability name="EXTREJECT" value="0x0000000800000000" />
+    <capability name="EXTCLK" value="0x0000001000000000" />
+    <capability name="TCPWM_P" value="0x0000002000000000" />
+    <capability name="TCPWM_N" value="0x0000004000000000" />
+    <capability name="SCB_UART_RX" value="0x0000008000000000" />
+    <capability name="SCB_UART_TX" value="0x0000010000000000" />
+    <capability name="ROUTABLE" value="0x0000020000000000" />
+    <capability name="TRUETOUCH" value="0x0000040000000000" />
+    <capability name="LCD_COM" value="0x0000080000000000" />
+    <capability name="LCD_SEG" value="0x0000100000000000" />
+    <capability name="WAKEUP" value="0x0000200000000000" />
+    <capability name="SCB_UART_CTS" value="0x0000400000000000" />
+    <capability name="SCB_UART_RTS" value="0x0000800000000000" />
+  </capabilities>
+  <pins>
+    <pin number="1" name="VSS" pinSide="WEST" padSide="WEST" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VSSD" capabilities="0x0000000000000000" />
+    <pin number="2" name="P2[0]" pinSide="WEST" padSide="WEST" portId="2" pinId="0" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.16" />
+      <function name="LCD_SEG.16" />
+    </pin>
+    <pin number="3" name="P2[1]" pinSide="WEST" padSide="WEST" portId="2" pinId="1" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.17" />
+      <function name="LCD_SEG.17" />
+    </pin>
+    <pin number="4" name="P2[2]" pinSide="WEST" padSide="WEST" portId="2" pinId="2" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.18" />
+      <function name="LCD_SEG.18" />
+    </pin>
+    <pin number="5" name="P2[3]" pinSide="WEST" padSide="WEST" portId="2" pinId="3" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.19" />
+      <function name="LCD_SEG.19" />
+    </pin>
+    <pin number="6" name="P2[4]" pinSide="WEST" padSide="WEST" portId="2" pinId="4" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="0" term="line_out" required="false" />
+      <function name="TCPWM0_P[1]" />
+      <function name="LCD_COM.20" />
+      <function name="LCD_SEG.20" />
+    </pin>
+    <pin number="7" name="P2[5]" pinSide="WEST" padSide="WEST" portId="2" pinId="5" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="0" term="line_out_compl" required="false" />
+      <function name="TCPWM0_N[1]" />
+      <function name="LCD_COM.21" />
+      <function name="LCD_SEG.21" />
+    </pin>
+    <pin number="8" name="P2[6]" pinSide="WEST" padSide="WEST" portId="2" pinId="6" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="1" term="line_out" required="false" />
+      <function name="TCPWM1_P[1]" />
+      <function name="LCD_COM.22" />
+      <function name="LCD_SEG.22" />
+    </pin>
+    <pin number="9" name="P2[7]" pinSide="WEST" padSide="WEST" portId="2" pinId="7" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="1" term="line_out_compl" required="false" />
+      <function name="TCPWM1_N[1]" />
+      <function name="LCD_COM.23" />
+      <function name="LCD_SEG.23" />
+    </pin>
+    <pin number="10" name="VSS" pinSide="WEST" padSide="WEST" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="-" capabilities="0x0000000000000000" />
+    <pin number="11" name="P3[0]" pinSide="WEST" padSide="SOUTH" portId="3" pinId="0" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001AE040002007">
+      <ffbterm ffbtype="TCPWM" ffbid="0" term="line_out" required="false" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="rx" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="scl" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="mosi_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="mosi_s" required="true" />
+      <function name="TCPWM0_P[0]" />
+      <function name="SCB1_UART_RX[0]" />
+      <function name="LCD_COM.24" />
+      <function name="LCD_SEG.24" />
+      <function name="SCB1_I2C_SCL[0]" />
+      <function name="SCB1_SPI_MOSI[0]" />
+    </pin>
+    <pin number="12" name="P3[1]" pinSide="SOUTH" padSide="SOUTH" portId="3" pinId="1" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001B6080001007">
+      <ffbterm ffbtype="TCPWM" ffbid="0" term="line_out_compl" required="false" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="tx" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="sda" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="miso_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="miso_s" required="true" />
+      <function name="TCPWM0_N[0]" />
+      <function name="SCB1_UART_TX[0]" />
+      <function name="LCD_COM.25" />
+      <function name="LCD_SEG.25" />
+      <function name="SCB1_I2C_SDA[0]" />
+      <function name="SCB1_SPI_MISO[0]" />
+    </pin>
+    <pin number="13" name="P3[2]" pinSide="SOUTH" padSide="SOUTH" portId="3" pinId="2" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6200000207">
+      <ffbterm ffbtype="TCPWM" ffbid="1" term="line_out" required="false" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="sclk_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="sclk_s" required="true" />
+      <function name="TCPWM1_P[0]" />
+      <function name="LCD_COM.26" />
+      <function name="LCD_SEG.26" />
+      <function name="SWD_IO[0]" />
+      <function name="SCB1_SPI_CLK[0]" />
+    </pin>
+    <pin number="14" name="P3[3]" pinSide="SOUTH" padSide="SOUTH" portId="3" pinId="3" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6100000407">
+      <ffbterm ffbtype="TCPWM" ffbid="1" term="line_out_compl" required="false" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="select_s" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="select_m" wire="0" required="true" />
+      <function name="TCPWM1_N[0]" />
+      <function name="LCD_COM.27" />
+      <function name="LCD_SEG.27" />
+      <function name="SWD_CLK[0]" />
+      <function name="SCB1_SPI_SSEL_0[0]" />
+    </pin>
+    <pin number="15" name="P3[4]" pinSide="SOUTH" padSide="SOUTH" portId="3" pinId="4" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6100000007">
+      <ffbterm ffbtype="TCPWM" ffbid="2" term="line_out" required="false" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="select_m" wire="1" required="true" />
+      <function name="TCPWM2_P[0]" />
+      <function name="LCD_COM.28" />
+      <function name="LCD_SEG.28" />
+      <function name="SCB1_SPI_SSEL_1" />
+    </pin>
+    <pin number="16" name="P3[5]" pinSide="SOUTH" padSide="SOUTH" portId="3" pinId="5" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6100000007">
+      <ffbterm ffbtype="TCPWM" ffbid="2" term="line_out_compl" required="false" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="select_m" wire="2" required="true" />
+      <function name="TCPWM2_N[0]" />
+      <function name="LCD_COM.29" />
+      <function name="LCD_SEG.29" />
+      <function name="SCB1_SPI_SSEL_2" />
+    </pin>
+    <pin number="17" name="P3[6]" pinSide="SOUTH" padSide="SOUTH" portId="3" pinId="6" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6100000007">
+      <ffbterm ffbtype="TCPWM" ffbid="3" term="line_out" required="false" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="select_m" wire="3" required="true" />
+      <function name="TCPWM3_P[0]" />
+      <function name="LCD_COM.30" />
+      <function name="LCD_SEG.30" />
+      <function name="SWD_IO[1]" />
+      <function name="SCB1_SPI_SSEL_3" />
+    </pin>
+    <pin number="18" name="P3[7]" pinSide="SOUTH" padSide="SOUTH" portId="3" pinId="7" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="3" term="line_out_compl" required="false" />
+      <function name="TCPWM3_N[0]" />
+      <function name="LCD_COM.31" />
+      <function name="LCD_SEG.31" />
+      <function name="SWD_CLK[1]" />
+    </pin>
+    <pin number="19" name="VDDD" pinSide="SOUTH" padSide="SOUTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VDDD" capabilities="0x0000000000000000" />
+    <pin number="20" name="P4[0]" pinSide="SOUTH" padSide="SOUTH" portId="4" pinId="0" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x0000188040002007">
+      <ffbterm ffbtype="SCB" ffbid="0" term="rx" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="scl" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="mosi_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="mosi_s" required="true" />
+      <function name="SCB0_UART_RX" />
+      <function name="LCD_COM.32" />
+      <function name="LCD_SEG.32" />
+      <function name="SCB0_I2C_SCL" />
+      <function name="SCB0_SPI_MOSI" />
+    </pin>
+    <pin number="21" name="P4[1]" pinSide="SOUTH" padSide="SOUTH" portId="4" pinId="1" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x0000190080001007">
+      <ffbterm ffbtype="SCB" ffbid="0" term="tx" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="sda" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="miso_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="miso_s" required="true" />
+      <function name="SCB0_UART_TX" />
+      <function name="LCD_COM.33" />
+      <function name="LCD_SEG.33" />
+      <function name="SCB0_I2C_SDA" />
+      <function name="SCB0_SPI_MISO" />
+    </pin>
+    <pin number="22" name="P4[2]" pinSide="SOUTH" padSide="SOUTH" portId="4" pinId="2" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x0000180200000007">
+      <ffbterm ffbtype="SCB" ffbid="0" term="sclk_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="sclk_s" required="true" />
+      <function name="LCD_COM.34" />
+      <function name="LCD_SEG.34" />
+      <function name="SCB0_SPI_CLK" />
+    </pin>
+    <pin number="23" name="P4[3]" pinSide="EAST" padSide="SOUTH" portId="4" pinId="3" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x0000180100000007">
+      <ffbterm ffbtype="SCB" ffbid="0" term="select_s" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="0" term="select_m" wire="0" required="true" />
+      <function name="LCD_COM.35" />
+      <function name="LCD_SEG.35" />
+      <function name="SCB0_SPI_SSEL_0" />
+    </pin>
+    <pin number="24" name="P0[0]" pinSide="EAST" padSide="EAST" portId="0" pinId="0" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6100000007">
+      <ffbterm ffbtype="SCB" ffbid="0" term="select_m" wire="1" required="true" />
+      <function name="LCD_COM.0" />
+      <function name="LCD_SEG.0" />
+      <function name="SCB0_SPI_SSEL_1" />
+    </pin>
+    <pin number="25" name="P0[1]" pinSide="EAST" padSide="EAST" portId="0" pinId="1" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6100000007">
+      <ffbterm ffbtype="SCB" ffbid="0" term="select_m" wire="2" required="true" />
+      <function name="LCD_COM.1" />
+      <function name="LCD_SEG.1" />
+      <function name="SCB0_SPI_SSEL_2" />
+    </pin>
+    <pin number="26" name="P0[2]" pinSide="EAST" padSide="EAST" portId="0" pinId="2" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6100000007">
+      <ffbterm ffbtype="SCB" ffbid="0" term="select_m" wire="3" required="true" />
+      <function name="LCD_COM.2" />
+      <function name="LCD_SEG.2" />
+      <function name="SCB0_SPI_SSEL_3" />
+    </pin>
+    <pin number="27" name="P0[3]" pinSide="EAST" padSide="EAST" portId="0" pinId="3" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.3" />
+      <function name="LCD_SEG.3" />
+    </pin>
+    <pin number="28" name="P0[4]" pinSide="EAST" padSide="EAST" portId="0" pinId="4" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001AE040002007">
+      <ffbterm ffbtype="SCB" ffbid="1" term="rx" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="scl" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="mosi_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="mosi_s" required="true" />
+      <function name="SCB1_UART_RX[1]" />
+      <function name="LCD_COM.4" />
+      <function name="LCD_SEG.4" />
+      <function name="SCB1_I2C_SCL[1]" />
+      <function name="SCB1_SPI_MOSI[1]" />
+    </pin>
+    <pin number="29" name="P0[5]" pinSide="EAST" padSide="EAST" portId="0" pinId="5" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001B6080001007">
+      <ffbterm ffbtype="SCB" ffbid="1" term="tx" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="sda" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="miso_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="miso_s" required="true" />
+      <function name="SCB1_UART_TX[1]" />
+      <function name="LCD_COM.5" />
+      <function name="LCD_SEG.5" />
+      <function name="SCB1_I2C_SDA[1]" />
+      <function name="SCB1_SPI_MISO[1]" />
+    </pin>
+    <pin number="30" name="P0[6]" pinSide="EAST" padSide="EAST" portId="0" pinId="6" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A7200000007">
+      <ffbterm ffbtype="SCB" ffbid="1" term="sclk_m" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="sclk_s" required="true" />
+      <function name="EXT_CLK" />
+      <function name="LCD_COM.6" />
+      <function name="LCD_SEG.6" />
+      <function name="SCB1_SPI_CLK[1]" />
+    </pin>
+    <pin number="31" name="P0[7]" pinSide="EAST" padSide="EAST" portId="0" pinId="7" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00003A6100000007">
+      <ffbterm ffbtype="SCB" ffbid="1" term="select_s" required="true" />
+      <ffbterm ffbtype="SCB" ffbid="1" term="select_m" wire="0" required="true" />
+      <function name="LCD_COM.7" />
+      <function name="LCD_SEG.7" />
+      <function name="WAKEUP" />
+      <function name="SCB1_SPI_SSEL_0[1]" />
+    </pin>
+    <pin number="32" name="XRES" pinSide="EAST" padSide="EAST" ioSupplyPin="VDDD" ioSupplyPinNo="19" dedicatedPadNames="XRES" capabilities="0x0000000000000000" />
+    <pin number="33" name="VCCD" pinSide="EAST" padSide="NORTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VCCD" capabilities="0x0000000000000000" />
+    <pin number="34" name="VDDD" pinSide="NORTH" padSide="NORTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VDDD" capabilities="0x0000000000000000" />
+    <pin number="35" name="VDDA" pinSide="NORTH" padSide="NORTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VDDA" capabilities="0x0000000000000000" />
+    <pin number="36" name="VSSA" pinSide="NORTH" padSide="NORTH" ioSupplyPin="VDDD" ioSupplyPinNo="19" powerPadNames="VSSA" capabilities="0x0000000000000000" />
+    <pin number="37" name="P1[0]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="0" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="2" term="line_out" required="false" />
+      <function name="TCPWM2_P[1]" />
+      <function name="LCD_COM.8" />
+      <function name="LCD_SEG.8" />
+    </pin>
+    <pin number="38" name="P1[1]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="1" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="2" term="line_out_compl" required="false" />
+      <function name="TCPWM2_N[1]" />
+      <function name="LCD_COM.9" />
+      <function name="LCD_SEG.9" />
+    </pin>
+    <pin number="39" name="P1[2]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="2" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="3" term="line_out" required="false" />
+      <function name="TCPWM3_P[1]" />
+      <function name="LCD_COM.10" />
+      <function name="LCD_SEG.10" />
+    </pin>
+    <pin number="40" name="P1[3]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="3" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <ffbterm ffbtype="TCPWM" ffbid="3" term="line_out_compl" required="false" />
+      <function name="TCPWM3_N[1]" />
+      <function name="LCD_COM.11" />
+      <function name="LCD_SEG.11" />
+    </pin>
+    <pin number="41" name="P1[4]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="4" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.12" />
+      <function name="LCD_SEG.12" />
+    </pin>
+    <pin number="42" name="P1[5]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="5" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.13" />
+      <function name="LCD_SEG.13" />
+    </pin>
+    <pin number="43" name="P1[6]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="6" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6000000007">
+      <function name="LCD_COM.14" />
+      <function name="LCD_SEG.14" />
+    </pin>
+    <pin number="44" name="P1[7]" pinSide="NORTH" padSide="NORTH" portId="1" pinId="7" ioSupplyPin="VDDD" ioSupplyPinNo="19" capabilities="0x00001A6010000007">
+      <ffbterm ffbtype="SAR" ffbid="0" term="ext_pin" required="true" />
+      <function name="EXT_VREF" />
+      <function name="LCD_COM.15" />
+      <function name="LCD_SEG.15" />
+    </pin>
+  </pins>
+</pindata>

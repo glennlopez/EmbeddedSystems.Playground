@@ -1,0 +1,28 @@
+
+----------------------------------------------------------------------
+
+Verifying bitstream.
+
+-----------------------------------------------------------------------
+
+
+---------Mapping jacks.---------
+
+
+---------Processing bitstream.---------
+
+Utilized "udb_hv_a@[UDB Pair=(0,0)]"
+Utilized "udb_hc@[UDB Pair=(0,0)]"
+Utilized "udb_hv_b@[UDB Pair=(0,1)]"
+Utilized "dsi_hc@[DSI=(0,0)][side=top]"
+Utilized "dsi_hv_b@[DSI=(0,0)][side=top]"
+Utilized "dsi_hc@[DSI=(0,1)][side=top]"
+Utilized "dsi_hv_a@[DSI=(0,1)][side=top]"
+
+
+----------------------------------------------------------------------
+
+Bitstream verification passed.
+
+-----------------------------------------------------------------------
+

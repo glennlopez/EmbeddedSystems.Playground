@@ -1,0 +1,710 @@
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"cyutils.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.CySetReg24,"ax",%progbits
+  18              		.align	2
+  19              		.global	CySetReg24
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	CySetReg24, %function
+  23              	CySetReg24:
+  24              	.LFB0:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\cyutils.c"
+   1:.\Generated_Source\PSoC4/cyutils.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/cyutils.c **** * FILENAME: cyutils.c
+   3:.\Generated_Source\PSoC4/cyutils.c **** * Version 4.20
+   4:.\Generated_Source\PSoC4/cyutils.c **** *
+   5:.\Generated_Source\PSoC4/cyutils.c **** *  Description:
+   6:.\Generated_Source\PSoC4/cyutils.c **** *   CyUtils provides a function to handle 24-bit value writes.
+   7:.\Generated_Source\PSoC4/cyutils.c **** *
+   8:.\Generated_Source\PSoC4/cyutils.c **** ********************************************************************************
+   9:.\Generated_Source\PSoC4/cyutils.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  10:.\Generated_Source\PSoC4/cyutils.c **** * You may use this file only in accordance with the license, terms, conditions,
+  11:.\Generated_Source\PSoC4/cyutils.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  12:.\Generated_Source\PSoC4/cyutils.c **** * the software package with which this file was provided.
+  13:.\Generated_Source\PSoC4/cyutils.c **** *******************************************************************************/
+  14:.\Generated_Source\PSoC4/cyutils.c **** 
+  15:.\Generated_Source\PSoC4/cyutils.c **** #include "cytypes.h"
+  16:.\Generated_Source\PSoC4/cyutils.c **** 
+  17:.\Generated_Source\PSoC4/cyutils.c **** #if (!CY_PSOC3)
+  18:.\Generated_Source\PSoC4/cyutils.c **** 
+  19:.\Generated_Source\PSoC4/cyutils.c ****     /***************************************************************************
+  20:.\Generated_Source\PSoC4/cyutils.c ****     * Function Name: CySetReg24
+  21:.\Generated_Source\PSoC4/cyutils.c ****     ****************************************************************************
+  22:.\Generated_Source\PSoC4/cyutils.c ****     *
+  23:.\Generated_Source\PSoC4/cyutils.c ****     * Summary:
+  24:.\Generated_Source\PSoC4/cyutils.c ****     *  Writes a 24-bit value to the specified register.
+  25:.\Generated_Source\PSoC4/cyutils.c ****     *
+  26:.\Generated_Source\PSoC4/cyutils.c ****     * Parameters:
+  27:.\Generated_Source\PSoC4/cyutils.c ****     *  addr : the address where data must be written.
+  28:.\Generated_Source\PSoC4/cyutils.c ****     *  value: the data that must be written.
+  29:.\Generated_Source\PSoC4/cyutils.c ****     *
+  30:.\Generated_Source\PSoC4/cyutils.c ****     * Return:
+  31:.\Generated_Source\PSoC4/cyutils.c ****     *  None
+  32:.\Generated_Source\PSoC4/cyutils.c ****     *
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/cyutils.c ****     * Reentrant:
+  34:.\Generated_Source\PSoC4/cyutils.c ****     *  No
+  35:.\Generated_Source\PSoC4/cyutils.c ****     *
+  36:.\Generated_Source\PSoC4/cyutils.c ****     ***************************************************************************/
+  37:.\Generated_Source\PSoC4/cyutils.c ****     void CySetReg24(uint32 volatile * addr, uint32 value)
+  38:.\Generated_Source\PSoC4/cyutils.c ****     {
+  26              		.loc 1 38 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 84B0     		sub	sp, sp, #16
+  33              		.cfi_def_cfa_offset 24
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 7860     		str	r0, [r7, #4]
+  37 0008 3960     		str	r1, [r7]
+  39:.\Generated_Source\PSoC4/cyutils.c ****         uint8 volatile *tmpAddr;
+  40:.\Generated_Source\PSoC4/cyutils.c **** 
+  41:.\Generated_Source\PSoC4/cyutils.c ****         tmpAddr = (uint8 volatile *) addr;
+  38              		.loc 1 41 0
+  39 000a 7B68     		ldr	r3, [r7, #4]
+  40 000c FB60     		str	r3, [r7, #12]
+  42:.\Generated_Source\PSoC4/cyutils.c **** 
+  43:.\Generated_Source\PSoC4/cyutils.c ****         tmpAddr[0u] = (uint8) value;
+  41              		.loc 1 43 0
+  42 000e 3B68     		ldr	r3, [r7]
+  43 0010 DAB2     		uxtb	r2, r3
+  44 0012 FB68     		ldr	r3, [r7, #12]
+  45 0014 1A70     		strb	r2, [r3]
+  44:.\Generated_Source\PSoC4/cyutils.c ****         tmpAddr[1u] = (uint8) (value >> 8u);
+  46              		.loc 1 44 0
+  47 0016 FB68     		ldr	r3, [r7, #12]
+  48 0018 0133     		add	r3, r3, #1
+  49 001a 3A68     		ldr	r2, [r7]
+  50 001c 120A     		lsr	r2, r2, #8
+  51 001e D2B2     		uxtb	r2, r2
+  52 0020 1A70     		strb	r2, [r3]
+  45:.\Generated_Source\PSoC4/cyutils.c ****         tmpAddr[2u] = (uint8) (value >> 16u);
+  53              		.loc 1 45 0
+  54 0022 FB68     		ldr	r3, [r7, #12]
+  55 0024 0233     		add	r3, r3, #2
+  56 0026 3A68     		ldr	r2, [r7]
+  57 0028 120C     		lsr	r2, r2, #16
+  58 002a D2B2     		uxtb	r2, r2
+  59 002c 1A70     		strb	r2, [r3]
+  46:.\Generated_Source\PSoC4/cyutils.c ****     }
+  60              		.loc 1 46 0
+  61 002e BD46     		mov	sp, r7
+  62 0030 04B0     		add	sp, sp, #16
+  63              		@ sp needed
+  64 0032 80BD     		pop	{r7, pc}
+  65              		.cfi_endproc
+  66              	.LFE0:
+  67              		.size	CySetReg24, .-CySetReg24
+  68              		.section	.text.CyGetReg24,"ax",%progbits
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 3
+
+
+  69              		.align	2
+  70              		.global	CyGetReg24
+  71              		.code	16
+  72              		.thumb_func
+  73              		.type	CyGetReg24, %function
+  74              	CyGetReg24:
+  75              	.LFB1:
+  47:.\Generated_Source\PSoC4/cyutils.c **** 
+  48:.\Generated_Source\PSoC4/cyutils.c **** 
+  49:.\Generated_Source\PSoC4/cyutils.c ****     #if(CY_PSOC4)
+  50:.\Generated_Source\PSoC4/cyutils.c **** 
+  51:.\Generated_Source\PSoC4/cyutils.c ****         /***************************************************************************
+  52:.\Generated_Source\PSoC4/cyutils.c ****         * Function Name: CyGetReg24
+  53:.\Generated_Source\PSoC4/cyutils.c ****         ****************************************************************************
+  54:.\Generated_Source\PSoC4/cyutils.c ****         *
+  55:.\Generated_Source\PSoC4/cyutils.c ****         * Summary:
+  56:.\Generated_Source\PSoC4/cyutils.c ****         *  Reads the 24-bit value from the specified register.
+  57:.\Generated_Source\PSoC4/cyutils.c ****         *
+  58:.\Generated_Source\PSoC4/cyutils.c ****         * Parameters:
+  59:.\Generated_Source\PSoC4/cyutils.c ****         *  addr : the address where data must be read.
+  60:.\Generated_Source\PSoC4/cyutils.c ****         *
+  61:.\Generated_Source\PSoC4/cyutils.c ****         * Return:
+  62:.\Generated_Source\PSoC4/cyutils.c ****         *  None
+  63:.\Generated_Source\PSoC4/cyutils.c ****         *
+  64:.\Generated_Source\PSoC4/cyutils.c ****         * Reentrant:
+  65:.\Generated_Source\PSoC4/cyutils.c ****         *  No
+  66:.\Generated_Source\PSoC4/cyutils.c ****         *
+  67:.\Generated_Source\PSoC4/cyutils.c ****         ***************************************************************************/
+  68:.\Generated_Source\PSoC4/cyutils.c ****         uint32 CyGetReg24(uint32 const volatile * addr)
+  69:.\Generated_Source\PSoC4/cyutils.c ****         {
+  76              		.loc 1 69 0
+  77              		.cfi_startproc
+  78 0000 80B5     		push	{r7, lr}
+  79              		.cfi_def_cfa_offset 8
+  80              		.cfi_offset 7, -8
+  81              		.cfi_offset 14, -4
+  82 0002 84B0     		sub	sp, sp, #16
+  83              		.cfi_def_cfa_offset 24
+  84 0004 00AF     		add	r7, sp, #0
+  85              		.cfi_def_cfa_register 7
+  86 0006 7860     		str	r0, [r7, #4]
+  70:.\Generated_Source\PSoC4/cyutils.c ****             uint8 const volatile *tmpAddr;
+  71:.\Generated_Source\PSoC4/cyutils.c ****             uint32 value;
+  72:.\Generated_Source\PSoC4/cyutils.c **** 
+  73:.\Generated_Source\PSoC4/cyutils.c ****             tmpAddr = (uint8 const volatile *) addr;
+  87              		.loc 1 73 0
+  88 0008 7B68     		ldr	r3, [r7, #4]
+  89 000a FB60     		str	r3, [r7, #12]
+  74:.\Generated_Source\PSoC4/cyutils.c **** 
+  75:.\Generated_Source\PSoC4/cyutils.c ****             value  =  (uint32) tmpAddr[0u];
+  90              		.loc 1 75 0
+  91 000c FB68     		ldr	r3, [r7, #12]
+  92 000e 1B78     		ldrb	r3, [r3]
+  93 0010 DBB2     		uxtb	r3, r3
+  94 0012 BB60     		str	r3, [r7, #8]
+  76:.\Generated_Source\PSoC4/cyutils.c ****             value |= ((uint32) tmpAddr[1u] << 8u );
+  95              		.loc 1 76 0
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 4
+
+
+  96 0014 FB68     		ldr	r3, [r7, #12]
+  97 0016 0133     		add	r3, r3, #1
+  98 0018 1B78     		ldrb	r3, [r3]
+  99 001a DBB2     		uxtb	r3, r3
+ 100 001c 1B02     		lsl	r3, r3, #8
+ 101 001e BA68     		ldr	r2, [r7, #8]
+ 102 0020 1343     		orr	r3, r2
+ 103 0022 BB60     		str	r3, [r7, #8]
+  77:.\Generated_Source\PSoC4/cyutils.c ****             value |= ((uint32) tmpAddr[2u] << 16u);
+ 104              		.loc 1 77 0
+ 105 0024 FB68     		ldr	r3, [r7, #12]
+ 106 0026 0233     		add	r3, r3, #2
+ 107 0028 1B78     		ldrb	r3, [r3]
+ 108 002a DBB2     		uxtb	r3, r3
+ 109 002c 1B04     		lsl	r3, r3, #16
+ 110 002e BA68     		ldr	r2, [r7, #8]
+ 111 0030 1343     		orr	r3, r2
+ 112 0032 BB60     		str	r3, [r7, #8]
+  78:.\Generated_Source\PSoC4/cyutils.c **** 
+  79:.\Generated_Source\PSoC4/cyutils.c ****             return(value);
+ 113              		.loc 1 79 0
+ 114 0034 BB68     		ldr	r3, [r7, #8]
+  80:.\Generated_Source\PSoC4/cyutils.c ****         }
+ 115              		.loc 1 80 0
+ 116 0036 181C     		mov	r0, r3
+ 117 0038 BD46     		mov	sp, r7
+ 118 003a 04B0     		add	sp, sp, #16
+ 119              		@ sp needed
+ 120 003c 80BD     		pop	{r7, pc}
+ 121              		.cfi_endproc
+ 122              	.LFE1:
+ 123              		.size	CyGetReg24, .-CyGetReg24
+ 124 003e C046     		.text
+ 125              	.Letext0:
+ 126              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 127              		.section	.debug_info,"",%progbits
+ 128              	.Ldebug_info0:
+ 129 0000 43010000 		.4byte	0x143
+ 130 0004 0400     		.2byte	0x4
+ 131 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 132 000a 04       		.byte	0x4
+ 133 000b 01       		.uleb128 0x1
+ 134 000c C0000000 		.4byte	.LASF17
+ 135 0010 01       		.byte	0x1
+ 136 0011 77000000 		.4byte	.LASF18
+ 137 0015 5F010000 		.4byte	.LASF19
+ 138 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 139 001d 00000000 		.4byte	0
+ 140 0021 00000000 		.4byte	.Ldebug_line0
+ 141 0025 02       		.uleb128 0x2
+ 142 0026 01       		.byte	0x1
+ 143 0027 06       		.byte	0x6
+ 144 0028 A2010000 		.4byte	.LASF0
+ 145 002c 02       		.uleb128 0x2
+ 146 002d 01       		.byte	0x1
+ 147 002e 08       		.byte	0x8
+ 148 002f 3C000000 		.4byte	.LASF1
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 5
+
+
+ 149 0033 02       		.uleb128 0x2
+ 150 0034 02       		.byte	0x2
+ 151 0035 05       		.byte	0x5
+ 152 0036 4F010000 		.4byte	.LASF2
+ 153 003a 02       		.uleb128 0x2
+ 154 003b 02       		.byte	0x2
+ 155 003c 07       		.byte	0x7
+ 156 003d 64000000 		.4byte	.LASF3
+ 157 0041 02       		.uleb128 0x2
+ 158 0042 04       		.byte	0x4
+ 159 0043 05       		.byte	0x5
+ 160 0044 11000000 		.4byte	.LASF4
+ 161 0048 02       		.uleb128 0x2
+ 162 0049 04       		.byte	0x4
+ 163 004a 07       		.byte	0x7
+ 164 004b 52000000 		.4byte	.LASF5
+ 165 004f 02       		.uleb128 0x2
+ 166 0050 08       		.byte	0x8
+ 167 0051 05       		.byte	0x5
+ 168 0052 3C010000 		.4byte	.LASF6
+ 169 0056 02       		.uleb128 0x2
+ 170 0057 08       		.byte	0x8
+ 171 0058 07       		.byte	0x7
+ 172 0059 25000000 		.4byte	.LASF7
+ 173 005d 03       		.uleb128 0x3
+ 174 005e 04       		.byte	0x4
+ 175 005f 05       		.byte	0x5
+ 176 0060 696E7400 		.ascii	"int\000"
+ 177 0064 02       		.uleb128 0x2
+ 178 0065 04       		.byte	0x4
+ 179 0066 07       		.byte	0x7
+ 180 0067 B3000000 		.4byte	.LASF8
+ 181 006b 04       		.uleb128 0x4
+ 182 006c 59010000 		.4byte	.LASF9
+ 183 0070 02       		.byte	0x2
+ 184 0071 A1       		.byte	0xa1
+ 185 0072 2C000000 		.4byte	0x2c
+ 186 0076 04       		.uleb128 0x4
+ 187 0077 AC000000 		.4byte	.LASF10
+ 188 007b 02       		.byte	0x2
+ 189 007c A3       		.byte	0xa3
+ 190 007d 48000000 		.4byte	0x48
+ 191 0081 02       		.uleb128 0x2
+ 192 0082 04       		.byte	0x4
+ 193 0083 04       		.byte	0x4
+ 194 0084 1F000000 		.4byte	.LASF11
+ 195 0088 02       		.uleb128 0x2
+ 196 0089 08       		.byte	0x8
+ 197 008a 04       		.byte	0x4
+ 198 008b 9A000000 		.4byte	.LASF12
+ 199 008f 02       		.uleb128 0x2
+ 200 0090 01       		.byte	0x1
+ 201 0091 08       		.byte	0x8
+ 202 0092 4A010000 		.4byte	.LASF13
+ 203 0096 05       		.uleb128 0x5
+ 204 0097 6B000000 		.4byte	0x6b
+ 205 009b 05       		.uleb128 0x5
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 6
+
+
+ 206 009c 76000000 		.4byte	0x76
+ 207 00a0 06       		.uleb128 0x6
+ 208 00a1 A1000000 		.4byte	.LASF20
+ 209 00a5 01       		.byte	0x1
+ 210 00a6 25       		.byte	0x25
+ 211 00a7 00000000 		.4byte	.LFB0
+ 212 00ab 34000000 		.4byte	.LFE0-.LFB0
+ 213 00af 01       		.uleb128 0x1
+ 214 00b0 9C       		.byte	0x9c
+ 215 00b1 E0000000 		.4byte	0xe0
+ 216 00b5 07       		.uleb128 0x7
+ 217 00b6 1A000000 		.4byte	.LASF14
+ 218 00ba 01       		.byte	0x1
+ 219 00bb 25       		.byte	0x25
+ 220 00bc E0000000 		.4byte	0xe0
+ 221 00c0 02       		.uleb128 0x2
+ 222 00c1 91       		.byte	0x91
+ 223 00c2 6C       		.sleb128 -20
+ 224 00c3 07       		.uleb128 0x7
+ 225 00c4 00000000 		.4byte	.LASF15
+ 226 00c8 01       		.byte	0x1
+ 227 00c9 25       		.byte	0x25
+ 228 00ca 76000000 		.4byte	0x76
+ 229 00ce 02       		.uleb128 0x2
+ 230 00cf 91       		.byte	0x91
+ 231 00d0 68       		.sleb128 -24
+ 232 00d1 08       		.uleb128 0x8
+ 233 00d2 4A000000 		.4byte	.LASF16
+ 234 00d6 01       		.byte	0x1
+ 235 00d7 27       		.byte	0x27
+ 236 00d8 E6000000 		.4byte	0xe6
+ 237 00dc 02       		.uleb128 0x2
+ 238 00dd 91       		.byte	0x91
+ 239 00de 74       		.sleb128 -12
+ 240 00df 00       		.byte	0
+ 241 00e0 09       		.uleb128 0x9
+ 242 00e1 04       		.byte	0x4
+ 243 00e2 9B000000 		.4byte	0x9b
+ 244 00e6 09       		.uleb128 0x9
+ 245 00e7 04       		.byte	0x4
+ 246 00e8 96000000 		.4byte	0x96
+ 247 00ec 0A       		.uleb128 0xa
+ 248 00ed 06000000 		.4byte	.LASF21
+ 249 00f1 01       		.byte	0x1
+ 250 00f2 44       		.byte	0x44
+ 251 00f3 76000000 		.4byte	0x76
+ 252 00f7 00000000 		.4byte	.LFB1
+ 253 00fb 3E000000 		.4byte	.LFE1-.LFB1
+ 254 00ff 01       		.uleb128 0x1
+ 255 0100 9C       		.byte	0x9c
+ 256 0101 30010000 		.4byte	0x130
+ 257 0105 07       		.uleb128 0x7
+ 258 0106 1A000000 		.4byte	.LASF14
+ 259 010a 01       		.byte	0x1
+ 260 010b 44       		.byte	0x44
+ 261 010c 30010000 		.4byte	0x130
+ 262 0110 02       		.uleb128 0x2
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 7
+
+
+ 263 0111 91       		.byte	0x91
+ 264 0112 6C       		.sleb128 -20
+ 265 0113 08       		.uleb128 0x8
+ 266 0114 4A000000 		.4byte	.LASF16
+ 267 0118 01       		.byte	0x1
+ 268 0119 46       		.byte	0x46
+ 269 011a 3B010000 		.4byte	0x13b
+ 270 011e 02       		.uleb128 0x2
+ 271 011f 91       		.byte	0x91
+ 272 0120 74       		.sleb128 -12
+ 273 0121 08       		.uleb128 0x8
+ 274 0122 00000000 		.4byte	.LASF15
+ 275 0126 01       		.byte	0x1
+ 276 0127 47       		.byte	0x47
+ 277 0128 76000000 		.4byte	0x76
+ 278 012c 02       		.uleb128 0x2
+ 279 012d 91       		.byte	0x91
+ 280 012e 70       		.sleb128 -16
+ 281 012f 00       		.byte	0
+ 282 0130 09       		.uleb128 0x9
+ 283 0131 04       		.byte	0x4
+ 284 0132 36010000 		.4byte	0x136
+ 285 0136 0B       		.uleb128 0xb
+ 286 0137 9B000000 		.4byte	0x9b
+ 287 013b 09       		.uleb128 0x9
+ 288 013c 04       		.byte	0x4
+ 289 013d 41010000 		.4byte	0x141
+ 290 0141 0B       		.uleb128 0xb
+ 291 0142 96000000 		.4byte	0x96
+ 292 0146 00       		.byte	0
+ 293              		.section	.debug_abbrev,"",%progbits
+ 294              	.Ldebug_abbrev0:
+ 295 0000 01       		.uleb128 0x1
+ 296 0001 11       		.uleb128 0x11
+ 297 0002 01       		.byte	0x1
+ 298 0003 25       		.uleb128 0x25
+ 299 0004 0E       		.uleb128 0xe
+ 300 0005 13       		.uleb128 0x13
+ 301 0006 0B       		.uleb128 0xb
+ 302 0007 03       		.uleb128 0x3
+ 303 0008 0E       		.uleb128 0xe
+ 304 0009 1B       		.uleb128 0x1b
+ 305 000a 0E       		.uleb128 0xe
+ 306 000b 55       		.uleb128 0x55
+ 307 000c 17       		.uleb128 0x17
+ 308 000d 11       		.uleb128 0x11
+ 309 000e 01       		.uleb128 0x1
+ 310 000f 10       		.uleb128 0x10
+ 311 0010 17       		.uleb128 0x17
+ 312 0011 00       		.byte	0
+ 313 0012 00       		.byte	0
+ 314 0013 02       		.uleb128 0x2
+ 315 0014 24       		.uleb128 0x24
+ 316 0015 00       		.byte	0
+ 317 0016 0B       		.uleb128 0xb
+ 318 0017 0B       		.uleb128 0xb
+ 319 0018 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 8
+
+
+ 320 0019 0B       		.uleb128 0xb
+ 321 001a 03       		.uleb128 0x3
+ 322 001b 0E       		.uleb128 0xe
+ 323 001c 00       		.byte	0
+ 324 001d 00       		.byte	0
+ 325 001e 03       		.uleb128 0x3
+ 326 001f 24       		.uleb128 0x24
+ 327 0020 00       		.byte	0
+ 328 0021 0B       		.uleb128 0xb
+ 329 0022 0B       		.uleb128 0xb
+ 330 0023 3E       		.uleb128 0x3e
+ 331 0024 0B       		.uleb128 0xb
+ 332 0025 03       		.uleb128 0x3
+ 333 0026 08       		.uleb128 0x8
+ 334 0027 00       		.byte	0
+ 335 0028 00       		.byte	0
+ 336 0029 04       		.uleb128 0x4
+ 337 002a 16       		.uleb128 0x16
+ 338 002b 00       		.byte	0
+ 339 002c 03       		.uleb128 0x3
+ 340 002d 0E       		.uleb128 0xe
+ 341 002e 3A       		.uleb128 0x3a
+ 342 002f 0B       		.uleb128 0xb
+ 343 0030 3B       		.uleb128 0x3b
+ 344 0031 0B       		.uleb128 0xb
+ 345 0032 49       		.uleb128 0x49
+ 346 0033 13       		.uleb128 0x13
+ 347 0034 00       		.byte	0
+ 348 0035 00       		.byte	0
+ 349 0036 05       		.uleb128 0x5
+ 350 0037 35       		.uleb128 0x35
+ 351 0038 00       		.byte	0
+ 352 0039 49       		.uleb128 0x49
+ 353 003a 13       		.uleb128 0x13
+ 354 003b 00       		.byte	0
+ 355 003c 00       		.byte	0
+ 356 003d 06       		.uleb128 0x6
+ 357 003e 2E       		.uleb128 0x2e
+ 358 003f 01       		.byte	0x1
+ 359 0040 3F       		.uleb128 0x3f
+ 360 0041 19       		.uleb128 0x19
+ 361 0042 03       		.uleb128 0x3
+ 362 0043 0E       		.uleb128 0xe
+ 363 0044 3A       		.uleb128 0x3a
+ 364 0045 0B       		.uleb128 0xb
+ 365 0046 3B       		.uleb128 0x3b
+ 366 0047 0B       		.uleb128 0xb
+ 367 0048 27       		.uleb128 0x27
+ 368 0049 19       		.uleb128 0x19
+ 369 004a 11       		.uleb128 0x11
+ 370 004b 01       		.uleb128 0x1
+ 371 004c 12       		.uleb128 0x12
+ 372 004d 06       		.uleb128 0x6
+ 373 004e 40       		.uleb128 0x40
+ 374 004f 18       		.uleb128 0x18
+ 375 0050 9742     		.uleb128 0x2117
+ 376 0052 19       		.uleb128 0x19
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 9
+
+
+ 377 0053 01       		.uleb128 0x1
+ 378 0054 13       		.uleb128 0x13
+ 379 0055 00       		.byte	0
+ 380 0056 00       		.byte	0
+ 381 0057 07       		.uleb128 0x7
+ 382 0058 05       		.uleb128 0x5
+ 383 0059 00       		.byte	0
+ 384 005a 03       		.uleb128 0x3
+ 385 005b 0E       		.uleb128 0xe
+ 386 005c 3A       		.uleb128 0x3a
+ 387 005d 0B       		.uleb128 0xb
+ 388 005e 3B       		.uleb128 0x3b
+ 389 005f 0B       		.uleb128 0xb
+ 390 0060 49       		.uleb128 0x49
+ 391 0061 13       		.uleb128 0x13
+ 392 0062 02       		.uleb128 0x2
+ 393 0063 18       		.uleb128 0x18
+ 394 0064 00       		.byte	0
+ 395 0065 00       		.byte	0
+ 396 0066 08       		.uleb128 0x8
+ 397 0067 34       		.uleb128 0x34
+ 398 0068 00       		.byte	0
+ 399 0069 03       		.uleb128 0x3
+ 400 006a 0E       		.uleb128 0xe
+ 401 006b 3A       		.uleb128 0x3a
+ 402 006c 0B       		.uleb128 0xb
+ 403 006d 3B       		.uleb128 0x3b
+ 404 006e 0B       		.uleb128 0xb
+ 405 006f 49       		.uleb128 0x49
+ 406 0070 13       		.uleb128 0x13
+ 407 0071 02       		.uleb128 0x2
+ 408 0072 18       		.uleb128 0x18
+ 409 0073 00       		.byte	0
+ 410 0074 00       		.byte	0
+ 411 0075 09       		.uleb128 0x9
+ 412 0076 0F       		.uleb128 0xf
+ 413 0077 00       		.byte	0
+ 414 0078 0B       		.uleb128 0xb
+ 415 0079 0B       		.uleb128 0xb
+ 416 007a 49       		.uleb128 0x49
+ 417 007b 13       		.uleb128 0x13
+ 418 007c 00       		.byte	0
+ 419 007d 00       		.byte	0
+ 420 007e 0A       		.uleb128 0xa
+ 421 007f 2E       		.uleb128 0x2e
+ 422 0080 01       		.byte	0x1
+ 423 0081 3F       		.uleb128 0x3f
+ 424 0082 19       		.uleb128 0x19
+ 425 0083 03       		.uleb128 0x3
+ 426 0084 0E       		.uleb128 0xe
+ 427 0085 3A       		.uleb128 0x3a
+ 428 0086 0B       		.uleb128 0xb
+ 429 0087 3B       		.uleb128 0x3b
+ 430 0088 0B       		.uleb128 0xb
+ 431 0089 27       		.uleb128 0x27
+ 432 008a 19       		.uleb128 0x19
+ 433 008b 49       		.uleb128 0x49
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 10
+
+
+ 434 008c 13       		.uleb128 0x13
+ 435 008d 11       		.uleb128 0x11
+ 436 008e 01       		.uleb128 0x1
+ 437 008f 12       		.uleb128 0x12
+ 438 0090 06       		.uleb128 0x6
+ 439 0091 40       		.uleb128 0x40
+ 440 0092 18       		.uleb128 0x18
+ 441 0093 9742     		.uleb128 0x2117
+ 442 0095 19       		.uleb128 0x19
+ 443 0096 01       		.uleb128 0x1
+ 444 0097 13       		.uleb128 0x13
+ 445 0098 00       		.byte	0
+ 446 0099 00       		.byte	0
+ 447 009a 0B       		.uleb128 0xb
+ 448 009b 26       		.uleb128 0x26
+ 449 009c 00       		.byte	0
+ 450 009d 49       		.uleb128 0x49
+ 451 009e 13       		.uleb128 0x13
+ 452 009f 00       		.byte	0
+ 453 00a0 00       		.byte	0
+ 454 00a1 00       		.byte	0
+ 455              		.section	.debug_aranges,"",%progbits
+ 456 0000 24000000 		.4byte	0x24
+ 457 0004 0200     		.2byte	0x2
+ 458 0006 00000000 		.4byte	.Ldebug_info0
+ 459 000a 04       		.byte	0x4
+ 460 000b 00       		.byte	0
+ 461 000c 0000     		.2byte	0
+ 462 000e 0000     		.2byte	0
+ 463 0010 00000000 		.4byte	.LFB0
+ 464 0014 34000000 		.4byte	.LFE0-.LFB0
+ 465 0018 00000000 		.4byte	.LFB1
+ 466 001c 3E000000 		.4byte	.LFE1-.LFB1
+ 467 0020 00000000 		.4byte	0
+ 468 0024 00000000 		.4byte	0
+ 469              		.section	.debug_ranges,"",%progbits
+ 470              	.Ldebug_ranges0:
+ 471 0000 00000000 		.4byte	.LFB0
+ 472 0004 34000000 		.4byte	.LFE0
+ 473 0008 00000000 		.4byte	.LFB1
+ 474 000c 3E000000 		.4byte	.LFE1
+ 475 0010 00000000 		.4byte	0
+ 476 0014 00000000 		.4byte	0
+ 477              		.section	.debug_line,"",%progbits
+ 478              	.Ldebug_line0:
+ 479 0000 76000000 		.section	.debug_str,"MS",%progbits,1
+ 479      02004600 
+ 479      00000201 
+ 479      FB0E0D00 
+ 479      01010101 
+ 480              	.LASF15:
+ 481 0000 76616C75 		.ascii	"value\000"
+ 481      6500
+ 482              	.LASF21:
+ 483 0006 43794765 		.ascii	"CyGetReg24\000"
+ 483      74526567 
+ 483      323400
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 11
+
+
+ 484              	.LASF4:
+ 485 0011 6C6F6E67 		.ascii	"long int\000"
+ 485      20696E74 
+ 485      00
+ 486              	.LASF14:
+ 487 001a 61646472 		.ascii	"addr\000"
+ 487      00
+ 488              	.LASF11:
+ 489 001f 666C6F61 		.ascii	"float\000"
+ 489      7400
+ 490              	.LASF7:
+ 491 0025 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 491      206C6F6E 
+ 491      6720756E 
+ 491      7369676E 
+ 491      65642069 
+ 492              	.LASF1:
+ 493 003c 756E7369 		.ascii	"unsigned char\000"
+ 493      676E6564 
+ 493      20636861 
+ 493      7200
+ 494              	.LASF16:
+ 495 004a 746D7041 		.ascii	"tmpAddr\000"
+ 495      64647200 
+ 496              	.LASF5:
+ 497 0052 6C6F6E67 		.ascii	"long unsigned int\000"
+ 497      20756E73 
+ 497      69676E65 
+ 497      6420696E 
+ 497      7400
+ 498              	.LASF3:
+ 499 0064 73686F72 		.ascii	"short unsigned int\000"
+ 499      7420756E 
+ 499      7369676E 
+ 499      65642069 
+ 499      6E7400
+ 500              	.LASF18:
+ 501 0077 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\cyutils.c\000"
+ 501      6E657261 
+ 501      7465645F 
+ 501      536F7572 
+ 501      63655C50 
+ 502              	.LASF12:
+ 503 009a 646F7562 		.ascii	"double\000"
+ 503      6C6500
+ 504              	.LASF20:
+ 505 00a1 43795365 		.ascii	"CySetReg24\000"
+ 505      74526567 
+ 505      323400
+ 506              	.LASF10:
+ 507 00ac 75696E74 		.ascii	"uint32\000"
+ 507      333200
+ 508              	.LASF8:
+ 509 00b3 756E7369 		.ascii	"unsigned int\000"
+ 509      676E6564 
+ 509      20696E74 
+ 509      00
+ARM GAS  C:\Users\GLENNL~1\AppData\Local\Temp\ccR5Qt05.s 			page 12
+
+
+ 510              	.LASF17:
+ 511 00c0 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 511      4320342E 
+ 511      382E3420 
+ 511      32303134 
+ 511      30353236 
+ 512 00f3 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 512      20726576 
+ 512      6973696F 
+ 512      6E203231 
+ 512      31333538 
+ 513 0126 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 513      66756E63 
+ 513      74696F6E 
+ 513      2D736563 
+ 513      74696F6E 
+ 514              	.LASF6:
+ 515 013c 6C6F6E67 		.ascii	"long long int\000"
+ 515      206C6F6E 
+ 515      6720696E 
+ 515      7400
+ 516              	.LASF13:
+ 517 014a 63686172 		.ascii	"char\000"
+ 517      00
+ 518              	.LASF2:
+ 519 014f 73686F72 		.ascii	"short int\000"
+ 519      7420696E 
+ 519      7400
+ 520              	.LASF9:
+ 521 0159 75696E74 		.ascii	"uint8\000"
+ 521      3800
+ 522              	.LASF19:
+ 523 015f 5A3A5C44 		.ascii	"Z:\\Documents\\Github Clones\\PSoC.Playground\\PROJ"
+ 523      6F63756D 
+ 523      656E7473 
+ 523      5C476974 
+ 523      68756220 
+ 524 018e 45435453 		.ascii	"ECTS\\USB-UART.cydsn\000"
+ 524      5C555342 
+ 524      2D554152 
+ 524      542E6379 
+ 524      64736E00 
+ 525              	.LASF0:
+ 526 01a2 7369676E 		.ascii	"signed char\000"
+ 526      65642063 
+ 526      68617200 
+ 527              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
