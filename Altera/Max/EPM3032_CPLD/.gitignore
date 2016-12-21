@@ -1,0 +1,14 @@
+# Folders
+db/
+incremental_db/
+bin-release/
+output_files/
+simulation/
+
+# Files
+*.qpf
+*.qsf
+*.bak
+*.qws
+*.vwf
+*.vmf
