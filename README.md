@@ -2,9 +2,7 @@
 
 Embedded Systems Playground
 =================
-This repo contains all my trials and tribulations with Embedded Systems, learnig C, C++, Assymbly, and how to properly use C++'s OOP abstraction with C in embedded systems.
-
-><b>Prospective employers:</b> My progress with C++ is stored at https://github.com/glennlopez/Cpp.Playground. 
+This repo contains all my trials and tribulations with Embedded Systems. It contains materials used for learnig C and C++ for embedded systems, writing HDL's, SoCs, and tinkering with microcontrollers, FPGA's CPLD's, and anything in between. 
 
 ### Learning/Referance material
 * https://zybooks.zyante.com/#/zybook/ProgrammingEmbeddedSystemsR10/dashboard
