@@ -6,7 +6,7 @@ This is where I keep all the fun things I do with Altera's MAX series CPLD's. Fr
 
 ![alt text](http://gadgetory.com/image/cache/data/products/100078_cpld_breakout_pcb/1-500x500.jpg "EPM3032_CPLD")
 
-> Altera's MAX® CPLD series has provided the lowest power, lowest cost CPLDs. The introduction of the new MAX 10 FPGAs present a leap forward in integration and FPGA capabilities for a non-volatile programmable logic device.
+> Altera's MAX CPLD series has provided the lowest power, lowest cost CPLDs. 
 
 ### Folder Structure
 
