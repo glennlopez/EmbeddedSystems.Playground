@@ -8,7 +8,7 @@ This repo contains all my trials and tribulations with Embedded Systems. It cont
 
 ### Languange preference
 
-| Folder Name        | Language           |
+| Platform Name        | Language           |
 | ------------- |:--------------------:|
 | CPLD     | VHDL |
 | FPGA     | VHDL |
