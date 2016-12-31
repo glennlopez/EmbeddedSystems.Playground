@@ -1,8 +1,0 @@
-INTSTYLE=pa
-INFILE=D:\Github Clones\EmbeddedSystems.Playground\Xilinx\Spartan-6\proj_luc\work\planAhead\proj_luc\proj_luc.runs\impl_1\mojo_top_0_routed.ncd
-OUTFILE=D:\Github Clones\EmbeddedSystems.Playground\Xilinx\Spartan-6\proj_luc\work\planAhead\proj_luc\proj_luc.runs\impl_1\mojo_top_0.bit
-FAMILY=Spartan6
-PART=xc6slx9-2tqg144
-WORKINGDIR=D:\Github Clones\EmbeddedSystems.Playground\Xilinx\Spartan-6\proj_luc\work\planAhead\proj_luc\proj_luc.runs\impl_1
-LICENSE=WebPack
-USER_INFO=211288194_0_0_933
