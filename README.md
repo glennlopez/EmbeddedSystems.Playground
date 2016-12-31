@@ -11,8 +11,8 @@ This repo contains all my trials and tribulations with Embedded Systems. It cont
 | Platform Name        | Language           |
 | ------------- |:--------------------:|
 | CPLD     | VHDL |
-| FPGA     | VHDL |
-| Microcontrollers     | C, C++ for abstractions |
+| FPGA     | Verilog |
+| Microcontrollers     | C and C++ |
 | SoC     | Cypress's PSoC IDE |
 
 
