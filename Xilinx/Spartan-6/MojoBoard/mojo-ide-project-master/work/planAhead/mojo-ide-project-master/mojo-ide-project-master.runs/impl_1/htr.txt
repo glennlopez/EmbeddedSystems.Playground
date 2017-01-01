@@ -1,0 +1,9 @@
+REM
+REM PlanAhead(TM)
+REM htr.txt: a PlanAhead-generated description of how-to-repeat the
+REM          the basic steps of a run.  Note that runme.bat/sh needs
+REM          to be invoked for PlanAhead to track run status.
+REM Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+REM
+
+bitgen "mojo_top_0_routed.ncd" "mojo_top_0.bit" "mojo_top_0.pcf" -g Binary:Yes -g Compress -w -intstyle pa

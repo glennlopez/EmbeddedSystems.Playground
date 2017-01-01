@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="8">
+	<Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc6slx9tqg144-2" LaunchPart="xc6slx9tqg144-2" ConstrsSet="constrs_1" Description="PlanAhead Defaults (XST defaults with hierarchy)" State="current" Dir="$PRUNDIR/synth_1" LaunchTime="1483255197">
+		<File Type="XST-NGC" Name="mojo_top_0.ngc"/>
+		<File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
+		<File Type="XST-SRP" Name="mojo_top_0.srp"/>
+		<File Type="PA-XST" Name="mojo_top_0.xst"/>
+		<File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
+		<File Type="PA-XSTPRJ" Name="mojo_top_0.prj"/>
+		<File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
+	</Run>
+	<Run Id="impl_1" Type="Ft2:EntireDesign" SynthRun="synth_1" Part="xc6slx9tqg144-2" LaunchPart="xc6slx9tqg144-2" ConstrsSet="constrs_1" Description="ISE Defaults, including packing registers in IOs off" State="current" Dir="$PRUNDIR/impl_1" LaunchTime="1483255217">
+		<File Type="MAP-PSR" Name="mojo_top_0.psr"/>
+		<File Type="PA-EDIF" Name="mojo_top_0.edf"/>
+		<File Type="PAR-NCD" Name="mojo_top_0_routed.ncd"/>
+		<File Type="PA-UCF" Name="mojo_top_0.ucf"/>
+		<File Type="PAR-PAD" Name="mojo_top_0_routed_pad.txt"/>
+		<File Type="PAR-PAR" Name="mojo_top_0_routed.par"/>
+		<File Type="PAR-UNR" Name="mojo_top_0_routed.unroutes"/>
+		<File Type="BG-BIT" Name="mojo_top_0.bit"/>
+		<File Type="BG-DRC" Name="mojo_top_0.drc"/>
+		<File Type="PA-CONSTRSDIR" Name=".constrs"/>
+		<File Type="BG-BGN" Name="mojo_top_0.bgn"/>
+		<File Type="TRCE-TWR" Name="mojo_top_0.twr"/>
+		<File Type="TRCE-TWX" Name="mojo_top_0.twx"/>
+		<File Type="XDL-XDL" Name="mojo_top_0_routed.xdl"/>
+		<File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+		<File Type="WBT-LOG" Name="webtalk.log"/>
+		<File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+		<File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+		<File Type="NGDB-NGD" Name="mojo_top_0.ngd"/>
+		<File Type="NGDB-BLD" Name="mojo_top_0.bld"/>
+		<File Type="MAP-NCD" Name="mojo_top_0.ncd"/>
+		<File Type="MAP-PCF" Name="mojo_top_0.pcf"/>
+		<File Type="MAP-MRP" Name="mojo_top_0.mrp"/>
+		<File Type="MAP-MAP" Name="mojo_top_0.map"/>
+	</Run>
+</Runs>
+

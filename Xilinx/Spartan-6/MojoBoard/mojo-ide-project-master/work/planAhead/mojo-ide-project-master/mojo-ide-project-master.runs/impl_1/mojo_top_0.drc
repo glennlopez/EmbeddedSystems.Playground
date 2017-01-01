@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Sun Jan 01 01:21:09 2017
+
+drc -z mojo_top_0_routed.ncd mojo_top_0.pcf
+
+DRC detected 0 errors and 0 warnings.
