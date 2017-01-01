@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="mojo_top">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2017-1-1T1:7:35</timestamp>
+    <attr value="mojo_top" name="VeriModel" />
+    <pin polarity="Input" x="0" y="-480" name="clk" />
+    <pin polarity="Input" x="0" y="-416" name="rst_n" />
+    <pin polarity="Input" x="0" y="-352" name="cclk" />
+    <pin polarity="Input" x="0" y="-288" name="spi_ss" />
+    <pin polarity="Input" x="0" y="-224" name="spi_mosi" />
+    <pin polarity="Input" x="0" y="-160" name="spi_sck" />
+    <pin polarity="Input" x="0" y="-96" name="avr_tx" />
+    <pin polarity="Input" x="0" y="-32" name="avr_rx_busy" />
+    <pin polarity="Output" x="448" y="-480" name="spi_miso" />
+    <pin polarity="Output" x="448" y="-336" name="avr_rx" />
+    <pin polarity="Output" x="448" y="-192" name="led(7:0)" />
+    <pin polarity="Output" x="448" y="-48" name="spi_channel(3:0)" />
+    <graph>
+        <rect width="320" x="64" y="-512" height="512" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="224" y="-520" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin clk" />
+        <line x2="0" y1="-480" y2="-480" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin rst_n" />
+        <line x2="0" y1="-416" y2="-416" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin cclk" />
+        <line x2="0" y1="-352" y2="-352" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-288" type="pin spi_ss" />
+        <line x2="0" y1="-288" y2="-288" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin spi_mosi" />
+        <line x2="0" y1="-224" y2="-224" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin spi_sck" />
+        <line x2="0" y1="-160" y2="-160" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin avr_tx" />
+        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin avr_rx_busy" />
+        <line x2="0" y1="-32" y2="-32" x1="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-480" type="pin spi_miso" />
+        <line x2="448" y1="-480" y2="-480" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-336" type="pin avr_rx" />
+        <line x2="448" y1="-336" y2="-336" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-192" type="pin led(7:0)" />
+        <rect width="64" x="384" y="-204" height="24" />
+        <line x2="448" y1="-192" y2="-192" x1="384" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="376" y="-48" type="pin spi_channel(3:0)" />
+        <rect width="64" x="384" y="-60" height="24" />
+        <line x2="448" y1="-48" y2="-48" x1="384" />
+    </graph>
+</symbol>
