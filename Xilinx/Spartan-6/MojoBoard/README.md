@@ -2,10 +2,9 @@
 
 Mojo v2: Spartan-6 FPGA Development board
 =================
-![alt text](https://github.com/glennlopez/EmbeddedSystems.Playground/blob/master/Xilinx/Spartan-6/MojoBoard/pins.png?raw=true"Photo")
-
 The Mojo is an FPGA development board that is designed to be user friendly and a great introduction into digital design for anyone.
 
+![alt text](https://github.com/glennlopez/EmbeddedSystems.Playground/blob/master/Xilinx/Spartan-6/MojoBoard/pins.png?raw=true"Photo")
 
 
 ### Learning/Referance material
