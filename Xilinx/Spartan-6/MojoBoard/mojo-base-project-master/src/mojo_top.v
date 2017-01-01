@@ -28,7 +28,14 @@ assign avr_rx = 1'bz;
 assign spi_channel = 4'bzzzz;
 
 //assign led = 8'b0;
-assign led[6:0] = 7'b0;
+//assign led[6:0] = 7'b0;
+assign led[0] = 1'b0;
+assign led[1] = rst;
+assign led[2] = 1'b0;
+assign led[3] = 1'b0;
+assign led[4] = rst;
+assign led[5] = 1'b0;
+assign led[6] = 1'b0;
 assign led[7] = rst;
 
 endmodule
