@@ -2,10 +2,9 @@
 
 Mojo v2: Spartan-6 FPGA Development board
 =================
-This repo contains all my trials and tribulations with Embedded Systems. It contains learning materials, labs, etc.. involving many diffrent languages such as VHDL, Verilog, Lucid, C, C++, and many others I may come accross for embedded systems like FPGA's, CPLD's, SoC's, and microcontrollers, on popular core architechtures (Cortex M, Spartan, PSoC, AVR, Max3000, etc.).
+![alt text](https://github.com/glennlopez/EmbeddedSystems.Playground/blob/master/Xilinx/Spartan-6/MojoBoard/pins.png?raw=true"Photo")
 
->I've organized the source codes into thier respective manufacturer chipsets. This should make it easier for potential employers to better understand what platforms I have experiance in, the depth of my experiance, and how recent my last learning session was for a particular platform.
-
+The Mojo is an FPGA development board that is designed to be user friendly and a great introduction into digital design for anyone.
 
 
 
