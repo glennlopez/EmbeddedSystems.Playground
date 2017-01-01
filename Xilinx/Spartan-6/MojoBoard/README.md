@@ -9,3 +9,4 @@ The Mojo is an FPGA development board that is designed to be user friendly and a
 
 ### Learning/Referance material
 * https://embeddedmicro.com/tutorials/
+* https://www.youtube.com/watch?v=0age83XI8Z4&t=497s
