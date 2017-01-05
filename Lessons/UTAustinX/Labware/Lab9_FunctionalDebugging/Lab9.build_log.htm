@@ -4,21 +4,14 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 D:\Github Clones\EmbeddedSystems.Playground\Lessons\UTAustinX\Labware\Lab9_FunctionalDebugging\Lab9.uvproj
-Project File Date:  02/10/2014
+Project File Date:  01/05/2017
 
 <h2>Output:</h2>
 Build target 'Lab9'
 compiling main.c...
-linking...
-Program Size: Code=2932 RO-data=2712 RW-data=60 ZI-data=1644  
-".\Lab9.axf" - 0 Error(s), 0 Warning(s).
-gned long lastData;
-main.c(83): error:  #268: declaration may not appear after executable statement in block
-                        unsigned long newData;
-main.c(82): warning:  #177-D: variable "lastData" was declared but never referenced
-                        unsigned long lastData;
-main.c(83): warning:  #177-D: variable "newData" was declared but never referenced
-                        unsigned long newData;
-main.c: 2 warnings, 2 errors
-".\Lab9.axf" - 2 Error(s), 2 Warning(s).
+main.c(82): error:  #268: declaration may not appear after executable statement in block
+                        unsigned long oldData = GPIO_PORTF_DATA_R&0x13;
+main.c: 0 warnings, 1 error
+".\Lab9.axf" - 1 Error(s), 0 Warning(s).
 Target not created
+Error: Could not load file 'D:\Github Clones\EmbeddedSystems.Playground\Lessons\UTAustinX\Labware\Lab9_FunctionalDebugging\Lab9.axf'. Debugger aborted !

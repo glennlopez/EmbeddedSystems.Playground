@@ -79,6 +79,7 @@ int main(void){  unsigned long i,last,now;
 			GPIO_PORTF_DATA_R = Led;   // output 
 		
 			// Record only when change in input or output changes
+			unsigned long oldData = GPIO_PORTF_DATA_R&0x13;
 
 			/**************************************************
 			PF4 PF1 PF0: Needs to be colected in a dumpfile
@@ -92,18 +93,17 @@ int main(void){  unsigned long i,last,now;
 			Answer: Data = GPIO_PORTF_DATA_R & 0x13;
 			****************************************************/
 			
-			if(i<50){
+			if((i<50) && ((GPIO_PORTF_DATA_R&0x13) != oldData)){
 				now = NVIC_ST_CURRENT_R;
 				Time[i] = (last-now)&0x00FFFFFF;  // 24-bit time difference
-				Data[i] = GPIO_PORTF_DATA_R&0x02; // record PF1
+				Data[i] = GPIO_PORTF_DATA_R&0x13; // record PF4 PF1 PF0
 				last = now;
 				i++;
 			}
+			
+			Delay();
 		}
 		
-
-		
-    Delay();
   }
 	
 }
