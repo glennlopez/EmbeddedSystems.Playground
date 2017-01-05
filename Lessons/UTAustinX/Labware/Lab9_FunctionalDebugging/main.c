@@ -17,28 +17,6 @@ void EnableInterrupts(void);  // Enable interrupts
 
 // ***** 3. Subroutines Section *****
 
-
-
-/* 
-This Lab9 starter project is the same as C9_Debugging example but 
-includes the connections to the Lab9 grader. You will make three changes. 
-First, make the LED flash at 10 Hz. In other words, make it turn on for 0.05 seconds, 
-and then turn off for 0.05 seconds. 
-Second, make the LED flash if either switch SW1 or SW2 is pressed 
-(this means flash the LED if either PF4 or PF0 is 0). 
-Third, record PortF bits 4,1,0 every time the input changes or the output changes. 
-For example, if your system detects a change in either PF4 or PF0 input, 
-record PortF bits 4,1,0. If your system causes a change in PF1, record PortF bits 4,1,0. 
-
-If both PF4 and PF0 switch are not pressed, the PF1 output should be low.  
-If either PF4 or PF0 switches is pressed, the output toggles at 10 Hz (±10%). 
-Information collected in the Data array matches the I/O on PortF.
-50 data points are collected only on a change in input or a change in output.
-This means no adjacent elements in the array should be equal.
-
-*/
-
-
 // PortF Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
 #define SW1											(*((volatile unsigned long *)0x40025040))			//PF4 - offset 0x040 (0000 0100 0000) | 64
 #define SW2											(*((volatile unsigned long *)0x40025004))			//PF0 - offset 0x004 (0000 0000 0100) | 4
@@ -59,7 +37,7 @@ int main(void){  unsigned long i,last,now;
 	/*********************************************************
 		[x] Make LED flash at 10Hz
 		[x] Make LED only flash if SW1 or SW2 is pressed
-		[] Record PF4,1,0 when input or output changes
+		[x] Record PF4,1,0 when input or output changes
 	*********************************************************/
 
   TExaS_Init(SW_PIN_PF40, LED_PIN_PF1); 			 // activate grader and set system clock to 16 MHz
@@ -76,10 +54,8 @@ int main(void){  unsigned long i,last,now;
 		if((SW2 == 0x00) ||(SW1 == 0x00)){
 			Led = GPIO_PORTF_DATA_R;   // read previous
 			Led = Led^0x02;            // toggle red LED
-			GPIO_PORTF_DATA_R |= (Led&0x02);   // output 
+			GPIO_PORTF_DATA_R = Led;   // output 
 		
-			// Record only when change in input or output changes
-			unsigned long oldData = GPIO_PORTF_DATA_R&0x13;
 
 			/**************************************************
 			PF4 PF1 PF0: Needs to be colected in a dumpfile
@@ -93,7 +69,7 @@ int main(void){  unsigned long i,last,now;
 			Answer: Data = GPIO_PORTF_DATA_R & 0x13;
 			****************************************************/
 			
-			if((i<50) && ((GPIO_PORTF_DATA_R&0x13) != oldData)){
+			if(i<50){
 				now = NVIC_ST_CURRENT_R;
 				Time[i] = (last-now)&0x00FFFFFF;  // 24-bit time difference
 				Data[i] = GPIO_PORTF_DATA_R&0x13; // record PF4 PF1 PF0
@@ -107,17 +83,6 @@ int main(void){  unsigned long i,last,now;
   }
 	
 }
-
-
-// Color    LED(s) PortF
-// dark     ---    0
-// red      R--    0x02
-// blue     --B    0x04
-// green    -G-    0x08
-// yellow   RG-    0x0A
-// sky blue -GB    0x0C
-// white    RGB    0x0E
-// pink     R-B    0x06
 
 
 
@@ -136,7 +101,6 @@ void PortF_Init(void){ volatile unsigned long delay;
   GPIO_PORTF_DEN_R = 0x1F;          // 7) enable digital I/O on PF4-0
 }
 
-
 // Initialize SysTick with busy wait running at bus clock.
 void SysTick_Init(void){
   NVIC_ST_CTRL_R = 0;                   // disable SysTick during setup
@@ -147,7 +111,7 @@ void SysTick_Init(void){
 
 // Delay
 void Delay(void){unsigned long volatile time;
-  time = 155500; // 0.1sec - originally 160000
+  time = 75000; 
   while(time){
    time--;
   }
