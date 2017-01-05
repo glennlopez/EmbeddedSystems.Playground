@@ -2,11 +2,8 @@
 // main.c for Lab 9
 // Runs on LM4F120/TM4C123
 // In this lab we are learning functional debugging by dumping
-//   recorded I/O data into a buffer
-// January 15, 2016
-
-// Lab 9
-//      Jon Valvano and Ramesh Yerraballi
+// recorded I/O data into a buffer
+// github.com/glennlopez
 
 // ***** 1. Pre-processor Directives Section *****
 #include "TExaS.h"
@@ -41,6 +38,11 @@ This means no adjacent elements in the array should be equal.
 
 */
 
+
+// PortF Bit-specific Address definitions (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04) expressed as 4*2^b (bitspecific addressing)
+#define SW1											(*((volatile unsigned long *)0x40025040))			//PF4 - offset 0x040 (0000 0100 0000) | 64
+#define SW2											(*((volatile unsigned long *)0x40025004))			//PF0 - offset 0x004 (0000 0000 0100) | 4
+	
 // Prototypes
 void PortF_Init(void);
 void SysTick_Init(void);
@@ -53,28 +55,53 @@ unsigned long Data[50];		// you must leave the Data array defined exactly as it 
 
  
 int main(void){  unsigned long i,last,now;
-
-  TExaS_Init(SW_PIN_PF40, LED_PIN_PF1);  // activate grader and set system clock to 16 MHz
-  PortF_Init();   // initialize PF1 to output
-  SysTick_Init(); // initialize SysTick, runs at 16 MHz
 	
-  i = 0;          // array index
+	/*********************************************************
+		[x] Make LED flash at 10Hz
+		[x] Make LED only flash if SW1 or SW2 is pressed
+		[] Record PF4,1,0 when input or output changes
+	*********************************************************/
+
+  TExaS_Init(SW_PIN_PF40, LED_PIN_PF1); 			 // activate grader and set system clock to 16 MHz
+  PortF_Init();   														 // initialize PF1 to output
+  SysTick_Init();															 // initialize SysTick, runs at 16 MHz
+	
+  i = 0;          														 // array index
   last = NVIC_ST_CURRENT_R;
-  EnableInterrupts();           // enable interrupts for the grader
+  EnableInterrupts();          								 // enable interrupts for the grader
 	
   while(1){
 		
-    Led = GPIO_PORTF_DATA_R;   // read previous
-    Led = Led^0x02;            // toggle red LED
-    GPIO_PORTF_DATA_R = Led;   // output 
+		//Toggle only when sw1 or sw2 is pressed (sw1/2 is active low)
+		if((SW2 == 0x00) ||(SW1 == 0x00)){
+			Led = GPIO_PORTF_DATA_R;   // read previous
+			Led = Led^0x02;            // toggle red LED
+			GPIO_PORTF_DATA_R = Led;   // output 
 		
-    if(i<50){
-      now = NVIC_ST_CURRENT_R;
-      Time[i] = (last-now)&0x00FFFFFF;  // 24-bit time difference
-      Data[i] = GPIO_PORTF_DATA_R&0x02; // record PF1
-      last = now;
-      i++;
-    }
+			// Record only when change in input or output changes
+
+			/**************************************************
+			PF4 PF1 PF0: Needs to be colected in a dumpfile
+				0 0 0 1  0 0 1 1 = 0x13
+			
+				GPIO_PORTF_DATA_R				=		x x x x  x x x x
+				0x13										=		0 0 0 1  0 0 1 1 
+				Mask off other bits 		&		----------------	
+																		0 0 0 x  0 0 x x
+		
+			Answer: Data = GPIO_PORTF_DATA_R & 0x13;
+			****************************************************/
+			
+			if(i<50){
+				now = NVIC_ST_CURRENT_R;
+				Time[i] = (last-now)&0x00FFFFFF;  // 24-bit time difference
+				Data[i] = GPIO_PORTF_DATA_R&0x02; // record PF1
+				last = now;
+				i++;
+			}
+		}
+		
+
 		
     Delay();
   }
@@ -118,7 +145,7 @@ void SysTick_Init(void){
   NVIC_ST_CTRL_R = 0x00000005;          // enable SysTick with core clock
 }
 
-
+// Delay
 void Delay(void){unsigned long volatile time;
   time = 155500; // 0.1sec - originally 160000
   while(time){
