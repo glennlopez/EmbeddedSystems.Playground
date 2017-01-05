@@ -76,7 +76,7 @@ int main(void){  unsigned long i,last,now;
 		if((SW2 == 0x00) ||(SW1 == 0x00)){
 			Led = GPIO_PORTF_DATA_R;   // read previous
 			Led = Led^0x02;            // toggle red LED
-			GPIO_PORTF_DATA_R = Led;   // output 
+			GPIO_PORTF_DATA_R |= (Led&0x02);   // output 
 		
 			// Record only when change in input or output changes
 			unsigned long oldData = GPIO_PORTF_DATA_R&0x13;
