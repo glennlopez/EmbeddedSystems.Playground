@@ -41,7 +41,60 @@ This means no adjacent elements in the array should be equal.
 
 */
 
+// Prototypes
+void PortF_Init(void);
+void SysTick_Init(void);
+void Delay(void);
 
+// Global vars
+unsigned long Led;
+unsigned long Time[50];		// first data point is wrong, the other 49 will be correct
+unsigned long Data[50];		// you must leave the Data array defined exactly as it is
+
+ 
+int main(void){  unsigned long i,last,now;
+
+  TExaS_Init(SW_PIN_PF40, LED_PIN_PF1);  // activate grader and set system clock to 16 MHz
+  PortF_Init();   // initialize PF1 to output
+  SysTick_Init(); // initialize SysTick, runs at 16 MHz
+	
+  i = 0;          // array index
+  last = NVIC_ST_CURRENT_R;
+  EnableInterrupts();           // enable interrupts for the grader
+	
+  while(1){
+		
+    Led = GPIO_PORTF_DATA_R;   // read previous
+    Led = Led^0x02;            // toggle red LED
+    GPIO_PORTF_DATA_R = Led;   // output 
+		
+    if(i<50){
+      now = NVIC_ST_CURRENT_R;
+      Time[i] = (last-now)&0x00FFFFFF;  // 24-bit time difference
+      Data[i] = GPIO_PORTF_DATA_R&0x02; // record PF1
+      last = now;
+      i++;
+    }
+		
+    Delay();
+  }
+	
+}
+
+
+// Color    LED(s) PortF
+// dark     ---    0
+// red      R--    0x02
+// blue     --B    0x04
+// green    -G-    0x08
+// yellow   RG-    0x0A
+// sky blue -GB    0x0C
+// white    RGB    0x0E
+// pink     R-B    0x06
+
+
+
+// PortF init
 void PortF_Init(void){ volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x00000020;     // 1) activate clock for Port F
   delay = SYSCTL_RCGC2_R;           // allow time for clock to start
@@ -56,6 +109,7 @@ void PortF_Init(void){ volatile unsigned long delay;
   GPIO_PORTF_DEN_R = 0x1F;          // 7) enable digital I/O on PF4-0
 }
 
+
 // Initialize SysTick with busy wait running at bus clock.
 void SysTick_Init(void){
   NVIC_ST_CTRL_R = 0;                   // disable SysTick during setup
@@ -63,51 +117,11 @@ void SysTick_Init(void){
   NVIC_ST_CURRENT_R = 0;                // any write to current clears it             
   NVIC_ST_CTRL_R = 0x00000005;          // enable SysTick with core clock
 }
-unsigned long Led;
+
+
 void Delay(void){unsigned long volatile time;
-  time = 160000; // 0.1sec
+  time = 155500; // 0.1sec - originally 160000
   while(time){
    time--;
   }
 }
-
-unsigned long Time[50];	// first data point is wrong, the other 49 will be correct
-unsigned long Data[50];	// you must leave the Data array defined exactly as it is
-
- 
-int main(void){  unsigned long i,last,now;
-  TExaS_Init(SW_PIN_PF40, LED_PIN_PF1);  // activate grader and set system clock to 16 MHz
-  PortF_Init();   // initialize PF1 to output
-	
-	
-	
-	
-  SysTick_Init(); // initialize SysTick, runs at 16 MHz
-  i = 0;          // array index
-  last = NVIC_ST_CURRENT_R;
-  EnableInterrupts();           // enable interrupts for the grader
-  while(1){
-    Led = GPIO_PORTF_DATA_R;   // read previous
-    Led = Led^0x02;            // toggle red LED
-    GPIO_PORTF_DATA_R = Led;   // output 
-    if(i<50){
-      now = NVIC_ST_CURRENT_R;
-      Time[i] = (last-now)&0x00FFFFFF;  // 24-bit time difference
-      Data[i] = GPIO_PORTF_DATA_R&0x02; // record PF1
-      last = now;
-      i++;
-    }
-    Delay();
-  }
-}
-
-
-// Color    LED(s) PortF
-// dark     ---    0
-// red      R--    0x02
-// blue     --B    0x04
-// green    -G-    0x08
-// yellow   RG-    0x0A
-// sky blue -GB    0x0C
-// white    RGB    0x0E
-// pink     R-B    0x06
