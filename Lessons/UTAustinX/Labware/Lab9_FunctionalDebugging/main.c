@@ -70,13 +70,18 @@ void Delay(void){unsigned long volatile time;
    time--;
   }
 }
-// first data point is wrong, the other 49 will be correct
-unsigned long Time[50];
-// you must leave the Data array defined exactly as it is
-unsigned long Data[50];
+
+unsigned long Time[50];	// first data point is wrong, the other 49 will be correct
+unsigned long Data[50];	// you must leave the Data array defined exactly as it is
+
+ 
 int main(void){  unsigned long i,last,now;
   TExaS_Init(SW_PIN_PF40, LED_PIN_PF1);  // activate grader and set system clock to 16 MHz
   PortF_Init();   // initialize PF1 to output
+	
+	
+	
+	
   SysTick_Init(); // initialize SysTick, runs at 16 MHz
   i = 0;          // array index
   last = NVIC_ST_CURRENT_R;

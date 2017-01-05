@@ -54,23 +54,27 @@ void Delay(void){unsigned long volatile time;
    time--;
   }
 }
+
+
 // first data point is wrong, the other 49 will be correct
-unsigned long Time[50];
-unsigned long Data[50];
+unsigned long Time[50]; 														//<---------- INSTRUMENTATION
+unsigned long Data[50]; 														//<---------- INSTRUMENTATION
+
+
 int main(void){  unsigned long i,last,now;
   PortF_Init();   // initialize PF1 to output
-  SysTick_Init(); // initialize SysTick, runs at 16 MHz
+  SysTick_Init(); 																	//<---------- INSTRUMENTATION
   i = 0;          // array index
-  last = NVIC_ST_CURRENT_R;
+  last = NVIC_ST_CURRENT_R; 												//<---------- INSTRUMENTATION
   while(1){
     Led = GPIO_PORTF_DATA_R;   // read previous
     Led = Led^0x02;            // toggle red LED
     GPIO_PORTF_DATA_R = Led;   // output 
     if(i<50){
-      now = NVIC_ST_CURRENT_R;
-      Time[i] = (last-now)&0x00FFFFFF;  // 24-bit time difference
-      Data[i] = GPIO_PORTF_DATA_R&0x02; // record PF1
-      last = now;
+      now = NVIC_ST_CURRENT_R; 											//<---------- INSTRUMENTATION
+      Time[i] = (last-now)&0x00FFFFFF;   						//<---------- INSTRUMENTATION
+      Data[i] = GPIO_PORTF_DATA_R&0x02;  						//<---------- INSTRUMENTATION
+      last = now; 																	//<---------- INSTRUMENTATION
       i++;
     }
     Delay();
