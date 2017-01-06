@@ -1,0 +1,23 @@
+*** Creating Trace Output File 'WallFollower.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"adcswtrigger.o"'
+### List of Objects: adding '"pll.o"'
+### List of Objects: adding '"wallfollower.o"'
+### List of Objects: adding '"uart2.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4 "startup.o" "adcswtrigger.o" "pll.o" "wallfollower.o" "uart2.o" 
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\WallFollower.map" -o WallFollower.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'WallFollower.axf'
+### ADS-LD Command File: 'WallFollower.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'WallFollower.lnp', Handle=0x00000484
+### Writing '.lnp' file
+### ADS-LD Command file 'WallFollower.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,34 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Dropbox\EdX\TM4Cware\C8_Security\C8.uvproj
+Project File Date:  11/06/2014
+
+<h2>Output:</h2>
+Build target 'SwitchLight'
+compiling main.c...
+linking...
+Program Size: Code=2404 RO-data=272 RW-data=56 ZI-data=1176  
+".\SwitchLight.axf" - 0 Errors, 0 Warning(s).
+Build target 'SwitchLight'
+linking...
+Program Size: Code=2404 RO-data=272 RW-data=56 ZI-data=1176  
+".\SwitchLight.axf" - 0 Errors, 0 Warning(s).
+Build target 'SwitchLight'
+linking...
+Program Size: Code=2404 RO-data=272 RW-data=56 ZI-data=1176  
+".\SwitchLight.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\EdX\\TM4Cware\\C8_Security\\SwitchLight.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Connection failed!, error code=&d
+Build target 'SwitchLight'
+linking...
+Program Size: Code=2404 RO-data=272 RW-data=56 ZI-data=1176  
+".\SwitchLight.axf" - 0 Errors, 0 Warning(s).
+Load "C:\\Dropbox\\EdX\\TM4Cware\\C8_Security\\SwitchLight.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'EdgeInterrupt.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"edgeinterrupt.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4 "startup.o" "edgeinterrupt.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\EdgeInterrupt.map" -o EdgeInterrupt.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'EdgeInterrupt.axf'
+### ADS-LD Command File: 'EdgeInterrupt.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'EdgeInterrupt.lnp', Handle=0x000002C8
+### Writing '.lnp' file
+### ADS-LD Command file 'EdgeInterrupt.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
