@@ -1,31 +1,24 @@
-
-PREPARATION
-=================
-
-You will need a LaunchPad.  Run the Lab9 starter file in the simulator and on the real board just to make sure the configurations are correct. The graders should run, but return scores of 0.
-
 STARTER PROJECT
 =================
 
 Lab9_FunctionalDebugging
 
-PURPOSE
+Learning Objectives
 =================
 
-In Lab09 you will learn about time delays, arrays and functional debugging. The data you collect will be physical proof that the system operates within specifications.
+In this chapter, we will illustrate a formal method for testing. Because embedded systems are deployed in safety-critical systems, we need to be rigorous in our methods that evaluate if the deployed system performs its tasks as required. Embedded systems not only need to arrive at the correct answer, they need to arrive at it at the correct time. We will introduce a simple hardware counter that we can use to measure time. The testing method we will develop in this chapter will be to create a data logger to store when and what our system is doing.
 
-SYSTEM REQUIREMENTS
+Learning Objectives:
 =================
 
-The Lab9 starter project is the same as C9_Debugging example but includes the connections to the Lab9 grader. You will make three changes.
-
-First, make the LED flash at 10 Hz. In other words, invert the output every 0.05 seconds.
-
-Second, make the LED flash if either switch SW1 or SW2 are pressed (this means either PF4 or PF0 is 0).  This means toggle if just SW1 is pressed, just SW2 is pressed or both switches are pressed.
-
-Third, record PortF bits 4,1,0 every time the input changes or the output changes. For example, if your system detects a change in either PF4 or PF0 input, record PortF bits 4,1,0. If your system causes a change in PF1, record PortF bits 4,1,0. In order for the grading engine to see/grade your data, please leave the debugging array defined exactly as it is in the starter project.
-
-Remember to reset the program before grading so the grader can watch you enter data into the buffers.
+* Understand the concept of minimally intrusive debugging
+* Learn how the SysTick counter works
+* Learn about arrays
+* Learn how to use indexing to access arrays
+* Understand precision, length and origin
+* Learn how to create a debugging dump
+* Understand that a formal method to verify program correctness
+* Learn how to use the dump to collect debugging information in real time
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/fzIaC0JLg7Y/0.jpg)](http://www.youtube.com/watch?v=fzIaC0JLg7Y "Video Title")
 
