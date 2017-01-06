@@ -27,5 +27,5 @@ Third, record PortF bits 4,1,0 every time the input changes or the output change
 
 Remember to reset the program before grading so the grader can watch you enter data into the buffers.
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/XXXXXXXX/0.jpg)](http://www.youtube.com/watch?v=XXXXX "Video Title")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/fzIaC0JLg7Y/0.jpg)](http://www.youtube.com/watch?v=fzIaC0JLg7Y "Video Title")
 
