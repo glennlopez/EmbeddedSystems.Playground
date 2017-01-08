@@ -36,6 +36,8 @@
 #define SYSCTL_RCC_XTAL_6MHZ    0x000002C0  // 6 MHz Crystal
 #define SYSCTL_RCC_XTAL_8MHZ    0x00000380  // 8 MHz Crystal
 #define SYSCTL_RCC_XTAL_16MHZ   0x00000540  // 16 MHz Crystal
+
+
 #define SYSCTL_RCC2_R           (*((volatile unsigned long *)0x400FE070))
 #define SYSCTL_RCC2_USERCC2     0x80000000  // Use RCC2
 #define SYSCTL_RCC2_DIV400      0x40000000  // Divide PLL as 400 MHz vs. 200
