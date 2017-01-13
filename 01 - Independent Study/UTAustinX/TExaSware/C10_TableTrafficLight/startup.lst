@@ -448,7 +448,7 @@ ARM Macro Assembler    Page 7
   252 0000026C                 EXPORT           Reset_Handler
   253 0000026C         Reset_Handler
   254 0000026C         ;
-  255 0000026C         ; DO NOT ENABLE the floating-point unit.  This must be d
+  255 0000026C         ; DO NOT enable the floating-point unit.  This must be d
                        one here to handle the
   256 0000026C         ; case where main() uses floating-point and the function
                         prologue saves
