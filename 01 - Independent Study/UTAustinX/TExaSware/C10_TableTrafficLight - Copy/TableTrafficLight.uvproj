@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>LineTracker</TargetName>
+      <TargetName>TableTrafficLight</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -29,7 +29,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:LM4F120H5QR$SVD\LM4F120H5QR.svd</SFDFile>
+          <SFDFile></SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>LineTracker</OutputName>
+          <OutputName>TableTrafficLight</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -411,9 +411,9 @@
               <FilePath>.\startup.s</FilePath>
             </File>
             <File>
-              <FileName>LineTracker.c</FileName>
+              <FileName>SysTick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\LineTracker.c</FilePath>
+              <FilePath>.\SysTick.c</FilePath>
             </File>
             <File>
               <FileName>PLL.c</FileName>
@@ -421,9 +421,9 @@
               <FilePath>.\PLL.c</FilePath>
             </File>
             <File>
-              <FileName>SysTick.c</FileName>
+              <FileName>TableTrafficLight.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\SysTick.c</FilePath>
+              <FilePath>.\TableTrafficLight.c</FilePath>
             </File>
           </Files>
         </Group>
