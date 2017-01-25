@@ -15,5 +15,5 @@ Learning Objectives:
 * Develop a design strategy for building Finite State Machines
 * Explain how stepper motors work using two motors to make an autonomous robot
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/xxxxxxx/0.jpg)](http://www.youtube.com/watch?v=xxxxxxx "Video Title")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/7xtmUixB5XU/0.jpg)](http://www.youtube.com/watch?v=7xtmUixB5XU"Video Title")
 
