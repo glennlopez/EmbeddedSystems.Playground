@@ -56,16 +56,17 @@
 void UART_Init(void){
   SYSCTL_RCGC1_R |= SYSCTL_RCGC1_UART0; // activate UART0
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA; // activate port A
+	
   UART0_CTL_R &= ~UART_CTL_UARTEN;      // disable UART
   UART0_IBRD_R = 27;                    // IBRD = int(50,000,000 / (16 * 115,200)) = int(27.1267)
-  UART0_FBRD_R = 8;                     // FBRD = int(0.1267 * 64 + 0.5) = 8
-                                        // 8 bit word length (no parity bits, one stop bit, FIFOs)
-  UART0_LCRH_R = (UART_LCRH_WLEN_8|UART_LCRH_FEN);
+  UART0_FBRD_R = 8;                     // FBRD = int(0.1267 * 64 + 0.5) = 8                     
+  UART0_LCRH_R = (UART_LCRH_WLEN_8|UART_LCRH_FEN);	// 8 bit word length (no parity bits, one stop bit, FIFOs)
   UART0_CTL_R |= UART_CTL_UARTEN;       // enable UART
+	
+	
   GPIO_PORTA_AFSEL_R |= 0x03;           // enable alt funct on PA1-0
-  GPIO_PORTA_DEN_R |= 0x03;             // enable digital I/O on PA1-0
-                                        // configure PA1-0 as UART
-  GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0xFFFFFF00)+0x00000011;
+  GPIO_PORTA_DEN_R |= 0x03;             // enable digital I/O on PA1-0                                  
+  GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0xFFFFFF00)+0x00000011;  // configure PA1-0 as UART
   GPIO_PORTA_AMSEL_R &= ~0x03;          // disable analog functionality on PA
 }
 
