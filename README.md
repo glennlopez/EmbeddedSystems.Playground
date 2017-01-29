@@ -2,7 +2,7 @@
 
 Embedded Systems Playground
 =================
-This repo contains all my trials and tribulations with Embedded Systems. It contains learning materials, practice sessions, and labs I've completed through out my lifetime. Some embedded systems labs have thier own repository (I've provided links down in the table below for your convenience). 
+This repo contains all my trials and tribulations with Embedded Systems. It contains learning materials, practice sessions, and labs I've completed through out my lifetime. Some embedded systems labs have thier own repository (I've provided links down in the table below for your convenience). If you are a student, I have also created a [WIKI](https://github.com/glennlopez/EmbeddedSystems.Playground/wiki)  to serve as a quick reference guide for some of the devices i'm using that you may want to check out. 
 
 >Note: I've organized the source codes into thier respective manufacturer and architechtural name. This should make it easier for anyone to look through my work if you wish to review the things I've done with a specific platform (CPLD, FPGA, uC, SoC's etc..). The table below is organized from most recent being at the top to oldest at the bottom.
 
