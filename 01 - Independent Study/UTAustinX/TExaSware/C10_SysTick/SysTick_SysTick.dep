@@ -1,0 +1,8 @@
+Dependencies for Project 'SysTick', Target 'SysTick': (DO NOT MODIFY !)
+F (.\startup.s)(0x51983B40)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\SysTick.c)(0x5894D80B)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\systick.o --omf_browse .\systick.crf --depend .\systick.d)
+F (.\SysTickTestMain.c)(0x5894D839)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\systicktestmain.o --omf_browse .\systicktestmain.crf --depend .\systicktestmain.d)
+I (SysTick.h)(0x5894D835)
+I (PLL.h)(0x52321B60)
+F (.\PLL.c)(0x52321B60)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\pll.o --omf_browse .\pll.crf --depend .\pll.d)
+I (PLL.h)(0x52321B60)

@@ -55,6 +55,6 @@ int main(void){
 //    SysTick_Wait(1);        // approximately 720 ns
 //    SysTick_Wait(2);        // approximately 720 ns
 //    SysTick_Wait(10000);    // approximately 0.2 ms
-    SysTick_Wait10ms(1);    // approximately 10 ms
+    SysTick_Wait1ms(1);    // approximately 10 ms
   }
 }

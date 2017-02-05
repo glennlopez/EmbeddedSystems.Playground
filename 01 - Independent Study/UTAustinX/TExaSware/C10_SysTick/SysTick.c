@@ -69,3 +69,9 @@ void SysTick_Wait10ms(unsigned long delay){
     SysTick_Wait(500000);  // wait 10ms (assumes 50 MHz clock)
   }
 }
+void SysTick_Wait1ms(unsigned long delay){
+  unsigned long i;
+  for(i=0; i<delay; i++){
+    SysTick_Wait(50000);  // wait 10ms (assumes 50 MHz clock)
+  }
+}
