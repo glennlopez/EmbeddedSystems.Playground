@@ -10,9 +10,9 @@ What I'll learn (course still in progress)
 
 Course Syllabus		
 =================
-* Introduction to I/O using the BSP and debugging
-* Thread management for a personal fitness device
-* Thread synchronication and scheduling for a personal fitness device
-* Real-time operating system for a hand-held video game
-* File system using the flash ROM of the microcontroller
-* Bluetooth personal area network
+* Unit 1: Introduction to I/O using the BSP and debugging
+* Unit 2: Thread management for a personal fitness device
+* Unit 3: Thread synchronication and scheduling for a personal fitness device
+* Unit 4: Real-time operating system for a hand-held video game
+* Unit 5: File system using the flash ROM of the microcontroller
+* Unit 6: Bluetooth personal area network
