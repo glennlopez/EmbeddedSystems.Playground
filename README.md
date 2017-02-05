@@ -8,9 +8,9 @@ This repo contains all my trials and tribulations with Embedded Systems. It cont
 
 | Institution | Course Name           |
 | ------------- |:--------------------:|
-| UTAustinX     | [UT.RTBN.12.01x Realtime Bluetooth Networks - BLE RTOS](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20RTOS%20BLE)|
-| UTAustinX     | [UT.6.03x Embedded Systems - Multi-Threaded Interfacing](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20Multi-Threaded%20Interfacing)|
-| UTAustinX     | [UT.6.03x Embedded Systems - Microcontroller Input/Output](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20InputOutput)|
+| University of Texas | [UT.RTBN.12.01x Realtime Bluetooth Networks - BLE RTOS](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20RTOS%20BLE)|
+| University of Texas | [UT.6.03x Embedded Systems - Multi-Threaded Interfacing](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20Multi-Threaded%20Interfacing)|
+| University of Texas | [UT.6.03x Embedded Systems - Microcontroller Input/Output](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20InputOutput)|
 | Red River College     | [DIGI-2224 - Digital Systems (intro to VHDL)](https://github.com/glennlopez/DIGI-2224)|
 | Red River College     | [MICR-1240 - Embedded Systems 1](https://github.com/glennlopez/MICR-1240)|
 | Red River College     | [PROG-2000 - Intro to C and Micro](https://github.com/glennlopez/Prog-2000)|
