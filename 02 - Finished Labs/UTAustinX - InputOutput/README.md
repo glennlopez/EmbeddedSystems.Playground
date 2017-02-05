@@ -1,6 +1,6 @@
 <!-- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
 
-What I learned from course
+What I learned 
 =================
 * Understanding of embedded systems using modular design and abstraction
 * C programming: considering both function and style
