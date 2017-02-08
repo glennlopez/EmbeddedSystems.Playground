@@ -1,0 +1,21 @@
+\t (00:00:01) allegro 16.6 S019 (v16-6-112BG) Windows 32
+\t (00:00:01)     Journal start - Mon Apr 25 16:13:05 2016
+\t (00:00:01)         Host=LTA0190588A User=a0190588 Pid=9212 CPUs=4
+\t (00:00:01) 
+   (00:00:01) Loading axlcore.cxt 
+\t (00:00:08) Opening existing design...
+\d (00:00:08) Database opened: C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/BOOSTXL-CC2650MA.brd
+\i (00:00:09) trapsize 1940
+\i (00:00:09) trapsize 1905
+\i (00:00:09) trapsize 1946
+\i (00:00:09) trapsize 1961
+\i (00:00:09) trapsize 2060
+\i (00:00:10) generaledit 
+\i (00:00:14) nctape_full 
+\i (00:00:22) setwindow form.nc_drill
+\i (00:00:22) FORM nc_drill tape_name C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA.drl 
+\i (00:00:22) FORM nc_drill close  
+\i (00:00:22) setwindow pcb
+\i (00:00:22) generaledit 
+\i (00:00:25) exit 
+\t (00:00:26)     Journal end - Mon Apr 25 16:13:30 2016

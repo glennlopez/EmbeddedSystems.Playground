@@ -1,0 +1,424 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    ARTWORK LOG                                                      )
+(                                                                     )
+(    Drawing          : BOOSTXL-CC2650MA.brd                          )
+(    Software Version : 16.6S019                                      )
+(    Date/Time        : Mon Apr 25 16:09:05 2016                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+ ---- Photoplot outline rectangle not found; using drawing extents.
+
+
+
+Results from parameter file ...
+    DEVICE-TYPE           GERBER_RS274X
+    OUTPUT-UNITS          MM
+    FILM-SIZE             240000 160000
+    FORMAT                4.4
+    ABORT-ON-ERROR        NO
+    SCALE                 1
+    SUPPRESS-LEAD-ZEROES  YES
+    SUPPRESS-TRAIL-ZEROES NO
+    SUPPRESS-EQUAL        YES
+    UNDEF-APT-CONT        NO
+
+
+================================================================
+     PROCESSING FILM < paste_top >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_paste_top.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     1.27000                                  DARK 
+  SQUARE     1.50000                     0.000 NO     DARK 
+  RECTANGLE  0.30000     x 1.70000       0.000 NO     DARK 
+  RECTANGLE  0.55000     x 0.90000       0.000 NO     DARK 
+  RECTANGLE  0.55000     x 0.90000      90.000 NO     DARK 
+  OBLONG     0.60000     x 2.10000       0.000 NO     DARK 
+  PAD SHAPE  SHAPE_950RECT1000           0.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525           0.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525          90.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525         180.000 NO     DARK 
+  PAD SHAPE  SHAPE_750RECT750          180.000 NO     DARK 
+  PAD SHAPE  SHAPE_950RECT1000         180.000 NO     DARK 
+  PAD SHAPE  SHAPE_300RECTX500         270.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525         270.000 NO     DARK 
+
+     BOOSTXL-CC2650MA_paste_top created.
+
+
+================================================================
+     PROCESSING FILM < paste_bottom >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_paste_bottom.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+
+     BOOSTXL-CC2650MA_paste_bottom created.
+
+
+================================================================
+     PROCESSING FILM < soldmask_top >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_soldmask_top.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     1.42000                                  DARK 
+  CIRCLE     1.80000                                  DARK 
+  CIRCLE     1.85000                                  DARK 
+  SQUARE     1.60000                     0.000 NO     DARK 
+  RECTANGLE  0.45000     x 1.85000       0.000 NO     DARK 
+  RECTANGLE  0.70000     x 1.05000       0.000 NO     DARK 
+  RECTANGLE  0.70000     x 1.05000      90.000 NO     DARK 
+  OBLONG     0.75000     x 2.25000       0.000 NO     DARK 
+  PAD SHAPE  SHAPE_650RECTX675           0.000 NO     DARK 
+  PAD SHAPE  SHAPE_1100RECT1150          0.000 NO     DARK 
+  PAD SHAPE  SHAPE_650RECTX675          90.000 NO     DARK 
+  PAD SHAPE  SHAPE_1100RECT1150        180.000 NO     DARK 
+  PAD SHAPE  SHAPE_650RECTX675         180.000 NO     DARK 
+  PAD SHAPE  SHAPE_900RECT900          180.000 NO     DARK 
+  PAD SHAPE  SHAPE_650RECTX675         270.000 NO     DARK 
+  PAD SHAPE  SHAPE_400RECTX600         270.000 NO     DARK 
+
+     BOOSTXL-CC2650MA_soldmask_top created.
+
+
+================================================================
+     PROCESSING FILM < soldmask_bottom >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_soldmask_bottom.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     1.80000                                  DARK 
+  CIRCLE     1.85000                                  DARK 
+
+     BOOSTXL-CC2650MA_soldmask_bottom created.
+
+
+================================================================
+     PROCESSING FILM < silk_top >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_silk_top.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+    WARNING: 0 width line found at (240.304 234.248)
+           ... using undefined line width of 0.099
+
+    WARNING: Multiple 0 width lines; all will be treated the same as the first.
+           ... using undefined line width of 0.099
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     0.10000                                  DARK 
+  CIRCLE     0.15000                                  DARK 
+  CIRCLE     0.18000                                  DARK 
+
+     BOOSTXL-CC2650MA_silk_top created with warnings
+
+
+================================================================
+     PROCESSING FILM < silk_bottom >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_silk_bottom.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.00200                                  DARK 
+  CIRCLE     0.00300                                  DARK 
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     0.10000                                  DARK 
+  CIRCLE     0.18000                                  DARK 
+  CIRCLE     0.25000                                  DARK 
+  CIRCLE     0.30000                                  DARK 
+  CIRCLE     0.40000                                  DARK 
+
+     BOOSTXL-CC2650MA_silk_bottom created.
+
+
+================================================================
+     PROCESSING FILM < assembly_bottom >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_assembly_bottom.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.05000                                  DARK 
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     0.10000                                  DARK 
+
+     BOOSTXL-CC2650MA_assembly_bottom created.
+
+
+================================================================
+     PROCESSING FILM < Top >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_Top.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     0.15000                                  DARK 
+  CIRCLE     0.30000                                  DARK 
+  CIRCLE     0.40000                                  DARK 
+  CIRCLE     1.27000                                  DARK 
+  CIRCLE     1.65000                                  DARK 
+  CIRCLE     1.70000                                  DARK 
+  SQUARE     1.50000                     0.000 NO     DARK 
+  RECTANGLE  0.30000     x 1.70000       0.000 NO     DARK 
+  RECTANGLE  0.55000     x 0.90000       0.000 NO     DARK 
+  RECTANGLE  0.55000     x 0.90000      90.000 NO     DARK 
+  OBLONG     0.60000     x 2.10000       0.000 NO     DARK 
+  PAD SHAPE  SHAPE_950RECT1000           0.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525           0.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525          90.000 NO     DARK 
+  PAD SHAPE  SHAPE_750RECT750          180.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525         180.000 NO     DARK 
+  PAD SHAPE  SHAPE_950RECT1000         180.000 NO     DARK 
+  PAD SHAPE  SHAPE_500RECTX525         270.000 NO     DARK 
+  PAD SHAPE  SHAPE_300RECTX500         270.000 NO     DARK 
+
+     BOOSTXL-CC2650MA_Top created.
+
+
+================================================================
+     PROCESSING FILM < Bottom >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_Bottom.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     0.15000                                  DARK 
+  CIRCLE     0.30000                                  DARK 
+  CIRCLE     0.40000                                  DARK 
+  CIRCLE     1.65000                                  DARK 
+  CIRCLE     1.70000                                  DARK 
+  OBLONG     0.02500     x 0.05100       0.000 NO     DARK 
+
+     BOOSTXL-CC2650MA_Bottom created.
+
+
+================================================================
+     PROCESSING FILM < assembly_top >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_assembly_top.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.05000                                  DARK 
+  CIRCLE     0.09900                                  DARK 
+  CIRCLE     0.10000                                  DARK 
+  CIRCLE     0.15000                                  DARK 
+
+     BOOSTXL-CC2650MA_assembly_top created.
+
+
+================================================================
+     PROCESSING FILM < drill >
+     TO FILE < C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/art/BOOSTXL-CC2650MA_drill.art > ...
+================================================================
+
+  FILM PARAMETERS :
+  ---------------------------------------------------------
+  Undefined line width                0.099
+  Mirror code                         NONE
+  Rotate angle                        NONE
+  Offset x:                           0.000
+  Offset y:                           0.000
+  Plot negative                       NO
+  Suppress unconnected internal pads  NO
+  Draw holes only                     NO
+
+    WARNING: text composed 0 width line found at (188.115 149.401)
+           ... using undefined line width of 0.099
+
+    WARNING: text having Multiple 0 width lines; all will be treated the same as the first.
+           ... using undefined line width of 0.099
+
+
+
+  APERTURES USED:
+  ---------------------------------------------------------
+  TYPE       SIZE/NAME                   ROT   MIRROR MODE 
+  ---------------------------------------------------------
+  CIRCLE     0.09900                                  DARK 
+
+     BOOSTXL-CC2650MA_drill created with warnings
+
+
+------------------------------------------------------
+ SUMMARY:
+        BOOSTXL-CC2650MA_paste_top created.
+        BOOSTXL-CC2650MA_paste_bottom created.
+        BOOSTXL-CC2650MA_soldmask_top created.
+        BOOSTXL-CC2650MA_soldmask_bottom created.
+        BOOSTXL-CC2650MA_silk_top created with warnings
+        BOOSTXL-CC2650MA_silk_bottom created.
+        BOOSTXL-CC2650MA_assembly_bottom created.
+        BOOSTXL-CC2650MA_Top created.
+        BOOSTXL-CC2650MA_Bottom created.
+        BOOSTXL-CC2650MA_assembly_top created.
+        BOOSTXL-CC2650MA_drill created with warnings
+
+ ARTWORK had warnings

@@ -1,0 +1,9 @@
+page_setup/unit=Millimeter
+page_setup/margin_left=12.700
+page_setup/margin_right=12.700
+page_setup/margin_top=12.700
+page_setup/margin_bottom=12.700
+page_setup/header_footer_text_size_width=1.219
+page_setup/header_footer_text_size_height=1.219
+page_setup/scale_factor=1.000
+page_setup/orientation=portrait

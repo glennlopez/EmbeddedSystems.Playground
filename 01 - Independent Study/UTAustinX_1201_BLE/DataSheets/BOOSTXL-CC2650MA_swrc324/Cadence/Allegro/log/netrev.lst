@@ -1,0 +1,95 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Allegro Netrev Import Logic                                      )
+(                                                                     )
+(    Drawing          : BOOSTXL-CC2650MA.brd                          )
+(    Software Version : 16.6S019                                      )
+(    Date/Time        : Thu Apr 21 16:08:34 2016                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+------ Directives ------
+
+RIPUP_ETCH FALSE;
+RIPUP_DELETE_FIRST_SEGMENT FALSE;
+RIPUP_RETAIN_BONDWIRE FALSE;
+RIPUP_SYMBOLS ALWAYS;
+Missing symbol has error FALSE;
+SCHEMATIC_DIRECTORY 'C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro';
+BOARD_DIRECTORY '';
+OLD_BOARD_NAME 'C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/BOOSTXL-CC2650MA.brd';
+NEW_BOARD_NAME 'C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/BOOSTXL-CC2650MA.brd';
+
+CmdLine: netrev -$ -i C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro -y 1 -z -v C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/#Taaaaae08824.tmp
+
+------ Preparing to read pst files ------
+
+Starting to read C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/pstchip.dat 
+   Finished reading C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/pstchip.dat (00:00:00.04)
+Starting to read C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/pstxprt.dat 
+   Finished reading C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/pstxprt.dat (00:00:00.00)
+Starting to read C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/pstxnet.dat 
+   Finished reading C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/pstxnet.dat (00:00:00.00)
+
+------ Oversights/Warnings/Errors ------
+
+
+------ Library Paths ------
+MODULEPATH =  . 
+           C:\Cadence\SPB_16.6/modules 
+
+PSMPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           C:\Cadence\SPB_16.6/symbols 
+           C:/Cadence/SPB_16.6/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_16.6/share/pcb/allegrolib/symbols 
+           x:/padstacks 
+           x:/Footprints 
+           x:/mech 
+           X:/Layout_graphics/ 
+
+PADPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           C:\Cadence\SPB_16.6/padstacks 
+           C:/Cadence/SPB_16.6/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_16.6/share/pcb/allegrolib/symbols 
+           x:/padstacks 
+           x:/Footprints 
+
+
+------ Summary Statistics ------
+
+
+netrev run on Apr 21 16:08:34 2016
+   DESIGN NAME : 'BOOSTXL-CC2650MA'
+   PACKAGING ON Oct 28 2013 13:12:55
+
+   COMPILE 'logic'
+   CHECK_PIN_NAMES OFF
+   CROSS_REFERENCE OFF
+   FEEDBACK OFF
+   INCREMENTAL OFF
+   INTERFACE_TYPE PHYSICAL
+   MAX_ERRORS 500
+   MERGE_MINIMUM 5
+   NET_NAME_CHARS '#%&()*+-./:=>?@[]^_`|'
+   NET_NAME_LENGTH 24
+   OVERSIGHTS ON
+   REPLACE_CHECK OFF
+   SINGLE_NODE_NETS ON
+   SPLIT_MINIMUM 0
+   SUPPRESS   20
+   WARNINGS ON
+
+ No error detected
+ No oversight detected
+ No warning detected
+
+cpu time      0:01:17
+elapsed time  0:00:00
+

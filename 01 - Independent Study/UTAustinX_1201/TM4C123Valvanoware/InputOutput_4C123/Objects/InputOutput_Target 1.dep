@@ -1,0 +1,14 @@
+Dependencies for Project 'InputOutput', Target 'Target 1': (DO NOT MODIFY !)
+F (.\InputOutput.c)(0x56BA7AE9)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I..//inc -c99-I C:\Dropbox\EdX\RTOS\TM4C123software\InputOutput\RTE-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.0.0\Device\Include\TM4C123-D__UVISION_VERSION="514" -D_RTE_ -DTM4C123GH6PM-o .\objects\inputoutput.o --omf_browse .\objects\inputoutput.crf --depend .\objects\inputoutput.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476A9D0)
+I (../inc/tm4c123gh6pm.h)(0x5388B4C9)
+F (RTE\Device\TM4C123GH6PM\startup_TM4C123.s)(0x51B73866)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Dropbox\EdX\RTOS\TM4C123software\InputOutput\RTE-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.0.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 514" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1"--list .\listings\startup_tm4c123.lst --xref -o .\objects\startup_tm4c123.o --depend .\objects\startup_tm4c123.d)
+F (RTE\Device\TM4C123GH6PM\system_TM4C123.c)(0x52540084)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I..//inc -c99-I C:\Dropbox\EdX\RTOS\TM4C123software\InputOutput\RTE-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.0.0\Device\Include\TM4C123-D__UVISION_VERSION="514" -D_RTE_ -DTM4C123GH6PM-o .\objects\system_tm4c123.o --omf_browse .\objects\system_tm4c123.crf --depend .\objects\system_tm4c123.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5476A9D0)
+I (E:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.0.0\Device\Include\TM4C123\TM4C123.h)(0x530F5566)
+I (E:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.0.0\Device\Include\TM4C123\TM4C123GH6PM.h)(0x530F5566)
+I (E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm4.h)(0x53FCDA9A)
+I (E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FF9B6A)
+I (E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FF9B6A)
+I (E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FCDA9A)
+I (E:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.0.0\Device\Include\TM4C123\system_TM4C123.h)(0x51B73866)

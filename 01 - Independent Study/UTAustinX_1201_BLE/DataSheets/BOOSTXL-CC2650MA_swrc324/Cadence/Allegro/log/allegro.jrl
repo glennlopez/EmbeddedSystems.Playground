@@ -1,0 +1,17 @@
+\t (00:00:01) allegro 16.6 S019 (v16-6-112BG) Windows 32
+\t (00:00:01)     Journal start - Tue Apr 26 12:58:18 2016
+\t (00:00:01)         Host=LTA0190588A User=a0190588 Pid=11536 CPUs=4
+\t (00:00:01) 
+   (00:00:01) Loading axlcore.cxt 
+\t (00:00:07) Opening existing design...
+\d (00:00:07) Database opened: C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/BOOSTXL-CC2650MA.brd
+\i (00:00:08) trapsize 1940
+\i (00:00:08) trapsize 1905
+\i (00:00:08) trapsize 1946
+\i (00:00:08) trapsize 1961
+\i (00:00:08) trapsize 2060
+\i (00:00:09) generaledit 
+\i (00:00:17) opencd C:/kht/work/Solar/Manufacture/Cadence/Allegro/DevPack_Solar.brd 
+\t (00:00:17) Opening existing design...
+\i (00:00:17) trapsize 1256
+\t (00:00:18)     Journal end - Tue Apr 26 12:58:35 2016

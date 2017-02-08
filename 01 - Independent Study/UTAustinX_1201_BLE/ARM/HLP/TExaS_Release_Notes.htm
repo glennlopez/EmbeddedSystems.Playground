@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Release Notes for TExaS Part 2, version 2</title>
+</head>
+<body>
+<h1 style="text-align: center;">Release Notes for TExaS Part 2</h1>
+<h2 style="text-align: center;">Starter projects for Labs 4 (optional), and 6&nbsp;</h2>
+<h2 style="text-align: center;">UT.12.01x Real-Time Bluetooth Networks - Shape The
+World</h2>
+<p>This installer adds four components to the RTBN course, including the bug fix for Lab 6. <b> 1) Lab 6: Bluetooth.</b> There are four BLE projects available as you learn Bluetooth,  all of which require the
+CC2650 LaunchPad or CC2650 BoosterPack. <b> VerySimpleApplicationProcessor</b>  is a barebones
+BLE example. <b> ApplicationProcessor</b> is a more abstract BLE example. There are two lab 6 starter projects,
+one project based on Lab 1, and another based on Lab 3. The <b>Lab6wLab1_xxx</b> project will run without an operating system.
+The <b>Lab6wLab3_xxx</b> project requires the OS with blocking semaphores from Lab 3.</p>
+<p><b>2) Logic analyzer</b>
+There is a new project called <b>TExaSDisplay</b>
+that shows the inner workings of the TExaS logic analyzer. The TM4C123 version of this
+project also adds an oscilloscope. </p><p>
+<b>3) Hand-help video game</b>
+There is also a new optional Lab 4 that runs
+a hand held video game. If you finish your regular lab 4 you can import
+your Lab 4 OS into this project and run the video game. This version of the OS has two new featues, dynamic thread creation and destruction.
+In particular, you can add threads one at time at run time. Furthermore, a thread can kill itself (OS_Kill), freeing its resources. 
+This system supports up to 20 threads and uses PendSV to launch a new thread during OS_Kill();
+</p><p>
+<b>4)Bug fixes.</b> This installer includes the fix of the MSP432 bug that incorrectly set the clock speed to 48 MHz.
+Test EXecute, And Simulate, called <span style="font-weight: bold;">TExaS</span>,
+is a collection of DLL
+plugins that transform Keil uVision into learning environment for
+embedded systems. These plugins provide simulation of the Texas
+Instruments Tiva LaunchPad.
+The suite also includes a stand-alone application called TExaSdisplay, which provides a serial port interface. 
+When operating with the code embedded on the microcontroller, TExaSdisplay also provides a oscilloscope
+and logic analyzer functionality. 
+ Furthermore, <span
+ style="font-weight: bold;">TExaS</span> can be used for
+automatic grading of labs on the real board for UT.12.01x.<br>
+<br>
+<span style="font-weight: bold;">TExaS</span> accompanies the books<br>
+&nbsp;&nbsp; "Embedded Systems: Introduction to ARM Cortex M
+Microcontrollers",&nbsp;&nbsp; ISBN: 978-1469998749, Jonathan Valvano,
+copyright (c) 2016<br>
+&nbsp;&nbsp; "Embedded Systems: Real Time Interfacing to ARM Cortex M
+Microcontrollers",&nbsp;&nbsp; ISBN: 978-1463590154, Jonathan Valvano,
+copyright (c) 2016<br>
+&nbsp;&nbsp; "Embedded Systems: Real-Time Operating Systems for ARM
+Cortex-M Microcontrollers&rdquo;, ISBN: 978-1466468863, Jonathan
+Valvano, copyright (c) 2016<br>
+<br>
+Copyright 2016 by Jonathan W. Valvano,
+valvano@mail.utexas.edu.&nbsp;&nbsp; You may use, edit, run or
+distribute these files as long as the copyright notice remains<br>
+THIS SOFTWARE IS PROVIDED "AS IS".&nbsp; NO WARRANTIES, WHETHER
+EXPRESS, IMPLIED&nbsp; OR STATUTORY, INCLUDING, BUT NOT LIMITED TO,
+IMPLIED WARRANTIES OF&nbsp;MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE APPLY TO THIS SOFTWARE.&nbsp;VALVANO SHALL NOT, IN ANY
+CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL,&nbsp; OR
+CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.<br>
+<br>
+&nbsp;For more information about my classes, my research, and my books,
+see&nbsp; <a href="http://users.ece.utexas.edu/%7Evalvano/"
+ target="_blank">http://users.ece.utexas.edu/~valvano/</a><br>
+<br>
+These components where developed for educational purposes.&nbsp; Feel
+free to use them for educational use, but cannot use them for
+commercial products without permission.<br>
+&nbsp;<br>
+This is version 2.28, built November 20, 2016 and includes all software for
+the course. This version
+was rebuilt without SSE2 so it should run on vintage PCs with AthlonXP or PIII processors.<br>
+<br>
+Jonathan Valvano<br>
+</body>
+</html>

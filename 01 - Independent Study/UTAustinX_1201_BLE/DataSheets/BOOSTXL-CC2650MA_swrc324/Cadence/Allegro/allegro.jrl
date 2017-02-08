@@ -1,0 +1,18 @@
+\t (00:00:03) allegro 16.6 S019 (v16-6-112BG) Windows 32
+\t (00:00:03)     Journal start - Thu Sep 03 09:10:35 2015
+\t (00:00:03)         Host=LTA0190588A User=a0190588 Pid=2600 CPUs=4
+\t (00:00:03) 
+\t (00:00:08) Opening existing design...
+\d (00:00:08) Database opened: C:/kht/work/BOOSTXL-CC2650M5A_0_1_0/Cadence/Allegro/BOOSTXL-CC2650M5A.brd
+\i (00:00:08) trapsize 6078
+\i (00:00:08) trapsize 5901
+\i (00:00:08) trapsize 6109
+\i (00:00:08) trapsize 6000
+\i (00:00:08) trapsize 6000
+\i (00:00:09) generaledit 
+\i (00:00:11) open 
+\i (00:00:19) fillin "C:\kht\work\LAUNCHXL-CC2650_1_0_0\LAUNCHXL-CC2650_1_0_0_Cadence\Allegro\LAUNCHXL-CC2650.brd"
+\i (00:00:19) cd "C:\kht\work\LAUNCHXL-CC2650_1_0_0\LAUNCHXL-CC2650_1_0_0_Cadence\Allegro"
+\t (00:00:19) Opening existing design...
+\i (00:00:19) trapsize 344
+\t (00:00:19)     Journal end - Thu Sep 03 09:10:51 2015

@@ -1,0 +1,30 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    DBDOCTOR                                                         )
+(                                                                     )
+(    Drawing          : BOOSTXL-CC2650MA.brd                          )
+(    Software Version : 16.6S019                                      )
+(    Date/Time        : Mon Apr 25 16:08:42 2016                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+
+ERROR IN ARC SEGMENT center = (247.727 239.018)
+  class = ETCH
+  subclass = TOP 
+  ERROR(SPMHUT-144): Illegal arc specification.
+   Error was fixed.
+
+ERROR IN ARC SEGMENT center = (247.273 239.018)
+  class = ETCH
+  subclass = TOP 
+  ERROR(SPMHUT-144): Illegal arc specification.
+   Error was fixed.
+
+Regenerating DRC
+  Original DRC errors:   0
+  Updated DRC errors:    0
+  DRC elapsed time:      00:00:03
+
+0 warnings, 2 errors detected, 2 errors  fixed.

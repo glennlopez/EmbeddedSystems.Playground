@@ -1,0 +1,1 @@
+BOOSTXL-CC2650MA.brd

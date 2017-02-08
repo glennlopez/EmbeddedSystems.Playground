@@ -1,0 +1,402 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 16.6.0 d001Apr-13-2016 at 13:04:25 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='BOOSTXL-CC2650MA';
+ POST_TIME='Oct 28 2013 13:12:55';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ C1 'CAPACITOR_CAPC1005X60B2N_100NF':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS35675@CAPACITOR.CAPACITOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins35675@capacitor.\capacitor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins35675@capacitor.\capacitor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ CR1 'LED_LEDC1707X65N_DISCRETE_LPL29':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS254@OPTOELECTRONICS.LED.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins254@optoelectronics.\led.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins254@optoelectronics.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ CR2 'LED_LEDC1708X67N_DISCRETE_LS L2':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS279@OPTOELECTRONICS.LED.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins279@optoelectronics.\led.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins279@optoelectronics.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ FIDU1 'FIDMARK_FID127X142_FIDU_1.27MM':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS36688@PCB.FIDMARK.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins36688@pcb.\fidmark.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins36688@pcb.\fidmark.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ FIDU2 'FIDMARK_FID127X142_FIDU_1.27MM':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS36698@PCB.FIDMARK.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins36698@pcb.\fidmark.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins36698@pcb.\fidmark.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ FIDU3 'FIDMARK_FID127X142_FIDU_1.27MM':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS36708@PCB.FIDMARK.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins36708@pcb.\fidmark.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins36708@pcb.\fidmark.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'CONN_HEADER_2X10_J_S_V1_SAMTEC_':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS64@CONNECTOR.CONN_HEADER_2X10_J_S_V1.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins64@connector.\conn_header_2x10_j_s_v1.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins64@connector.\conn_header_2x10_j_s_v1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'CONN_HEADER_2X10_J_S_V1_SAMTEC_':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS116@CONNECTOR.CONN_HEADER_2X10_J_S_V1.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins116@connector.\conn_header_2x10_j_s_v1.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins116@connector.\conn_header_2x10_j_s_v1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LBL1 'LABEL_PB-FREE_V1_LABEL_PB-FREE_':;
+
+SECTION_NUMBER -1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS36737@PCB.LABEL_PB-FREE_V1.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins36737@pcb.\label_pb-free_v1.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins36737@pcb.\label_pb-free_v1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ CLASS='MECHANICAL',
+ SECTION='';
+
+PART_NAME
+ LBL2 'CE_LABEL_CE_LABEL_CE_LABEL':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS36760@PCB.CE_LABEL.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins36760@pcb.\ce_label.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins36760@pcb.\ce_label.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ M1 'MECH_SHUNT_JUMPER_V1_SAMTEC_SNT':;
+
+SECTION_NUMBER -1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS31920@MECHANIC.MECH_SHUNT_JUMPER_V1.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins31920@mechanic.\mech_shunt_jumper_v1.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins31920@mechanic.\mech_shunt_jumper_v1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ CLASS='MECHANICAL',
+ SECTION='';
+
+PART_NAME
+ MH1 'HOLE_PTH_MTG110_170_HOLE_1.1MM_':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS36660@PCB.HOLE_PTH.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins36660@pcb.\hole_pth.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins36660@pcb.\hole_pth.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ MH2 'HOLE_PTH_MTG110_170_HOLE_1.1MM_':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS1721@PCB.HOLE_PTH.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins1721@pcb.\hole_pth.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins1721@pcb.\hole_pth.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ MH3 'HOLE_PTH_MTG110_170_HOLE_1.1MM_':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS1743@PCB.HOLE_PTH.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins1743@pcb.\hole_pth.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins1743@pcb.\hole_pth.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ P2 'CONN_HEADER_2_P_GRADCONN_BB02HC':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS1577@CONNECTOR.CONN_HEADER_2_P.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins1577@connector.\conn_header_2_p.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins1577@connector.\conn_header_2_p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ P20 'CONN_HEADER_2X5_SAMTEC_FTSH-105':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS395@CONNECTOR.CONN_HEADER_2X5.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins395@connector.\conn_header_2x5.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins395@connector.\conn_header_2x5.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R10 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS3850@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins3850@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins3850@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R11 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS3876@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins3876@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins3876@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R12 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS3902@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins3902@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins3902@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R13 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS5022@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins5022@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins5022@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R16 'RESISTOR_RESC1608X55N_0.1_RESC1':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS10507@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins10507@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins10507@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R17 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS16554@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins16554@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins16554@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R18 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS19996@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins19996@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins19996@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R19 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS20035@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins20035@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins20035@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R20 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS24090@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins24090@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins24090@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R21 'RESISTOR_RESC1608X55N_DNM_RESC1':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS24343@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins24343@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins24343@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R22 'RESISTOR_RESC1608X55N_DNM_RESC1':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS31638@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins31638@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins31638@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R23 'RESISTOR_RESC1608X55N_DNM_RESC1':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS31696@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins31696@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins31696@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R24 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS34353@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins34353@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins34353@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R25 'RESISTOR_RESC1005X40B2N_10K':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS34831@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins34831@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins34831@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R26 'RESISTOR_RESC1005X40B2N_10K':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS34958@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins34958@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins34958@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R27 'RESISTOR_RESC1005X40B2N_10K':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS35152@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins35152@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins35152@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R5 'RESISTOR_RESC1005X40B2N_180':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS1439@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins1439@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins1439@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R6 'RESISTOR_RESC1005X40B2N_220':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS1468@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins1468@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins1468@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R7 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS3718@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins3718@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins3718@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R8 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS3768@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins3768@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins3768@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R9 'RESISTOR_RESC1608X55N_0_RESC160':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS3812@RESISTOR.RESISTOR.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins3812@resistor.\resistor.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins3812@resistor.\resistor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U2 'IC_RF_CC2650MODA_MODULE29_MODUL':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS17744@IC_RF.IC_RF_CC2650MODA_MODULE29.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins17744@ic_rf.\ic_rf_cc2650moda_module29.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins17744@ic_rf.\ic_rf_cc2650moda_module29.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U3 'IC_FLASH_MX25R8035F_USON8_SON50':;
+
+SECTION_NUMBER 1
+ '@BOOSTXL-CC2650MA.BOOSTXL-CC2650MA(SCH_1):INS34010@IC_FLASH.IC_FLASH_MX25R8035F_USON8.NORMAL(CHIPS)':
+ C_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):ins34010@ic_flash.\ic_flash_mx25r8035f_uson8.normal\(chips)',
+ P_PATH='@\boostxl-cc2650ma\.\boostxl-cc2650ma\(sch_1):page1_ins34010@ic_flash.\ic_flash_mx25r8035f_uson8.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

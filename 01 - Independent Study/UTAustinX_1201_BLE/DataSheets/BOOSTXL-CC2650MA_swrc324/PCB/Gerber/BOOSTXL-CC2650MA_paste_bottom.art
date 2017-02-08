@@ -1,0 +1,30 @@
+G04 ================== begin FILE IDENTIFICATION RECORD ==================*
+G04 Layout Name:  C:/kht/work/BOOSTXL-CC2650MA/Cadence/Allegro/BOOSTXL-CC2650MA.brd*
+G04 Film Name:    BOOSTXL-CC2650MA_paste_bottom*
+G04 File Format:  Gerber RS274X*
+G04 File Origin:  Cadence Allegro 16.6-S019*
+G04 Origin Date:  Mon Apr 25 16:09:05 2016*
+G04 *
+G04 Layer:  PIN/FILMMASKBOTTOM*
+G04 Layer:  BOARD GEOMETRY/OUTLINE*
+G04 *
+G04 Offset:    (0.000 0.000)*
+G04 Mirror:    No*
+G04 Mode:      Positive*
+G04 Rotation:  0*
+G04 FullContactRelief:  No*
+G04 UndefLineWidth:     0.099*
+G04 ================== end FILE IDENTIFICATION RECORD ====================*
+%FSLAX44Y44*MOMM*%
+%IR0*IPPOS*OFA0.00000B0.00000*MIA0B0*SFA1.00000B1.00000*%
+%ADD10C,.099*%
+G75*
+%LPD*%
+G75*
+G54D10*
+G01X1830000Y2470000D02*
+X1829980Y2190000D01*
+X2583000D01*
+Y2470000D01*
+X1830000D01*
+M02*

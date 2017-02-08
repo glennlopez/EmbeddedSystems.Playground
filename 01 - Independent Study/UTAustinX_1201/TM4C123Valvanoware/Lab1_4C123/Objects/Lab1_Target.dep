@@ -1,0 +1,24 @@
+Dependencies for Project 'Lab1', Target 'Target': (DO NOT MODIFY !)
+F (.\Lab1.c)(0x589A9008)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ../inc-I"D:\Github Clones\EmbeddedSystems.Playground\01 - Independent Study\UTAustinX_1201\TM4C123Valvanoware\Lab1_4C123\RTE\_Target"-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="522" -D_RTE_ -DTM4C123GH6PM-o .\objects\lab1.o --omf_browse .\objects\lab1.crf --depend .\objects\lab1.d)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\ARMCC\include\stdint.h)(0x57F6CB98)
+I (../inc/BSP.h)(0x57BA5EE4)
+I (../inc/Profile.h)(0x57589674)
+I (Texas.h)(0x578C5C3E)
+I (../inc/CortexM.h)(0x56B75576)
+F (..\inc\BSP.c)(0x57BA5EE4)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ../inc-I"D:\Github Clones\EmbeddedSystems.Playground\01 - Independent Study\UTAustinX_1201\TM4C123Valvanoware\Lab1_4C123\RTE\_Target"-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="522" -D_RTE_ -DTM4C123GH6PM-o .\objects\bsp.o --omf_browse .\objects\bsp.crf --depend .\objects\bsp.d)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\ARMCC\include\stdint.h)(0x57F6CB98)
+I (..\inc\BSP.h)(0x57BA5EE4)
+I (..\inc\../inc/tm4c123gh6pm.h)(0x5388D0EA)
+F (..\inc\Profile.c)(0x57589806)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ../inc-I"D:\Github Clones\EmbeddedSystems.Playground\01 - Independent Study\UTAustinX_1201\TM4C123Valvanoware\Lab1_4C123\RTE\_Target"-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="522" -D_RTE_ -DTM4C123GH6PM-o .\objects\profile.o --omf_browse .\objects\profile.crf --depend .\objects\profile.d)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\ARMCC\include\stdint.h)(0x57F6CB98)
+I (..\inc\../inc/tm4c123gh6pm.h)(0x5388D0EA)
+F (.\texas.o)(0x57BE6F74)()
+F (RTE\Device\TM4C123GH6PM\startup_TM4C123.s)(0x56BBF2B6)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I"D:\Github Clones\EmbeddedSystems.Playground\01 - Independent Study\UTAustinX_1201\TM4C123Valvanoware\Lab1_4C123\RTE\_Target"-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 522" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1"--list .\listings\startup_tm4c123.lst --xref -o .\objects\startup_tm4c123.o --depend .\objects\startup_tm4c123.d)
+F (RTE\Device\TM4C123GH6PM\system_TM4C123.c)(0x52541CA4)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I ../inc-I"D:\Github Clones\EmbeddedSystems.Playground\01 - Independent Study\UTAustinX_1201\TM4C123Valvanoware\Lab1_4C123\RTE\_Target"-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="522" -D_RTE_ -DTM4C123GH6PM-o .\objects\system_tm4c123.o --omf_browse .\objects\system_tm4c123.crf --depend .\objects\system_tm4c123.d)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\ARMCC\include\stdint.h)(0x57F6CB98)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123.h)(0x530F6376)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123GH6PM.h)(0x551052AC)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\core_cm4.h)(0x5825FEBE)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_compiler.h)(0x5825FEBE)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_armcc.h)(0x5825FEBE)
+I (D:\EngineeringSoftware\Keil_5.2\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\system_TM4C123.h)(0x51B75486)

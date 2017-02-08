@@ -1,0 +1,9 @@
+Soldermask color: RED
+Surface finish: ENIG
+
+Stack-up: See *Mech.pdf
+
+Min trace width: 0.15 mm
+Min copper spacing: 0.15 mm
+
+DE104ML/FR4 or equivalent substrate (Resin contents around 45%, which gives Er=4.42@2.4GHz,TanD=0.016)
