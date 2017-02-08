@@ -34,4 +34,5 @@ Course Syllabus
 * Logging data onto flash/playback of data
 
 **Lab 6) Bluetooth personal area network**
+
 *Interacting with the device from a smart phone
