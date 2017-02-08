@@ -37,8 +37,10 @@
 void UART_Init(void){
 // as part of Lab 11, modify this program to use UART0 instead of UART1
 //                 switching from PC5,PC4 to PA1,PA0
+	
   SYSCTL_RCGC1_R |= SYSCTL_RCGC1_UART0; // activate UART0
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOA; // activate port A
+	
   UART0_CTL_R &= ~UART_CTL_UARTEN;      // disable UART
   UART0_IBRD_R = 43;                    // IBRD = int(80,000,000 / (16 * 115200)) = int(43.402778)
   UART0_FBRD_R = 26;                    // FBRD = round(0.402778 * 64) = 26
