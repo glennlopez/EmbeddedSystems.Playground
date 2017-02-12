@@ -75,7 +75,7 @@ void UART_Init(void){
 // Input: none
 // Output: ASCII code for key typed
 unsigned char UART_InChar(void){
-  while((UART0_FR_R&UART_FR_RXFE) != 0);
+  while((UART0_FR_R&0x00000010) != 0);
   return((unsigned char)(UART0_DR_R&0xFF));
 }
 //------------UART_OutChar------------
@@ -83,7 +83,7 @@ unsigned char UART_InChar(void){
 // Input: letter is an 8-bit ASCII character to be transferred
 // Output: none
 void UART_OutChar(unsigned char data){
-  while((UART0_FR_R&UART_FR_TXFF) != 0);
+  while((UART0_FR_R&0x00000020) != 0);
   UART0_DR_R = data;
 }
 
