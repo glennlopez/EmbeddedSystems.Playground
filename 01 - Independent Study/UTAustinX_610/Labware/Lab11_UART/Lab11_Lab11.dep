@@ -1,9 +1,10 @@
 Dependencies for Project 'Lab11', Target 'Lab11': (DO NOT MODIFY !)
 F (.\startup.s)(0x52FA6308)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\UART.c)(0x54A1673E)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
+F (.\UART.c)(0x58A227FC)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
 I (..\tm4c123gh6pm.h)(0x51D49AE2)
 I (UART.h)(0x54A1673E)
-F (.\main.c)(0x5699B446)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (D:\EngineeringSoftware\Keil\ARM\ARMCC\include\string.h)(0x51C87C24)
+F (.\main.c)(0x58A220C6)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (UART.h)(0x54A1673E)
 I (TExaS.h)(0x5699B392)
 F (.\texas.o)(0x5699B392)()
