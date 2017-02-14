@@ -9,7 +9,7 @@ This repo contains all my trials and tribulations with Embedded Systems. It cont
 I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playground/wiki) to serve as a quick reference guide for configuring devices I use, and to teach myself how to use them.
 
 | Institution | Device Used | Course Name           |
-| ------------- |--------------------|
+| ------------- |--------------------|--------------------|
 | University of Texas | TM4C123G (32bit) | [UT.RTBN.12.01x - Realtime Bluetooth Networks (RTOS BLE)](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20RTOS%20BLE)|
 | University of Texas | TM4C123G (32bit) | [UT.6.03x - Multi-Threaded Interfacing](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20Multi-Threaded%20Interfacing)|
 | University of Texas | TM4C123G (32bit) | [UT.6.03x - Microcontroller Input/Output](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20InputOutput)|
