@@ -2,9 +2,11 @@
 
 Embedded Systems Playground
 =================
-This repo contains all my trials and tribulations with Embedded Systems. It contains learning materials, practice sessions, and all the labs I've completed in my lifetime. I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playground/wiki) to serve as a quick reference guide for configuring devices I use, and to teach myself how to use them should I ever forget how.
+This repo contains all my trials and tribulations with Embedded Systems. It contains learning materials, practice sessions, and all the labs I've completed independently (no-credits/for-fun). 
 
-**Note:** Some embedded systems labs have thier own repo. The table below links to all the labs I've completed located within this repo and outside of it. The table is organized from the most recent labs at the top and oldest being at the bottom 
+**+More:** Labs I've done with schools/for-credit will have thier own repo. The table below links to all the embedded-systems labs I've completed (within this repo and outside of it). The table is organized from the most recent labs at the top and oldest being at the bottom 
+
+I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playground/wiki) to serve as a quick reference guide for configuring devices I use, and to teach myself how to use them.
 
 | Institution | Course Name           |
 | ------------- |:--------------------:|
