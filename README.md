@@ -10,7 +10,7 @@ I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playgrou
 
 | Institution | Device Used | Course Name           |
 | ------------- |--------------------|--------------------|
-| University of Texas | TM4C123G (32bit) | [UT.RTBN.12.01x - Realtime Bluetooth Networks (RTOS BLE)](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20RTOS%20BLE)|
+| University of Texas | MSP432 (32bit) | [UT.RTBN.12.01x - Realtime Bluetooth Networks (RTOS BLE)](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20RTOS%20BLE)|
 | University of Texas | TM4C123G (32bit) | [UT.6.03x - Multi-Threaded Interfacing](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20Multi-Threaded%20Interfacing)|
 | University of Texas | TM4C123G (32bit) | [UT.6.03x - Microcontroller Input/Output](https://github.com/glennlopez/EmbeddedSystems.Playground/tree/master/02%20-%20Finished%20Labs/UTAustinX%20-%20InputOutput)|
 | Red River College     |Cyclone II (FPGA) | [DIGI-2224 - Digital Systems (intro to VHDL)](https://github.com/glennlopez/DIGI-2224)|
@@ -22,7 +22,5 @@ I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playgrou
 * [Pyro Electro Tutorials](http://www.pyroelectro.com/edu/)
 * [Newbie Hack Tutorials](https://www.newbiehack.com/MicrocontrollerTutorial.aspx)
 * [Mojo FPGA Tutorials](https://embeddedmicro.com/tutorials)
-* [Arm Fundimentals](https://www.youtube.com/watch?v=qvrmOXtOpvw)
-
-### Assembly Language Tutorials
-* https://www.youtube.com/watch?v=ViNnfoE56V8
+* [Cortex-M Processor](https://www.youtube.com/watch?v=qvrmOXtOpvw)
+* [Assembly Language Tutorial](http://www.newthinktank.com/2016/04/assembly-language-tutorial/)
