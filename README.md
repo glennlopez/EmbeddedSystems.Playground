@@ -19,6 +19,10 @@ I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playgrou
 
 
 ### Learning/Referance material
-* http://www.pyroelectro.com/edu/
-* https://www.newbiehack.com/MicrocontrollerTutorial.aspx
-* https://embeddedmicro.com/tutorials
+* [Pyro Electro Tutorials](http://www.pyroelectro.com/edu/)
+* [Newbie Hack Tutorials](https://www.newbiehack.com/MicrocontrollerTutorial.aspx)
+* [Mojo FPGA Tutorials](https://embeddedmicro.com/tutorials)
+* [Arm Fundimentals](https://www.youtube.com/watch?v=qvrmOXtOpvw)
+
+### Assembly Language Tutorials
+* https://www.youtube.com/watch?v=ViNnfoE56V8
