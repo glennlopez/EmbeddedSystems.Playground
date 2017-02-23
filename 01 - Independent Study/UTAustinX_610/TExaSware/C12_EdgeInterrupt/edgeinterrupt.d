@@ -1,0 +1,1 @@
+.\edgeinterrupt.o: EdgeInterrupt.c
