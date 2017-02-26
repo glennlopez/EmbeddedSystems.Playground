@@ -1352,13 +1352,13 @@ ARM Macro Assembler    Page 21
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
 ork --depend=.\objects\startup_tm4c123.d -o.\objects\startup_tm4c123.o -I"D:\Gi
-thub Clones\EmbeddedSystems.Playground\01 - Independent Study\UTAustinX_1201\TM
-4C123Valvanoware\Lab1_4C123\RTE\_Target" -ID:\EngineeringSoftware\Keil_5.2\ARM\
-PACK\ARM\CMSIS\5.0.0\CMSIS\Include -ID:\EngineeringSoftware\Keil_5.2\ARM\PACK\K
-eil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVAL SETA 1" --predefi
-ne="__UVISION_VERSION SETA 522" --predefine="_RTE_ SETA 1" --predefine="TM4C123
-GH6PM SETA 1" --list=.\listings\startup_tm4c123.lst RTE\Device\TM4C123GH6PM\sta
-rtup_TM4C123.s
+thub Clones\EmbeddedSystems.Playground\01 - Independent Study\UTAustinX_1201_RT
+OS\TM4C123Valvanoware\Lab1_4C123\RTE\_Target" -ID:\EngineeringSoftware\Keil_5.2
+\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include -ID:\EngineeringSoftware\Keil_5.2\ARM\P
+ACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__EVAL SETA 1" --pr
+edefine="__UVISION_VERSION SETA 522" --predefine="_RTE_ SETA 1" --predefine="TM
+4C123GH6PM SETA 1" --list=.\listings\startup_tm4c123.lst RTE\Device\TM4C123GH6P
+M\startup_TM4C123.s
 
 
 
