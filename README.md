@@ -6,7 +6,7 @@ This repo contains all my trials and tribulations with Embedded Systems. It cont
 
 **+More:** Labs I've done with schools/for-credit will have thier own repo. The table below links to all the embedded-systems labs I've completed (within this repo and outside of it). The table is organized from the most recent labs at the top and oldest being at the bottom 
 
-I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playground/wiki) to serve as a quick reference guide for configuring devices I use, and to teach myself how to use them.
+I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playground/wiki) to serve as a quick reference guide for configuring devices I use, and to teach myself how write wiki's on Github.
 
 | Institution | Device Used | Course Name           |
 | ------------- |--------------------|--------------------|
