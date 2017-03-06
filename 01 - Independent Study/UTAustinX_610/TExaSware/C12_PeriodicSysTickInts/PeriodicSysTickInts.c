@@ -72,17 +72,18 @@ void SysTick_Init(unsigned long period){
 }
 
 void PortF_Init(void){ volatile unsigned long delay;
-	SYSCTL_RCGC2_R |= 0x00000020; 		// activate port F
-	delay = SYSCTL_RCGC2_R;           // allow time for clock to start
-  
-	GPIO_PORTF_DIR_R |= 0x04;   			// make PF2 output (PF2 built-in LED)
-  GPIO_PORTF_AFSEL_R &= ~0x04;			// disable alt funct on PF2
-  GPIO_PORTF_DEN_R |= 0x04;   			// enable digital I/O on PF2
-																		// configure PF2 as GPIO
-  GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF0FF)+0x00000000;
-  GPIO_PORTF_AMSEL_R = 0;     			// disable analog functionality on PF
-}
+  SYSCTL_RCGC2_R |= 0x00000020;			// (a) activate port F
+  delay = SYSCTL_RCGC2_R;						//     allow time for clock to start
 
+  GPIO_PORTF_DIR_R |= 0x04;					// (b) make PF2 output (PF2 built-in LED)
+  GPIO_PORTF_AFSEL_R &= ~0x04;			// (c) disable alt funct on PF2
+  GPIO_PORTF_DEN_R |= 0x04;					// (d) enable digital I/O on PF2
+	GPIO_PORTF_AMSEL_R = 0;						// (e) disable analog functionality on PF
+
+  // (f) configure PF2 as GPIO
+  //GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF0FF)+0x00000000;
+	GPIO_PORTF_PCTL_R     &=  ~0x00000F00;
+}
 
 // Interrupt service routine
 // Executed every 62.5ns*(period)
