@@ -1,30 +1,3 @@
-// PeriodicSysTickInts.c
-// Runs on LM4F120 or TM4C123
-// Use the SysTick timer to request interrupts at a particular period.
-// Daniel Valvano
-// September 14, 2013
-
-/* This example accompanies the book
-   "Embedded Systems: Introduction to ARM Cortex M Microcontrollers"
-   ISBN: 978-1469998749, Jonathan Valvano, copyright (c) 2013
-   Volume 1, Program 9.6
-   
-   "Embedded Systems: Real Time Interfacing to ARM Cortex M Microcontrollers",
-   ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2013
-   Volume 2, Program 5.12, section 5.7
-
- Copyright 2013 by Jonathan W. Valvano, valvano@mail.utexas.edu
-    You may use, edit, run or distribute this file
-    as long as the above copyright notice remains
- THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
- OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
- VALVANO SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL,
- OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
- For more information about my classes, my research, and my books, see
- http://users.ece.utexas.edu/~valvano/
- */
-
 // oscilloscope or LED connected to PF2 for period measurement
 
 // GPIO Port Registers
@@ -72,17 +45,14 @@ void SysTick_Init(unsigned long period){
 }
 
 void PortF_Init(void){ volatile unsigned long delay;
-  SYSCTL_RCGC2_R |= 0x00000020;			// (a) activate port F
-  delay = SYSCTL_RCGC2_R;						//     allow time for clock to start
+  SYSCTL_RCGC2_R 			|= 0x00000020;		// (a) activate port F
+  delay = SYSCTL_RCGC2_R;       				//     allow time for clock to start
 
-  GPIO_PORTF_DIR_R |= 0x04;					// (b) make PF2 output (PF2 built-in LED)
-  GPIO_PORTF_AFSEL_R &= ~0x04;			// (c) disable alt funct on PF2
-  GPIO_PORTF_DEN_R |= 0x04;					// (d) enable digital I/O on PF2
-	GPIO_PORTF_AMSEL_R = 0;						// (e) disable analog functionality on PF
-
-  // (f) configure PF2 as GPIO
-  //GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF0FF)+0x00000000;
-	GPIO_PORTF_PCTL_R     &=  ~0x00000F00;
+  GPIO_PORTF_DIR_R 		|= 0x04;     			// (b) make PF2 output (PF2 built-in LED)
+  GPIO_PORTF_AFSEL_R 	&= ~0x04;  				// (c) disable alt funct on PF2
+  GPIO_PORTF_DEN_R 		|= 0x04;     			// (d) enable digital I/O on PF2
+  GPIO_PORTF_AMSEL_R 	 = 0;       			// (e) disable analog functionality on PF
+  GPIO_PORTF_PCTL_R   &=  ~0x00000F00;	// (f) configure PF2 as GPIO
 }
 
 // Interrupt service routine
@@ -94,13 +64,13 @@ void SysTick_Handler(void){
 
 
 int main(void){
-	Counts = 0;
-	PortF_Init();								// initialize portf config
-  SysTick_Init(16000);        // initialize SysTick timer
-  EnableInterrupts();
+   Counts = 0;
+   PortF_Init();         // (a) initialize portf config
+   SysTick_Init(16000);  // (b) initialize SysTick timer
+   EnableInterrupts();   // (c) clear I bit (global enable)
 
-  while(1){                   // interrupts every 1ms, 500 Hz flash
-    WaitForInterrupt();
+   while(1){             // (d) interrupts every 1ms, 500 Hz flash
+      WaitForInterrupt();
   }
 }
 

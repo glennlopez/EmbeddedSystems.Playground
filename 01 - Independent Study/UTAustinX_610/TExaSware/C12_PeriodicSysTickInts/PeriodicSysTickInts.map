@@ -570,11 +570,11 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       240         48          0          4          0       3682   periodicsystickints.o
+       240         48          0          4          0       3678   periodicsystickints.o
        692        632          0          0       1024       1028   startup.o
 
     ----------------------------------------------------------------------
-       932        680         32          4       1024       4710   Object Totals
+       932        680         32          4       1024       4706   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -623,8 +623,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1204        696         32          4       1124       4870   Grand Totals
-      1204        696         32          4       1124       4870   ELF Image Totals
+      1204        696         32          4       1124       4866   Grand Totals
+      1204        696         32          4       1124       4866   ELF Image Totals
       1204        696         32          4          0          0   ROM Totals
 
 ==============================================================================

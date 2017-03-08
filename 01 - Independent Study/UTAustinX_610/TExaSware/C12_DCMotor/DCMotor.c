@@ -1,40 +1,20 @@
-// DCMotor.c
-// Runs on LM4F120 or TM4C123
-// Use SysTick interrupts to implement a software PWM to drive
-// a DC motor at a given duty cycle.  The built-in button SW1
-// increases the speed, and SW2 decreases the speed.
-// Daniel Valvano, Jonathan Valvano
-// August 6, 2013
-
-/* This example accompanies the book
-   "Embedded Systems: Introduction to ARM Cortex M Microcontrollers",
-   ISBN: 978-1469998749, Jonathan Valvano, copyright (c) 2013
-   "Embedded Systems: Real Time Interfacing to ARM Cortex M Microcontrollers",
-   ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2013
-
- Copyright 2013 by Jonathan W. Valvano, valvano@mail.utexas.edu
-    You may use, edit, run or distribute this file
-    as long as the above copyright notice remains
- THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
- OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
- VALVANO SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL,
- OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
- For more information about my classes, my research, and my books, see
- http://users.ece.utexas.edu/~valvano/
- */
-
 // PA5 connected to DC motor interface
 
 #include "PLL.h"
+#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
 
 #define GPIO_PORTA_DATA_R       (*((volatile unsigned long *)0x400043FC))
 #define GPIO_PORTA_DIR_R        (*((volatile unsigned long *)0x40004400))
 #define GPIO_PORTA_AFSEL_R      (*((volatile unsigned long *)0x40004420))
-#define GPIO_PORTA_DR8R_R       (*((volatile unsigned long *)0x40004508))
 #define GPIO_PORTA_DEN_R        (*((volatile unsigned long *)0x4000451C))
 #define GPIO_PORTA_AMSEL_R      (*((volatile unsigned long *)0x40004528))
 #define GPIO_PORTA_PCTL_R       (*((volatile unsigned long *)0x4000452C))
+#define GPIO_PORTA_DR8R_R       (*((volatile unsigned long *)0x40004508))
+
+#define GPIO_PORTF_LOCK_R       (*((volatile unsigned long *)0x40025520))
+#define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))
+#define GPIO_PORTF_PUR_R        (*((volatile unsigned long *)0x40025510))
+#define GPIO_PORTF_DEN_R        (*((volatile unsigned long *)0x4002551C))
 #define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400253FC))
 #define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40025400))
 #define GPIO_PORTF_IS_R         (*((volatile unsigned long *)0x40025404))
@@ -43,20 +23,18 @@
 #define GPIO_PORTF_IM_R         (*((volatile unsigned long *)0x40025410))
 #define GPIO_PORTF_RIS_R        (*((volatile unsigned long *)0x40025414))
 #define GPIO_PORTF_ICR_R        (*((volatile unsigned long *)0x4002541C))
-#define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))
-#define GPIO_PORTF_PUR_R        (*((volatile unsigned long *)0x40025510))
-#define GPIO_PORTF_DEN_R        (*((volatile unsigned long *)0x4002551C))
-#define GPIO_PORTF_LOCK_R       (*((volatile unsigned long *)0x40025520))
+	
 #define GPIO_LOCK_KEY           0x4C4F434B  // Unlocks the GPIO_CR register
 #define GPIO_PORTF_CR_R         (*((volatile unsigned long *)0x40025524))
 #define GPIO_PORTF_AMSEL_R      (*((volatile unsigned long *)0x40025528))
 #define GPIO_PORTF_PCTL_R       (*((volatile unsigned long *)0x4002552C))
-#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
+
+#define NVIC_EN0_R              (*((volatile unsigned long *)0xE000E100))
+#define NVIC_PRI7_R             (*((volatile unsigned long *)0xE000E41C))
+
 #define NVIC_ST_CTRL_R          (*((volatile unsigned long *)0xE000E010))
 #define NVIC_ST_RELOAD_R        (*((volatile unsigned long *)0xE000E014))
 #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
-#define NVIC_EN0_R              (*((volatile unsigned long *)0xE000E100))
-#define NVIC_PRI7_R             (*((volatile unsigned long *)0xE000E41C))
 #define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
 
 // basic functions defined at end of startup.s
