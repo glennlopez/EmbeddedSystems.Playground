@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project Timer0APWM_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Timer0APWM_4C123.out"  "Timer0APWM_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Timer0APWM_4C123\Debug\Timer0APWM_4C123.out
+DEL /F "PLL.pp" "Timer0APWM.pp" "Timer0APWMTestMain.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Timer0APWM_4C123\Debug\PLL.pp
+DEL /F "PLL.obj" "Timer0APWM.obj" "Timer0APWMTestMain.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Timer0APWM_4C123\Debug\PLL.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project HeapFixedBlock_4C123asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "HeapFixedBlock_4C123asm.out"  "HeapFixedBlock_4C123asm.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HeapFixedBlock_4C123asm\Debug\HeapFixedBlock_4C123asm.out
+DEL /F "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HeapFixedBlock_4C123asm\Debug\tm4c123gh6pm_startup_ccs.pp
+DEL /F "HeapTestMain.obj" "heap.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HeapFixedBlock_4C123asm\Debug\HeapTestMain.obj
+DEL /F "HeapTestMain.pp" "heap.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HeapFixedBlock_4C123asm\Debug\HeapTestMain.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

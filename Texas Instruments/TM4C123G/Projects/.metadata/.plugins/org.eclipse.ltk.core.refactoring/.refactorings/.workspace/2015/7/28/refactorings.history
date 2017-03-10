@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;FreqMeasurement&apos; to &apos;FreqMeasurement_4C123&apos;" description="Rename resource &apos;FreqMeasurement&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/FreqMeasurement" name="FreqMeasurement_4C123" stamp="1436634737041" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;FreqMeasurement_4C123&apos; to &apos;FreqMeas_4C123&apos;" description="Rename resource &apos;FreqMeasurement_4C123&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/FreqMeasurement_4C123" name="FreqMeas_4C123" stamp="1436635038179" updateReferences="true"/>
+</session>

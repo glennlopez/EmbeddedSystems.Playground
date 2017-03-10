@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project EdgeCount_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "EdgeCount_4C123.out"  "EdgeCount_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeCount_4C123\Debug\EdgeCount_4C123.out
+DEL /F "EdgeCount.pp" "EdgeCountTestMain.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeCount_4C123\Debug\EdgeCount.pp
+DEL /F "EdgeCount.obj" "EdgeCountTestMain.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeCount_4C123\Debug\EdgeCount.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

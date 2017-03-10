@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project PeriodicTimer0AInts_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PeriodicTimer0AInts_4C123.out"  "PeriodicTimer0AInts_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PeriodicTimer0AInts_4C123\Debug\PeriodicTimer0AInts_4C123.out
+DEL /F "PLL.pp" "PeriodicTimer0AInts.pp" "Timer0A.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PeriodicTimer0AInts_4C123\Debug\PLL.pp
+DEL /F "PLL.obj" "PeriodicTimer0AInts.obj" "Timer0A.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PeriodicTimer0AInts_4C123\Debug\PLL.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

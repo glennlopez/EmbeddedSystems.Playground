@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project GPIO_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "GPIO_4C123.out"  "GPIO_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\GPIO_4C123\Debug\GPIO_4C123.out
+DEL /F "GPIO.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\GPIO_4C123\Debug\GPIO.pp
+DEL /F "GPIO.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\GPIO_4C123\Debug\GPIO.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

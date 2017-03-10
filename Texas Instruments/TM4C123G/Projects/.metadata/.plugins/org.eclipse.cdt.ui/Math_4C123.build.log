@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project Math_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Math_4C123.out"  "Math_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Math_4C123\Debug\Math_4C123.out
+DEL /F "SysTick.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Math_4C123\Debug\SysTick.pp
+DEL /F "SysTick.obj" "circle.obj" "main.obj" "sqrt.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Math_4C123\Debug\SysTick.obj
+DEL /F "circle.pp" "sqrt.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Math_4C123\Debug\circle.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

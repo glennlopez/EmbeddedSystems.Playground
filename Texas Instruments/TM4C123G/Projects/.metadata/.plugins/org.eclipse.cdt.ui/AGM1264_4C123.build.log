@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project AGM1264_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "AGM1264_4C123.out"  "AGM1264_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\AGM1264_4C123\Debug\AGM1264_4C123.out
+DEL /F "LCDG.pp" "LCDGTestMain.pp" "PLL.pp" "SysTick.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\AGM1264_4C123\Debug\LCDG.pp
+DEL /F "LCDG.obj" "LCDGTestMain.obj" "PLL.obj" "SysTick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\AGM1264_4C123\Debug\LCDG.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

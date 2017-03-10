@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project TwoButtonVector_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "TwoButtonVector_4C123.out"  "TwoButtonVector_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\TwoButtonVector_4C123\Debug\TwoButtonVector_4C123.out
+DEL /F "TwoButtonVector.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\TwoButtonVector_4C123\Debug\TwoButtonVector.pp
+DEL /F "TwoButtonVector.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\TwoButtonVector_4C123\Debug\TwoButtonVector.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

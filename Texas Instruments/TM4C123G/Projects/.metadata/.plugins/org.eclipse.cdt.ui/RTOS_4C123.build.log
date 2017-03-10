@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project RTOS_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "RTOS_4C123.out"  "RTOS_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\RTOS_4C123\Debug\RTOS_4C123.out
+DEL /F "PLL.pp" "os.pp" "tm4c123gh6pm_startup_ccs.pp" "user.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\RTOS_4C123\Debug\PLL.pp
+DEL /F "OSasm.obj" "PLL.obj" "os.obj" "tm4c123gh6pm_startup_ccs.obj" "user.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\RTOS_4C123\Debug\OSasm.obj
+DEL /F "OSasm.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\RTOS_4C123\Debug\OSasm.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

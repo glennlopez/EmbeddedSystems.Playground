@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project Squarewaves_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Squarewaves_4C123.out"  "Squarewaves_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Squarewaves_4C123\Debug\Squarewaves_4C123.out
+DEL /F "Squarewaves.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Squarewaves_4C123\Debug\Squarewaves.pp
+DEL /F "Squarewaves.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Squarewaves_4C123\Debug\Squarewaves.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

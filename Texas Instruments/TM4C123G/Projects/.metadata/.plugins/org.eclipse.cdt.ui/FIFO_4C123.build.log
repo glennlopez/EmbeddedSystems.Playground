@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project FIFO_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "FIFO_4C123.out"  "FIFO_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FIFO_4C123\Debug\FIFO_4C123.out
+DEL /F "FIFO.pp" "FIFOtestmain.pp" "PLL.pp" "Timer0A.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FIFO_4C123\Debug\FIFO.pp
+DEL /F "FIFO.obj" "FIFOtestmain.obj" "PLL.obj" "Timer0A.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FIFO_4C123\Debug\FIFO.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

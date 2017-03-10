@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project LLFIFO_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "LLFIFO_4C123.out"  "LLFIFO_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LLFIFO_4C123\Debug\LLFIFO_4C123.out
+DEL /F "LLFifo.pp" "LLFifoTestMain.pp" "heap.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LLFIFO_4C123\Debug\LLFifo.pp
+DEL /F "LLFifo.obj" "LLFifoTestMain.obj" "heap.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LLFIFO_4C123\Debug\LLFifo.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

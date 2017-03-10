@@ -1,0 +1,67 @@
+!SESSION 2015-09-17 22:58:24.706 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+This is a continuation of log file C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\.metadata\.bak_0.log
+Created Time: 2015-09-17 22:59:26.517
+!SESSION 2015-09-17 22:58:24.706 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 4 0 2015-09-17 22:59:26.519
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 4 0 2015-09-17 22:59:26.522
+!MESSAGE debugServerDir=C:/ti/ccsv6/ccs_base/DebugServer
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-09-17 23:00:52.726
+!MESSAGE Indexed 'ESP8266_4C123' (94 sources, 161 headers) in 4.87 sec: 9,391 declarations; 43,975 references; 3 unresolved inclusions; 5 syntax errors; 43 unresolved names (0.081%)
+!SESSION 2015-09-17 23:02:51.660 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 4 0 2015-09-17 23:02:55.136
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 4 0 2015-09-17 23:02:55.139
+!MESSAGE debugServerDir=C:/ti/ccsv6/ccs_base/DebugServer
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-09-17 23:03:04.982
+!MESSAGE Indexed 'ESP8266_4C123' (8 sources, 22 headers) in 2.34 sec: 1,704 declarations; 1,742 references; 0 unresolved inclusions; 4 syntax errors; 0 unresolved names (0%)
+!SESSION 2015-09-17 23:18:19.206 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 4 0 2015-09-17 23:18:28.341
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 4 0 2015-09-17 23:18:28.374
+!MESSAGE debugServerDir=C:/ti/ccsv6/ccs_base/DebugServer
+
+!ENTRY com.ti.ccstudio.debug.server 4 214294189 2015-09-17 23:19:13.431
+!MESSAGE Unexpected CCS exit detected [9/17/15 11:03 PM]!!!
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-09-17 23:20:39.289
+!MESSAGE Indexed 'ESP8266_4C123' (8 sources, 22 headers) in 1.45 sec: 1,704 declarations; 1,742 references; 0 unresolved inclusions; 4 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-09-17 23:21:43.909
+!MESSAGE Indexed 'EdgeInterrupt_4C123' (2 sources, 2 headers) in 0.459 sec: 549 declarations; 191 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-09-17 23:21:49.354
+!MESSAGE Indexed 'Nokia5110_4C123' (4 sources, 4 headers) in 0.99 sec: 626 declarations; 560 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

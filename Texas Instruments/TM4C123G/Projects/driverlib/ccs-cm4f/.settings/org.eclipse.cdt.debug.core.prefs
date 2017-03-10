@@ -1,0 +1,3 @@
+#Wed May 22 11:56:09 CDT 2013
+eclipse.preferences.version=1
+org.eclipse.cdt.debug.core.toggleBreakpointModel=com.ti.ccstudio.debug.CCSBreakpointMarker

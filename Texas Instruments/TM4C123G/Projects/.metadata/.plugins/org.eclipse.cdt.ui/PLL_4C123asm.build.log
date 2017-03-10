@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project PLL_4C123asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PLL_4C123asm.out"  "PLL_4C123asm.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PLL_4C123asm\Debug\PLL_4C123asm.out
+DEL /F "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PLL_4C123asm\Debug\tm4c123gh6pm_startup_ccs.pp
+DEL /F "PLL.obj" "PLLTestMain.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PLL_4C123asm\Debug\PLL.obj
+DEL /F "PLL.pp" "PLLTestMain.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PLL_4C123asm\Debug\PLL.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

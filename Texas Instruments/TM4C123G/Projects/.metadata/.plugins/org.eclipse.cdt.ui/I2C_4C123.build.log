@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project I2C_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "I2C_4C123.out"  "I2C_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\I2C_4C123\Debug\I2C_4C123.out
+DEL /F "I2C0.pp" "I2CTestMain.pp" "PLL.pp" "UART.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\I2C_4C123\Debug\I2C0.pp
+DEL /F "I2C0.obj" "I2CTestMain.obj" "PLL.obj" "UART.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\I2C_4C123\Debug\I2C0.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

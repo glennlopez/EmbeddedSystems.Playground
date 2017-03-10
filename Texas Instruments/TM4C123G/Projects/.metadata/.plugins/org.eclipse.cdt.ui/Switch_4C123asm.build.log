@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project Switch_4C123asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Switch_4C123asm.out"  "Switch_4C123asm.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\Switch_4C123asm.out
+DEL /F "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\tm4c123gh6pm_startup_ccs.pp
+DEL /F "Switch.obj" "SwitchTestMain.obj" "SysTick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\Switch.obj
+DEL /F "Switch.pp" "SwitchTestMain.pp" "SysTick.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\Switch.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

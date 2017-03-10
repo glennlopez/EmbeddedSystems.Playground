@@ -1,1 +1,0 @@
-"./main.o" "./startup.o" "./tm4c123gh6pm_startup_ccs_gcc.o" -Wl,-T"../tm4c123gh6pm.lds" -Wl,--start-group -lc -Wl,--end-group 

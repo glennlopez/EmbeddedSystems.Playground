@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project 74HC165_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "74HC165_4C123.out"  "74HC165_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165_4C123.out
+DEL /F "74HC165.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165.pp
+DEL /F "74HC165.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

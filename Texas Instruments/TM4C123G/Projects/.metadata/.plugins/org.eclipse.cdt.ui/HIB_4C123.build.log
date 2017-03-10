@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project HIB_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "HIB_4C123.out"  "HIB_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HIB_4C123\Debug\HIB_4C123.out
+DEL /F "HIB.pp" "SysTick.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HIB_4C123\Debug\HIB.pp
+DEL /F "HIB.obj" "SysTick.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HIB_4C123\Debug\HIB.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

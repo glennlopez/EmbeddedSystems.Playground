@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project CC3100GetWeather_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "CC3100GetWeather_4C123.out"  "CC3100GetWeather_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100GetWeather_4C123\Debug\CC3100GetWeather_4C123.out
+DEL /F "LED.pp" "Nokia5110.pp" "board.pp" "device.pp" "driver.pp" "flowcont.pp" "fs.pp" "main.pp" "netapp.pp" "netcfg.pp" "nonos.pp" "socket.pp" "spawn.pp" "spi.pp" "startup_ccs.pp" "uart.pp" "uartstdio.pp" "ustdlib.pp" "wlan.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100GetWeather_4C123\Debug\LED.pp
+DEL /F "LED.obj" "Nokia5110.obj" "board.obj" "device.obj" "driver.obj" "flowcont.obj" "fs.obj" "main.obj" "netapp.obj" "netcfg.obj" "nonos.obj" "socket.obj" "spawn.obj" "spi.obj" "startup_ccs.obj" "uart.obj" "uartstdio.obj" "ustdlib.obj" "wlan.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100GetWeather_4C123\Debug\LED.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project UARTInts_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "UARTInts_4C123.out"  "UARTInts_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\UARTInts_4C123\Debug\UARTInts_4C123.out
+DEL /F "PLL.pp" "UART.pp" "UARTIntsTestMain.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\UARTInts_4C123\Debug\PLL.pp
+DEL /F "PLL.obj" "UART.obj" "UARTIntsTestMain.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\UARTInts_4C123\Debug\PLL.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

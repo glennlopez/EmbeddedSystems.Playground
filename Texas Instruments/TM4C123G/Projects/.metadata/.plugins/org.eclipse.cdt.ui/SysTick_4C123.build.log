@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project SysTick_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "SysTick_4C123.out"  "SysTick_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\SysTick_4C123\Debug\SysTick_4C123.out
+DEL /F "PLL.pp" "SysTick.pp" "SysTickTestMain.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\SysTick_4C123\Debug\PLL.pp
+DEL /F "PLL.obj" "SysTick.obj" "SysTickTestMain.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\SysTick_4C123\Debug\PLL.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

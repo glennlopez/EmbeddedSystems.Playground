@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project ProfileFFT_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "ProfileFFT_4C123.out"  "ProfileFFT_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ProfileFFT_4C123\Debug\ProfileFFT_4C123.out
+DEL /F "ProfileFFT.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ProfileFFT_4C123\Debug\ProfileFFT.pp
+DEL /F "ProfileFFT.obj" "cr4_fft_1024_stm32.obj" "cr4_fft_256_stm32.obj" "cr4_fft_64_stm32.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ProfileFFT_4C123\Debug\ProfileFFT.obj
+DEL /F "cr4_fft_1024_stm32.pp" "cr4_fft_256_stm32.pp" "cr4_fft_64_stm32.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ProfileFFT_4C123\Debug\cr4_fft_1024_stm32.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

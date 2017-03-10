@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project PeriodMeasure_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PeriodMeasure_4C123.out"  "PeriodMeasure_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PeriodMeasure_4C123\Debug\PeriodMeasure_4C123.out
+DEL /F "PLL.pp" "PeriodMeasure.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PeriodMeasure_4C123\Debug\PLL.pp
+DEL /F "PLL.obj" "PeriodMeasure.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PeriodMeasure_4C123\Debug\PLL.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

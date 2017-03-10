@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project Performance_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Performance_4C123.out"  "Performance_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Performance_4C123\Debug\Performance_4C123.out
+DEL /F "PLL.pp" "Performance.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Performance_4C123\Debug\PLL.pp
+DEL /F "PLL.obj" "Performance.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Performance_4C123\Debug\PLL.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

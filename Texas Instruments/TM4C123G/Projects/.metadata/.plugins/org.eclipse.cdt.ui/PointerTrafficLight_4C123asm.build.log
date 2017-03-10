@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project PointerTrafficLight_4C123asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "PointerTrafficLight_4C123asm.out"  "PointerTrafficLight_4C123asm.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PointerTrafficLight_4C123asm\Debug\PointerTrafficLight_4C123asm.out
+DEL /F "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PointerTrafficLight_4C123asm\Debug\tm4c123gh6pm_startup_ccs.pp
+DEL /F "PLL.obj" "PointerTrafficLight.obj" "SysTick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PointerTrafficLight_4C123asm\Debug\PLL.obj
+DEL /F "PLL.pp" "PointerTrafficLight.pp" "SysTick.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\PointerTrafficLight_4C123asm\Debug\PLL.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project WS2812_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "WS2812_4C123.out"  "WS2812_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\WS2812_4C123\Debug\WS2812_4C123.out
+DEL /F "ADCSWTrigger.pp" "ADCT0ATrigger.pp" "DMATimer.pp" "PLL.pp" "SysTick.pp" "WS2812.pp" "WS2812TestMain.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\WS2812_4C123\Debug\ADCSWTrigger.pp
+DEL /F "ADCSWTrigger.obj" "ADCT0ATrigger.obj" "DMATimer.obj" "PLL.obj" "SysTick.obj" "WS2812.obj" "WS2812TestMain.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\WS2812_4C123\Debug\ADCSWTrigger.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

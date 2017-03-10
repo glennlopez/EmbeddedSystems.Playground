@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project TwoButtonPoll_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "TwoButtonPoll_4C123.out"  "TwoButtonPoll_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\TwoButtonPoll_4C123\Debug\TwoButtonPoll_4C123.out
+DEL /F "TwoButtonPoll.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\TwoButtonPoll_4C123\Debug\TwoButtonPoll.pp
+DEL /F "TwoButtonPoll.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\TwoButtonPoll_4C123\Debug\TwoButtonPoll.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

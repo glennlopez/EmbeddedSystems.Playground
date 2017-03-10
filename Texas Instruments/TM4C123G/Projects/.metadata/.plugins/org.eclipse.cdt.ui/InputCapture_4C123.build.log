@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project InputCapture_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "InputCapture_4C123.out"  "InputCapture_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\InputCapture_4C123\Debug\InputCapture_4C123.out
+DEL /F "InputCapture.pp" "InputCaptureTestMain.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\InputCapture_4C123\Debug\InputCapture.pp
+DEL /F "InputCapture.obj" "InputCaptureTestMain.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\InputCapture_4C123\Debug\InputCapture.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project ProfileSort_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "ProfileSort_4C123.out"  "ProfileSort_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ProfileSort_4C123\Debug\ProfileSort_4C123.out
+DEL /F "ProfileSort.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ProfileSort_4C123\Debug\ProfileSort.pp
+DEL /F "ProfileSort.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ProfileSort_4C123\Debug\ProfileSort.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

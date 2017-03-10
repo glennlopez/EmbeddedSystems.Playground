@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project Kentec_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Kentec_4C123.out"  "Kentec_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Kentec_4C123\Debug\Kentec_4C123.out
+DEL /F "LCDTestMain.pp" "PLL.pp" "SSD2119.pp" "systick.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Kentec_4C123\Debug\LCDTestMain.pp
+DEL /F "LCDTestMain.obj" "PLL.obj" "SSD2119.obj" "random.obj" "systick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Kentec_4C123\Debug\LCDTestMain.obj
+DEL /F "random.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Kentec_4C123\Debug\random.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

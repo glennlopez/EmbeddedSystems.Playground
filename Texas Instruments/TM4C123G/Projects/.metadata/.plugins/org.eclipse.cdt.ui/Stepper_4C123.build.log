@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project Stepper_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Stepper_4C123.out"  "Stepper_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Stepper_4C123\Debug\Stepper_4C123.out
+DEL /F "StepperTestMain.pp" "SysTick.pp" "stepper.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Stepper_4C123\Debug\StepperTestMain.pp
+DEL /F "StepperTestMain.obj" "SysTick.obj" "stepper.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Stepper_4C123\Debug\StepperTestMain.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

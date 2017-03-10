@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project LCD_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "LCD_4C123.out"  "LCD_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LCD_4C123\Debug\LCD_4C123.out
+DEL /F "LCDTestMain.pp" "PLL.pp" "SysTick.pp" "lcd.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LCD_4C123\Debug\LCDTestMain.pp
+DEL /F "LCDTestMain.obj" "PLL.obj" "SysTick.obj" "lcd.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LCD_4C123\Debug\LCDTestMain.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

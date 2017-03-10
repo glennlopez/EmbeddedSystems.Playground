@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project ADCT0ATrigger_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "ADCT0ATrigger_4C123.out"  "ADCT0ATrigger_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ADCT0ATrigger_4C123\Debug\ADCT0ATrigger_4C123.out
+DEL /F "ADCT0ATrigger.pp" "ADCTestmain.pp" "PLL.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ADCT0ATrigger_4C123\Debug\ADCT0ATrigger.pp
+DEL /F "ADCT0ATrigger.obj" "ADCTestmain.obj" "PLL.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ADCT0ATrigger_4C123\Debug\ADCT0ATrigger.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

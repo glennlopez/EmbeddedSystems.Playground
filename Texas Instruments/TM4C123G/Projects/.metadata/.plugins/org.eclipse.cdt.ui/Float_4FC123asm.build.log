@@ -1,0 +1,16 @@
+
+**** Clean-only build of configuration Debug for project Float_4FC123asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Float_4FC123asm.out"  "Float_4FC123asm.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Float_4FC123asm\Debug\Float_4FC123asm.out
+DEL /F "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Float_4FC123asm\Debug\tm4c123gh6pm_startup_ccs.pp
+DEL /F "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Float_4FC123asm\Debug\main.obj
+DEL /F "main.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Float_4FC123asm\Debug\main.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

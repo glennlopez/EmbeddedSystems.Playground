@@ -1,0 +1,285 @@
+
+**** Build of configuration Debug for project ESP8266_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../LED.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="LED.pp"  "../LED.c"
+'Finished building: ../LED.c'
+' '
+'Building file: ../UART.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="UART.pp"  "../UART.c"
+"../UART.c", line 71: warning #1934-D: concatenation with "++" in macro "AddIndexFifo" does not create a valid token
+"../UART.c", line 71: warning #1934-D: concatenation with "++" in macro "AddIndexFifo" does not create a valid token
+"../UART.c", line 72: warning #1934-D: concatenation with "++" in macro "AddIndexFifo" does not create a valid token
+"../UART.c", line 72: warning #1934-D: concatenation with "++" in macro "AddIndexFifo" does not create a valid token
+'Finished building: ../UART.c'
+' '
+'Building file: ../esp8266.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="esp8266.pp"  "../esp8266.c"
+'Finished building: ../esp8266.c'
+' '
+'Building file: ../http.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="http.pp"  "../http.c"
+'Finished building: ../http.c'
+' '
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../pll.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="pll.pp"  "../pll.c"
+'Finished building: ../pll.c'
+' '
+'Building file: ../systick.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="systick.pp"  "../systick.c"
+'Finished building: ../systick.c'
+' '
+'Building file: ../tm4c123gh6pm_startup_ccs.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.pp"  "../tm4c123gh6pm_startup_ccs.c"
+'Finished building: ../tm4c123gh6pm_startup_ccs.c'
+' '
+'Building target: ESP8266_4C123.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --c99 --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --c_src_interlist --asm_listing -z -m"ESP8266_4C123.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/lib" -i"C:/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="ESP8266_4C123_linkInfo.xml" --rom_model -o "ESP8266_4C123.out" "./LED.obj" "./UART.obj" "./esp8266.obj" "./http.obj" "./main.obj" "./pll.obj" "./systick.obj" "./tm4c123gh6pm_startup_ccs.obj" "../tm4c123gh6pm.cmd"  -l"libc.a" 
+<Linking>
+'Finished building target: ESP8266_4C123.out'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project 74HC165_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "74HC165_4C123.out"  "74HC165_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165_4C123.out
+DEL /F "74HC165.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165.pp
+DEL /F "74HC165.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project 74HC165_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "74HC165_4C123.out"  "74HC165_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165_4C123.out
+DEL /F "74HC165.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165.pp
+DEL /F "74HC165.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC165_4C123\Debug\74HC165.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project 74HC595_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "74HC595_4C123.out"  "74HC595_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC595_4C123\Debug\74HC595_4C123.out
+DEL /F "74HC595.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC595_4C123\Debug\74HC595.pp
+DEL /F "74HC595.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\74HC595_4C123\Debug\74HC595.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project CC3100DataLog_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "CC3100DataLog_4C123.out"  "CC3100DataLog_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100DataLog_4C123\Debug\CC3100DataLog_4C123.out
+DEL /F "LED.pp" "Nokia5110.pp" "board.pp" "device.pp" "driver.pp" "flowcont.pp" "fs.pp" "main.pp" "netapp.pp" "netcfg.pp" "nonos.pp" "socket.pp" "spawn.pp" "spi.pp" "startup_ccs.pp" "uart.pp" "uartstdio.pp" "ustdlib.pp" "wlan.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100DataLog_4C123\Debug\LED.pp
+DEL /F "LED.obj" "Nokia5110.obj" "board.obj" "device.obj" "driver.obj" "flowcont.obj" "fs.obj" "main.obj" "netapp.obj" "netcfg.obj" "nonos.obj" "socket.obj" "spawn.obj" "spi.obj" "startup_ccs.obj" "uart.obj" "uartstdio.obj" "ustdlib.obj" "wlan.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100DataLog_4C123\Debug\LED.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project CC3100GetWeather_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "CC3100GetWeather_4C123.out"  "CC3100GetWeather_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100GetWeather_4C123\Debug\CC3100GetWeather_4C123.out
+DEL /F "LED.pp" "Nokia5110.pp" "board.pp" "device.pp" "driver.pp" "flowcont.pp" "fs.pp" "main.pp" "netapp.pp" "netcfg.pp" "nonos.pp" "socket.pp" "spawn.pp" "spi.pp" "startup_ccs.pp" "uart.pp" "uartstdio.pp" "ustdlib.pp" "wlan.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100GetWeather_4C123\Debug\LED.pp
+DEL /F "LED.obj" "Nokia5110.obj" "board.obj" "device.obj" "driver.obj" "flowcont.obj" "fs.obj" "main.obj" "netapp.obj" "netcfg.obj" "nonos.obj" "socket.obj" "spawn.obj" "spi.obj" "startup_ccs.obj" "uart.obj" "uartstdio.obj" "ustdlib.obj" "wlan.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\CC3100GetWeather_4C123\Debug\LED.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project ESP8266_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "ESP8266_4C123.out"  "ESP8266_4C123.hex" 
+DEL /F "LED.pp" "UART.pp" "esp8266.pp" "http.pp" "main.pp" "pll.pp" "systick.pp" "tm4c123gh6pm_startup_ccs.pp" 
+DEL /F "LED.obj" "UART.obj" "esp8266.obj" "http.obj" "main.obj" "pll.obj" "systick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project ESP8266_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "ESP8266_4C123.out"  "ESP8266_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ESP8266_4C123\Debug\ESP8266_4C123.out
+DEL /F "LED.pp" "UART.pp" "esp8266.pp" "http.pp" "main.pp" "pll.pp" "systick.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ESP8266_4C123\Debug\LED.pp
+DEL /F "LED.obj" "UART.obj" "esp8266.obj" "http.obj" "main.obj" "pll.obj" "systick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\ESP8266_4C123\Debug\LED.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project EdgeInterrupt_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "EdgeInterrupt_4C123.out"  "EdgeInterrupt_4C123.hex" 
+DEL /F "EdgeInterrupt.pp" "tm4c123gh6pm_startup_ccs.pp" 
+DEL /F "EdgeInterrupt.obj" "tm4c123gh6pm_startup_ccs.obj" 
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project EdgeInterrupt_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "EdgeInterrupt_4C123.out"  "EdgeInterrupt_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeInterrupt_4C123\Debug\EdgeInterrupt_4C123.out
+DEL /F "EdgeInterrupt.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeInterrupt_4C123\Debug\EdgeInterrupt.pp
+DEL /F "EdgeInterrupt.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeInterrupt_4C123\Debug\EdgeInterrupt.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project FreqMeas_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "FreqMeasurement_4C123.out"  "FreqMeasurement_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasurement_4C123.out
+DEL /F "FreqMeasure.pp" "PLL.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasure.pp
+DEL /F "FreqMeasure.obj" "PLL.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasure.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project FreqMeas_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "FreqMeasurement_4C123.out"  "FreqMeasurement_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasurement_4C123.out
+DEL /F "FreqMeasure.pp" "PLL.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasure.pp
+DEL /F "FreqMeasure.obj" "PLL.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasure.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project GPIO_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "GPIO_4C123.out"  "GPIO_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\GPIO_4C123\Debug\GPIO_4C123.out
+DEL /F "GPIO.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\GPIO_4C123\Debug\GPIO.pp
+DEL /F "GPIO.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\GPIO_4C123\Debug\GPIO.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project HIB_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "HIB_4C123.out"  "HIB_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HIB_4C123\Debug\HIB_4C123.out
+DEL /F "HIB.pp" "SysTick.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HIB_4C123\Debug\HIB.pp
+DEL /F "HIB.obj" "SysTick.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\HIB_4C123\Debug\HIB.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project LLFifo_4C123asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "LLFifo_4C123asm.out"  "LLFifo_4C123asm.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LLFifo_4C123asm\Debug\LLFifo_4C123asm.out
+DEL /F "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LLFifo_4C123asm\Debug\tm4c123gh6pm_startup_ccs.pp
+DEL /F "LLFifo.obj" "LLFifoTestMain.obj" "heap.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LLFifo_4C123asm\Debug\LLFifo.obj
+DEL /F "LLFifo.pp" "LLFifoTestMain.pp" "heap.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\LLFifo_4C123asm\Debug\LLFifo.pp
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project Nokia5110_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+gmake: *** No rule to make target `clean'.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project Switch_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Switch_4C123.out"  "Switch_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123\Debug\Switch_4C123.out
+DEL /F "Switch.pp" "SwitchTestMain.pp" "SysTick.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123\Debug\Switch.pp
+DEL /F "Switch.obj" "SwitchTestMain.obj" "SysTick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123\Debug\Switch.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project Switch_4C123asm ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "Switch_4C123asm.out"  "Switch_4C123asm.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\Switch_4C123asm.out
+DEL /F "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\tm4c123gh6pm_startup_ccs.pp
+DEL /F "Switch.obj" "SwitchTestMain.obj" "SysTick.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\Switch.obj
+DEL /F "Switch.pp" "SwitchTestMain.pp" "SysTick.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\Switch_4C123asm\Debug\Switch.pp
+'Finished clean'
+' '
+
+**** Build Finished ****

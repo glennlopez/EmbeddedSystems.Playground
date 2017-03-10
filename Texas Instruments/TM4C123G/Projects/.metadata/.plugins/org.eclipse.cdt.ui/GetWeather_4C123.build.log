@@ -1,0 +1,11 @@
+
+**** Clean-only build of configuration Debug for project GetWeather_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "GetWeather_4C123.out"  "GetWeather_4C123.hex" 
+DEL /F "LED.pp" "Nokia5110.pp" "board.pp" "device.pp" "driver.pp" "flowcont.pp" "fs.pp" "main.pp" "netapp.pp" "netcfg.pp" "nonos.pp" "socket.pp" "spawn.pp" "spi.pp" "startup_ccs.pp" "uart.pp" "uartstdio.pp" "ustdlib.pp" "wlan.pp" 
+DEL /F "LED.obj" "Nokia5110.obj" "board.obj" "device.obj" "driver.obj" "flowcont.obj" "fs.obj" "main.obj" "netapp.obj" "netcfg.obj" "nonos.obj" "socket.obj" "spawn.obj" "spi.obj" "startup_ccs.obj" "uart.obj" "uartstdio.obj" "ustdlib.obj" "wlan.obj" 
+'Finished clean'
+' '
+
+**** Build Finished ****

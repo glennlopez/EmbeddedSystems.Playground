@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project FreqMeas_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "FreqMeasurement_4C123.out"  "FreqMeasurement_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasurement_4C123.out
+DEL /F "FreqMeasure.pp" "PLL.pp" "main.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasure.pp
+DEL /F "FreqMeasure.obj" "PLL.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\FreqMeas_4C123\Debug\FreqMeasure.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

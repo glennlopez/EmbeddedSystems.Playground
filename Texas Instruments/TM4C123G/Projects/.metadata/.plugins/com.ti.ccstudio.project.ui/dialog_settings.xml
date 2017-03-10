@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.ti.ccstudio.project.ui.internal.properties.DynamicPropertiesPageManager">
+	</section>
+	<section name="com.ti.ccstudio.project.ui.internal.preferences.DynamicPreferencePageManager">
+	</section>
+	<section name="CCS.ImportCCSProjectWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_IMPORT_REFERENCED_PROJECTS_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+	</section>
+	<section name="com.ti.ccstudio.project.ui.internal.wizards.project.ProjectSettingsPage">
+		<item value="C:\ti\ccsv6\ccs_base\common\targetdb\devices\tm4c123gh6pm.xml" key="CCS.TARGET"/>
+		<item value="C:\ti\ccsv6\ccs_base\common\targetdb\connections\Stellaris_ICDI_Connection.xml" key="CCS.CONNECTION"/>
+		<section name="1">
+			<item value="" key="CCS.CODEGEN_TOOL_VERSION"/>
+			<item value="" key="CCS.DEVICE_ENDIANNESS"/>
+			<item value="null" key="CCS.LINKER_COMMAND_FILE"/>
+			<item value="executable" key="CCS.OUTPUT_TYPE"/>
+			<item value="null" key="CCS.RUNTIME_SUPPORT_LIB"/>
+			<item value="" key="CCS.OUTPUT_FORMAT"/>
+		</section>
+	</section>
+</section>

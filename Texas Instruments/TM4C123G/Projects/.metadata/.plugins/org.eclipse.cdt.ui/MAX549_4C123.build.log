@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project MAX549_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "MAX549_4C123.out"  "MAX549_4C123.hex" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\MAX549_4C123\Debug\MAX549_4C123.out
+DEL /F "MAX549TestMain.pp" "SysTick.pp" "max549.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\MAX549_4C123\Debug\MAX549TestMain.pp
+DEL /F "MAX549TestMain.obj" "SysTick.obj" "max549.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find D:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\MAX549_4C123\Debug\MAX549TestMain.obj
+'Finished clean'
+' '
+
+**** Build Finished ****

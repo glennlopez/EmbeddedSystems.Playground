@@ -1,0 +1,14 @@
+
+**** Clean-only build of configuration Debug for project EdgeInterrupt_4C123 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "EdgeInterrupt_4C123.out"  "EdgeInterrupt_4C123.hex" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeInterrupt_4C123\Debug\EdgeInterrupt_4C123.out
+DEL /F "EdgeInterrupt.pp" "tm4c123gh6pm_startup_ccs.pp" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeInterrupt_4C123\Debug\EdgeInterrupt.pp
+DEL /F "EdgeInterrupt.obj" "tm4c123gh6pm_startup_ccs.obj" 
+Could Not Find C:\Dropbox\ArmBook\LaunchPad\ValvanoWareTM4C123\EdgeInterrupt_4C123\Debug\EdgeInterrupt.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
