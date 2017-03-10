@@ -35,7 +35,8 @@
  ************************/
 // GPIO PF4
 void GPIOPortF_Handler(void){
-
+    GPIO_PORTF_ICR_R = 0x10;      // acknowledge flag4
+    GPIO_PORTF_DATA_R ^= 0x08;
 }
 
 /************************
@@ -58,10 +59,6 @@ void main(void) {
 
     // Program routine
     while(1){
-        if(SW1 == 0x00){
-            GPIO_PORTF_DATA_R ^= 0x08;
-            delay(200);
-        }
         WaitForInterrupt();
     }
 }
@@ -111,9 +108,9 @@ void initNVIC(void){
     GPIO_PORTF_ICR_R        &=      ~0x00;          // (d) Clear flag 4 for PF4
     GPIO_PORTF_IM_R         |=       0x10;          // (e) arm interrupt mask on PF4
 
-    //NVIC Configuration
-    NVIC_PRI7_R            =        ~0x00;          // (f) Set Vector Priority to 5
-    NVIC_EN0_R             =        ~0X00;          // (g) Enable Global Interrupts
+    //NVIC Configuration (pg. 132)
+    NVIC_PRI7_R            |=        0x00A00000;    // (f) Set Vector Priority to 5
+    NVIC_EN0_R             |=        0X40000000;    // (g) Enable Interrupt # 30
 
 }
 
