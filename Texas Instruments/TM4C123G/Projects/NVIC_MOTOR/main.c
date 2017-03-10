@@ -1,10 +1,10 @@
 /************************
  * ADDRESS DEFINITIONS
  ************************/
-// System Control Legacy base address: 0x400F.E000 (Datasheet pg. 234)
+// System Control Legacy base address
 #define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
 
-// PortF(APB) base address: 0x40025000 (Datasheet pg. 657)
+// PortF(APB) base address: 0x40025000
 #define GPIO_PORTF_DATA_R       (*((volatile unsigned long *)0x400253FC))
 #define GPIO_PORTF_DEN_R        (*((volatile unsigned long *)0x4002551C))
 #define GPIO_PORTF_DIR_R        (*((volatile unsigned long *)0x40025400))
@@ -26,9 +26,24 @@
 #define GPIO_PORTF_LOCK_R       (*((volatile unsigned long *)0x40025520))
 #define GPIO_PORTF_CR_R         (*((volatile unsigned long *)0x40025524))
 
+// Systick & NVIC Registers
+#define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
+#define NVIC_ST_CTRL_R          (*((volatile unsigned long *)0xE000E010))
+#define NVIC_ST_RELOAD_R        (*((volatile unsigned long *)0xE000E014))
+#define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
+
 // PortF Bit-specific Address
 #define SW1                     (*((volatile unsigned long *)0x40025040))
 #define SW2                     (*((volatile unsigned long *)0x40025004))
+
+void initPortF_in(void);
+void initPortF_out(void);
+void delay(unsigned int param);
+void initNVIC(void);
+void SysTick_Pulse(unsigned long param);
+void EnableInterrupts(void);
+void WaitForInterrupt(void);
+
 
 /************************
  * ISR HANDLERS
@@ -39,21 +54,20 @@ void GPIOPortF_Handler(void){
     GPIO_PORTF_DATA_R ^= 0x08;                      // toggle GREEN led
 }
 
+void SysTick_Handler(void){
+  GPIO_PORTF_DATA_R ^= 0x04;
+}
+
+
 /************************
  * MAIN ROUTINE
  ************************/
-void initPortF_in(void);
-void initPortF_out(void);
-void delay(unsigned int param);
-void initNVIC(void);
-void EnableInterrupts(void);
-void WaitForInterrupt(void);
-
 void main(void) {
     // Initialization routine
     SYSCTL_RCGC2_R |= 0x00000020;                   // (a) Activate PortF Clock
     initPortF_in();
     initPortF_out();
+    SysTick_Pulse(1600000);
     initNVIC();
     EnableInterrupts();
 
@@ -67,6 +81,16 @@ void main(void) {
 /************************
  * SUB ROUTINES
  ************************/
+
+// SysTick Interrupt Routine (pg. 132)
+void SysTick_Pulse(unsigned long param){
+
+    NVIC_ST_CTRL_R           =      0;
+    NVIC_ST_RELOAD_R         =      param - 1;
+    NVIC_ST_CURRENT_R        =      0;
+    NVIC_SYS_PRI3_R         |=      0x50000000;
+    NVIC_ST_CTRL_R          |=      0x07;
+}
 
 // PortF Output Initialization
 void initPortF_out(void){
@@ -111,7 +135,6 @@ void initNVIC(void){
     //NVIC Configuration (pg. 132)
     NVIC_PRI7_R            |=        0x00A00000;    // (f) Set Vector Priority to 5
     NVIC_EN0_R             |=        0X40000000;    // (g) Enable Interrupt # 30
-
 }
 
 // Busy-wait delay (~1ms per param)
