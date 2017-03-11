@@ -51,8 +51,12 @@ void WaitForInterrupt(void);
 // Edge Trigger (on PF4: SW1)
 void GPIOPortF_Handler(void){
 
+
     if(SW2 == 0x00){
+        // Clear Flag
         GPIO_PORTF_ICR_R = 0x10;
+
+        // Toggle Green LED
         GPIO_PORTF_DATA_R ^= 0x08;
     }
 }
@@ -78,9 +82,9 @@ void main(void) {
 
     // Program routine
     while(1){
-        WaitForInterrupt();
         //GPIO_PORTF_DATA_R ^= 0x04;
         //delay(100);
+        WaitForInterrupt();
     }
 }
 
@@ -134,8 +138,8 @@ void initPortF_in(void){
 void initNVIC(void){
                                                     //     ************INTERRUPT*************
     GPIO_PORTF_IS_R         &=      ~0x10;          // (c) PF4 edge-sensitive
-//  GPIO_PORTF_IBE_R        &=      ~0x10;          //     PF4 does not trigger on both
-    GPIO_PORTF_IBE_R        |=      0x10;           //     PF4 does triggers on BOTH
+    GPIO_PORTF_IBE_R        &=      ~0x10;          //     PF4 does not trigger on both
+//  GPIO_PORTF_IBE_R        |=      0x10;           //     PF4 does triggers on BOTH
     GPIO_PORTF_IEV_R        &=      ~0x10;          //     PF4 triggers on falling edge
 //  GPIO_PORTF_IEV_R        |=      0x10;           //     PF4 triggers on rising edge
     GPIO_PORTF_ICR_R        &=      ~0x00;          // (d) Clear flag 4 for PF4
