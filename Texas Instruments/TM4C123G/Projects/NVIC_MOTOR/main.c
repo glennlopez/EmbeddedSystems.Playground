@@ -35,6 +35,12 @@
 // PortF Bit-specific Address
 #define SW1                     (*((volatile unsigned long *)0x40025040))
 #define SW2                     (*((volatile unsigned long *)0x40025004))
+#define LED_B                   (*((volatile unsigned long *)0x40025010))
+#define LED_R                   (*((volatile unsigned long *)0x40025008))
+#define LED_G                   (*((volatile unsigned long *)0x40025020))
+
+#define ON                      0xFF
+#define OFF                     0x00
 
 void initPortF_in(void);
 void initPortF_out(void);
@@ -44,36 +50,48 @@ void SysTick_Pulse(unsigned long param);
 void EnableInterrupts(void);
 void WaitForInterrupt(void);
 
+// Global Variable
+unsigned SLOW = 1;
+
 
 /************************
  * ISR HANDLERS
  ************************/
 // Edge Trigger (on PF4: SW1)
 void GPIOPortF_Handler(void){
+    GPIO_PORTF_ICR_R = 0x11;
 
-    if(SW1 == 0){
-        // Clear Interrupt Flag 4
-        GPIO_PORTF_ICR_R = 0x10;
-
-        // Toggle Blue LED
-        GPIO_PORTF_DATA_R ^= 0x04;
+    //slow down
+    if(SW2 == 0){
+        if(SLOW < 8){
+            SLOW++;
+        }
     }
 
-    if(SW2 == 0){
-        // Clear Interrupt Flag 0
-        GPIO_PORTF_ICR_R = 0x01;
-
-        // Toggle Green LED
-        GPIO_PORTF_DATA_R ^= 0x08;
+    //speed up
+    if(SW1 == 0){
+        if(SLOW > 0){
+             SLOW--;
+        }
     }
 
 }
 
 // Periodic Handler
-void SysTick_Handler(void){
+void SysTick_Handler(void){ unsigned long RELOAD_VAL;
 
-  // Toggle Red LED
-  GPIO_PORTF_DATA_R ^= 0x02;
+    RELOAD_VAL = 40000;
+
+    if(LED_B == 0x00){
+        GPIO_PORTF_DATA_R = 0x04;
+        NVIC_ST_RELOAD_R = (RELOAD_VAL + ((RELOAD_VAL/20)*SLOW)) - 1;
+    }
+
+    else{
+        GPIO_PORTF_DATA_R = 0x00;
+        NVIC_ST_RELOAD_R = (RELOAD_VAL - ((RELOAD_VAL/20)*SLOW)) - 1;
+    }
+
 }
 
 
@@ -85,7 +103,7 @@ void main(void) {
     SYSCTL_RCGC2_R |= 0x00000020;                   // (a) Activate PortF Clock
     initPortF_in();
     initPortF_out();
-    SysTick_Pulse(1600000);
+    SysTick_Pulse(16000);                         //     SysTick creates 100ms pulse
     initNVIC();
     EnableInterrupts();
 
@@ -93,7 +111,7 @@ void main(void) {
     while(1){
         //GPIO_PORTF_DATA_R ^= 0x01;
         //delay(100);
-        WaitForInterrupt();
+        //WaitForInterrupt();
     }
 }
 
@@ -151,7 +169,7 @@ void initNVIC(void){
 //  GPIO_PORTF_IBE_R        |=      0x11;           //     Does triggers on BOTH
     GPIO_PORTF_IEV_R        &=      ~0x11;          //     Triggers on FALLING edge
 //  GPIO_PORTF_IEV_R        |=      0x11;           //     Triggers on RISING edge
-    GPIO_PORTF_ICR_R        &=      ~0x00;          // (d) CLEAR All Interrupt FLAGS
+    GPIO_PORTF_ICR_R        |=       0x0F;          // (d) CLEAR All Interrupt FLAGS
     GPIO_PORTF_IM_R         |=       0x11;          // (e) Enable interrupt mask (allows designated pins for ISR)
 
     //NVIC Configuration (pg. 132)
