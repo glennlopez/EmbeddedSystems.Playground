@@ -35,7 +35,7 @@
  ************************/
 // GPIO PF4
 void GPIOPortF_Handler(void){
-    GPIO_PORTF_ICR_R = 0x10;                        // acknowledge flag4
+    GPIO_PORTF_ICR_R = 0x10;                        // acknowledge interrupt flag4
     GPIO_PORTF_DATA_R ^= 0x08;                      // toggle GREEN led
 }
 

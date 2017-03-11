@@ -22,8 +22,4 @@ I've also create a [Wiki](https://github.com/glennlopez/EmbeddedSystems.Playgrou
 * [Pyro Electro Tutorials](http://www.pyroelectro.com/edu/)
 * [Newbie Hack Tutorials](https://www.newbiehack.com/MicrocontrollerTutorial.aspx)
 * [Mojo FPGA Tutorials](https://embeddedmicro.com/tutorials)
-* [Cortex-M Processor](https://www.youtube.com/watch?v=qvrmOXtOpvw)
 * [Assembly Language Tutorial](http://www.newthinktank.com/2016/04/assembly-language-tutorial/)
-
-### Resources
-[TI Resource Explorer](http://dev.ti.com/tirex/#/)
