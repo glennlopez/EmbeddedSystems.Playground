@@ -134,9 +134,10 @@ void initPortF_in(void){
 void initNVIC(void){
                                                     //     ************INTERRUPT*************
     GPIO_PORTF_IS_R         &=      ~0x10;          // (c) PF4 edge-sensitive
-    GPIO_PORTF_IBE_R        &=      ~0x10;          //     PF4 does not trigger on both
-    //GPIO_PORTF_IEV_R        &=      ~0x10;          //     PF4 triggers on falling edge
-    GPIO_PORTF_IEV_R        |=      0x10;          //     PF4 triggers on rising edge
+//  GPIO_PORTF_IBE_R        &=      ~0x10;          //     PF4 does not trigger on both
+    GPIO_PORTF_IBE_R        |=      0x10;           //     PF4 does triggers on BOTH
+    GPIO_PORTF_IEV_R        &=      ~0x10;          //     PF4 triggers on falling edge
+//  GPIO_PORTF_IEV_R        |=      0x10;           //     PF4 triggers on rising edge
     GPIO_PORTF_ICR_R        &=      ~0x00;          // (d) Clear flag 4 for PF4
     GPIO_PORTF_IM_R         |=       0x10;          // (e) arm interrupt mask on PF4
 
