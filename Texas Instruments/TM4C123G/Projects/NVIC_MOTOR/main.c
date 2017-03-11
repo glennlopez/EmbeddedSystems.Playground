@@ -51,20 +51,29 @@ void WaitForInterrupt(void);
 // Edge Trigger (on PF4: SW1)
 void GPIOPortF_Handler(void){
 
-
-    if(SW2 == 0x00){
-        // Clear Flag
+    if(SW1 == 0){
+        // Clear Interrupt Flag 4
         GPIO_PORTF_ICR_R = 0x10;
+
+        // Toggle Blue LED
+        GPIO_PORTF_DATA_R ^= 0x04;
+    }
+
+    if(SW2 == 0){
+        // Clear Interrupt Flag 0
+        GPIO_PORTF_ICR_R = 0x01;
 
         // Toggle Green LED
         GPIO_PORTF_DATA_R ^= 0x08;
     }
+
 }
 
 // Periodic Handler
 void SysTick_Handler(void){
-  //GPIO_PORTF_DATA_R ^= 0x04;
 
+  // Toggle Red LED
+  GPIO_PORTF_DATA_R ^= 0x02;
 }
 
 
@@ -82,7 +91,7 @@ void main(void) {
 
     // Program routine
     while(1){
-        //GPIO_PORTF_DATA_R ^= 0x04;
+        //GPIO_PORTF_DATA_R ^= 0x01;
         //delay(100);
         WaitForInterrupt();
     }
@@ -99,7 +108,7 @@ void SysTick_Pulse(unsigned long param){
     NVIC_ST_CTRL_R           =      0;
     NVIC_ST_RELOAD_R         =      param - 1;
     NVIC_ST_CURRENT_R        =      0;
-    NVIC_SYS_PRI3_R         |=      0x50000000;
+    NVIC_SYS_PRI3_R         |=      0x50000000;     //     Interrupt Priority 2
     NVIC_ST_CTRL_R          |=      0x07;
 }
 
@@ -137,17 +146,17 @@ void initPortF_in(void){
 // Edge Triggered Interrupt (pg. 657)
 void initNVIC(void){
                                                     //     ************INTERRUPT*************
-    GPIO_PORTF_IS_R         &=      ~0x10;          // (c) PF4 edge-sensitive
-    GPIO_PORTF_IBE_R        &=      ~0x10;          //     PF4 does not trigger on both
-//  GPIO_PORTF_IBE_R        |=      0x10;           //     PF4 does triggers on BOTH
-    GPIO_PORTF_IEV_R        &=      ~0x10;          //     PF4 triggers on falling edge
-//  GPIO_PORTF_IEV_R        |=      0x10;           //     PF4 triggers on rising edge
-    GPIO_PORTF_ICR_R        &=      ~0x00;          // (d) Clear flag 4 for PF4
-    GPIO_PORTF_IM_R         |=       0x10;          // (e) arm interrupt mask on PF4
+    GPIO_PORTF_IS_R         &=      ~0x11;          // (c) Edge-sensitive
+    GPIO_PORTF_IBE_R        &=      ~0x11;          //     Does not trigger on falling or rising
+//  GPIO_PORTF_IBE_R        |=      0x11;           //     Does triggers on BOTH
+    GPIO_PORTF_IEV_R        &=      ~0x11;          //     Triggers on FALLING edge
+//  GPIO_PORTF_IEV_R        |=      0x11;           //     Triggers on RISING edge
+    GPIO_PORTF_ICR_R        &=      ~0x00;          // (d) CLEAR All Interrupt FLAGS
+    GPIO_PORTF_IM_R         |=       0x11;          // (e) Enable interrupt mask (allows designated pins for ISR)
 
     //NVIC Configuration (pg. 132)
-    NVIC_PRI7_R            |=        0x00A00000;    // (f) Set Vector Priority to 5
-    NVIC_EN0_R             |=        0X40000000;    // (g) Enable Interrupt # 30
+    NVIC_PRI7_R            |=        0x00A00000;    // (f) Interrupt Priority to 5
+    NVIC_EN0_R             |=        0X40000000;    // (g) Enable Interrupt # 30 - PORTF
 }
 
 // Busy-wait delay (~1ms per param)
