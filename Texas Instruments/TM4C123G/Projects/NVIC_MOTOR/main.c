@@ -51,7 +51,7 @@ void EnableInterrupts(void);
 void WaitForInterrupt(void);
 
 // Global Variable
-unsigned SLOW = 1;
+unsigned SPEED = 1;
 
 
 /************************
@@ -63,15 +63,15 @@ void GPIOPortF_Handler(void){
 
     //slow down
     if(SW2 == 0){
-        if(SLOW < 8){
-            SLOW++;
+        if(SPEED < 8){
+            SPEED++;
         }
     }
 
     //speed up
     if(SW1 == 0){
-        if(SLOW > 0){
-             SLOW--;
+        if(SPEED > 0){
+             SPEED--;
         }
     }
 
@@ -84,12 +84,12 @@ void SysTick_Handler(void){ unsigned long RELOAD_VAL;
 
     if(LED_B == 0x00){
         GPIO_PORTF_DATA_R = 0x04;
-        NVIC_ST_RELOAD_R = (RELOAD_VAL + ((RELOAD_VAL/20)*SLOW)) - 1;
+        NVIC_ST_RELOAD_R = (RELOAD_VAL + ((RELOAD_VAL/20)*SPEED)) - 1;
     }
 
     else{
         GPIO_PORTF_DATA_R = 0x00;
-        NVIC_ST_RELOAD_R = (RELOAD_VAL - ((RELOAD_VAL/20)*SLOW)) - 1;
+        NVIC_ST_RELOAD_R = (RELOAD_VAL - ((RELOAD_VAL/20)*SPEED)) - 1;
     }
 
 }
@@ -100,7 +100,7 @@ void SysTick_Handler(void){ unsigned long RELOAD_VAL;
  ************************/
 void main(void) {
     // Initialization routine
-    SYSCTL_RCGC2_R |= 0x00000020;                   // (a) Activate PortF Clock
+    SYSCTL_RCGC2_R |= 0x00000020;                 // (a) Activate PortF Clock
     initPortF_in();
     initPortF_out();
     SysTick_Pulse(16000);                         //     SysTick creates 100ms pulse

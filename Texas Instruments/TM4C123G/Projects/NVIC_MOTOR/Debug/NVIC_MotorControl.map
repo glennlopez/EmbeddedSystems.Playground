@@ -1,31 +1,31 @@
 ******************************************************************************
                   TI ARM Linker PC v16.9.0                     
 ******************************************************************************
->> Linked Fri Mar 10 21:48:19 2017
+>> Linked Tue Mar 14 17:26:11 2017
 
 OUTPUT FILE NAME:   <NVIC_MotorControl.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00000a25
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000ad5
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00000b76  0003f48a  R  X
-  SRAM                  20000000   00008000  00000218  00007de8  RW X
+  FLASH                 00000000   00040000  00000c26  0003f3da  R  X
+  SRAM                  20000000   00008000  0000021c  00007de4  RW X
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00000b7c   00000b7c    r-x
+00000000    00000000    00000c2c   00000c2c    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  00000270    00000270    000008e6   000008e6    r-x .text
-  00000b58    00000b58    00000024   00000024    r-- .cinit
-20000000    20000000    00000218   00000000    rw-
+  00000270    00000270    00000996   00000996    r-x .text
+  00000c08    00000c08    00000024   00000024    r-- .cinit
+20000000    20000000    0000021c   00000000    rw-
   20000000    20000000    00000200   00000000    rw- .stack
-  20000200    20000200    00000018   00000000    rw- .data
+  20000200    20000200    0000001c   00000000    rw- .data
 
 
 SECTION ALLOCATION MAP
@@ -36,27 +36,27 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
 
-.text      0    00000270    000008e6     
+.text      0    00000270    00000996     
                   00000270    000003f4     tm4c123gh6pm_startup_ccs.obj (.text)
                   00000664    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
-                  00000668    00000248     main.obj (.text)
-                  000008b0    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
-                  0000094c    00000070                                   : autoinit.obj (.text)
-                  000009bc    00000068                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
-                  00000a24    00000054                                   : boot.obj (.text)
-                  00000a78    00000054                                   : exit.obj (.text)
-                  00000acc    0000004c                                   : cpy_tbl.obj (.text)
-                  00000b18    00000018                                   : args_main.obj (.text)
-                  00000b30    00000014                                   : _lock.obj (.text)
-                  00000b44    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
-                  00000b52    00000002                                   : mpu_init.obj (.text)
-                  00000b54    00000002                                   : startup.obj (.text)
+                  00000668    000002f8     main.obj (.text)
+                  00000960    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  000009fc    00000070                                   : autoinit.obj (.text)
+                  00000a6c    00000068                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00000ad4    00000054                                   : boot.obj (.text)
+                  00000b28    00000054                                   : exit.obj (.text)
+                  00000b7c    0000004c                                   : cpy_tbl.obj (.text)
+                  00000bc8    00000018                                   : args_main.obj (.text)
+                  00000be0    00000014                                   : _lock.obj (.text)
+                  00000bf4    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
+                  00000c02    00000002                                   : mpu_init.obj (.text)
+                  00000c04    00000002                                   : startup.obj (.text)
 
-.cinit     0    00000b58    00000024     
-                  00000b58    00000011     (.cinit..data.load) [load image, compression = lzss]
-                  00000b69    00000003     --HOLE-- [fill = 0]
-                  00000b6c    00000008     (__TI_handler_table)
-                  00000b74    00000008     (__TI_cinit_table)
+.cinit     0    00000c08    00000024     
+                  00000c08    00000013     (.cinit..data.load) [load image, compression = lzss]
+                  00000c1b    00000001     --HOLE-- [fill = 0]
+                  00000c1c    00000008     (__TI_handler_table)
+                  00000c24    00000008     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
@@ -64,10 +64,11 @@ section   page    origin      length       input sections
 .stack     0    20000000    00000200     UNINITIALIZED
                   20000000    00000200     --HOLE--
 
-.data      0    20000200    00000018     UNINITIALIZED
+.data      0    20000200    0000001c     UNINITIALIZED
                   20000200    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
                   2000020c    00000008                                   : _lock.obj (.data:$O1$$)
-                  20000214    00000004                                   : stkdepth_vars.obj (.data)
+                  20000214    00000004     main.obj (.data)
+                  20000218    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
 
 MODULE SUMMARY
 
@@ -75,9 +76,9 @@ MODULE SUMMARY
        ------                         ----   -------   -------
     .\
        tm4c123gh6pm_startup_ccs.obj   1012   620       0      
-       main.obj                       584    0         0      
+       main.obj                       760    0         4      
     +--+------------------------------+------+---------+---------+
-       Total:                         1596   620       0      
+       Total:                         1772   620       4      
                                                               
     D:\EngineeringSoftware\CCS\ccsv7\tools\compiler\ti-cgt-arm_16.9.0.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
        memcpy_t2.obj                  156    0         0      
@@ -97,20 +98,20 @@ MODULE SUMMARY
        Total:                         682    0         24     
                                                               
        Stack:                         0      0         512    
-       Linker Generated:              0      33        0      
+       Linker Generated:              0      35        0      
     +--+------------------------------+------+---------+---------+
-       Grand Total:                   2278   653       536    
+       Grand Total:                   2454   655       540    
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00000b74 records: 1, size/record: 8, table size: 8
-	.data: load addr=00000b58, load size=00000011 bytes, run addr=20000200, run size=00000018 bytes, compression=lzss
+__TI_cinit_table @ 00000c24 records: 1, size/record: 8, table size: 8
+	.data: load addr=00000c08, load size=00000013 bytes, run addr=20000200, run size=0000001c bytes, compression=lzss
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00000b6c records: 2, size/record: 4, table size: 8
+__TI_handler_table @ 00000c1c records: 2, size/record: 4, table size: 8
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 
@@ -127,7 +128,7 @@ address   name
 00000439  ADC1Seq1_Handler               
 00000441  ADC1Seq2_Handler               
 00000449  ADC1Seq3_Handler               
-00000a79  C$$EXIT                        
+00000b29  C$$EXIT                        
 000003e9  CAN0_Handler                   
 000003f1  CAN1_Handler                   
 000003f9  CAN2_Handler                   
@@ -201,6 +202,7 @@ address   name
 00000271  ResetISR                       
 UNDEFED   SHT$$INIT_ARRAY$$Base          
 UNDEFED   SHT$$INIT_ARRAY$$Limit         
+20000214  SPEED                          
 000002e9  SSI0_Handler                   
 000003c1  SSI1_Handler                   
 00000479  SSI2_Handler                   
@@ -208,8 +210,8 @@ UNDEFED   SHT$$INIT_ARRAY$$Limit
 00000291  SVC_Handler                    
 00000651  StartCritical                  
 00000391  SysCtl_Handler                 
-00000699  SysTick_Handler                
-000006d9  SysTick_Pulse                  
+000006c9  SysTick_Handler                
+00000781  SysTick_Pulse                  
 00000349  Timer0A_Handler                
 00000351  Timer0B_Handler                
 00000359  Timer1A_Handler                
@@ -248,48 +250,48 @@ UNDEFED   SHT$$INIT_ARRAY$$Limit
 20000200  __STACK_END                    
 00000200  __STACK_SIZE                   
 20000200  __STACK_TOP                    
-00000b74  __TI_CINIT_Base                
-00000b7c  __TI_CINIT_Limit               
-00000b6c  __TI_Handler_Table_Base        
-00000b74  __TI_Handler_Table_Limit       
-0000094d  __TI_auto_init                 
+00000c24  __TI_CINIT_Base                
+00000c2c  __TI_CINIT_Limit               
+00000c1c  __TI_Handler_Table_Base        
+00000c24  __TI_Handler_Table_Limit       
+000009fd  __TI_auto_init                 
 20000200  __TI_cleanup_ptr               
-000009bd  __TI_decompress_lzss           
-00000b45  __TI_decompress_none           
+00000a6d  __TI_decompress_lzss           
+00000bf5  __TI_decompress_none           
 20000204  __TI_dtors_ptr                 
 20000208  __TI_enable_exit_profile_output
 ffffffff  __TI_pprof_out_hndl            
 ffffffff  __TI_prof_data_size            
 ffffffff  __TI_prof_data_start           
 00000000  __TI_static_base__             
-000008b1  __aeabi_memcpy                 
-000008b1  __aeabi_memcpy4                
-000008b1  __aeabi_memcpy8                
+00000961  __aeabi_memcpy                 
+00000961  __aeabi_memcpy4                
+00000961  __aeabi_memcpy8                
 ffffffff  __binit__                      
 ffffffff  __c_args__                     
-00000b53  __mpu_init                     
+00000c03  __mpu_init                     
 20000000  __stack                        
-00000b19  _args_main                     
-00000a25  _c_int00                       
+00000bc9  _args_main                     
+00000ad5  _c_int00                       
 2000020c  _lock                          
-00000b3f  _nop                           
-00000b37  _register_lock                 
-00000b31  _register_unlock               
-00000b55  _system_post_cinit             
+00000bef  _nop                           
+00000be7  _register_lock                 
+00000be1  _register_unlock               
+00000c05  _system_post_cinit             
 00000665  _system_pre_init               
 20000210  _unlock                        
-00000a7d  abort                          
+00000b2d  abort                          
 ffffffff  binit                          
-00000acd  copy_in                        
-00000869  delay                          
-00000a85  exit                           
+00000b7d  copy_in                        
+00000919  delay                          
+00000b35  exit                           
 00000000  g_pfnVectors                   
-000007f9  initNVIC                       
-00000779  initPortF_in                   
-00000729  initPortF_out                  
-000006a1  main                           
-20000214  main_func_sp                   
-000008b1  memcpy                         
+000008a1  initNVIC                       
+00000821  initPortF_in                   
+000007d1  initPortF_out                  
+00000749  main                           
+20000218  main_func_sp                   
+00000961  memcpy                         
 00000429  uDMA_Error                     
 00000421  uDMA_Handler                   
 
@@ -425,35 +427,35 @@ address   name
 00000661  WaitForInterrupt               
 00000665  _system_pre_init               
 00000669  GPIOPortF_Handler              
-00000699  SysTick_Handler                
-000006a1  main                           
-000006d9  SysTick_Pulse                  
-00000729  initPortF_out                  
-00000779  initPortF_in                   
-000007f9  initNVIC                       
-00000869  delay                          
-000008b1  __aeabi_memcpy                 
-000008b1  __aeabi_memcpy4                
-000008b1  __aeabi_memcpy8                
-000008b1  memcpy                         
-0000094d  __TI_auto_init                 
-000009bd  __TI_decompress_lzss           
-00000a25  _c_int00                       
-00000a79  C$$EXIT                        
-00000a7d  abort                          
-00000a85  exit                           
-00000acd  copy_in                        
-00000b19  _args_main                     
-00000b31  _register_unlock               
-00000b37  _register_lock                 
-00000b3f  _nop                           
-00000b45  __TI_decompress_none           
-00000b53  __mpu_init                     
-00000b55  _system_post_cinit             
-00000b6c  __TI_Handler_Table_Base        
-00000b74  __TI_CINIT_Base                
-00000b74  __TI_Handler_Table_Limit       
-00000b7c  __TI_CINIT_Limit               
+000006c9  SysTick_Handler                
+00000749  main                           
+00000781  SysTick_Pulse                  
+000007d1  initPortF_out                  
+00000821  initPortF_in                   
+000008a1  initNVIC                       
+00000919  delay                          
+00000961  __aeabi_memcpy                 
+00000961  __aeabi_memcpy4                
+00000961  __aeabi_memcpy8                
+00000961  memcpy                         
+000009fd  __TI_auto_init                 
+00000a6d  __TI_decompress_lzss           
+00000ad5  _c_int00                       
+00000b29  C$$EXIT                        
+00000b2d  abort                          
+00000b35  exit                           
+00000b7d  copy_in                        
+00000bc9  _args_main                     
+00000be1  _register_unlock               
+00000be7  _register_lock                 
+00000bef  _nop                           
+00000bf5  __TI_decompress_none           
+00000c03  __mpu_init                     
+00000c05  _system_post_cinit             
+00000c1c  __TI_Handler_Table_Base        
+00000c24  __TI_CINIT_Base                
+00000c24  __TI_Handler_Table_Limit       
+00000c2c  __TI_CINIT_Limit               
 20000000  __stack                        
 20000200  __STACK_END                    
 20000200  __STACK_TOP                    
@@ -462,7 +464,8 @@ address   name
 20000208  __TI_enable_exit_profile_output
 2000020c  _lock                          
 20000210  _unlock                        
-20000214  main_func_sp                   
+20000214  SPEED                          
+20000218  main_func_sp                   
 ffffffff  __TI_pprof_out_hndl            
 ffffffff  __TI_prof_data_size            
 ffffffff  __TI_prof_data_start           
@@ -472,4 +475,4 @@ ffffffff  binit
 UNDEFED   SHT$$INIT_ARRAY$$Base          
 UNDEFED   SHT$$INIT_ARRAY$$Limit         
 
-[173 symbols]
+[174 symbols]
