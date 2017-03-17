@@ -187,7 +187,7 @@ void initNVIC(void){
     GPIO_PORTF_IM_R         |=       0x11;          // (e) Enable interrupt mask (allows designated pins for ISR)
 
     //NVIC Configuration (pg. 132)
-    NVIC_PRI7_R            |=        0x00A00000;    // (f) Interrupt Priority to 5
+    NVIC_PRI7_R            |=        0x00400000;    // (f) Interrupt Priority to 2
     NVIC_EN0_R             |=        0X40000000;    // (g) Enable Interrupt # 30 - PORTF
 }
 
