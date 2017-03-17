@@ -38,7 +38,9 @@
 #define LED_B                   (*((volatile unsigned long *)0x40025010))
 #define LED_R                   (*((volatile unsigned long *)0x40025008))
 #define LED_G                   (*((volatile unsigned long *)0x40025020))
+#define PF2                     (*((volatile unsigned long *)0x40025010))
 
+// Switch Definitions
 #define ON                      0xFF
 #define OFF                     0x00
 
@@ -51,42 +53,52 @@ void EnableInterrupts(void);
 void WaitForInterrupt(void);
 
 // Global Variable
-unsigned long H = 0;
-unsigned long L = 0;
+unsigned long SysTickPeriod = 16000;    //(1ms/62.5us) - @ 16MHz clock
+unsigned long H = 8000;                 // SysTickPeriod/2 - initial wave state
+unsigned long L = 8000;                 // SysTickPeriod/2 - initial wave state
+unsigned long AdjParam = 1000;          // PWM Adjustment Parameter
 
 /************************
  * ISR HANDLERS
  ************************/
-// Edge Trigger (on PF4: SW1)
+// Edge Trigger (Background Thread)
 void GPIOPortF_Handler(void){
     GPIO_PORTF_ICR_R = 0x11;    //clear PF4 and PF0 flags
 
+    // Slow down
     if(SW2 == 0){
+        if(H > (AdjParam*2)){   // <-- lower boundary limit
+            H -= AdjParam;
+            L += AdjParam;
+        }
+    }
 
-       }
-
+    // Speed up
     if(SW1 == 0){
-
+        if(L > (AdjParam*2)){   // <-- upper boundary limit
+            H += AdjParam;
+            L -= AdjParam;
+        }
     }
 }
 
-// Periodic Handler
+// Periodic Handler (Background Thread)
 void SysTick_Handler(void){
 
-    H = 8000;
-    L = 8000;
+    /*
+     * This will toggle PF2 on and off
+     * at SysTickPeriod rate
+     */
 
-    if(LED_B == 0x00){
-        GPIO_PORTF_DATA_R = 0x04;
+    if(PF2 == OFF){
+        PF2 = ON;
         NVIC_ST_RELOAD_R = L - 1;
     }
 
     else{
-        GPIO_PORTF_DATA_R = 0x00;
+        PF2 = OFF;
         NVIC_ST_RELOAD_R = H - 1;
     }
-
-
 }
 
 
@@ -98,15 +110,16 @@ void main(void) {
     SYSCTL_RCGC2_R |= 0x00000020;                 // (a) Activate PortF Clock
     initPortF_in();
     initPortF_out();
-    SysTick_Pulse(16000);
+    SysTick_Pulse(SysTickPeriod);
     initNVIC();
     EnableInterrupts();
 
     // Program routine
     while(1){
-        //GPIO_PORTF_DATA_R ^= 0x01;
-        //delay(100);
-        //WaitForInterrupt();
+        // Blink Red LED (Foreground Thread)
+        GPIO_PORTF_DATA_R ^= 0x02;
+        delay(500);
+        //WaitForInterrupt();   //enter low power mode while doing nothing
     }
 }
 
