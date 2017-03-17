@@ -52,11 +52,11 @@ void SysTick_Pulse(unsigned long param);
 void EnableInterrupts(void);
 void WaitForInterrupt(void);
 
-// Global Variable
-unsigned long SysTickPeriod = 16000;    //(1ms/62.5us) - @ 16MHz clock
-unsigned long H = 8000;                 // SysTickPeriod/2 - initial wave state
-unsigned long L = 8000;                 // SysTickPeriod/2 - initial wave state
-unsigned long AdjParam = 1000;          // PWM Adjustment Parameter
+// Parametric Settings (Global Variables)
+unsigned long SysTickPeriod = 80000;     //(1ms/62.5us) - 1ms period @ 16MHz clock
+unsigned long H = 40000;                 // SysTickPeriod/2 - initial HIGH wave state
+unsigned long L = 40000;                 // SysTickPeriod/2 - initial LOW wave state
+unsigned long AdjParam = 10000;          // PWM Adjustment Parameter (12.5% of SysTickPeriod)
 
 /************************
  * ISR HANDLERS
@@ -117,7 +117,7 @@ void main(void) {
     // Program routine
     while(1){
         // Blink Red LED (Foreground Thread)
-        GPIO_PORTF_DATA_R ^= 0x02;
+        LED_G ^= ON;
         delay(500);
         //WaitForInterrupt();   //enter low power mode while doing nothing
     }
