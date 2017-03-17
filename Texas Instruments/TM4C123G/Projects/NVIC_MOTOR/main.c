@@ -51,46 +51,41 @@ void EnableInterrupts(void);
 void WaitForInterrupt(void);
 
 // Global Variable
-unsigned SPEED = 1;
-
+unsigned long H = 0;
+unsigned long L = 0;
 
 /************************
  * ISR HANDLERS
  ************************/
 // Edge Trigger (on PF4: SW1)
 void GPIOPortF_Handler(void){
-    GPIO_PORTF_ICR_R = 0x11;
+    GPIO_PORTF_ICR_R = 0x11;    //clear PF4 and PF0 flags
 
-    //slow down
     if(SW2 == 0){
-        if(SPEED < 8){
-            SPEED++;
-        }
-    }
 
-    //speed up
+       }
+
     if(SW1 == 0){
-        if(SPEED > 0){
-             SPEED--;
-        }
-    }
 
+    }
 }
 
 // Periodic Handler
-void SysTick_Handler(void){ unsigned long RELOAD_VAL;
+void SysTick_Handler(void){
 
-    RELOAD_VAL = 40000;
+    H = 8000;
+    L = 8000;
 
     if(LED_B == 0x00){
         GPIO_PORTF_DATA_R = 0x04;
-        NVIC_ST_RELOAD_R = (RELOAD_VAL + ((RELOAD_VAL/20)*SPEED)) - 1;
+        NVIC_ST_RELOAD_R = L - 1;
     }
 
     else{
         GPIO_PORTF_DATA_R = 0x00;
-        NVIC_ST_RELOAD_R = (RELOAD_VAL - ((RELOAD_VAL/20)*SPEED)) - 1;
+        NVIC_ST_RELOAD_R = H - 1;
     }
+
 
 }
 
@@ -103,7 +98,7 @@ void main(void) {
     SYSCTL_RCGC2_R |= 0x00000020;                 // (a) Activate PortF Clock
     initPortF_in();
     initPortF_out();
-    SysTick_Pulse(16000);                         //     SysTick creates 100ms pulse
+    SysTick_Pulse(16000);
     initNVIC();
     EnableInterrupts();
 
@@ -163,6 +158,12 @@ void initPortF_in(void){
 
 // Edge Triggered Interrupt (pg. 657)
 void initNVIC(void){
+
+    /* EDGE TRIGGER NOTE:
+     * We Trigger on the falling
+     * edge because SW1 & SW2 are set
+     * to be a negative-logic switch
+     */
                                                     //     ************INTERRUPT*************
     GPIO_PORTF_IS_R         &=      ~0x11;          // (c) Edge-sensitive
     GPIO_PORTF_IBE_R        &=      ~0x11;          //     Does not trigger on falling or rising
