@@ -26,7 +26,6 @@
 
 //#include "TExaS.h"
 //#include "..//tm4c123gh6pm.h"
-#include "PLL.h"
 
 
 /************************
@@ -43,19 +42,9 @@
 #define GPIO_PORTA_AMSEL_R      (*((volatile unsigned long *)0x40004528))
 #define GPIO_PORTA_AFSEL_R      (*((volatile unsigned long *)0x40004420))
 #define GPIO_PORTA_PCTL_R       (*((volatile unsigned long *)0x4000452C))
-#define GPIO_PORTA_PUR_R        (*((volatile unsigned long *)0x40004510))
-
-// PortA Interrupt Registers
-//#define NVIC_EN0_R              (*((volatile unsigned long *)0xE000E100))
-//#define NVIC_PRI7_R             (*((volatile unsigned long *)0xE000E41C))
-#define GPIO_PORTA_IS_R         (*((volatile unsigned long *)0x40004404))
-#define GPIO_PORTA_IBE_R        (*((volatile unsigned long *)0x40004408))
-#define GPIO_PORTA_IEV_R        (*((volatile unsigned long *)0x4000440C))
-#define GPIO_PORTA_IM_R         (*((volatile unsigned long *)0x40004410))
-#define GPIO_PORTA_ICR_R        (*((volatile unsigned long *)0x4000441C))
 
 // Systick & NVIC Registers
-//#define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
+#define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
 #define NVIC_ST_CTRL_R          (*((volatile unsigned long *)0xE000E010))
 #define NVIC_ST_RELOAD_R        (*((volatile unsigned long *)0xE000E014))
 #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
@@ -68,9 +57,9 @@
 
 
 // basic functions defined at end of startup.s
-void DisableInterrupts(void); // Disable interrupts
-void EnableInterrupts(void);  // Enable interrupts
-void WaitForInterrupt(void);  // low power mode
+void DisableInterrupts(void);           // Disable interrupts
+void EnableInterrupts(void);            // Enable interrupts
+void initSysTick(unsigned long param);
 void initPortA_out(void);
 void initPortA_in(void);
 void delay(unsigned int param);
@@ -79,10 +68,8 @@ void delay(unsigned int param);
  * ISR HANDLERS
  ************************/
 
-
-// called at 880 Hz
 void SysTick_Handler(void){
-
+    GPIO_PORTA_DATA_R ^= 0x04;
 }
 
 
@@ -94,14 +81,15 @@ void SysTick_Handler(void){
 int main(void){//TExaS_Init(SW_PIN_PA3, HEADPHONE_PIN_PA2,ScopeOn);
 
   // Initialization routine
-  PLL_Init();           // 80 MHz
-  initPortA_out();      // Initialize output driver
-  EnableInterrupts();   // enable after all initialization are done
+  SYSCTL_RCGC2_R |= 0x00000001;     // (a) Activate PortA Clock
+  initPortA_out();                  // Initialize output driver
+  initPortA_in();                   // Initialize input driver
+  initSysTick(90909);               // Initialize systick
+  EnableInterrupts();               // enable after all initialization are done
 
   // Program routine
   while(1){
-      PF2 ^= ON;
-      delay(1);
+
   }
 }
 
@@ -110,11 +98,22 @@ int main(void){//TExaS_Init(SW_PIN_PA3, HEADPHONE_PIN_PA2,ScopeOn);
  * SUB ROUTINES
  ************************/
 
-// PortA Output Initialization
+// SysTick Initialization Routine (pg. 132)
+void initSysTick(unsigned long param){
+
+    NVIC_ST_CTRL_R           =      0;              //     Disable systick on setup
+    NVIC_ST_RELOAD_R         =      param - 1;
+    NVIC_ST_CURRENT_R        =      0;
+    NVIC_SYS_PRI3_R         |=      0x50000000;     //     Interrupt Priority 2
+    NVIC_ST_CTRL_R          |=      0x07;           //     Enable interrupts with systic
+}
+
+
+// PortA Output Initialization Routine
 void initPortA_out(void){
 
-    // GPIO Digital Control                         //************OUTPUT*************
-    GPIO_PORTA_DEN_R        |=      0x04;           // (b) Make PA2 Digital Pins
+    // GPIO Digital Control                         //     ************OUTPUT*************
+    GPIO_PORTA_DEN_R        |=      0x04;           //     Make PA2 Digital Pins
     GPIO_PORTA_DIR_R        |=      0x04;           //     Make PA2 OUTPUT Pins
 
     // GPIO Alternate function control
@@ -123,33 +122,14 @@ void initPortA_out(void){
     GPIO_PORTA_PCTL_R       &=      ~0x00000F00;    //     Keep PA2 as GPIO
 }
 
-// PortA Input Initialization
+// PortF Input Initialization
 void initPortA_in(void){
 
-                                                      //     ************INPUT*************
-
-    // GPIO Digital Control
-    //GPIO_PORTA_DEN_R        |=       0x11;          // (b) Make PF4 & PF0 Digital Pins
-    //GPIO_PORTA_DIR_R        &=      ~0x11;          //     Make PF4 & PF0 INPUT Pins
-    //GPIO_PORTA_PUR_R        |=       0x11;          //     Set a PULL-UP resister internal for PF4 & PF1
+    // GPIO Digital Control                           //     ************INPUT*************
+    GPIO_PORTA_DEN_R        |=       0x08;          // (b) Make PA3 Digital Pins
+    GPIO_PORTA_DIR_R        &=      ~0x08;          //     Make PA3 INPUT Pins
 
     // GPIO Alternate function control
-    //GPIO_PORTA_AMSEL_R       =      0;              //     Disable Analog Mode
-    //GPIO_PORTA_AFSEL_R      &=      ~0x11;          //     Disable Alternate Function on PF
-    //GPIO_PORTA_PCTL_R       &=      ~0x000F000F;    //     Keep PF4 & PF0 as GPIO
-}
-
-// Busy-wait delay (~1ms per param)
-void delay(unsigned int param){ unsigned int i, j;
-
-    for(j = 0; j < param; j++){
-        for(i = 0; i < 3600; i++){
-            // do nothing
-        }
-    }
-}
-
-// input from PA3, output from PA2, SysTick interrupts
-void Sound_Init(void){
-
+    GPIO_PORTA_AFSEL_R      &=      ~0x08;          //     Disable Alternate Function on PA3
+    GPIO_PORTA_PCTL_R       &=      ~0x0000F000;    //     Keep PA3 as GPIO
 }
