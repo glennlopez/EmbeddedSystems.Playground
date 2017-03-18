@@ -2,8 +2,8 @@
     TuningFork.c Lab 12
     Runs on LM4F120/TM4C123
     Use SysTick interrupts to create a squarewave at 440Hz.
-    There is a positive logic switch connected to PA3, PB3, or PE3.
-    There is an output on PA2, PB2, or PE2. The output is
+    There is a positive logic switch connected to PA3.
+    There is an output on PA2. The output is
     connected to headphones through a 1k resistor.
     The volume-limiting resistor can be any value from 680 to 2000 ohms
     The tone is initially off, when the switch goes from
@@ -25,6 +25,36 @@
  * ADDRESS DEFINITIONS
  ************************/
 
+// System Control Legacy base address
+#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
+
+// PortA (APB) base address: 0x40004000
+#define GPIO_PORTA_DATA_R       (*((volatile unsigned long *)3FC))
+#define GPIO_PORTA_DEN_R        (*((volatile unsigned long *)51C))
+#define GPIO_PORTA_DIR_R        (*((volatile unsigned long *)400))
+#define GPIO_PORTA_AMSEL_R      (*((volatile unsigned long *)528))
+#define GPIO_PORTA_AFSEL_R      (*((volatile unsigned long *)420))
+#define GPIO_PORTA_PCTL_R       (*((volatile unsigned long *)52C))
+#define GPIO_PORTA_PUR_R        (*((volatile unsigned long *)510))
+
+// PortA Interrupt Registers
+//#define NVIC_EN0_R              (*((volatile unsigned long *)0xE000E100))
+//#define NVIC_PRI7_R             (*((volatile unsigned long *)0xE000E41C))
+#define GPIO_PORTA_IS_R         (*((volatile unsigned long *)404))
+#define GPIO_PORTA_IBE_R        (*((volatile unsigned long *)408))
+#define GPIO_PORTA_IEV_R        (*((volatile unsigned long *)40C))
+#define GPIO_PORTA_IM_R         (*((volatile unsigned long *)410))
+#define GPIO_PORTA_ICR_R        (*((volatile unsigned long *)41C))
+
+// Systick & NVIC Registers
+//#define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
+#define NVIC_ST_CTRL_R          (*((volatile unsigned long *)0xE000E010))
+#define NVIC_ST_RELOAD_R        (*((volatile unsigned long *)0xE000E014))
+#define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
+
+// PortA Bit-specific Address
+#define PF2                     (*((volatile unsigned long *)0x40004000))
+#define PF3                     (*((volatile unsigned long *)0x40004000))
 
 
 
