@@ -16,17 +16,17 @@
  Tone     ----------| |-| |-| |-| |-| |-| |-| |---------------
 
  System Specifications:
- [] 440Hz Square Wave
- [] Positive Logic Switch
- [] PA3 acts as toggle switch
- [] No edge triggering is possible (Limit)
+ [x] 440Hz Square Wave
+ [x] Positive Logic Switch
+ [x] PA3 acts as toggle switch
+ [x] No edge triggering is possible (Limit)
  [] Bus Clock is set to 80MHz
 
 */
 
 //#include "TExaS.h"
 //#include "..//tm4c123gh6pm.h"
-
+#include "PLL.h"
 
 /************************
  * ADDRESS DEFINITIONS
@@ -42,6 +42,7 @@
 #define GPIO_PORTA_AMSEL_R      (*((volatile unsigned long *)0x40004528))
 #define GPIO_PORTA_AFSEL_R      (*((volatile unsigned long *)0x40004420))
 #define GPIO_PORTA_PCTL_R       (*((volatile unsigned long *)0x4000452C))
+#define GPIO_PORTA_PDR_R        (*((volatile unsigned long *)0x40004514))
 
 // Systick & NVIC Registers
 #define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
@@ -64,12 +65,23 @@ void initPortA_out(void);
 void initPortA_in(void);
 void delay(unsigned int param);
 
+// Global Variables
+unsigned int toggle = 0;
+
 /************************
  * ISR HANDLERS
  ************************/
 
 void SysTick_Handler(void){
-    GPIO_PORTA_DATA_R ^= 0x04;
+    /*
+    if(toggle == 1){
+        PF2 ^= ON;
+    }
+    else{
+        PF2 = OFF;
+    }
+    */
+    PF2 ^= ON;
 }
 
 
@@ -85,6 +97,7 @@ int main(void){//TExaS_Init(SW_PIN_PA3, HEADPHONE_PIN_PA2,ScopeOn);
   initPortA_out();                  // Initialize output driver
   initPortA_in();                   // Initialize input driver
   initSysTick(90909);               // Initialize systick
+  PLL_Init();                       // 80 MHz
   EnableInterrupts();               // enable after all initialization are done
 
   // Program routine
@@ -125,9 +138,10 @@ void initPortA_out(void){
 // PortF Input Initialization
 void initPortA_in(void){
 
-    // GPIO Digital Control                           //     ************INPUT*************
+    // GPIO Digital Control                         //     ************INPUT*************
     GPIO_PORTA_DEN_R        |=       0x08;          // (b) Make PA3 Digital Pins
     GPIO_PORTA_DIR_R        &=      ~0x08;          //     Make PA3 INPUT Pins
+    //GPIO_PORTA_PDR_R        |=       0x08;          //     Set Pull Down resistor for PA3
 
     // GPIO Alternate function control
     GPIO_PORTA_AFSEL_R      &=      ~0x08;          //     Disable Alternate Function on PA3
