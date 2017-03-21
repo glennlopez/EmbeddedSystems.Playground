@@ -1,3 +1,5 @@
+#include "PLL.h"    // Set to 80MHz
+
 /************************
  * ADDRESS DEFINITIONS
  ************************/
@@ -112,6 +114,7 @@ void main(void) {
     initPortF_out();
     SysTick_Pulse(SysTickPeriod);
     initNVIC();
+    PLL_Init();
     EnableInterrupts();
 
     // Program routine

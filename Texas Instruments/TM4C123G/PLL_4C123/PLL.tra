@@ -1,0 +1,21 @@
+*** Creating Trace Output File 'PLL.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"pll.o"'
+### List of Objects: adding '"plltestmain.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4 "startup.o" "pll.o" "plltestmain.o" 
+--library_type=microlib --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\PLL.map" -o PLL.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'PLL.axf'
+### ADS-LD Command File: 'PLL.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'PLL.lnp', Handle=0x00000504
+### Writing '.lnp' file
+### ADS-LD Command file 'PLL.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

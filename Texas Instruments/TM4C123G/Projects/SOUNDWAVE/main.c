@@ -73,15 +73,15 @@ unsigned int toggle = 0;
  ************************/
 
 void SysTick_Handler(void){
-    /*
+    if(PF3 == 0x08){
+        toggle ^= 1;
+    }
+
+    // 440Hz wave
     if(toggle == 1){
         PF2 ^= ON;
     }
-    else{
-        PF2 = OFF;
-    }
-    */
-    PF2 ^= ON;
+
 }
 
 
@@ -102,7 +102,11 @@ int main(void){//TExaS_Init(SW_PIN_PA3, HEADPHONE_PIN_PA2,ScopeOn);
 
   // Program routine
   while(1){
-
+      /*
+      while(PF3 == 0x08){
+          toggle = 1;
+      }
+      */
   }
 }
 

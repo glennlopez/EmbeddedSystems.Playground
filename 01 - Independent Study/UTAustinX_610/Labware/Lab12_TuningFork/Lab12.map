@@ -18,9 +18,13 @@ Section Cross References
     startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
     startup.o(.text) refers to startup.o(HEAP) for HeapMem
     startup.o(.text) refers to startup.o(STACK) for StackMem
-    tuningfork.o(i.main) refers to texas.o(i.TExaS_Init) for TExaS_Init
-    tuningfork.o(i.main) refers to tuningfork.o(i.Sound_Init) for Sound_Init
+    tuningfork.o(i.SysTick_Handler) refers to tuningfork.o(.data) for flag
+    tuningfork.o(i.main) refers to tuningfork.o(i.initPortA_out) for initPortA_out
+    tuningfork.o(i.main) refers to tuningfork.o(i.initPortA_in) for initPortA_in
+    tuningfork.o(i.main) refers to tuningfork.o(i.initSysTick) for initSysTick
+    tuningfork.o(i.main) refers to texas.o(i.PLL_Init) for PLL_Init
     tuningfork.o(i.main) refers to startup.o(.text) for EnableInterrupts
+    tuningfork.o(i.main) refers to tuningfork.o(.data) for flag
     texas.o(i.Decrypt) refers to texas.o(.bss) for EncriptedMagicCode
     texas.o(i.Decrypt) refers to texas.o(.constdata) for DeScramble
     texas.o(i.Encrypt) refers to texas.o(i.SetCode) for SetCode
@@ -169,19 +173,24 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
+    Removing tuningfork.o(i.delay), (24 bytes).
+    Removing texas.o(i.ADC1_Init), (208 bytes).
     Removing texas.o(i.Decrypt), (92 bytes).
     Removing texas.o(i.PortD2_Init), (108 bytes).
+    Removing texas.o(i.SetCourse), (24 bytes).
     Removing texas.o(i.SetMode), (24 bytes).
     Removing texas.o(i.StartTimer4), (24 bytes).
     Removing texas.o(i.StopTimer4), (24 bytes).
+    Removing texas.o(i.TExaS_Init), (456 bytes).
     Removing texas.o(i.TExaS_Stop), (28 bytes).
     Removing texas.o(i.UART_InChar), (24 bytes).
     Removing texas.o(i.UART_InCharNonBlocking), (28 bytes).
+    Removing texas.o(i.UART_Init), (152 bytes).
     Removing texas.o(i.UART_OutChar), (24 bytes).
     Removing texas.o(i.UART_OutCharNonBlock), (12 bytes).
     Removing texas.o(i.copy), (18 bytes).
 
-11 unused section(s) (total 406 bytes) removed from the image.
+16 unused section(s) (total 1270 bytes) removed from the image.
 
 ==============================================================================
 
@@ -192,51 +201,51 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      644  startup.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
-    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry4.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry2.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtentry4.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../fplib/dcmpi.s                         0x00000000   Number         0  dcmpi.o ABSOLUTE
@@ -302,41 +311,40 @@ Image Symbol Table
     .text                                    0x000003c0   Section        2  use_no_semi.o(.text)
     .text                                    0x000003c2   Section        0  indicate_semi.o(.text)
     i.ADC1_In                                0x000003c4   Section        0  texas.o(i.ADC1_In)
-    i.ADC1_Init                              0x000003d0   Section        0  texas.o(i.ADC1_Init)
-    i.Encrypt                                0x000004a0   Section        0  texas.o(i.Encrypt)
-    i.GPIOPortA_Handler                      0x0000050c   Section        0  texas.o(i.GPIOPortA_Handler)
-    i.GPIOPortB_Handler                      0x00000520   Section        0  texas.o(i.GPIOPortB_Handler)
-    i.GPIOPortE_Handler                      0x00000534   Section        0  texas.o(i.GPIOPortE_Handler)
-    i.PLL_Init                               0x00000548   Section        0  texas.o(i.PLL_Init)
-    i.SetCode                                0x000005c4   Section        0  texas.o(i.SetCode)
-    i.SetCourse                              0x000005dc   Section        0  texas.o(i.SetCourse)
-    i.SetGrade                               0x000005f4   Section        0  texas.o(i.SetGrade)
-    i.Sound_Init                             0x000006c0   Section        0  tuningfork.o(i.Sound_Init)
-    i.SpecialBGTest1_End                     0x000006c4   Section        0  texas.o(i.SpecialBGTest1_End)
-    i.SpecialBGTest1_Periodic                0x00000800   Section        0  texas.o(i.SpecialBGTest1_Periodic)
-    i.SpecialBGTest1_Start                   0x00000864   Section        0  texas.o(i.SpecialBGTest1_Start)
-    i.SysTick_Handler                        0x000009bc   Section        0  tuningfork.o(i.SysTick_Handler)
-    i.TExaS_Init                             0x000009c0   Section        0  texas.o(i.TExaS_Init)
-    i.Timer4A_Handler                        0x00000b88   Section        0  texas.o(i.Timer4A_Handler)
-    i.Timer5A_Handler                        0x00000ba8   Section        0  texas.o(i.Timer5A_Handler)
-    i.UART_Init                              0x000011b8   Section        0  texas.o(i.UART_Init)
-    i.main                                   0x00001250   Section        0  tuningfork.o(i.main)
-    x$fpl$dcmpinf                            0x00001266   Section       24  dcmpi.o(x$fpl$dcmpinf)
-    x$fpl$dfltu                              0x0000127e   Section       38  dflt_clz.o(x$fpl$dfltu)
-    x$fpl$dleqf                              0x000012a4   Section      120  dleqf.o(x$fpl$dleqf)
-    x$fpl$dnaninf                            0x0000131c   Section      156  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$drleqf                             0x000013b8   Section      108  drleqf.o(x$fpl$drleqf)
-    .constdata                               0x00001424   Section     7304  texas.o(.constdata)
-    x$fpl$usenofp                            0x00001424   Section        0  usenofp.o(x$fpl$usenofp)
-    .data                                    0x20000000   Section       76  texas.o(.data)
-    previousTime                             0x2000001c   Data           4  texas.o(.data)
-    RealGrade                                0x20000020   Data           4  texas.o(.data)
-    .bss                                     0x20000050   Section      628  texas.o(.bss)
-    .bss                                     0x200002c4   Section       96  libspace.o(.bss)
-    HEAP                                     0x20000328   Section        0  startup.o(HEAP)
-    STACK                                    0x20000328   Section     1024  startup.o(STACK)
-    HeapMem                                  0x20000328   Data           0  startup.o(HEAP)
-    StackMem                                 0x20000328   Data           0  startup.o(STACK)
+    i.Encrypt                                0x000003d0   Section        0  texas.o(i.Encrypt)
+    i.GPIOPortA_Handler                      0x0000043c   Section        0  texas.o(i.GPIOPortA_Handler)
+    i.GPIOPortB_Handler                      0x00000450   Section        0  texas.o(i.GPIOPortB_Handler)
+    i.GPIOPortE_Handler                      0x00000464   Section        0  texas.o(i.GPIOPortE_Handler)
+    i.PLL_Init                               0x00000478   Section        0  texas.o(i.PLL_Init)
+    i.SetCode                                0x000004f4   Section        0  texas.o(i.SetCode)
+    i.SetGrade                               0x0000050c   Section        0  texas.o(i.SetGrade)
+    i.SpecialBGTest1_End                     0x000005d8   Section        0  texas.o(i.SpecialBGTest1_End)
+    i.SpecialBGTest1_Periodic                0x00000714   Section        0  texas.o(i.SpecialBGTest1_Periodic)
+    i.SpecialBGTest1_Start                   0x00000778   Section        0  texas.o(i.SpecialBGTest1_Start)
+    i.SysTick_Handler                        0x000008d0   Section        0  tuningfork.o(i.SysTick_Handler)
+    i.Timer4A_Handler                        0x000008f8   Section        0  texas.o(i.Timer4A_Handler)
+    i.Timer5A_Handler                        0x00000918   Section        0  texas.o(i.Timer5A_Handler)
+    i.initPortA_in                           0x00000f28   Section        0  tuningfork.o(i.initPortA_in)
+    i.initPortA_out                          0x00000f7c   Section        0  tuningfork.o(i.initPortA_out)
+    i.initSysTick                            0x00000fcc   Section        0  tuningfork.o(i.initSysTick)
+    i.main                                   0x00001000   Section        0  tuningfork.o(i.main)
+    x$fpl$dcmpinf                            0x0000105c   Section       24  dcmpi.o(x$fpl$dcmpinf)
+    x$fpl$dfltu                              0x00001074   Section       38  dflt_clz.o(x$fpl$dfltu)
+    x$fpl$dleqf                              0x0000109c   Section      120  dleqf.o(x$fpl$dleqf)
+    x$fpl$dnaninf                            0x00001114   Section      156  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$drleqf                             0x000011b0   Section      108  drleqf.o(x$fpl$drleqf)
+    .constdata                               0x0000121c   Section     7304  texas.o(.constdata)
+    x$fpl$usenofp                            0x0000121c   Section        0  usenofp.o(x$fpl$usenofp)
+    .data                                    0x20000000   Section        8  tuningfork.o(.data)
+    .data                                    0x20000008   Section       76  texas.o(.data)
+    previousTime                             0x20000024   Data           4  texas.o(.data)
+    RealGrade                                0x20000028   Data           4  texas.o(.data)
+    .bss                                     0x20000058   Section      628  texas.o(.bss)
+    .bss                                     0x200002cc   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000330   Section        0  startup.o(HEAP)
+    STACK                                    0x20000330   Section     1024  startup.o(STACK)
+    HeapMem                                  0x20000330   Data           0  startup.o(HEAP)
+    StackMem                                 0x20000330   Data           0  startup.o(STACK)
 
     Global Symbols
 
@@ -555,77 +563,77 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x000003c1   Thumb Code     2  use_no_semi.o(.text)
     __semihosting_library_function           0x000003c3   Thumb Code     0  indicate_semi.o(.text)
     ADC1_In                                  0x000003c5   Thumb Code     6  texas.o(i.ADC1_In)
-    ADC1_Init                                0x000003d1   Thumb Code   168  texas.o(i.ADC1_Init)
-    Encrypt                                  0x000004a1   Thumb Code    92  texas.o(i.Encrypt)
-    GPIOPortA_Handler                        0x0000050d   Thumb Code    14  texas.o(i.GPIOPortA_Handler)
-    GPIOPortB_Handler                        0x00000521   Thumb Code    14  texas.o(i.GPIOPortB_Handler)
-    GPIOPortE_Handler                        0x00000535   Thumb Code    14  texas.o(i.GPIOPortE_Handler)
-    PLL_Init                                 0x00000549   Thumb Code   118  texas.o(i.PLL_Init)
-    SetCode                                  0x000005c5   Thumb Code    20  texas.o(i.SetCode)
-    SetCourse                                0x000005dd   Thumb Code    20  texas.o(i.SetCourse)
-    SetGrade                                 0x000005f5   Thumb Code   196  texas.o(i.SetGrade)
-    Sound_Init                               0x000006c1   Thumb Code     2  tuningfork.o(i.Sound_Init)
-    SpecialBGTest1_End                       0x000006c5   Thumb Code   180  texas.o(i.SpecialBGTest1_End)
-    SpecialBGTest1_Periodic                  0x00000801   Thumb Code    80  texas.o(i.SpecialBGTest1_Periodic)
-    SpecialBGTest1_Start                     0x00000865   Thumb Code   306  texas.o(i.SpecialBGTest1_Start)
-    SysTick_Handler                          0x000009bd   Thumb Code     2  tuningfork.o(i.SysTick_Handler)
-    TExaS_Init                               0x000009c1   Thumb Code   324  texas.o(i.TExaS_Init)
-    Timer4A_Handler                          0x00000b89   Thumb Code    20  texas.o(i.Timer4A_Handler)
-    Timer5A_Handler                          0x00000ba9   Thumb Code  1532  texas.o(i.Timer5A_Handler)
-    UART_Init                                0x000011b9   Thumb Code   126  texas.o(i.UART_Init)
-    main                                     0x00001251   Thumb Code    22  tuningfork.o(i.main)
-    __fpl_dcmp_Inf                           0x00001267   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
-    __aeabi_ui2d                             0x0000127f   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
-    _dfltu                                   0x0000127f   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
-    __aeabi_cdcmple                          0x000012a5   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    _dcmple                                  0x000012a5   Thumb Code   120  dleqf.o(x$fpl$dleqf)
-    __fpl_dcmple_InfNaN                      0x00001307   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    __fpl_dnaninf                            0x0000131d   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __aeabi_cdrcmple                         0x000013b9   Thumb Code     0  drleqf.o(x$fpl$drleqf)
-    _drcmple                                 0x000013b9   Thumb Code   108  drleqf.o(x$fpl$drleqf)
-    Port                                     0x00001424   Data          24  texas.o(.constdata)
-    __I$use$fp                               0x00001424   Number         0  usenofp.o(x$fpl$usenofp)
-    InputPortMsgA                            0x0000143c   Data          40  texas.o(.constdata)
-    OutputPortMsgA                           0x00001464   Data          40  texas.o(.constdata)
-    InputPortMsgB                            0x0000148c   Data          40  texas.o(.constdata)
-    OutputPortMsgB                           0x000014b4   Data          40  texas.o(.constdata)
-    InputPortMsgE                            0x000014dc   Data          40  texas.o(.constdata)
-    OutputPortMsgE                           0x00001504   Data          40  texas.o(.constdata)
-    BlankMsg                                 0x0000152c   Data          40  texas.o(.constdata)
-    InitializedMsg                           0x00001554   Data          40  texas.o(.constdata)
-    IntroMsg                                 0x0000157c   Data          40  texas.o(.constdata)
-    DoneMsg                                  0x000015a4   Data          40  texas.o(.constdata)
-    TestMsg                                  0x000015cc   Data          40  texas.o(.constdata)
-    LabTest                                  0x000015f4   Data        6608  texas.o(.constdata)
-    BgTest                                   0x00002fc4   Data         160  texas.o(.constdata)
-    Key                                      0x00003064   Data           8  texas.o(.constdata)
-    Scramble                                 0x0000306c   Data          32  texas.o(.constdata)
-    DeScramble                               0x0000308c   Data          32  texas.o(.constdata)
-    Region$$Table$$Base                      0x000030ac   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000030cc   Number         0  anon$$obj.o(Region$$Table)
-    InPort                                   0x20000000   Data           4  texas.o(.data)
-    OutPort                                  0x20000004   Data           4  texas.o(.data)
-    BgTestStatus                             0x20000008   Data           1  texas.o(.data)
-    EdgeNumber                               0x2000000c   Data           4  texas.o(.data)
-    ShortestPeriod                           0x20000010   Data           4  texas.o(.data)
-    LongestPeriod                            0x20000014   Data           4  texas.o(.data)
-    TExaS_Period                             0x20000018   Data           4  texas.o(.data)
-    TExaS_Ports                              0x20000024   Data           8  texas.o(.data)
-    TExaS_Meter                              0x2000002c   Data           4  texas.o(.data)
-    ADCnum                                   0x20000030   Data           4  texas.o(.data)
-    LastMode                                 0x20000034   Data           4  texas.o(.data)
-    bFlag                                    0x20000038   Data           4  texas.o(.data)
-    Count                                    0x2000003c   Data           4  texas.o(.data)
-    DelayBetweenTests                        0x20000040   Data           4  texas.o(.data)
-    TExaS_Test                               0x20000044   Data           4  texas.o(.data)
-    ScopeMode                                0x20000048   Data           4  texas.o(.data)
-    TExaS                                    0x20000050   Data          56  texas.o(.bss)
-    TExaS_ADC                                0x20000088   Data         512  texas.o(.bss)
-    MagicCode                                0x20000288   Data          10  texas.o(.bss)
-    EncriptedMagicCode                       0x20000292   Data          10  texas.o(.bss)
-    StudentID                                0x2000029c   Data          40  texas.o(.bss)
-    __libspace_start                         0x200002c4   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x20000324   Data           0  libspace.o(.bss)
+    Encrypt                                  0x000003d1   Thumb Code    92  texas.o(i.Encrypt)
+    GPIOPortA_Handler                        0x0000043d   Thumb Code    14  texas.o(i.GPIOPortA_Handler)
+    GPIOPortB_Handler                        0x00000451   Thumb Code    14  texas.o(i.GPIOPortB_Handler)
+    GPIOPortE_Handler                        0x00000465   Thumb Code    14  texas.o(i.GPIOPortE_Handler)
+    PLL_Init                                 0x00000479   Thumb Code   118  texas.o(i.PLL_Init)
+    SetCode                                  0x000004f5   Thumb Code    20  texas.o(i.SetCode)
+    SetGrade                                 0x0000050d   Thumb Code   196  texas.o(i.SetGrade)
+    SpecialBGTest1_End                       0x000005d9   Thumb Code   180  texas.o(i.SpecialBGTest1_End)
+    SpecialBGTest1_Periodic                  0x00000715   Thumb Code    80  texas.o(i.SpecialBGTest1_Periodic)
+    SpecialBGTest1_Start                     0x00000779   Thumb Code   306  texas.o(i.SpecialBGTest1_Start)
+    SysTick_Handler                          0x000008d1   Thumb Code    36  tuningfork.o(i.SysTick_Handler)
+    Timer4A_Handler                          0x000008f9   Thumb Code    20  texas.o(i.Timer4A_Handler)
+    Timer5A_Handler                          0x00000919   Thumb Code  1532  texas.o(i.Timer5A_Handler)
+    initPortA_in                             0x00000f29   Thumb Code    74  tuningfork.o(i.initPortA_in)
+    initPortA_out                            0x00000f7d   Thumb Code    72  tuningfork.o(i.initPortA_out)
+    initSysTick                              0x00000fcd   Thumb Code    46  tuningfork.o(i.initSysTick)
+    main                                     0x00001001   Thumb Code    72  tuningfork.o(i.main)
+    __fpl_dcmp_Inf                           0x0000105d   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
+    __aeabi_ui2d                             0x00001075   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
+    _dfltu                                   0x00001075   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
+    __aeabi_cdcmple                          0x0000109d   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    _dcmple                                  0x0000109d   Thumb Code   120  dleqf.o(x$fpl$dleqf)
+    __fpl_dcmple_InfNaN                      0x000010ff   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    __fpl_dnaninf                            0x00001115   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __aeabi_cdrcmple                         0x000011b1   Thumb Code     0  drleqf.o(x$fpl$drleqf)
+    _drcmple                                 0x000011b1   Thumb Code   108  drleqf.o(x$fpl$drleqf)
+    Port                                     0x0000121c   Data          24  texas.o(.constdata)
+    __I$use$fp                               0x0000121c   Number         0  usenofp.o(x$fpl$usenofp)
+    InputPortMsgA                            0x00001234   Data          40  texas.o(.constdata)
+    OutputPortMsgA                           0x0000125c   Data          40  texas.o(.constdata)
+    InputPortMsgB                            0x00001284   Data          40  texas.o(.constdata)
+    OutputPortMsgB                           0x000012ac   Data          40  texas.o(.constdata)
+    InputPortMsgE                            0x000012d4   Data          40  texas.o(.constdata)
+    OutputPortMsgE                           0x000012fc   Data          40  texas.o(.constdata)
+    BlankMsg                                 0x00001324   Data          40  texas.o(.constdata)
+    InitializedMsg                           0x0000134c   Data          40  texas.o(.constdata)
+    IntroMsg                                 0x00001374   Data          40  texas.o(.constdata)
+    DoneMsg                                  0x0000139c   Data          40  texas.o(.constdata)
+    TestMsg                                  0x000013c4   Data          40  texas.o(.constdata)
+    LabTest                                  0x000013ec   Data        6608  texas.o(.constdata)
+    BgTest                                   0x00002dbc   Data         160  texas.o(.constdata)
+    Key                                      0x00002e5c   Data           8  texas.o(.constdata)
+    Scramble                                 0x00002e64   Data          32  texas.o(.constdata)
+    DeScramble                               0x00002e84   Data          32  texas.o(.constdata)
+    Region$$Table$$Base                      0x00002ea4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00002ec4   Number         0  anon$$obj.o(Region$$Table)
+    flag                                     0x20000000   Data           4  tuningfork.o(.data)
+    swState                                  0x20000004   Data           4  tuningfork.o(.data)
+    InPort                                   0x20000008   Data           4  texas.o(.data)
+    OutPort                                  0x2000000c   Data           4  texas.o(.data)
+    BgTestStatus                             0x20000010   Data           1  texas.o(.data)
+    EdgeNumber                               0x20000014   Data           4  texas.o(.data)
+    ShortestPeriod                           0x20000018   Data           4  texas.o(.data)
+    LongestPeriod                            0x2000001c   Data           4  texas.o(.data)
+    TExaS_Period                             0x20000020   Data           4  texas.o(.data)
+    TExaS_Ports                              0x2000002c   Data           8  texas.o(.data)
+    TExaS_Meter                              0x20000034   Data           4  texas.o(.data)
+    ADCnum                                   0x20000038   Data           4  texas.o(.data)
+    LastMode                                 0x2000003c   Data           4  texas.o(.data)
+    bFlag                                    0x20000040   Data           4  texas.o(.data)
+    Count                                    0x20000044   Data           4  texas.o(.data)
+    DelayBetweenTests                        0x20000048   Data           4  texas.o(.data)
+    TExaS_Test                               0x2000004c   Data           4  texas.o(.data)
+    ScopeMode                                0x20000050   Data           4  texas.o(.data)
+    TExaS                                    0x20000058   Data          56  texas.o(.bss)
+    TExaS_ADC                                0x20000090   Data         512  texas.o(.bss)
+    MagicCode                                0x20000290   Data          10  texas.o(.bss)
+    EncriptedMagicCode                       0x2000029a   Data          10  texas.o(.bss)
+    StudentID                                0x200002a4   Data          40  texas.o(.bss)
+    __libspace_start                         0x200002cc   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x2000032c   Data           0  libspace.o(.bss)
 
 
 
@@ -635,116 +643,114 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00003118, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00002f18, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x000030cc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00002ec4, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000284   Code   RO            3  * RESET               startup.o
-    0x00000284   0x00000008   Code   RO          225  * !!!main             c_w.l(__main.o)
-    0x0000028c   0x00000034   Code   RO          394    !!!scatter          c_w.l(__scatter.o)
-    0x000002c0   0x0000001a   Code   RO          396    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x00000284   0x00000008   Code   RO          245  * !!!main             c_w.l(__main.o)
+    0x0000028c   0x00000034   Code   RO          414    !!!scatter          c_w.l(__scatter.o)
+    0x000002c0   0x0000001a   Code   RO          416    !!handler_copy      c_w.l(__scatter_copy.o)
     0x000002da   0x00000002   PAD
-    0x000002dc   0x0000001c   Code   RO          398    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x000002f8   0x00000002   Code   RO          267    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x000002fa   0x00000000   Code   RO          274    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          277    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          279    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          281    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          284    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          286    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          288    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          290    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          292    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          294    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          296    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          298    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          300    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          302    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          304    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          308    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          310    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          312    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x000002fa   0x00000000   Code   RO          314    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x000002fa   0x00000002   Code   RO          315    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
-    0x000002fc   0x00000002   Code   RO          335    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x000002fe   0x00000000   Code   RO          349    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          352    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          355    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          357    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000000   Code   RO          360    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
-    0x000002fe   0x00000002   Code   RO          361    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x00000300   0x00000000   Code   RO          237    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
-    0x00000300   0x00000000   Code   RO          244    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
-    0x00000300   0x00000006   Code   RO          256    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
-    0x00000306   0x00000000   Code   RO          246    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
-    0x00000306   0x00000004   Code   RO          247    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
-    0x0000030a   0x00000000   Code   RO          249    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
-    0x0000030a   0x00000008   Code   RO          250    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
-    0x00000312   0x00000002   Code   RO          271    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x00000314   0x00000000   Code   RO          317    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x00000314   0x00000004   Code   RO          318    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x00000318   0x00000006   Code   RO          319    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x000002dc   0x0000001c   Code   RO          418    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002f8   0x00000002   Code   RO          287    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002fa   0x00000000   Code   RO          294    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          297    .ARM.Collect$$libinit$$00000008  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          299    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          301    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          304    .ARM.Collect$$libinit$$0000000F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          306    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          308    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          310    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          312    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          314    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          316    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          318    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          320    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          322    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          324    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          328    .ARM.Collect$$libinit$$0000002A  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          330    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          332    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x000002fa   0x00000000   Code   RO          334    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x000002fa   0x00000002   Code   RO          335    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x000002fc   0x00000002   Code   RO          355    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x000002fe   0x00000000   Code   RO          369    .ARM.Collect$$libshutdown$$00000003  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          372    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          375    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          377    .ARM.Collect$$libshutdown$$0000000B  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000000   Code   RO          380    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
+    0x000002fe   0x00000002   Code   RO          381    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x00000300   0x00000000   Code   RO          257    .ARM.Collect$$rtentry$$00000000  c_w.l(rtentry.o)
+    0x00000300   0x00000000   Code   RO          264    .ARM.Collect$$rtentry$$00000002  c_w.l(rtentry2.o)
+    0x00000300   0x00000006   Code   RO          276    .ARM.Collect$$rtentry$$00000004  c_w.l(rtentry4.o)
+    0x00000306   0x00000000   Code   RO          266    .ARM.Collect$$rtentry$$00000009  c_w.l(rtentry2.o)
+    0x00000306   0x00000004   Code   RO          267    .ARM.Collect$$rtentry$$0000000A  c_w.l(rtentry2.o)
+    0x0000030a   0x00000000   Code   RO          269    .ARM.Collect$$rtentry$$0000000C  c_w.l(rtentry2.o)
+    0x0000030a   0x00000008   Code   RO          270    .ARM.Collect$$rtentry$$0000000D  c_w.l(rtentry2.o)
+    0x00000312   0x00000002   Code   RO          291    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x00000314   0x00000000   Code   RO          337    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x00000314   0x00000004   Code   RO          338    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000318   0x00000006   Code   RO          339    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x0000031e   0x00000002   PAD
     0x00000320   0x00000030   Code   RO            4    .text               startup.o
-    0x00000350   0x00000006   Code   RO          223    .text               c_w.l(heapauxi.o)
-    0x00000356   0x0000004a   Code   RO          258    .text               c_w.l(sys_stackheap_outer.o)
-    0x000003a0   0x0000000c   Code   RO          260    .text               c_w.l(exit.o)
-    0x000003ac   0x00000008   Code   RO          268    .text               c_w.l(libspace.o)
-    0x000003b4   0x0000000c   Code   RO          327    .text               c_w.l(sys_exit.o)
-    0x000003c0   0x00000002   Code   RO          338    .text               c_w.l(use_no_semi.o)
-    0x000003c2   0x00000000   Code   RO          340    .text               c_w.l(indicate_semi.o)
+    0x00000350   0x00000006   Code   RO          243    .text               c_w.l(heapauxi.o)
+    0x00000356   0x0000004a   Code   RO          278    .text               c_w.l(sys_stackheap_outer.o)
+    0x000003a0   0x0000000c   Code   RO          280    .text               c_w.l(exit.o)
+    0x000003ac   0x00000008   Code   RO          288    .text               c_w.l(libspace.o)
+    0x000003b4   0x0000000c   Code   RO          347    .text               c_w.l(sys_exit.o)
+    0x000003c0   0x00000002   Code   RO          358    .text               c_w.l(use_no_semi.o)
+    0x000003c2   0x00000000   Code   RO          360    .text               c_w.l(indicate_semi.o)
     0x000003c2   0x00000002   PAD
-    0x000003c4   0x0000000c   Code   RO           41    i.ADC1_In           texas.o
-    0x000003d0   0x000000d0   Code   RO           42    i.ADC1_Init         texas.o
-    0x000004a0   0x0000006c   Code   RO           44    i.Encrypt           texas.o
-    0x0000050c   0x00000014   Code   RO           45    i.GPIOPortA_Handler  texas.o
-    0x00000520   0x00000014   Code   RO           46    i.GPIOPortB_Handler  texas.o
-    0x00000534   0x00000014   Code   RO           47    i.GPIOPortE_Handler  texas.o
-    0x00000548   0x0000007c   Code   RO           48    i.PLL_Init          texas.o
-    0x000005c4   0x00000018   Code   RO           50    i.SetCode           texas.o
-    0x000005dc   0x00000018   Code   RO           51    i.SetCourse         texas.o
-    0x000005f4   0x000000cc   Code   RO           52    i.SetGrade          texas.o
-    0x000006c0   0x00000002   Code   RO           12    i.Sound_Init        tuningfork.o
-    0x000006c2   0x00000002   PAD
-    0x000006c4   0x0000013c   Code   RO           54    i.SpecialBGTest1_End  texas.o
-    0x00000800   0x00000064   Code   RO           55    i.SpecialBGTest1_Periodic  texas.o
-    0x00000864   0x00000158   Code   RO           56    i.SpecialBGTest1_Start  texas.o
-    0x000009bc   0x00000002   Code   RO           13    i.SysTick_Handler   tuningfork.o
-    0x000009be   0x00000002   PAD
-    0x000009c0   0x000001c8   Code   RO           59    i.TExaS_Init        texas.o
-    0x00000b88   0x00000020   Code   RO           61    i.Timer4A_Handler   texas.o
-    0x00000ba8   0x00000610   Code   RO           62    i.Timer5A_Handler   texas.o
-    0x000011b8   0x00000098   Code   RO           65    i.UART_Init         texas.o
-    0x00001250   0x00000016   Code   RO           14    i.main              tuningfork.o
-    0x00001266   0x00000018   Code   RO          238    x$fpl$dcmpinf       fz_ws.l(dcmpi.o)
-    0x0000127e   0x00000026   Code   RO          227    x$fpl$dfltu         fz_ws.l(dflt_clz.o)
-    0x000012a4   0x00000078   Code   RO          233    x$fpl$dleqf         fz_ws.l(dleqf.o)
-    0x0000131c   0x0000009c   Code   RO          240    x$fpl$dnaninf       fz_ws.l(dnaninf.o)
-    0x000013b8   0x0000006c   Code   RO          235    x$fpl$drleqf        fz_ws.l(drleqf.o)
-    0x00001424   0x00000000   Code   RO          242    x$fpl$usenofp       fz_ws.l(usenofp.o)
-    0x00001424   0x00001c88   Data   RO           70    .constdata          texas.o
-    0x000030ac   0x00000020   Data   RO          392    Region$$Table       anon$$obj.o
+    0x000003c4   0x0000000c   Code   RO           61    i.ADC1_In           texas.o
+    0x000003d0   0x0000006c   Code   RO           64    i.Encrypt           texas.o
+    0x0000043c   0x00000014   Code   RO           65    i.GPIOPortA_Handler  texas.o
+    0x00000450   0x00000014   Code   RO           66    i.GPIOPortB_Handler  texas.o
+    0x00000464   0x00000014   Code   RO           67    i.GPIOPortE_Handler  texas.o
+    0x00000478   0x0000007c   Code   RO           68    i.PLL_Init          texas.o
+    0x000004f4   0x00000018   Code   RO           70    i.SetCode           texas.o
+    0x0000050c   0x000000cc   Code   RO           72    i.SetGrade          texas.o
+    0x000005d8   0x0000013c   Code   RO           74    i.SpecialBGTest1_End  texas.o
+    0x00000714   0x00000064   Code   RO           75    i.SpecialBGTest1_Periodic  texas.o
+    0x00000778   0x00000158   Code   RO           76    i.SpecialBGTest1_Start  texas.o
+    0x000008d0   0x00000028   Code   RO           12    i.SysTick_Handler   tuningfork.o
+    0x000008f8   0x00000020   Code   RO           81    i.Timer4A_Handler   texas.o
+    0x00000918   0x00000610   Code   RO           82    i.Timer5A_Handler   texas.o
+    0x00000f28   0x00000054   Code   RO           14    i.initPortA_in      tuningfork.o
+    0x00000f7c   0x00000050   Code   RO           15    i.initPortA_out     tuningfork.o
+    0x00000fcc   0x00000034   Code   RO           16    i.initSysTick       tuningfork.o
+    0x00001000   0x0000005c   Code   RO           17    i.main              tuningfork.o
+    0x0000105c   0x00000018   Code   RO          258    x$fpl$dcmpinf       fz_ws.l(dcmpi.o)
+    0x00001074   0x00000026   Code   RO          247    x$fpl$dfltu         fz_ws.l(dflt_clz.o)
+    0x0000109a   0x00000002   PAD
+    0x0000109c   0x00000078   Code   RO          253    x$fpl$dleqf         fz_ws.l(dleqf.o)
+    0x00001114   0x0000009c   Code   RO          260    x$fpl$dnaninf       fz_ws.l(dnaninf.o)
+    0x000011b0   0x0000006c   Code   RO          255    x$fpl$drleqf        fz_ws.l(drleqf.o)
+    0x0000121c   0x00000000   Code   RO          262    x$fpl$usenofp       fz_ws.l(usenofp.o)
+    0x0000121c   0x00001c88   Data   RO           90    .constdata          texas.o
+    0x00002ea4   0x00000020   Data   RO          412    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Base: 0x20000000, Size: 0x0000004c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000054, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0000004c   Data   RW           71    .data               texas.o
+    0x20000000   0x00000008   Data   RW           18    .data               tuningfork.o
+    0x20000008   0x0000004c   Data   RW           91    .data               texas.o
 
 
-    Execution Region ER_ZI (Base: 0x2000004c, Size: 0x000006dc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Base: 0x20000054, Size: 0x000006dc, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2000004c   0x00000004   PAD
-    0x20000050   0x00000274   Zero   RW           69    .bss                texas.o
-    0x200002c4   0x00000060   Zero   RW          269    .bss                c_w.l(libspace.o)
-    0x20000324   0x00000004   PAD
-    0x20000328   0x00000000   Zero   RW            2    HEAP                startup.o
-    0x20000328   0x00000400   Zero   RW            1    STACK               startup.o
+    0x20000054   0x00000004   PAD
+    0x20000058   0x00000274   Zero   RW           89    .bss                texas.o
+    0x200002cc   0x00000060   Zero   RW          289    .bss                c_w.l(libspace.o)
+    0x2000032c   0x00000004   PAD
+    0x20000330   0x00000000   Zero   RW            2    HEAP                startup.o
+    0x20000330   0x00000400   Zero   RW            1    STACK               startup.o
 
 
 ==============================================================================
@@ -755,13 +761,13 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        692        632          0          0       1024       1012   startup.o
-      3716        550       7304         76        628      23288   texas.o
-        26          0          0          0          0       2690   tuningfork.o
+      2876        348       7304         76        628      20971   texas.o
+       348         48          0          8          0       3953   tuningfork.o
 
     ----------------------------------------------------------------------
-      4438       1182       7336         76       1656      26990   Object Totals
+      3916       1028       7336         84       1656      25936   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         4          0          0          0          4          0   (incl. Padding)
+         0          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -795,8 +801,8 @@ Image component sizes
          0          0          0          0          0          0   usenofp.o
 
     ----------------------------------------------------------------------
-       718         24          0          0        100        976   Library Totals
-         6          0          0          0          4          0   (incl. Padding)
+       720         24          0          0        100        976   Library Totals
+         8          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -806,7 +812,7 @@ Image component sizes
        446          8          0          0          0        400   fz_ws.l
 
     ----------------------------------------------------------------------
-       718         24          0          0        100        976   Library Totals
+       720         24          0          0        100        976   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -815,15 +821,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5156       1206       7336         76       1756      26562   Grand Totals
-      5156       1206       7336         76       1756      26562   ELF Image Totals
-      5156       1206       7336         76          0          0   ROM Totals
+      4636       1052       7336         84       1756      25560   Grand Totals
+      4636       1052       7336         84       1756      25560   ELF Image Totals
+      4636       1052       7336         84          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                12492 (  12.20kB)
-    Total RW  Size (RW Data + ZI Data)              1832 (   1.79kB)
-    Total ROM Size (Code + RO Data + RW Data)      12568 (  12.27kB)
+    Total RO  Size (Code + RO Data)                11972 (  11.69kB)
+    Total RW  Size (RW Data + ZI Data)              1840 (   1.80kB)
+    Total ROM Size (Code + RO Data + RW Data)      12056 (  11.77kB)
 
 ==============================================================================
 
