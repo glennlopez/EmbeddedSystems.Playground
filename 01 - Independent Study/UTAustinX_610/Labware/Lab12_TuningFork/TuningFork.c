@@ -76,8 +76,7 @@ unsigned int swState = 0;
  * ISR HANDLERS
  ************************/
 
-void SysTick_Handler(void){
-	
+void SysTick_Handler(void){						//FIXME: SIMPLIFY THIS 	
 	// Check for toggle trigger
 	if(flag == 1){
 		
@@ -112,7 +111,7 @@ int main(void){//TExaS_Init(SW_PIN_PA3, HEADPHONE_PIN_PA2,ScopeOn);
   EnableInterrupts();               // enable after all initialization are done
 
   // Program routine
-  while(1){
+  while(1){												//FIX ME: SOLVE USING FSM (ODD DETECTOR)
 		
 		if(PA3 == 0x08 && flag == 0){
 			swState = PA3;
@@ -165,7 +164,7 @@ void initPortA_in(void){
     GPIO_PORTA_PCTL_R       &=      ~0x0000F000;    //     Keep PA3 as GPIO
 }
 
-// Busy-wait delay (~1ms per param)
+//FIXME: FOR DEBUG USE ONLY Busy-wait delay (~1ms per param)
 void delay(unsigned int param){ unsigned int i, j;
 
     for(j = 0; j < param; j++){
