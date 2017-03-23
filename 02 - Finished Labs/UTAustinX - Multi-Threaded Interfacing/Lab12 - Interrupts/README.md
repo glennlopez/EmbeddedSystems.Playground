@@ -1,10 +1,9 @@
 C12 Interupts
 =================
+This chapter presents general concepts about interrupts and specific details for the **Cortex™-M microcontroller**. We will then use periodic interrupts to cause a software task to be executed on a periodic basis. If a GPIO pin is configured as an input, it can also be armed to invoke an interrupt on falling edges, rising edges, or both falling and rising edges. Using interrupts allows the software to  respond quickly to changes in the external environment.
+
 * Pre-Lab: [SysTick & Edge Triggering](https://www.youtube.com/watch?v=k1XHWXA9pyc)
 * Lab12: [440Hz TuningFork](https://www.youtube.com/watch?v=ONx5cumqRws)
-
-=================
-This chapter presents general concepts about interrupts and specific details for the **Cortex™-M microcontroller**. We will then use periodic interrupts to cause a software task to be executed on a periodic basis. If a GPIO pin is configured as an input, it can also be armed to invoke an interrupt on falling edges, rising edges, or both falling and rising edges. Using interrupts allows the software to  respond quickly to changes in the external environment.
 
 Learning Objectives
 =================
