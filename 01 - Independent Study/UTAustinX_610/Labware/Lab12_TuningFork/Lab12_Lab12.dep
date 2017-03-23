@@ -1,6 +1,6 @@
 Dependencies for Project 'Lab12', Target 'Lab12': (DO NOT MODIFY !)
 F (.\startup.s)(0x519961BE)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\TuningFork.c)(0x58D3F7F5)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\tuningfork.o --omf_browse .\tuningfork.crf --depend .\tuningfork.d)
+F (.\TuningFork.c)(0x58D40FEE)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\tuningfork.o --omf_browse .\tuningfork.crf --depend .\tuningfork.d)
 I (TExaS.h)(0x5699CD34)
 I (..//tm4c123gh6pm.h)(0x51D4A8F2)
 I (PLL.h)(0x5276677C)
