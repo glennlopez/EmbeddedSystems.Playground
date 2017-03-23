@@ -1,7 +1,6 @@
 C12 Interupts
 =================
 Pre-Lab: [SysTick & Edge Triggering](https://www.youtube.com/watch?v=k1XHWXA9pyc)
-
 Lab12: [440Hz TuningFork](https://www.youtube.com/watch?v=ONx5cumqRws)
 
 Learning Objectives
@@ -19,3 +18,4 @@ Learning Objectives
 * Use SysTick to create sounds and spin motors.
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/ONx5cumqRws/0.jpg)](http://www.youtube.com/watch?v=ONx5cumqRws "Video Title")
+
