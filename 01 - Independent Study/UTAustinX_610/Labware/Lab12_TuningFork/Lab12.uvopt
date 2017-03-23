@@ -228,7 +228,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>270</TopLine>
+      <TopLine>271</TopLine>
       <CurrentLine>277</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
@@ -242,10 +242,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>4</ColumnNumber>
+      <ColumnNumber>20</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>32</TopLine>
-      <CurrentLine>82</CurrentLine>
+      <TopLine>95</TopLine>
+      <CurrentLine>117</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\TuningFork.c</PathWithFileName>
       <FilenameWithoutPath>TuningFork.c</FilenameWithoutPath>
