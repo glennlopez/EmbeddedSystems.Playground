@@ -73,6 +73,7 @@ void initSysTick(unsigned long param);
 void initPortA_out(void);
 void initPortA_in(void);
 void delay(unsigned int param);
+void edgeDetect(char param);
 
 // Button Toggle FSM
 struct state{
@@ -106,6 +107,10 @@ void SysTick_Handler(void){
 		PA2 = OFF;
 	}
 	
+	else{
+		PA2 = OFF;
+	}
+	
 
 }
 
@@ -125,21 +130,7 @@ int main(void){TExaS_Init(SW_PIN_PA3, HEADPHONE_PIN_PA2,ScopeOn);
 
   // Program routine
   while(1){	unsigned int input = 0;
-		
-    output = toggle[cState].out;
-		
-		// rising-edge detect using FSM
-		if(PA3 == 0x00){
-			delay(1);	// small delay for "detecting" low-to-high transition
-			if(PA3 == 0x08){
-				input = 1;
-			}
-		}
-		else{
-			input = 0;
-		}
-		
-    cState = toggle[cState].next[input];
+		edgeDetect('r');	// 'r' rising, 'f' falling
   }
 	
 }
@@ -194,3 +185,46 @@ void delay(unsigned int param){ unsigned int i, j;
         }
     }
 }
+
+// EdgeDetect: 'f' for falling, 'r' for rising
+void edgeDetect(char param){
+	if(param == 'r'){
+		
+		unsigned int input = 0;
+    output = toggle[cState].out;
+		
+		// rising-edge detect using FSM
+		if(PA3 == 0x00){
+			delay(1);	// increase the delay if failing to detect changes
+			if(PA3 == 0x08){
+				input = 1;
+			}
+		}
+		else{
+			input = 0;
+		}
+		
+    cState = toggle[cState].next[input];
+		
+}
+	else if(param == 'f'){
+		
+		unsigned int input = 0;
+    output = toggle[cState].out;
+		
+		// rising-edge detect using FSM
+		if(PA3 == 0x08){
+			delay(1);	// increase the delay if failing to detect changes
+			if(PA3 == 0x00){
+				input = 1;
+			}
+		}
+		else{
+			input = 0;
+		}
+		
+    cState = toggle[cState].next[input];
+		
+	}
+}
+
