@@ -1,3 +1,4 @@
+#include<iostream>
 
 /************************
  * ADDRESS DEFINITIONS
@@ -30,7 +31,7 @@ void main(void) {
 
     while(1){
         GPIO_PORTF_DATA_R ^= 0x04;   // Toggle LED on/off
-        delay(100);                  // Up/Down time
+        delay(500);                  // Up/Down time
     }
 
 }
@@ -63,3 +64,6 @@ void delay(unsigned int param){ unsigned int i, j;
         }
     }
 }
+
+// Led Color
+

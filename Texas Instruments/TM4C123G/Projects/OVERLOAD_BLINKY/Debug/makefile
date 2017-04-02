@@ -155,7 +155,8 @@ Function\ Overloading.hex: $(EXE_OUTPUTS)
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
 	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" 
-	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" 
+	-$(RM) "tm4c123gh6pm_startup_ccs.d" 
+	-$(RM) "main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
