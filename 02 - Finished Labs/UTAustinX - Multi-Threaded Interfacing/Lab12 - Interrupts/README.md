@@ -14,6 +14,3 @@ Learning Objectives
 * Study the basics of interrupt programming: arm, enable, trigger, vector, priority, acknowledge.
 * Understand how to use SysTick to create periodic interrupts.
 * Use SysTick to create sounds and spin motors.
-
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/ONx5cumqRws/0.jpg)](http://www.youtube.com/watch?v=ONx5cumqRws "Video Title")
-

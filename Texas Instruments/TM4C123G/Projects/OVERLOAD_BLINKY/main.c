@@ -13,26 +13,31 @@
 #define GPIO_PORTF_AFSEL_R      (*((volatile unsigned long *)0x40025420))
 #define GPIO_PORTF_PCTL_R       (*((volatile unsigned long *)0x4002552C))
 
+
 /************************
  * Pre-Proccess routines
  ************************/
 // Prototypes
 void initPortF(void);
-void delay(int param);
+void delay(unsigned int param);
+
 
 /************************
  * MAIN ROUTINE
  ************************/
-int main(void) {
-	
-	return 0;
-}
+void main(void) {
+    initPortF();                     // Initialize PortF
 
+    while(1){
+        GPIO_PORTF_DATA_R ^= 0x04;   // Toggle LED on/off
+        delay(100);                  // Up/Down time
+    }
+
+}
 
 /************************
  * SUB ROUTINES
  ************************/
-
 void initPortF(void){    unsigned long volatile delay;
 
     // Port Clock Control
@@ -49,3 +54,12 @@ void initPortF(void){    unsigned long volatile delay;
     GPIO_PORTF_PCTL_R       &=      ~0x0000FFF0;
 }
 
+// Busy-wait delay
+void delay(unsigned int param){ unsigned int i, j;
+
+    for(j = 0; j < param; j++){
+        for(i = 0; i < 15; i++){
+            // do nothing
+        }
+    }
+}
