@@ -12,3 +12,7 @@ Learning Objectives
 * Study the basics of sound: electromagnets, speakers, AC vs. DC power, perception of sound.
 * Understand how to create sound: loudness, pitch, envelope, and shape
 * Use SysTick to create sounds by programming variable frequencies.
+
+Learning/Referance material
+=================
+* [Sampling, Aliasing & Nyquist Theorem](https://www.youtube.com/watch?v=yWqrx08UeUs)
