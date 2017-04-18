@@ -16,5 +16,3 @@ Learning Objectives
 Learning/Referance material
 =================
 * [Sampling, Aliasing & Nyquist Theorem](https://www.youtube.com/watch?v=yWqrx08UeUs)
-* [Lecture 18: SPI, Timing, DAC Interface](https://www.youtube.com/watch?v=15Ymu5vyMwk&index=22&list=PLyg2vmIzGxXGBxFu8nvX3KBadSdsNAvbA)
-* [Electronic Basics: DAC](https://www.youtube.com/watch?v=Y2OPnrgb0pY)
