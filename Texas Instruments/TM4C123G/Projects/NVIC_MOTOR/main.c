@@ -117,7 +117,7 @@ void main(void) {
     PLL_Init();
     EnableInterrupts();
 
-    // Program routine
+    // Loop routine
     while(1){
         // Blink Red LED (Foreground Thread)
         LED_G ^= ON;
