@@ -1,4 +1,4 @@
-
+/* Github.com/glennlopez */
 
 /************************
  * ADDRESS DEFINITIONS
@@ -6,7 +6,16 @@
 // System Control Legacy base address: 0x400F.E000 (Datasheet pg. 234)
 #define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
 
-// PortB(APB) base address: 0x40005000 (Datasheet pg. 657)
+// INPUT PortE(APB) base address: 0x40024000 (Datasheet pg. 657)
+#define GPIO_PORTE_DATA_R       (*((volatile unsigned long *)0x400243FC))
+#define GPIO_PORTE_DEN_R        (*((volatile unsigned long *)0x4002451C))
+#define GPIO_PORTE_DIR_R        (*((volatile unsigned long *)0x40024400))
+#define GPIO_PORTE_PDR_R        (*((volatile unsigned long *)0x40024514))
+#define GPIO_PORTE_AMSEL_R      (*((volatile unsigned long *)0x40024528))
+#define GPIO_PORTE_AFSEL_R      (*((volatile unsigned long *)0x40024420))
+#define GPIO_PORTE_PCTL_R       (*((volatile unsigned long *)0x4002452C))
+
+// OUTPUT PortB(APB) base address: 0x40005000 (Datasheet pg. 657)
 #define GPIO_PORTB_DATA_R       (*((volatile unsigned long *)0x400053FC))
 #define GPIO_PORTB_DEN_R        (*((volatile unsigned long *)0x4000551C))
 #define GPIO_PORTB_DIR_R        (*((volatile unsigned long *)0x40005400))
@@ -14,29 +23,20 @@
 #define GPIO_PORTB_AFSEL_R      (*((volatile unsigned long *)0x40005420))
 #define GPIO_PORTB_PCTL_R       (*((volatile unsigned long *)0x4000552C))
 
-// NVIC Registers
-//#define NVIC_EN0_R              (*((volatile unsigned long *)0xE000E100))  // IRQ 0 to 31 Set Enable Register
-//#define NVIC_PRI7_R             (*((volatile unsigned long *)0xE000E41C))  // IRQ 28 to 31 Priority Register
-
-
 // Systick & NVIC Registers (pg 132)
 #define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
 #define NVIC_ST_CTRL_R          (*((volatile unsigned long *)0xE000E010))
 #define NVIC_ST_RELOAD_R        (*((volatile unsigned long *)0xE000E014))
 #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
 
-// GPIO Port Interrupt Registers (pg 657)
-//#define GPIO_PORTF_IS_R         (*((volatile unsigned long *)0x40025404))
-//#define GPIO_PORTF_IBE_R        (*((volatile unsigned long *)0x40025408))
-//#define GPIO_PORTF_IEV_R        (*((volatile unsigned long *)0x4002540C))
-//#define GPIO_PORTF_IM_R         (*((volatile unsigned long *)0x40025410))
-//#define GPIO_PORTF_RIS_R        (*((volatile unsigned long *)0x40025414))
-//#define GPIO_PORTF_ICR_R        (*((volatile unsigned long *)0x4002541C))
-
-
 // DAC Bit-specific address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
 #define DACOUT                  (*((volatile unsigned long *)0x4000503C))
 
+// INPUT Bit-specific Address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
+#define G_KEY /* E3: (783.991) */ (*((volatile unsigned long *)0x40024020))
+#define E_KEY /* E2: (659.255) */ (*((volatile unsigned long *)0x40024010))
+#define D_KEY /* E1: (587.330) */ (*((volatile unsigned long *)0x40024008))
+#define C_KEY /* E0: (523.251) */ (*((volatile unsigned long *)0x40024004))
 
 
 /************************
@@ -44,12 +44,12 @@
  ************************/
 // Prototypes
 void initPortBOut(void);
-void delay(unsigned int param);
+void initPortEIn(void);
 void SysTick_Init(unsigned long period);
+void frqChange(unsigned long period);
 
 // Global Variables
 unsigned int rampDown = 0;
-//DACOUT = 0x00;
 
 
 
@@ -73,7 +73,7 @@ void SysTick_Handler(void){
    }
 
 
-    //DACOUT++;
+    //GPIO_PORTB_DATA_R ^= 0x08;
 
 }
 
@@ -83,14 +83,32 @@ void SysTick_Handler(void){
  ************************/
 void main(void) {
     // Initialization routine
+    SYSCTL_RCGC2_R  |=  0x00000012;
     initPortBOut();
+    initPortEIn();
     SysTick_Init(800000);
     EnableInterrupts();
 
 
     // Loop routine
     while(1){
-        //do nothing
+
+        if(C_KEY == 0x01){
+            NVIC_ST_RELOAD_R = (1055 -1);
+        }
+        else if(D_KEY == 0x02){
+            NVIC_ST_RELOAD_R = (935 -1);
+        }
+        else if(E_KEY == 0x04){
+            NVIC_ST_RELOAD_R = (840 -1);
+        }
+        else if(G_KEY == 0x08){
+            NVIC_ST_RELOAD_R = (705 -1);
+        }
+        else if(GPIO_PORTE_DATA_R == 0x00){
+            NVIC_ST_RELOAD_R = (0);
+        }
+
     }
 
 }
@@ -103,6 +121,7 @@ void main(void) {
 
 // SysTick Interrupt Routine (pg. 132)
 void SysTick_Init(unsigned long period){
+
   // Setup Routine
   NVIC_ST_CTRL_R = 0;         // (a) disable SysTick during setup
   NVIC_ST_RELOAD_R = period-1;// (b) reload value
@@ -113,12 +132,17 @@ void SysTick_Init(unsigned long period){
   NVIC_ST_CTRL_R = 0x07;      // (e) enable SysTick with core clock and interrupts
 }
 
-//PortB Output Initiazation Routine
-void initPortBOut(void){    unsigned long volatile delay;
+// Change SysTick reload  value
+void frqChange(unsigned long period){
 
-    // Port Clock Control
-    SYSCTL_RCGC2_R          |=      0x00000002;
-    delay  /*Wait Ready*/    =      SYSCTL_RCGC2_R;
+  NVIC_ST_CTRL_R = 0;         // (a) disable SysTick during setup
+  NVIC_ST_RELOAD_R = period-1;// (b) reload value
+  NVIC_ST_CURRENT_R = 0;      // (c) any write to current clears it
+  NVIC_ST_CTRL_R = 0x07;      // (e) enable SysTick with core clock and interrupts
+}
+
+// PortB OUTPUT Initiazation Routine (pg. 657)
+void initPortBOut(void){    unsigned long volatile delay;
 
     // GPIO Digital Control
     GPIO_PORTB_DEN_R        |=      0x0F;
@@ -130,12 +154,16 @@ void initPortBOut(void){    unsigned long volatile delay;
     GPIO_PORTB_PCTL_R       &=      ~0x0000FFFF;
 }
 
-// Busy-wait delay
-void delay(unsigned int param){ unsigned int i, j;
+// PortE INPUT Initiazation Routine (pg. 657)
+void initPortEIn(void){
 
-    for(j = 0; j < param; j++){
-        for(i = 0; i < 15; i++){
-            // do nothing
-        }
-    }
+    // GPIO Digital Control
+    GPIO_PORTE_DEN_R        |=       0x0F;
+    GPIO_PORTE_DIR_R        &=      ~0x0F;
+    GPIO_PORTE_PDR_R        |=       0x0F;
+
+    // GPIO Alternate function control
+    GPIO_PORTE_AMSEL_R       =      0;
+    GPIO_PORTE_AFSEL_R      &=      ~0x0F;
+    GPIO_PORTE_PCTL_R       &=      ~0x0000FFFF;
 }
