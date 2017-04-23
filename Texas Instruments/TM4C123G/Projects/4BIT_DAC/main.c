@@ -73,8 +73,6 @@ void SysTick_Handler(void){
    }
 
 
-    //GPIO_PORTB_DATA_R ^= 0x08;
-
 }
 
 
@@ -93,25 +91,29 @@ void main(void) {
     // Loop routine
     while(1){
 
-        do{
+        /* Getting the correct RELOAD value:
+         * ([(1/f)/62.5^9]/bitsize)/2 = Sinewave Reload value
+         */
+
+        if(C_KEY == 0x01){
             NVIC_ST_RELOAD_R = (1055 -1);
-        }while(C_KEY == 0x01);
+        }
 
-        do{
+        if(D_KEY == 0x02){
             NVIC_ST_RELOAD_R = (935 -1);
-        }while(D_KEY == 0x02);
+        }
 
-        do{
+        if(E_KEY == 0x04){
             NVIC_ST_RELOAD_R = (840 -1);
-        }while(E_KEY == 0x04);
+        }
 
-        do{
+        if(G_KEY == 0x08){
             NVIC_ST_RELOAD_R = (705 -1);
-        }while(G_KEY == 0x08);
+        }
 
-        do{
+        if(GPIO_PORTE_DATA_R == 0x00){
             NVIC_ST_RELOAD_R = (0);
-        }while(GPIO_PORTE_DATA_R == 0x00);
+        }
 
     }
 
