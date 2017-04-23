@@ -93,21 +93,25 @@ void main(void) {
     // Loop routine
     while(1){
 
-        if(C_KEY == 0x01){
+        do{
             NVIC_ST_RELOAD_R = (1055 -1);
-        }
-        else if(D_KEY == 0x02){
+        }while(C_KEY == 0x01);
+
+        do{
             NVIC_ST_RELOAD_R = (935 -1);
-        }
-        else if(E_KEY == 0x04){
+        }while(D_KEY == 0x02);
+
+        do{
             NVIC_ST_RELOAD_R = (840 -1);
-        }
-        else if(G_KEY == 0x08){
+        }while(E_KEY == 0x04);
+
+        do{
             NVIC_ST_RELOAD_R = (705 -1);
-        }
-        else if(GPIO_PORTE_DATA_R == 0x00){
+        }while(G_KEY == 0x08);
+
+        do{
             NVIC_ST_RELOAD_R = (0);
-        }
+        }while(GPIO_PORTE_DATA_R == 0x00);
 
     }
 
