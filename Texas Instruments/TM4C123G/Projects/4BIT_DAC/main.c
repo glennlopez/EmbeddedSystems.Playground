@@ -46,7 +46,6 @@
 void initPortBOut(void);
 void initPortEIn(void);
 void SysTick_Init(unsigned long period);
-void frqChange(unsigned long period);
 
 // Global Variables
 unsigned int rampDown = 0;
@@ -93,23 +92,24 @@ void main(void) {
 
         /* Getting the correct RELOAD value:
          * ([(1/f)/62.5^9]/bitsize)/2 = Sinewave Reload value
+         * Using If vs ifthen allows you to use any of the keys simultaneously
          */
 
-        if(C_KEY == 0x01){
-            NVIC_ST_RELOAD_R = (1055 -1);
-        }
+         if(C_KEY == 0x01){
+             NVIC_ST_RELOAD_R = (1055 -1);
+         }
 
-        if(D_KEY == 0x02){
-            NVIC_ST_RELOAD_R = (935 -1);
-        }
+         if(D_KEY == 0x02){
+             NVIC_ST_RELOAD_R = (935 -1);
+         }
 
-        if(E_KEY == 0x04){
-            NVIC_ST_RELOAD_R = (840 -1);
-        }
+         if(E_KEY == 0x04){
+             NVIC_ST_RELOAD_R = (840 -1);
+         }
 
-        if(G_KEY == 0x08){
-            NVIC_ST_RELOAD_R = (705 -1);
-        }
+         if(G_KEY == 0x08){
+             NVIC_ST_RELOAD_R = (705 -1);
+         }
 
         if(GPIO_PORTE_DATA_R == 0x00){
             NVIC_ST_RELOAD_R = (0);
@@ -128,23 +128,11 @@ void main(void) {
 // SysTick Interrupt Routine (pg. 132)
 void SysTick_Init(unsigned long period){
 
-  // Setup Routine
-  NVIC_ST_CTRL_R = 0;         // (a) disable SysTick during setup
-  NVIC_ST_RELOAD_R = period-1;// (b) reload value
-  NVIC_ST_CURRENT_R = 0;      // (c) any write to current clears it
-
-  // (d) priority 2 - PRI < 2 can interrupt this routine
+  NVIC_ST_CTRL_R = 0;
+  NVIC_ST_RELOAD_R = period-1;
+  NVIC_ST_CURRENT_R = 0;
   NVIC_SYS_PRI3_R = (NVIC_SYS_PRI3_R&0x00FFFFFF)|0x40000000;
-  NVIC_ST_CTRL_R = 0x07;      // (e) enable SysTick with core clock and interrupts
-}
-
-// Change SysTick reload  value
-void frqChange(unsigned long period){
-
-  NVIC_ST_CTRL_R = 0;         // (a) disable SysTick during setup
-  NVIC_ST_RELOAD_R = period-1;// (b) reload value
-  NVIC_ST_CURRENT_R = 0;      // (c) any write to current clears it
-  NVIC_ST_CTRL_R = 0x07;      // (e) enable SysTick with core clock and interrupts
+  NVIC_ST_CTRL_R = 0x07;
 }
 
 // PortB OUTPUT Initiazation Routine (pg. 657)
