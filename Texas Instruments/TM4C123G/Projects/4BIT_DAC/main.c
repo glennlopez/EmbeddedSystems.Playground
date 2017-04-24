@@ -1,8 +1,9 @@
 /* Github.com/glennlopez */
 
 /************************
- * ADDRESS DEFINITIONS
+ * PREPROCESSOR DIRECTIVES
  ************************/
+
 // System Control Legacy base address: 0x400F.E000 (Datasheet pg. 234)
 #define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
 
@@ -40,22 +41,31 @@
 
 
 /************************
- * Pre-Proccess routines
+ * PROTOTYPES & GLOBAL
  ************************/
+
 // Prototypes
 void initPortBOut(void);
 void initPortEIn(void);
 void SysTick_Init(unsigned long period);
+void pianoKeyAction(void);
+void toneCutOff(void);
 
 // Global Variables
 unsigned int rampDown = 0;
-
 
 
 /************************
  * ISR HANDLERS
  ************************/
 void SysTick_Handler(void){
+
+    /* NOTE:
+     * While loops should not be used in ISR's
+     * If statements are OK
+     */
+
+    toneCutOff();
 
     if(rampDown == 0){
         DACOUT++;
@@ -80,7 +90,7 @@ void SysTick_Handler(void){
  ************************/
 void main(void) {
     // Initialization routine
-    SYSCTL_RCGC2_R  |=  0x00000012;
+    SYSCTL_RCGC2_R |= 0x00000012;
     initPortBOut();
     initPortEIn();
     SysTick_Init(800000);
@@ -90,32 +100,10 @@ void main(void) {
     // Loop routine
     while(1){
 
-        /* Getting the correct RELOAD value:
-         * ([(1/f)/62.5^9]/bitsize)/2 = Sinewave Reload value
-         * Using If vs ifthen allows you to use any of the keys simultaneously
-         */
-
-         if(C_KEY == 0x01){
-             NVIC_ST_RELOAD_R = (1055 -1);
-         }
-
-         if(D_KEY == 0x02){
-             NVIC_ST_RELOAD_R = (935 -1);
-         }
-
-         if(E_KEY == 0x04){
-             NVIC_ST_RELOAD_R = (840 -1);
-         }
-
-         if(G_KEY == 0x08){
-             NVIC_ST_RELOAD_R = (705 -1);
-         }
-
-        if(GPIO_PORTE_DATA_R == 0x00){
-            NVIC_ST_RELOAD_R = (0);
-        }
+        pianoKeyAction();
 
     }
+
 
 }
 
@@ -160,4 +148,39 @@ void initPortEIn(void){
     GPIO_PORTE_AMSEL_R       =      0;
     GPIO_PORTE_AFSEL_R      &=      ~0x0F;
     GPIO_PORTE_PCTL_R       &=      ~0x0000FFFF;
+}
+
+// Tuned C,D,E,G NVIC RELOAD values
+void pianoKeyAction(void){
+
+    /* Getting the correct RELOAD value:
+     * ([(1/f)/62.5^9]/bitsize)/2 = Sinewave Reload value
+     * Using If vs ifthen allows you to use any of the keys simultaneously
+     */
+
+     if(C_KEY == 0x01){
+         NVIC_ST_RELOAD_R = (1055 -1);
+     }
+
+     if(D_KEY == 0x02){
+         NVIC_ST_RELOAD_R = (935 -1);
+     }
+
+     if(E_KEY == 0x04){
+         NVIC_ST_RELOAD_R = (840 -1);
+     }
+
+     if(G_KEY == 0x08){
+         NVIC_ST_RELOAD_R = (705 -1);
+     }
+
+}
+
+// Tone cutoff
+void toneCutOff(void){
+
+    if(GPIO_PORTE_DATA_R == 0x00){
+        NVIC_ST_RELOAD_R = (0);
+    }
+
 }
