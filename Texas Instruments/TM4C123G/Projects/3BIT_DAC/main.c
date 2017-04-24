@@ -32,7 +32,7 @@
 #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
 
 // DAC Bit-specific address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
-#define DACOUT                  (*((volatile unsigned long *)0x4000503C))
+#define DACOUT                  (*((volatile unsigned long *)0x4000501C))
 
 // INPUT Bit-specific Address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
 #define G_KEY /* E3: (783.991) */ (*((volatile unsigned long *)0x40024020))
@@ -68,8 +68,9 @@ const unsigned char RampWave[16] = {
  * ISR HANDLERS
  ************************/
 void SysTick_Handler(void){
+    GPIO_PORTB_DATA_R ^= 0x08; //heartbeat
     index = (index+1) & 0x0F;
-    DACOut(RampWave[index]);
+    DACOut(SineWave[index]);
 }
 
 
@@ -82,21 +83,14 @@ int main(void) {
     SYSCTL_RCGC2_R |= 0x00000012;
     initPortBOut();
     initPortEIn();
-    SysTick_Init(708);
+    SysTick_Init(8000000);
     EnableInterrupts();
 
 
     // Loop routine
     while(1){
 
-
-        if(GPIO_PORTE_DATA_R == 0x01){
-            EnableInterrupts();
-        }
-        else{
-            DisableInterrupts();
-        }
-
+        // do nothing
 
     }
 	
@@ -124,13 +118,13 @@ void SysTick_Init(unsigned long period){
 void initPortBOut(void){    unsigned long volatile delay;
 
     // GPIO Digital Control
-    GPIO_PORTB_DEN_R        |=      0x07;
-    GPIO_PORTB_DIR_R        |=      0x07;
+    GPIO_PORTB_DEN_R        |=      0x0F;
+    GPIO_PORTB_DIR_R        |=      0x0F;
 
     // GPIO Alternate function control
-    GPIO_PORTB_AMSEL_R      &=      ~0x07;
-    GPIO_PORTB_AFSEL_R      &=      ~0x07;
-    GPIO_PORTB_PCTL_R       &=      ~0x00000FFF;
+    GPIO_PORTB_AMSEL_R      &=      ~0x0F;
+    GPIO_PORTB_AFSEL_R      &=      ~0x0F;
+    GPIO_PORTB_PCTL_R       &=      ~0x0000FFFF;
 }
 
 void initPortEIn(void){
@@ -148,5 +142,5 @@ void initPortEIn(void){
 
 // DAC output
 char DACOut(unsigned char param){
-    GPIO_PORTB_DATA_R = param;
+    DACOUT = param;
 }
