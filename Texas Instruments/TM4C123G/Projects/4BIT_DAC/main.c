@@ -1,4 +1,5 @@
 /* 4bit DAC - Github.com/glennlopez */
+// Produces a triangle wave by incrementing through the datapins
 
 /************************
  * PREPROCESSOR DIRECTIVES
