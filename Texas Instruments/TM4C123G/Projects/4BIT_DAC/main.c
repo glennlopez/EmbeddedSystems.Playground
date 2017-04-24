@@ -1,4 +1,4 @@
-/* Github.com/glennlopez */
+/* 4bit DAC - Github.com/glennlopez */
 
 /************************
  * PREPROCESSOR DIRECTIVES
