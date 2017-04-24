@@ -47,13 +47,29 @@
 
 // Prototypes
 void initPortBOut(void);
+void initPortEIn(void);
 void SysTick_Init(unsigned long period);
+char DACOut(unsigned char param);
+
+// Globals variables
+unsigned char index = 0;
+const unsigned char SineWave[16] = {
+     4,5,6,7,7,7,6,5,4,3,2,1,1,1,2,3
+};
+const unsigned char TriangleWave[14] = {
+     0,1,2,3,4,5,6,7,6,5,4,3,2,1
+};
+const unsigned char RampWave[16] = {
+     1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,0
+};
+
 
 /************************
  * ISR HANDLERS
  ************************/
 void SysTick_Handler(void){
-    GPIO_PORTB_DATA_R ^= 0x001;
+    index = (index+1) & 0x0F;
+    DACOut(RampWave[index]);
 }
 
 
@@ -65,14 +81,22 @@ int main(void) {
     // Initialization routine
     SYSCTL_RCGC2_R |= 0x00000012;
     initPortBOut();
-    SysTick_Init(8000);
+    initPortEIn();
+    SysTick_Init(708);
     EnableInterrupts();
+
 
     // Loop routine
     while(1){
 
-        //GPIO_PORTB_DATA_R ^= 0x001;
-        //delay(500);
+
+        if(GPIO_PORTE_DATA_R == 0x01){
+            EnableInterrupts();
+        }
+        else{
+            DisableInterrupts();
+        }
+
 
     }
 	
@@ -100,11 +124,29 @@ void SysTick_Init(unsigned long period){
 void initPortBOut(void){    unsigned long volatile delay;
 
     // GPIO Digital Control
-    GPIO_PORTB_DEN_R        |=      0x0F;
-    GPIO_PORTB_DIR_R        |=      0x0F;
+    GPIO_PORTB_DEN_R        |=      0x07;
+    GPIO_PORTB_DIR_R        |=      0x07;
 
     // GPIO Alternate function control
-    GPIO_PORTB_AMSEL_R      &=      ~0x0F;
-    GPIO_PORTB_AFSEL_R      &=      ~0x0F;
-    GPIO_PORTB_PCTL_R       &=      ~0x0000FFFF;
+    GPIO_PORTB_AMSEL_R      &=      ~0x07;
+    GPIO_PORTB_AFSEL_R      &=      ~0x07;
+    GPIO_PORTB_PCTL_R       &=      ~0x00000FFF;
+}
+
+void initPortEIn(void){
+
+    // GPIO Digital Control
+    GPIO_PORTE_DEN_R        |=       0x01;
+    GPIO_PORTE_DIR_R        &=      ~0x01;
+    GPIO_PORTE_PDR_R        |=       0x01;
+
+    // GPIO Alternate function control
+    GPIO_PORTE_AMSEL_R       =      0;
+    GPIO_PORTE_AFSEL_R      &=      ~0x01;
+    GPIO_PORTE_PCTL_R       &=      ~0x0000000F;
+}
+
+// DAC output
+char DACOut(unsigned char param){
+    GPIO_PORTB_DATA_R = param;
 }

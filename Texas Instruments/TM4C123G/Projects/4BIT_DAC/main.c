@@ -95,8 +95,6 @@ void main(void) {
     initPortBOut();
     initPortEIn();
     SysTick_Init(800000);
-    EnableInterrupts();
-
 
     // Loop routine
     while(1){
@@ -160,18 +158,22 @@ void pianoKeyAction(void){
      */
 
      if(C_KEY == 0x01){
+         EnableInterrupts();
          NVIC_ST_RELOAD_R = (1055 -1);
      }
 
      if(D_KEY == 0x02){
+         EnableInterrupts();
          NVIC_ST_RELOAD_R = (935 -1);
      }
 
      if(E_KEY == 0x04){
+         EnableInterrupts();
          NVIC_ST_RELOAD_R = (840 -1);
      }
 
      if(G_KEY == 0x08){
+         EnableInterrupts();
          NVIC_ST_RELOAD_R = (705 -1);
      }
 
@@ -181,7 +183,7 @@ void pianoKeyAction(void){
 void toneCutOff(void){
 
     if(GPIO_PORTE_DATA_R == 0x00){
-        NVIC_ST_RELOAD_R = (0);
+        DisableInterrupts();
     }
 
 }
