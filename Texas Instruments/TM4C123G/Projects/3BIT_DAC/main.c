@@ -32,7 +32,7 @@
 #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
 
 // DAC Bit-specific address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
-#define DACOUT                  (*((volatile unsigned long *)0x4000501C))
+#define DACOUT                  (*((volatile unsigned long *)0x400050FC))
 
 // INPUT Bit-specific Address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
 #define G_KEY /* E3: (783.991) */ (*((volatile unsigned long *)0x40024020))
@@ -53,23 +53,22 @@ char DACOut(unsigned char param);
 
 // Globals variables
 unsigned char index = 0;
-const unsigned char SineWave[16] = {
-     4,5,6,7,7,7,6,5,4,3,2,1,1,1,2,3
+
+const unsigned char SineWave[67] = {
+     0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,
+     17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,
+     33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,
+     49,50,51,52,53,54,55,56,57,58,59,60,61,62,62,63,63,63
 };
-const unsigned char TriangleWave[14] = {
-     0,1,2,3,4,5,6,7,6,5,4,3,2,1
-};
-const unsigned char RampWave[16] = {
-     1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,0
-};
+
 
 
 /************************
  * ISR HANDLERS
  ************************/
 void SysTick_Handler(void){
-    GPIO_PORTB_DATA_R ^= 0x08; //heartbeat
-    index = (index+1) & 0x0F;
+    //GPIO_PORTB_DATA_R ^= 0x08; //heartbeat
+    index = (index+1) & 0x3F;
     DACOut(SineWave[index]);
 }
 
@@ -77,13 +76,13 @@ void SysTick_Handler(void){
 /************************
  * MAIN ROUTINE
  ************************/
-int main(void) {
+void main(void) {
 
     // Initialization routine
     SYSCTL_RCGC2_R |= 0x00000012;
     initPortBOut();
     initPortEIn();
-    SysTick_Init(8000000);
+    SysTick_Init(800000);
     EnableInterrupts();
 
 
@@ -94,7 +93,6 @@ int main(void) {
 
     }
 	
-	return 0;
 }
 
 
@@ -118,13 +116,13 @@ void SysTick_Init(unsigned long period){
 void initPortBOut(void){    unsigned long volatile delay;
 
     // GPIO Digital Control
-    GPIO_PORTB_DEN_R        |=      0x0F;
-    GPIO_PORTB_DIR_R        |=      0x0F;
+    GPIO_PORTB_DEN_R        |=      0x3F;
+    GPIO_PORTB_DIR_R        |=      0x3F;
 
     // GPIO Alternate function control
-    GPIO_PORTB_AMSEL_R      &=      ~0x0F;
-    GPIO_PORTB_AFSEL_R      &=      ~0x0F;
-    GPIO_PORTB_PCTL_R       &=      ~0x0000FFFF;
+    GPIO_PORTB_AMSEL_R      &=      ~0x3F;
+    GPIO_PORTB_AFSEL_R      &=      ~0x3F;
+    GPIO_PORTB_PCTL_R       &=      ~0x00FFFFFF;
 }
 
 void initPortEIn(void){
