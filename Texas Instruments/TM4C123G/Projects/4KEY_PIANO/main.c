@@ -30,7 +30,7 @@
 #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
 
 // DAC Bit-specific address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
-#define DACOUT                  (*((volatile unsigned long *)0x4000501C))
+#define DACOUT                  (*((volatile unsigned long *)0x4000503C))
 
 // INPUT Bit-specific Address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
 #define G_KEY /* E3: (783.991) */ (*((volatile unsigned long *)0x40024020))
@@ -47,18 +47,13 @@
 void initPortBOut(void);
 void initPortEIn(void);
 void SysTick_Init(unsigned long period);
-char DACOut(unsigned char param);
+void DACOut(unsigned char param);
 
 // Globals variables
 unsigned char index = 0;
-const unsigned char SineWave[16] = {
-     4,5,6,7,7,7,6,5,4,3,2,1,1,1,2,3
-};
-const unsigned char TriangleWave[14] = {
-     0,1,2,3,4,5,6,7,6,5,4,3,2,1
-};
-const unsigned char RampWave[16] = {
-     1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,0
+const unsigned char SineWave[48] = {
+     0,0,1,1,1,2,2,3,4,5,6,7,8,9,10,11,12,13,13,14,14,14,15,15,
+     15,15,14,14,14,13,13,12,11,10,9,8,7,6,5,4,3,2,2,1,1,1,0,0
 };
 
 
@@ -66,8 +61,12 @@ const unsigned char RampWave[16] = {
  * ISR HANDLERS
  ************************/
 void SysTick_Handler(void){
-    //GPIO_PORTB_DATA_R ^= 0x08; //heartbeat
-    index = (index+1) & 0x0F;
+    if(index < 49){
+        index++;
+        if(index == 48){
+            index = 0;
+        }
+    }
     DACOut(SineWave[index]);
 }
 
@@ -75,7 +74,7 @@ void SysTick_Handler(void){
 /************************
  * MAIN ROUTINE
  ************************/
-int main(void) {
+void main(void) {
 
     // Initialization routine
     SYSCTL_RCGC2_R |= 0x00000012;
@@ -84,7 +83,6 @@ int main(void) {
     SysTick_Init(80000);
     EnableInterrupts();
 
-
     // Loop routine
     while(1){
 
@@ -92,7 +90,6 @@ int main(void) {
 
     }
 
-    return 0;
 }
 
 
@@ -128,17 +125,17 @@ void initPortBOut(void){    unsigned long volatile delay;
 void initPortEIn(void){
 
     // GPIO Digital Control
-    GPIO_PORTE_DEN_R        |=       0x01;
-    GPIO_PORTE_DIR_R        &=      ~0x01;
-    GPIO_PORTE_PDR_R        |=       0x01;
+    GPIO_PORTE_DEN_R        |=       0x0F;
+    GPIO_PORTE_DIR_R        &=      ~0x0F;
+    GPIO_PORTE_PDR_R        |=       0x0F;
 
     // GPIO Alternate function control
     GPIO_PORTE_AMSEL_R       =      0;
-    GPIO_PORTE_AFSEL_R      &=      ~0x01;
-    GPIO_PORTE_PCTL_R       &=      ~0x0000000F;
+    GPIO_PORTE_AFSEL_R      &=      ~0x0F;
+    GPIO_PORTE_PCTL_R       &=      ~0x0000FFFF;
 }
 
 // DAC output
-char DACOut(unsigned char param){
+void DACOut(unsigned char param){
     DACOUT = param;
 }
