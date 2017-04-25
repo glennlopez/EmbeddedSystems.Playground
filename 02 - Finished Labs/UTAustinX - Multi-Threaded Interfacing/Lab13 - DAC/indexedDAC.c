@@ -68,7 +68,7 @@ const unsigned char RampWave[16] = {
  * ISR HANDLERS
  ************************/
 void SysTick_Handler(void){
-    GPIO_PORTB_DATA_R ^= 0x08; //heartbeat
+    //GPIO_PORTB_DATA_R ^= 0x08; //heartbeat
     index = (index+1) & 0x0F;
     DACOut(SineWave[index]);
 }
