@@ -1,7 +1,12 @@
 
+
 /************************
  * PREPROCESSOR DIRECTIVES
  ************************/
+
+ // Includes
+#include "PLL.h"
+#include "DAC.h"
 
 // System Control Legacy base address: 0x400F.E000 (Datasheet pg. 234)
 #define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
@@ -15,22 +20,11 @@
 #define GPIO_PORTE_AFSEL_R      (*((volatile unsigned long *)0x40024420))
 #define GPIO_PORTE_PCTL_R       (*((volatile unsigned long *)0x4002452C))
 
-// OUTPUT PortB(APB) base address: 0x40005000 (Datasheet pg. 657)
-#define GPIO_PORTB_DATA_R       (*((volatile unsigned long *)0x400053FC))
-#define GPIO_PORTB_DEN_R        (*((volatile unsigned long *)0x4000551C))
-#define GPIO_PORTB_DIR_R        (*((volatile unsigned long *)0x40005400))
-#define GPIO_PORTB_AMSEL_R      (*((volatile unsigned long *)0x40005528))
-#define GPIO_PORTB_AFSEL_R      (*((volatile unsigned long *)0x40005420))
-#define GPIO_PORTB_PCTL_R       (*((volatile unsigned long *)0x4000552C))
-
 // Systick & NVIC Registers (pg 132)
 #define NVIC_SYS_PRI3_R         (*((volatile unsigned long *)0xE000ED20))
 #define NVIC_ST_CTRL_R          (*((volatile unsigned long *)0xE000E010))
 #define NVIC_ST_RELOAD_R        (*((volatile unsigned long *)0xE000E014))
 #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
-
-// DAC Bit-specific address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
-#define DACOUT                  (*((volatile unsigned long *)0x4000503C))
 
 // INPUT Bit-specific Address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
 #define G_KEY /* E3: (783.991) */ (*((volatile unsigned long *)0x40024020))
@@ -44,10 +38,13 @@
  ************************/
 
 // Prototypes
-void initPortBOut(void);
+//void initPortBOut(void);
 void initPortEIn(void);
+void toneCutOff(void);
 void SysTick_Init(unsigned long period);
-void DACOut(unsigned char param);
+//void DACOut(unsigned char param);
+void EnableInterrupts(void);
+void DisableInterrupts(void);
 
 // Globals variables
 unsigned char index = 0;
@@ -61,13 +58,17 @@ const unsigned char SineWave[48] = {
  * ISR HANDLERS
  ************************/
 void SysTick_Handler(void){
+
+    toneCutOff();
+
     if(index < 49){
         index++;
         if(index == 48){
             index = 0;
         }
     }
-    DACOut(SineWave[index]);
+    DAC_Out(SineWave[index]);
+
 }
 
 
@@ -78,15 +79,37 @@ void main(void) {
 
     // Initialization routine
     SYSCTL_RCGC2_R |= 0x00000012;
-    initPortBOut();
+    DAC_Init();
     initPortEIn();
-    SysTick_Init(80000);
-    EnableInterrupts();
+    SysTick_Init(2126);
+    PLL_Init();
 
     // Loop routine
     while(1){
 
-        // do nothing
+        /* NOTE:
+         * ([(1/f)/(1/system clock)]/total pulse) = Wave Reload value
+         */
+
+        if(C_KEY == 0x01){
+            EnableInterrupts();
+            NVIC_ST_RELOAD_R = (3186 -1);
+        }
+
+        if(D_KEY == 0x02){
+            EnableInterrupts();
+            NVIC_ST_RELOAD_R = (2839 -1);
+        }
+
+        if(E_KEY == 0x04){
+            EnableInterrupts();
+            NVIC_ST_RELOAD_R = (2529 -1);
+        }
+
+        if(G_KEY == 0x08){
+            EnableInterrupts();
+            NVIC_ST_RELOAD_R = (2126 -1);
+        }
 
     }
 
@@ -109,19 +132,6 @@ void SysTick_Init(unsigned long period){
   NVIC_ST_CTRL_R = 0x07;
 }
 
-// PortB OUTPUT Initiazation Routine (pg. 657)
-void initPortBOut(void){    unsigned long volatile delay;
-
-    // GPIO Digital Control
-    GPIO_PORTB_DEN_R        |=      0x0F;
-    GPIO_PORTB_DIR_R        |=      0x0F;
-
-    // GPIO Alternate function control
-    GPIO_PORTB_AMSEL_R      &=      ~0x0F;
-    GPIO_PORTB_AFSEL_R      &=      ~0x0F;
-    GPIO_PORTB_PCTL_R       &=      ~0x0000FFFF;
-}
-
 void initPortEIn(void){
 
     // GPIO Digital Control
@@ -135,7 +145,11 @@ void initPortEIn(void){
     GPIO_PORTE_PCTL_R       &=      ~0x0000FFFF;
 }
 
-// DAC output
-void DACOut(unsigned char param){
-    DACOUT = param;
+// Tone cutoff
+void toneCutOff(void){
+
+    if(GPIO_PORTE_DATA_R == 0x00){
+        DisableInterrupts();
+    }
+
 }
