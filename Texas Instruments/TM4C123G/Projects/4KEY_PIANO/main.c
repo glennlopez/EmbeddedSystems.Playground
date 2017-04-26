@@ -9,11 +9,14 @@
 #include "Sound.h"
 #include "Piano.h"
 
+void EnableInterrupts(void);
+void DisableInterrupts(void);
+
 
 /************************
  * MAIN ROUTINE
  ************************/
-void main(void) {
+int main(void) {
 
     // Initialization routine
     Sound_Init();
@@ -29,4 +32,5 @@ void main(void) {
 
     }
 
+    return 0;
 }

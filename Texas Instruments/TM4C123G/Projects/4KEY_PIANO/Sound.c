@@ -2,8 +2,6 @@
 // Runs on LM4F120 or TM4C123,
 // edX lab 13
 // Use the SysTick timer to request interrupts at a particular period.
-// Daniel Valvano, Jonathan Valvano
-// December 29, 2014
 // This routine calls the 4-bit DAC
 
 #include "Sound.h"

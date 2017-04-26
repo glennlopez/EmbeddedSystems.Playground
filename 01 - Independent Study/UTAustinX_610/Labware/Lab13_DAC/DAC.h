@@ -1,22 +1,10 @@
-// DAC.h
-// Runs on LM4F120 or TM4C123, 
-// edX lab 13 
-// Header file for the 4-bit digital to analog converter
-// Daniel Valvano, Jonathan Valvano
-// March 13, 2014
+#define SYSCTL_RCGC2_R          (*((volatile unsigned long *)0x400FE108))
 
-// **************DAC_Init*********************
-// Initialize 4-bit DAC 
-// Input: none
-// Output: none
+// DAC Bit-specific address: (7|200, 6|100, 5|80, 4|40, 3|20, 2|10, 1|08, 0|04)
+#define DACOUT                  (*((volatile unsigned long *)0x4000503C))
+
+// Configure PortB for DAC Output
 void DAC_Init(void);
 
-
-// **************DAC_Out*********************
-// output to DAC
-// Input: 4-bit data, 0 to 15 
-// Output: none
+// Outputs parameter to PortB
 void DAC_Out(unsigned long data);
-  
-
-
