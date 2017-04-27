@@ -253,7 +253,7 @@
       <Focus>1</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>271</TopLine>
+      <TopLine>272</TopLine>
       <CurrentLine>277</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
@@ -270,7 +270,7 @@
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>21</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Lab13.c</PathWithFileName>
       <FilenameWithoutPath>Lab13.c</FilenameWithoutPath>
