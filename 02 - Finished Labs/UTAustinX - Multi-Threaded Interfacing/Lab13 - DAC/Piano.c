@@ -23,7 +23,7 @@ void Piano_Init(void){  unsigned long delay;
     // GPIO Digital Control
     GPIO_PORTE_DEN_R        |=       0x0F;
     GPIO_PORTE_DIR_R        &=      ~0x0F;
-    //GPIO_PORTE_PDR_R        |=       0x0F;
+    GPIO_PORTE_PDR_R        |=       0x0F;
 		//GPIO_PORTE_PUR_R        |=       0x0F;
 
     // GPIO Alternate function control
@@ -42,27 +42,23 @@ void Piano_Init(void){  unsigned long delay;
 // 0x04 is key 2 pressed, 0x08 is key 3 pressed
 unsigned long Piano_In(void){ unsigned long frq;
 
-    /* NOTE: This returns the reload value for systic
-     * ([(1/f)/(1/system clock)]/total pulse) = Wave Reload value
-     */
-
-    if(PIANO_KEY == 0x00){
+    if(BTN_INPUT == 0x00){
         frq = CUT_OFF;
     }
 
-    if(PIANO_KEY == 0x01){
+    if(BTN_INPUT == 0x01){
         frq = (C_NOTE -1);
     }
 
-    if(PIANO_KEY == 0x02){
+    if(BTN_INPUT == 0x02){
         frq = (D_NOTE -1);
     }
 
-    if(PIANO_KEY == 0x04){
+    if(BTN_INPUT == 0x04){
         frq = (E_NOTE -1);
     }
 
-    if(PIANO_KEY == 0x08){
+    if(BTN_INPUT == 0x08){
         frq = (G_NOTE -1);
     }
 
