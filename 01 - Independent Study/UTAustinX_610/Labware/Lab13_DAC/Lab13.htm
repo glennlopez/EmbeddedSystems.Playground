@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Lab13.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Lab13.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Wed Apr 26 15:21:44 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Wed Apr 26 16:55:45 2017
 <BR><P>
 <H3>Maximum Stack Usage =        136 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -769,7 +769,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[97]"></a>DAC_Init</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, dac.o(i.DAC_Init))
+<P><STRONG><a name="[97]"></a>DAC_Init</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, dac.o(i.DAC_Init))
 <BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sound_Init
 </UL>
 
@@ -787,7 +787,6 @@ Global Symbols
 
 <P><STRONG><a name="[9f]"></a>PLL_Init</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, texas.o(i.PLL_Init))
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[a7]"></a>Piano_In</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, piano.o(i.Piano_In))
@@ -873,8 +872,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetCourse
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetCode
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_Init
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLL_Init
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -899,7 +898,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, lab13.o(i.main))
+<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, lab13.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = main &rArr; TExaS_Init &rArr; ADC1_Init
 </UL>
@@ -908,7 +907,6 @@ Global Symbols
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sound_Init
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Piano_Init
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Piano_In
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLL_Init
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableInterrupts
 </UL>
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main

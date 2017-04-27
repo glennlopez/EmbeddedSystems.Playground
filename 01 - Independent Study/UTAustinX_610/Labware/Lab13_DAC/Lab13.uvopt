@@ -96,10 +96,10 @@
         <tRtrace>0</tRtrace>
         <sRSysVw>1</sRSysVw>
         <tRSysVw>1</tRSysVw>
-        <tPdscDbg>1</tPdscDbg>
+        <tPdscDbg>0</tPdscDbg>
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
-        <nTsel>3</nTsel>
+        <nTsel>2</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -115,13 +115,18 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+          <Name>ÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÌÈ`ù</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>UL2CM3</Key>
           <Name>UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0TM4C123_32 -FS00 -FL08000)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
-          <Name>(1010=-1,-1,-1,-1,0)(1007=158,207,335,468,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9206=753,329,1149,679,1)(9203=-1,-1,-1,-1,0)</Name>
+          <Name>(1010=-1,-1,-1,-1,0)(1007=158,207,335,468,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9206=828,397,1224,748,1)(9203=180,121,576,400,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -136,7 +141,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DAC_R5</Key>
-          <Name>-2077682152</Name>
+          <Name>0</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -146,22 +151,22 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DAC_R3</Key>
-          <Name>1069547520</Name>
+          <Name>1053609165</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>DAC_R2</Key>
-          <Name>1077936128</Name>
+          <Name>1061997773</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>DAC_R1</Key>
-          <Name>1086324736</Name>
+          <Name>1070386381</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>DAC_R0</Key>
-          <Name>1094713344</Name>
+          <Name>1078774989</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -193,7 +198,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>1</aLwin>
+        <aLwin>0</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -222,9 +227,15 @@
         <Wi>
           <IntNumber>0</IntNumber>
           <FirstString>`DACOUT</FirstString>
-          <SecondString>FF00000000000000000000006666666666660A40000000000000000000000000000000004441434F555400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000700000001000000000000000000F03F13000000000000000000000000000000000000001C1F0000</SecondString>
+          <SecondString>FF00000000000000000000006666666666660A40000000000000000000000000000000004441434F555400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000700000001000000000000000000F03F0F0000000000000000000000000000000000000048060000</SecondString>
         </Wi>
       </LogicAnalyzers>
+      <SystemViewers>
+        <Entry>
+          <Name>OS Support\TExaS Grader v2.1</Name>
+          <WinId>35905</WinId>
+        </Entry>
+      </SystemViewers>
     </TargetOption>
   </Target>
 
@@ -240,10 +251,10 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>1</Focus>
-      <ColumnNumber>19860500</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>5</CurrentLine>
+      <TopLine>271</TopLine>
+      <CurrentLine>277</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
       <FilenameWithoutPath>startup.s</FilenameWithoutPath>
@@ -258,8 +269,8 @@
       <Focus>1</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>31</TopLine>
-      <CurrentLine>58</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Lab13.c</PathWithFileName>
       <FilenameWithoutPath>Lab13.c</FilenameWithoutPath>
@@ -272,10 +283,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>1</Focus>
-      <ColumnNumber>12</ColumnNumber>
+      <ColumnNumber>18</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>10</CurrentLine>
+      <CurrentLine>21</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Sound.c</PathWithFileName>
       <FilenameWithoutPath>Sound.c</FilenameWithoutPath>
@@ -288,7 +299,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>1</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>16</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>1</CurrentLine>
@@ -307,7 +318,7 @@
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <CurrentLine>3</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Piano.c</PathWithFileName>
       <FilenameWithoutPath>Piano.c</FilenameWithoutPath>

@@ -1,10 +1,3 @@
-// Piano.c
-// Runs on LM4F120 or TM4C123,
-// edX lab 13
-// There are four keys in the piano
-
-// Port E bits 3-0 have 4 piano keys
-
 #include "Piano.h"
 
 // INPUT PortE(APB) base address: 0x40024000 (Datasheet pg. 657)
@@ -12,12 +5,14 @@
 #define GPIO_PORTE_DEN_R        (*((volatile unsigned long *)0x4002451C))
 #define GPIO_PORTE_DIR_R        (*((volatile unsigned long *)0x40024400))
 #define GPIO_PORTE_PDR_R        (*((volatile unsigned long *)0x40024514))
+#define GPIO_PORTE_PUR_R        (*((volatile unsigned long *)0x40024510))
 #define GPIO_PORTE_AMSEL_R      (*((volatile unsigned long *)0x40024528))
 #define GPIO_PORTE_AFSEL_R      (*((volatile unsigned long *)0x40024420))
 #define GPIO_PORTE_PCTL_R       (*((volatile unsigned long *)0x4002452C))
 
-
-// **************Piano_Init*********************
+/************************
+ * Piano_Init
+ ************************/
 // Initialize piano key inputs
 // Input: none
 // Output: none
@@ -29,6 +24,7 @@ void Piano_Init(void){  unsigned long delay;
     GPIO_PORTE_DEN_R        |=       0x0F;
     GPIO_PORTE_DIR_R        &=      ~0x0F;
     //GPIO_PORTE_PDR_R        |=       0x0F;
+		//GPIO_PORTE_PUR_R        |=       0x0F;
 
     // GPIO Alternate function control
     GPIO_PORTE_AMSEL_R       =      0;
@@ -36,7 +32,9 @@ void Piano_Init(void){  unsigned long delay;
     GPIO_PORTE_PCTL_R       &=      ~0x0000FFFF;
 }
 
-// **************Piano_In*********************
+/************************
+ * Piano_In
+ ************************/
 // Input from piano key inputs
 // Input: none
 // Output: 0 to 15 depending on keys
