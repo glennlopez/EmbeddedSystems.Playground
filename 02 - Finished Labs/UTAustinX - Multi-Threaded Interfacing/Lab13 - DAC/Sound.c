@@ -40,15 +40,12 @@ void Sound_Tone(unsigned long period){
 
 
 /************************
- * Sound_Off
+ * Sound_Off - NOT IN USE
  ************************/
 // stop outputing to DAC
 // Output: none
 void Sound_Off(void){
- // this routine stops the sound output
-    if(DACOUT == 0x00){
-        NVIC_ST_RELOAD_R = 0;
-    }
+// this routine stops the sound output
 }
 
 
@@ -58,9 +55,7 @@ void Sound_Off(void){
 // Interrupt service routine
 // Executed every 12.5ns*(period)
 void SysTick_Handler(void){
-
-    Sound_Off();
-
+	
     if(index < 49){
         index++;
         if(index == 48){
