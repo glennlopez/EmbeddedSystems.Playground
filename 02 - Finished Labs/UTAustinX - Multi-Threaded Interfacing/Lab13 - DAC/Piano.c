@@ -47,20 +47,21 @@ unsigned long Piano_In(void){ unsigned long frq;
     }
 
     if(BTN_INPUT == 0x01){
-				frq = (C_NOTE -1);	//Lab13: C_NOTE
+				frq = C_NOTE;				//Lab13: C_NOTE
     }
 
     if(BTN_INPUT == 0x02){
-        frq = (D_NOTE -1);	//Lab13: D_NOTE
+        frq = D_NOTE;				//Lab13: D_NOTE
     }
 
     if(BTN_INPUT == 0x04){
-        frq = (E_NOTE -1);	//Lab13: E_NOTE
+        frq = E_NOTE;				//Lab13: E_NOTE
     }
 
     if(BTN_INPUT == 0x08){
-        frq = (G_NOTE -1);	//Lab13: G_NOTE
+        frq = G_NOTE;				//Lab13: G_NOTE
     }
-
-    return frq;
+	
+		// frq - 1 returns the correct systick NVIC RELOAD value
+    return frq - 1;	
 }
