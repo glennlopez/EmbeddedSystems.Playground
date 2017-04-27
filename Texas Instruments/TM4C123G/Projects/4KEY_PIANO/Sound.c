@@ -1,9 +1,3 @@
-// Sound.c
-// Runs on LM4F120 or TM4C123,
-// edX lab 13
-// Use the SysTick timer to request interrupts at a particular period.
-// This routine calls the 4-bit DAC
-
 #include "Sound.h"
 #include "DAC.h"
 
@@ -14,9 +8,9 @@ const unsigned char SineWave[48] = {
 };
 
 const unsigned char Guitar[32] = {
-    5,5,4,1,1,3,8,11,11,9,4,    //11
-    2,5,11,15,13,9,7,5,5,6,8,   //11
-    8,7,4,3,3,3,3,4,5,5             //10
+    5,5,4,1,1,3,8,11,11,9,4,
+    2,5,11,15,13,9,7,5,5,6,8,
+    8,7,4,3,3,3,3,4,5,5
 };
 
 
@@ -67,12 +61,12 @@ void SysTick_Handler(void){
 
     Sound_Off();
 
-    if(index < 49){
+    if(index < 33){
         index++;
-        if(index == 48){
+        if(index == 32){
             index = 0;
         }
     }
 
-    DAC_Out(SineWave[index]);
+    DAC_Out(Guitar[index]);
 }

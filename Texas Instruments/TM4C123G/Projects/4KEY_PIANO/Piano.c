@@ -53,20 +53,20 @@ unsigned long Piano_In(void){ unsigned long frq;
     }
 
     if(PIANO_KEY == 0x01){
-        frq = (C_NOTE -1);
+        frq = (C_NOTE);
     }
 
     if(PIANO_KEY == 0x02){
-        frq = (D_NOTE -1);
+        frq = (D_NOTE);
     }
 
     if(PIANO_KEY == 0x04){
-        frq = (E_NOTE -1);
+        frq = (E_NOTE);
     }
 
     if(PIANO_KEY == 0x08){
-        frq = (G_NOTE -1);
+        frq = (G_NOTE);
     }
 
-    return frq;
+    return ((frq * 48)/32) - 1;
 }
