@@ -1,4 +1,5 @@
 #include "DAC.h"
+#include "Piano.h"
 
 // OUTPUT PortB(APB) base address: 0x40005000 (Datasheet pg. 657)
 #define GPIO_PORTB_DATA_R       (*((volatile unsigned long *)0x400053FC))
@@ -37,5 +38,10 @@ void DAC_Init(void){unsigned int delay;
 // Input: 4-bit data, 0 to 15
 // Output: none
 void DAC_Out(unsigned long data){
-    DACOUT = data;
+	if(BTN_INPUT == 0x00){
+		DACOUT = 0x00;
+	}
+	else{
+		DACOUT = data;
+	}
 }

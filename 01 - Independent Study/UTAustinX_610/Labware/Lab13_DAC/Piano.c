@@ -42,24 +42,24 @@ void Piano_Init(void){  unsigned long delay;
 // 0x04 is key 2 pressed, 0x08 is key 3 pressed
 unsigned long Piano_In(void){ unsigned long frq;
 
-    if(PIANO_KEY == 0x00){
-        frq = CUT_OFF;
+    if(BTN_INPUT == 0x00){
+        frq = CUT_OFF;			//Lab13: CUT_OFF
     }
 
-    if(PIANO_KEY == 0x01){
-        frq = (C_NOTE -1);
+    if(BTN_INPUT == 0x01){
+				frq = (C_NOTE -1);	//Lab13: C_NOTE
     }
 
-    if(PIANO_KEY == 0x02){
-        frq = (D_NOTE -1);
+    if(BTN_INPUT == 0x02){
+        frq = (D_NOTE -1);	//Lab13: D_NOTE
     }
 
-    if(PIANO_KEY == 0x04){
-        frq = (E_NOTE -1);
+    if(BTN_INPUT == 0x04){
+        frq = (E_NOTE -1);	//Lab13: E_NOTE
     }
 
-    if(PIANO_KEY == 0x08){
-        frq = (G_NOTE -1);
+    if(BTN_INPUT == 0x08){
+        frq = (G_NOTE -1);	//Lab13: G_NOTE
     }
 
     return frq;
