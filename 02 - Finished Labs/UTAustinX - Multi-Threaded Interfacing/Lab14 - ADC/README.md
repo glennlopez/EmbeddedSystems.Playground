@@ -31,3 +31,4 @@ In this chapter we will focus on input devices that we use to gather information
 
 Learning/Referance material
 =================
+* [Successive Approximation](https://www.youtube.com/watch?v=BD3k9bO3hJ0)
