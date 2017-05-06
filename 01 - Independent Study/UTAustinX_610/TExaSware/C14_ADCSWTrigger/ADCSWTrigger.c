@@ -38,12 +38,15 @@
 void ADC0_InitSWTriggerSeq3_Ch1(void){ volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x00000010;   // 1) activate clock for Port E
   delay = SYSCTL_RCGC2_R;         //    allow time for clock to stabilize
+	
   GPIO_PORTE_DIR_R &= ~0x04;      // 2) make PE2 input
   GPIO_PORTE_AFSEL_R |= 0x04;     // 3) enable alternate function on PE2
   GPIO_PORTE_DEN_R &= ~0x04;      // 4) disable digital I/O on PE2
   GPIO_PORTE_AMSEL_R |= 0x04;     // 5) enable analog function on PE2
+	
   SYSCTL_RCGC0_R |= 0x00010000;   // 6) activate ADC0 
-  delay = SYSCTL_RCGC2_R;         
+  delay = SYSCTL_RCGC2_R;   
+	
   SYSCTL_RCGC0_R &= ~0x00000300;  // 7) configure for 125K 
   ADC0_SSPRI_R = 0x0123;          // 8) Sequencer 3 is highest priority
   ADC0_ACTSS_R &= ~0x0008;        // 9) disable sample sequencer 3
@@ -57,7 +60,7 @@ void ADC0_InitSWTriggerSeq3_Ch1(void){ volatile unsigned long delay;
 
 
 
-
+//READING DATA
 //------------ADC0_InSeq3------------
 // Busy-wait Analog to digital conversion
 // Input: none
