@@ -61,6 +61,6 @@ int main(void){unsigned long volatile delay;
     GPIO_PORTF_DATA_R |= 0x04;          // profile
     ADCvalue = ADC0_InSeq3();
     GPIO_PORTF_DATA_R &= ~0x04;
-    for(delay=0; delay<100000; delay++){};
+    for(delay=0; delay< /*100000*/ ADCvalue; delay++){};
   }
 }

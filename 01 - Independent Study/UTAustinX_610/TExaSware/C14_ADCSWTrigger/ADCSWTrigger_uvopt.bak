@@ -76,6 +76,16 @@
         <IsCurrentTarget>1</IsCurrentTarget>
       </OPTFL>
       <CpuCode>255</CpuCode>
+      <DllOpt>
+        <SimDllName>SARMCM3.DLL</SimDllName>
+        <SimDllArguments>-MPU</SimDllArguments>
+        <SimDlgDllName>DCM.DLL</SimDlgDllName>
+        <SimDlgDllArguments>-pCM4 -dLaunchPadDLL</SimDlgDllArguments>
+        <TargetDllName>SARMCM3.DLL</TargetDllName>
+        <TargetDllArguments>-MPU</TargetDllArguments>
+        <TargetDlgDllName>TCM.DLL</TargetDlgDllName>
+        <TargetDlgDllArguments>-pCM4</TargetDlgDllArguments>
+      </DllOpt>
       <DebugOpt>
         <uSim>1</uSim>
         <uTrg>0</uTrg>
@@ -94,9 +104,6 @@
         <tRfunc>0</tRfunc>
         <tRbox>1</tRbox>
         <tRtrace>0</tRtrace>
-        <sRSysVw>1</sRSysVw>
-        <tRSysVw>1</tRSysVw>
-        <tPdscDbg>1</tPdscDbg>
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
         <nTsel>3</nTsel>
@@ -176,7 +183,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
-          <Name>(1010=815,203,1225,746,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9108=-1,-1,-1,-1,0)(9106=2684,179,2893,336,0)(9104=582,149,978,420,0)(9107=2137,306,2590,577,1)(9102=760,478,1156,752,0)</Name>
+          <Name>(1010=815,203,1225,746,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(9106=175,149,384,302,1)(9104=582,149,978,416,1)(9107=179,345,632,651,1)(9102=760,478,1156,748,1)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -225,7 +232,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -274,7 +281,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>264</TopLine>
+      <TopLine>276</TopLine>
       <CurrentLine>277</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
@@ -288,7 +295,7 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>10</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>56</CurrentLine>
@@ -304,10 +311,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>25</TopLine>
-      <CurrentLine>59</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>60</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\ADCTestMain.c</PathWithFileName>
       <FilenameWithoutPath>ADCTestMain.c</FilenameWithoutPath>
@@ -322,7 +329,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>50</TopLine>
+      <TopLine>1</TopLine>
       <CurrentLine>54</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\PLL.c</PathWithFileName>

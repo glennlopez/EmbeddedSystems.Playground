@@ -2,7 +2,7 @@ Dependencies for Project 'ADCSWTrigger', Target 'ADCSWTrigger': (DO NOT MODIFY !
 F (.\startup.s)(0x519B8E3E)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
 F (.\ADCSWTrigger.c)(0x590D2407)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\adcswtrigger.o --omf_browse .\adcswtrigger.crf --depend .\adcswtrigger.d)
 I (../tm4c123gh6pm.h)(0x51D4A8F2)
-F (.\ADCTestMain.c)(0x590D2489)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\adctestmain.o --omf_browse .\adctestmain.crf --depend .\adctestmain.d)
+F (.\ADCTestMain.c)(0x5910064A)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\..-I D:\EngineeringSoftware\Keil\ARM\RV31\INC-I D:\EngineeringSoftware\Keil\ARM\CMSIS\Include-I D:\EngineeringSoftware\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\adctestmain.o --omf_browse .\adctestmain.crf --depend .\adctestmain.d)
 I (ADCSWTrigger.h)(0x52643936)
 I (../tm4c123gh6pm.h)(0x51D4A8F2)
 I (PLL.h)(0x5263E5C6)
