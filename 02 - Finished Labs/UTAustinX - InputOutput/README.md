@@ -1,5 +1,7 @@
 <!-- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
 
+>NOTE: MY LABS FOR UTAUSTINX 610 HAS BEEN [MIGRATED](https://github.com/glennlopez/UT610.UTAustinX) TO ITS OWN REPOSITORY. THIS FOLDER WILL SOON BE DELETED MID 2018.  
+
 What I acomplished 
 =================
 * Understanding of embedded systems using modular design and abstraction
@@ -19,7 +21,7 @@ Course Syllabus
 Example. Develop a system that toggles an LED on the LaunchPad
 Lab 2. Run existing project on LaunchPad with switch input and LED output
 
-* **Module 3:** Electronics: resistors, voltage, current and Ohm’s Law    
+* **Module 3:** Electronics: resistors, voltage, current and Ohmâ€™s Law    
 
 * **Module 4:** Digital Logic: transistors, flip flops and logic functions
 Lab 4. Debug a system with two inputs and two outputs
