@@ -1,7 +1,5 @@
 <!-- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
 
->NOTE: MY LABS FOR UTAUSTINX 610 HAS BEEN [MIGRATED](https://github.com/glennlopez/UT610.UTAustinX) TO ITS OWN REPOSITORY. THIS FOLDER WILL SOON BE DELETED MID 2018.  
-
 What I acomplished 
 =================
 * Understanding of embedded systems using modular design and abstraction
